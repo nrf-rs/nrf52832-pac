@@ -6068,11 +6068,6 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\
                   <value>0xEC</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>Neg30dBm</name>
-                  <description>Deprecated enumerator -  -40 dBm</description>
-                  <value>0xD8</value>
-                </enumeratedValue>
-                <enumeratedValue>
                   <name>Neg40dBm</name>
                   <description>-40 dBm</description>
                   <value>0xD8</value>
