@@ -27918,21 +27918,6 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\
           </fields>
         </register>
         <register>
-          <name>ERASEPCR1</name>
-          <description>Deprecated register -  Register for erasing a page in Code area. Equivalent to ERASEPAGE.</description>
-          <addressOffset>0x508</addressOffset>
-          <access>read-write</access>
-          <alternateRegister>ERASEPAGE</alternateRegister>
-          <fields>
-            <field>
-              <name>ERASEPCR1</name>
-              <description>Register for erasing a page in Code area. Equivalent to ERASEPAGE.</description>
-              <lsb>0</lsb>
-              <msb>31</msb>
-            </field>
-          </fields>
-        </register>
-        <register>
           <name>ERASEALL</name>
           <description>Register for erasing all non-volatile user memory</description>
           <addressOffset>0x50C</addressOffset>
