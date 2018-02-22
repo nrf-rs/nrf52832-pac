@@ -1,10 +1,21 @@
 [package]
-name = "nrf52"
 version = "0.1.0"
 authors = ["James Munns <james.munns@gmail.com>"]
+description = "Peripheral access API for nrf52 microcontrollers"
+documentation = "https://docs.rs/nrf52"
+keywords = ["no-std", "arm", "cortex-m", "nrf52"]
+license = "MIT OR Apache-2.0"
+name = "nrf52"
+repository = "https://github.com/jamesmunns/nrf52"
 
 [dependencies]
 bare-metal = "0.1"
 vcell = "0.1"
-cortex-m-rt = "0.3"
 cortex-m = "0.4"
+
+[dependencies.cortex-m-rt]
+optional = true
+version = "0.3"
+
+[features]
+rt = ["cortex-m-rt"]
