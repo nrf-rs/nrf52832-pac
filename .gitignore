@@ -1,2 +1,4 @@
 target/
 
+# lib crate
+Cargo.lock
