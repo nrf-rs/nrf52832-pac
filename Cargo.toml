@@ -11,7 +11,7 @@ repository = "https://github.com/jamesmunns/nrf52"
 [dependencies]
 bare-metal = "0.1"
 vcell = "0.1"
-cortex-m = "0.4"
+cortex-m = "0.4.3"
 
 [dependencies.cortex-m-rt]
 optional = true
