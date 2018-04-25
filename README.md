@@ -2,9 +2,7 @@
 
 > Peripheral access API for nrf52 (nrf52832) microcontrollers
 
-NOTE: `src/lib.rs` is not formatted due to https://github.com/rust-lang-nursery/rustfmt/issues/2479.
-
-NOTE: To generate code from the contained SVD, https://github.com/japaric/svd2rust/pull/177 is required.
+NOTE: we use `svd2rust` to generate the code, `form` to organize it, and `cargo fmt` to make it pretty
 
 # [Documentation](https://docs.rs/nrf52)
 
