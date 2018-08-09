@@ -9,13 +9,13 @@ name = "nrf52"
 repository = "https://github.com/jamesmunns/nrf52"
 
 [dependencies]
-bare-metal = "0.1"
+bare-metal = "0.2.1"
 vcell = "0.1"
-cortex-m = "0.4.3"
+cortex-m = "0.5.3"
 
 [dependencies.cortex-m-rt]
 optional = true
-version = "0.3"
+version = "0.5.1"
 
 [features]
-rt = ["cortex-m-rt"]
+rt = ["cortex-m-rt/device"]
