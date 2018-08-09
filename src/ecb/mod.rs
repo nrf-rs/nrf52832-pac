@@ -1,4 +1,3 @@
-use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
@@ -22,43 +21,43 @@ pub struct RegisterBlock {
 }
 #[doc = "Start ECB block encrypt"]
 pub struct TASKS_STARTECB {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Start ECB block encrypt"]
 pub mod tasks_startecb;
 #[doc = "Abort a possible executing ECB operation"]
 pub struct TASKS_STOPECB {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Abort a possible executing ECB operation"]
 pub mod tasks_stopecb;
 #[doc = "ECB block encrypt complete"]
 pub struct EVENTS_ENDECB {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "ECB block encrypt complete"]
 pub mod events_endecb;
 #[doc = "ECB block encrypt aborted because of a STOPECB task or due to an error"]
 pub struct EVENTS_ERRORECB {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "ECB block encrypt aborted because of a STOPECB task or due to an error"]
 pub mod events_errorecb;
 #[doc = "Enable interrupt"]
 pub struct INTENSET {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Enable interrupt"]
 pub mod intenset;
 #[doc = "Disable interrupt"]
 pub struct INTENCLR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Disable interrupt"]
 pub mod intenclr;
 #[doc = "ECB block encrypt memory pointers"]
 pub struct ECBDATAPTR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "ECB block encrypt memory pointers"]
 pub mod ecbdataptr;

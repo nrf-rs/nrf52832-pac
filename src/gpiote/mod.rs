@@ -1,4 +1,3 @@
-use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
@@ -27,49 +26,49 @@ pub struct RegisterBlock {
 }
 #[doc = "Description collection[0]: Task for writing to pin specified in CONFIG[0].PSEL. Action on pin is configured in CONFIG[0].POLARITY."]
 pub struct TASKS_OUT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Description collection[0]: Task for writing to pin specified in CONFIG[0].PSEL. Action on pin is configured in CONFIG[0].POLARITY."]
 pub mod tasks_out;
 #[doc = "Description collection[0]: Task for writing to pin specified in CONFIG[0].PSEL. Action on pin is to set it high."]
 pub struct TASKS_SET {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Description collection[0]: Task for writing to pin specified in CONFIG[0].PSEL. Action on pin is to set it high."]
 pub mod tasks_set;
 #[doc = "Description collection[0]: Task for writing to pin specified in CONFIG[0].PSEL. Action on pin is to set it low."]
 pub struct TASKS_CLR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Description collection[0]: Task for writing to pin specified in CONFIG[0].PSEL. Action on pin is to set it low."]
 pub mod tasks_clr;
 #[doc = "Description collection[0]: Event generated from pin specified in CONFIG[0].PSEL"]
 pub struct EVENTS_IN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Description collection[0]: Event generated from pin specified in CONFIG[0].PSEL"]
 pub mod events_in;
 #[doc = "Event generated from multiple input GPIO pins with SENSE mechanism enabled"]
 pub struct EVENTS_PORT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Event generated from multiple input GPIO pins with SENSE mechanism enabled"]
 pub mod events_port;
 #[doc = "Enable interrupt"]
 pub struct INTENSET {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Enable interrupt"]
 pub mod intenset;
 #[doc = "Disable interrupt"]
 pub struct INTENCLR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Disable interrupt"]
 pub mod intenclr;
 #[doc = "Description collection[0]: Configuration for OUT[n], SET[n] and CLR[n] tasks and IN[n] event"]
 pub struct CONFIG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Description collection[0]: Configuration for OUT[n], SET[n] and CLR[n] tasks and IN[n] event"]
 pub mod config;

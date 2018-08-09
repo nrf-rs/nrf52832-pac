@@ -1,4 +1,3 @@
-use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
@@ -41,91 +40,91 @@ pub struct RegisterBlock {
 }
 #[doc = "Start RTC COUNTER"]
 pub struct TASKS_START {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Start RTC COUNTER"]
 pub mod tasks_start;
 #[doc = "Stop RTC COUNTER"]
 pub struct TASKS_STOP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Stop RTC COUNTER"]
 pub mod tasks_stop;
 #[doc = "Clear RTC COUNTER"]
 pub struct TASKS_CLEAR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Clear RTC COUNTER"]
 pub mod tasks_clear;
 #[doc = "Set COUNTER to 0xFFFFF0"]
 pub struct TASKS_TRIGOVRFLW {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Set COUNTER to 0xFFFFF0"]
 pub mod tasks_trigovrflw;
 #[doc = "Event on COUNTER increment"]
 pub struct EVENTS_TICK {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Event on COUNTER increment"]
 pub mod events_tick;
 #[doc = "Event on COUNTER overflow"]
 pub struct EVENTS_OVRFLW {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Event on COUNTER overflow"]
 pub mod events_ovrflw;
 #[doc = "Description collection[0]: Compare event on CC[0] match"]
 pub struct EVENTS_COMPARE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Description collection[0]: Compare event on CC[0] match"]
 pub mod events_compare;
 #[doc = "Enable interrupt"]
 pub struct INTENSET {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Enable interrupt"]
 pub mod intenset;
 #[doc = "Disable interrupt"]
 pub struct INTENCLR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Disable interrupt"]
 pub mod intenclr;
 #[doc = "Enable or disable event routing"]
 pub struct EVTEN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Enable or disable event routing"]
 pub mod evten;
 #[doc = "Enable event routing"]
 pub struct EVTENSET {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Enable event routing"]
 pub mod evtenset;
 #[doc = "Disable event routing"]
 pub struct EVTENCLR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Disable event routing"]
 pub mod evtenclr;
 #[doc = "Current COUNTER value"]
 pub struct COUNTER {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Current COUNTER value"]
 pub mod counter;
 #[doc = "12 bit prescaler for COUNTER frequency (32768/(PRESCALER+1)).Must be written when RTC is stopped"]
 pub struct PRESCALER {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "12 bit prescaler for COUNTER frequency (32768/(PRESCALER+1)).Must be written when RTC is stopped"]
 pub mod prescaler;
 #[doc = "Description collection[0]: Compare register 0"]
 pub struct CC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Description collection[0]: Compare register 0"]
 pub mod cc;

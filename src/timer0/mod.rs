@@ -1,4 +1,3 @@
-use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
@@ -40,85 +39,85 @@ pub struct RegisterBlock {
 }
 #[doc = "Start Timer"]
 pub struct TASKS_START {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Start Timer"]
 pub mod tasks_start;
 #[doc = "Stop Timer"]
 pub struct TASKS_STOP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Stop Timer"]
 pub mod tasks_stop;
 #[doc = "Increment Timer (Counter mode only)"]
 pub struct TASKS_COUNT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Increment Timer (Counter mode only)"]
 pub mod tasks_count;
 #[doc = "Clear time"]
 pub struct TASKS_CLEAR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Clear time"]
 pub mod tasks_clear;
 #[doc = "Deprecated register - Shut down timer"]
 pub struct TASKS_SHUTDOWN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Deprecated register - Shut down timer"]
 pub mod tasks_shutdown;
 #[doc = "Description collection[0]: Capture Timer value to CC[0] register"]
 pub struct TASKS_CAPTURE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Description collection[0]: Capture Timer value to CC[0] register"]
 pub mod tasks_capture;
 #[doc = "Description collection[0]: Compare event on CC[0] match"]
 pub struct EVENTS_COMPARE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Description collection[0]: Compare event on CC[0] match"]
 pub mod events_compare;
 #[doc = "Shortcut register"]
 pub struct SHORTS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Shortcut register"]
 pub mod shorts;
 #[doc = "Enable interrupt"]
 pub struct INTENSET {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Enable interrupt"]
 pub mod intenset;
 #[doc = "Disable interrupt"]
 pub struct INTENCLR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Disable interrupt"]
 pub mod intenclr;
 #[doc = "Timer mode selection"]
 pub struct MODE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Timer mode selection"]
 pub mod mode;
 #[doc = "Configure the number of bits used by the TIMER"]
 pub struct BITMODE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Configure the number of bits used by the TIMER"]
 pub mod bitmode;
 #[doc = "Timer prescaler register"]
 pub struct PRESCALER {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Timer prescaler register"]
 pub mod prescaler;
 #[doc = "Description collection[0]: Capture/Compare register 0"]
 pub struct CC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Description collection[0]: Capture/Compare register 0"]
 pub mod cc;

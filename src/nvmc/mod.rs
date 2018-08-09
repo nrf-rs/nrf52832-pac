@@ -1,4 +1,3 @@
-use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
@@ -27,55 +26,55 @@ pub struct RegisterBlock {
 }
 #[doc = "Ready flag"]
 pub struct READY {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Ready flag"]
 pub mod ready;
 #[doc = "Configuration register"]
 pub struct CONFIG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Configuration register"]
 pub mod config;
 #[doc = "Register for erasing a page in Code area"]
 pub struct ERASEPAGE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Register for erasing a page in Code area"]
 pub mod erasepage;
 #[doc = "Register for erasing all non-volatile user memory"]
 pub struct ERASEALL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Register for erasing all non-volatile user memory"]
 pub mod eraseall;
 #[doc = "Deprecated register - Register for erasing a page in Code area. Equivalent to ERASEPAGE."]
 pub struct ERASEPCR0 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Deprecated register - Register for erasing a page in Code area. Equivalent to ERASEPAGE."]
 pub mod erasepcr0;
 #[doc = "Register for erasing User Information Configuration Registers"]
 pub struct ERASEUICR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Register for erasing User Information Configuration Registers"]
 pub mod eraseuicr;
 #[doc = "I-Code cache configuration register."]
 pub struct ICACHECNF {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "I-Code cache configuration register."]
 pub mod icachecnf;
 #[doc = "I-Code cache hit counter."]
 pub struct IHIT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "I-Code cache hit counter."]
 pub mod ihit;
 #[doc = "I-Code cache miss counter."]
 pub struct IMISS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "I-Code cache miss counter."]
 pub mod imiss;

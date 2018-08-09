@@ -1,4 +1,3 @@
-use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
@@ -110,55 +109,55 @@ pub struct PREGION {
 pub mod pregion;
 #[doc = "Enable or disable interrupt"]
 pub struct INTEN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Enable or disable interrupt"]
 pub mod inten;
 #[doc = "Enable interrupt"]
 pub struct INTENSET {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Enable interrupt"]
 pub mod intenset;
 #[doc = "Disable interrupt"]
 pub struct INTENCLR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Disable interrupt"]
 pub mod intenclr;
 #[doc = "Enable or disable non-maskable interrupt"]
 pub struct NMIEN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Enable or disable non-maskable interrupt"]
 pub mod nmien;
 #[doc = "Enable non-maskable interrupt"]
 pub struct NMIENSET {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Enable non-maskable interrupt"]
 pub mod nmienset;
 #[doc = "Disable non-maskable interrupt"]
 pub struct NMIENCLR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Disable non-maskable interrupt"]
 pub mod nmienclr;
 #[doc = "Enable/disable regions watch"]
 pub struct REGIONEN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Enable/disable regions watch"]
 pub mod regionen;
 #[doc = "Enable regions watch"]
 pub struct REGIONENSET {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Enable regions watch"]
 pub mod regionenset;
 #[doc = "Disable regions watch"]
 pub struct REGIONENCLR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Disable regions watch"]
 pub mod regionenclr;

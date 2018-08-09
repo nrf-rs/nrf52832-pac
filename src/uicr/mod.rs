@@ -1,4 +1,3 @@
-use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
@@ -27,61 +26,61 @@ pub struct RegisterBlock {
 }
 #[doc = "Unspecified"]
 pub struct UNUSED0 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Unspecified"]
 pub mod unused0;
 #[doc = "Unspecified"]
 pub struct UNUSED1 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Unspecified"]
 pub mod unused1;
 #[doc = "Unspecified"]
 pub struct UNUSED2 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Unspecified"]
 pub mod unused2;
 #[doc = "Unspecified"]
 pub struct UNUSED3 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Unspecified"]
 pub mod unused3;
 #[doc = "Description collection[0]: Reserved for Nordic firmware design"]
 pub struct NRFFW {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Description collection[0]: Reserved for Nordic firmware design"]
 pub mod nrffw;
 #[doc = "Description collection[0]: Reserved for Nordic hardware design"]
 pub struct NRFHW {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Description collection[0]: Reserved for Nordic hardware design"]
 pub mod nrfhw;
 #[doc = "Description collection[0]: Reserved for customer"]
 pub struct CUSTOMER {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Description collection[0]: Reserved for customer"]
 pub mod customer;
 #[doc = "Description collection[0]: Mapping of the nRESET function (see POWER chapter for details)"]
 pub struct PSELRESET {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Description collection[0]: Mapping of the nRESET function (see POWER chapter for details)"]
 pub mod pselreset;
 #[doc = "Access Port protection"]
 pub struct APPROTECT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Access Port protection"]
 pub mod approtect;
 #[doc = "Setting of pins dedicated to NFC functionality: NFC antenna or GPIO"]
 pub struct NFCPINS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Setting of pins dedicated to NFC functionality: NFC antenna or GPIO"]
 pub mod nfcpins;

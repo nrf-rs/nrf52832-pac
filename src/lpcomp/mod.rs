@@ -1,4 +1,3 @@
-use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
@@ -46,103 +45,103 @@ pub struct RegisterBlock {
 }
 #[doc = "Start comparator"]
 pub struct TASKS_START {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Start comparator"]
 pub mod tasks_start;
 #[doc = "Stop comparator"]
 pub struct TASKS_STOP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Stop comparator"]
 pub mod tasks_stop;
 #[doc = "Sample comparator value"]
 pub struct TASKS_SAMPLE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Sample comparator value"]
 pub mod tasks_sample;
 #[doc = "LPCOMP is ready and output is valid"]
 pub struct EVENTS_READY {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "LPCOMP is ready and output is valid"]
 pub mod events_ready;
 #[doc = "Downward crossing"]
 pub struct EVENTS_DOWN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Downward crossing"]
 pub mod events_down;
 #[doc = "Upward crossing"]
 pub struct EVENTS_UP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Upward crossing"]
 pub mod events_up;
 #[doc = "Downward or upward crossing"]
 pub struct EVENTS_CROSS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Downward or upward crossing"]
 pub mod events_cross;
 #[doc = "Shortcut register"]
 pub struct SHORTS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Shortcut register"]
 pub mod shorts;
 #[doc = "Enable interrupt"]
 pub struct INTENSET {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Enable interrupt"]
 pub mod intenset;
 #[doc = "Disable interrupt"]
 pub struct INTENCLR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Disable interrupt"]
 pub mod intenclr;
 #[doc = "Compare result"]
 pub struct RESULT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Compare result"]
 pub mod result;
 #[doc = "Enable LPCOMP"]
 pub struct ENABLE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Enable LPCOMP"]
 pub mod enable;
 #[doc = "Input pin select"]
 pub struct PSEL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Input pin select"]
 pub mod psel;
 #[doc = "Reference select"]
 pub struct REFSEL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Reference select"]
 pub mod refsel;
 #[doc = "External reference select"]
 pub struct EXTREFSEL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "External reference select"]
 pub mod extrefsel;
 #[doc = "Analog detect configuration"]
 pub struct ANADETECT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Analog detect configuration"]
 pub mod anadetect;
 #[doc = "Comparator hysteresis enable"]
 pub struct HYST {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Comparator hysteresis enable"]
 pub mod hyst;

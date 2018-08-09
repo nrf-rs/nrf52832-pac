@@ -1,4 +1,3 @@
-use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
@@ -73,145 +72,145 @@ pub struct PSEL {
 pub mod psel;
 #[doc = "Task starting the quadrature decoder"]
 pub struct TASKS_START {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Task starting the quadrature decoder"]
 pub mod tasks_start;
 #[doc = "Task stopping the quadrature decoder"]
 pub struct TASKS_STOP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Task stopping the quadrature decoder"]
 pub mod tasks_stop;
 #[doc = "Read and clear ACC and ACCDBL"]
 pub struct TASKS_READCLRACC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Read and clear ACC and ACCDBL"]
 pub mod tasks_readclracc;
 #[doc = "Read and clear ACC"]
 pub struct TASKS_RDCLRACC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Read and clear ACC"]
 pub mod tasks_rdclracc;
 #[doc = "Read and clear ACCDBL"]
 pub struct TASKS_RDCLRDBL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Read and clear ACCDBL"]
 pub mod tasks_rdclrdbl;
 #[doc = "Event being generated for every new sample value written to the SAMPLE register"]
 pub struct EVENTS_SAMPLERDY {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Event being generated for every new sample value written to the SAMPLE register"]
 pub mod events_samplerdy;
 #[doc = "Non-null report ready"]
 pub struct EVENTS_REPORTRDY {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Non-null report ready"]
 pub mod events_reportrdy;
 #[doc = "ACC or ACCDBL register overflow"]
 pub struct EVENTS_ACCOF {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "ACC or ACCDBL register overflow"]
 pub mod events_accof;
 #[doc = "Double displacement(s) detected"]
 pub struct EVENTS_DBLRDY {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Double displacement(s) detected"]
 pub mod events_dblrdy;
 #[doc = "QDEC has been stopped"]
 pub struct EVENTS_STOPPED {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "QDEC has been stopped"]
 pub mod events_stopped;
 #[doc = "Shortcut register"]
 pub struct SHORTS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Shortcut register"]
 pub mod shorts;
 #[doc = "Enable interrupt"]
 pub struct INTENSET {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Enable interrupt"]
 pub mod intenset;
 #[doc = "Disable interrupt"]
 pub struct INTENCLR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Disable interrupt"]
 pub mod intenclr;
 #[doc = "Enable the quadrature decoder"]
 pub struct ENABLE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Enable the quadrature decoder"]
 pub mod enable;
 #[doc = "LED output pin polarity"]
 pub struct LEDPOL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "LED output pin polarity"]
 pub mod ledpol;
 #[doc = "Sample period"]
 pub struct SAMPLEPER {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Sample period"]
 pub mod sampleper;
 #[doc = "Motion sample value"]
 pub struct SAMPLE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Motion sample value"]
 pub mod sample;
 #[doc = "Number of samples to be taken before REPORTRDY and DBLRDY events can be generated"]
 pub struct REPORTPER {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Number of samples to be taken before REPORTRDY and DBLRDY events can be generated"]
 pub mod reportper;
 #[doc = "Register accumulating the valid transitions"]
 pub struct ACC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Register accumulating the valid transitions"]
 pub mod acc;
 #[doc = "Snapshot of the ACC register, updated by the READCLRACC or RDCLRACC task"]
 pub struct ACCREAD {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Snapshot of the ACC register, updated by the READCLRACC or RDCLRACC task"]
 pub mod accread;
 #[doc = "Enable input debounce filters"]
 pub struct DBFEN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Enable input debounce filters"]
 pub mod dbfen;
 #[doc = "Time period the LED is switched ON prior to sampling"]
 pub struct LEDPRE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Time period the LED is switched ON prior to sampling"]
 pub mod ledpre;
 #[doc = "Register accumulating the number of detected double transitions"]
 pub struct ACCDBL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Register accumulating the number of detected double transitions"]
 pub mod accdbl;
 #[doc = "Snapshot of the ACCDBL, updated by the READCLRACC or RDCLRDBL task"]
 pub struct ACCDBLREAD {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Snapshot of the ACCDBL, updated by the READCLRACC or RDCLRDBL task"]
 pub mod accdblread;
