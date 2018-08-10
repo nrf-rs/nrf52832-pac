@@ -1,6 +1,9 @@
 [package]
 version = "0.3.0"
-authors = ["James Munns <james.munns@gmail.com>"]
+authors = [
+    "James Munns <james.munns@gmail.com>",
+    "Hanno Braun <hanno@braun-robotics.com>"
+]
 description = "Peripheral access API for nrf52 microcontrollers"
 documentation = "https://docs.rs/nrf52"
 keywords = ["no-std", "arm", "cortex-m", "nrf52"]
