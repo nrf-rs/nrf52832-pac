@@ -1,4 +1,3 @@
-use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
@@ -63,79 +62,79 @@ pub struct SAMPLE {
 pub mod sample;
 #[doc = "Starts continuous PDM transfer"]
 pub struct TASKS_START {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Starts continuous PDM transfer"]
 pub mod tasks_start;
 #[doc = "Stops PDM transfer"]
 pub struct TASKS_STOP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Stops PDM transfer"]
 pub mod tasks_stop;
 #[doc = "PDM transfer has started"]
 pub struct EVENTS_STARTED {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "PDM transfer has started"]
 pub mod events_started;
 #[doc = "PDM transfer has finished"]
 pub struct EVENTS_STOPPED {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "PDM transfer has finished"]
 pub mod events_stopped;
 #[doc = "The PDM has written the last sample specified by SAMPLE.MAXCNT (or the last sample after a STOP task has been received) to Data RAM"]
 pub struct EVENTS_END {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "The PDM has written the last sample specified by SAMPLE.MAXCNT (or the last sample after a STOP task has been received) to Data RAM"]
 pub mod events_end;
 #[doc = "Enable or disable interrupt"]
 pub struct INTEN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Enable or disable interrupt"]
 pub mod inten;
 #[doc = "Enable interrupt"]
 pub struct INTENSET {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Enable interrupt"]
 pub mod intenset;
 #[doc = "Disable interrupt"]
 pub struct INTENCLR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Disable interrupt"]
 pub mod intenclr;
 #[doc = "PDM module enable register"]
 pub struct ENABLE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "PDM module enable register"]
 pub mod enable;
 #[doc = "PDM clock generator control"]
 pub struct PDMCLKCTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "PDM clock generator control"]
 pub mod pdmclkctrl;
 #[doc = "Defines the routing of the connected PDM microphones' signals"]
 pub struct MODE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Defines the routing of the connected PDM microphones' signals"]
 pub mod mode;
 #[doc = "Left output gain adjustment"]
 pub struct GAINL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Left output gain adjustment"]
 pub mod gainl;
 #[doc = "Right output gain adjustment"]
 pub struct GAINR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Right output gain adjustment"]
 pub mod gainr;

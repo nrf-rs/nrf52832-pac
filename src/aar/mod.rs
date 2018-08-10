@@ -1,4 +1,3 @@
-use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
@@ -37,79 +36,79 @@ pub struct RegisterBlock {
 }
 #[doc = "Start resolving addresses based on IRKs specified in the IRK data structure"]
 pub struct TASKS_START {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Start resolving addresses based on IRKs specified in the IRK data structure"]
 pub mod tasks_start;
 #[doc = "Stop resolving addresses"]
 pub struct TASKS_STOP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Stop resolving addresses"]
 pub mod tasks_stop;
 #[doc = "Address resolution procedure complete"]
 pub struct EVENTS_END {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Address resolution procedure complete"]
 pub mod events_end;
 #[doc = "Address resolved"]
 pub struct EVENTS_RESOLVED {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Address resolved"]
 pub mod events_resolved;
 #[doc = "Address not resolved"]
 pub struct EVENTS_NOTRESOLVED {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Address not resolved"]
 pub mod events_notresolved;
 #[doc = "Enable interrupt"]
 pub struct INTENSET {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Enable interrupt"]
 pub mod intenset;
 #[doc = "Disable interrupt"]
 pub struct INTENCLR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Disable interrupt"]
 pub mod intenclr;
 #[doc = "Resolution status"]
 pub struct STATUS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Resolution status"]
 pub mod status;
 #[doc = "Enable AAR"]
 pub struct ENABLE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Enable AAR"]
 pub mod enable;
 #[doc = "Number of IRKs"]
 pub struct NIRK {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Number of IRKs"]
 pub mod nirk;
 #[doc = "Pointer to IRK data structure"]
 pub struct IRKPTR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Pointer to IRK data structure"]
 pub mod irkptr;
 #[doc = "Pointer to the resolvable address"]
 pub struct ADDRPTR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Pointer to the resolvable address"]
 pub mod addrptr;
 #[doc = "Pointer to data area used for temporary storage"]
 pub struct SCRATCHPTR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Pointer to data area used for temporary storage"]
 pub mod scratchptr;

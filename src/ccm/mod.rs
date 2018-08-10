@@ -1,4 +1,3 @@
-use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
@@ -42,97 +41,97 @@ pub struct RegisterBlock {
 }
 #[doc = "Start generation of key-stream. This operation will stop by itself when completed."]
 pub struct TASKS_KSGEN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Start generation of key-stream. This operation will stop by itself when completed."]
 pub mod tasks_ksgen;
 #[doc = "Start encryption/decryption. This operation will stop by itself when completed."]
 pub struct TASKS_CRYPT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Start encryption/decryption. This operation will stop by itself when completed."]
 pub mod tasks_crypt;
 #[doc = "Stop encryption/decryption"]
 pub struct TASKS_STOP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Stop encryption/decryption"]
 pub mod tasks_stop;
 #[doc = "Key-stream generation complete"]
 pub struct EVENTS_ENDKSGEN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Key-stream generation complete"]
 pub mod events_endksgen;
 #[doc = "Encrypt/decrypt complete"]
 pub struct EVENTS_ENDCRYPT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Encrypt/decrypt complete"]
 pub mod events_endcrypt;
 #[doc = "CCM error event"]
 pub struct EVENTS_ERROR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "CCM error event"]
 pub mod events_error;
 #[doc = "Shortcut register"]
 pub struct SHORTS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Shortcut register"]
 pub mod shorts;
 #[doc = "Enable interrupt"]
 pub struct INTENSET {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Enable interrupt"]
 pub mod intenset;
 #[doc = "Disable interrupt"]
 pub struct INTENCLR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Disable interrupt"]
 pub mod intenclr;
 #[doc = "MIC check result"]
 pub struct MICSTATUS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "MIC check result"]
 pub mod micstatus;
 #[doc = "Enable"]
 pub struct ENABLE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Enable"]
 pub mod enable;
 #[doc = "Operation mode"]
 pub struct MODE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Operation mode"]
 pub mod mode;
 #[doc = "Pointer to data structure holding AES key and NONCE vector"]
 pub struct CNFPTR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Pointer to data structure holding AES key and NONCE vector"]
 pub mod cnfptr;
 #[doc = "Input pointer"]
 pub struct INPTR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Input pointer"]
 pub mod inptr;
 #[doc = "Output pointer"]
 pub struct OUTPTR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Output pointer"]
 pub mod outptr;
 #[doc = "Pointer to data area used for temporary storage"]
 pub struct SCRATCHPTR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Pointer to data area used for temporary storage"]
 pub mod scratchptr;

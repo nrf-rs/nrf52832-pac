@@ -1,4 +1,3 @@
-use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
@@ -107,121 +106,121 @@ pub struct TXD {
 pub mod txd;
 #[doc = "Start TWI receive sequence"]
 pub struct TASKS_STARTRX {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Start TWI receive sequence"]
 pub mod tasks_startrx;
 #[doc = "Start TWI transmit sequence"]
 pub struct TASKS_STARTTX {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Start TWI transmit sequence"]
 pub mod tasks_starttx;
 #[doc = "Stop TWI transaction. Must be issued while the TWI master is not suspended."]
 pub struct TASKS_STOP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Stop TWI transaction. Must be issued while the TWI master is not suspended."]
 pub mod tasks_stop;
 #[doc = "Suspend TWI transaction"]
 pub struct TASKS_SUSPEND {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Suspend TWI transaction"]
 pub mod tasks_suspend;
 #[doc = "Resume TWI transaction"]
 pub struct TASKS_RESUME {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Resume TWI transaction"]
 pub mod tasks_resume;
 #[doc = "TWI stopped"]
 pub struct EVENTS_STOPPED {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "TWI stopped"]
 pub mod events_stopped;
 #[doc = "TWI error"]
 pub struct EVENTS_ERROR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "TWI error"]
 pub mod events_error;
 #[doc = "Last byte has been sent out after the SUSPEND task has been issued, TWI traffic is now suspended."]
 pub struct EVENTS_SUSPENDED {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Last byte has been sent out after the SUSPEND task has been issued, TWI traffic is now suspended."]
 pub mod events_suspended;
 #[doc = "Receive sequence started"]
 pub struct EVENTS_RXSTARTED {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Receive sequence started"]
 pub mod events_rxstarted;
 #[doc = "Transmit sequence started"]
 pub struct EVENTS_TXSTARTED {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Transmit sequence started"]
 pub mod events_txstarted;
 #[doc = "Byte boundary, starting to receive the last byte"]
 pub struct EVENTS_LASTRX {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Byte boundary, starting to receive the last byte"]
 pub mod events_lastrx;
 #[doc = "Byte boundary, starting to transmit the last byte"]
 pub struct EVENTS_LASTTX {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Byte boundary, starting to transmit the last byte"]
 pub mod events_lasttx;
 #[doc = "Shortcut register"]
 pub struct SHORTS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Shortcut register"]
 pub mod shorts;
 #[doc = "Enable or disable interrupt"]
 pub struct INTEN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Enable or disable interrupt"]
 pub mod inten;
 #[doc = "Enable interrupt"]
 pub struct INTENSET {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Enable interrupt"]
 pub mod intenset;
 #[doc = "Disable interrupt"]
 pub struct INTENCLR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Disable interrupt"]
 pub mod intenclr;
 #[doc = "Error source"]
 pub struct ERRORSRC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Error source"]
 pub mod errorsrc;
 #[doc = "Enable TWIM"]
 pub struct ENABLE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Enable TWIM"]
 pub mod enable;
 #[doc = "TWI frequency"]
 pub struct FREQUENCY {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "TWI frequency"]
 pub mod frequency;
 #[doc = "Address used in the TWI transfer"]
 pub struct ADDRESS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Address used in the TWI transfer"]
 pub mod address;

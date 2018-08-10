@@ -1,4 +1,3 @@
-use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
@@ -100,97 +99,97 @@ pub struct TXD {
 pub mod txd;
 #[doc = "Start SPI transaction"]
 pub struct TASKS_START {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Start SPI transaction"]
 pub mod tasks_start;
 #[doc = "Stop SPI transaction"]
 pub struct TASKS_STOP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Stop SPI transaction"]
 pub mod tasks_stop;
 #[doc = "Suspend SPI transaction"]
 pub struct TASKS_SUSPEND {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Suspend SPI transaction"]
 pub mod tasks_suspend;
 #[doc = "Resume SPI transaction"]
 pub struct TASKS_RESUME {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Resume SPI transaction"]
 pub mod tasks_resume;
 #[doc = "SPI transaction has stopped"]
 pub struct EVENTS_STOPPED {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "SPI transaction has stopped"]
 pub mod events_stopped;
 #[doc = "End of RXD buffer reached"]
 pub struct EVENTS_ENDRX {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "End of RXD buffer reached"]
 pub mod events_endrx;
 #[doc = "End of RXD buffer and TXD buffer reached"]
 pub struct EVENTS_END {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "End of RXD buffer and TXD buffer reached"]
 pub mod events_end;
 #[doc = "End of TXD buffer reached"]
 pub struct EVENTS_ENDTX {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "End of TXD buffer reached"]
 pub mod events_endtx;
 #[doc = "Transaction started"]
 pub struct EVENTS_STARTED {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Transaction started"]
 pub mod events_started;
 #[doc = "Shortcut register"]
 pub struct SHORTS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Shortcut register"]
 pub mod shorts;
 #[doc = "Enable interrupt"]
 pub struct INTENSET {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Enable interrupt"]
 pub mod intenset;
 #[doc = "Disable interrupt"]
 pub struct INTENCLR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Disable interrupt"]
 pub mod intenclr;
 #[doc = "Enable SPIM"]
 pub struct ENABLE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Enable SPIM"]
 pub mod enable;
 #[doc = "SPI frequency"]
 pub struct FREQUENCY {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "SPI frequency"]
 pub mod frequency;
 #[doc = "Configuration register"]
 pub struct CONFIG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Configuration register"]
 pub mod config;
 #[doc = "Over-read character. Character clocked out in case and over-read of the TXD buffer."]
 pub struct ORC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Over-read character. Character clocked out in case and over-read of the TXD buffer."]
 pub mod orc;

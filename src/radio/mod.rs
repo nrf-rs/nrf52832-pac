@@ -1,4 +1,3 @@
-use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
@@ -124,319 +123,319 @@ pub struct RegisterBlock {
 }
 #[doc = "Enable RADIO in TX mode"]
 pub struct TASKS_TXEN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Enable RADIO in TX mode"]
 pub mod tasks_txen;
 #[doc = "Enable RADIO in RX mode"]
 pub struct TASKS_RXEN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Enable RADIO in RX mode"]
 pub mod tasks_rxen;
 #[doc = "Start RADIO"]
 pub struct TASKS_START {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Start RADIO"]
 pub mod tasks_start;
 #[doc = "Stop RADIO"]
 pub struct TASKS_STOP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Stop RADIO"]
 pub mod tasks_stop;
 #[doc = "Disable RADIO"]
 pub struct TASKS_DISABLE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Disable RADIO"]
 pub mod tasks_disable;
 #[doc = "Start the RSSI and take one single sample of the receive signal strength."]
 pub struct TASKS_RSSISTART {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Start the RSSI and take one single sample of the receive signal strength."]
 pub mod tasks_rssistart;
 #[doc = "Stop the RSSI measurement"]
 pub struct TASKS_RSSISTOP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Stop the RSSI measurement"]
 pub mod tasks_rssistop;
 #[doc = "Start the bit counter"]
 pub struct TASKS_BCSTART {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Start the bit counter"]
 pub mod tasks_bcstart;
 #[doc = "Stop the bit counter"]
 pub struct TASKS_BCSTOP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Stop the bit counter"]
 pub mod tasks_bcstop;
 #[doc = "RADIO has ramped up and is ready to be started"]
 pub struct EVENTS_READY {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "RADIO has ramped up and is ready to be started"]
 pub mod events_ready;
 #[doc = "Address sent or received"]
 pub struct EVENTS_ADDRESS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Address sent or received"]
 pub mod events_address;
 #[doc = "Packet payload sent or received"]
 pub struct EVENTS_PAYLOAD {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Packet payload sent or received"]
 pub mod events_payload;
 #[doc = "Packet sent or received"]
 pub struct EVENTS_END {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Packet sent or received"]
 pub mod events_end;
 #[doc = "RADIO has been disabled"]
 pub struct EVENTS_DISABLED {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "RADIO has been disabled"]
 pub mod events_disabled;
 #[doc = "A device address match occurred on the last received packet"]
 pub struct EVENTS_DEVMATCH {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "A device address match occurred on the last received packet"]
 pub mod events_devmatch;
 #[doc = "No device address match occurred on the last received packet"]
 pub struct EVENTS_DEVMISS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "No device address match occurred on the last received packet"]
 pub mod events_devmiss;
 #[doc = "Sampling of receive signal strength complete."]
 pub struct EVENTS_RSSIEND {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Sampling of receive signal strength complete."]
 pub mod events_rssiend;
 #[doc = "Bit counter reached bit count value."]
 pub struct EVENTS_BCMATCH {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Bit counter reached bit count value."]
 pub mod events_bcmatch;
 #[doc = "Packet received with CRC ok"]
 pub struct EVENTS_CRCOK {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Packet received with CRC ok"]
 pub mod events_crcok;
 #[doc = "Packet received with CRC error"]
 pub struct EVENTS_CRCERROR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Packet received with CRC error"]
 pub mod events_crcerror;
 #[doc = "Shortcut register"]
 pub struct SHORTS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Shortcut register"]
 pub mod shorts;
 #[doc = "Enable interrupt"]
 pub struct INTENSET {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Enable interrupt"]
 pub mod intenset;
 #[doc = "Disable interrupt"]
 pub struct INTENCLR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Disable interrupt"]
 pub mod intenclr;
 #[doc = "CRC status"]
 pub struct CRCSTATUS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "CRC status"]
 pub mod crcstatus;
 #[doc = "Received address"]
 pub struct RXMATCH {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Received address"]
 pub mod rxmatch;
 #[doc = "CRC field of previously received packet"]
 pub struct RXCRC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "CRC field of previously received packet"]
 pub mod rxcrc;
 #[doc = "Device address match index"]
 pub struct DAI {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device address match index"]
 pub mod dai;
 #[doc = "Packet pointer"]
 pub struct PACKETPTR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Packet pointer"]
 pub mod packetptr;
 #[doc = "Frequency"]
 pub struct FREQUENCY {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Frequency"]
 pub mod frequency;
 #[doc = "Output power"]
 pub struct TXPOWER {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Output power"]
 pub mod txpower;
 #[doc = "Data rate and modulation"]
 pub struct MODE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Data rate and modulation"]
 pub mod mode;
 #[doc = "Packet configuration register 0"]
 pub struct PCNF0 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Packet configuration register 0"]
 pub mod pcnf0;
 #[doc = "Packet configuration register 1"]
 pub struct PCNF1 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Packet configuration register 1"]
 pub mod pcnf1;
 #[doc = "Base address 0"]
 pub struct BASE0 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Base address 0"]
 pub mod base0;
 #[doc = "Base address 1"]
 pub struct BASE1 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Base address 1"]
 pub mod base1;
 #[doc = "Prefixes bytes for logical addresses 0-3"]
 pub struct PREFIX0 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Prefixes bytes for logical addresses 0-3"]
 pub mod prefix0;
 #[doc = "Prefixes bytes for logical addresses 4-7"]
 pub struct PREFIX1 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Prefixes bytes for logical addresses 4-7"]
 pub mod prefix1;
 #[doc = "Transmit address select"]
 pub struct TXADDRESS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Transmit address select"]
 pub mod txaddress;
 #[doc = "Receive address select"]
 pub struct RXADDRESSES {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Receive address select"]
 pub mod rxaddresses;
 #[doc = "CRC configuration"]
 pub struct CRCCNF {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "CRC configuration"]
 pub mod crccnf;
 #[doc = "CRC polynomial"]
 pub struct CRCPOLY {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "CRC polynomial"]
 pub mod crcpoly;
 #[doc = "CRC initial value"]
 pub struct CRCINIT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "CRC initial value"]
 pub mod crcinit;
 #[doc = "Unspecified"]
 pub struct UNUSED0 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Unspecified"]
 pub mod unused0;
 #[doc = "Inter Frame Spacing in us"]
 pub struct TIFS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Inter Frame Spacing in us"]
 pub mod tifs;
 #[doc = "RSSI sample"]
 pub struct RSSISAMPLE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "RSSI sample"]
 pub mod rssisample;
 #[doc = "Current radio state"]
 pub struct STATE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Current radio state"]
 pub mod state;
 #[doc = "Data whitening initial value"]
 pub struct DATAWHITEIV {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Data whitening initial value"]
 pub mod datawhiteiv;
 #[doc = "Bit counter compare"]
 pub struct BCC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Bit counter compare"]
 pub mod bcc;
 #[doc = "Description collection[0]: Device address base segment 0"]
 pub struct DAB {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Description collection[0]: Device address base segment 0"]
 pub mod dab;
 #[doc = "Description collection[0]: Device address prefix 0"]
 pub struct DAP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Description collection[0]: Device address prefix 0"]
 pub mod dap;
 #[doc = "Device address match configuration"]
 pub struct DACNF {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device address match configuration"]
 pub mod dacnf;
 #[doc = "Radio mode configuration register 0"]
 pub struct MODECNF0 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Radio mode configuration register 0"]
 pub mod modecnf0;
 #[doc = "Peripheral power control"]
 pub struct POWER {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Peripheral power control"]
 pub mod power;

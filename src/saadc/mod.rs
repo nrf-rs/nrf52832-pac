@@ -1,4 +1,3 @@
-use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
@@ -93,109 +92,109 @@ pub struct RESULT {
 pub mod result;
 #[doc = "Start the ADC and prepare the result buffer in RAM"]
 pub struct TASKS_START {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Start the ADC and prepare the result buffer in RAM"]
 pub mod tasks_start;
 #[doc = "Take one ADC sample, if scan is enabled all channels are sampled"]
 pub struct TASKS_SAMPLE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Take one ADC sample, if scan is enabled all channels are sampled"]
 pub mod tasks_sample;
 #[doc = "Stop the ADC and terminate any on-going conversion"]
 pub struct TASKS_STOP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Stop the ADC and terminate any on-going conversion"]
 pub mod tasks_stop;
 #[doc = "Starts offset auto-calibration"]
 pub struct TASKS_CALIBRATEOFFSET {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Starts offset auto-calibration"]
 pub mod tasks_calibrateoffset;
 #[doc = "The ADC has started"]
 pub struct EVENTS_STARTED {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "The ADC has started"]
 pub mod events_started;
 #[doc = "The ADC has filled up the Result buffer"]
 pub struct EVENTS_END {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "The ADC has filled up the Result buffer"]
 pub mod events_end;
 #[doc = "A conversion task has been completed. Depending on the mode, multiple conversions might be needed for a result to be transferred to RAM."]
 pub struct EVENTS_DONE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "A conversion task has been completed. Depending on the mode, multiple conversions might be needed for a result to be transferred to RAM."]
 pub mod events_done;
 #[doc = "A result is ready to get transferred to RAM."]
 pub struct EVENTS_RESULTDONE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "A result is ready to get transferred to RAM."]
 pub mod events_resultdone;
 #[doc = "Calibration is complete"]
 pub struct EVENTS_CALIBRATEDONE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Calibration is complete"]
 pub mod events_calibratedone;
 #[doc = "The ADC has stopped"]
 pub struct EVENTS_STOPPED {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "The ADC has stopped"]
 pub mod events_stopped;
 #[doc = "Enable or disable interrupt"]
 pub struct INTEN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Enable or disable interrupt"]
 pub mod inten;
 #[doc = "Enable interrupt"]
 pub struct INTENSET {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Enable interrupt"]
 pub mod intenset;
 #[doc = "Disable interrupt"]
 pub struct INTENCLR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Disable interrupt"]
 pub mod intenclr;
 #[doc = "Status"]
 pub struct STATUS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Status"]
 pub mod status;
 #[doc = "Enable or disable ADC"]
 pub struct ENABLE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Enable or disable ADC"]
 pub mod enable;
 #[doc = "Resolution configuration"]
 pub struct RESOLUTION {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Resolution configuration"]
 pub mod resolution;
 #[doc = "Oversampling configuration. OVERSAMPLE should not be combined with SCAN. The RESOLUTION is applied before averaging, thus for high OVERSAMPLE a higher RESOLUTION should be used."]
 pub struct OVERSAMPLE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Oversampling configuration. OVERSAMPLE should not be combined with SCAN. The RESOLUTION is applied before averaging, thus for high OVERSAMPLE a higher RESOLUTION should be used."]
 pub mod oversample;
 #[doc = "Controls normal or continuous sample rate"]
 pub struct SAMPLERATE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Controls normal or continuous sample rate"]
 pub mod samplerate;

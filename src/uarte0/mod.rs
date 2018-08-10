@@ -1,4 +1,3 @@
-use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
@@ -116,145 +115,145 @@ pub struct TXD {
 pub mod txd;
 #[doc = "Start UART receiver"]
 pub struct TASKS_STARTRX {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Start UART receiver"]
 pub mod tasks_startrx;
 #[doc = "Stop UART receiver"]
 pub struct TASKS_STOPRX {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Stop UART receiver"]
 pub mod tasks_stoprx;
 #[doc = "Start UART transmitter"]
 pub struct TASKS_STARTTX {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Start UART transmitter"]
 pub mod tasks_starttx;
 #[doc = "Stop UART transmitter"]
 pub struct TASKS_STOPTX {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Stop UART transmitter"]
 pub mod tasks_stoptx;
 #[doc = "Flush RX FIFO into RX buffer"]
 pub struct TASKS_FLUSHRX {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Flush RX FIFO into RX buffer"]
 pub mod tasks_flushrx;
 #[doc = "CTS is activated (set low). Clear To Send."]
 pub struct EVENTS_CTS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "CTS is activated (set low). Clear To Send."]
 pub mod events_cts;
 #[doc = "CTS is deactivated (set high). Not Clear To Send."]
 pub struct EVENTS_NCTS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "CTS is deactivated (set high). Not Clear To Send."]
 pub mod events_ncts;
 #[doc = "Data received in RXD (but potentially not yet transferred to Data RAM)"]
 pub struct EVENTS_RXDRDY {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Data received in RXD (but potentially not yet transferred to Data RAM)"]
 pub mod events_rxdrdy;
 #[doc = "Receive buffer is filled up"]
 pub struct EVENTS_ENDRX {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Receive buffer is filled up"]
 pub mod events_endrx;
 #[doc = "Data sent from TXD"]
 pub struct EVENTS_TXDRDY {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Data sent from TXD"]
 pub mod events_txdrdy;
 #[doc = "Last TX byte transmitted"]
 pub struct EVENTS_ENDTX {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Last TX byte transmitted"]
 pub mod events_endtx;
 #[doc = "Error detected"]
 pub struct EVENTS_ERROR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Error detected"]
 pub mod events_error;
 #[doc = "Receiver timeout"]
 pub struct EVENTS_RXTO {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Receiver timeout"]
 pub mod events_rxto;
 #[doc = "UART receiver has started"]
 pub struct EVENTS_RXSTARTED {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "UART receiver has started"]
 pub mod events_rxstarted;
 #[doc = "UART transmitter has started"]
 pub struct EVENTS_TXSTARTED {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "UART transmitter has started"]
 pub mod events_txstarted;
 #[doc = "Transmitter stopped"]
 pub struct EVENTS_TXSTOPPED {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Transmitter stopped"]
 pub mod events_txstopped;
 #[doc = "Shortcut register"]
 pub struct SHORTS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Shortcut register"]
 pub mod shorts;
 #[doc = "Enable or disable interrupt"]
 pub struct INTEN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Enable or disable interrupt"]
 pub mod inten;
 #[doc = "Enable interrupt"]
 pub struct INTENSET {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Enable interrupt"]
 pub mod intenset;
 #[doc = "Disable interrupt"]
 pub struct INTENCLR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Disable interrupt"]
 pub mod intenclr;
 #[doc = "Error source"]
 pub struct ERRORSRC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Error source"]
 pub mod errorsrc;
 #[doc = "Enable UART"]
 pub struct ENABLE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Enable UART"]
 pub mod enable;
 #[doc = "Baud rate. Accuracy depends on the HFCLK source selected."]
 pub struct BAUDRATE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Baud rate. Accuracy depends on the HFCLK source selected."]
 pub mod baudrate;
 #[doc = "Configuration of parity and hardware flow control"]
 pub struct CONFIG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Configuration of parity and hardware flow control"]
 pub mod config;

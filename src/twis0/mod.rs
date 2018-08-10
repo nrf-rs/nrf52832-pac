@@ -1,4 +1,3 @@
-use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
@@ -107,127 +106,127 @@ pub struct TXD {
 pub mod txd;
 #[doc = "Stop TWI transaction"]
 pub struct TASKS_STOP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Stop TWI transaction"]
 pub mod tasks_stop;
 #[doc = "Suspend TWI transaction"]
 pub struct TASKS_SUSPEND {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Suspend TWI transaction"]
 pub mod tasks_suspend;
 #[doc = "Resume TWI transaction"]
 pub struct TASKS_RESUME {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Resume TWI transaction"]
 pub mod tasks_resume;
 #[doc = "Prepare the TWI slave to respond to a write command"]
 pub struct TASKS_PREPARERX {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Prepare the TWI slave to respond to a write command"]
 pub mod tasks_preparerx;
 #[doc = "Prepare the TWI slave to respond to a read command"]
 pub struct TASKS_PREPARETX {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Prepare the TWI slave to respond to a read command"]
 pub mod tasks_preparetx;
 #[doc = "TWI stopped"]
 pub struct EVENTS_STOPPED {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "TWI stopped"]
 pub mod events_stopped;
 #[doc = "TWI error"]
 pub struct EVENTS_ERROR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "TWI error"]
 pub mod events_error;
 #[doc = "Receive sequence started"]
 pub struct EVENTS_RXSTARTED {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Receive sequence started"]
 pub mod events_rxstarted;
 #[doc = "Transmit sequence started"]
 pub struct EVENTS_TXSTARTED {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Transmit sequence started"]
 pub mod events_txstarted;
 #[doc = "Write command received"]
 pub struct EVENTS_WRITE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Write command received"]
 pub mod events_write;
 #[doc = "Read command received"]
 pub struct EVENTS_READ {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Read command received"]
 pub mod events_read;
 #[doc = "Shortcut register"]
 pub struct SHORTS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Shortcut register"]
 pub mod shorts;
 #[doc = "Enable or disable interrupt"]
 pub struct INTEN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Enable or disable interrupt"]
 pub mod inten;
 #[doc = "Enable interrupt"]
 pub struct INTENSET {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Enable interrupt"]
 pub mod intenset;
 #[doc = "Disable interrupt"]
 pub struct INTENCLR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Disable interrupt"]
 pub mod intenclr;
 #[doc = "Error source"]
 pub struct ERRORSRC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Error source"]
 pub mod errorsrc;
 #[doc = "Status register indicating which address had a match"]
 pub struct MATCH {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Status register indicating which address had a match"]
 pub mod match_;
 #[doc = "Enable TWIS"]
 pub struct ENABLE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Enable TWIS"]
 pub mod enable;
 #[doc = "Description collection[0]: TWI slave address 0"]
 pub struct ADDRESS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Description collection[0]: TWI slave address 0"]
 pub mod address;
 #[doc = "Configuration register for the address match mechanism"]
 pub struct CONFIG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Configuration register for the address match mechanism"]
 pub mod config;
 #[doc = "Over-read character. Character sent out in case of an over-read of the transmit buffer."]
 pub struct ORC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Over-read character. Character sent out in case of an over-read of the transmit buffer."]
 pub mod orc;

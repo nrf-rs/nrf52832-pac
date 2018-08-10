@@ -1,4 +1,3 @@
-use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
@@ -55,127 +54,127 @@ pub struct RegisterBlock {
 }
 #[doc = "Start HFCLK crystal oscillator"]
 pub struct TASKS_HFCLKSTART {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Start HFCLK crystal oscillator"]
 pub mod tasks_hfclkstart;
 #[doc = "Stop HFCLK crystal oscillator"]
 pub struct TASKS_HFCLKSTOP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Stop HFCLK crystal oscillator"]
 pub mod tasks_hfclkstop;
 #[doc = "Start LFCLK source"]
 pub struct TASKS_LFCLKSTART {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Start LFCLK source"]
 pub mod tasks_lfclkstart;
 #[doc = "Stop LFCLK source"]
 pub struct TASKS_LFCLKSTOP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Stop LFCLK source"]
 pub mod tasks_lfclkstop;
 #[doc = "Start calibration of LFRC oscillator"]
 pub struct TASKS_CAL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Start calibration of LFRC oscillator"]
 pub mod tasks_cal;
 #[doc = "Start calibration timer"]
 pub struct TASKS_CTSTART {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Start calibration timer"]
 pub mod tasks_ctstart;
 #[doc = "Stop calibration timer"]
 pub struct TASKS_CTSTOP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Stop calibration timer"]
 pub mod tasks_ctstop;
 #[doc = "HFCLK oscillator started"]
 pub struct EVENTS_HFCLKSTARTED {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "HFCLK oscillator started"]
 pub mod events_hfclkstarted;
 #[doc = "LFCLK started"]
 pub struct EVENTS_LFCLKSTARTED {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "LFCLK started"]
 pub mod events_lfclkstarted;
 #[doc = "Calibration of LFCLK RC oscillator complete event"]
 pub struct EVENTS_DONE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Calibration of LFCLK RC oscillator complete event"]
 pub mod events_done;
 #[doc = "Calibration timer timeout"]
 pub struct EVENTS_CTTO {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Calibration timer timeout"]
 pub mod events_ctto;
 #[doc = "Enable interrupt"]
 pub struct INTENSET {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Enable interrupt"]
 pub mod intenset;
 #[doc = "Disable interrupt"]
 pub struct INTENCLR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Disable interrupt"]
 pub mod intenclr;
 #[doc = "Status indicating that HFCLKSTART task has been triggered"]
 pub struct HFCLKRUN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Status indicating that HFCLKSTART task has been triggered"]
 pub mod hfclkrun;
 #[doc = "HFCLK status"]
 pub struct HFCLKSTAT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "HFCLK status"]
 pub mod hfclkstat;
 #[doc = "Status indicating that LFCLKSTART task has been triggered"]
 pub struct LFCLKRUN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Status indicating that LFCLKSTART task has been triggered"]
 pub mod lfclkrun;
 #[doc = "LFCLK status"]
 pub struct LFCLKSTAT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "LFCLK status"]
 pub mod lfclkstat;
 #[doc = "Copy of LFCLKSRC register, set when LFCLKSTART task was triggered"]
 pub struct LFCLKSRCCOPY {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Copy of LFCLKSRC register, set when LFCLKSTART task was triggered"]
 pub mod lfclksrccopy;
 #[doc = "Clock source for the LFCLK"]
 pub struct LFCLKSRC {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Clock source for the LFCLK"]
 pub mod lfclksrc;
 #[doc = "Calibration timer interval"]
 pub struct CTIV {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Calibration timer interval"]
 pub mod ctiv;
 #[doc = "Clocking options for the Trace Port debug interface"]
 pub struct TRACECONFIG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Clocking options for the Trace Port debug interface"]
 pub mod traceconfig;

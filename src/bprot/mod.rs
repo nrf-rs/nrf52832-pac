@@ -1,4 +1,3 @@
-use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
@@ -18,37 +17,37 @@ pub struct RegisterBlock {
 }
 #[doc = "Block protect configuration register 0"]
 pub struct CONFIG0 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Block protect configuration register 0"]
 pub mod config0;
 #[doc = "Block protect configuration register 1"]
 pub struct CONFIG1 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Block protect configuration register 1"]
 pub mod config1;
 #[doc = "Disable protection mechanism in debug interface mode"]
 pub struct DISABLEINDEBUG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Disable protection mechanism in debug interface mode"]
 pub mod disableindebug;
 #[doc = "Unspecified"]
 pub struct UNUSED0 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Unspecified"]
 pub mod unused0;
 #[doc = "Block protect configuration register 2"]
 pub struct CONFIG2 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Block protect configuration register 2"]
 pub mod config2;
 #[doc = "Block protect configuration register 3"]
 pub struct CONFIG3 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Block protect configuration register 3"]
 pub mod config3;

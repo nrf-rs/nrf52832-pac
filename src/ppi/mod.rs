@@ -1,4 +1,3 @@
-use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
@@ -54,25 +53,25 @@ pub struct FORK {
 pub mod fork;
 #[doc = "Channel enable register"]
 pub struct CHEN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel enable register"]
 pub mod chen;
 #[doc = "Channel enable set register"]
 pub struct CHENSET {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel enable set register"]
 pub mod chenset;
 #[doc = "Channel enable clear register"]
 pub struct CHENCLR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Channel enable clear register"]
 pub mod chenclr;
 #[doc = "Description collection[0]: Channel group 0"]
 pub struct CHG {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Description collection[0]: Channel group 0"]
 pub mod chg;

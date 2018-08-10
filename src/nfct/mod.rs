@@ -1,4 +1,3 @@
-use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
@@ -135,235 +134,235 @@ pub struct RXD {
 pub mod rxd;
 #[doc = "Activate NFC peripheral for incoming and outgoing frames, change state to activated"]
 pub struct TASKS_ACTIVATE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Activate NFC peripheral for incoming and outgoing frames, change state to activated"]
 pub mod tasks_activate;
 #[doc = "Disable NFC peripheral"]
 pub struct TASKS_DISABLE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Disable NFC peripheral"]
 pub mod tasks_disable;
 #[doc = "Enable NFC sense field mode, change state to sense mode"]
 pub struct TASKS_SENSE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Enable NFC sense field mode, change state to sense mode"]
 pub mod tasks_sense;
 #[doc = "Start transmission of a outgoing frame, change state to transmit"]
 pub struct TASKS_STARTTX {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Start transmission of a outgoing frame, change state to transmit"]
 pub mod tasks_starttx;
 #[doc = "Initializes the EasyDMA for receive."]
 pub struct TASKS_ENABLERXDATA {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Initializes the EasyDMA for receive."]
 pub mod tasks_enablerxdata;
 #[doc = "Force state machine to IDLE state"]
 pub struct TASKS_GOIDLE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Force state machine to IDLE state"]
 pub mod tasks_goidle;
 #[doc = "Force state machine to SLEEP_A state"]
 pub struct TASKS_GOSLEEP {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Force state machine to SLEEP_A state"]
 pub mod tasks_gosleep;
 #[doc = "The NFC peripheral is ready to receive and send frames"]
 pub struct EVENTS_READY {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "The NFC peripheral is ready to receive and send frames"]
 pub mod events_ready;
 #[doc = "Remote NFC field detected"]
 pub struct EVENTS_FIELDDETECTED {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Remote NFC field detected"]
 pub mod events_fielddetected;
 #[doc = "Remote NFC field lost"]
 pub struct EVENTS_FIELDLOST {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Remote NFC field lost"]
 pub mod events_fieldlost;
 #[doc = "Marks the start of the first symbol of a transmitted frame"]
 pub struct EVENTS_TXFRAMESTART {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Marks the start of the first symbol of a transmitted frame"]
 pub mod events_txframestart;
 #[doc = "Marks the end of the last transmitted on-air symbol of a frame"]
 pub struct EVENTS_TXFRAMEEND {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Marks the end of the last transmitted on-air symbol of a frame"]
 pub mod events_txframeend;
 #[doc = "Marks the end of the first symbol of a received frame"]
 pub struct EVENTS_RXFRAMESTART {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Marks the end of the first symbol of a received frame"]
 pub mod events_rxframestart;
 #[doc = "Received data have been checked (CRC, parity) and transferred to RAM, and EasyDMA has ended accessing the RX buffer"]
 pub struct EVENTS_RXFRAMEEND {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Received data have been checked (CRC, parity) and transferred to RAM, and EasyDMA has ended accessing the RX buffer"]
 pub mod events_rxframeend;
 #[doc = "NFC error reported. The ERRORSTATUS register contains details on the source of the error."]
 pub struct EVENTS_ERROR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "NFC error reported. The ERRORSTATUS register contains details on the source of the error."]
 pub mod events_error;
 #[doc = "NFC RX frame error reported. The FRAMESTATUS.RX register contains details on the source of the error."]
 pub struct EVENTS_RXERROR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "NFC RX frame error reported. The FRAMESTATUS.RX register contains details on the source of the error."]
 pub mod events_rxerror;
 #[doc = "RX buffer (as defined by PACKETPTR and MAXLEN) in Data RAM full."]
 pub struct EVENTS_ENDRX {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "RX buffer (as defined by PACKETPTR and MAXLEN) in Data RAM full."]
 pub mod events_endrx;
 #[doc = "Transmission of data in RAM has ended, and EasyDMA has ended accessing the TX buffer"]
 pub struct EVENTS_ENDTX {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Transmission of data in RAM has ended, and EasyDMA has ended accessing the TX buffer"]
 pub mod events_endtx;
 #[doc = "Auto collision resolution process has started"]
 pub struct EVENTS_AUTOCOLRESSTARTED {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Auto collision resolution process has started"]
 pub mod events_autocolresstarted;
 #[doc = "NFC Auto collision resolution error reported."]
 pub struct EVENTS_COLLISION {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "NFC Auto collision resolution error reported."]
 pub mod events_collision;
 #[doc = "NFC Auto collision resolution successfully completed"]
 pub struct EVENTS_SELECTED {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "NFC Auto collision resolution successfully completed"]
 pub mod events_selected;
 #[doc = "EasyDMA is ready to receive or send frames."]
 pub struct EVENTS_STARTED {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "EasyDMA is ready to receive or send frames."]
 pub mod events_started;
 #[doc = "Shortcut register"]
 pub struct SHORTS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Shortcut register"]
 pub mod shorts;
 #[doc = "Enable or disable interrupt"]
 pub struct INTEN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Enable or disable interrupt"]
 pub mod inten;
 #[doc = "Enable interrupt"]
 pub struct INTENSET {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Enable interrupt"]
 pub mod intenset;
 #[doc = "Disable interrupt"]
 pub struct INTENCLR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Disable interrupt"]
 pub mod intenclr;
 #[doc = "NFC Error Status register"]
 pub struct ERRORSTATUS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "NFC Error Status register"]
 pub mod errorstatus;
 #[doc = "Current value driven to the NFC Load Control"]
 pub struct CURRENTLOADCTRL {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Current value driven to the NFC Load Control"]
 pub mod currentloadctrl;
 #[doc = "Indicates the presence or not of a valid field"]
 pub struct FIELDPRESENT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Indicates the presence or not of a valid field"]
 pub mod fieldpresent;
 #[doc = "Minimum frame delay"]
 pub struct FRAMEDELAYMIN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Minimum frame delay"]
 pub mod framedelaymin;
 #[doc = "Maximum frame delay"]
 pub struct FRAMEDELAYMAX {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Maximum frame delay"]
 pub mod framedelaymax;
 #[doc = "Configuration register for the Frame Delay Timer"]
 pub struct FRAMEDELAYMODE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Configuration register for the Frame Delay Timer"]
 pub mod framedelaymode;
 #[doc = "Packet pointer for TXD and RXD data storage in Data RAM"]
 pub struct PACKETPTR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Packet pointer for TXD and RXD data storage in Data RAM"]
 pub mod packetptr;
 #[doc = "Size of allocated for TXD and RXD data storage buffer in Data RAM"]
 pub struct MAXLEN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Size of allocated for TXD and RXD data storage buffer in Data RAM"]
 pub mod maxlen;
 #[doc = "Last NFCID1 part (4, 7 or 10 bytes ID)"]
 pub struct NFCID1_LAST {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Last NFCID1 part (4, 7 or 10 bytes ID)"]
 pub mod nfcid1_last;
 #[doc = "Second last NFCID1 part (7 or 10 bytes ID)"]
 pub struct NFCID1_2ND_LAST {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Second last NFCID1 part (7 or 10 bytes ID)"]
 pub mod nfcid1_2nd_last;
 #[doc = "Third last NFCID1 part (10 bytes ID)"]
 pub struct NFCID1_3RD_LAST {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Third last NFCID1 part (10 bytes ID)"]
 pub mod nfcid1_3rd_last;
 #[doc = "NFC-A SENS_RES auto-response settings"]
 pub struct SENSRES {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "NFC-A SENS_RES auto-response settings"]
 pub mod sensres;
 #[doc = "NFC-A SEL_RES auto-response settings"]
 pub struct SELRES {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "NFC-A SEL_RES auto-response settings"]
 pub mod selres;

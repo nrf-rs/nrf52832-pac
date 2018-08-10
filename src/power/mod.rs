@@ -1,4 +1,3 @@
-use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
@@ -85,97 +84,97 @@ pub struct RAM {
 pub mod ram;
 #[doc = "Enable constant latency mode"]
 pub struct TASKS_CONSTLAT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Enable constant latency mode"]
 pub mod tasks_constlat;
 #[doc = "Enable low power mode (variable latency)"]
 pub struct TASKS_LOWPWR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Enable low power mode (variable latency)"]
 pub mod tasks_lowpwr;
 #[doc = "Power failure warning"]
 pub struct EVENTS_POFWARN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Power failure warning"]
 pub mod events_pofwarn;
 #[doc = "CPU entered WFI/WFE sleep"]
 pub struct EVENTS_SLEEPENTER {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "CPU entered WFI/WFE sleep"]
 pub mod events_sleepenter;
 #[doc = "CPU exited WFI/WFE sleep"]
 pub struct EVENTS_SLEEPEXIT {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "CPU exited WFI/WFE sleep"]
 pub mod events_sleepexit;
 #[doc = "Enable interrupt"]
 pub struct INTENSET {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Enable interrupt"]
 pub mod intenset;
 #[doc = "Disable interrupt"]
 pub struct INTENCLR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Disable interrupt"]
 pub mod intenclr;
 #[doc = "Reset reason"]
 pub struct RESETREAS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Reset reason"]
 pub mod resetreas;
 #[doc = "Deprecated register - RAM status register"]
 pub struct RAMSTATUS {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Deprecated register - RAM status register"]
 pub mod ramstatus;
 #[doc = "System OFF register"]
 pub struct SYSTEMOFF {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "System OFF register"]
 pub mod systemoff;
 #[doc = "Power failure comparator configuration"]
 pub struct POFCON {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Power failure comparator configuration"]
 pub mod pofcon;
 #[doc = "General purpose retention register"]
 pub struct GPREGRET {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "General purpose retention register"]
 pub mod gpregret;
 #[doc = "General purpose retention register"]
 pub struct GPREGRET2 {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "General purpose retention register"]
 pub mod gpregret2;
 #[doc = "Deprecated register - RAM on/off register (this register is retained)"]
 pub struct RAMON {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Deprecated register - RAM on/off register (this register is retained)"]
 pub mod ramon;
 #[doc = "Deprecated register - RAM on/off register (this register is retained)"]
 pub struct RAMONB {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Deprecated register - RAM on/off register (this register is retained)"]
 pub mod ramonb;
 #[doc = "DC/DC enable register"]
 pub struct DCDCEN {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "DC/DC enable register"]
 pub mod dcdcen;

@@ -1,4 +1,3 @@
-use vcell::VolatileCell;
 #[doc = r" Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
@@ -106,43 +105,43 @@ pub struct NFC {
 pub mod nfc;
 #[doc = "Code memory page size"]
 pub struct CODEPAGESIZE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Code memory page size"]
 pub mod codepagesize;
 #[doc = "Code memory size"]
 pub struct CODESIZE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Code memory size"]
 pub mod codesize;
 #[doc = "Description collection[0]: Device identifier"]
 pub struct DEVICEID {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Description collection[0]: Device identifier"]
 pub mod deviceid;
 #[doc = "Description collection[0]: Encryption Root, word 0"]
 pub struct ER {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Description collection[0]: Encryption Root, word 0"]
 pub mod er;
 #[doc = "Description collection[0]: Identity Root, word 0"]
 pub struct IR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Description collection[0]: Identity Root, word 0"]
 pub mod ir;
 #[doc = "Device address type"]
 pub struct DEVICEADDRTYPE {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Device address type"]
 pub mod deviceaddrtype;
 #[doc = "Description collection[0]: Device address 0"]
 pub struct DEVICEADDR {
-    register: VolatileCell<u32>,
+    register: ::vcell::VolatileCell<u32>,
 }
 #[doc = "Description collection[0]: Device address 0"]
 pub mod deviceaddr;
