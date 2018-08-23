@@ -2,7 +2,7 @@
 set -x
 set -e
 
-cargo install --force --git https://github.com/wez/svd2rust svd2rust
+cargo install --force --git https://github.com/wez/svd2rust --rev e0de96e90d6fd4c4d7207111fbe72bf2b531d593 svd2rust
 cargo install --force --version 0.99.2 rustfmt-nightly
 cargo install --force --version 0.3.0 form
 
