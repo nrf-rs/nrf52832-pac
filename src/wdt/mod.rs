@@ -3,27 +3,27 @@
 pub struct RegisterBlock {
     #[doc = "0x00 - Start the watchdog"]
     pub tasks_start: TASKS_START,
-    _reserved0: [u8; 252usize],
+    _reserved1: [u8; 252usize],
     #[doc = "0x100 - Watchdog timeout"]
     pub events_timeout: EVENTS_TIMEOUT,
-    _reserved1: [u8; 512usize],
+    _reserved2: [u8; 512usize],
     #[doc = "0x304 - Enable interrupt"]
     pub intenset: INTENSET,
     #[doc = "0x308 - Disable interrupt"]
     pub intenclr: INTENCLR,
-    _reserved2: [u8; 244usize],
+    _reserved4: [u8; 244usize],
     #[doc = "0x400 - Run status"]
     pub runstatus: RUNSTATUS,
     #[doc = "0x404 - Request status"]
     pub reqstatus: REQSTATUS,
-    _reserved3: [u8; 252usize],
+    _reserved6: [u8; 252usize],
     #[doc = "0x504 - Counter reload value"]
     pub crv: CRV,
     #[doc = "0x508 - Enable register for reload request registers"]
     pub rren: RREN,
     #[doc = "0x50c - Configuration register"]
     pub config: CONFIG,
-    _reserved4: [u8; 240usize],
+    _reserved9: [u8; 240usize],
     #[doc = "0x600 - Description collection[0]: Reload request 0"]
     pub rr: [RR; 8],
 }

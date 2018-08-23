@@ -5,17 +5,17 @@ pub struct RegisterBlock {
     pub tasks_startecb: TASKS_STARTECB,
     #[doc = "0x04 - Abort a possible executing ECB operation"]
     pub tasks_stopecb: TASKS_STOPECB,
-    _reserved0: [u8; 248usize],
+    _reserved2: [u8; 248usize],
     #[doc = "0x100 - ECB block encrypt complete"]
     pub events_endecb: EVENTS_ENDECB,
     #[doc = "0x104 - ECB block encrypt aborted because of a STOPECB task or due to an error"]
     pub events_errorecb: EVENTS_ERRORECB,
-    _reserved1: [u8; 508usize],
+    _reserved4: [u8; 508usize],
     #[doc = "0x304 - Enable interrupt"]
     pub intenset: INTENSET,
     #[doc = "0x308 - Disable interrupt"]
     pub intenclr: INTENCLR,
-    _reserved2: [u8; 504usize],
+    _reserved6: [u8; 504usize],
     #[doc = "0x504 - ECB block encrypt memory pointers"]
     pub ecbdataptr: ECBDATAPTR,
 }

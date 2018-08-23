@@ -9,7 +9,7 @@ pub struct RegisterBlock {
     pub tasks_stop: TASKS_STOP,
     #[doc = "0x0c - Starts offset auto-calibration"]
     pub tasks_calibrateoffset: TASKS_CALIBRATEOFFSET,
-    _reserved0: [u8; 240usize],
+    _reserved4: [u8; 240usize],
     #[doc = "0x100 - The ADC has started"]
     pub events_started: EVENTS_STARTED,
     #[doc = "0x104 - The ADC has filled up the Result buffer"]
@@ -24,30 +24,30 @@ pub struct RegisterBlock {
     pub events_stopped: EVENTS_STOPPED,
     #[doc = "0x118 - Unspecified"]
     pub events_ch: [EVENTS_CH; 8],
-    _reserved1: [u8; 424usize],
+    _reserved11: [u8; 424usize],
     #[doc = "0x300 - Enable or disable interrupt"]
     pub inten: INTEN,
     #[doc = "0x304 - Enable interrupt"]
     pub intenset: INTENSET,
     #[doc = "0x308 - Disable interrupt"]
     pub intenclr: INTENCLR,
-    _reserved2: [u8; 244usize],
+    _reserved14: [u8; 244usize],
     #[doc = "0x400 - Status"]
     pub status: STATUS,
-    _reserved3: [u8; 252usize],
+    _reserved15: [u8; 252usize],
     #[doc = "0x500 - Enable or disable ADC"]
     pub enable: ENABLE,
-    _reserved4: [u8; 12usize],
+    _reserved16: [u8; 12usize],
     #[doc = "0x510 - Unspecified"]
     pub ch: [CH; 8],
-    _reserved5: [u8; 96usize],
+    _reserved17: [u8; 96usize],
     #[doc = "0x5f0 - Resolution configuration"]
     pub resolution: RESOLUTION,
     #[doc = "0x5f4 - Oversampling configuration. OVERSAMPLE should not be combined with SCAN. The RESOLUTION is applied before averaging, thus for high OVERSAMPLE a higher RESOLUTION should be used."]
     pub oversample: OVERSAMPLE,
     #[doc = "0x5f8 - Controls normal or continuous sample rate"]
     pub samplerate: SAMPLERATE,
-    _reserved6: [u8; 48usize],
+    _reserved20: [u8; 48usize],
     #[doc = "0x62c - RESULT EasyDMA channel"]
     pub result: RESULT,
 }

@@ -6,66 +6,66 @@ pub struct RegisterBlock {
     pub tasks_constlat: TASKS_CONSTLAT,
     #[doc = "0x7c - Enable low power mode (variable latency)"]
     pub tasks_lowpwr: TASKS_LOWPWR,
-    _reserved1: [u8; 136usize],
+    _reserved2: [u8; 136usize],
     #[doc = "0x108 - Power failure warning"]
     pub events_pofwarn: EVENTS_POFWARN,
-    _reserved2: [u8; 8usize],
+    _reserved3: [u8; 8usize],
     #[doc = "0x114 - CPU entered WFI/WFE sleep"]
     pub events_sleepenter: EVENTS_SLEEPENTER,
     #[doc = "0x118 - CPU exited WFI/WFE sleep"]
     pub events_sleepexit: EVENTS_SLEEPEXIT,
-    _reserved3: [u8; 488usize],
+    _reserved5: [u8; 488usize],
     #[doc = "0x304 - Enable interrupt"]
     pub intenset: INTENSET,
     #[doc = "0x308 - Disable interrupt"]
     pub intenclr: INTENCLR,
-    _reserved4: [u8; 244usize],
+    _reserved7: [u8; 244usize],
     #[doc = "0x400 - Reset reason"]
     pub resetreas: RESETREAS,
-    _reserved5: [u8; 36usize],
+    _reserved8: [u8; 36usize],
     #[doc = "0x428 - Deprecated register - RAM status register"]
     pub ramstatus: RAMSTATUS,
-    _reserved6: [u8; 212usize],
+    _reserved9: [u8; 212usize],
     #[doc = "0x500 - System OFF register"]
     pub systemoff: SYSTEMOFF,
-    _reserved7: [u8; 12usize],
+    _reserved10: [u8; 12usize],
     #[doc = "0x510 - Power failure comparator configuration"]
     pub pofcon: POFCON,
-    _reserved8: [u8; 8usize],
+    _reserved11: [u8; 8usize],
     #[doc = "0x51c - General purpose retention register"]
     pub gpregret: GPREGRET,
     #[doc = "0x520 - General purpose retention register"]
     pub gpregret2: GPREGRET2,
     #[doc = "0x524 - Deprecated register - RAM on/off register (this register is retained)"]
     pub ramon: RAMON,
-    _reserved9: [u8; 44usize],
+    _reserved14: [u8; 44usize],
     #[doc = "0x554 - Deprecated register - RAM on/off register (this register is retained)"]
     pub ramonb: RAMONB,
-    _reserved10: [u8; 32usize],
+    _reserved15: [u8; 32usize],
     #[doc = "0x578 - DC/DC enable register"]
     pub dcdcen: DCDCEN,
-    _reserved11: [u8; 900usize],
+    _reserved16: [u8; 900usize],
     #[doc = "0x900 - Unspecified"]
     pub ram0: RAM,
-    _reserved12: [u8; 4usize],
+    _reserved17: [u8; 4usize],
     #[doc = "0x910 - Unspecified"]
     pub ram1: RAM,
-    _reserved13: [u8; 4usize],
+    _reserved18: [u8; 4usize],
     #[doc = "0x920 - Unspecified"]
     pub ram2: RAM,
-    _reserved14: [u8; 4usize],
+    _reserved19: [u8; 4usize],
     #[doc = "0x930 - Unspecified"]
     pub ram3: RAM,
-    _reserved15: [u8; 4usize],
+    _reserved20: [u8; 4usize],
     #[doc = "0x940 - Unspecified"]
     pub ram4: RAM,
-    _reserved16: [u8; 4usize],
+    _reserved21: [u8; 4usize],
     #[doc = "0x950 - Unspecified"]
     pub ram5: RAM,
-    _reserved17: [u8; 4usize],
+    _reserved22: [u8; 4usize],
     #[doc = "0x960 - Unspecified"]
     pub ram6: RAM,
-    _reserved18: [u8; 4usize],
+    _reserved23: [u8; 4usize],
     #[doc = "0x970 - Unspecified"]
     pub ram7: RAM,
 }

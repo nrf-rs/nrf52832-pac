@@ -6,51 +6,51 @@ pub struct RegisterBlock {
     pub tasks_start: TASKS_START,
     #[doc = "0x14 - Stop SPI transaction"]
     pub tasks_stop: TASKS_STOP,
-    _reserved1: [u8; 4usize],
+    _reserved2: [u8; 4usize],
     #[doc = "0x1c - Suspend SPI transaction"]
     pub tasks_suspend: TASKS_SUSPEND,
     #[doc = "0x20 - Resume SPI transaction"]
     pub tasks_resume: TASKS_RESUME,
-    _reserved2: [u8; 224usize],
+    _reserved4: [u8; 224usize],
     #[doc = "0x104 - SPI transaction has stopped"]
     pub events_stopped: EVENTS_STOPPED,
-    _reserved3: [u8; 8usize],
+    _reserved5: [u8; 8usize],
     #[doc = "0x110 - End of RXD buffer reached"]
     pub events_endrx: EVENTS_ENDRX,
-    _reserved4: [u8; 4usize],
+    _reserved6: [u8; 4usize],
     #[doc = "0x118 - End of RXD buffer and TXD buffer reached"]
     pub events_end: EVENTS_END,
-    _reserved5: [u8; 4usize],
+    _reserved7: [u8; 4usize],
     #[doc = "0x120 - End of TXD buffer reached"]
     pub events_endtx: EVENTS_ENDTX,
-    _reserved6: [u8; 40usize],
+    _reserved8: [u8; 40usize],
     #[doc = "0x14c - Transaction started"]
     pub events_started: EVENTS_STARTED,
-    _reserved7: [u8; 176usize],
+    _reserved9: [u8; 176usize],
     #[doc = "0x200 - Shortcut register"]
     pub shorts: SHORTS,
-    _reserved8: [u8; 256usize],
+    _reserved10: [u8; 256usize],
     #[doc = "0x304 - Enable interrupt"]
     pub intenset: INTENSET,
     #[doc = "0x308 - Disable interrupt"]
     pub intenclr: INTENCLR,
-    _reserved9: [u8; 500usize],
+    _reserved12: [u8; 500usize],
     #[doc = "0x500 - Enable SPIM"]
     pub enable: ENABLE,
-    _reserved10: [u8; 4usize],
+    _reserved13: [u8; 4usize],
     #[doc = "0x508 - Unspecified"]
     pub psel: PSEL,
-    _reserved11: [u8; 16usize],
-    #[doc = "0x524 - SPI frequency"]
+    _reserved14: [u8; 16usize],
+    #[doc = "0x524 - SPI frequency. Accuracy depends on the HFCLK source selected."]
     pub frequency: FREQUENCY,
-    _reserved12: [u8; 12usize],
+    _reserved15: [u8; 12usize],
     #[doc = "0x534 - RXD EasyDMA channel"]
     pub rxd: RXD,
     #[doc = "0x544 - TXD EasyDMA channel"]
     pub txd: TXD,
     #[doc = "0x554 - Configuration register"]
     pub config: CONFIG,
-    _reserved13: [u8; 104usize],
+    _reserved18: [u8; 104usize],
     #[doc = "0x5c0 - Over-read character. Character clocked out in case and over-read of the TXD buffer."]
     pub orc: ORC,
 }
@@ -175,11 +175,11 @@ pub struct ENABLE {
 }
 #[doc = "Enable SPIM"]
 pub mod enable;
-#[doc = "SPI frequency"]
+#[doc = "SPI frequency. Accuracy depends on the HFCLK source selected."]
 pub struct FREQUENCY {
     register: ::vcell::VolatileCell<u32>,
 }
-#[doc = "SPI frequency"]
+#[doc = "SPI frequency. Accuracy depends on the HFCLK source selected."]
 pub mod frequency;
 #[doc = "Configuration register"]
 pub struct CONFIG {

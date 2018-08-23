@@ -3,63 +3,63 @@
 pub struct RegisterBlock {
     #[doc = "0x00 - Start TWI receive sequence"]
     pub tasks_startrx: TASKS_STARTRX,
-    _reserved0: [u8; 4usize],
+    _reserved1: [u8; 4usize],
     #[doc = "0x08 - Start TWI transmit sequence"]
     pub tasks_starttx: TASKS_STARTTX,
-    _reserved1: [u8; 8usize],
+    _reserved2: [u8; 8usize],
     #[doc = "0x14 - Stop TWI transaction. Must be issued while the TWI master is not suspended."]
     pub tasks_stop: TASKS_STOP,
-    _reserved2: [u8; 4usize],
+    _reserved3: [u8; 4usize],
     #[doc = "0x1c - Suspend TWI transaction"]
     pub tasks_suspend: TASKS_SUSPEND,
     #[doc = "0x20 - Resume TWI transaction"]
     pub tasks_resume: TASKS_RESUME,
-    _reserved3: [u8; 224usize],
+    _reserved5: [u8; 224usize],
     #[doc = "0x104 - TWI stopped"]
     pub events_stopped: EVENTS_STOPPED,
-    _reserved4: [u8; 28usize],
+    _reserved6: [u8; 28usize],
     #[doc = "0x124 - TWI error"]
     pub events_error: EVENTS_ERROR,
-    _reserved5: [u8; 32usize],
+    _reserved7: [u8; 32usize],
     #[doc = "0x148 - Last byte has been sent out after the SUSPEND task has been issued, TWI traffic is now suspended."]
     pub events_suspended: EVENTS_SUSPENDED,
     #[doc = "0x14c - Receive sequence started"]
     pub events_rxstarted: EVENTS_RXSTARTED,
     #[doc = "0x150 - Transmit sequence started"]
     pub events_txstarted: EVENTS_TXSTARTED,
-    _reserved6: [u8; 8usize],
+    _reserved10: [u8; 8usize],
     #[doc = "0x15c - Byte boundary, starting to receive the last byte"]
     pub events_lastrx: EVENTS_LASTRX,
     #[doc = "0x160 - Byte boundary, starting to transmit the last byte"]
     pub events_lasttx: EVENTS_LASTTX,
-    _reserved7: [u8; 156usize],
+    _reserved12: [u8; 156usize],
     #[doc = "0x200 - Shortcut register"]
     pub shorts: SHORTS,
-    _reserved8: [u8; 252usize],
+    _reserved13: [u8; 252usize],
     #[doc = "0x300 - Enable or disable interrupt"]
     pub inten: INTEN,
     #[doc = "0x304 - Enable interrupt"]
     pub intenset: INTENSET,
     #[doc = "0x308 - Disable interrupt"]
     pub intenclr: INTENCLR,
-    _reserved9: [u8; 440usize],
+    _reserved16: [u8; 440usize],
     #[doc = "0x4c4 - Error source"]
     pub errorsrc: ERRORSRC,
-    _reserved10: [u8; 56usize],
+    _reserved17: [u8; 56usize],
     #[doc = "0x500 - Enable TWIM"]
     pub enable: ENABLE,
-    _reserved11: [u8; 4usize],
+    _reserved18: [u8; 4usize],
     #[doc = "0x508 - Unspecified"]
     pub psel: PSEL,
-    _reserved12: [u8; 20usize],
+    _reserved19: [u8; 20usize],
     #[doc = "0x524 - TWI frequency"]
     pub frequency: FREQUENCY,
-    _reserved13: [u8; 12usize],
+    _reserved20: [u8; 12usize],
     #[doc = "0x534 - RXD EasyDMA channel"]
     pub rxd: RXD,
     #[doc = "0x544 - TXD EasyDMA channel"]
     pub txd: TXD,
-    _reserved14: [u8; 52usize],
+    _reserved22: [u8; 52usize],
     #[doc = "0x588 - Address used in the TWI transfer"]
     pub address: ADDRESS,
 }

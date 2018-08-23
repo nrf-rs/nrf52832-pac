@@ -15,40 +15,40 @@ pub struct RegisterBlock {
     pub tasks_ctstart: TASKS_CTSTART,
     #[doc = "0x18 - Stop calibration timer"]
     pub tasks_ctstop: TASKS_CTSTOP,
-    _reserved0: [u8; 228usize],
+    _reserved7: [u8; 228usize],
     #[doc = "0x100 - HFCLK oscillator started"]
     pub events_hfclkstarted: EVENTS_HFCLKSTARTED,
     #[doc = "0x104 - LFCLK started"]
     pub events_lfclkstarted: EVENTS_LFCLKSTARTED,
-    _reserved1: [u8; 4usize],
+    _reserved9: [u8; 4usize],
     #[doc = "0x10c - Calibration of LFCLK RC oscillator complete event"]
     pub events_done: EVENTS_DONE,
     #[doc = "0x110 - Calibration timer timeout"]
     pub events_ctto: EVENTS_CTTO,
-    _reserved2: [u8; 496usize],
+    _reserved11: [u8; 496usize],
     #[doc = "0x304 - Enable interrupt"]
     pub intenset: INTENSET,
     #[doc = "0x308 - Disable interrupt"]
     pub intenclr: INTENCLR,
-    _reserved3: [u8; 252usize],
+    _reserved13: [u8; 252usize],
     #[doc = "0x408 - Status indicating that HFCLKSTART task has been triggered"]
     pub hfclkrun: HFCLKRUN,
     #[doc = "0x40c - HFCLK status"]
     pub hfclkstat: HFCLKSTAT,
-    _reserved4: [u8; 4usize],
+    _reserved15: [u8; 4usize],
     #[doc = "0x414 - Status indicating that LFCLKSTART task has been triggered"]
     pub lfclkrun: LFCLKRUN,
     #[doc = "0x418 - LFCLK status"]
     pub lfclkstat: LFCLKSTAT,
     #[doc = "0x41c - Copy of LFCLKSRC register, set when LFCLKSTART task was triggered"]
     pub lfclksrccopy: LFCLKSRCCOPY,
-    _reserved5: [u8; 248usize],
+    _reserved18: [u8; 248usize],
     #[doc = "0x518 - Clock source for the LFCLK"]
     pub lfclksrc: LFCLKSRC,
-    _reserved6: [u8; 28usize],
+    _reserved19: [u8; 28usize],
     #[doc = "0x538 - Calibration timer interval"]
     pub ctiv: CTIV,
-    _reserved7: [u8; 32usize],
+    _reserved20: [u8; 32usize],
     #[doc = "0x55c - Clocking options for the Trace Port debug interface"]
     pub traceconfig: TRACECONFIG,
 }

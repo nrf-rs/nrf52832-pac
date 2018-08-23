@@ -8,7 +8,7 @@ pub struct RegisterBlock {
     pub tasks_seqstart: [TASKS_SEQSTART; 2],
     #[doc = "0x10 - Steps by one value in the current sequence on all enabled channels if DECODER.MODE=NextStep. Does not cause PWM generation to start it was not running."]
     pub tasks_nextstep: TASKS_NEXTSTEP,
-    _reserved1: [u8; 240usize],
+    _reserved3: [u8; 240usize],
     #[doc = "0x104 - Response to STOP task, emitted when PWM pulses are no longer generated"]
     pub events_stopped: EVENTS_STOPPED,
     #[doc = "0x108 - Description collection[0]: First PWM period started on sequence 0"]
@@ -19,17 +19,17 @@ pub struct RegisterBlock {
     pub events_pwmperiodend: EVENTS_PWMPERIODEND,
     #[doc = "0x11c - Concatenated sequences have been played the amount of times defined in LOOP.CNT"]
     pub events_loopsdone: EVENTS_LOOPSDONE,
-    _reserved2: [u8; 224usize],
+    _reserved8: [u8; 224usize],
     #[doc = "0x200 - Shortcut register"]
     pub shorts: SHORTS,
-    _reserved3: [u8; 252usize],
+    _reserved9: [u8; 252usize],
     #[doc = "0x300 - Enable or disable interrupt"]
     pub inten: INTEN,
     #[doc = "0x304 - Enable interrupt"]
     pub intenset: INTENSET,
     #[doc = "0x308 - Disable interrupt"]
     pub intenclr: INTENCLR,
-    _reserved4: [u8; 500usize],
+    _reserved12: [u8; 500usize],
     #[doc = "0x500 - PWM module enable register"]
     pub enable: ENABLE,
     #[doc = "0x504 - Selects operating mode of the wave counter"]
@@ -42,13 +42,13 @@ pub struct RegisterBlock {
     pub decoder: DECODER,
     #[doc = "0x514 - Amount of playback of a loop"]
     pub loop_: LOOP,
-    _reserved5: [u8; 8usize],
+    _reserved18: [u8; 8usize],
     #[doc = "0x520 - Unspecified"]
     pub seq0: SEQ,
-    _reserved6: [u8; 16usize],
+    _reserved19: [u8; 16usize],
     #[doc = "0x540 - Unspecified"]
     pub seq1: SEQ,
-    _reserved7: [u8; 16usize],
+    _reserved20: [u8; 16usize],
     #[doc = "0x560 - Unspecified"]
     pub psel: PSEL,
 }

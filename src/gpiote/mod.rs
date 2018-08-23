@@ -3,24 +3,24 @@
 pub struct RegisterBlock {
     #[doc = "0x00 - Description collection[0]: Task for writing to pin specified in CONFIG[0].PSEL. Action on pin is configured in CONFIG[0].POLARITY."]
     pub tasks_out: [TASKS_OUT; 8],
-    _reserved0: [u8; 16usize],
+    _reserved1: [u8; 16usize],
     #[doc = "0x30 - Description collection[0]: Task for writing to pin specified in CONFIG[0].PSEL. Action on pin is to set it high."]
     pub tasks_set: [TASKS_SET; 8],
-    _reserved1: [u8; 16usize],
+    _reserved2: [u8; 16usize],
     #[doc = "0x60 - Description collection[0]: Task for writing to pin specified in CONFIG[0].PSEL. Action on pin is to set it low."]
     pub tasks_clr: [TASKS_CLR; 8],
-    _reserved2: [u8; 128usize],
+    _reserved3: [u8; 128usize],
     #[doc = "0x100 - Description collection[0]: Event generated from pin specified in CONFIG[0].PSEL"]
     pub events_in: [EVENTS_IN; 8],
-    _reserved3: [u8; 92usize],
+    _reserved4: [u8; 92usize],
     #[doc = "0x17c - Event generated from multiple input GPIO pins with SENSE mechanism enabled"]
     pub events_port: EVENTS_PORT,
-    _reserved4: [u8; 388usize],
+    _reserved5: [u8; 388usize],
     #[doc = "0x304 - Enable interrupt"]
     pub intenset: INTENSET,
     #[doc = "0x308 - Disable interrupt"]
     pub intenclr: INTENCLR,
-    _reserved5: [u8; 516usize],
+    _reserved7: [u8; 516usize],
     #[doc = "0x510 - Description collection[0]: Configuration for OUT[n], SET[n] and CLR[n] tasks and IN[n] event"]
     pub config: [CONFIG; 8],
 }

@@ -9,32 +9,32 @@ pub struct RegisterBlock {
     pub tasks_clear: TASKS_CLEAR,
     #[doc = "0x0c - Set COUNTER to 0xFFFFF0"]
     pub tasks_trigovrflw: TASKS_TRIGOVRFLW,
-    _reserved0: [u8; 240usize],
+    _reserved4: [u8; 240usize],
     #[doc = "0x100 - Event on COUNTER increment"]
     pub events_tick: EVENTS_TICK,
     #[doc = "0x104 - Event on COUNTER overflow"]
     pub events_ovrflw: EVENTS_OVRFLW,
-    _reserved1: [u8; 56usize],
+    _reserved6: [u8; 56usize],
     #[doc = "0x140 - Description collection[0]: Compare event on CC[0] match"]
     pub events_compare: [EVENTS_COMPARE; 4],
-    _reserved2: [u8; 436usize],
+    _reserved7: [u8; 436usize],
     #[doc = "0x304 - Enable interrupt"]
     pub intenset: INTENSET,
     #[doc = "0x308 - Disable interrupt"]
     pub intenclr: INTENCLR,
-    _reserved3: [u8; 52usize],
+    _reserved9: [u8; 52usize],
     #[doc = "0x340 - Enable or disable event routing"]
     pub evten: EVTEN,
     #[doc = "0x344 - Enable event routing"]
     pub evtenset: EVTENSET,
     #[doc = "0x348 - Disable event routing"]
     pub evtenclr: EVTENCLR,
-    _reserved4: [u8; 440usize],
+    _reserved12: [u8; 440usize],
     #[doc = "0x504 - Current COUNTER value"]
     pub counter: COUNTER,
     #[doc = "0x508 - 12 bit prescaler for COUNTER frequency (32768/(PRESCALER+1)).Must be written when RTC is stopped"]
     pub prescaler: PRESCALER,
-    _reserved5: [u8; 52usize],
+    _reserved14: [u8; 52usize],
     #[doc = "0x540 - Description collection[0]: Compare register 0"]
     pub cc: [CC; 4],
 }

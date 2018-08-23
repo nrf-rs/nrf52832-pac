@@ -7,25 +7,25 @@ pub struct RegisterBlock {
     pub tasks_crypt: TASKS_CRYPT,
     #[doc = "0x08 - Stop encryption/decryption"]
     pub tasks_stop: TASKS_STOP,
-    _reserved0: [u8; 244usize],
+    _reserved3: [u8; 244usize],
     #[doc = "0x100 - Key-stream generation complete"]
     pub events_endksgen: EVENTS_ENDKSGEN,
     #[doc = "0x104 - Encrypt/decrypt complete"]
     pub events_endcrypt: EVENTS_ENDCRYPT,
     #[doc = "0x108 - CCM error event"]
     pub events_error: EVENTS_ERROR,
-    _reserved1: [u8; 244usize],
+    _reserved6: [u8; 244usize],
     #[doc = "0x200 - Shortcut register"]
     pub shorts: SHORTS,
-    _reserved2: [u8; 256usize],
+    _reserved7: [u8; 256usize],
     #[doc = "0x304 - Enable interrupt"]
     pub intenset: INTENSET,
     #[doc = "0x308 - Disable interrupt"]
     pub intenclr: INTENCLR,
-    _reserved3: [u8; 244usize],
+    _reserved9: [u8; 244usize],
     #[doc = "0x400 - MIC check result"]
     pub micstatus: MICSTATUS,
-    _reserved4: [u8; 252usize],
+    _reserved10: [u8; 252usize],
     #[doc = "0x500 - Enable"]
     pub enable: ENABLE,
     #[doc = "0x504 - Operation mode"]

@@ -3,20 +3,20 @@
 pub struct RegisterBlock {
     #[doc = "0x00 - Channel group tasks"]
     pub tasks_chg: [TASKS_CHG; 6],
-    _reserved0: [u8; 1232usize],
+    _reserved1: [u8; 1232usize],
     #[doc = "0x500 - Channel enable register"]
     pub chen: CHEN,
     #[doc = "0x504 - Channel enable set register"]
     pub chenset: CHENSET,
     #[doc = "0x508 - Channel enable clear register"]
     pub chenclr: CHENCLR,
-    _reserved1: [u8; 4usize],
+    _reserved4: [u8; 4usize],
     #[doc = "0x510 - PPI Channel"]
     pub ch: [CH; 20],
-    _reserved2: [u8; 592usize],
+    _reserved5: [u8; 592usize],
     #[doc = "0x800 - Description collection[0]: Channel group 0"]
     pub chg: [CHG; 6],
-    _reserved3: [u8; 248usize],
+    _reserved6: [u8; 248usize],
     #[doc = "0x910 - Fork"]
     pub fork: [FORK; 32],
 }

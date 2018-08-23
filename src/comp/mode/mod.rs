@@ -45,11 +45,11 @@ impl super::MODE {
 #[doc = "Possible values of the field `SP`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SPR {
-    #[doc = "Low power mode"]
+    #[doc = "Low-power mode"]
     LOW,
     #[doc = "Normal mode"]
     NORMAL,
-    #[doc = "High speed mode"]
+    #[doc = "High-speed mode"]
     HIGH,
     #[doc = r" Reserved"]
     _Reserved(u8),
@@ -95,7 +95,7 @@ impl SPR {
 #[doc = "Possible values of the field `MAIN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MAINR {
-    #[doc = "Single ended mode"]
+    #[doc = "Single-ended mode"]
     SE,
     #[doc = "Differential mode"]
     DIFF,
@@ -141,11 +141,11 @@ impl MAINR {
 }
 #[doc = "Values that can be written to the field `SP`"]
 pub enum SPW {
-    #[doc = "Low power mode"]
+    #[doc = "Low-power mode"]
     LOW,
     #[doc = "Normal mode"]
     NORMAL,
-    #[doc = "High speed mode"]
+    #[doc = "High-speed mode"]
     HIGH,
 }
 impl SPW {
@@ -170,7 +170,7 @@ impl<'a> _SPW<'a> {
     pub fn variant(self, variant: SPW) -> &'a mut W {
         unsafe { self.bits(variant._bits()) }
     }
-    #[doc = "Low power mode"]
+    #[doc = "Low-power mode"]
     #[inline]
     pub fn low(self) -> &'a mut W {
         self.variant(SPW::LOW)
@@ -180,7 +180,7 @@ impl<'a> _SPW<'a> {
     pub fn normal(self) -> &'a mut W {
         self.variant(SPW::NORMAL)
     }
-    #[doc = "High speed mode"]
+    #[doc = "High-speed mode"]
     #[inline]
     pub fn high(self) -> &'a mut W {
         self.variant(SPW::HIGH)
@@ -197,7 +197,7 @@ impl<'a> _SPW<'a> {
 }
 #[doc = "Values that can be written to the field `MAIN`"]
 pub enum MAINW {
-    #[doc = "Single ended mode"]
+    #[doc = "Single-ended mode"]
     SE,
     #[doc = "Differential mode"]
     DIFF,
@@ -225,7 +225,7 @@ impl<'a> _MAINW<'a> {
             self.bit(variant._bits())
         }
     }
-    #[doc = "Single ended mode"]
+    #[doc = "Single-ended mode"]
     #[inline]
     pub fn se(self) -> &'a mut W {
         self.variant(MAINW::SE)
@@ -259,7 +259,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:1 - Speed and power mode"]
+    #[doc = "Bits 0:1 - Speed and power modes"]
     #[inline]
     pub fn sp(&self) -> SPR {
         SPR::_from({
@@ -268,7 +268,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) as u8
         })
     }
-    #[doc = "Bit 8 - Main operation mode"]
+    #[doc = "Bit 8 - Main operation modes"]
     #[inline]
     pub fn main(&self) -> MAINR {
         MAINR::_from({
@@ -290,12 +290,12 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:1 - Speed and power mode"]
+    #[doc = "Bits 0:1 - Speed and power modes"]
     #[inline]
     pub fn sp(&mut self) -> _SPW {
         _SPW { w: self }
     }
-    #[doc = "Bit 8 - Main operation mode"]
+    #[doc = "Bit 8 - Main operation modes"]
     #[inline]
     pub fn main(&mut self) -> _MAINW {
         _MAINW { w: self }

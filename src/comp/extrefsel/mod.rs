@@ -49,33 +49,48 @@ pub enum EXTREFSELR {
     ANALOGREFERENCE0,
     #[doc = "Use AIN1 as external analog reference"]
     ANALOGREFERENCE1,
+    #[doc = "Use AIN2 as external analog reference"]
+    ANALOGREFERENCE2,
+    #[doc = "Use AIN3 as external analog reference"]
+    ANALOGREFERENCE3,
+    #[doc = "Use AIN4 as external analog reference"]
+    ANALOGREFERENCE4,
+    #[doc = "Use AIN5 as external analog reference"]
+    ANALOGREFERENCE5,
+    #[doc = "Use AIN6 as external analog reference"]
+    ANALOGREFERENCE6,
+    #[doc = "Use AIN7 as external analog reference"]
+    ANALOGREFERENCE7,
 }
 impl EXTREFSELR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
     #[doc = r" Value of the field as raw bits"]
     #[inline]
-    pub fn bit(&self) -> bool {
+    pub fn bits(&self) -> u8 {
         match *self {
-            EXTREFSELR::ANALOGREFERENCE0 => false,
-            EXTREFSELR::ANALOGREFERENCE1 => true,
+            EXTREFSELR::ANALOGREFERENCE0 => 0,
+            EXTREFSELR::ANALOGREFERENCE1 => 1,
+            EXTREFSELR::ANALOGREFERENCE2 => 2,
+            EXTREFSELR::ANALOGREFERENCE3 => 3,
+            EXTREFSELR::ANALOGREFERENCE4 => 4,
+            EXTREFSELR::ANALOGREFERENCE5 => 5,
+            EXTREFSELR::ANALOGREFERENCE6 => 6,
+            EXTREFSELR::ANALOGREFERENCE7 => 7,
         }
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
     #[inline]
-    pub fn _from(value: bool) -> EXTREFSELR {
+    pub fn _from(value: u8) -> EXTREFSELR {
         match value {
-            false => EXTREFSELR::ANALOGREFERENCE0,
-            true => EXTREFSELR::ANALOGREFERENCE1,
+            0 => EXTREFSELR::ANALOGREFERENCE0,
+            1 => EXTREFSELR::ANALOGREFERENCE1,
+            2 => EXTREFSELR::ANALOGREFERENCE2,
+            3 => EXTREFSELR::ANALOGREFERENCE3,
+            4 => EXTREFSELR::ANALOGREFERENCE4,
+            5 => EXTREFSELR::ANALOGREFERENCE5,
+            6 => EXTREFSELR::ANALOGREFERENCE6,
+            7 => EXTREFSELR::ANALOGREFERENCE7,
+            _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `ANALOGREFERENCE0`"]
@@ -88,6 +103,36 @@ impl EXTREFSELR {
     pub fn is_analog_reference1(&self) -> bool {
         *self == EXTREFSELR::ANALOGREFERENCE1
     }
+    #[doc = "Checks if the value of the field is `ANALOGREFERENCE2`"]
+    #[inline]
+    pub fn is_analog_reference2(&self) -> bool {
+        *self == EXTREFSELR::ANALOGREFERENCE2
+    }
+    #[doc = "Checks if the value of the field is `ANALOGREFERENCE3`"]
+    #[inline]
+    pub fn is_analog_reference3(&self) -> bool {
+        *self == EXTREFSELR::ANALOGREFERENCE3
+    }
+    #[doc = "Checks if the value of the field is `ANALOGREFERENCE4`"]
+    #[inline]
+    pub fn is_analog_reference4(&self) -> bool {
+        *self == EXTREFSELR::ANALOGREFERENCE4
+    }
+    #[doc = "Checks if the value of the field is `ANALOGREFERENCE5`"]
+    #[inline]
+    pub fn is_analog_reference5(&self) -> bool {
+        *self == EXTREFSELR::ANALOGREFERENCE5
+    }
+    #[doc = "Checks if the value of the field is `ANALOGREFERENCE6`"]
+    #[inline]
+    pub fn is_analog_reference6(&self) -> bool {
+        *self == EXTREFSELR::ANALOGREFERENCE6
+    }
+    #[doc = "Checks if the value of the field is `ANALOGREFERENCE7`"]
+    #[inline]
+    pub fn is_analog_reference7(&self) -> bool {
+        *self == EXTREFSELR::ANALOGREFERENCE7
+    }
 }
 #[doc = "Values that can be written to the field `EXTREFSEL`"]
 pub enum EXTREFSELW {
@@ -95,15 +140,33 @@ pub enum EXTREFSELW {
     ANALOGREFERENCE0,
     #[doc = "Use AIN1 as external analog reference"]
     ANALOGREFERENCE1,
+    #[doc = "Use AIN2 as external analog reference"]
+    ANALOGREFERENCE2,
+    #[doc = "Use AIN3 as external analog reference"]
+    ANALOGREFERENCE3,
+    #[doc = "Use AIN4 as external analog reference"]
+    ANALOGREFERENCE4,
+    #[doc = "Use AIN5 as external analog reference"]
+    ANALOGREFERENCE5,
+    #[doc = "Use AIN6 as external analog reference"]
+    ANALOGREFERENCE6,
+    #[doc = "Use AIN7 as external analog reference"]
+    ANALOGREFERENCE7,
 }
 impl EXTREFSELW {
     #[allow(missing_docs)]
     #[doc(hidden)]
     #[inline]
-    pub fn _bits(&self) -> bool {
+    pub fn _bits(&self) -> u8 {
         match *self {
-            EXTREFSELW::ANALOGREFERENCE0 => false,
-            EXTREFSELW::ANALOGREFERENCE1 => true,
+            EXTREFSELW::ANALOGREFERENCE0 => 0,
+            EXTREFSELW::ANALOGREFERENCE1 => 1,
+            EXTREFSELW::ANALOGREFERENCE2 => 2,
+            EXTREFSELW::ANALOGREFERENCE3 => 3,
+            EXTREFSELW::ANALOGREFERENCE4 => 4,
+            EXTREFSELW::ANALOGREFERENCE5 => 5,
+            EXTREFSELW::ANALOGREFERENCE6 => 6,
+            EXTREFSELW::ANALOGREFERENCE7 => 7,
         }
     }
 }
@@ -116,7 +179,7 @@ impl<'a> _EXTREFSELW<'a> {
     #[inline]
     pub fn variant(self, variant: EXTREFSELW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bits(variant._bits())
         }
     }
     #[doc = "Use AIN0 as external analog reference"]
@@ -129,18 +192,40 @@ impl<'a> _EXTREFSELW<'a> {
     pub fn analog_reference1(self) -> &'a mut W {
         self.variant(EXTREFSELW::ANALOGREFERENCE1)
     }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
+    #[doc = "Use AIN2 as external analog reference"]
+    #[inline]
+    pub fn analog_reference2(self) -> &'a mut W {
+        self.variant(EXTREFSELW::ANALOGREFERENCE2)
     }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
+    #[doc = "Use AIN3 as external analog reference"]
+    #[inline]
+    pub fn analog_reference3(self) -> &'a mut W {
+        self.variant(EXTREFSELW::ANALOGREFERENCE3)
+    }
+    #[doc = "Use AIN4 as external analog reference"]
+    #[inline]
+    pub fn analog_reference4(self) -> &'a mut W {
+        self.variant(EXTREFSELW::ANALOGREFERENCE4)
+    }
+    #[doc = "Use AIN5 as external analog reference"]
+    #[inline]
+    pub fn analog_reference5(self) -> &'a mut W {
+        self.variant(EXTREFSELW::ANALOGREFERENCE5)
+    }
+    #[doc = "Use AIN6 as external analog reference"]
+    #[inline]
+    pub fn analog_reference6(self) -> &'a mut W {
+        self.variant(EXTREFSELW::ANALOGREFERENCE6)
+    }
+    #[doc = "Use AIN7 as external analog reference"]
+    #[inline]
+    pub fn analog_reference7(self) -> &'a mut W {
+        self.variant(EXTREFSELW::ANALOGREFERENCE7)
     }
     #[doc = r" Writes raw bits to the field"]
     #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
+    pub fn bits(self, value: u8) -> &'a mut W {
+        const MASK: u8 = 7;
         const OFFSET: u8 = 0;
         self.w.bits &= !((MASK as u32) << OFFSET);
         self.w.bits |= ((value & MASK) as u32) << OFFSET;
@@ -153,13 +238,13 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bit 0 - External analog reference select"]
+    #[doc = "Bits 0:2 - External analog reference select"]
     #[inline]
     pub fn extrefsel(&self) -> EXTREFSELR {
         EXTREFSELR::_from({
-            const MASK: bool = true;
+            const MASK: u8 = 7;
             const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
+            ((self.bits >> OFFSET) & MASK as u32) as u8
         })
     }
 }
@@ -175,7 +260,7 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 0 - External analog reference select"]
+    #[doc = "Bits 0:2 - External analog reference select"]
     #[inline]
     pub fn extrefsel(&mut self) -> _EXTREFSELW {
         _EXTREFSELW { w: self }

@@ -20,6 +20,8 @@ pub enum PACKAGER {
     CH,
     #[doc = "CIxx - 7x8 WLCSP 56 balls"]
     CI,
+    #[doc = "CKxx - 7x8 WLCSP 56 balls with backside coating for light protection"]
+    CK,
     #[doc = "Unspecified"]
     UNSPECIFIED,
     #[doc = r" Reserved"]
@@ -33,6 +35,7 @@ impl PACKAGER {
             PACKAGER::QF => 8192,
             PACKAGER::CH => 8193,
             PACKAGER::CI => 8194,
+            PACKAGER::CK => 8197,
             PACKAGER::UNSPECIFIED => 4294967295,
             PACKAGER::_Reserved(bits) => bits,
         }
@@ -45,6 +48,7 @@ impl PACKAGER {
             8192 => PACKAGER::QF,
             8193 => PACKAGER::CH,
             8194 => PACKAGER::CI,
+            8197 => PACKAGER::CK,
             4294967295 => PACKAGER::UNSPECIFIED,
             i => PACKAGER::_Reserved(i),
         }
@@ -63,6 +67,11 @@ impl PACKAGER {
     #[inline]
     pub fn is_ci(&self) -> bool {
         *self == PACKAGER::CI
+    }
+    #[doc = "Checks if the value of the field is `CK`"]
+    #[inline]
+    pub fn is_ck(&self) -> bool {
+        *self == PACKAGER::CK
     }
     #[doc = "Checks if the value of the field is `UNSPECIFIED`"]
     #[inline]

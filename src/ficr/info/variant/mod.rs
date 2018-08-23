@@ -24,8 +24,8 @@ pub enum VARIANTR {
     AABB,
     #[doc = "AAB0"]
     AAB0,
-    #[doc = "SPA0"]
-    SPA0,
+    #[doc = "AAE0"]
+    AAE0,
     #[doc = "Unspecified"]
     UNSPECIFIED,
     #[doc = r" Reserved"]
@@ -41,7 +41,7 @@ impl VARIANTR {
             VARIANTR::AABA => 1094795841,
             VARIANTR::AABB => 1094795842,
             VARIANTR::AAB0 => 1094795824,
-            VARIANTR::SPA0 => 1397768496,
+            VARIANTR::AAE0 => 1094796592,
             VARIANTR::UNSPECIFIED => 4294967295,
             VARIANTR::_Reserved(bits) => bits,
         }
@@ -56,7 +56,7 @@ impl VARIANTR {
             1094795841 => VARIANTR::AABA,
             1094795842 => VARIANTR::AABB,
             1094795824 => VARIANTR::AAB0,
-            1397768496 => VARIANTR::SPA0,
+            1094796592 => VARIANTR::AAE0,
             4294967295 => VARIANTR::UNSPECIFIED,
             i => VARIANTR::_Reserved(i),
         }
@@ -86,10 +86,10 @@ impl VARIANTR {
     pub fn is_aab0(&self) -> bool {
         *self == VARIANTR::AAB0
     }
-    #[doc = "Checks if the value of the field is `SPA0`"]
+    #[doc = "Checks if the value of the field is `AAE0`"]
     #[inline]
-    pub fn is_spa0(&self) -> bool {
-        *self == VARIANTR::SPA0
+    pub fn is_aae0(&self) -> bool {
+        *self == VARIANTR::AAE0
     }
     #[doc = "Checks if the value of the field is `UNSPECIFIED`"]
     #[inline]

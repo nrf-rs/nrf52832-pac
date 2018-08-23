@@ -14,39 +14,39 @@ pub struct RegisterBlock {
     pub intenset: INTENSET,
     #[doc = "0x308 - Disable interrupt"]
     pub intenclr: INTENCLR,
-    _reserved3: [u8; 20usize],
+    _reserved5: [u8; 20usize],
     #[doc = "0x320 - Enable or disable non-maskable interrupt"]
     pub nmien: NMIEN,
     #[doc = "0x324 - Enable non-maskable interrupt"]
     pub nmienset: NMIENSET,
     #[doc = "0x328 - Disable non-maskable interrupt"]
     pub nmienclr: NMIENCLR,
-    _reserved4: [u8; 212usize],
+    _reserved8: [u8; 212usize],
     #[doc = "0x400 - Unspecified"]
     pub perregion: [PERREGION; 2],
-    _reserved5: [u8; 256usize],
+    _reserved9: [u8; 256usize],
     #[doc = "0x510 - Enable/disable regions watch"]
     pub regionen: REGIONEN,
     #[doc = "0x514 - Enable regions watch"]
     pub regionenset: REGIONENSET,
     #[doc = "0x518 - Disable regions watch"]
     pub regionenclr: REGIONENCLR,
-    _reserved6: [u8; 228usize],
+    _reserved12: [u8; 228usize],
     #[doc = "0x600 - Unspecified"]
     pub region0: REGION,
-    _reserved7: [u8; 8usize],
+    _reserved13: [u8; 8usize],
     #[doc = "0x610 - Unspecified"]
     pub region1: REGION,
-    _reserved8: [u8; 8usize],
+    _reserved14: [u8; 8usize],
     #[doc = "0x620 - Unspecified"]
     pub region2: REGION,
-    _reserved9: [u8; 8usize],
+    _reserved15: [u8; 8usize],
     #[doc = "0x630 - Unspecified"]
     pub region3: REGION,
-    _reserved10: [u8; 136usize],
+    _reserved16: [u8; 136usize],
     #[doc = "0x6c0 - Unspecified"]
     pub pregion0: PREGION,
-    _reserved11: [u8; 4usize],
+    _reserved17: [u8; 4usize],
     #[doc = "0x6d0 - Unspecified"]
     pub pregion1: PREGION,
 }

@@ -9,21 +9,21 @@ pub struct RegisterBlock {
     pub intenset: INTENSET,
     #[doc = "0x308 - Disable interrupt"]
     pub intenclr: INTENCLR,
-    _reserved2: [u8; 500usize],
+    _reserved3: [u8; 500usize],
     #[doc = "0x500 - Enable SPI"]
     pub enable: ENABLE,
-    _reserved3: [u8; 4usize],
+    _reserved4: [u8; 4usize],
     #[doc = "0x508 - Unspecified"]
     pub psel: PSEL,
-    _reserved4: [u8; 4usize],
+    _reserved5: [u8; 4usize],
     #[doc = "0x518 - RXD register"]
     pub rxd: RXD,
     #[doc = "0x51c - TXD register"]
     pub txd: TXD,
-    _reserved5: [u8; 4usize],
+    _reserved7: [u8; 4usize],
     #[doc = "0x524 - SPI frequency"]
     pub frequency: FREQUENCY,
-    _reserved6: [u8; 44usize],
+    _reserved8: [u8; 44usize],
     #[doc = "0x554 - Configuration register"]
     pub config: CONFIG,
 }
