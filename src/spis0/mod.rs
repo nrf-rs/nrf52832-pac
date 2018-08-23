@@ -6,48 +6,48 @@ pub struct RegisterBlock {
     pub tasks_acquire: TASKS_ACQUIRE,
     #[doc = "0x28 - Release SPI semaphore, enabling the SPI slave to acquire it"]
     pub tasks_release: TASKS_RELEASE,
-    _reserved1: [u8; 216usize],
+    _reserved2: [u8; 216usize],
     #[doc = "0x104 - Granted transaction completed"]
     pub events_end: EVENTS_END,
-    _reserved2: [u8; 8usize],
+    _reserved3: [u8; 8usize],
     #[doc = "0x110 - End of RXD buffer reached"]
     pub events_endrx: EVENTS_ENDRX,
-    _reserved3: [u8; 20usize],
+    _reserved4: [u8; 20usize],
     #[doc = "0x128 - Semaphore acquired"]
     pub events_acquired: EVENTS_ACQUIRED,
-    _reserved4: [u8; 212usize],
+    _reserved5: [u8; 212usize],
     #[doc = "0x200 - Shortcut register"]
     pub shorts: SHORTS,
-    _reserved5: [u8; 256usize],
+    _reserved6: [u8; 256usize],
     #[doc = "0x304 - Enable interrupt"]
     pub intenset: INTENSET,
     #[doc = "0x308 - Disable interrupt"]
     pub intenclr: INTENCLR,
-    _reserved6: [u8; 244usize],
+    _reserved8: [u8; 244usize],
     #[doc = "0x400 - Semaphore status register"]
     pub semstat: SEMSTAT,
-    _reserved7: [u8; 60usize],
+    _reserved9: [u8; 60usize],
     #[doc = "0x440 - Status from last transaction"]
     pub status: STATUS,
-    _reserved8: [u8; 188usize],
+    _reserved10: [u8; 188usize],
     #[doc = "0x500 - Enable SPI slave"]
     pub enable: ENABLE,
-    _reserved9: [u8; 4usize],
+    _reserved11: [u8; 4usize],
     #[doc = "0x508 - Unspecified"]
     pub psel: PSEL,
-    _reserved10: [u8; 28usize],
+    _reserved12: [u8; 28usize],
     #[doc = "0x534 - Unspecified"]
     pub rxd: RXD,
-    _reserved11: [u8; 4usize],
+    _reserved13: [u8; 4usize],
     #[doc = "0x544 - Unspecified"]
     pub txd: TXD,
-    _reserved12: [u8; 4usize],
+    _reserved14: [u8; 4usize],
     #[doc = "0x554 - Configuration register"]
     pub config: CONFIG,
-    _reserved13: [u8; 4usize],
+    _reserved15: [u8; 4usize],
     #[doc = "0x55c - Default character. Character clocked out in case of an ignored transaction."]
     pub def: DEF,
-    _reserved14: [u8; 96usize],
+    _reserved16: [u8; 96usize],
     #[doc = "0x5c0 - Over-read character"]
     pub orc: ORC,
 }

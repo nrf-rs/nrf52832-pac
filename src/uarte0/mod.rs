@@ -9,66 +9,66 @@ pub struct RegisterBlock {
     pub tasks_starttx: TASKS_STARTTX,
     #[doc = "0x0c - Stop UART transmitter"]
     pub tasks_stoptx: TASKS_STOPTX,
-    _reserved0: [u8; 28usize],
+    _reserved4: [u8; 28usize],
     #[doc = "0x2c - Flush RX FIFO into RX buffer"]
     pub tasks_flushrx: TASKS_FLUSHRX,
-    _reserved1: [u8; 208usize],
+    _reserved5: [u8; 208usize],
     #[doc = "0x100 - CTS is activated (set low). Clear To Send."]
     pub events_cts: EVENTS_CTS,
     #[doc = "0x104 - CTS is deactivated (set high). Not Clear To Send."]
     pub events_ncts: EVENTS_NCTS,
     #[doc = "0x108 - Data received in RXD (but potentially not yet transferred to Data RAM)"]
     pub events_rxdrdy: EVENTS_RXDRDY,
-    _reserved2: [u8; 4usize],
+    _reserved8: [u8; 4usize],
     #[doc = "0x110 - Receive buffer is filled up"]
     pub events_endrx: EVENTS_ENDRX,
-    _reserved3: [u8; 8usize],
+    _reserved9: [u8; 8usize],
     #[doc = "0x11c - Data sent from TXD"]
     pub events_txdrdy: EVENTS_TXDRDY,
     #[doc = "0x120 - Last TX byte transmitted"]
     pub events_endtx: EVENTS_ENDTX,
     #[doc = "0x124 - Error detected"]
     pub events_error: EVENTS_ERROR,
-    _reserved4: [u8; 28usize],
+    _reserved12: [u8; 28usize],
     #[doc = "0x144 - Receiver timeout"]
     pub events_rxto: EVENTS_RXTO,
-    _reserved5: [u8; 4usize],
+    _reserved13: [u8; 4usize],
     #[doc = "0x14c - UART receiver has started"]
     pub events_rxstarted: EVENTS_RXSTARTED,
     #[doc = "0x150 - UART transmitter has started"]
     pub events_txstarted: EVENTS_TXSTARTED,
-    _reserved6: [u8; 4usize],
+    _reserved15: [u8; 4usize],
     #[doc = "0x158 - Transmitter stopped"]
     pub events_txstopped: EVENTS_TXSTOPPED,
-    _reserved7: [u8; 164usize],
+    _reserved16: [u8; 164usize],
     #[doc = "0x200 - Shortcut register"]
     pub shorts: SHORTS,
-    _reserved8: [u8; 252usize],
+    _reserved17: [u8; 252usize],
     #[doc = "0x300 - Enable or disable interrupt"]
     pub inten: INTEN,
     #[doc = "0x304 - Enable interrupt"]
     pub intenset: INTENSET,
     #[doc = "0x308 - Disable interrupt"]
     pub intenclr: INTENCLR,
-    _reserved9: [u8; 372usize],
+    _reserved20: [u8; 372usize],
     #[doc = "0x480 - Error source"]
     pub errorsrc: ERRORSRC,
-    _reserved10: [u8; 124usize],
+    _reserved21: [u8; 124usize],
     #[doc = "0x500 - Enable UART"]
     pub enable: ENABLE,
-    _reserved11: [u8; 4usize],
+    _reserved22: [u8; 4usize],
     #[doc = "0x508 - Unspecified"]
     pub psel: PSEL,
-    _reserved12: [u8; 12usize],
+    _reserved23: [u8; 12usize],
     #[doc = "0x524 - Baud rate. Accuracy depends on the HFCLK source selected."]
     pub baudrate: BAUDRATE,
-    _reserved13: [u8; 12usize],
+    _reserved24: [u8; 12usize],
     #[doc = "0x534 - RXD EasyDMA channel"]
     pub rxd: RXD,
-    _reserved14: [u8; 4usize],
+    _reserved25: [u8; 4usize],
     #[doc = "0x544 - TXD EasyDMA channel"]
     pub txd: TXD,
-    _reserved15: [u8; 28usize],
+    _reserved26: [u8; 28usize],
     #[doc = "0x56c - Configuration of parity and hardware flow control"]
     pub config: CONFIG,
 }

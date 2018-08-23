@@ -108,7 +108,7 @@ impl<'a> _PINW<'a> {
     #[doc = r" Writes raw bits to the field"]
     #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 31;
+        const MASK: u8 = 63;
         const OFFSET: u8 = 0;
         self.w.bits &= !((MASK as u32) << OFFSET);
         self.w.bits |= ((value & MASK) as u32) << OFFSET;
@@ -179,11 +179,11 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:4 - GPIO number P0.n onto which Reset is exposed"]
+    #[doc = "Bits 0:5 - GPIO number P0.n onto which Reset is exposed"]
     #[inline]
     pub fn pin(&self) -> PINR {
         let bits = {
-            const MASK: u8 = 31;
+            const MASK: u8 = 63;
             const OFFSET: u8 = 0;
             ((self.bits >> OFFSET) & MASK as u32) as u8
         };
@@ -211,7 +211,7 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:4 - GPIO number P0.n onto which Reset is exposed"]
+    #[doc = "Bits 0:5 - GPIO number P0.n onto which Reset is exposed"]
     #[inline]
     pub fn pin(&mut self) -> _PINW {
         _PINW { w: self }

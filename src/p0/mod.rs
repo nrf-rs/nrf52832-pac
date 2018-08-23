@@ -20,7 +20,7 @@ pub struct RegisterBlock {
     pub latch: LATCH,
     #[doc = "0x524 - Select between default DETECT signal behaviour and LDETECT mode"]
     pub detectmode: DETECTMODE,
-    _reserved1: [u8; 472usize],
+    _reserved9: [u8; 472usize],
     #[doc = "0x700 - Description collection[0]: Configuration of GPIO pins"]
     pub pin_cnf: [PIN_CNF; 32],
 }

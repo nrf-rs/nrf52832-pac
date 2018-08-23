@@ -6,10 +6,10 @@ pub struct RegisterBlock {
     pub codepagesize: CODEPAGESIZE,
     #[doc = "0x14 - Code memory size"]
     pub codesize: CODESIZE,
-    _reserved1: [u8; 72usize],
+    _reserved2: [u8; 72usize],
     #[doc = "0x60 - Description collection[0]: Device identifier"]
     pub deviceid: [DEVICEID; 2],
-    _reserved2: [u8; 24usize],
+    _reserved3: [u8; 24usize],
     #[doc = "0x80 - Description collection[0]: Encryption Root, word 0"]
     pub er: [ER; 4],
     #[doc = "0x90 - Description collection[0]: Identity Root, word 0"]
@@ -18,13 +18,13 @@ pub struct RegisterBlock {
     pub deviceaddrtype: DEVICEADDRTYPE,
     #[doc = "0xa4 - Description collection[0]: Device address 0"]
     pub deviceaddr: [DEVICEADDR; 2],
-    _reserved3: [u8; 84usize],
+    _reserved7: [u8; 84usize],
     #[doc = "0x100 - Device info"]
     pub info: INFO,
-    _reserved4: [u8; 740usize],
+    _reserved8: [u8; 740usize],
     #[doc = "0x404 - Registers storing factory TEMP module linearization coefficients"]
     pub temp: TEMP,
-    _reserved5: [u8; 8usize],
+    _reserved9: [u8; 8usize],
     #[doc = "0x450 - Unspecified"]
     pub nfc: NFC,
 }

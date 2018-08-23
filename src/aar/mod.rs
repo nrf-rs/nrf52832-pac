@@ -3,32 +3,32 @@
 pub struct RegisterBlock {
     #[doc = "0x00 - Start resolving addresses based on IRKs specified in the IRK data structure"]
     pub tasks_start: TASKS_START,
-    _reserved0: [u8; 4usize],
+    _reserved1: [u8; 4usize],
     #[doc = "0x08 - Stop resolving addresses"]
     pub tasks_stop: TASKS_STOP,
-    _reserved1: [u8; 244usize],
+    _reserved2: [u8; 244usize],
     #[doc = "0x100 - Address resolution procedure complete"]
     pub events_end: EVENTS_END,
     #[doc = "0x104 - Address resolved"]
     pub events_resolved: EVENTS_RESOLVED,
     #[doc = "0x108 - Address not resolved"]
     pub events_notresolved: EVENTS_NOTRESOLVED,
-    _reserved2: [u8; 504usize],
+    _reserved5: [u8; 504usize],
     #[doc = "0x304 - Enable interrupt"]
     pub intenset: INTENSET,
     #[doc = "0x308 - Disable interrupt"]
     pub intenclr: INTENCLR,
-    _reserved3: [u8; 244usize],
+    _reserved7: [u8; 244usize],
     #[doc = "0x400 - Resolution status"]
     pub status: STATUS,
-    _reserved4: [u8; 252usize],
+    _reserved8: [u8; 252usize],
     #[doc = "0x500 - Enable AAR"]
     pub enable: ENABLE,
     #[doc = "0x504 - Number of IRKs"]
     pub nirk: NIRK,
     #[doc = "0x508 - Pointer to IRK data structure"]
     pub irkptr: IRKPTR,
-    _reserved5: [u8; 4usize],
+    _reserved11: [u8; 4usize],
     #[doc = "0x510 - Pointer to the resolvable address"]
     pub addrptr: ADDRPTR,
     #[doc = "0x514 - Pointer to data area used for temporary storage"]

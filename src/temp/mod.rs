@@ -5,18 +5,18 @@ pub struct RegisterBlock {
     pub tasks_start: TASKS_START,
     #[doc = "0x04 - Stop temperature measurement"]
     pub tasks_stop: TASKS_STOP,
-    _reserved0: [u8; 248usize],
+    _reserved2: [u8; 248usize],
     #[doc = "0x100 - Temperature measurement complete, data ready"]
     pub events_datardy: EVENTS_DATARDY,
-    _reserved1: [u8; 512usize],
+    _reserved3: [u8; 512usize],
     #[doc = "0x304 - Enable interrupt"]
     pub intenset: INTENSET,
     #[doc = "0x308 - Disable interrupt"]
     pub intenclr: INTENCLR,
-    _reserved2: [u8; 508usize],
+    _reserved5: [u8; 508usize],
     #[doc = "0x508 - Temperature in degC (0.25deg steps)"]
     pub temp: TEMP,
-    _reserved3: [u8; 20usize],
+    _reserved6: [u8; 20usize],
     #[doc = "0x520 - Slope of 1st piece wise linear function"]
     pub a0: A0,
     #[doc = "0x524 - Slope of 2nd piece wise linear function"]
@@ -29,7 +29,7 @@ pub struct RegisterBlock {
     pub a4: A4,
     #[doc = "0x534 - Slope of 6th piece wise linear function"]
     pub a5: A5,
-    _reserved4: [u8; 8usize],
+    _reserved12: [u8; 8usize],
     #[doc = "0x540 - y-intercept of 1st piece wise linear function"]
     pub b0: B0,
     #[doc = "0x544 - y-intercept of 2nd piece wise linear function"]
@@ -42,7 +42,7 @@ pub struct RegisterBlock {
     pub b4: B4,
     #[doc = "0x554 - y-intercept of 6th piece wise linear function"]
     pub b5: B5,
-    _reserved5: [u8; 8usize],
+    _reserved18: [u8; 8usize],
     #[doc = "0x560 - End point of 1st piece wise linear function"]
     pub t0: T0,
     #[doc = "0x564 - End point of 2nd piece wise linear function"]

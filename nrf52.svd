@@ -6,9 +6,9 @@
   <name>nrf52</name>
   <series>nrf52</series>
   <version>1</version>
-  <description>nRF52 reference description for radio MCU with ARM 32-bit Cortex-M4 Microcontroller </description>
+  <description>nRF52832 reference description for radio MCU with ARM 32-bit Cortex-M4 Microcontroller </description>
   <licenseText>
-Copyright (c) 2010 - 2017, Nordic Semiconductor ASA\n
+Copyright (c) 2010 - 2018, Nordic Semiconductor ASA\n
 \n
 All rights reserved.\n
 \n
@@ -44,7 +44,7 @@ GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\n
 HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT\n
 LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT\n
 OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n
-  </licenseText>
+        </licenseText>
   <addressUnitBits>8</addressUnitBits>
   <width>32</width>
   <size>32</size>
@@ -274,9 +274,9 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\
                     <value>0x41414230</value>
                   </enumeratedValue>
                   <enumeratedValue>
-                    <name>SPA0</name>
-                    <description>SPA0</description>
-                    <value>0x53504130</value>
+                    <name>AAE0</name>
+                    <description>AAE0</description>
+                    <value>0x41414530</value>
                   </enumeratedValue>
                   <enumeratedValue>
                     <name>Unspecified</name>
@@ -314,6 +314,11 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\
                     <name>CI</name>
                     <description>CIxx - 7x8 WLCSP 56 balls</description>
                     <value>0x2002</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>CK</name>
+                    <description>CKxx - 7x8 WLCSP 56 balls with backside coating for light protection</description>
+                    <value>0x2005</value>
                   </enumeratedValue>
                   <enumeratedValue>
                     <name>Unspecified</name>
@@ -906,7 +911,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\
               <name>PIN</name>
               <description>GPIO number P0.n onto which Reset is exposed</description>
               <lsb>0</lsb>
-              <msb>4</msb>
+              <msb>5</msb>
             </field>
             <field>
               <name>CONNECT</name>
@@ -6068,6 +6073,11 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\
                   <value>0xEC</value>
                 </enumeratedValue>
                 <enumeratedValue>
+                  <name>Neg30dBm</name>
+                  <description>Deprecated enumerator -  -40 dBm</description>
+                  <value>0xD8</value>
+                </enumeratedValue>
+                <enumeratedValue>
                   <name>Neg40dBm</name>
                   <description>-40 dBm</description>
                   <value>0xD8</value>
@@ -9853,7 +9863,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\
         </cluster>
         <register>
           <name>FREQUENCY</name>
-          <description>SPI frequency</description>
+          <description>SPI frequency. Accuracy depends on the HFCLK source selected.</description>
           <addressOffset>0x524</addressOffset>
           <access>read-write</access>
           <resetValue>0x04000000</resetValue>
@@ -23995,7 +24005,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\
         </register>
         <register>
           <name>REFSEL</name>
-          <description>Reference source select</description>
+          <description>Reference source select for single-ended mode</description>
           <addressOffset>0x508</addressOffset>
           <access>read-write</access>
           <resetValue>0x00000004</resetValue>
@@ -24045,7 +24055,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\
               <name>EXTREFSEL</name>
               <description>External analog reference select</description>
               <lsb>0</lsb>
-              <msb>0</msb>
+              <msb>2</msb>
               <enumeratedValues>
                 <enumeratedValue>
                   <name>AnalogReference0</name>
@@ -24056,6 +24066,36 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\
                   <name>AnalogReference1</name>
                   <description>Use AIN1 as external analog reference</description>
                   <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>AnalogReference2</name>
+                  <description>Use AIN2 as external analog reference</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>AnalogReference3</name>
+                  <description>Use AIN3 as external analog reference</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>AnalogReference4</name>
+                  <description>Use AIN4 as external analog reference</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>AnalogReference5</name>
+                  <description>Use AIN5 as external analog reference</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>AnalogReference6</name>
+                  <description>Use AIN6 as external analog reference</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>AnalogReference7</name>
+                  <description>Use AIN7 as external analog reference</description>
+                  <value>7</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
@@ -24090,13 +24130,13 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\
           <fields>
             <field>
               <name>SP</name>
-              <description>Speed and power mode</description>
+              <description>Speed and power modes</description>
               <lsb>0</lsb>
               <msb>1</msb>
               <enumeratedValues>
                 <enumeratedValue>
                   <name>Low</name>
-                  <description>Low power mode</description>
+                  <description>Low-power mode</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
@@ -24106,20 +24146,20 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>High</name>
-                  <description>High speed mode</description>
+                  <description>High-speed mode</description>
                   <value>2</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
             <field>
               <name>MAIN</name>
-              <description>Main operation mode</description>
+              <description>Main operation modes</description>
               <lsb>8</lsb>
               <msb>8</msb>
               <enumeratedValues>
                 <enumeratedValue>
                   <name>SE</name>
-                  <description>Single ended mode</description>
+                  <description>Single-ended mode</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
@@ -27083,7 +27123,7 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\
               <name>LOAD</name>
               <description>How a sequence is read from RAM and spread to the compare register</description>
               <lsb>0</lsb>
-              <msb>2</msb>
+              <msb>1</msb>
               <enumeratedValues>
                 <enumeratedValue>
                   <name>Common</name>
@@ -27912,6 +27952,21 @@ OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\
             <field>
               <name>ERASEPAGE</name>
               <description>Register for starting erase of a page in Code area</description>
+              <lsb>0</lsb>
+              <msb>31</msb>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>ERASEPCR1</name>
+          <description>Deprecated register -  Register for erasing a page in Code area. Equivalent to ERASEPAGE.</description>
+          <addressOffset>0x508</addressOffset>
+          <access>read-write</access>
+          <alternateRegister>ERASEPAGE</alternateRegister>
+          <fields>
+            <field>
+              <name>ERASEPCR1</name>
+              <description>Register for erasing a page in Code area. Equivalent to ERASEPAGE.</description>
               <lsb>0</lsb>
               <msb>31</msb>
             </field>

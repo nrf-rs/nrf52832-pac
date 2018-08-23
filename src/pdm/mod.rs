@@ -5,36 +5,36 @@ pub struct RegisterBlock {
     pub tasks_start: TASKS_START,
     #[doc = "0x04 - Stops PDM transfer"]
     pub tasks_stop: TASKS_STOP,
-    _reserved0: [u8; 248usize],
+    _reserved2: [u8; 248usize],
     #[doc = "0x100 - PDM transfer has started"]
     pub events_started: EVENTS_STARTED,
     #[doc = "0x104 - PDM transfer has finished"]
     pub events_stopped: EVENTS_STOPPED,
     #[doc = "0x108 - The PDM has written the last sample specified by SAMPLE.MAXCNT (or the last sample after a STOP task has been received) to Data RAM"]
     pub events_end: EVENTS_END,
-    _reserved1: [u8; 500usize],
+    _reserved5: [u8; 500usize],
     #[doc = "0x300 - Enable or disable interrupt"]
     pub inten: INTEN,
     #[doc = "0x304 - Enable interrupt"]
     pub intenset: INTENSET,
     #[doc = "0x308 - Disable interrupt"]
     pub intenclr: INTENCLR,
-    _reserved2: [u8; 500usize],
+    _reserved8: [u8; 500usize],
     #[doc = "0x500 - PDM module enable register"]
     pub enable: ENABLE,
     #[doc = "0x504 - PDM clock generator control"]
     pub pdmclkctrl: PDMCLKCTRL,
     #[doc = "0x508 - Defines the routing of the connected PDM microphones' signals"]
     pub mode: MODE,
-    _reserved3: [u8; 12usize],
+    _reserved11: [u8; 12usize],
     #[doc = "0x518 - Left output gain adjustment"]
     pub gainl: GAINL,
     #[doc = "0x51c - Right output gain adjustment"]
     pub gainr: GAINR,
-    _reserved4: [u8; 32usize],
+    _reserved13: [u8; 32usize],
     #[doc = "0x540 - Unspecified"]
     pub psel: PSEL,
-    _reserved5: [u8; 24usize],
+    _reserved14: [u8; 24usize],
     #[doc = "0x560 - Unspecified"]
     pub sample: SAMPLE,
 }

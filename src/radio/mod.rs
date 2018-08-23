@@ -19,7 +19,7 @@ pub struct RegisterBlock {
     pub tasks_bcstart: TASKS_BCSTART,
     #[doc = "0x20 - Stop the bit counter"]
     pub tasks_bcstop: TASKS_BCSTOP,
-    _reserved0: [u8; 220usize],
+    _reserved9: [u8; 220usize],
     #[doc = "0x100 - RADIO has ramped up and is ready to be started"]
     pub events_ready: EVENTS_READY,
     #[doc = "0x104 - Address sent or received"]
@@ -36,33 +36,33 @@ pub struct RegisterBlock {
     pub events_devmiss: EVENTS_DEVMISS,
     #[doc = "0x11c - Sampling of receive signal strength complete."]
     pub events_rssiend: EVENTS_RSSIEND,
-    _reserved1: [u8; 8usize],
+    _reserved17: [u8; 8usize],
     #[doc = "0x128 - Bit counter reached bit count value."]
     pub events_bcmatch: EVENTS_BCMATCH,
-    _reserved2: [u8; 4usize],
+    _reserved18: [u8; 4usize],
     #[doc = "0x130 - Packet received with CRC ok"]
     pub events_crcok: EVENTS_CRCOK,
     #[doc = "0x134 - Packet received with CRC error"]
     pub events_crcerror: EVENTS_CRCERROR,
-    _reserved3: [u8; 200usize],
+    _reserved20: [u8; 200usize],
     #[doc = "0x200 - Shortcut register"]
     pub shorts: SHORTS,
-    _reserved4: [u8; 256usize],
+    _reserved21: [u8; 256usize],
     #[doc = "0x304 - Enable interrupt"]
     pub intenset: INTENSET,
     #[doc = "0x308 - Disable interrupt"]
     pub intenclr: INTENCLR,
-    _reserved5: [u8; 244usize],
+    _reserved23: [u8; 244usize],
     #[doc = "0x400 - CRC status"]
     pub crcstatus: CRCSTATUS,
-    _reserved6: [u8; 4usize],
+    _reserved24: [u8; 4usize],
     #[doc = "0x408 - Received address"]
     pub rxmatch: RXMATCH,
     #[doc = "0x40c - CRC field of previously received packet"]
     pub rxcrc: RXCRC,
     #[doc = "0x410 - Device address match index"]
     pub dai: DAI,
-    _reserved7: [u8; 240usize],
+    _reserved27: [u8; 240usize],
     #[doc = "0x504 - Packet pointer"]
     pub packetptr: PACKETPTR,
     #[doc = "0x508 - Frequency"]
@@ -99,25 +99,25 @@ pub struct RegisterBlock {
     pub tifs: TIFS,
     #[doc = "0x548 - RSSI sample"]
     pub rssisample: RSSISAMPLE,
-    _reserved8: [u8; 4usize],
+    _reserved45: [u8; 4usize],
     #[doc = "0x550 - Current radio state"]
     pub state: STATE,
     #[doc = "0x554 - Data whitening initial value"]
     pub datawhiteiv: DATAWHITEIV,
-    _reserved9: [u8; 8usize],
+    _reserved47: [u8; 8usize],
     #[doc = "0x560 - Bit counter compare"]
     pub bcc: BCC,
-    _reserved10: [u8; 156usize],
+    _reserved48: [u8; 156usize],
     #[doc = "0x600 - Description collection[0]: Device address base segment 0"]
     pub dab: [DAB; 8],
     #[doc = "0x620 - Description collection[0]: Device address prefix 0"]
     pub dap: [DAP; 8],
     #[doc = "0x640 - Device address match configuration"]
     pub dacnf: DACNF,
-    _reserved11: [u8; 12usize],
+    _reserved51: [u8; 12usize],
     #[doc = "0x650 - Radio mode configuration register 0"]
     pub modecnf0: MODECNF0,
-    _reserved12: [u8; 2472usize],
+    _reserved52: [u8; 2472usize],
     #[doc = "0xffc - Peripheral power control"]
     pub power: POWER,
 }

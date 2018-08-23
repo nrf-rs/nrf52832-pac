@@ -5,18 +5,18 @@ pub struct RegisterBlock {
     pub tasks_start: TASKS_START,
     #[doc = "0x04 - Task stopping the random number generator"]
     pub tasks_stop: TASKS_STOP,
-    _reserved0: [u8; 248usize],
+    _reserved2: [u8; 248usize],
     #[doc = "0x100 - Event being generated for every new random number written to the VALUE register"]
     pub events_valrdy: EVENTS_VALRDY,
-    _reserved1: [u8; 252usize],
+    _reserved3: [u8; 252usize],
     #[doc = "0x200 - Shortcut register"]
     pub shorts: SHORTS,
-    _reserved2: [u8; 256usize],
+    _reserved4: [u8; 256usize],
     #[doc = "0x304 - Enable interrupt"]
     pub intenset: INTENSET,
     #[doc = "0x308 - Disable interrupt"]
     pub intenclr: INTENCLR,
-    _reserved3: [u8; 504usize],
+    _reserved6: [u8; 504usize],
     #[doc = "0x504 - Configuration register"]
     pub config: CONFIG,
     #[doc = "0x508 - Output random number"]

@@ -9,61 +9,61 @@ pub struct RegisterBlock {
     pub tasks_suspend: TASKS_SUSPEND,
     #[doc = "0x20 - Resume TWI transaction"]
     pub tasks_resume: TASKS_RESUME,
-    _reserved2: [u8; 12usize],
+    _reserved3: [u8; 12usize],
     #[doc = "0x30 - Prepare the TWI slave to respond to a write command"]
     pub tasks_preparerx: TASKS_PREPARERX,
     #[doc = "0x34 - Prepare the TWI slave to respond to a read command"]
     pub tasks_preparetx: TASKS_PREPARETX,
-    _reserved3: [u8; 204usize],
+    _reserved5: [u8; 204usize],
     #[doc = "0x104 - TWI stopped"]
     pub events_stopped: EVENTS_STOPPED,
-    _reserved4: [u8; 28usize],
+    _reserved6: [u8; 28usize],
     #[doc = "0x124 - TWI error"]
     pub events_error: EVENTS_ERROR,
-    _reserved5: [u8; 36usize],
+    _reserved7: [u8; 36usize],
     #[doc = "0x14c - Receive sequence started"]
     pub events_rxstarted: EVENTS_RXSTARTED,
     #[doc = "0x150 - Transmit sequence started"]
     pub events_txstarted: EVENTS_TXSTARTED,
-    _reserved6: [u8; 16usize],
+    _reserved9: [u8; 16usize],
     #[doc = "0x164 - Write command received"]
     pub events_write: EVENTS_WRITE,
     #[doc = "0x168 - Read command received"]
     pub events_read: EVENTS_READ,
-    _reserved7: [u8; 148usize],
+    _reserved11: [u8; 148usize],
     #[doc = "0x200 - Shortcut register"]
     pub shorts: SHORTS,
-    _reserved8: [u8; 252usize],
+    _reserved12: [u8; 252usize],
     #[doc = "0x300 - Enable or disable interrupt"]
     pub inten: INTEN,
     #[doc = "0x304 - Enable interrupt"]
     pub intenset: INTENSET,
     #[doc = "0x308 - Disable interrupt"]
     pub intenclr: INTENCLR,
-    _reserved9: [u8; 452usize],
+    _reserved15: [u8; 452usize],
     #[doc = "0x4d0 - Error source"]
     pub errorsrc: ERRORSRC,
     #[doc = "0x4d4 - Status register indicating which address had a match"]
     pub match_: MATCH,
-    _reserved10: [u8; 40usize],
+    _reserved17: [u8; 40usize],
     #[doc = "0x500 - Enable TWIS"]
     pub enable: ENABLE,
-    _reserved11: [u8; 4usize],
+    _reserved18: [u8; 4usize],
     #[doc = "0x508 - Unspecified"]
     pub psel: PSEL,
-    _reserved12: [u8; 36usize],
+    _reserved19: [u8; 36usize],
     #[doc = "0x534 - RXD EasyDMA channel"]
     pub rxd: RXD,
-    _reserved13: [u8; 4usize],
+    _reserved20: [u8; 4usize],
     #[doc = "0x544 - TXD EasyDMA channel"]
     pub txd: TXD,
-    _reserved14: [u8; 56usize],
+    _reserved21: [u8; 56usize],
     #[doc = "0x588 - Description collection[0]: TWI slave address 0"]
     pub address: [ADDRESS; 2],
-    _reserved15: [u8; 4usize],
+    _reserved22: [u8; 4usize],
     #[doc = "0x594 - Configuration register for the address match mechanism"]
     pub config: CONFIG,
-    _reserved16: [u8; 40usize],
+    _reserved23: [u8; 40usize],
     #[doc = "0x5c0 - Over-read character. Character sent out in case of an over-read of the transmit buffer."]
     pub orc: ORC,
 }

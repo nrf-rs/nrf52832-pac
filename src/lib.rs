@@ -3,6 +3,7 @@
 #![deny(warnings)]
 #![allow(non_camel_case_types)]
 #![no_std]
+#![feature(untagged_unions)]
 extern crate bare_metal;
 extern crate cortex_m;
 #[cfg(feature = "rt")]

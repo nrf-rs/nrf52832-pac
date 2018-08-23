@@ -11,7 +11,7 @@ pub struct RegisterBlock {
     pub tasks_rdclracc: TASKS_RDCLRACC,
     #[doc = "0x10 - Read and clear ACCDBL"]
     pub tasks_rdclrdbl: TASKS_RDCLRDBL,
-    _reserved0: [u8; 236usize],
+    _reserved5: [u8; 236usize],
     #[doc = "0x100 - Event being generated for every new sample value written to the SAMPLE register"]
     pub events_samplerdy: EVENTS_SAMPLERDY,
     #[doc = "0x104 - Non-null report ready"]
@@ -22,15 +22,15 @@ pub struct RegisterBlock {
     pub events_dblrdy: EVENTS_DBLRDY,
     #[doc = "0x110 - QDEC has been stopped"]
     pub events_stopped: EVENTS_STOPPED,
-    _reserved1: [u8; 236usize],
+    _reserved10: [u8; 236usize],
     #[doc = "0x200 - Shortcut register"]
     pub shorts: SHORTS,
-    _reserved2: [u8; 256usize],
+    _reserved11: [u8; 256usize],
     #[doc = "0x304 - Enable interrupt"]
     pub intenset: INTENSET,
     #[doc = "0x308 - Disable interrupt"]
     pub intenclr: INTENCLR,
-    _reserved3: [u8; 500usize],
+    _reserved13: [u8; 500usize],
     #[doc = "0x500 - Enable the quadrature decoder"]
     pub enable: ENABLE,
     #[doc = "0x504 - LED output pin polarity"]
@@ -49,7 +49,7 @@ pub struct RegisterBlock {
     pub psel: PSEL,
     #[doc = "0x528 - Enable input debounce filters"]
     pub dbfen: DBFEN,
-    _reserved4: [u8; 20usize],
+    _reserved22: [u8; 20usize],
     #[doc = "0x540 - Time period the LED is switched ON prior to sampling"]
     pub ledpre: LEDPRE,
     #[doc = "0x544 - Register accumulating the number of detected double transitions"]

@@ -7,7 +7,7 @@ pub struct RegisterBlock {
     pub tasks_stop: TASKS_STOP,
     #[doc = "0x08 - Sample comparator value"]
     pub tasks_sample: TASKS_SAMPLE,
-    _reserved0: [u8; 244usize],
+    _reserved3: [u8; 244usize],
     #[doc = "0x100 - LPCOMP is ready and output is valid"]
     pub events_ready: EVENTS_READY,
     #[doc = "0x104 - Downward crossing"]
@@ -16,18 +16,18 @@ pub struct RegisterBlock {
     pub events_up: EVENTS_UP,
     #[doc = "0x10c - Downward or upward crossing"]
     pub events_cross: EVENTS_CROSS,
-    _reserved1: [u8; 240usize],
+    _reserved7: [u8; 240usize],
     #[doc = "0x200 - Shortcut register"]
     pub shorts: SHORTS,
-    _reserved2: [u8; 256usize],
+    _reserved8: [u8; 256usize],
     #[doc = "0x304 - Enable interrupt"]
     pub intenset: INTENSET,
     #[doc = "0x308 - Disable interrupt"]
     pub intenclr: INTENCLR,
-    _reserved3: [u8; 244usize],
+    _reserved10: [u8; 244usize],
     #[doc = "0x400 - Compare result"]
     pub result: RESULT,
-    _reserved4: [u8; 252usize],
+    _reserved11: [u8; 252usize],
     #[doc = "0x500 - Enable LPCOMP"]
     pub enable: ENABLE,
     #[doc = "0x504 - Input pin select"]
@@ -36,10 +36,10 @@ pub struct RegisterBlock {
     pub refsel: REFSEL,
     #[doc = "0x50c - External reference select"]
     pub extrefsel: EXTREFSEL,
-    _reserved5: [u8; 16usize],
+    _reserved15: [u8; 16usize],
     #[doc = "0x520 - Analog detect configuration"]
     pub anadetect: ANADETECT,
-    _reserved6: [u8; 20usize],
+    _reserved16: [u8; 20usize],
     #[doc = "0x538 - Comparator hysteresis enable"]
     pub hyst: HYST,
 }

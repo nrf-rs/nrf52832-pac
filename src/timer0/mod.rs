@@ -11,29 +11,29 @@ pub struct RegisterBlock {
     pub tasks_clear: TASKS_CLEAR,
     #[doc = "0x10 - Deprecated register - Shut down timer"]
     pub tasks_shutdown: TASKS_SHUTDOWN,
-    _reserved0: [u8; 44usize],
+    _reserved5: [u8; 44usize],
     #[doc = "0x40 - Description collection[0]: Capture Timer value to CC[0] register"]
     pub tasks_capture: [TASKS_CAPTURE; 6],
-    _reserved1: [u8; 232usize],
+    _reserved6: [u8; 232usize],
     #[doc = "0x140 - Description collection[0]: Compare event on CC[0] match"]
     pub events_compare: [EVENTS_COMPARE; 6],
-    _reserved2: [u8; 168usize],
+    _reserved7: [u8; 168usize],
     #[doc = "0x200 - Shortcut register"]
     pub shorts: SHORTS,
-    _reserved3: [u8; 256usize],
+    _reserved8: [u8; 256usize],
     #[doc = "0x304 - Enable interrupt"]
     pub intenset: INTENSET,
     #[doc = "0x308 - Disable interrupt"]
     pub intenclr: INTENCLR,
-    _reserved4: [u8; 504usize],
+    _reserved10: [u8; 504usize],
     #[doc = "0x504 - Timer mode selection"]
     pub mode: MODE,
     #[doc = "0x508 - Configure the number of bits used by the TIMER"]
     pub bitmode: BITMODE,
-    _reserved5: [u8; 4usize],
+    _reserved12: [u8; 4usize],
     #[doc = "0x510 - Timer prescaler register"]
     pub prescaler: PRESCALER,
-    _reserved6: [u8; 44usize],
+    _reserved13: [u8; 44usize],
     #[doc = "0x540 - Description collection[0]: Capture/Compare register 0"]
     pub cc: [CC; 6],
 }

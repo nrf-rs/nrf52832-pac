@@ -1,8 +1,9 @@
 [package]
-version = "0.4.0"
+version = "0.5.0"
 authors = [
     "James Munns <james.munns@gmail.com>",
-    "Hanno Braun <hanno@braun-robotics.com>"
+    "Hanno Braun <hanno@braun-robotics.com>",
+    "Wez Furlong <wez@wezfurlong.org>",
 ]
 description = "Peripheral access API for nrf52 microcontrollers"
 documentation = "https://docs.rs/nrf52"

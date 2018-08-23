@@ -5,36 +5,36 @@ pub struct RegisterBlock {
     pub tasks_start: TASKS_START,
     #[doc = "0x04 - Stops I2S transfer. Also stops MCK generator. Triggering this task will cause the {event:STOPPED} event to be generated."]
     pub tasks_stop: TASKS_STOP,
-    _reserved0: [u8; 252usize],
+    _reserved2: [u8; 252usize],
     #[doc = "0x104 - The RXD.PTR register has been copied to internal double-buffers. When the I2S module is started and RX is enabled, this event will be generated for every RXTXD.MAXCNT words that are received on the SDIN pin."]
     pub events_rxptrupd: EVENTS_RXPTRUPD,
     #[doc = "0x108 - I2S transfer stopped."]
     pub events_stopped: EVENTS_STOPPED,
-    _reserved1: [u8; 8usize],
+    _reserved4: [u8; 8usize],
     #[doc = "0x114 - The TDX.PTR register has been copied to internal double-buffers. When the I2S module is started and TX is enabled, this event will be generated for every RXTXD.MAXCNT words that are sent on the SDOUT pin."]
     pub events_txptrupd: EVENTS_TXPTRUPD,
-    _reserved2: [u8; 488usize],
+    _reserved5: [u8; 488usize],
     #[doc = "0x300 - Enable or disable interrupt"]
     pub inten: INTEN,
     #[doc = "0x304 - Enable interrupt"]
     pub intenset: INTENSET,
     #[doc = "0x308 - Disable interrupt"]
     pub intenclr: INTENCLR,
-    _reserved3: [u8; 500usize],
+    _reserved8: [u8; 500usize],
     #[doc = "0x500 - Enable I2S module."]
     pub enable: ENABLE,
     #[doc = "0x504 - Unspecified"]
     pub config: CONFIG,
-    _reserved4: [u8; 12usize],
+    _reserved10: [u8; 12usize],
     #[doc = "0x538 - Unspecified"]
     pub rxd: RXD,
-    _reserved5: [u8; 4usize],
+    _reserved11: [u8; 4usize],
     #[doc = "0x540 - Unspecified"]
     pub txd: TXD,
-    _reserved6: [u8; 12usize],
+    _reserved12: [u8; 12usize],
     #[doc = "0x550 - Unspecified"]
     pub rxtxd: RXTXD,
-    _reserved7: [u8; 12usize],
+    _reserved13: [u8; 12usize],
     #[doc = "0x560 - Unspecified"]
     pub psel: PSEL,
 }

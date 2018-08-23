@@ -7,22 +7,30 @@ pub struct RegisterBlock {
     _reserved1: [u8; 256usize],
     #[doc = "0x504 - Configuration register"]
     pub config: CONFIG,
-    #[doc = "0x508 - Register for erasing a page in Code area"]
-    pub erasepage: ERASEPAGE,
+    #[doc = "Deprecated register -  Register for erasing a page in Code area. Equivalent to ERASEPAGE. Register for erasing a page in Code area"]
+    pub erasepage: ERASEPAGE_UNION,
     #[doc = "0x50c - Register for erasing all non-volatile user memory"]
     pub eraseall: ERASEALL,
     #[doc = "0x510 - Deprecated register - Register for erasing a page in Code area. Equivalent to ERASEPAGE."]
     pub erasepcr0: ERASEPCR0,
     #[doc = "0x514 - Register for erasing User Information Configuration Registers"]
     pub eraseuicr: ERASEUICR,
-    _reserved2: [u8; 40usize],
+    _reserved6: [u8; 40usize],
     #[doc = "0x540 - I-Code cache configuration register."]
     pub icachecnf: ICACHECNF,
-    _reserved3: [u8; 4usize],
+    _reserved7: [u8; 4usize],
     #[doc = "0x548 - I-Code cache hit counter."]
     pub ihit: IHIT,
     #[doc = "0x54c - I-Code cache miss counter."]
     pub imiss: IMISS,
+}
+#[doc = "Deprecated register -  Register for erasing a page in Code area. Equivalent to ERASEPAGE. Register for erasing a page in Code area"]
+#[repr(C)]
+pub union ERASEPAGE_UNION {
+    #[doc = "0x508 - Deprecated register - Register for erasing a page in Code area. Equivalent to ERASEPAGE."]
+    pub erasepcr1: ERASEPCR1,
+    #[doc = "0x508 - Register for erasing a page in Code area"]
+    pub erasepage: ERASEPAGE,
 }
 #[doc = "Ready flag"]
 pub struct READY {
@@ -42,6 +50,12 @@ pub struct ERASEPAGE {
 }
 #[doc = "Register for erasing a page in Code area"]
 pub mod erasepage;
+#[doc = "Deprecated register - Register for erasing a page in Code area. Equivalent to ERASEPAGE."]
+pub struct ERASEPCR1 {
+    register: ::vcell::VolatileCell<u32>,
+}
+#[doc = "Deprecated register - Register for erasing a page in Code area. Equivalent to ERASEPAGE."]
+pub mod erasepcr1;
 #[doc = "Register for erasing all non-volatile user memory"]
 pub struct ERASEALL {
     register: ::vcell::VolatileCell<u32>,

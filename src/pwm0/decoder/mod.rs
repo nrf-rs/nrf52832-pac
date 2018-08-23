@@ -53,8 +53,6 @@ pub enum LOADR {
     INDIVIDUAL,
     #[doc = "1st half word (16-bit) in ch.0; 2nd in ch.1; ...; 4th in COUNTERTOP"]
     WAVEFORM,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
 impl LOADR {
     #[doc = r" Value of the field as raw bits"]
@@ -65,7 +63,6 @@ impl LOADR {
             LOADR::GROUPED => 1,
             LOADR::INDIVIDUAL => 2,
             LOADR::WAVEFORM => 3,
-            LOADR::_Reserved(bits) => bits,
         }
     }
     #[allow(missing_docs)]
@@ -77,7 +74,7 @@ impl LOADR {
             1 => LOADR::GROUPED,
             2 => LOADR::INDIVIDUAL,
             3 => LOADR::WAVEFORM,
-            i => LOADR::_Reserved(i),
+            _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `COMMON`"]
@@ -180,7 +177,9 @@ impl<'a> _LOADW<'a> {
     #[doc = r" Writes `variant` to the field"]
     #[inline]
     pub fn variant(self, variant: LOADW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+        {
+            self.bits(variant._bits())
+        }
     }
     #[doc = "1st half word (16-bit) used in all PWM channels 0..3"]
     #[inline]
@@ -204,8 +203,8 @@ impl<'a> _LOADW<'a> {
     }
     #[doc = r" Writes raw bits to the field"]
     #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
+    pub fn bits(self, value: u8) -> &'a mut W {
+        const MASK: u8 = 3;
         const OFFSET: u8 = 0;
         self.w.bits &= !((MASK as u32) << OFFSET);
         self.w.bits |= ((value & MASK) as u32) << OFFSET;
@@ -276,11 +275,11 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:2 - How a sequence is read from RAM and spread to the compare register"]
+    #[doc = "Bits 0:1 - How a sequence is read from RAM and spread to the compare register"]
     #[inline]
     pub fn load(&self) -> LOADR {
         LOADR::_from({
-            const MASK: u8 = 7;
+            const MASK: u8 = 3;
             const OFFSET: u8 = 0;
             ((self.bits >> OFFSET) & MASK as u32) as u8
         })
@@ -307,7 +306,7 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:2 - How a sequence is read from RAM and spread to the compare register"]
+    #[doc = "Bits 0:1 - How a sequence is read from RAM and spread to the compare register"]
     #[inline]
     pub fn load(&mut self) -> _LOADW {
         _LOADW { w: self }

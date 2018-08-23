@@ -7,7 +7,7 @@ pub struct RegisterBlock {
     pub unused1: UNUSED1,
     #[doc = "0x08 - Unspecified"]
     pub unused2: UNUSED2,
-    _reserved0: [u8; 4usize],
+    _reserved3: [u8; 4usize],
     #[doc = "0x10 - Unspecified"]
     pub unused3: UNUSED3,
     #[doc = "0x14 - Description collection[0]: Reserved for Nordic firmware design"]
@@ -16,7 +16,7 @@ pub struct RegisterBlock {
     pub nrfhw: [NRFHW; 12],
     #[doc = "0x80 - Description collection[0]: Reserved for customer"]
     pub customer: [CUSTOMER; 32],
-    _reserved1: [u8; 256usize],
+    _reserved7: [u8; 256usize],
     #[doc = "0x200 - Description collection[0]: Mapping of the nRESET function (see POWER chapter for details)"]
     pub pselreset: [PSELRESET; 2],
     #[doc = "0x208 - Access Port protection"]
