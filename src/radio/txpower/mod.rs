@@ -61,8 +61,6 @@ pub enum TXPOWERR {
     NEG16DBM,
     #[doc = "-20 dBm"]
     NEG20DBM,
-    #[doc = "Deprecated enumerator -  -40 dBm"]
-    NEG30DBM,
     #[doc = "-40 dBm"]
     NEG40DBM,
     #[doc = r" Reserved"]
@@ -81,7 +79,6 @@ impl TXPOWERR {
             TXPOWERR::NEG12DBM => 244,
             TXPOWERR::NEG16DBM => 240,
             TXPOWERR::NEG20DBM => 236,
-            TXPOWERR::NEG30DBM => 216,
             TXPOWERR::NEG40DBM => 216,
             TXPOWERR::_Reserved(bits) => bits,
         }
@@ -99,7 +96,6 @@ impl TXPOWERR {
             244 => TXPOWERR::NEG12DBM,
             240 => TXPOWERR::NEG16DBM,
             236 => TXPOWERR::NEG20DBM,
-            216 => TXPOWERR::NEG30DBM,
             216 => TXPOWERR::NEG40DBM,
             i => TXPOWERR::_Reserved(i),
         }
@@ -144,11 +140,6 @@ impl TXPOWERR {
     pub fn is_neg20d_bm(&self) -> bool {
         *self == TXPOWERR::NEG20DBM
     }
-    #[doc = "Checks if the value of the field is `NEG30DBM`"]
-    #[inline]
-    pub fn is_neg30d_bm(&self) -> bool {
-        *self == TXPOWERR::NEG30DBM
-    }
     #[doc = "Checks if the value of the field is `NEG40DBM`"]
     #[inline]
     pub fn is_neg40d_bm(&self) -> bool {
@@ -173,8 +164,6 @@ pub enum TXPOWERW {
     NEG16DBM,
     #[doc = "-20 dBm"]
     NEG20DBM,
-    #[doc = "Deprecated enumerator -  -40 dBm"]
-    NEG30DBM,
     #[doc = "-40 dBm"]
     NEG40DBM,
 }
@@ -192,7 +181,6 @@ impl TXPOWERW {
             TXPOWERW::NEG12DBM => 244,
             TXPOWERW::NEG16DBM => 240,
             TXPOWERW::NEG20DBM => 236,
-            TXPOWERW::NEG30DBM => 216,
             TXPOWERW::NEG40DBM => 216,
         }
     }
@@ -246,11 +234,6 @@ impl<'a> _TXPOWERW<'a> {
     #[inline]
     pub fn neg20d_bm(self) -> &'a mut W {
         self.variant(TXPOWERW::NEG20DBM)
-    }
-    #[doc = "Deprecated enumerator - -40 dBm"]
-    #[inline]
-    pub fn neg30d_bm(self) -> &'a mut W {
-        self.variant(TXPOWERW::NEG30DBM)
     }
     #[doc = "-40 dBm"]
     #[inline]
