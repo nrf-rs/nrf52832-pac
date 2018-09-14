@@ -5,9 +5,9 @@ authors = [
     "Hanno Braun <hanno@braun-robotics.com>",
     "Wez Furlong <wez@wezfurlong.org>",
 ]
-description = "Peripheral access API for nrf52 microcontrollers"
+description = "Peripheral access API for nrf52832 microcontrollers"
 documentation = "https://docs.rs/nrf52"
-keywords = ["no-std", "arm", "cortex-m", "nrf52"]
+keywords = ["no-std", "arm", "cortex-m", "nrf52", "nrf52832"]
 license = "MIT OR Apache-2.0"
 name = "nrf52"
 repository = "https://github.com/nrf-rs/nrf52832"
