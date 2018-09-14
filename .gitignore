@@ -1,4 +1,4 @@
-target/
-
-# lib crate
+/target/
+[._]*.sw[a-p]
+**/*.rs.bk
 Cargo.lock
