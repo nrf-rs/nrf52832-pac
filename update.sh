@@ -15,6 +15,11 @@ for chip in nrf52832 nrf52840 ; do
   form -i lib.rs -o src
   rm lib.rs
   cargo fmt
+
+  # workaround for https://github.com/rust-embedded/svd2rust/issues/232
+  grep -v 'deny(warnings)' src/lib.rs > lib.rs
+  mv lib.rs src/lib.rs
+
   rustfmt build.rs
   cd ..
 done
