@@ -1,0 +1,34 @@
+[package]
+authors = [
+    "Jorge Aparicio <jorge@japaric.io>",
+    "Daniel Egger <daniel@eggers-club.de>",
+]
+categories = ["embedded"]
+description = "Peripheral access API for nRF51 microcontrollers"
+documentation = "https://docs.rs/nrf51"
+keywords = [
+    "no-std",
+    "arm",
+    "cortex-m",
+    "nordic",
+]
+license = "0BSD"
+name = "nrf51"
+repository = "https://github.com/therealprof/nrf51"
+version = "0.6.0"
+
+[dependencies]
+cortex-m = "0.5.7"
+vcell = "0.1.0"
+
+[dependencies.bare-metal]
+features = ["const-fn"]
+version = "0.2.3"
+
+[dependencies.cortex-m-rt]
+optional = true
+version = "0.6.2"
+
+[features]
+default = ["rt"]
+rt = ["cortex-m-rt/device"]

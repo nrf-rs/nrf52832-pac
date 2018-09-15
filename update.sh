@@ -6,7 +6,7 @@ cargo install --force --git https://github.com/wez/svd2rust --rev e0de96e90d6fd4
 cargo install --force --version 0.99.2 rustfmt-nightly
 cargo install --force --version 0.3.0 form
 
-for chip in nrf52832 nrf52840 ; do
+for chip in nrf52832 nrf52840 nrf51 ; do
   cd $chip
   rm -rf src
   mkdir src
