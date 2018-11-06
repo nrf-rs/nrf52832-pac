@@ -1,25 +1,26 @@
 [package]
-version = "0.5.0"
+version = "0.6.0"
 authors = [
     "James Munns <james.munns@gmail.com>",
     "Hanno Braun <hanno@braun-robotics.com>",
     "Wez Furlong <wez@wezfurlong.org>",
 ]
 description = "Peripheral access API for nrf52832 microcontrollers"
-documentation = "https://docs.rs/nrf52"
+documentation = "https://docs.rs/nrf52832-pac"
 keywords = ["no-std", "arm", "cortex-m", "nrf52", "nrf52832"]
 license = "MIT OR Apache-2.0"
-name = "nrf52"
-repository = "https://github.com/nrf-rs/nrf52832"
+name = "nrf52832-pac"
+repository = "https://github.com/nrf-rs/nrf52832-pac"
+edition = "2018"
 
 [dependencies]
-bare-metal = "0.2.1"
+bare-metal = "0.2.4"
 vcell = "0.1"
-cortex-m = "0.5.3"
+cortex-m = "0.5.8"
 
 [dependencies.cortex-m-rt]
 optional = true
-version = "0.5.1"
+version = "0.6.5"
 
 [features]
 rt = ["cortex-m-rt/device"]
