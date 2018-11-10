@@ -1,5 +1,5 @@
 [package]
-version = "0.6.0"
+version = "0.6.0-beta.1"
 authors = [
     "James Munns <james.munns@gmail.com>",
     "Hanno Braun <hanno@braun-robotics.com>",
