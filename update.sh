@@ -5,9 +5,8 @@ set -e
 # NOTE: Last executed using Rust 1.31.0
 
 cargo install --force --version 0.14.0 svd2rust
-
-rustup component add rustfmt-preview
-cargo install --force --version 0.4.0 form
+cargo install --force --version 0.4.0  form
+rustup component add rustfmt
 
 rm -rf src
 mkdir src
