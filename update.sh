@@ -2,19 +2,16 @@
 set -x
 set -e
 
-cargo install --force --git https://github.com/wez/svd2rust --rev e0de96e90d6fd4c4d7207111fbe72bf2b531d593 svd2rust
-cargo install --force --version 0.99.2 rustfmt-nightly
-cargo install --force --version 0.3.0 form
+# NOTE: Last executed using Rust 1.31.0
 
-for chip in nrf52832 nrf52840 ; do
-  cd $chip
-  rm -rf src
-  mkdir src
-  ls -l ../svd/
-  svd2rust -i ../svd/$chip.svd --nightly
-  form -i lib.rs -o src
-  rm lib.rs
-  cargo fmt
-  rustfmt build.rs
-  cd ..
-done
+cargo install --force --version 0.14.0 svd2rust
+cargo install --force --version 0.4.0  form
+rustup component add rustfmt
+
+rm -rf src
+mkdir src
+svd2rust -i ./nrf52832.svd
+form -i lib.rs -o src
+rm lib.rs
+cargo fmt
+rustfmt build.rs
