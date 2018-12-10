@@ -45,9 +45,9 @@ impl super::MODE {
 #[doc = "Possible values of the field `OPERATION`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OPERATIONR {
-    #[doc = "Sample and store one pair (Left + Right) of 16bit samples per RAM word R=[31:16]; L=[15:0]"]
+    #[doc = "Sample and store one pair (Left + Right) of 16bit samples per RAM word R=\\[31:16\\]; L=\\[15:0\\]"]
     STEREO,
-    #[doc = "Sample and store two successive Left samples (16 bit each) per RAM word L1=[31:16]; L0=[15:0]"]
+    #[doc = "Sample and store two successive Left samples (16 bit each) per RAM word L1=\\[31:16\\]; L0=\\[15:0\\]"]
     MONO,
 }
 impl OPERATIONR {
@@ -138,9 +138,9 @@ impl EDGER {
 }
 #[doc = "Values that can be written to the field `OPERATION`"]
 pub enum OPERATIONW {
-    #[doc = "Sample and store one pair (Left + Right) of 16bit samples per RAM word R=[31:16]; L=[15:0]"]
+    #[doc = "Sample and store one pair (Left + Right) of 16bit samples per RAM word R=\\[31:16\\]; L=\\[15:0\\]"]
     STEREO,
-    #[doc = "Sample and store two successive Left samples (16 bit each) per RAM word L1=[31:16]; L0=[15:0]"]
+    #[doc = "Sample and store two successive Left samples (16 bit each) per RAM word L1=\\[31:16\\]; L0=\\[15:0\\]"]
     MONO,
 }
 impl OPERATIONW {

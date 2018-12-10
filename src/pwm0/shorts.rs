@@ -573,7 +573,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bit 0 - Shortcut between SEQEND[0] event and STOP task"]
+    #[doc = "Bit 0 - Shortcut between SEQEND\\[0\\] event and STOP task"]
     #[inline]
     pub fn seqend0_stop(&self) -> SEQEND0_STOPR {
         SEQEND0_STOPR::_from({
@@ -582,7 +582,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 1 - Shortcut between SEQEND[1] event and STOP task"]
+    #[doc = "Bit 1 - Shortcut between SEQEND\\[1\\] event and STOP task"]
     #[inline]
     pub fn seqend1_stop(&self) -> SEQEND1_STOPR {
         SEQEND1_STOPR::_from({
@@ -591,7 +591,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 2 - Shortcut between LOOPSDONE event and SEQSTART[0] task"]
+    #[doc = "Bit 2 - Shortcut between LOOPSDONE event and SEQSTART\\[0\\] task"]
     #[inline]
     pub fn loopsdone_seqstart0(&self) -> LOOPSDONE_SEQSTART0R {
         LOOPSDONE_SEQSTART0R::_from({
@@ -600,7 +600,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 3 - Shortcut between LOOPSDONE event and SEQSTART[1] task"]
+    #[doc = "Bit 3 - Shortcut between LOOPSDONE event and SEQSTART\\[1\\] task"]
     #[inline]
     pub fn loopsdone_seqstart1(&self) -> LOOPSDONE_SEQSTART1R {
         LOOPSDONE_SEQSTART1R::_from({
@@ -631,22 +631,22 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 0 - Shortcut between SEQEND[0] event and STOP task"]
+    #[doc = "Bit 0 - Shortcut between SEQEND\\[0\\] event and STOP task"]
     #[inline]
     pub fn seqend0_stop(&mut self) -> _SEQEND0_STOPW {
         _SEQEND0_STOPW { w: self }
     }
-    #[doc = "Bit 1 - Shortcut between SEQEND[1] event and STOP task"]
+    #[doc = "Bit 1 - Shortcut between SEQEND\\[1\\] event and STOP task"]
     #[inline]
     pub fn seqend1_stop(&mut self) -> _SEQEND1_STOPW {
         _SEQEND1_STOPW { w: self }
     }
-    #[doc = "Bit 2 - Shortcut between LOOPSDONE event and SEQSTART[0] task"]
+    #[doc = "Bit 2 - Shortcut between LOOPSDONE event and SEQSTART\\[0\\] task"]
     #[inline]
     pub fn loopsdone_seqstart0(&mut self) -> _LOOPSDONE_SEQSTART0W {
         _LOOPSDONE_SEQSTART0W { w: self }
     }
-    #[doc = "Bit 3 - Shortcut between LOOPSDONE event and SEQSTART[1] task"]
+    #[doc = "Bit 3 - Shortcut between LOOPSDONE event and SEQSTART\\[1\\] task"]
     #[inline]
     pub fn loopsdone_seqstart1(&mut self) -> _LOOPSDONE_SEQSTART1W {
         _LOOPSDONE_SEQSTART1W { w: self }

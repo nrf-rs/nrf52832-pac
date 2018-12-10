@@ -2,13 +2,9 @@
 set -x
 set -e
 
-# NOTE: Last executed using rust/cargo 1.31.0-beta.4
+# NOTE: Last executed using Rust 1.31.0
 
-cargo install \
-    --force \
-    --git https://github.com/rust-embedded/svd2rust \
-    --rev b6d2c9a8076198d8579a9fe2525605991ef7a424 \
-    svd2rust
+cargo install --force --version 0.14.0 svd2rust
 
 rustup component add rustfmt-preview
 cargo install --force --version 0.4.0 form

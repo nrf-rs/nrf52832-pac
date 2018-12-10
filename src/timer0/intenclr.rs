@@ -630,7 +630,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bit 16 - Write '1' to Disable interrupt for COMPARE[0] event"]
+    #[doc = "Bit 16 - Write '1' to Disable interrupt for COMPARE\\[0\\] event"]
     #[inline]
     pub fn compare0(&self) -> COMPARE0R {
         COMPARE0R::_from({
@@ -639,7 +639,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 17 - Write '1' to Disable interrupt for COMPARE[1] event"]
+    #[doc = "Bit 17 - Write '1' to Disable interrupt for COMPARE\\[1\\] event"]
     #[inline]
     pub fn compare1(&self) -> COMPARE1R {
         COMPARE1R::_from({
@@ -648,7 +648,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 18 - Write '1' to Disable interrupt for COMPARE[2] event"]
+    #[doc = "Bit 18 - Write '1' to Disable interrupt for COMPARE\\[2\\] event"]
     #[inline]
     pub fn compare2(&self) -> COMPARE2R {
         COMPARE2R::_from({
@@ -657,7 +657,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 19 - Write '1' to Disable interrupt for COMPARE[3] event"]
+    #[doc = "Bit 19 - Write '1' to Disable interrupt for COMPARE\\[3\\] event"]
     #[inline]
     pub fn compare3(&self) -> COMPARE3R {
         COMPARE3R::_from({
@@ -666,7 +666,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 20 - Write '1' to Disable interrupt for COMPARE[4] event"]
+    #[doc = "Bit 20 - Write '1' to Disable interrupt for COMPARE\\[4\\] event"]
     #[inline]
     pub fn compare4(&self) -> COMPARE4R {
         COMPARE4R::_from({
@@ -675,7 +675,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 21 - Write '1' to Disable interrupt for COMPARE[5] event"]
+    #[doc = "Bit 21 - Write '1' to Disable interrupt for COMPARE\\[5\\] event"]
     #[inline]
     pub fn compare5(&self) -> COMPARE5R {
         COMPARE5R::_from({
@@ -697,32 +697,32 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 16 - Write '1' to Disable interrupt for COMPARE[0] event"]
+    #[doc = "Bit 16 - Write '1' to Disable interrupt for COMPARE\\[0\\] event"]
     #[inline]
     pub fn compare0(&mut self) -> _COMPARE0W {
         _COMPARE0W { w: self }
     }
-    #[doc = "Bit 17 - Write '1' to Disable interrupt for COMPARE[1] event"]
+    #[doc = "Bit 17 - Write '1' to Disable interrupt for COMPARE\\[1\\] event"]
     #[inline]
     pub fn compare1(&mut self) -> _COMPARE1W {
         _COMPARE1W { w: self }
     }
-    #[doc = "Bit 18 - Write '1' to Disable interrupt for COMPARE[2] event"]
+    #[doc = "Bit 18 - Write '1' to Disable interrupt for COMPARE\\[2\\] event"]
     #[inline]
     pub fn compare2(&mut self) -> _COMPARE2W {
         _COMPARE2W { w: self }
     }
-    #[doc = "Bit 19 - Write '1' to Disable interrupt for COMPARE[3] event"]
+    #[doc = "Bit 19 - Write '1' to Disable interrupt for COMPARE\\[3\\] event"]
     #[inline]
     pub fn compare3(&mut self) -> _COMPARE3W {
         _COMPARE3W { w: self }
     }
-    #[doc = "Bit 20 - Write '1' to Disable interrupt for COMPARE[4] event"]
+    #[doc = "Bit 20 - Write '1' to Disable interrupt for COMPARE\\[4\\] event"]
     #[inline]
     pub fn compare4(&mut self) -> _COMPARE4W {
         _COMPARE4W { w: self }
     }
-    #[doc = "Bit 21 - Write '1' to Disable interrupt for COMPARE[5] event"]
+    #[doc = "Bit 21 - Write '1' to Disable interrupt for COMPARE\\[5\\] event"]
     #[inline]
     pub fn compare5(&mut self) -> _COMPARE5W {
         _COMPARE5W { w: self }

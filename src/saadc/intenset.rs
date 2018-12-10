@@ -2236,7 +2236,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 6 - Write '1' to Enable interrupt for CH[0].LIMITH event"]
+    #[doc = "Bit 6 - Write '1' to Enable interrupt for CH\\[0\\].LIMITH event"]
     #[inline]
     pub fn ch0limith(&self) -> CH0LIMITHR {
         CH0LIMITHR::_from({
@@ -2245,7 +2245,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 7 - Write '1' to Enable interrupt for CH[0].LIMITL event"]
+    #[doc = "Bit 7 - Write '1' to Enable interrupt for CH\\[0\\].LIMITL event"]
     #[inline]
     pub fn ch0limitl(&self) -> CH0LIMITLR {
         CH0LIMITLR::_from({
@@ -2254,7 +2254,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 8 - Write '1' to Enable interrupt for CH[1].LIMITH event"]
+    #[doc = "Bit 8 - Write '1' to Enable interrupt for CH\\[1\\].LIMITH event"]
     #[inline]
     pub fn ch1limith(&self) -> CH1LIMITHR {
         CH1LIMITHR::_from({
@@ -2263,7 +2263,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 9 - Write '1' to Enable interrupt for CH[1].LIMITL event"]
+    #[doc = "Bit 9 - Write '1' to Enable interrupt for CH\\[1\\].LIMITL event"]
     #[inline]
     pub fn ch1limitl(&self) -> CH1LIMITLR {
         CH1LIMITLR::_from({
@@ -2272,7 +2272,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 10 - Write '1' to Enable interrupt for CH[2].LIMITH event"]
+    #[doc = "Bit 10 - Write '1' to Enable interrupt for CH\\[2\\].LIMITH event"]
     #[inline]
     pub fn ch2limith(&self) -> CH2LIMITHR {
         CH2LIMITHR::_from({
@@ -2281,7 +2281,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 11 - Write '1' to Enable interrupt for CH[2].LIMITL event"]
+    #[doc = "Bit 11 - Write '1' to Enable interrupt for CH\\[2\\].LIMITL event"]
     #[inline]
     pub fn ch2limitl(&self) -> CH2LIMITLR {
         CH2LIMITLR::_from({
@@ -2290,7 +2290,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 12 - Write '1' to Enable interrupt for CH[3].LIMITH event"]
+    #[doc = "Bit 12 - Write '1' to Enable interrupt for CH\\[3\\].LIMITH event"]
     #[inline]
     pub fn ch3limith(&self) -> CH3LIMITHR {
         CH3LIMITHR::_from({
@@ -2299,7 +2299,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 13 - Write '1' to Enable interrupt for CH[3].LIMITL event"]
+    #[doc = "Bit 13 - Write '1' to Enable interrupt for CH\\[3\\].LIMITL event"]
     #[inline]
     pub fn ch3limitl(&self) -> CH3LIMITLR {
         CH3LIMITLR::_from({
@@ -2308,7 +2308,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 14 - Write '1' to Enable interrupt for CH[4].LIMITH event"]
+    #[doc = "Bit 14 - Write '1' to Enable interrupt for CH\\[4\\].LIMITH event"]
     #[inline]
     pub fn ch4limith(&self) -> CH4LIMITHR {
         CH4LIMITHR::_from({
@@ -2317,7 +2317,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 15 - Write '1' to Enable interrupt for CH[4].LIMITL event"]
+    #[doc = "Bit 15 - Write '1' to Enable interrupt for CH\\[4\\].LIMITL event"]
     #[inline]
     pub fn ch4limitl(&self) -> CH4LIMITLR {
         CH4LIMITLR::_from({
@@ -2326,7 +2326,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 16 - Write '1' to Enable interrupt for CH[5].LIMITH event"]
+    #[doc = "Bit 16 - Write '1' to Enable interrupt for CH\\[5\\].LIMITH event"]
     #[inline]
     pub fn ch5limith(&self) -> CH5LIMITHR {
         CH5LIMITHR::_from({
@@ -2335,7 +2335,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 17 - Write '1' to Enable interrupt for CH[5].LIMITL event"]
+    #[doc = "Bit 17 - Write '1' to Enable interrupt for CH\\[5\\].LIMITL event"]
     #[inline]
     pub fn ch5limitl(&self) -> CH5LIMITLR {
         CH5LIMITLR::_from({
@@ -2344,7 +2344,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 18 - Write '1' to Enable interrupt for CH[6].LIMITH event"]
+    #[doc = "Bit 18 - Write '1' to Enable interrupt for CH\\[6\\].LIMITH event"]
     #[inline]
     pub fn ch6limith(&self) -> CH6LIMITHR {
         CH6LIMITHR::_from({
@@ -2353,7 +2353,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 19 - Write '1' to Enable interrupt for CH[6].LIMITL event"]
+    #[doc = "Bit 19 - Write '1' to Enable interrupt for CH\\[6\\].LIMITL event"]
     #[inline]
     pub fn ch6limitl(&self) -> CH6LIMITLR {
         CH6LIMITLR::_from({
@@ -2362,7 +2362,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 20 - Write '1' to Enable interrupt for CH[7].LIMITH event"]
+    #[doc = "Bit 20 - Write '1' to Enable interrupt for CH\\[7\\].LIMITH event"]
     #[inline]
     pub fn ch7limith(&self) -> CH7LIMITHR {
         CH7LIMITHR::_from({
@@ -2371,7 +2371,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 21 - Write '1' to Enable interrupt for CH[7].LIMITL event"]
+    #[doc = "Bit 21 - Write '1' to Enable interrupt for CH\\[7\\].LIMITL event"]
     #[inline]
     pub fn ch7limitl(&self) -> CH7LIMITLR {
         CH7LIMITLR::_from({
@@ -2423,82 +2423,82 @@ impl W {
     pub fn stopped(&mut self) -> _STOPPEDW {
         _STOPPEDW { w: self }
     }
-    #[doc = "Bit 6 - Write '1' to Enable interrupt for CH[0].LIMITH event"]
+    #[doc = "Bit 6 - Write '1' to Enable interrupt for CH\\[0\\].LIMITH event"]
     #[inline]
     pub fn ch0limith(&mut self) -> _CH0LIMITHW {
         _CH0LIMITHW { w: self }
     }
-    #[doc = "Bit 7 - Write '1' to Enable interrupt for CH[0].LIMITL event"]
+    #[doc = "Bit 7 - Write '1' to Enable interrupt for CH\\[0\\].LIMITL event"]
     #[inline]
     pub fn ch0limitl(&mut self) -> _CH0LIMITLW {
         _CH0LIMITLW { w: self }
     }
-    #[doc = "Bit 8 - Write '1' to Enable interrupt for CH[1].LIMITH event"]
+    #[doc = "Bit 8 - Write '1' to Enable interrupt for CH\\[1\\].LIMITH event"]
     #[inline]
     pub fn ch1limith(&mut self) -> _CH1LIMITHW {
         _CH1LIMITHW { w: self }
     }
-    #[doc = "Bit 9 - Write '1' to Enable interrupt for CH[1].LIMITL event"]
+    #[doc = "Bit 9 - Write '1' to Enable interrupt for CH\\[1\\].LIMITL event"]
     #[inline]
     pub fn ch1limitl(&mut self) -> _CH1LIMITLW {
         _CH1LIMITLW { w: self }
     }
-    #[doc = "Bit 10 - Write '1' to Enable interrupt for CH[2].LIMITH event"]
+    #[doc = "Bit 10 - Write '1' to Enable interrupt for CH\\[2\\].LIMITH event"]
     #[inline]
     pub fn ch2limith(&mut self) -> _CH2LIMITHW {
         _CH2LIMITHW { w: self }
     }
-    #[doc = "Bit 11 - Write '1' to Enable interrupt for CH[2].LIMITL event"]
+    #[doc = "Bit 11 - Write '1' to Enable interrupt for CH\\[2\\].LIMITL event"]
     #[inline]
     pub fn ch2limitl(&mut self) -> _CH2LIMITLW {
         _CH2LIMITLW { w: self }
     }
-    #[doc = "Bit 12 - Write '1' to Enable interrupt for CH[3].LIMITH event"]
+    #[doc = "Bit 12 - Write '1' to Enable interrupt for CH\\[3\\].LIMITH event"]
     #[inline]
     pub fn ch3limith(&mut self) -> _CH3LIMITHW {
         _CH3LIMITHW { w: self }
     }
-    #[doc = "Bit 13 - Write '1' to Enable interrupt for CH[3].LIMITL event"]
+    #[doc = "Bit 13 - Write '1' to Enable interrupt for CH\\[3\\].LIMITL event"]
     #[inline]
     pub fn ch3limitl(&mut self) -> _CH3LIMITLW {
         _CH3LIMITLW { w: self }
     }
-    #[doc = "Bit 14 - Write '1' to Enable interrupt for CH[4].LIMITH event"]
+    #[doc = "Bit 14 - Write '1' to Enable interrupt for CH\\[4\\].LIMITH event"]
     #[inline]
     pub fn ch4limith(&mut self) -> _CH4LIMITHW {
         _CH4LIMITHW { w: self }
     }
-    #[doc = "Bit 15 - Write '1' to Enable interrupt for CH[4].LIMITL event"]
+    #[doc = "Bit 15 - Write '1' to Enable interrupt for CH\\[4\\].LIMITL event"]
     #[inline]
     pub fn ch4limitl(&mut self) -> _CH4LIMITLW {
         _CH4LIMITLW { w: self }
     }
-    #[doc = "Bit 16 - Write '1' to Enable interrupt for CH[5].LIMITH event"]
+    #[doc = "Bit 16 - Write '1' to Enable interrupt for CH\\[5\\].LIMITH event"]
     #[inline]
     pub fn ch5limith(&mut self) -> _CH5LIMITHW {
         _CH5LIMITHW { w: self }
     }
-    #[doc = "Bit 17 - Write '1' to Enable interrupt for CH[5].LIMITL event"]
+    #[doc = "Bit 17 - Write '1' to Enable interrupt for CH\\[5\\].LIMITL event"]
     #[inline]
     pub fn ch5limitl(&mut self) -> _CH5LIMITLW {
         _CH5LIMITLW { w: self }
     }
-    #[doc = "Bit 18 - Write '1' to Enable interrupt for CH[6].LIMITH event"]
+    #[doc = "Bit 18 - Write '1' to Enable interrupt for CH\\[6\\].LIMITH event"]
     #[inline]
     pub fn ch6limith(&mut self) -> _CH6LIMITHW {
         _CH6LIMITHW { w: self }
     }
-    #[doc = "Bit 19 - Write '1' to Enable interrupt for CH[6].LIMITL event"]
+    #[doc = "Bit 19 - Write '1' to Enable interrupt for CH\\[6\\].LIMITL event"]
     #[inline]
     pub fn ch6limitl(&mut self) -> _CH6LIMITLW {
         _CH6LIMITLW { w: self }
     }
-    #[doc = "Bit 20 - Write '1' to Enable interrupt for CH[7].LIMITH event"]
+    #[doc = "Bit 20 - Write '1' to Enable interrupt for CH\\[7\\].LIMITH event"]
     #[inline]
     pub fn ch7limith(&mut self) -> _CH7LIMITHW {
         _CH7LIMITHW { w: self }
     }
-    #[doc = "Bit 21 - Write '1' to Enable interrupt for CH[7].LIMITL event"]
+    #[doc = "Bit 21 - Write '1' to Enable interrupt for CH\\[7\\].LIMITL event"]
     #[inline]
     pub fn ch7limitl(&mut self) -> _CH7LIMITLW {
         _CH7LIMITLW { w: self }

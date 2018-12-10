@@ -921,7 +921,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bit 0 - Write '1' to Disable interrupt for IN[0] event"]
+    #[doc = "Bit 0 - Write '1' to Disable interrupt for IN\\[0\\] event"]
     #[inline]
     pub fn in0(&self) -> IN0R {
         IN0R::_from({
@@ -930,7 +930,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 1 - Write '1' to Disable interrupt for IN[1] event"]
+    #[doc = "Bit 1 - Write '1' to Disable interrupt for IN\\[1\\] event"]
     #[inline]
     pub fn in1(&self) -> IN1R {
         IN1R::_from({
@@ -939,7 +939,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 2 - Write '1' to Disable interrupt for IN[2] event"]
+    #[doc = "Bit 2 - Write '1' to Disable interrupt for IN\\[2\\] event"]
     #[inline]
     pub fn in2(&self) -> IN2R {
         IN2R::_from({
@@ -948,7 +948,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 3 - Write '1' to Disable interrupt for IN[3] event"]
+    #[doc = "Bit 3 - Write '1' to Disable interrupt for IN\\[3\\] event"]
     #[inline]
     pub fn in3(&self) -> IN3R {
         IN3R::_from({
@@ -957,7 +957,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 4 - Write '1' to Disable interrupt for IN[4] event"]
+    #[doc = "Bit 4 - Write '1' to Disable interrupt for IN\\[4\\] event"]
     #[inline]
     pub fn in4(&self) -> IN4R {
         IN4R::_from({
@@ -966,7 +966,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 5 - Write '1' to Disable interrupt for IN[5] event"]
+    #[doc = "Bit 5 - Write '1' to Disable interrupt for IN\\[5\\] event"]
     #[inline]
     pub fn in5(&self) -> IN5R {
         IN5R::_from({
@@ -975,7 +975,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 6 - Write '1' to Disable interrupt for IN[6] event"]
+    #[doc = "Bit 6 - Write '1' to Disable interrupt for IN\\[6\\] event"]
     #[inline]
     pub fn in6(&self) -> IN6R {
         IN6R::_from({
@@ -984,7 +984,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 7 - Write '1' to Disable interrupt for IN[7] event"]
+    #[doc = "Bit 7 - Write '1' to Disable interrupt for IN\\[7\\] event"]
     #[inline]
     pub fn in7(&self) -> IN7R {
         IN7R::_from({
@@ -1015,42 +1015,42 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 0 - Write '1' to Disable interrupt for IN[0] event"]
+    #[doc = "Bit 0 - Write '1' to Disable interrupt for IN\\[0\\] event"]
     #[inline]
     pub fn in0(&mut self) -> _IN0W {
         _IN0W { w: self }
     }
-    #[doc = "Bit 1 - Write '1' to Disable interrupt for IN[1] event"]
+    #[doc = "Bit 1 - Write '1' to Disable interrupt for IN\\[1\\] event"]
     #[inline]
     pub fn in1(&mut self) -> _IN1W {
         _IN1W { w: self }
     }
-    #[doc = "Bit 2 - Write '1' to Disable interrupt for IN[2] event"]
+    #[doc = "Bit 2 - Write '1' to Disable interrupt for IN\\[2\\] event"]
     #[inline]
     pub fn in2(&mut self) -> _IN2W {
         _IN2W { w: self }
     }
-    #[doc = "Bit 3 - Write '1' to Disable interrupt for IN[3] event"]
+    #[doc = "Bit 3 - Write '1' to Disable interrupt for IN\\[3\\] event"]
     #[inline]
     pub fn in3(&mut self) -> _IN3W {
         _IN3W { w: self }
     }
-    #[doc = "Bit 4 - Write '1' to Disable interrupt for IN[4] event"]
+    #[doc = "Bit 4 - Write '1' to Disable interrupt for IN\\[4\\] event"]
     #[inline]
     pub fn in4(&mut self) -> _IN4W {
         _IN4W { w: self }
     }
-    #[doc = "Bit 5 - Write '1' to Disable interrupt for IN[5] event"]
+    #[doc = "Bit 5 - Write '1' to Disable interrupt for IN\\[5\\] event"]
     #[inline]
     pub fn in5(&mut self) -> _IN5W {
         _IN5W { w: self }
     }
-    #[doc = "Bit 6 - Write '1' to Disable interrupt for IN[6] event"]
+    #[doc = "Bit 6 - Write '1' to Disable interrupt for IN\\[6\\] event"]
     #[inline]
     pub fn in6(&mut self) -> _IN6W {
         _IN6W { w: self }
     }
-    #[doc = "Bit 7 - Write '1' to Disable interrupt for IN[7] event"]
+    #[doc = "Bit 7 - Write '1' to Disable interrupt for IN\\[7\\] event"]
     #[inline]
     pub fn in7(&mut self) -> _IN7W {
         _IN7W { w: self }

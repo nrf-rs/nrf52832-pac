@@ -1212,7 +1212,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bit 0 - Write '1' to Enable interrupt for REGION[0].WA event"]
+    #[doc = "Bit 0 - Write '1' to Enable interrupt for REGION\\[0\\].WA event"]
     #[inline]
     pub fn region0wa(&self) -> REGION0WAR {
         REGION0WAR::_from({
@@ -1221,7 +1221,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 1 - Write '1' to Enable interrupt for REGION[0].RA event"]
+    #[doc = "Bit 1 - Write '1' to Enable interrupt for REGION\\[0\\].RA event"]
     #[inline]
     pub fn region0ra(&self) -> REGION0RAR {
         REGION0RAR::_from({
@@ -1230,7 +1230,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 2 - Write '1' to Enable interrupt for REGION[1].WA event"]
+    #[doc = "Bit 2 - Write '1' to Enable interrupt for REGION\\[1\\].WA event"]
     #[inline]
     pub fn region1wa(&self) -> REGION1WAR {
         REGION1WAR::_from({
@@ -1239,7 +1239,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 3 - Write '1' to Enable interrupt for REGION[1].RA event"]
+    #[doc = "Bit 3 - Write '1' to Enable interrupt for REGION\\[1\\].RA event"]
     #[inline]
     pub fn region1ra(&self) -> REGION1RAR {
         REGION1RAR::_from({
@@ -1248,7 +1248,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 4 - Write '1' to Enable interrupt for REGION[2].WA event"]
+    #[doc = "Bit 4 - Write '1' to Enable interrupt for REGION\\[2\\].WA event"]
     #[inline]
     pub fn region2wa(&self) -> REGION2WAR {
         REGION2WAR::_from({
@@ -1257,7 +1257,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 5 - Write '1' to Enable interrupt for REGION[2].RA event"]
+    #[doc = "Bit 5 - Write '1' to Enable interrupt for REGION\\[2\\].RA event"]
     #[inline]
     pub fn region2ra(&self) -> REGION2RAR {
         REGION2RAR::_from({
@@ -1266,7 +1266,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 6 - Write '1' to Enable interrupt for REGION[3].WA event"]
+    #[doc = "Bit 6 - Write '1' to Enable interrupt for REGION\\[3\\].WA event"]
     #[inline]
     pub fn region3wa(&self) -> REGION3WAR {
         REGION3WAR::_from({
@@ -1275,7 +1275,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 7 - Write '1' to Enable interrupt for REGION[3].RA event"]
+    #[doc = "Bit 7 - Write '1' to Enable interrupt for REGION\\[3\\].RA event"]
     #[inline]
     pub fn region3ra(&self) -> REGION3RAR {
         REGION3RAR::_from({
@@ -1284,7 +1284,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 24 - Write '1' to Enable interrupt for PREGION[0].WA event"]
+    #[doc = "Bit 24 - Write '1' to Enable interrupt for PREGION\\[0\\].WA event"]
     #[inline]
     pub fn pregion0wa(&self) -> PREGION0WAR {
         PREGION0WAR::_from({
@@ -1293,7 +1293,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 25 - Write '1' to Enable interrupt for PREGION[0].RA event"]
+    #[doc = "Bit 25 - Write '1' to Enable interrupt for PREGION\\[0\\].RA event"]
     #[inline]
     pub fn pregion0ra(&self) -> PREGION0RAR {
         PREGION0RAR::_from({
@@ -1302,7 +1302,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 26 - Write '1' to Enable interrupt for PREGION[1].WA event"]
+    #[doc = "Bit 26 - Write '1' to Enable interrupt for PREGION\\[1\\].WA event"]
     #[inline]
     pub fn pregion1wa(&self) -> PREGION1WAR {
         PREGION1WAR::_from({
@@ -1311,7 +1311,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 27 - Write '1' to Enable interrupt for PREGION[1].RA event"]
+    #[doc = "Bit 27 - Write '1' to Enable interrupt for PREGION\\[1\\].RA event"]
     #[inline]
     pub fn pregion1ra(&self) -> PREGION1RAR {
         PREGION1RAR::_from({
@@ -1333,62 +1333,62 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 0 - Write '1' to Enable interrupt for REGION[0].WA event"]
+    #[doc = "Bit 0 - Write '1' to Enable interrupt for REGION\\[0\\].WA event"]
     #[inline]
     pub fn region0wa(&mut self) -> _REGION0WAW {
         _REGION0WAW { w: self }
     }
-    #[doc = "Bit 1 - Write '1' to Enable interrupt for REGION[0].RA event"]
+    #[doc = "Bit 1 - Write '1' to Enable interrupt for REGION\\[0\\].RA event"]
     #[inline]
     pub fn region0ra(&mut self) -> _REGION0RAW {
         _REGION0RAW { w: self }
     }
-    #[doc = "Bit 2 - Write '1' to Enable interrupt for REGION[1].WA event"]
+    #[doc = "Bit 2 - Write '1' to Enable interrupt for REGION\\[1\\].WA event"]
     #[inline]
     pub fn region1wa(&mut self) -> _REGION1WAW {
         _REGION1WAW { w: self }
     }
-    #[doc = "Bit 3 - Write '1' to Enable interrupt for REGION[1].RA event"]
+    #[doc = "Bit 3 - Write '1' to Enable interrupt for REGION\\[1\\].RA event"]
     #[inline]
     pub fn region1ra(&mut self) -> _REGION1RAW {
         _REGION1RAW { w: self }
     }
-    #[doc = "Bit 4 - Write '1' to Enable interrupt for REGION[2].WA event"]
+    #[doc = "Bit 4 - Write '1' to Enable interrupt for REGION\\[2\\].WA event"]
     #[inline]
     pub fn region2wa(&mut self) -> _REGION2WAW {
         _REGION2WAW { w: self }
     }
-    #[doc = "Bit 5 - Write '1' to Enable interrupt for REGION[2].RA event"]
+    #[doc = "Bit 5 - Write '1' to Enable interrupt for REGION\\[2\\].RA event"]
     #[inline]
     pub fn region2ra(&mut self) -> _REGION2RAW {
         _REGION2RAW { w: self }
     }
-    #[doc = "Bit 6 - Write '1' to Enable interrupt for REGION[3].WA event"]
+    #[doc = "Bit 6 - Write '1' to Enable interrupt for REGION\\[3\\].WA event"]
     #[inline]
     pub fn region3wa(&mut self) -> _REGION3WAW {
         _REGION3WAW { w: self }
     }
-    #[doc = "Bit 7 - Write '1' to Enable interrupt for REGION[3].RA event"]
+    #[doc = "Bit 7 - Write '1' to Enable interrupt for REGION\\[3\\].RA event"]
     #[inline]
     pub fn region3ra(&mut self) -> _REGION3RAW {
         _REGION3RAW { w: self }
     }
-    #[doc = "Bit 24 - Write '1' to Enable interrupt for PREGION[0].WA event"]
+    #[doc = "Bit 24 - Write '1' to Enable interrupt for PREGION\\[0\\].WA event"]
     #[inline]
     pub fn pregion0wa(&mut self) -> _PREGION0WAW {
         _PREGION0WAW { w: self }
     }
-    #[doc = "Bit 25 - Write '1' to Enable interrupt for PREGION[0].RA event"]
+    #[doc = "Bit 25 - Write '1' to Enable interrupt for PREGION\\[0\\].RA event"]
     #[inline]
     pub fn pregion0ra(&mut self) -> _PREGION0RAW {
         _PREGION0RAW { w: self }
     }
-    #[doc = "Bit 26 - Write '1' to Enable interrupt for PREGION[1].WA event"]
+    #[doc = "Bit 26 - Write '1' to Enable interrupt for PREGION\\[1\\].WA event"]
     #[inline]
     pub fn pregion1wa(&mut self) -> _PREGION1WAW {
         _PREGION1WAW { w: self }
     }
-    #[doc = "Bit 27 - Write '1' to Enable interrupt for PREGION[1].RA event"]
+    #[doc = "Bit 27 - Write '1' to Enable interrupt for PREGION\\[1\\].RA event"]
     #[inline]
     pub fn pregion1ra(&mut self) -> _PREGION1RAW {
         _PREGION1RAW { w: self }

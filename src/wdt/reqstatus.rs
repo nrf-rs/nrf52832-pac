@@ -14,9 +14,9 @@ impl super::REQSTATUS {
 #[doc = "Possible values of the field `RR0`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RR0R {
-    #[doc = "RR[0] register is not enabled, or are already requesting reload"]
+    #[doc = "RR\\[0\\] register is not enabled, or are already requesting reload"]
     DISABLEDORREQUESTED,
-    #[doc = "RR[0] register is enabled, and are not yet requesting reload"]
+    #[doc = "RR\\[0\\] register is enabled, and are not yet requesting reload"]
     ENABLEDANDUNREQUESTED,
 }
 impl RR0R {
@@ -61,9 +61,9 @@ impl RR0R {
 #[doc = "Possible values of the field `RR1`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RR1R {
-    #[doc = "RR[1] register is not enabled, or are already requesting reload"]
+    #[doc = "RR\\[1\\] register is not enabled, or are already requesting reload"]
     DISABLEDORREQUESTED,
-    #[doc = "RR[1] register is enabled, and are not yet requesting reload"]
+    #[doc = "RR\\[1\\] register is enabled, and are not yet requesting reload"]
     ENABLEDANDUNREQUESTED,
 }
 impl RR1R {
@@ -108,9 +108,9 @@ impl RR1R {
 #[doc = "Possible values of the field `RR2`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RR2R {
-    #[doc = "RR[2] register is not enabled, or are already requesting reload"]
+    #[doc = "RR\\[2\\] register is not enabled, or are already requesting reload"]
     DISABLEDORREQUESTED,
-    #[doc = "RR[2] register is enabled, and are not yet requesting reload"]
+    #[doc = "RR\\[2\\] register is enabled, and are not yet requesting reload"]
     ENABLEDANDUNREQUESTED,
 }
 impl RR2R {
@@ -155,9 +155,9 @@ impl RR2R {
 #[doc = "Possible values of the field `RR3`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RR3R {
-    #[doc = "RR[3] register is not enabled, or are already requesting reload"]
+    #[doc = "RR\\[3\\] register is not enabled, or are already requesting reload"]
     DISABLEDORREQUESTED,
-    #[doc = "RR[3] register is enabled, and are not yet requesting reload"]
+    #[doc = "RR\\[3\\] register is enabled, and are not yet requesting reload"]
     ENABLEDANDUNREQUESTED,
 }
 impl RR3R {
@@ -202,9 +202,9 @@ impl RR3R {
 #[doc = "Possible values of the field `RR4`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RR4R {
-    #[doc = "RR[4] register is not enabled, or are already requesting reload"]
+    #[doc = "RR\\[4\\] register is not enabled, or are already requesting reload"]
     DISABLEDORREQUESTED,
-    #[doc = "RR[4] register is enabled, and are not yet requesting reload"]
+    #[doc = "RR\\[4\\] register is enabled, and are not yet requesting reload"]
     ENABLEDANDUNREQUESTED,
 }
 impl RR4R {
@@ -249,9 +249,9 @@ impl RR4R {
 #[doc = "Possible values of the field `RR5`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RR5R {
-    #[doc = "RR[5] register is not enabled, or are already requesting reload"]
+    #[doc = "RR\\[5\\] register is not enabled, or are already requesting reload"]
     DISABLEDORREQUESTED,
-    #[doc = "RR[5] register is enabled, and are not yet requesting reload"]
+    #[doc = "RR\\[5\\] register is enabled, and are not yet requesting reload"]
     ENABLEDANDUNREQUESTED,
 }
 impl RR5R {
@@ -296,9 +296,9 @@ impl RR5R {
 #[doc = "Possible values of the field `RR6`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RR6R {
-    #[doc = "RR[6] register is not enabled, or are already requesting reload"]
+    #[doc = "RR\\[6\\] register is not enabled, or are already requesting reload"]
     DISABLEDORREQUESTED,
-    #[doc = "RR[6] register is enabled, and are not yet requesting reload"]
+    #[doc = "RR\\[6\\] register is enabled, and are not yet requesting reload"]
     ENABLEDANDUNREQUESTED,
 }
 impl RR6R {
@@ -343,9 +343,9 @@ impl RR6R {
 #[doc = "Possible values of the field `RR7`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RR7R {
-    #[doc = "RR[7] register is not enabled, or are already requesting reload"]
+    #[doc = "RR\\[7\\] register is not enabled, or are already requesting reload"]
     DISABLEDORREQUESTED,
-    #[doc = "RR[7] register is enabled, and are not yet requesting reload"]
+    #[doc = "RR\\[7\\] register is enabled, and are not yet requesting reload"]
     ENABLEDANDUNREQUESTED,
 }
 impl RR7R {
@@ -393,7 +393,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bit 0 - Request status for RR[0] register"]
+    #[doc = "Bit 0 - Request status for RR\\[0\\] register"]
     #[inline]
     pub fn rr0(&self) -> RR0R {
         RR0R::_from({
@@ -402,7 +402,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 1 - Request status for RR[1] register"]
+    #[doc = "Bit 1 - Request status for RR\\[1\\] register"]
     #[inline]
     pub fn rr1(&self) -> RR1R {
         RR1R::_from({
@@ -411,7 +411,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 2 - Request status for RR[2] register"]
+    #[doc = "Bit 2 - Request status for RR\\[2\\] register"]
     #[inline]
     pub fn rr2(&self) -> RR2R {
         RR2R::_from({
@@ -420,7 +420,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 3 - Request status for RR[3] register"]
+    #[doc = "Bit 3 - Request status for RR\\[3\\] register"]
     #[inline]
     pub fn rr3(&self) -> RR3R {
         RR3R::_from({
@@ -429,7 +429,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 4 - Request status for RR[4] register"]
+    #[doc = "Bit 4 - Request status for RR\\[4\\] register"]
     #[inline]
     pub fn rr4(&self) -> RR4R {
         RR4R::_from({
@@ -438,7 +438,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 5 - Request status for RR[5] register"]
+    #[doc = "Bit 5 - Request status for RR\\[5\\] register"]
     #[inline]
     pub fn rr5(&self) -> RR5R {
         RR5R::_from({
@@ -447,7 +447,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 6 - Request status for RR[6] register"]
+    #[doc = "Bit 6 - Request status for RR\\[6\\] register"]
     #[inline]
     pub fn rr6(&self) -> RR6R {
         RR6R::_from({
@@ -456,7 +456,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 7 - Request status for RR[7] register"]
+    #[doc = "Bit 7 - Request status for RR\\[7\\] register"]
     #[inline]
     pub fn rr7(&self) -> RR7R {
         RR7R::_from({

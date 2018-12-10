@@ -696,7 +696,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 16 - Enable or disable event routing for COMPARE[0] event"]
+    #[doc = "Bit 16 - Enable or disable event routing for COMPARE\\[0\\] event"]
     #[inline]
     pub fn compare0(&self) -> COMPARE0R {
         COMPARE0R::_from({
@@ -705,7 +705,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 17 - Enable or disable event routing for COMPARE[1] event"]
+    #[doc = "Bit 17 - Enable or disable event routing for COMPARE\\[1\\] event"]
     #[inline]
     pub fn compare1(&self) -> COMPARE1R {
         COMPARE1R::_from({
@@ -714,7 +714,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 18 - Enable or disable event routing for COMPARE[2] event"]
+    #[doc = "Bit 18 - Enable or disable event routing for COMPARE\\[2\\] event"]
     #[inline]
     pub fn compare2(&self) -> COMPARE2R {
         COMPARE2R::_from({
@@ -723,7 +723,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 19 - Enable or disable event routing for COMPARE[3] event"]
+    #[doc = "Bit 19 - Enable or disable event routing for COMPARE\\[3\\] event"]
     #[inline]
     pub fn compare3(&self) -> COMPARE3R {
         COMPARE3R::_from({
@@ -755,22 +755,22 @@ impl W {
     pub fn ovrflw(&mut self) -> _OVRFLWW {
         _OVRFLWW { w: self }
     }
-    #[doc = "Bit 16 - Enable or disable event routing for COMPARE[0] event"]
+    #[doc = "Bit 16 - Enable or disable event routing for COMPARE\\[0\\] event"]
     #[inline]
     pub fn compare0(&mut self) -> _COMPARE0W {
         _COMPARE0W { w: self }
     }
-    #[doc = "Bit 17 - Enable or disable event routing for COMPARE[1] event"]
+    #[doc = "Bit 17 - Enable or disable event routing for COMPARE\\[1\\] event"]
     #[inline]
     pub fn compare1(&mut self) -> _COMPARE1W {
         _COMPARE1W { w: self }
     }
-    #[doc = "Bit 18 - Enable or disable event routing for COMPARE[2] event"]
+    #[doc = "Bit 18 - Enable or disable event routing for COMPARE\\[2\\] event"]
     #[inline]
     pub fn compare2(&mut self) -> _COMPARE2W {
         _COMPARE2W { w: self }
     }
-    #[doc = "Bit 19 - Enable or disable event routing for COMPARE[3] event"]
+    #[doc = "Bit 19 - Enable or disable event routing for COMPARE\\[3\\] event"]
     #[inline]
     pub fn compare3(&mut self) -> _COMPARE3W {
         _COMPARE3W { w: self }

@@ -258,7 +258,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bit 0 - Enable or disable address matching on ADDRESS[0]"]
+    #[doc = "Bit 0 - Enable or disable address matching on ADDRESS\\[0\\]"]
     #[inline]
     pub fn address0(&self) -> ADDRESS0R {
         ADDRESS0R::_from({
@@ -267,7 +267,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 1 - Enable or disable address matching on ADDRESS[1]"]
+    #[doc = "Bit 1 - Enable or disable address matching on ADDRESS\\[1\\]"]
     #[inline]
     pub fn address1(&self) -> ADDRESS1R {
         ADDRESS1R::_from({
@@ -289,12 +289,12 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 0 - Enable or disable address matching on ADDRESS[0]"]
+    #[doc = "Bit 0 - Enable or disable address matching on ADDRESS\\[0\\]"]
     #[inline]
     pub fn address0(&mut self) -> _ADDRESS0W {
         _ADDRESS0W { w: self }
     }
-    #[doc = "Bit 1 - Enable or disable address matching on ADDRESS[1]"]
+    #[doc = "Bit 1 - Enable or disable address matching on ADDRESS\\[1\\]"]
     #[inline]
     pub fn address1(&mut self) -> _ADDRESS1W {
         _ADDRESS1W { w: self }

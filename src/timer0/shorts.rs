@@ -1308,7 +1308,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bit 0 - Shortcut between COMPARE[0] event and CLEAR task"]
+    #[doc = "Bit 0 - Shortcut between COMPARE\\[0\\] event and CLEAR task"]
     #[inline]
     pub fn compare0_clear(&self) -> COMPARE0_CLEARR {
         COMPARE0_CLEARR::_from({
@@ -1317,7 +1317,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 1 - Shortcut between COMPARE[1] event and CLEAR task"]
+    #[doc = "Bit 1 - Shortcut between COMPARE\\[1\\] event and CLEAR task"]
     #[inline]
     pub fn compare1_clear(&self) -> COMPARE1_CLEARR {
         COMPARE1_CLEARR::_from({
@@ -1326,7 +1326,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 2 - Shortcut between COMPARE[2] event and CLEAR task"]
+    #[doc = "Bit 2 - Shortcut between COMPARE\\[2\\] event and CLEAR task"]
     #[inline]
     pub fn compare2_clear(&self) -> COMPARE2_CLEARR {
         COMPARE2_CLEARR::_from({
@@ -1335,7 +1335,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 3 - Shortcut between COMPARE[3] event and CLEAR task"]
+    #[doc = "Bit 3 - Shortcut between COMPARE\\[3\\] event and CLEAR task"]
     #[inline]
     pub fn compare3_clear(&self) -> COMPARE3_CLEARR {
         COMPARE3_CLEARR::_from({
@@ -1344,7 +1344,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 4 - Shortcut between COMPARE[4] event and CLEAR task"]
+    #[doc = "Bit 4 - Shortcut between COMPARE\\[4\\] event and CLEAR task"]
     #[inline]
     pub fn compare4_clear(&self) -> COMPARE4_CLEARR {
         COMPARE4_CLEARR::_from({
@@ -1353,7 +1353,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 5 - Shortcut between COMPARE[5] event and CLEAR task"]
+    #[doc = "Bit 5 - Shortcut between COMPARE\\[5\\] event and CLEAR task"]
     #[inline]
     pub fn compare5_clear(&self) -> COMPARE5_CLEARR {
         COMPARE5_CLEARR::_from({
@@ -1362,7 +1362,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 8 - Shortcut between COMPARE[0] event and STOP task"]
+    #[doc = "Bit 8 - Shortcut between COMPARE\\[0\\] event and STOP task"]
     #[inline]
     pub fn compare0_stop(&self) -> COMPARE0_STOPR {
         COMPARE0_STOPR::_from({
@@ -1371,7 +1371,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 9 - Shortcut between COMPARE[1] event and STOP task"]
+    #[doc = "Bit 9 - Shortcut between COMPARE\\[1\\] event and STOP task"]
     #[inline]
     pub fn compare1_stop(&self) -> COMPARE1_STOPR {
         COMPARE1_STOPR::_from({
@@ -1380,7 +1380,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 10 - Shortcut between COMPARE[2] event and STOP task"]
+    #[doc = "Bit 10 - Shortcut between COMPARE\\[2\\] event and STOP task"]
     #[inline]
     pub fn compare2_stop(&self) -> COMPARE2_STOPR {
         COMPARE2_STOPR::_from({
@@ -1389,7 +1389,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 11 - Shortcut between COMPARE[3] event and STOP task"]
+    #[doc = "Bit 11 - Shortcut between COMPARE\\[3\\] event and STOP task"]
     #[inline]
     pub fn compare3_stop(&self) -> COMPARE3_STOPR {
         COMPARE3_STOPR::_from({
@@ -1398,7 +1398,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 12 - Shortcut between COMPARE[4] event and STOP task"]
+    #[doc = "Bit 12 - Shortcut between COMPARE\\[4\\] event and STOP task"]
     #[inline]
     pub fn compare4_stop(&self) -> COMPARE4_STOPR {
         COMPARE4_STOPR::_from({
@@ -1407,7 +1407,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 13 - Shortcut between COMPARE[5] event and STOP task"]
+    #[doc = "Bit 13 - Shortcut between COMPARE\\[5\\] event and STOP task"]
     #[inline]
     pub fn compare5_stop(&self) -> COMPARE5_STOPR {
         COMPARE5_STOPR::_from({
@@ -1429,62 +1429,62 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 0 - Shortcut between COMPARE[0] event and CLEAR task"]
+    #[doc = "Bit 0 - Shortcut between COMPARE\\[0\\] event and CLEAR task"]
     #[inline]
     pub fn compare0_clear(&mut self) -> _COMPARE0_CLEARW {
         _COMPARE0_CLEARW { w: self }
     }
-    #[doc = "Bit 1 - Shortcut between COMPARE[1] event and CLEAR task"]
+    #[doc = "Bit 1 - Shortcut between COMPARE\\[1\\] event and CLEAR task"]
     #[inline]
     pub fn compare1_clear(&mut self) -> _COMPARE1_CLEARW {
         _COMPARE1_CLEARW { w: self }
     }
-    #[doc = "Bit 2 - Shortcut between COMPARE[2] event and CLEAR task"]
+    #[doc = "Bit 2 - Shortcut between COMPARE\\[2\\] event and CLEAR task"]
     #[inline]
     pub fn compare2_clear(&mut self) -> _COMPARE2_CLEARW {
         _COMPARE2_CLEARW { w: self }
     }
-    #[doc = "Bit 3 - Shortcut between COMPARE[3] event and CLEAR task"]
+    #[doc = "Bit 3 - Shortcut between COMPARE\\[3\\] event and CLEAR task"]
     #[inline]
     pub fn compare3_clear(&mut self) -> _COMPARE3_CLEARW {
         _COMPARE3_CLEARW { w: self }
     }
-    #[doc = "Bit 4 - Shortcut between COMPARE[4] event and CLEAR task"]
+    #[doc = "Bit 4 - Shortcut between COMPARE\\[4\\] event and CLEAR task"]
     #[inline]
     pub fn compare4_clear(&mut self) -> _COMPARE4_CLEARW {
         _COMPARE4_CLEARW { w: self }
     }
-    #[doc = "Bit 5 - Shortcut between COMPARE[5] event and CLEAR task"]
+    #[doc = "Bit 5 - Shortcut between COMPARE\\[5\\] event and CLEAR task"]
     #[inline]
     pub fn compare5_clear(&mut self) -> _COMPARE5_CLEARW {
         _COMPARE5_CLEARW { w: self }
     }
-    #[doc = "Bit 8 - Shortcut between COMPARE[0] event and STOP task"]
+    #[doc = "Bit 8 - Shortcut between COMPARE\\[0\\] event and STOP task"]
     #[inline]
     pub fn compare0_stop(&mut self) -> _COMPARE0_STOPW {
         _COMPARE0_STOPW { w: self }
     }
-    #[doc = "Bit 9 - Shortcut between COMPARE[1] event and STOP task"]
+    #[doc = "Bit 9 - Shortcut between COMPARE\\[1\\] event and STOP task"]
     #[inline]
     pub fn compare1_stop(&mut self) -> _COMPARE1_STOPW {
         _COMPARE1_STOPW { w: self }
     }
-    #[doc = "Bit 10 - Shortcut between COMPARE[2] event and STOP task"]
+    #[doc = "Bit 10 - Shortcut between COMPARE\\[2\\] event and STOP task"]
     #[inline]
     pub fn compare2_stop(&mut self) -> _COMPARE2_STOPW {
         _COMPARE2_STOPW { w: self }
     }
-    #[doc = "Bit 11 - Shortcut between COMPARE[3] event and STOP task"]
+    #[doc = "Bit 11 - Shortcut between COMPARE\\[3\\] event and STOP task"]
     #[inline]
     pub fn compare3_stop(&mut self) -> _COMPARE3_STOPW {
         _COMPARE3_STOPW { w: self }
     }
-    #[doc = "Bit 12 - Shortcut between COMPARE[4] event and STOP task"]
+    #[doc = "Bit 12 - Shortcut between COMPARE\\[4\\] event and STOP task"]
     #[inline]
     pub fn compare4_stop(&mut self) -> _COMPARE4_STOPW {
         _COMPARE4_STOPW { w: self }
     }
-    #[doc = "Bit 13 - Shortcut between COMPARE[5] event and STOP task"]
+    #[doc = "Bit 13 - Shortcut between COMPARE\\[5\\] event and STOP task"]
     #[inline]
     pub fn compare5_stop(&mut self) -> _COMPARE5_STOPW {
         _COMPARE5_STOPW { w: self }

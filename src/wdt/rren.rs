@@ -45,9 +45,9 @@ impl super::RREN {
 #[doc = "Possible values of the field `RR0`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RR0R {
-    #[doc = "Disable RR[0] register"]
+    #[doc = "Disable RR\\[0\\] register"]
     DISABLED,
-    #[doc = "Enable RR[0] register"]
+    #[doc = "Enable RR\\[0\\] register"]
     ENABLED,
 }
 impl RR0R {
@@ -92,9 +92,9 @@ impl RR0R {
 #[doc = "Possible values of the field `RR1`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RR1R {
-    #[doc = "Disable RR[1] register"]
+    #[doc = "Disable RR\\[1\\] register"]
     DISABLED,
-    #[doc = "Enable RR[1] register"]
+    #[doc = "Enable RR\\[1\\] register"]
     ENABLED,
 }
 impl RR1R {
@@ -139,9 +139,9 @@ impl RR1R {
 #[doc = "Possible values of the field `RR2`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RR2R {
-    #[doc = "Disable RR[2] register"]
+    #[doc = "Disable RR\\[2\\] register"]
     DISABLED,
-    #[doc = "Enable RR[2] register"]
+    #[doc = "Enable RR\\[2\\] register"]
     ENABLED,
 }
 impl RR2R {
@@ -186,9 +186,9 @@ impl RR2R {
 #[doc = "Possible values of the field `RR3`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RR3R {
-    #[doc = "Disable RR[3] register"]
+    #[doc = "Disable RR\\[3\\] register"]
     DISABLED,
-    #[doc = "Enable RR[3] register"]
+    #[doc = "Enable RR\\[3\\] register"]
     ENABLED,
 }
 impl RR3R {
@@ -233,9 +233,9 @@ impl RR3R {
 #[doc = "Possible values of the field `RR4`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RR4R {
-    #[doc = "Disable RR[4] register"]
+    #[doc = "Disable RR\\[4\\] register"]
     DISABLED,
-    #[doc = "Enable RR[4] register"]
+    #[doc = "Enable RR\\[4\\] register"]
     ENABLED,
 }
 impl RR4R {
@@ -280,9 +280,9 @@ impl RR4R {
 #[doc = "Possible values of the field `RR5`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RR5R {
-    #[doc = "Disable RR[5] register"]
+    #[doc = "Disable RR\\[5\\] register"]
     DISABLED,
-    #[doc = "Enable RR[5] register"]
+    #[doc = "Enable RR\\[5\\] register"]
     ENABLED,
 }
 impl RR5R {
@@ -327,9 +327,9 @@ impl RR5R {
 #[doc = "Possible values of the field `RR6`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RR6R {
-    #[doc = "Disable RR[6] register"]
+    #[doc = "Disable RR\\[6\\] register"]
     DISABLED,
-    #[doc = "Enable RR[6] register"]
+    #[doc = "Enable RR\\[6\\] register"]
     ENABLED,
 }
 impl RR6R {
@@ -374,9 +374,9 @@ impl RR6R {
 #[doc = "Possible values of the field `RR7`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RR7R {
-    #[doc = "Disable RR[7] register"]
+    #[doc = "Disable RR\\[7\\] register"]
     DISABLED,
-    #[doc = "Enable RR[7] register"]
+    #[doc = "Enable RR\\[7\\] register"]
     ENABLED,
 }
 impl RR7R {
@@ -420,9 +420,9 @@ impl RR7R {
 }
 #[doc = "Values that can be written to the field `RR0`"]
 pub enum RR0W {
-    #[doc = "Disable RR[0] register"]
+    #[doc = "Disable RR\\[0\\] register"]
     DISABLED,
-    #[doc = "Enable RR[0] register"]
+    #[doc = "Enable RR\\[0\\] register"]
     ENABLED,
 }
 impl RR0W {
@@ -478,9 +478,9 @@ impl<'a> _RR0W<'a> {
 }
 #[doc = "Values that can be written to the field `RR1`"]
 pub enum RR1W {
-    #[doc = "Disable RR[1] register"]
+    #[doc = "Disable RR\\[1\\] register"]
     DISABLED,
-    #[doc = "Enable RR[1] register"]
+    #[doc = "Enable RR\\[1\\] register"]
     ENABLED,
 }
 impl RR1W {
@@ -536,9 +536,9 @@ impl<'a> _RR1W<'a> {
 }
 #[doc = "Values that can be written to the field `RR2`"]
 pub enum RR2W {
-    #[doc = "Disable RR[2] register"]
+    #[doc = "Disable RR\\[2\\] register"]
     DISABLED,
-    #[doc = "Enable RR[2] register"]
+    #[doc = "Enable RR\\[2\\] register"]
     ENABLED,
 }
 impl RR2W {
@@ -594,9 +594,9 @@ impl<'a> _RR2W<'a> {
 }
 #[doc = "Values that can be written to the field `RR3`"]
 pub enum RR3W {
-    #[doc = "Disable RR[3] register"]
+    #[doc = "Disable RR\\[3\\] register"]
     DISABLED,
-    #[doc = "Enable RR[3] register"]
+    #[doc = "Enable RR\\[3\\] register"]
     ENABLED,
 }
 impl RR3W {
@@ -652,9 +652,9 @@ impl<'a> _RR3W<'a> {
 }
 #[doc = "Values that can be written to the field `RR4`"]
 pub enum RR4W {
-    #[doc = "Disable RR[4] register"]
+    #[doc = "Disable RR\\[4\\] register"]
     DISABLED,
-    #[doc = "Enable RR[4] register"]
+    #[doc = "Enable RR\\[4\\] register"]
     ENABLED,
 }
 impl RR4W {
@@ -710,9 +710,9 @@ impl<'a> _RR4W<'a> {
 }
 #[doc = "Values that can be written to the field `RR5`"]
 pub enum RR5W {
-    #[doc = "Disable RR[5] register"]
+    #[doc = "Disable RR\\[5\\] register"]
     DISABLED,
-    #[doc = "Enable RR[5] register"]
+    #[doc = "Enable RR\\[5\\] register"]
     ENABLED,
 }
 impl RR5W {
@@ -768,9 +768,9 @@ impl<'a> _RR5W<'a> {
 }
 #[doc = "Values that can be written to the field `RR6`"]
 pub enum RR6W {
-    #[doc = "Disable RR[6] register"]
+    #[doc = "Disable RR\\[6\\] register"]
     DISABLED,
-    #[doc = "Enable RR[6] register"]
+    #[doc = "Enable RR\\[6\\] register"]
     ENABLED,
 }
 impl RR6W {
@@ -826,9 +826,9 @@ impl<'a> _RR6W<'a> {
 }
 #[doc = "Values that can be written to the field `RR7`"]
 pub enum RR7W {
-    #[doc = "Disable RR[7] register"]
+    #[doc = "Disable RR\\[7\\] register"]
     DISABLED,
-    #[doc = "Enable RR[7] register"]
+    #[doc = "Enable RR\\[7\\] register"]
     ENABLED,
 }
 impl RR7W {
@@ -888,7 +888,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bit 0 - Enable or disable RR[0] register"]
+    #[doc = "Bit 0 - Enable or disable RR\\[0\\] register"]
     #[inline]
     pub fn rr0(&self) -> RR0R {
         RR0R::_from({
@@ -897,7 +897,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 1 - Enable or disable RR[1] register"]
+    #[doc = "Bit 1 - Enable or disable RR\\[1\\] register"]
     #[inline]
     pub fn rr1(&self) -> RR1R {
         RR1R::_from({
@@ -906,7 +906,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 2 - Enable or disable RR[2] register"]
+    #[doc = "Bit 2 - Enable or disable RR\\[2\\] register"]
     #[inline]
     pub fn rr2(&self) -> RR2R {
         RR2R::_from({
@@ -915,7 +915,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 3 - Enable or disable RR[3] register"]
+    #[doc = "Bit 3 - Enable or disable RR\\[3\\] register"]
     #[inline]
     pub fn rr3(&self) -> RR3R {
         RR3R::_from({
@@ -924,7 +924,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 4 - Enable or disable RR[4] register"]
+    #[doc = "Bit 4 - Enable or disable RR\\[4\\] register"]
     #[inline]
     pub fn rr4(&self) -> RR4R {
         RR4R::_from({
@@ -933,7 +933,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 5 - Enable or disable RR[5] register"]
+    #[doc = "Bit 5 - Enable or disable RR\\[5\\] register"]
     #[inline]
     pub fn rr5(&self) -> RR5R {
         RR5R::_from({
@@ -942,7 +942,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 6 - Enable or disable RR[6] register"]
+    #[doc = "Bit 6 - Enable or disable RR\\[6\\] register"]
     #[inline]
     pub fn rr6(&self) -> RR6R {
         RR6R::_from({
@@ -951,7 +951,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 7 - Enable or disable RR[7] register"]
+    #[doc = "Bit 7 - Enable or disable RR\\[7\\] register"]
     #[inline]
     pub fn rr7(&self) -> RR7R {
         RR7R::_from({
@@ -973,42 +973,42 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 0 - Enable or disable RR[0] register"]
+    #[doc = "Bit 0 - Enable or disable RR\\[0\\] register"]
     #[inline]
     pub fn rr0(&mut self) -> _RR0W {
         _RR0W { w: self }
     }
-    #[doc = "Bit 1 - Enable or disable RR[1] register"]
+    #[doc = "Bit 1 - Enable or disable RR\\[1\\] register"]
     #[inline]
     pub fn rr1(&mut self) -> _RR1W {
         _RR1W { w: self }
     }
-    #[doc = "Bit 2 - Enable or disable RR[2] register"]
+    #[doc = "Bit 2 - Enable or disable RR\\[2\\] register"]
     #[inline]
     pub fn rr2(&mut self) -> _RR2W {
         _RR2W { w: self }
     }
-    #[doc = "Bit 3 - Enable or disable RR[3] register"]
+    #[doc = "Bit 3 - Enable or disable RR\\[3\\] register"]
     #[inline]
     pub fn rr3(&mut self) -> _RR3W {
         _RR3W { w: self }
     }
-    #[doc = "Bit 4 - Enable or disable RR[4] register"]
+    #[doc = "Bit 4 - Enable or disable RR\\[4\\] register"]
     #[inline]
     pub fn rr4(&mut self) -> _RR4W {
         _RR4W { w: self }
     }
-    #[doc = "Bit 5 - Enable or disable RR[5] register"]
+    #[doc = "Bit 5 - Enable or disable RR\\[5\\] register"]
     #[inline]
     pub fn rr5(&mut self) -> _RR5W {
         _RR5W { w: self }
     }
-    #[doc = "Bit 6 - Enable or disable RR[6] register"]
+    #[doc = "Bit 6 - Enable or disable RR\\[6\\] register"]
     #[inline]
     pub fn rr6(&mut self) -> _RR6W {
         _RR6W { w: self }
     }
-    #[doc = "Bit 7 - Enable or disable RR[7] register"]
+    #[doc = "Bit 7 - Enable or disable RR\\[7\\] register"]
     #[inline]
     pub fn rr7(&mut self) -> _RR7W {
         _RR7W { w: self }

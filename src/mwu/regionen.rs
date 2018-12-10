@@ -1308,7 +1308,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bit 0 - Enable/disable write access watch in region[0]"]
+    #[doc = "Bit 0 - Enable/disable write access watch in region\\[0\\]"]
     #[inline]
     pub fn rgn0wa(&self) -> RGN0WAR {
         RGN0WAR::_from({
@@ -1317,7 +1317,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 1 - Enable/disable read access watch in region[0]"]
+    #[doc = "Bit 1 - Enable/disable read access watch in region\\[0\\]"]
     #[inline]
     pub fn rgn0ra(&self) -> RGN0RAR {
         RGN0RAR::_from({
@@ -1326,7 +1326,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 2 - Enable/disable write access watch in region[1]"]
+    #[doc = "Bit 2 - Enable/disable write access watch in region\\[1\\]"]
     #[inline]
     pub fn rgn1wa(&self) -> RGN1WAR {
         RGN1WAR::_from({
@@ -1335,7 +1335,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 3 - Enable/disable read access watch in region[1]"]
+    #[doc = "Bit 3 - Enable/disable read access watch in region\\[1\\]"]
     #[inline]
     pub fn rgn1ra(&self) -> RGN1RAR {
         RGN1RAR::_from({
@@ -1344,7 +1344,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 4 - Enable/disable write access watch in region[2]"]
+    #[doc = "Bit 4 - Enable/disable write access watch in region\\[2\\]"]
     #[inline]
     pub fn rgn2wa(&self) -> RGN2WAR {
         RGN2WAR::_from({
@@ -1353,7 +1353,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 5 - Enable/disable read access watch in region[2]"]
+    #[doc = "Bit 5 - Enable/disable read access watch in region\\[2\\]"]
     #[inline]
     pub fn rgn2ra(&self) -> RGN2RAR {
         RGN2RAR::_from({
@@ -1362,7 +1362,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 6 - Enable/disable write access watch in region[3]"]
+    #[doc = "Bit 6 - Enable/disable write access watch in region\\[3\\]"]
     #[inline]
     pub fn rgn3wa(&self) -> RGN3WAR {
         RGN3WAR::_from({
@@ -1371,7 +1371,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 7 - Enable/disable read access watch in region[3]"]
+    #[doc = "Bit 7 - Enable/disable read access watch in region\\[3\\]"]
     #[inline]
     pub fn rgn3ra(&self) -> RGN3RAR {
         RGN3RAR::_from({
@@ -1380,7 +1380,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 24 - Enable/disable write access watch in PREGION[0]"]
+    #[doc = "Bit 24 - Enable/disable write access watch in PREGION\\[0\\]"]
     #[inline]
     pub fn prgn0wa(&self) -> PRGN0WAR {
         PRGN0WAR::_from({
@@ -1389,7 +1389,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 25 - Enable/disable read access watch in PREGION[0]"]
+    #[doc = "Bit 25 - Enable/disable read access watch in PREGION\\[0\\]"]
     #[inline]
     pub fn prgn0ra(&self) -> PRGN0RAR {
         PRGN0RAR::_from({
@@ -1398,7 +1398,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 26 - Enable/disable write access watch in PREGION[1]"]
+    #[doc = "Bit 26 - Enable/disable write access watch in PREGION\\[1\\]"]
     #[inline]
     pub fn prgn1wa(&self) -> PRGN1WAR {
         PRGN1WAR::_from({
@@ -1407,7 +1407,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 27 - Enable/disable read access watch in PREGION[1]"]
+    #[doc = "Bit 27 - Enable/disable read access watch in PREGION\\[1\\]"]
     #[inline]
     pub fn prgn1ra(&self) -> PRGN1RAR {
         PRGN1RAR::_from({
@@ -1429,62 +1429,62 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 0 - Enable/disable write access watch in region[0]"]
+    #[doc = "Bit 0 - Enable/disable write access watch in region\\[0\\]"]
     #[inline]
     pub fn rgn0wa(&mut self) -> _RGN0WAW {
         _RGN0WAW { w: self }
     }
-    #[doc = "Bit 1 - Enable/disable read access watch in region[0]"]
+    #[doc = "Bit 1 - Enable/disable read access watch in region\\[0\\]"]
     #[inline]
     pub fn rgn0ra(&mut self) -> _RGN0RAW {
         _RGN0RAW { w: self }
     }
-    #[doc = "Bit 2 - Enable/disable write access watch in region[1]"]
+    #[doc = "Bit 2 - Enable/disable write access watch in region\\[1\\]"]
     #[inline]
     pub fn rgn1wa(&mut self) -> _RGN1WAW {
         _RGN1WAW { w: self }
     }
-    #[doc = "Bit 3 - Enable/disable read access watch in region[1]"]
+    #[doc = "Bit 3 - Enable/disable read access watch in region\\[1\\]"]
     #[inline]
     pub fn rgn1ra(&mut self) -> _RGN1RAW {
         _RGN1RAW { w: self }
     }
-    #[doc = "Bit 4 - Enable/disable write access watch in region[2]"]
+    #[doc = "Bit 4 - Enable/disable write access watch in region\\[2\\]"]
     #[inline]
     pub fn rgn2wa(&mut self) -> _RGN2WAW {
         _RGN2WAW { w: self }
     }
-    #[doc = "Bit 5 - Enable/disable read access watch in region[2]"]
+    #[doc = "Bit 5 - Enable/disable read access watch in region\\[2\\]"]
     #[inline]
     pub fn rgn2ra(&mut self) -> _RGN2RAW {
         _RGN2RAW { w: self }
     }
-    #[doc = "Bit 6 - Enable/disable write access watch in region[3]"]
+    #[doc = "Bit 6 - Enable/disable write access watch in region\\[3\\]"]
     #[inline]
     pub fn rgn3wa(&mut self) -> _RGN3WAW {
         _RGN3WAW { w: self }
     }
-    #[doc = "Bit 7 - Enable/disable read access watch in region[3]"]
+    #[doc = "Bit 7 - Enable/disable read access watch in region\\[3\\]"]
     #[inline]
     pub fn rgn3ra(&mut self) -> _RGN3RAW {
         _RGN3RAW { w: self }
     }
-    #[doc = "Bit 24 - Enable/disable write access watch in PREGION[0]"]
+    #[doc = "Bit 24 - Enable/disable write access watch in PREGION\\[0\\]"]
     #[inline]
     pub fn prgn0wa(&mut self) -> _PRGN0WAW {
         _PRGN0WAW { w: self }
     }
-    #[doc = "Bit 25 - Enable/disable read access watch in PREGION[0]"]
+    #[doc = "Bit 25 - Enable/disable read access watch in PREGION\\[0\\]"]
     #[inline]
     pub fn prgn0ra(&mut self) -> _PRGN0RAW {
         _PRGN0RAW { w: self }
     }
-    #[doc = "Bit 26 - Enable/disable write access watch in PREGION[1]"]
+    #[doc = "Bit 26 - Enable/disable write access watch in PREGION\\[1\\]"]
     #[inline]
     pub fn prgn1wa(&mut self) -> _PRGN1WAW {
         _PRGN1WAW { w: self }
     }
-    #[doc = "Bit 27 - Enable/disable read access watch in PREGION[1]"]
+    #[doc = "Bit 27 - Enable/disable read access watch in PREGION\\[1\\]"]
     #[inline]
     pub fn prgn1ra(&mut self) -> _PRGN1RAW {
         _PRGN1RAW { w: self }

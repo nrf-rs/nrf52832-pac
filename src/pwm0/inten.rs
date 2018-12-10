@@ -792,7 +792,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 2 - Enable or disable interrupt for SEQSTARTED[0] event"]
+    #[doc = "Bit 2 - Enable or disable interrupt for SEQSTARTED\\[0\\] event"]
     #[inline]
     pub fn seqstarted0(&self) -> SEQSTARTED0R {
         SEQSTARTED0R::_from({
@@ -801,7 +801,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 3 - Enable or disable interrupt for SEQSTARTED[1] event"]
+    #[doc = "Bit 3 - Enable or disable interrupt for SEQSTARTED\\[1\\] event"]
     #[inline]
     pub fn seqstarted1(&self) -> SEQSTARTED1R {
         SEQSTARTED1R::_from({
@@ -810,7 +810,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 4 - Enable or disable interrupt for SEQEND[0] event"]
+    #[doc = "Bit 4 - Enable or disable interrupt for SEQEND\\[0\\] event"]
     #[inline]
     pub fn seqend0(&self) -> SEQEND0R {
         SEQEND0R::_from({
@@ -819,7 +819,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 5 - Enable or disable interrupt for SEQEND[1] event"]
+    #[doc = "Bit 5 - Enable or disable interrupt for SEQEND\\[1\\] event"]
     #[inline]
     pub fn seqend1(&self) -> SEQEND1R {
         SEQEND1R::_from({
@@ -864,22 +864,22 @@ impl W {
     pub fn stopped(&mut self) -> _STOPPEDW {
         _STOPPEDW { w: self }
     }
-    #[doc = "Bit 2 - Enable or disable interrupt for SEQSTARTED[0] event"]
+    #[doc = "Bit 2 - Enable or disable interrupt for SEQSTARTED\\[0\\] event"]
     #[inline]
     pub fn seqstarted0(&mut self) -> _SEQSTARTED0W {
         _SEQSTARTED0W { w: self }
     }
-    #[doc = "Bit 3 - Enable or disable interrupt for SEQSTARTED[1] event"]
+    #[doc = "Bit 3 - Enable or disable interrupt for SEQSTARTED\\[1\\] event"]
     #[inline]
     pub fn seqstarted1(&mut self) -> _SEQSTARTED1W {
         _SEQSTARTED1W { w: self }
     }
-    #[doc = "Bit 4 - Enable or disable interrupt for SEQEND[0] event"]
+    #[doc = "Bit 4 - Enable or disable interrupt for SEQEND\\[0\\] event"]
     #[inline]
     pub fn seqend0(&mut self) -> _SEQEND0W {
         _SEQEND0W { w: self }
     }
-    #[doc = "Bit 5 - Enable or disable interrupt for SEQEND[1] event"]
+    #[doc = "Bit 5 - Enable or disable interrupt for SEQEND\\[1\\] event"]
     #[inline]
     pub fn seqend1(&mut self) -> _SEQEND1W {
         _SEQEND1W { w: self }
