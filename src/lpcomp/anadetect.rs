@@ -1,184 +1,108 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::ANADETECT {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register ANADETECT"]
+pub type R = crate::R<u32, super::ANADETECT>;
+#[doc = "Writer for register ANADETECT"]
+pub type W = crate::W<u32, super::ANADETECT>;
+#[doc = "Register ANADETECT `reset()`'s with value 0"]
+impl crate::ResetValue for super::ANADETECT {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `ANADETECT`"]
+#[doc = "Analog detect configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ANADETECTR {
-    #[doc = "Generate ANADETECT on crossing, both upward crossing and downward crossing"]
+pub enum ANADETECT_A {
+    #[doc = "0: Generate ANADETECT on crossing, both upward crossing and downward crossing"]
     CROSS,
-    #[doc = "Generate ANADETECT on upward crossing only"]
+    #[doc = "1: Generate ANADETECT on upward crossing only"]
     UP,
-    #[doc = "Generate ANADETECT on downward crossing only"]
+    #[doc = "2: Generate ANADETECT on downward crossing only"]
     DOWN,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl ANADETECTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            ANADETECTR::CROSS => 0,
-            ANADETECTR::UP => 1,
-            ANADETECTR::DOWN => 2,
-            ANADETECTR::_Reserved(bits) => bits,
+impl From<ANADETECT_A> for u8 {
+    #[inline(always)]
+    fn from(variant: ANADETECT_A) -> Self {
+        match variant {
+            ANADETECT_A::CROSS => 0,
+            ANADETECT_A::UP => 1,
+            ANADETECT_A::DOWN => 2,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> ANADETECTR {
-        match value {
-            0 => ANADETECTR::CROSS,
-            1 => ANADETECTR::UP,
-            2 => ANADETECTR::DOWN,
-            i => ANADETECTR::_Reserved(i),
+}
+#[doc = "Reader of field `ANADETECT`"]
+pub type ANADETECT_R = crate::R<u8, ANADETECT_A>;
+impl ANADETECT_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, ANADETECT_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(ANADETECT_A::CROSS),
+            1 => Val(ANADETECT_A::UP),
+            2 => Val(ANADETECT_A::DOWN),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `CROSS`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_cross(&self) -> bool {
-        *self == ANADETECTR::CROSS
+        *self == ANADETECT_A::CROSS
     }
     #[doc = "Checks if the value of the field is `UP`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_up(&self) -> bool {
-        *self == ANADETECTR::UP
+        *self == ANADETECT_A::UP
     }
     #[doc = "Checks if the value of the field is `DOWN`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_down(&self) -> bool {
-        *self == ANADETECTR::DOWN
+        *self == ANADETECT_A::DOWN
     }
 }
-#[doc = "Values that can be written to the field `ANADETECT`"]
-pub enum ANADETECTW {
-    #[doc = "Generate ANADETECT on crossing, both upward crossing and downward crossing"]
-    CROSS,
-    #[doc = "Generate ANADETECT on upward crossing only"]
-    UP,
-    #[doc = "Generate ANADETECT on downward crossing only"]
-    DOWN,
-}
-impl ANADETECTW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            ANADETECTW::CROSS => 0,
-            ANADETECTW::UP => 1,
-            ANADETECTW::DOWN => 2,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ANADETECTW<'a> {
+#[doc = "Write proxy for field `ANADETECT`"]
+pub struct ANADETECT_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ANADETECTW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ANADETECTW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+impl<'a> ANADETECT_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ANADETECT_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Generate ANADETECT on crossing, both upward crossing and downward crossing"]
-    #[inline]
+    #[inline(always)]
     pub fn cross(self) -> &'a mut W {
-        self.variant(ANADETECTW::CROSS)
+        self.variant(ANADETECT_A::CROSS)
     }
     #[doc = "Generate ANADETECT on upward crossing only"]
-    #[inline]
+    #[inline(always)]
     pub fn up(self) -> &'a mut W {
-        self.variant(ANADETECTW::UP)
+        self.variant(ANADETECT_A::UP)
     }
     #[doc = "Generate ANADETECT on downward crossing only"]
-    #[inline]
+    #[inline(always)]
     pub fn down(self) -> &'a mut W {
-        self.variant(ANADETECTW::DOWN)
+        self.variant(ANADETECT_A::DOWN)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x03) | ((value as u32) & 0x03);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:1 - Analog detect configuration"]
-    #[inline]
-    pub fn anadetect(&self) -> ANADETECTR {
-        ANADETECTR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn anadetect(&self) -> ANADETECT_R {
+        ANADETECT_R::new((self.bits & 0x03) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:1 - Analog detect configuration"]
-    #[inline]
-    pub fn anadetect(&mut self) -> _ANADETECTW {
-        _ANADETECTW { w: self }
+    #[inline(always)]
+    pub fn anadetect(&mut self) -> ANADETECT_W {
+        ANADETECT_W { w: self }
     }
 }

@@ -1,1396 +1,1180 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::REGIONENCLR {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register REGIONENCLR"]
+pub type R = crate::R<u32, super::REGIONENCLR>;
+#[doc = "Writer for register REGIONENCLR"]
+pub type W = crate::W<u32, super::REGIONENCLR>;
+#[doc = "Register REGIONENCLR `reset()`'s with value 0"]
+impl crate::ResetValue for super::REGIONENCLR {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `RGN0WA`"]
+#[doc = "Disable write access watch in region\\[0\\]\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RGN0WAR {
-    #[doc = "Write access watch in this region is disabled"]
+pub enum RGN0WA_A {
+    #[doc = "0: Write access watch in this region is disabled"]
     DISABLED,
-    #[doc = "Write access watch in this region is enabled"]
+    #[doc = "1: Write access watch in this region is enabled"]
     ENABLED,
 }
-impl RGN0WAR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            RGN0WAR::DISABLED => false,
-            RGN0WAR::ENABLED => true,
+impl From<RGN0WA_A> for bool {
+    #[inline(always)]
+    fn from(variant: RGN0WA_A) -> Self {
+        match variant {
+            RGN0WA_A::DISABLED => false,
+            RGN0WA_A::ENABLED => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> RGN0WAR {
-        match value {
-            false => RGN0WAR::DISABLED,
-            true => RGN0WAR::ENABLED,
+}
+#[doc = "Reader of field `RGN0WA`"]
+pub type RGN0WA_R = crate::R<bool, RGN0WA_A>;
+impl RGN0WA_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RGN0WA_A {
+        match self.bits {
+            false => RGN0WA_A::DISABLED,
+            true => RGN0WA_A::ENABLED,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == RGN0WAR::DISABLED
+        *self == RGN0WA_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == RGN0WAR::ENABLED
+        *self == RGN0WA_A::ENABLED
     }
 }
-#[doc = "Possible values of the field `RGN0RA`"]
+#[doc = "Disable write access watch in region\\[0\\]\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RGN0RAR {
-    #[doc = "Read access watch in this region is disabled"]
-    DISABLED,
-    #[doc = "Read access watch in this region is enabled"]
-    ENABLED,
-}
-impl RGN0RAR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            RGN0RAR::DISABLED => false,
-            RGN0RAR::ENABLED => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> RGN0RAR {
-        match value {
-            false => RGN0RAR::DISABLED,
-            true => RGN0RAR::ENABLED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
-    pub fn is_disabled(&self) -> bool {
-        *self == RGN0RAR::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
-    pub fn is_enabled(&self) -> bool {
-        *self == RGN0RAR::ENABLED
-    }
-}
-#[doc = "Possible values of the field `RGN1WA`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RGN1WAR {
-    #[doc = "Write access watch in this region is disabled"]
-    DISABLED,
-    #[doc = "Write access watch in this region is enabled"]
-    ENABLED,
-}
-impl RGN1WAR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            RGN1WAR::DISABLED => false,
-            RGN1WAR::ENABLED => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> RGN1WAR {
-        match value {
-            false => RGN1WAR::DISABLED,
-            true => RGN1WAR::ENABLED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
-    pub fn is_disabled(&self) -> bool {
-        *self == RGN1WAR::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
-    pub fn is_enabled(&self) -> bool {
-        *self == RGN1WAR::ENABLED
-    }
-}
-#[doc = "Possible values of the field `RGN1RA`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RGN1RAR {
-    #[doc = "Read access watch in this region is disabled"]
-    DISABLED,
-    #[doc = "Read access watch in this region is enabled"]
-    ENABLED,
-}
-impl RGN1RAR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            RGN1RAR::DISABLED => false,
-            RGN1RAR::ENABLED => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> RGN1RAR {
-        match value {
-            false => RGN1RAR::DISABLED,
-            true => RGN1RAR::ENABLED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
-    pub fn is_disabled(&self) -> bool {
-        *self == RGN1RAR::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
-    pub fn is_enabled(&self) -> bool {
-        *self == RGN1RAR::ENABLED
-    }
-}
-#[doc = "Possible values of the field `RGN2WA`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RGN2WAR {
-    #[doc = "Write access watch in this region is disabled"]
-    DISABLED,
-    #[doc = "Write access watch in this region is enabled"]
-    ENABLED,
-}
-impl RGN2WAR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            RGN2WAR::DISABLED => false,
-            RGN2WAR::ENABLED => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> RGN2WAR {
-        match value {
-            false => RGN2WAR::DISABLED,
-            true => RGN2WAR::ENABLED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
-    pub fn is_disabled(&self) -> bool {
-        *self == RGN2WAR::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
-    pub fn is_enabled(&self) -> bool {
-        *self == RGN2WAR::ENABLED
-    }
-}
-#[doc = "Possible values of the field `RGN2RA`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RGN2RAR {
-    #[doc = "Read access watch in this region is disabled"]
-    DISABLED,
-    #[doc = "Read access watch in this region is enabled"]
-    ENABLED,
-}
-impl RGN2RAR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            RGN2RAR::DISABLED => false,
-            RGN2RAR::ENABLED => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> RGN2RAR {
-        match value {
-            false => RGN2RAR::DISABLED,
-            true => RGN2RAR::ENABLED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
-    pub fn is_disabled(&self) -> bool {
-        *self == RGN2RAR::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
-    pub fn is_enabled(&self) -> bool {
-        *self == RGN2RAR::ENABLED
-    }
-}
-#[doc = "Possible values of the field `RGN3WA`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RGN3WAR {
-    #[doc = "Write access watch in this region is disabled"]
-    DISABLED,
-    #[doc = "Write access watch in this region is enabled"]
-    ENABLED,
-}
-impl RGN3WAR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            RGN3WAR::DISABLED => false,
-            RGN3WAR::ENABLED => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> RGN3WAR {
-        match value {
-            false => RGN3WAR::DISABLED,
-            true => RGN3WAR::ENABLED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
-    pub fn is_disabled(&self) -> bool {
-        *self == RGN3WAR::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
-    pub fn is_enabled(&self) -> bool {
-        *self == RGN3WAR::ENABLED
-    }
-}
-#[doc = "Possible values of the field `RGN3RA`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RGN3RAR {
-    #[doc = "Read access watch in this region is disabled"]
-    DISABLED,
-    #[doc = "Read access watch in this region is enabled"]
-    ENABLED,
-}
-impl RGN3RAR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            RGN3RAR::DISABLED => false,
-            RGN3RAR::ENABLED => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> RGN3RAR {
-        match value {
-            false => RGN3RAR::DISABLED,
-            true => RGN3RAR::ENABLED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
-    pub fn is_disabled(&self) -> bool {
-        *self == RGN3RAR::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
-    pub fn is_enabled(&self) -> bool {
-        *self == RGN3RAR::ENABLED
-    }
-}
-#[doc = "Possible values of the field `PRGN0WA`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PRGN0WAR {
-    #[doc = "Write access watch in this PREGION is disabled"]
-    DISABLED,
-    #[doc = "Write access watch in this PREGION is enabled"]
-    ENABLED,
-}
-impl PRGN0WAR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PRGN0WAR::DISABLED => false,
-            PRGN0WAR::ENABLED => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PRGN0WAR {
-        match value {
-            false => PRGN0WAR::DISABLED,
-            true => PRGN0WAR::ENABLED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
-    pub fn is_disabled(&self) -> bool {
-        *self == PRGN0WAR::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
-    pub fn is_enabled(&self) -> bool {
-        *self == PRGN0WAR::ENABLED
-    }
-}
-#[doc = "Possible values of the field `PRGN0RA`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PRGN0RAR {
-    #[doc = "Read access watch in this PREGION is disabled"]
-    DISABLED,
-    #[doc = "Read access watch in this PREGION is enabled"]
-    ENABLED,
-}
-impl PRGN0RAR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PRGN0RAR::DISABLED => false,
-            PRGN0RAR::ENABLED => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PRGN0RAR {
-        match value {
-            false => PRGN0RAR::DISABLED,
-            true => PRGN0RAR::ENABLED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
-    pub fn is_disabled(&self) -> bool {
-        *self == PRGN0RAR::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
-    pub fn is_enabled(&self) -> bool {
-        *self == PRGN0RAR::ENABLED
-    }
-}
-#[doc = "Possible values of the field `PRGN1WA`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PRGN1WAR {
-    #[doc = "Write access watch in this PREGION is disabled"]
-    DISABLED,
-    #[doc = "Write access watch in this PREGION is enabled"]
-    ENABLED,
-}
-impl PRGN1WAR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PRGN1WAR::DISABLED => false,
-            PRGN1WAR::ENABLED => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PRGN1WAR {
-        match value {
-            false => PRGN1WAR::DISABLED,
-            true => PRGN1WAR::ENABLED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
-    pub fn is_disabled(&self) -> bool {
-        *self == PRGN1WAR::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
-    pub fn is_enabled(&self) -> bool {
-        *self == PRGN1WAR::ENABLED
-    }
-}
-#[doc = "Possible values of the field `PRGN1RA`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PRGN1RAR {
-    #[doc = "Read access watch in this PREGION is disabled"]
-    DISABLED,
-    #[doc = "Read access watch in this PREGION is enabled"]
-    ENABLED,
-}
-impl PRGN1RAR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PRGN1RAR::DISABLED => false,
-            PRGN1RAR::ENABLED => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PRGN1RAR {
-        match value {
-            false => PRGN1RAR::DISABLED,
-            true => PRGN1RAR::ENABLED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
-    pub fn is_disabled(&self) -> bool {
-        *self == PRGN1RAR::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
-    pub fn is_enabled(&self) -> bool {
-        *self == PRGN1RAR::ENABLED
-    }
-}
-#[doc = "Values that can be written to the field `RGN0WA`"]
-pub enum RGN0WAW {
-    #[doc = "Disable write access watch in this region"]
+pub enum RGN0WA_AW {
+    #[doc = "1: Disable write access watch in this region"]
     CLEAR,
 }
-impl RGN0WAW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            RGN0WAW::CLEAR => true,
+impl From<RGN0WA_AW> for bool {
+    #[inline(always)]
+    fn from(variant: RGN0WA_AW) -> Self {
+        match variant {
+            RGN0WA_AW::CLEAR => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _RGN0WAW<'a> {
+#[doc = "Write proxy for field `RGN0WA`"]
+pub struct RGN0WA_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _RGN0WAW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: RGN0WAW) -> &'a mut W {
+impl<'a> RGN0WA_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: RGN0WA_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable write access watch in this region"]
-    #[inline]
+    #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(RGN0WAW::CLEAR)
+        self.variant(RGN0WA_AW::CLEAR)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `RGN0RA`"]
-pub enum RGN0RAW {
-    #[doc = "Disable read access watch in this region"]
+#[doc = "Disable read access watch in region\\[0\\]\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum RGN0RA_A {
+    #[doc = "0: Read access watch in this region is disabled"]
+    DISABLED,
+    #[doc = "1: Read access watch in this region is enabled"]
+    ENABLED,
+}
+impl From<RGN0RA_A> for bool {
+    #[inline(always)]
+    fn from(variant: RGN0RA_A) -> Self {
+        match variant {
+            RGN0RA_A::DISABLED => false,
+            RGN0RA_A::ENABLED => true,
+        }
+    }
+}
+#[doc = "Reader of field `RGN0RA`"]
+pub type RGN0RA_R = crate::R<bool, RGN0RA_A>;
+impl RGN0RA_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RGN0RA_A {
+        match self.bits {
+            false => RGN0RA_A::DISABLED,
+            true => RGN0RA_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == RGN0RA_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == RGN0RA_A::ENABLED
+    }
+}
+#[doc = "Disable read access watch in region\\[0\\]\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum RGN0RA_AW {
+    #[doc = "1: Disable read access watch in this region"]
     CLEAR,
 }
-impl RGN0RAW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            RGN0RAW::CLEAR => true,
+impl From<RGN0RA_AW> for bool {
+    #[inline(always)]
+    fn from(variant: RGN0RA_AW) -> Self {
+        match variant {
+            RGN0RA_AW::CLEAR => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _RGN0RAW<'a> {
+#[doc = "Write proxy for field `RGN0RA`"]
+pub struct RGN0RA_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _RGN0RAW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: RGN0RAW) -> &'a mut W {
+impl<'a> RGN0RA_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: RGN0RA_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable read access watch in this region"]
-    #[inline]
+    #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(RGN0RAW::CLEAR)
+        self.variant(RGN0RA_AW::CLEAR)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `RGN1WA`"]
-pub enum RGN1WAW {
-    #[doc = "Disable write access watch in this region"]
+#[doc = "Disable write access watch in region\\[1\\]\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum RGN1WA_A {
+    #[doc = "0: Write access watch in this region is disabled"]
+    DISABLED,
+    #[doc = "1: Write access watch in this region is enabled"]
+    ENABLED,
+}
+impl From<RGN1WA_A> for bool {
+    #[inline(always)]
+    fn from(variant: RGN1WA_A) -> Self {
+        match variant {
+            RGN1WA_A::DISABLED => false,
+            RGN1WA_A::ENABLED => true,
+        }
+    }
+}
+#[doc = "Reader of field `RGN1WA`"]
+pub type RGN1WA_R = crate::R<bool, RGN1WA_A>;
+impl RGN1WA_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RGN1WA_A {
+        match self.bits {
+            false => RGN1WA_A::DISABLED,
+            true => RGN1WA_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == RGN1WA_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == RGN1WA_A::ENABLED
+    }
+}
+#[doc = "Disable write access watch in region\\[1\\]\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum RGN1WA_AW {
+    #[doc = "1: Disable write access watch in this region"]
     CLEAR,
 }
-impl RGN1WAW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            RGN1WAW::CLEAR => true,
+impl From<RGN1WA_AW> for bool {
+    #[inline(always)]
+    fn from(variant: RGN1WA_AW) -> Self {
+        match variant {
+            RGN1WA_AW::CLEAR => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _RGN1WAW<'a> {
+#[doc = "Write proxy for field `RGN1WA`"]
+pub struct RGN1WA_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _RGN1WAW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: RGN1WAW) -> &'a mut W {
+impl<'a> RGN1WA_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: RGN1WA_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Disable write access watch in this region"]
-    #[inline]
-    pub fn clear(self) -> &'a mut W {
-        self.variant(RGN1WAW::CLEAR)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `RGN1RA`"]
-pub enum RGN1RAW {
-    #[doc = "Disable read access watch in this region"]
-    CLEAR,
-}
-impl RGN1RAW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            RGN1RAW::CLEAR => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _RGN1RAW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _RGN1RAW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: RGN1RAW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Disable read access watch in this region"]
-    #[inline]
-    pub fn clear(self) -> &'a mut W {
-        self.variant(RGN1RAW::CLEAR)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `RGN2WA`"]
-pub enum RGN2WAW {
-    #[doc = "Disable write access watch in this region"]
-    CLEAR,
-}
-impl RGN2WAW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            RGN2WAW::CLEAR => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _RGN2WAW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _RGN2WAW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: RGN2WAW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable write access watch in this region"]
-    #[inline]
+    #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(RGN2WAW::CLEAR)
+        self.variant(RGN1WA_AW::CLEAR)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `RGN2RA`"]
-pub enum RGN2RAW {
-    #[doc = "Disable read access watch in this region"]
+#[doc = "Disable read access watch in region\\[1\\]\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum RGN1RA_A {
+    #[doc = "0: Read access watch in this region is disabled"]
+    DISABLED,
+    #[doc = "1: Read access watch in this region is enabled"]
+    ENABLED,
+}
+impl From<RGN1RA_A> for bool {
+    #[inline(always)]
+    fn from(variant: RGN1RA_A) -> Self {
+        match variant {
+            RGN1RA_A::DISABLED => false,
+            RGN1RA_A::ENABLED => true,
+        }
+    }
+}
+#[doc = "Reader of field `RGN1RA`"]
+pub type RGN1RA_R = crate::R<bool, RGN1RA_A>;
+impl RGN1RA_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RGN1RA_A {
+        match self.bits {
+            false => RGN1RA_A::DISABLED,
+            true => RGN1RA_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == RGN1RA_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == RGN1RA_A::ENABLED
+    }
+}
+#[doc = "Disable read access watch in region\\[1\\]\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum RGN1RA_AW {
+    #[doc = "1: Disable read access watch in this region"]
     CLEAR,
 }
-impl RGN2RAW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            RGN2RAW::CLEAR => true,
+impl From<RGN1RA_AW> for bool {
+    #[inline(always)]
+    fn from(variant: RGN1RA_AW) -> Self {
+        match variant {
+            RGN1RA_AW::CLEAR => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _RGN2RAW<'a> {
+#[doc = "Write proxy for field `RGN1RA`"]
+pub struct RGN1RA_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _RGN2RAW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: RGN2RAW) -> &'a mut W {
+impl<'a> RGN1RA_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: RGN1RA_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable read access watch in this region"]
-    #[inline]
+    #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(RGN2RAW::CLEAR)
+        self.variant(RGN1RA_AW::CLEAR)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `RGN3WA`"]
-pub enum RGN3WAW {
+#[doc = "Disable write access watch in region\\[2\\]\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum RGN2WA_A {
+    #[doc = "0: Write access watch in this region is disabled"]
+    DISABLED,
+    #[doc = "1: Write access watch in this region is enabled"]
+    ENABLED,
+}
+impl From<RGN2WA_A> for bool {
+    #[inline(always)]
+    fn from(variant: RGN2WA_A) -> Self {
+        match variant {
+            RGN2WA_A::DISABLED => false,
+            RGN2WA_A::ENABLED => true,
+        }
+    }
+}
+#[doc = "Reader of field `RGN2WA`"]
+pub type RGN2WA_R = crate::R<bool, RGN2WA_A>;
+impl RGN2WA_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RGN2WA_A {
+        match self.bits {
+            false => RGN2WA_A::DISABLED,
+            true => RGN2WA_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == RGN2WA_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == RGN2WA_A::ENABLED
+    }
+}
+#[doc = "Disable write access watch in region\\[2\\]\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum RGN2WA_AW {
+    #[doc = "1: Disable write access watch in this region"]
+    CLEAR,
+}
+impl From<RGN2WA_AW> for bool {
+    #[inline(always)]
+    fn from(variant: RGN2WA_AW) -> Self {
+        match variant {
+            RGN2WA_AW::CLEAR => true,
+        }
+    }
+}
+#[doc = "Write proxy for field `RGN2WA`"]
+pub struct RGN2WA_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> RGN2WA_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: RGN2WA_AW) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "Disable write access watch in this region"]
-    CLEAR,
+    #[inline(always)]
+    pub fn clear(self) -> &'a mut W {
+        self.variant(RGN2WA_AW::CLEAR)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w
+    }
 }
-impl RGN3WAW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            RGN3WAW::CLEAR => true,
+#[doc = "Disable read access watch in region\\[2\\]\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum RGN2RA_A {
+    #[doc = "0: Read access watch in this region is disabled"]
+    DISABLED,
+    #[doc = "1: Read access watch in this region is enabled"]
+    ENABLED,
+}
+impl From<RGN2RA_A> for bool {
+    #[inline(always)]
+    fn from(variant: RGN2RA_A) -> Self {
+        match variant {
+            RGN2RA_A::DISABLED => false,
+            RGN2RA_A::ENABLED => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _RGN3WAW<'a> {
+#[doc = "Reader of field `RGN2RA`"]
+pub type RGN2RA_R = crate::R<bool, RGN2RA_A>;
+impl RGN2RA_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RGN2RA_A {
+        match self.bits {
+            false => RGN2RA_A::DISABLED,
+            true => RGN2RA_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == RGN2RA_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == RGN2RA_A::ENABLED
+    }
+}
+#[doc = "Disable read access watch in region\\[2\\]\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum RGN2RA_AW {
+    #[doc = "1: Disable read access watch in this region"]
+    CLEAR,
+}
+impl From<RGN2RA_AW> for bool {
+    #[inline(always)]
+    fn from(variant: RGN2RA_AW) -> Self {
+        match variant {
+            RGN2RA_AW::CLEAR => true,
+        }
+    }
+}
+#[doc = "Write proxy for field `RGN2RA`"]
+pub struct RGN2RA_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _RGN3WAW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: RGN3WAW) -> &'a mut W {
+impl<'a> RGN2RA_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: RGN2RA_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "Disable read access watch in this region"]
+    #[inline(always)]
+    pub fn clear(self) -> &'a mut W {
+        self.variant(RGN2RA_AW::CLEAR)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w
+    }
+}
+#[doc = "Disable write access watch in region\\[3\\]\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum RGN3WA_A {
+    #[doc = "0: Write access watch in this region is disabled"]
+    DISABLED,
+    #[doc = "1: Write access watch in this region is enabled"]
+    ENABLED,
+}
+impl From<RGN3WA_A> for bool {
+    #[inline(always)]
+    fn from(variant: RGN3WA_A) -> Self {
+        match variant {
+            RGN3WA_A::DISABLED => false,
+            RGN3WA_A::ENABLED => true,
+        }
+    }
+}
+#[doc = "Reader of field `RGN3WA`"]
+pub type RGN3WA_R = crate::R<bool, RGN3WA_A>;
+impl RGN3WA_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RGN3WA_A {
+        match self.bits {
+            false => RGN3WA_A::DISABLED,
+            true => RGN3WA_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == RGN3WA_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == RGN3WA_A::ENABLED
+    }
+}
+#[doc = "Disable write access watch in region\\[3\\]\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum RGN3WA_AW {
+    #[doc = "1: Disable write access watch in this region"]
+    CLEAR,
+}
+impl From<RGN3WA_AW> for bool {
+    #[inline(always)]
+    fn from(variant: RGN3WA_AW) -> Self {
+        match variant {
+            RGN3WA_AW::CLEAR => true,
+        }
+    }
+}
+#[doc = "Write proxy for field `RGN3WA`"]
+pub struct RGN3WA_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> RGN3WA_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: RGN3WA_AW) -> &'a mut W {
+        {
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable write access watch in this region"]
-    #[inline]
+    #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(RGN3WAW::CLEAR)
+        self.variant(RGN3WA_AW::CLEAR)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `RGN3RA`"]
-pub enum RGN3RAW {
-    #[doc = "Disable read access watch in this region"]
+#[doc = "Disable read access watch in region\\[3\\]\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum RGN3RA_A {
+    #[doc = "0: Read access watch in this region is disabled"]
+    DISABLED,
+    #[doc = "1: Read access watch in this region is enabled"]
+    ENABLED,
+}
+impl From<RGN3RA_A> for bool {
+    #[inline(always)]
+    fn from(variant: RGN3RA_A) -> Self {
+        match variant {
+            RGN3RA_A::DISABLED => false,
+            RGN3RA_A::ENABLED => true,
+        }
+    }
+}
+#[doc = "Reader of field `RGN3RA`"]
+pub type RGN3RA_R = crate::R<bool, RGN3RA_A>;
+impl RGN3RA_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RGN3RA_A {
+        match self.bits {
+            false => RGN3RA_A::DISABLED,
+            true => RGN3RA_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == RGN3RA_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == RGN3RA_A::ENABLED
+    }
+}
+#[doc = "Disable read access watch in region\\[3\\]\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum RGN3RA_AW {
+    #[doc = "1: Disable read access watch in this region"]
     CLEAR,
 }
-impl RGN3RAW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            RGN3RAW::CLEAR => true,
+impl From<RGN3RA_AW> for bool {
+    #[inline(always)]
+    fn from(variant: RGN3RA_AW) -> Self {
+        match variant {
+            RGN3RA_AW::CLEAR => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _RGN3RAW<'a> {
+#[doc = "Write proxy for field `RGN3RA`"]
+pub struct RGN3RA_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _RGN3RAW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: RGN3RAW) -> &'a mut W {
+impl<'a> RGN3RA_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: RGN3RA_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable read access watch in this region"]
-    #[inline]
+    #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(RGN3RAW::CLEAR)
+        self.variant(RGN3RA_AW::CLEAR)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 7;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `PRGN0WA`"]
-pub enum PRGN0WAW {
-    #[doc = "Disable write access watch in this PREGION"]
-    CLEAR,
+#[doc = "Disable write access watch in PREGION\\[0\\]\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PRGN0WA_A {
+    #[doc = "0: Write access watch in this PREGION is disabled"]
+    DISABLED,
+    #[doc = "1: Write access watch in this PREGION is enabled"]
+    ENABLED,
 }
-impl PRGN0WAW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PRGN0WAW::CLEAR => true,
+impl From<PRGN0WA_A> for bool {
+    #[inline(always)]
+    fn from(variant: PRGN0WA_A) -> Self {
+        match variant {
+            PRGN0WA_A::DISABLED => false,
+            PRGN0WA_A::ENABLED => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _PRGN0WAW<'a> {
+#[doc = "Reader of field `PRGN0WA`"]
+pub type PRGN0WA_R = crate::R<bool, PRGN0WA_A>;
+impl PRGN0WA_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PRGN0WA_A {
+        match self.bits {
+            false => PRGN0WA_A::DISABLED,
+            true => PRGN0WA_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == PRGN0WA_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == PRGN0WA_A::ENABLED
+    }
+}
+#[doc = "Disable write access watch in PREGION\\[0\\]\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PRGN0WA_AW {
+    #[doc = "1: Disable write access watch in this PREGION"]
+    CLEAR,
+}
+impl From<PRGN0WA_AW> for bool {
+    #[inline(always)]
+    fn from(variant: PRGN0WA_AW) -> Self {
+        match variant {
+            PRGN0WA_AW::CLEAR => true,
+        }
+    }
+}
+#[doc = "Write proxy for field `PRGN0WA`"]
+pub struct PRGN0WA_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PRGN0WAW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PRGN0WAW) -> &'a mut W {
+impl<'a> PRGN0WA_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PRGN0WA_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable write access watch in this PREGION"]
-    #[inline]
+    #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(PRGN0WAW::CLEAR)
+        self.variant(PRGN0WA_AW::CLEAR)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 24;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `PRGN0RA`"]
-pub enum PRGN0RAW {
-    #[doc = "Disable read access watch in this PREGION"]
+#[doc = "Disable read access watch in PREGION\\[0\\]\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PRGN0RA_A {
+    #[doc = "0: Read access watch in this PREGION is disabled"]
+    DISABLED,
+    #[doc = "1: Read access watch in this PREGION is enabled"]
+    ENABLED,
+}
+impl From<PRGN0RA_A> for bool {
+    #[inline(always)]
+    fn from(variant: PRGN0RA_A) -> Self {
+        match variant {
+            PRGN0RA_A::DISABLED => false,
+            PRGN0RA_A::ENABLED => true,
+        }
+    }
+}
+#[doc = "Reader of field `PRGN0RA`"]
+pub type PRGN0RA_R = crate::R<bool, PRGN0RA_A>;
+impl PRGN0RA_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PRGN0RA_A {
+        match self.bits {
+            false => PRGN0RA_A::DISABLED,
+            true => PRGN0RA_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == PRGN0RA_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == PRGN0RA_A::ENABLED
+    }
+}
+#[doc = "Disable read access watch in PREGION\\[0\\]\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PRGN0RA_AW {
+    #[doc = "1: Disable read access watch in this PREGION"]
     CLEAR,
 }
-impl PRGN0RAW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PRGN0RAW::CLEAR => true,
+impl From<PRGN0RA_AW> for bool {
+    #[inline(always)]
+    fn from(variant: PRGN0RA_AW) -> Self {
+        match variant {
+            PRGN0RA_AW::CLEAR => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _PRGN0RAW<'a> {
+#[doc = "Write proxy for field `PRGN0RA`"]
+pub struct PRGN0RA_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PRGN0RAW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PRGN0RAW) -> &'a mut W {
+impl<'a> PRGN0RA_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PRGN0RA_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable read access watch in this PREGION"]
-    #[inline]
+    #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(PRGN0RAW::CLEAR)
+        self.variant(PRGN0RA_AW::CLEAR)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 25;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 25)) | (((value as u32) & 0x01) << 25);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `PRGN1WA`"]
-pub enum PRGN1WAW {
+#[doc = "Disable write access watch in PREGION\\[1\\]\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PRGN1WA_A {
+    #[doc = "0: Write access watch in this PREGION is disabled"]
+    DISABLED,
+    #[doc = "1: Write access watch in this PREGION is enabled"]
+    ENABLED,
+}
+impl From<PRGN1WA_A> for bool {
+    #[inline(always)]
+    fn from(variant: PRGN1WA_A) -> Self {
+        match variant {
+            PRGN1WA_A::DISABLED => false,
+            PRGN1WA_A::ENABLED => true,
+        }
+    }
+}
+#[doc = "Reader of field `PRGN1WA`"]
+pub type PRGN1WA_R = crate::R<bool, PRGN1WA_A>;
+impl PRGN1WA_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PRGN1WA_A {
+        match self.bits {
+            false => PRGN1WA_A::DISABLED,
+            true => PRGN1WA_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == PRGN1WA_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == PRGN1WA_A::ENABLED
+    }
+}
+#[doc = "Disable write access watch in PREGION\\[1\\]\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PRGN1WA_AW {
+    #[doc = "1: Disable write access watch in this PREGION"]
+    CLEAR,
+}
+impl From<PRGN1WA_AW> for bool {
+    #[inline(always)]
+    fn from(variant: PRGN1WA_AW) -> Self {
+        match variant {
+            PRGN1WA_AW::CLEAR => true,
+        }
+    }
+}
+#[doc = "Write proxy for field `PRGN1WA`"]
+pub struct PRGN1WA_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> PRGN1WA_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PRGN1WA_AW) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "Disable write access watch in this PREGION"]
-    CLEAR,
-}
-impl PRGN1WAW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PRGN1WAW::CLEAR => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PRGN1WAW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PRGN1WAW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PRGN1WAW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Disable write access watch in this PREGION"]
-    #[inline]
+    #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(PRGN1WAW::CLEAR)
+        self.variant(PRGN1WA_AW::CLEAR)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 26;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 26)) | (((value as u32) & 0x01) << 26);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `PRGN1RA`"]
-pub enum PRGN1RAW {
-    #[doc = "Disable read access watch in this PREGION"]
+#[doc = "Disable read access watch in PREGION\\[1\\]\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PRGN1RA_A {
+    #[doc = "0: Read access watch in this PREGION is disabled"]
+    DISABLED,
+    #[doc = "1: Read access watch in this PREGION is enabled"]
+    ENABLED,
+}
+impl From<PRGN1RA_A> for bool {
+    #[inline(always)]
+    fn from(variant: PRGN1RA_A) -> Self {
+        match variant {
+            PRGN1RA_A::DISABLED => false,
+            PRGN1RA_A::ENABLED => true,
+        }
+    }
+}
+#[doc = "Reader of field `PRGN1RA`"]
+pub type PRGN1RA_R = crate::R<bool, PRGN1RA_A>;
+impl PRGN1RA_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PRGN1RA_A {
+        match self.bits {
+            false => PRGN1RA_A::DISABLED,
+            true => PRGN1RA_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == PRGN1RA_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == PRGN1RA_A::ENABLED
+    }
+}
+#[doc = "Disable read access watch in PREGION\\[1\\]\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PRGN1RA_AW {
+    #[doc = "1: Disable read access watch in this PREGION"]
     CLEAR,
 }
-impl PRGN1RAW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PRGN1RAW::CLEAR => true,
+impl From<PRGN1RA_AW> for bool {
+    #[inline(always)]
+    fn from(variant: PRGN1RA_AW) -> Self {
+        match variant {
+            PRGN1RA_AW::CLEAR => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _PRGN1RAW<'a> {
+#[doc = "Write proxy for field `PRGN1RA`"]
+pub struct PRGN1RA_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PRGN1RAW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PRGN1RAW) -> &'a mut W {
+impl<'a> PRGN1RA_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PRGN1RA_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable read access watch in this PREGION"]
-    #[inline]
+    #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(PRGN1RAW::CLEAR)
+        self.variant(PRGN1RA_AW::CLEAR)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 27;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 27)) | (((value as u32) & 0x01) << 27);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Disable write access watch in region\\[0\\]"]
-    #[inline]
-    pub fn rgn0wa(&self) -> RGN0WAR {
-        RGN0WAR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn rgn0wa(&self) -> RGN0WA_R {
+        RGN0WA_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Disable read access watch in region\\[0\\]"]
-    #[inline]
-    pub fn rgn0ra(&self) -> RGN0RAR {
-        RGN0RAR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn rgn0ra(&self) -> RGN0RA_R {
+        RGN0RA_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Disable write access watch in region\\[1\\]"]
-    #[inline]
-    pub fn rgn1wa(&self) -> RGN1WAR {
-        RGN1WAR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn rgn1wa(&self) -> RGN1WA_R {
+        RGN1WA_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - Disable read access watch in region\\[1\\]"]
-    #[inline]
-    pub fn rgn1ra(&self) -> RGN1RAR {
-        RGN1RAR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn rgn1ra(&self) -> RGN1RA_R {
+        RGN1RA_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - Disable write access watch in region\\[2\\]"]
-    #[inline]
-    pub fn rgn2wa(&self) -> RGN2WAR {
-        RGN2WAR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn rgn2wa(&self) -> RGN2WA_R {
+        RGN2WA_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - Disable read access watch in region\\[2\\]"]
-    #[inline]
-    pub fn rgn2ra(&self) -> RGN2RAR {
-        RGN2RAR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn rgn2ra(&self) -> RGN2RA_R {
+        RGN2RA_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - Disable write access watch in region\\[3\\]"]
-    #[inline]
-    pub fn rgn3wa(&self) -> RGN3WAR {
-        RGN3WAR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn rgn3wa(&self) -> RGN3WA_R {
+        RGN3WA_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - Disable read access watch in region\\[3\\]"]
-    #[inline]
-    pub fn rgn3ra(&self) -> RGN3RAR {
-        RGN3RAR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn rgn3ra(&self) -> RGN3RA_R {
+        RGN3RA_R::new(((self.bits >> 7) & 0x01) != 0)
     }
     #[doc = "Bit 24 - Disable write access watch in PREGION\\[0\\]"]
-    #[inline]
-    pub fn prgn0wa(&self) -> PRGN0WAR {
-        PRGN0WAR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn prgn0wa(&self) -> PRGN0WA_R {
+        PRGN0WA_R::new(((self.bits >> 24) & 0x01) != 0)
     }
     #[doc = "Bit 25 - Disable read access watch in PREGION\\[0\\]"]
-    #[inline]
-    pub fn prgn0ra(&self) -> PRGN0RAR {
-        PRGN0RAR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 25;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn prgn0ra(&self) -> PRGN0RA_R {
+        PRGN0RA_R::new(((self.bits >> 25) & 0x01) != 0)
     }
     #[doc = "Bit 26 - Disable write access watch in PREGION\\[1\\]"]
-    #[inline]
-    pub fn prgn1wa(&self) -> PRGN1WAR {
-        PRGN1WAR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 26;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn prgn1wa(&self) -> PRGN1WA_R {
+        PRGN1WA_R::new(((self.bits >> 26) & 0x01) != 0)
     }
     #[doc = "Bit 27 - Disable read access watch in PREGION\\[1\\]"]
-    #[inline]
-    pub fn prgn1ra(&self) -> PRGN1RAR {
-        PRGN1RAR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 27;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn prgn1ra(&self) -> PRGN1RA_R {
+        PRGN1RA_R::new(((self.bits >> 27) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Disable write access watch in region\\[0\\]"]
-    #[inline]
-    pub fn rgn0wa(&mut self) -> _RGN0WAW {
-        _RGN0WAW { w: self }
+    #[inline(always)]
+    pub fn rgn0wa(&mut self) -> RGN0WA_W {
+        RGN0WA_W { w: self }
     }
     #[doc = "Bit 1 - Disable read access watch in region\\[0\\]"]
-    #[inline]
-    pub fn rgn0ra(&mut self) -> _RGN0RAW {
-        _RGN0RAW { w: self }
+    #[inline(always)]
+    pub fn rgn0ra(&mut self) -> RGN0RA_W {
+        RGN0RA_W { w: self }
     }
     #[doc = "Bit 2 - Disable write access watch in region\\[1\\]"]
-    #[inline]
-    pub fn rgn1wa(&mut self) -> _RGN1WAW {
-        _RGN1WAW { w: self }
+    #[inline(always)]
+    pub fn rgn1wa(&mut self) -> RGN1WA_W {
+        RGN1WA_W { w: self }
     }
     #[doc = "Bit 3 - Disable read access watch in region\\[1\\]"]
-    #[inline]
-    pub fn rgn1ra(&mut self) -> _RGN1RAW {
-        _RGN1RAW { w: self }
+    #[inline(always)]
+    pub fn rgn1ra(&mut self) -> RGN1RA_W {
+        RGN1RA_W { w: self }
     }
     #[doc = "Bit 4 - Disable write access watch in region\\[2\\]"]
-    #[inline]
-    pub fn rgn2wa(&mut self) -> _RGN2WAW {
-        _RGN2WAW { w: self }
+    #[inline(always)]
+    pub fn rgn2wa(&mut self) -> RGN2WA_W {
+        RGN2WA_W { w: self }
     }
     #[doc = "Bit 5 - Disable read access watch in region\\[2\\]"]
-    #[inline]
-    pub fn rgn2ra(&mut self) -> _RGN2RAW {
-        _RGN2RAW { w: self }
+    #[inline(always)]
+    pub fn rgn2ra(&mut self) -> RGN2RA_W {
+        RGN2RA_W { w: self }
     }
     #[doc = "Bit 6 - Disable write access watch in region\\[3\\]"]
-    #[inline]
-    pub fn rgn3wa(&mut self) -> _RGN3WAW {
-        _RGN3WAW { w: self }
+    #[inline(always)]
+    pub fn rgn3wa(&mut self) -> RGN3WA_W {
+        RGN3WA_W { w: self }
     }
     #[doc = "Bit 7 - Disable read access watch in region\\[3\\]"]
-    #[inline]
-    pub fn rgn3ra(&mut self) -> _RGN3RAW {
-        _RGN3RAW { w: self }
+    #[inline(always)]
+    pub fn rgn3ra(&mut self) -> RGN3RA_W {
+        RGN3RA_W { w: self }
     }
     #[doc = "Bit 24 - Disable write access watch in PREGION\\[0\\]"]
-    #[inline]
-    pub fn prgn0wa(&mut self) -> _PRGN0WAW {
-        _PRGN0WAW { w: self }
+    #[inline(always)]
+    pub fn prgn0wa(&mut self) -> PRGN0WA_W {
+        PRGN0WA_W { w: self }
     }
     #[doc = "Bit 25 - Disable read access watch in PREGION\\[0\\]"]
-    #[inline]
-    pub fn prgn0ra(&mut self) -> _PRGN0RAW {
-        _PRGN0RAW { w: self }
+    #[inline(always)]
+    pub fn prgn0ra(&mut self) -> PRGN0RA_W {
+        PRGN0RA_W { w: self }
     }
     #[doc = "Bit 26 - Disable write access watch in PREGION\\[1\\]"]
-    #[inline]
-    pub fn prgn1wa(&mut self) -> _PRGN1WAW {
-        _PRGN1WAW { w: self }
+    #[inline(always)]
+    pub fn prgn1wa(&mut self) -> PRGN1WA_W {
+        PRGN1WA_W { w: self }
     }
     #[doc = "Bit 27 - Disable read access watch in PREGION\\[1\\]"]
-    #[inline]
-    pub fn prgn1ra(&mut self) -> _PRGN1RAW {
-        _PRGN1RAW { w: self }
+    #[inline(always)]
+    pub fn prgn1ra(&mut self) -> PRGN1RA_W {
+        PRGN1RA_W { w: self }
     }
 }

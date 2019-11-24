@@ -1,286 +1,182 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::CONFIG {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register CONFIG"]
+pub type R = crate::R<u32, super::CONFIG>;
+#[doc = "Writer for register CONFIG"]
+pub type W = crate::W<u32, super::CONFIG>;
+#[doc = "Register CONFIG `reset()`'s with value 0"]
+impl crate::ResetValue for super::CONFIG {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `HWFC`"]
+#[doc = "Hardware flow control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum HWFCR {
-    #[doc = "Disabled"]
+pub enum HWFC_A {
+    #[doc = "0: Disabled"]
     DISABLED,
-    #[doc = "Enabled"]
+    #[doc = "1: Enabled"]
     ENABLED,
 }
-impl HWFCR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            HWFCR::DISABLED => false,
-            HWFCR::ENABLED => true,
+impl From<HWFC_A> for bool {
+    #[inline(always)]
+    fn from(variant: HWFC_A) -> Self {
+        match variant {
+            HWFC_A::DISABLED => false,
+            HWFC_A::ENABLED => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> HWFCR {
-        match value {
-            false => HWFCR::DISABLED,
-            true => HWFCR::ENABLED,
+}
+#[doc = "Reader of field `HWFC`"]
+pub type HWFC_R = crate::R<bool, HWFC_A>;
+impl HWFC_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> HWFC_A {
+        match self.bits {
+            false => HWFC_A::DISABLED,
+            true => HWFC_A::ENABLED,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == HWFCR::DISABLED
+        *self == HWFC_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == HWFCR::ENABLED
+        *self == HWFC_A::ENABLED
     }
 }
-#[doc = "Possible values of the field `PARITY`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PARITYR {
-    #[doc = "Exclude parity bit"]
-    EXCLUDED,
-    #[doc = "Include parity bit"]
-    INCLUDED,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
-}
-impl PARITYR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            PARITYR::EXCLUDED => 0,
-            PARITYR::INCLUDED => 7,
-            PARITYR::_Reserved(bits) => bits,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> PARITYR {
-        match value {
-            0 => PARITYR::EXCLUDED,
-            7 => PARITYR::INCLUDED,
-            i => PARITYR::_Reserved(i),
-        }
-    }
-    #[doc = "Checks if the value of the field is `EXCLUDED`"]
-    #[inline]
-    pub fn is_excluded(&self) -> bool {
-        *self == PARITYR::EXCLUDED
-    }
-    #[doc = "Checks if the value of the field is `INCLUDED`"]
-    #[inline]
-    pub fn is_included(&self) -> bool {
-        *self == PARITYR::INCLUDED
-    }
-}
-#[doc = "Values that can be written to the field `HWFC`"]
-pub enum HWFCW {
-    #[doc = "Disabled"]
-    DISABLED,
-    #[doc = "Enabled"]
-    ENABLED,
-}
-impl HWFCW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            HWFCW::DISABLED => false,
-            HWFCW::ENABLED => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _HWFCW<'a> {
+#[doc = "Write proxy for field `HWFC`"]
+pub struct HWFC_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _HWFCW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: HWFCW) -> &'a mut W {
+impl<'a> HWFC_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: HWFC_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disabled"]
-    #[inline]
+    #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(HWFCW::DISABLED)
+        self.variant(HWFC_A::DISABLED)
     }
     #[doc = "Enabled"]
-    #[inline]
+    #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(HWFCW::ENABLED)
+        self.variant(HWFC_A::ENABLED)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `PARITY`"]
-pub enum PARITYW {
-    #[doc = "Exclude parity bit"]
+#[doc = "Parity\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PARITY_A {
+    #[doc = "0: Exclude parity bit"]
     EXCLUDED,
-    #[doc = "Include parity bit"]
+    #[doc = "7: Include parity bit"]
     INCLUDED,
 }
-impl PARITYW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            PARITYW::EXCLUDED => 0,
-            PARITYW::INCLUDED => 7,
+impl From<PARITY_A> for u8 {
+    #[inline(always)]
+    fn from(variant: PARITY_A) -> Self {
+        match variant {
+            PARITY_A::EXCLUDED => 0,
+            PARITY_A::INCLUDED => 7,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _PARITYW<'a> {
+#[doc = "Reader of field `PARITY`"]
+pub type PARITY_R = crate::R<u8, PARITY_A>;
+impl PARITY_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, PARITY_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(PARITY_A::EXCLUDED),
+            7 => Val(PARITY_A::INCLUDED),
+            i => Res(i),
+        }
+    }
+    #[doc = "Checks if the value of the field is `EXCLUDED`"]
+    #[inline(always)]
+    pub fn is_excluded(&self) -> bool {
+        *self == PARITY_A::EXCLUDED
+    }
+    #[doc = "Checks if the value of the field is `INCLUDED`"]
+    #[inline(always)]
+    pub fn is_included(&self) -> bool {
+        *self == PARITY_A::INCLUDED
+    }
+}
+#[doc = "Write proxy for field `PARITY`"]
+pub struct PARITY_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PARITYW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PARITYW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+impl<'a> PARITY_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PARITY_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Exclude parity bit"]
-    #[inline]
+    #[inline(always)]
     pub fn excluded(self) -> &'a mut W {
-        self.variant(PARITYW::EXCLUDED)
+        self.variant(PARITY_A::EXCLUDED)
     }
     #[doc = "Include parity bit"]
-    #[inline]
+    #[inline(always)]
     pub fn included(self) -> &'a mut W {
-        self.variant(PARITYW::INCLUDED)
+        self.variant(PARITY_A::INCLUDED)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x07 << 1)) | (((value as u32) & 0x07) << 1);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Hardware flow control"]
-    #[inline]
-    pub fn hwfc(&self) -> HWFCR {
-        HWFCR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn hwfc(&self) -> HWFC_R {
+        HWFC_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bits 1:3 - Parity"]
-    #[inline]
-    pub fn parity(&self) -> PARITYR {
-        PARITYR::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn parity(&self) -> PARITY_R {
+        PARITY_R::new(((self.bits >> 1) & 0x07) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Hardware flow control"]
-    #[inline]
-    pub fn hwfc(&mut self) -> _HWFCW {
-        _HWFCW { w: self }
+    #[inline(always)]
+    pub fn hwfc(&mut self) -> HWFC_W {
+        HWFC_W { w: self }
     }
     #[doc = "Bits 1:3 - Parity"]
-    #[inline]
-    pub fn parity(&mut self) -> _PARITYW {
-        _PARITYW { w: self }
+    #[inline(always)]
+    pub fn parity(&mut self) -> PARITY_W {
+        PARITY_W { w: self }
     }
 }

@@ -1,41 +1,11 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::ACCDBLREAD {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct ACCDBLREADR {
-    bits: u8,
-}
-impl ACCDBLREADR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
+#[doc = "Reader of register ACCDBLREAD"]
+pub type R = crate::R<u32, super::ACCDBLREAD>;
+#[doc = "Reader of field `ACCDBLREAD`"]
+pub type ACCDBLREAD_R = crate::R<u8, u8>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:3 - Snapshot of the ACCDBL register. This field is updated when the READCLRACC or RDCLRDBL task is triggered."]
-    #[inline]
-    pub fn accdblread(&self) -> ACCDBLREADR {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        ACCDBLREADR { bits }
+    #[inline(always)]
+    pub fn accdblread(&self) -> ACCDBLREAD_R {
+        ACCDBLREAD_R::new((self.bits & 0x0f) as u8)
     }
 }

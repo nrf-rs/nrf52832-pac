@@ -1,105 +1,40 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::FRAMEDELAYMIN {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register FRAMEDELAYMIN"]
+pub type R = crate::R<u32, super::FRAMEDELAYMIN>;
+#[doc = "Writer for register FRAMEDELAYMIN"]
+pub type W = crate::W<u32, super::FRAMEDELAYMIN>;
+#[doc = "Register FRAMEDELAYMIN `reset()`'s with value 0x0480"]
+impl crate::ResetValue for super::FRAMEDELAYMIN {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x0480
     }
 }
-#[doc = r" Value of the field"]
-pub struct FRAMEDELAYMINR {
-    bits: u16,
-}
-impl FRAMEDELAYMINR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
-#[doc = r" Proxy"]
-pub struct _FRAMEDELAYMINW<'a> {
+#[doc = "Reader of field `FRAMEDELAYMIN`"]
+pub type FRAMEDELAYMIN_R = crate::R<u16, u16>;
+#[doc = "Write proxy for field `FRAMEDELAYMIN`"]
+pub struct FRAMEDELAYMIN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _FRAMEDELAYMINW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> FRAMEDELAYMIN_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        const MASK: u16 = 65535;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0xffff) | ((value as u32) & 0xffff);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:15 - Minimum frame delay in number of 13.56 MHz clocks"]
-    #[inline]
-    pub fn framedelaymin(&self) -> FRAMEDELAYMINR {
-        let bits = {
-            const MASK: u16 = 65535;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        FRAMEDELAYMINR { bits }
+    #[inline(always)]
+    pub fn framedelaymin(&self) -> FRAMEDELAYMIN_R {
+        FRAMEDELAYMIN_R::new((self.bits & 0xffff) as u16)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 1152 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:15 - Minimum frame delay in number of 13.56 MHz clocks"]
-    #[inline]
-    pub fn framedelaymin(&mut self) -> _FRAMEDELAYMINW {
-        _FRAMEDELAYMINW { w: self }
+    #[inline(always)]
+    pub fn framedelaymin(&mut self) -> FRAMEDELAYMIN_W {
+        FRAMEDELAYMIN_W { w: self }
     }
 }

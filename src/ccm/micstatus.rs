@@ -1,76 +1,48 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::MICSTATUS {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-}
-#[doc = "Possible values of the field `MICSTATUS`"]
+#[doc = "Reader of register MICSTATUS"]
+pub type R = crate::R<u32, super::MICSTATUS>;
+#[doc = "The result of the MIC check performed during the previous decryption operation\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MICSTATUSR {
-    #[doc = "MIC check failed"]
+pub enum MICSTATUS_A {
+    #[doc = "0: MIC check failed"]
     CHECKFAILED,
-    #[doc = "MIC check passed"]
+    #[doc = "1: MIC check passed"]
     CHECKPASSED,
 }
-impl MICSTATUSR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            MICSTATUSR::CHECKFAILED => false,
-            MICSTATUSR::CHECKPASSED => true,
+impl From<MICSTATUS_A> for bool {
+    #[inline(always)]
+    fn from(variant: MICSTATUS_A) -> Self {
+        match variant {
+            MICSTATUS_A::CHECKFAILED => false,
+            MICSTATUS_A::CHECKPASSED => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> MICSTATUSR {
-        match value {
-            false => MICSTATUSR::CHECKFAILED,
-            true => MICSTATUSR::CHECKPASSED,
+}
+#[doc = "Reader of field `MICSTATUS`"]
+pub type MICSTATUS_R = crate::R<bool, MICSTATUS_A>;
+impl MICSTATUS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> MICSTATUS_A {
+        match self.bits {
+            false => MICSTATUS_A::CHECKFAILED,
+            true => MICSTATUS_A::CHECKPASSED,
         }
     }
     #[doc = "Checks if the value of the field is `CHECKFAILED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_check_failed(&self) -> bool {
-        *self == MICSTATUSR::CHECKFAILED
+        *self == MICSTATUS_A::CHECKFAILED
     }
     #[doc = "Checks if the value of the field is `CHECKPASSED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_check_passed(&self) -> bool {
-        *self == MICSTATUSR::CHECKPASSED
+        *self == MICSTATUS_A::CHECKPASSED
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - The result of the MIC check performed during the previous decryption operation"]
-    #[inline]
-    pub fn micstatus(&self) -> MICSTATUSR {
-        MICSTATUSR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn micstatus(&self) -> MICSTATUS_R {
+        MICSTATUS_R::new((self.bits & 0x01) != 0)
     }
 }

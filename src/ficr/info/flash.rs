@@ -1,88 +1,68 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::FLASH {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-}
-#[doc = "Possible values of the field `FLASH`"]
+#[doc = "Reader of register FLASH"]
+pub type R = crate::R<u32, super::FLASH>;
+#[doc = "Flash variant\n\nValue on reset: 512"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FLASHR {
-    #[doc = "128 kByte FLASH"]
+pub enum FLASH_A {
+    #[doc = "128: 128 kByte FLASH"]
     K128,
-    #[doc = "256 kByte FLASH"]
+    #[doc = "256: 256 kByte FLASH"]
     K256,
-    #[doc = "512 kByte FLASH"]
+    #[doc = "512: 512 kByte FLASH"]
     K512,
-    #[doc = "Unspecified"]
+    #[doc = "4294967295: Unspecified"]
     UNSPECIFIED,
-    #[doc = r" Reserved"]
-    _Reserved(u32),
 }
-impl FLASHR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        match *self {
-            FLASHR::K128 => 128,
-            FLASHR::K256 => 256,
-            FLASHR::K512 => 512,
-            FLASHR::UNSPECIFIED => 4294967295,
-            FLASHR::_Reserved(bits) => bits,
+impl From<FLASH_A> for u32 {
+    #[inline(always)]
+    fn from(variant: FLASH_A) -> Self {
+        match variant {
+            FLASH_A::K128 => 128,
+            FLASH_A::K256 => 256,
+            FLASH_A::K512 => 512,
+            FLASH_A::UNSPECIFIED => 4294967295,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u32) -> FLASHR {
-        match value {
-            128 => FLASHR::K128,
-            256 => FLASHR::K256,
-            512 => FLASHR::K512,
-            4294967295 => FLASHR::UNSPECIFIED,
-            i => FLASHR::_Reserved(i),
+}
+#[doc = "Reader of field `FLASH`"]
+pub type FLASH_R = crate::R<u32, FLASH_A>;
+impl FLASH_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u32, FLASH_A> {
+        use crate::Variant::*;
+        match self.bits {
+            128 => Val(FLASH_A::K128),
+            256 => Val(FLASH_A::K256),
+            512 => Val(FLASH_A::K512),
+            4294967295 => Val(FLASH_A::UNSPECIFIED),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `K128`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_k128(&self) -> bool {
-        *self == FLASHR::K128
+        *self == FLASH_A::K128
     }
     #[doc = "Checks if the value of the field is `K256`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_k256(&self) -> bool {
-        *self == FLASHR::K256
+        *self == FLASH_A::K256
     }
     #[doc = "Checks if the value of the field is `K512`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_k512(&self) -> bool {
-        *self == FLASHR::K512
+        *self == FLASH_A::K512
     }
     #[doc = "Checks if the value of the field is `UNSPECIFIED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_unspecified(&self) -> bool {
-        *self == FLASHR::UNSPECIFIED
+        *self == FLASH_A::UNSPECIFIED
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:31 - Flash variant"]
-    #[inline]
-    pub fn flash(&self) -> FLASHR {
-        FLASHR::_from({
-            const MASK: u32 = 4294967295;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u32
-        })
+    #[inline(always)]
+    pub fn flash(&self) -> FLASH_R {
+        FLASH_R::new((self.bits & 0xffff_ffff) as u32)
     }
 }

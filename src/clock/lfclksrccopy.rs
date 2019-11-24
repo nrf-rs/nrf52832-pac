@@ -1,79 +1,59 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::LFCLKSRCCOPY {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-}
-#[doc = "Possible values of the field `SRC`"]
+#[doc = "Reader of register LFCLKSRCCOPY"]
+pub type R = crate::R<u32, super::LFCLKSRCCOPY>;
+#[doc = "Clock source\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SRCR {
-    #[doc = "32.768 kHz RC oscillator"]
+pub enum SRC_A {
+    #[doc = "0: 32.768 kHz RC oscillator"]
     RC,
-    #[doc = "32.768 kHz crystal oscillator"]
+    #[doc = "1: 32.768 kHz crystal oscillator"]
     XTAL,
-    #[doc = "32.768 kHz synthesized from HFCLK"]
+    #[doc = "2: 32.768 kHz synthesized from HFCLK"]
     SYNTH,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl SRCR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            SRCR::RC => 0,
-            SRCR::XTAL => 1,
-            SRCR::SYNTH => 2,
-            SRCR::_Reserved(bits) => bits,
+impl From<SRC_A> for u8 {
+    #[inline(always)]
+    fn from(variant: SRC_A) -> Self {
+        match variant {
+            SRC_A::RC => 0,
+            SRC_A::XTAL => 1,
+            SRC_A::SYNTH => 2,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> SRCR {
-        match value {
-            0 => SRCR::RC,
-            1 => SRCR::XTAL,
-            2 => SRCR::SYNTH,
-            i => SRCR::_Reserved(i),
+}
+#[doc = "Reader of field `SRC`"]
+pub type SRC_R = crate::R<u8, SRC_A>;
+impl SRC_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, SRC_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(SRC_A::RC),
+            1 => Val(SRC_A::XTAL),
+            2 => Val(SRC_A::SYNTH),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `RC`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_rc(&self) -> bool {
-        *self == SRCR::RC
+        *self == SRC_A::RC
     }
     #[doc = "Checks if the value of the field is `XTAL`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_xtal(&self) -> bool {
-        *self == SRCR::XTAL
+        *self == SRC_A::XTAL
     }
     #[doc = "Checks if the value of the field is `SYNTH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_synth(&self) -> bool {
-        *self == SRCR::SYNTH
+        *self == SRC_A::SYNTH
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:1 - Clock source"]
-    #[inline]
-    pub fn src(&self) -> SRCR {
-        SRCR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn src(&self) -> SRC_R {
+        SRC_R::new((self.bits & 0x03) as u8)
     }
 }

@@ -1,76 +1,48 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::CRCSTATUS {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-}
-#[doc = "Possible values of the field `CRCSTATUS`"]
+#[doc = "Reader of register CRCSTATUS"]
+pub type R = crate::R<u32, super::CRCSTATUS>;
+#[doc = "CRC status of packet received\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CRCSTATUSR {
-    #[doc = "Packet received with CRC error"]
+pub enum CRCSTATUS_A {
+    #[doc = "0: Packet received with CRC error"]
     CRCERROR,
-    #[doc = "Packet received with CRC ok"]
+    #[doc = "1: Packet received with CRC ok"]
     CRCOK,
 }
-impl CRCSTATUSR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CRCSTATUSR::CRCERROR => false,
-            CRCSTATUSR::CRCOK => true,
+impl From<CRCSTATUS_A> for bool {
+    #[inline(always)]
+    fn from(variant: CRCSTATUS_A) -> Self {
+        match variant {
+            CRCSTATUS_A::CRCERROR => false,
+            CRCSTATUS_A::CRCOK => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CRCSTATUSR {
-        match value {
-            false => CRCSTATUSR::CRCERROR,
-            true => CRCSTATUSR::CRCOK,
+}
+#[doc = "Reader of field `CRCSTATUS`"]
+pub type CRCSTATUS_R = crate::R<bool, CRCSTATUS_A>;
+impl CRCSTATUS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CRCSTATUS_A {
+        match self.bits {
+            false => CRCSTATUS_A::CRCERROR,
+            true => CRCSTATUS_A::CRCOK,
         }
     }
     #[doc = "Checks if the value of the field is `CRCERROR`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_crcerror(&self) -> bool {
-        *self == CRCSTATUSR::CRCERROR
+        *self == CRCSTATUS_A::CRCERROR
     }
     #[doc = "Checks if the value of the field is `CRCOK`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_crcok(&self) -> bool {
-        *self == CRCSTATUSR::CRCOK
+        *self == CRCSTATUS_A::CRCOK
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - CRC status of packet received"]
-    #[inline]
-    pub fn crcstatus(&self) -> CRCSTATUSR {
-        CRCSTATUSR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn crcstatus(&self) -> CRCSTATUS_R {
+        CRCSTATUS_R::new((self.bits & 0x01) != 0)
     }
 }

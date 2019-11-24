@@ -1,132 +1,92 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::FIELDPRESENT {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-}
-#[doc = "Possible values of the field `FIELDPRESENT`"]
+#[doc = "Reader of register FIELDPRESENT"]
+pub type R = crate::R<u32, super::FIELDPRESENT>;
+#[doc = "Indicates the presence or not of a valid field. Available only in the activated state.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FIELDPRESENTR {
-    #[doc = "No valid field detected"]
+pub enum FIELDPRESENT_A {
+    #[doc = "0: No valid field detected"]
     NOFIELD,
-    #[doc = "Valid field detected"]
+    #[doc = "1: Valid field detected"]
     FIELDPRESENT,
 }
-impl FIELDPRESENTR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            FIELDPRESENTR::NOFIELD => false,
-            FIELDPRESENTR::FIELDPRESENT => true,
+impl From<FIELDPRESENT_A> for bool {
+    #[inline(always)]
+    fn from(variant: FIELDPRESENT_A) -> Self {
+        match variant {
+            FIELDPRESENT_A::NOFIELD => false,
+            FIELDPRESENT_A::FIELDPRESENT => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> FIELDPRESENTR {
-        match value {
-            false => FIELDPRESENTR::NOFIELD,
-            true => FIELDPRESENTR::FIELDPRESENT,
+}
+#[doc = "Reader of field `FIELDPRESENT`"]
+pub type FIELDPRESENT_R = crate::R<bool, FIELDPRESENT_A>;
+impl FIELDPRESENT_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> FIELDPRESENT_A {
+        match self.bits {
+            false => FIELDPRESENT_A::NOFIELD,
+            true => FIELDPRESENT_A::FIELDPRESENT,
         }
     }
     #[doc = "Checks if the value of the field is `NOFIELD`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_no_field(&self) -> bool {
-        *self == FIELDPRESENTR::NOFIELD
+        *self == FIELDPRESENT_A::NOFIELD
     }
     #[doc = "Checks if the value of the field is `FIELDPRESENT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_field_present(&self) -> bool {
-        *self == FIELDPRESENTR::FIELDPRESENT
+        *self == FIELDPRESENT_A::FIELDPRESENT
     }
 }
-#[doc = "Possible values of the field `LOCKDETECT`"]
+#[doc = "Indicates if the low level has locked to the field\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LOCKDETECTR {
-    #[doc = "Not locked to field"]
+pub enum LOCKDETECT_A {
+    #[doc = "0: Not locked to field"]
     NOTLOCKED,
-    #[doc = "Locked to field"]
+    #[doc = "1: Locked to field"]
     LOCKED,
 }
-impl LOCKDETECTR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            LOCKDETECTR::NOTLOCKED => false,
-            LOCKDETECTR::LOCKED => true,
+impl From<LOCKDETECT_A> for bool {
+    #[inline(always)]
+    fn from(variant: LOCKDETECT_A) -> Self {
+        match variant {
+            LOCKDETECT_A::NOTLOCKED => false,
+            LOCKDETECT_A::LOCKED => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> LOCKDETECTR {
-        match value {
-            false => LOCKDETECTR::NOTLOCKED,
-            true => LOCKDETECTR::LOCKED,
+}
+#[doc = "Reader of field `LOCKDETECT`"]
+pub type LOCKDETECT_R = crate::R<bool, LOCKDETECT_A>;
+impl LOCKDETECT_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LOCKDETECT_A {
+        match self.bits {
+            false => LOCKDETECT_A::NOTLOCKED,
+            true => LOCKDETECT_A::LOCKED,
         }
     }
     #[doc = "Checks if the value of the field is `NOTLOCKED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_not_locked(&self) -> bool {
-        *self == LOCKDETECTR::NOTLOCKED
+        *self == LOCKDETECT_A::NOTLOCKED
     }
     #[doc = "Checks if the value of the field is `LOCKED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_locked(&self) -> bool {
-        *self == LOCKDETECTR::LOCKED
+        *self == LOCKDETECT_A::LOCKED
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Indicates the presence or not of a valid field. Available only in the activated state."]
-    #[inline]
-    pub fn fieldpresent(&self) -> FIELDPRESENTR {
-        FIELDPRESENTR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn fieldpresent(&self) -> FIELDPRESENT_R {
+        FIELDPRESENT_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Indicates if the low level has locked to the field"]
-    #[inline]
-    pub fn lockdetect(&self) -> LOCKDETECTR {
-        LOCKDETECTR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn lockdetect(&self) -> LOCKDETECT_R {
+        LOCKDETECT_R::new(((self.bits >> 1) & 0x01) != 0)
     }
 }

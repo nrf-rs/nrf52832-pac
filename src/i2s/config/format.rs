@@ -1,183 +1,104 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::FORMAT {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register FORMAT"]
+pub type R = crate::R<u32, super::FORMAT>;
+#[doc = "Writer for register FORMAT"]
+pub type W = crate::W<u32, super::FORMAT>;
+#[doc = "Register FORMAT `reset()`'s with value 0"]
+impl crate::ResetValue for super::FORMAT {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `FORMAT`"]
+#[doc = "Frame format.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FORMATR {
-    #[doc = "Original I2S format."]
+pub enum FORMAT_A {
+    #[doc = "0: Original I2S format."]
     I2S,
-    #[doc = "Alternate (left- or right-aligned) format."]
+    #[doc = "1: Alternate (left- or right-aligned) format."]
     ALIGNED,
 }
-impl FORMATR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            FORMATR::I2S => false,
-            FORMATR::ALIGNED => true,
+impl From<FORMAT_A> for bool {
+    #[inline(always)]
+    fn from(variant: FORMAT_A) -> Self {
+        match variant {
+            FORMAT_A::I2S => false,
+            FORMAT_A::ALIGNED => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> FORMATR {
-        match value {
-            false => FORMATR::I2S,
-            true => FORMATR::ALIGNED,
+}
+#[doc = "Reader of field `FORMAT`"]
+pub type FORMAT_R = crate::R<bool, FORMAT_A>;
+impl FORMAT_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> FORMAT_A {
+        match self.bits {
+            false => FORMAT_A::I2S,
+            true => FORMAT_A::ALIGNED,
         }
     }
     #[doc = "Checks if the value of the field is `I2S`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_i2s(&self) -> bool {
-        *self == FORMATR::I2S
+        *self == FORMAT_A::I2S
     }
     #[doc = "Checks if the value of the field is `ALIGNED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_aligned(&self) -> bool {
-        *self == FORMATR::ALIGNED
+        *self == FORMAT_A::ALIGNED
     }
 }
-#[doc = "Values that can be written to the field `FORMAT`"]
-pub enum FORMATW {
-    #[doc = "Original I2S format."]
-    I2S,
-    #[doc = "Alternate (left- or right-aligned) format."]
-    ALIGNED,
-}
-impl FORMATW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            FORMATW::I2S => false,
-            FORMATW::ALIGNED => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _FORMATW<'a> {
+#[doc = "Write proxy for field `FORMAT`"]
+pub struct FORMAT_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _FORMATW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: FORMATW) -> &'a mut W {
+impl<'a> FORMAT_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: FORMAT_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Original I2S format."]
-    #[inline]
+    #[inline(always)]
     pub fn i2s(self) -> &'a mut W {
-        self.variant(FORMATW::I2S)
+        self.variant(FORMAT_A::I2S)
     }
     #[doc = "Alternate (left- or right-aligned) format."]
-    #[inline]
+    #[inline(always)]
     pub fn aligned(self) -> &'a mut W {
-        self.variant(FORMATW::ALIGNED)
+        self.variant(FORMAT_A::ALIGNED)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Frame format."]
-    #[inline]
-    pub fn format(&self) -> FORMATR {
-        FORMATR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn format(&self) -> FORMAT_R {
+        FORMAT_R::new((self.bits & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Frame format."]
-    #[inline]
-    pub fn format(&mut self) -> _FORMATW {
-        _FORMATW { w: self }
+    #[inline(always)]
+    pub fn format(&mut self) -> FORMAT_W {
+        FORMAT_W { w: self }
     }
 }

@@ -1,286 +1,192 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::RATIO {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register RATIO"]
+pub type R = crate::R<u32, super::RATIO>;
+#[doc = "Writer for register RATIO"]
+pub type W = crate::W<u32, super::RATIO>;
+#[doc = "Register RATIO `reset()`'s with value 0x06"]
+impl crate::ResetValue for super::RATIO {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x06
     }
 }
-#[doc = "Possible values of the field `RATIO`"]
+#[doc = "MCK / LRCK ratio.\n\nValue on reset: 6"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RATIOR {
-    #[doc = "LRCK = MCK / 32"]
+pub enum RATIO_A {
+    #[doc = "0: LRCK = MCK / 32"]
     _32X,
-    #[doc = "LRCK = MCK / 48"]
+    #[doc = "1: LRCK = MCK / 48"]
     _48X,
-    #[doc = "LRCK = MCK / 64"]
+    #[doc = "2: LRCK = MCK / 64"]
     _64X,
-    #[doc = "LRCK = MCK / 96"]
+    #[doc = "3: LRCK = MCK / 96"]
     _96X,
-    #[doc = "LRCK = MCK / 128"]
+    #[doc = "4: LRCK = MCK / 128"]
     _128X,
-    #[doc = "LRCK = MCK / 192"]
+    #[doc = "5: LRCK = MCK / 192"]
     _192X,
-    #[doc = "LRCK = MCK / 256"]
+    #[doc = "6: LRCK = MCK / 256"]
     _256X,
-    #[doc = "LRCK = MCK / 384"]
+    #[doc = "7: LRCK = MCK / 384"]
     _384X,
-    #[doc = "LRCK = MCK / 512"]
+    #[doc = "8: LRCK = MCK / 512"]
     _512X,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl RATIOR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            RATIOR::_32X => 0,
-            RATIOR::_48X => 1,
-            RATIOR::_64X => 2,
-            RATIOR::_96X => 3,
-            RATIOR::_128X => 4,
-            RATIOR::_192X => 5,
-            RATIOR::_256X => 6,
-            RATIOR::_384X => 7,
-            RATIOR::_512X => 8,
-            RATIOR::_Reserved(bits) => bits,
+impl From<RATIO_A> for u8 {
+    #[inline(always)]
+    fn from(variant: RATIO_A) -> Self {
+        match variant {
+            RATIO_A::_32X => 0,
+            RATIO_A::_48X => 1,
+            RATIO_A::_64X => 2,
+            RATIO_A::_96X => 3,
+            RATIO_A::_128X => 4,
+            RATIO_A::_192X => 5,
+            RATIO_A::_256X => 6,
+            RATIO_A::_384X => 7,
+            RATIO_A::_512X => 8,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> RATIOR {
-        match value {
-            0 => RATIOR::_32X,
-            1 => RATIOR::_48X,
-            2 => RATIOR::_64X,
-            3 => RATIOR::_96X,
-            4 => RATIOR::_128X,
-            5 => RATIOR::_192X,
-            6 => RATIOR::_256X,
-            7 => RATIOR::_384X,
-            8 => RATIOR::_512X,
-            i => RATIOR::_Reserved(i),
+}
+#[doc = "Reader of field `RATIO`"]
+pub type RATIO_R = crate::R<u8, RATIO_A>;
+impl RATIO_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, RATIO_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(RATIO_A::_32X),
+            1 => Val(RATIO_A::_48X),
+            2 => Val(RATIO_A::_64X),
+            3 => Val(RATIO_A::_96X),
+            4 => Val(RATIO_A::_128X),
+            5 => Val(RATIO_A::_192X),
+            6 => Val(RATIO_A::_256X),
+            7 => Val(RATIO_A::_384X),
+            8 => Val(RATIO_A::_512X),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `_32X`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_32x(&self) -> bool {
-        *self == RATIOR::_32X
+        *self == RATIO_A::_32X
     }
     #[doc = "Checks if the value of the field is `_48X`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_48x(&self) -> bool {
-        *self == RATIOR::_48X
+        *self == RATIO_A::_48X
     }
     #[doc = "Checks if the value of the field is `_64X`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_64x(&self) -> bool {
-        *self == RATIOR::_64X
+        *self == RATIO_A::_64X
     }
     #[doc = "Checks if the value of the field is `_96X`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_96x(&self) -> bool {
-        *self == RATIOR::_96X
+        *self == RATIO_A::_96X
     }
     #[doc = "Checks if the value of the field is `_128X`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_128x(&self) -> bool {
-        *self == RATIOR::_128X
+        *self == RATIO_A::_128X
     }
     #[doc = "Checks if the value of the field is `_192X`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_192x(&self) -> bool {
-        *self == RATIOR::_192X
+        *self == RATIO_A::_192X
     }
     #[doc = "Checks if the value of the field is `_256X`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_256x(&self) -> bool {
-        *self == RATIOR::_256X
+        *self == RATIO_A::_256X
     }
     #[doc = "Checks if the value of the field is `_384X`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_384x(&self) -> bool {
-        *self == RATIOR::_384X
+        *self == RATIO_A::_384X
     }
     #[doc = "Checks if the value of the field is `_512X`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_512x(&self) -> bool {
-        *self == RATIOR::_512X
+        *self == RATIO_A::_512X
     }
 }
-#[doc = "Values that can be written to the field `RATIO`"]
-pub enum RATIOW {
-    #[doc = "LRCK = MCK / 32"]
-    _32X,
-    #[doc = "LRCK = MCK / 48"]
-    _48X,
-    #[doc = "LRCK = MCK / 64"]
-    _64X,
-    #[doc = "LRCK = MCK / 96"]
-    _96X,
-    #[doc = "LRCK = MCK / 128"]
-    _128X,
-    #[doc = "LRCK = MCK / 192"]
-    _192X,
-    #[doc = "LRCK = MCK / 256"]
-    _256X,
-    #[doc = "LRCK = MCK / 384"]
-    _384X,
-    #[doc = "LRCK = MCK / 512"]
-    _512X,
-}
-impl RATIOW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            RATIOW::_32X => 0,
-            RATIOW::_48X => 1,
-            RATIOW::_64X => 2,
-            RATIOW::_96X => 3,
-            RATIOW::_128X => 4,
-            RATIOW::_192X => 5,
-            RATIOW::_256X => 6,
-            RATIOW::_384X => 7,
-            RATIOW::_512X => 8,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _RATIOW<'a> {
+#[doc = "Write proxy for field `RATIO`"]
+pub struct RATIO_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _RATIOW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: RATIOW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+impl<'a> RATIO_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: RATIO_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "LRCK = MCK / 32"]
-    #[inline]
+    #[inline(always)]
     pub fn _32x(self) -> &'a mut W {
-        self.variant(RATIOW::_32X)
+        self.variant(RATIO_A::_32X)
     }
     #[doc = "LRCK = MCK / 48"]
-    #[inline]
+    #[inline(always)]
     pub fn _48x(self) -> &'a mut W {
-        self.variant(RATIOW::_48X)
+        self.variant(RATIO_A::_48X)
     }
     #[doc = "LRCK = MCK / 64"]
-    #[inline]
+    #[inline(always)]
     pub fn _64x(self) -> &'a mut W {
-        self.variant(RATIOW::_64X)
+        self.variant(RATIO_A::_64X)
     }
     #[doc = "LRCK = MCK / 96"]
-    #[inline]
+    #[inline(always)]
     pub fn _96x(self) -> &'a mut W {
-        self.variant(RATIOW::_96X)
+        self.variant(RATIO_A::_96X)
     }
     #[doc = "LRCK = MCK / 128"]
-    #[inline]
+    #[inline(always)]
     pub fn _128x(self) -> &'a mut W {
-        self.variant(RATIOW::_128X)
+        self.variant(RATIO_A::_128X)
     }
     #[doc = "LRCK = MCK / 192"]
-    #[inline]
+    #[inline(always)]
     pub fn _192x(self) -> &'a mut W {
-        self.variant(RATIOW::_192X)
+        self.variant(RATIO_A::_192X)
     }
     #[doc = "LRCK = MCK / 256"]
-    #[inline]
+    #[inline(always)]
     pub fn _256x(self) -> &'a mut W {
-        self.variant(RATIOW::_256X)
+        self.variant(RATIO_A::_256X)
     }
     #[doc = "LRCK = MCK / 384"]
-    #[inline]
+    #[inline(always)]
     pub fn _384x(self) -> &'a mut W {
-        self.variant(RATIOW::_384X)
+        self.variant(RATIO_A::_384X)
     }
     #[doc = "LRCK = MCK / 512"]
-    #[inline]
+    #[inline(always)]
     pub fn _512x(self) -> &'a mut W {
-        self.variant(RATIOW::_512X)
+        self.variant(RATIO_A::_512X)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x0f) | ((value as u32) & 0x0f);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:3 - MCK / LRCK ratio."]
-    #[inline]
-    pub fn ratio(&self) -> RATIOR {
-        RATIOR::_from({
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn ratio(&self) -> RATIO_R {
+        RATIO_R::new((self.bits & 0x0f) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 6 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:3 - MCK / LRCK ratio."]
-    #[inline]
-    pub fn ratio(&mut self) -> _RATIOW {
-        _RATIOW { w: self }
+    #[inline(always)]
+    pub fn ratio(&mut self) -> RATIO_W {
+        RATIO_W { w: self }
     }
 }

@@ -1,183 +1,104 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::POWER {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register POWER"]
+pub type R = crate::R<u32, super::POWER>;
+#[doc = "Writer for register POWER"]
+pub type W = crate::W<u32, super::POWER>;
+#[doc = "Register POWER `reset()`'s with value 0x01"]
+impl crate::ResetValue for super::POWER {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x01
     }
 }
-#[doc = "Possible values of the field `POWER`"]
+#[doc = "Peripheral power control. The peripheral and its registers will be reset to its initial state by switching the peripheral off and then back on again.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum POWERR {
-    #[doc = "Peripheral is powered off"]
+pub enum POWER_A {
+    #[doc = "0: Peripheral is powered off"]
     DISABLED,
-    #[doc = "Peripheral is powered on"]
+    #[doc = "1: Peripheral is powered on"]
     ENABLED,
 }
-impl POWERR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            POWERR::DISABLED => false,
-            POWERR::ENABLED => true,
+impl From<POWER_A> for bool {
+    #[inline(always)]
+    fn from(variant: POWER_A) -> Self {
+        match variant {
+            POWER_A::DISABLED => false,
+            POWER_A::ENABLED => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> POWERR {
-        match value {
-            false => POWERR::DISABLED,
-            true => POWERR::ENABLED,
+}
+#[doc = "Reader of field `POWER`"]
+pub type POWER_R = crate::R<bool, POWER_A>;
+impl POWER_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> POWER_A {
+        match self.bits {
+            false => POWER_A::DISABLED,
+            true => POWER_A::ENABLED,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == POWERR::DISABLED
+        *self == POWER_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == POWERR::ENABLED
+        *self == POWER_A::ENABLED
     }
 }
-#[doc = "Values that can be written to the field `POWER`"]
-pub enum POWERW {
-    #[doc = "Peripheral is powered off"]
-    DISABLED,
-    #[doc = "Peripheral is powered on"]
-    ENABLED,
-}
-impl POWERW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            POWERW::DISABLED => false,
-            POWERW::ENABLED => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _POWERW<'a> {
+#[doc = "Write proxy for field `POWER`"]
+pub struct POWER_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _POWERW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: POWERW) -> &'a mut W {
+impl<'a> POWER_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: POWER_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Peripheral is powered off"]
-    #[inline]
+    #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(POWERW::DISABLED)
+        self.variant(POWER_A::DISABLED)
     }
     #[doc = "Peripheral is powered on"]
-    #[inline]
+    #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(POWERW::ENABLED)
+        self.variant(POWER_A::ENABLED)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Peripheral power control. The peripheral and its registers will be reset to its initial state by switching the peripheral off and then back on again."]
-    #[inline]
-    pub fn power(&self) -> POWERR {
-        POWERR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn power(&self) -> POWER_R {
+        POWER_R::new((self.bits & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 1 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Peripheral power control. The peripheral and its registers will be reset to its initial state by switching the peripheral off and then back on again."]
-    #[inline]
-    pub fn power(&mut self) -> _POWERW {
-        _POWERW { w: self }
+    #[inline(always)]
+    pub fn power(&mut self) -> POWER_W {
+        POWER_W { w: self }
     }
 }

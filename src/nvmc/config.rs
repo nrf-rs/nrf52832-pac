@@ -1,184 +1,108 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::CONFIG {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register CONFIG"]
+pub type R = crate::R<u32, super::CONFIG>;
+#[doc = "Writer for register CONFIG"]
+pub type W = crate::W<u32, super::CONFIG>;
+#[doc = "Register CONFIG `reset()`'s with value 0"]
+impl crate::ResetValue for super::CONFIG {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `WEN`"]
+#[doc = "Program memory access mode. It is strongly recommended to only activate erase and write modes when they are actively used. Enabling write or erase will invalidate the cache and keep it invalidated.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum WENR {
-    #[doc = "Read only access"]
+pub enum WEN_A {
+    #[doc = "0: Read only access"]
     REN,
-    #[doc = "Write Enabled"]
+    #[doc = "1: Write Enabled"]
     WEN,
-    #[doc = "Erase enabled"]
+    #[doc = "2: Erase enabled"]
     EEN,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl WENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            WENR::REN => 0,
-            WENR::WEN => 1,
-            WENR::EEN => 2,
-            WENR::_Reserved(bits) => bits,
+impl From<WEN_A> for u8 {
+    #[inline(always)]
+    fn from(variant: WEN_A) -> Self {
+        match variant {
+            WEN_A::REN => 0,
+            WEN_A::WEN => 1,
+            WEN_A::EEN => 2,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> WENR {
-        match value {
-            0 => WENR::REN,
-            1 => WENR::WEN,
-            2 => WENR::EEN,
-            i => WENR::_Reserved(i),
+}
+#[doc = "Reader of field `WEN`"]
+pub type WEN_R = crate::R<u8, WEN_A>;
+impl WEN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, WEN_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(WEN_A::REN),
+            1 => Val(WEN_A::WEN),
+            2 => Val(WEN_A::EEN),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `REN`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_ren(&self) -> bool {
-        *self == WENR::REN
+        *self == WEN_A::REN
     }
     #[doc = "Checks if the value of the field is `WEN`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wen(&self) -> bool {
-        *self == WENR::WEN
+        *self == WEN_A::WEN
     }
     #[doc = "Checks if the value of the field is `EEN`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_een(&self) -> bool {
-        *self == WENR::EEN
+        *self == WEN_A::EEN
     }
 }
-#[doc = "Values that can be written to the field `WEN`"]
-pub enum WENW {
-    #[doc = "Read only access"]
-    REN,
-    #[doc = "Write Enabled"]
-    WEN,
-    #[doc = "Erase enabled"]
-    EEN,
-}
-impl WENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            WENW::REN => 0,
-            WENW::WEN => 1,
-            WENW::EEN => 2,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _WENW<'a> {
+#[doc = "Write proxy for field `WEN`"]
+pub struct WEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _WENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: WENW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+impl<'a> WEN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: WEN_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Read only access"]
-    #[inline]
+    #[inline(always)]
     pub fn ren(self) -> &'a mut W {
-        self.variant(WENW::REN)
+        self.variant(WEN_A::REN)
     }
     #[doc = "Write Enabled"]
-    #[inline]
+    #[inline(always)]
     pub fn wen(self) -> &'a mut W {
-        self.variant(WENW::WEN)
+        self.variant(WEN_A::WEN)
     }
     #[doc = "Erase enabled"]
-    #[inline]
+    #[inline(always)]
     pub fn een(self) -> &'a mut W {
-        self.variant(WENW::EEN)
+        self.variant(WEN_A::EEN)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x03) | ((value as u32) & 0x03);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:1 - Program memory access mode. It is strongly recommended to only activate erase and write modes when they are actively used. Enabling write or erase will invalidate the cache and keep it invalidated."]
-    #[inline]
-    pub fn wen(&self) -> WENR {
-        WENR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn wen(&self) -> WEN_R {
+        WEN_R::new((self.bits & 0x03) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:1 - Program memory access mode. It is strongly recommended to only activate erase and write modes when they are actively used. Enabling write or erase will invalidate the cache and keep it invalidated."]
-    #[inline]
-    pub fn wen(&mut self) -> _WENW {
-        _WENW { w: self }
+    #[inline(always)]
+    pub fn wen(&mut self) -> WEN_W {
+        WEN_W { w: self }
     }
 }

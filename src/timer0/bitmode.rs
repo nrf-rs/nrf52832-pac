@@ -1,200 +1,123 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::BITMODE {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register BITMODE"]
+pub type R = crate::R<u32, super::BITMODE>;
+#[doc = "Writer for register BITMODE"]
+pub type W = crate::W<u32, super::BITMODE>;
+#[doc = "Register BITMODE `reset()`'s with value 0"]
+impl crate::ResetValue for super::BITMODE {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `BITMODE`"]
+#[doc = "Timer bit width\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum BITMODER {
-    #[doc = "16 bit timer bit width"]
+pub enum BITMODE_A {
+    #[doc = "0: 16 bit timer bit width"]
     _16BIT,
-    #[doc = "8 bit timer bit width"]
+    #[doc = "1: 8 bit timer bit width"]
     _08BIT,
-    #[doc = "24 bit timer bit width"]
+    #[doc = "2: 24 bit timer bit width"]
     _24BIT,
-    #[doc = "32 bit timer bit width"]
+    #[doc = "3: 32 bit timer bit width"]
     _32BIT,
 }
-impl BITMODER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            BITMODER::_16BIT => 0,
-            BITMODER::_08BIT => 1,
-            BITMODER::_24BIT => 2,
-            BITMODER::_32BIT => 3,
+impl From<BITMODE_A> for u8 {
+    #[inline(always)]
+    fn from(variant: BITMODE_A) -> Self {
+        match variant {
+            BITMODE_A::_16BIT => 0,
+            BITMODE_A::_08BIT => 1,
+            BITMODE_A::_24BIT => 2,
+            BITMODE_A::_32BIT => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> BITMODER {
-        match value {
-            0 => BITMODER::_16BIT,
-            1 => BITMODER::_08BIT,
-            2 => BITMODER::_24BIT,
-            3 => BITMODER::_32BIT,
+}
+#[doc = "Reader of field `BITMODE`"]
+pub type BITMODE_R = crate::R<u8, BITMODE_A>;
+impl BITMODE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> BITMODE_A {
+        match self.bits {
+            0 => BITMODE_A::_16BIT,
+            1 => BITMODE_A::_08BIT,
+            2 => BITMODE_A::_24BIT,
+            3 => BITMODE_A::_32BIT,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `_16BIT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_16bit(&self) -> bool {
-        *self == BITMODER::_16BIT
+        *self == BITMODE_A::_16BIT
     }
     #[doc = "Checks if the value of the field is `_08BIT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_08bit(&self) -> bool {
-        *self == BITMODER::_08BIT
+        *self == BITMODE_A::_08BIT
     }
     #[doc = "Checks if the value of the field is `_24BIT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_24bit(&self) -> bool {
-        *self == BITMODER::_24BIT
+        *self == BITMODE_A::_24BIT
     }
     #[doc = "Checks if the value of the field is `_32BIT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_32bit(&self) -> bool {
-        *self == BITMODER::_32BIT
+        *self == BITMODE_A::_32BIT
     }
 }
-#[doc = "Values that can be written to the field `BITMODE`"]
-pub enum BITMODEW {
-    #[doc = "16 bit timer bit width"]
-    _16BIT,
-    #[doc = "8 bit timer bit width"]
-    _08BIT,
-    #[doc = "24 bit timer bit width"]
-    _24BIT,
-    #[doc = "32 bit timer bit width"]
-    _32BIT,
-}
-impl BITMODEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            BITMODEW::_16BIT => 0,
-            BITMODEW::_08BIT => 1,
-            BITMODEW::_24BIT => 2,
-            BITMODEW::_32BIT => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _BITMODEW<'a> {
+#[doc = "Write proxy for field `BITMODE`"]
+pub struct BITMODE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _BITMODEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: BITMODEW) -> &'a mut W {
+impl<'a> BITMODE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: BITMODE_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "16 bit timer bit width"]
-    #[inline]
+    #[inline(always)]
     pub fn _16bit(self) -> &'a mut W {
-        self.variant(BITMODEW::_16BIT)
+        self.variant(BITMODE_A::_16BIT)
     }
     #[doc = "8 bit timer bit width"]
-    #[inline]
+    #[inline(always)]
     pub fn _08bit(self) -> &'a mut W {
-        self.variant(BITMODEW::_08BIT)
+        self.variant(BITMODE_A::_08BIT)
     }
     #[doc = "24 bit timer bit width"]
-    #[inline]
+    #[inline(always)]
     pub fn _24bit(self) -> &'a mut W {
-        self.variant(BITMODEW::_24BIT)
+        self.variant(BITMODE_A::_24BIT)
     }
     #[doc = "32 bit timer bit width"]
-    #[inline]
+    #[inline(always)]
     pub fn _32bit(self) -> &'a mut W {
-        self.variant(BITMODEW::_32BIT)
+        self.variant(BITMODE_A::_32BIT)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x03) | ((value as u32) & 0x03);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:1 - Timer bit width"]
-    #[inline]
-    pub fn bitmode(&self) -> BITMODER {
-        BITMODER::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn bitmode(&self) -> BITMODE_R {
+        BITMODE_R::new((self.bits & 0x03) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:1 - Timer bit width"]
-    #[inline]
-    pub fn bitmode(&mut self) -> _BITMODEW {
-        _BITMODEW { w: self }
+    #[inline(always)]
+    pub fn bitmode(&mut self) -> BITMODE_W {
+        BITMODE_W { w: self }
     }
 }

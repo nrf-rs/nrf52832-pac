@@ -1,41 +1,11 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::DAI {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct DAIR {
-    bits: u8,
-}
-impl DAIR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
+#[doc = "Reader of register DAI"]
+pub type R = crate::R<u32, super::DAI>;
+#[doc = "Reader of field `DAI`"]
+pub type DAI_R = crate::R<u8, u8>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:2 - Device address match index"]
-    #[inline]
-    pub fn dai(&self) -> DAIR {
-        let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        DAIR { bits }
+    #[inline(always)]
+    pub fn dai(&self) -> DAI_R {
+        DAI_R::new((self.bits & 0x07) as u8)
     }
 }

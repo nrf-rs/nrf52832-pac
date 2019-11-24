@@ -1,41 +1,11 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::VALUE {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct VALUER {
-    bits: u8,
-}
-impl VALUER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
+#[doc = "Reader of register VALUE"]
+pub type R = crate::R<u32, super::VALUE>;
+#[doc = "Reader of field `VALUE`"]
+pub type VALUE_R = crate::R<u8, u8>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:7 - Generated random number"]
-    #[inline]
-    pub fn value(&self) -> VALUER {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        VALUER { bits }
+    #[inline(always)]
+    pub fn value(&self) -> VALUE_R {
+        VALUE_R::new((self.bits & 0xff) as u8)
     }
 }

@@ -1,183 +1,104 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::TXEN {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register TXEN"]
+pub type R = crate::R<u32, super::TXEN>;
+#[doc = "Writer for register TXEN"]
+pub type W = crate::W<u32, super::TXEN>;
+#[doc = "Register TXEN `reset()`'s with value 0x01"]
+impl crate::ResetValue for super::TXEN {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x01
     }
 }
-#[doc = "Possible values of the field `TXEN`"]
+#[doc = "Transmission (TX) enable.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TXENR {
-    #[doc = "Transmission disabled and now data will be read from the RXD.TXD address."]
+pub enum TXEN_A {
+    #[doc = "0: Transmission disabled and now data will be read from the RXD.TXD address."]
     DISABLED,
-    #[doc = "Transmission enabled."]
+    #[doc = "1: Transmission enabled."]
     ENABLED,
 }
-impl TXENR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            TXENR::DISABLED => false,
-            TXENR::ENABLED => true,
+impl From<TXEN_A> for bool {
+    #[inline(always)]
+    fn from(variant: TXEN_A) -> Self {
+        match variant {
+            TXEN_A::DISABLED => false,
+            TXEN_A::ENABLED => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> TXENR {
-        match value {
-            false => TXENR::DISABLED,
-            true => TXENR::ENABLED,
+}
+#[doc = "Reader of field `TXEN`"]
+pub type TXEN_R = crate::R<bool, TXEN_A>;
+impl TXEN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TXEN_A {
+        match self.bits {
+            false => TXEN_A::DISABLED,
+            true => TXEN_A::ENABLED,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == TXENR::DISABLED
+        *self == TXEN_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == TXENR::ENABLED
+        *self == TXEN_A::ENABLED
     }
 }
-#[doc = "Values that can be written to the field `TXEN`"]
-pub enum TXENW {
-    #[doc = "Transmission disabled and now data will be read from the RXD.TXD address."]
-    DISABLED,
-    #[doc = "Transmission enabled."]
-    ENABLED,
-}
-impl TXENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            TXENW::DISABLED => false,
-            TXENW::ENABLED => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _TXENW<'a> {
+#[doc = "Write proxy for field `TXEN`"]
+pub struct TXEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TXENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: TXENW) -> &'a mut W {
+impl<'a> TXEN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: TXEN_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Transmission disabled and now data will be read from the RXD.TXD address."]
-    #[inline]
+    #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(TXENW::DISABLED)
+        self.variant(TXEN_A::DISABLED)
     }
     #[doc = "Transmission enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(TXENW::ENABLED)
+        self.variant(TXEN_A::ENABLED)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Transmission (TX) enable."]
-    #[inline]
-    pub fn txen(&self) -> TXENR {
-        TXENR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn txen(&self) -> TXEN_R {
+        TXEN_R::new((self.bits & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 1 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Transmission (TX) enable."]
-    #[inline]
-    pub fn txen(&mut self) -> _TXENW {
-        _TXENW { w: self }
+    #[inline(always)]
+    pub fn txen(&mut self) -> TXEN_W {
+        TXEN_W { w: self }
     }
 }

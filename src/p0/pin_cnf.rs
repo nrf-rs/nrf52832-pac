@@ -1,746 +1,539 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::PIN_CNF {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register PIN_CNF[%s]"]
+pub type R = crate::R<u32, super::PIN_CNF>;
+#[doc = "Writer for register PIN_CNF[%s]"]
+pub type W = crate::W<u32, super::PIN_CNF>;
+#[doc = "Register PIN_CNF[%s] `reset()`'s with value 0x02"]
+impl crate::ResetValue for super::PIN_CNF {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x02
     }
 }
-#[doc = "Possible values of the field `DIR`"]
+#[doc = "Pin direction. Same physical register as DIR register\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DIRR {
-    #[doc = "Configure pin as an input pin"]
+pub enum DIR_A {
+    #[doc = "0: Configure pin as an input pin"]
     INPUT,
-    #[doc = "Configure pin as an output pin"]
+    #[doc = "1: Configure pin as an output pin"]
     OUTPUT,
 }
-impl DIRR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            DIRR::INPUT => false,
-            DIRR::OUTPUT => true,
+impl From<DIR_A> for bool {
+    #[inline(always)]
+    fn from(variant: DIR_A) -> Self {
+        match variant {
+            DIR_A::INPUT => false,
+            DIR_A::OUTPUT => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> DIRR {
-        match value {
-            false => DIRR::INPUT,
-            true => DIRR::OUTPUT,
+}
+#[doc = "Reader of field `DIR`"]
+pub type DIR_R = crate::R<bool, DIR_A>;
+impl DIR_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DIR_A {
+        match self.bits {
+            false => DIR_A::INPUT,
+            true => DIR_A::OUTPUT,
         }
     }
     #[doc = "Checks if the value of the field is `INPUT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_input(&self) -> bool {
-        *self == DIRR::INPUT
+        *self == DIR_A::INPUT
     }
     #[doc = "Checks if the value of the field is `OUTPUT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_output(&self) -> bool {
-        *self == DIRR::OUTPUT
+        *self == DIR_A::OUTPUT
     }
 }
-#[doc = "Possible values of the field `INPUT`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum INPUTR {
-    #[doc = "Connect input buffer"]
-    CONNECT,
-    #[doc = "Disconnect input buffer"]
-    DISCONNECT,
+#[doc = "Write proxy for field `DIR`"]
+pub struct DIR_W<'a> {
+    w: &'a mut W,
 }
-impl INPUTR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            INPUTR::CONNECT => false,
-            INPUTR::DISCONNECT => true,
+impl<'a> DIR_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: DIR_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> INPUTR {
-        match value {
-            false => INPUTR::CONNECT,
-            true => INPUTR::DISCONNECT,
+    #[doc = "Configure pin as an input pin"]
+    #[inline(always)]
+    pub fn input(self) -> &'a mut W {
+        self.variant(DIR_A::INPUT)
+    }
+    #[doc = "Configure pin as an output pin"]
+    #[inline(always)]
+    pub fn output(self) -> &'a mut W {
+        self.variant(DIR_A::OUTPUT)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w
+    }
+}
+#[doc = "Connect or disconnect input buffer\n\nValue on reset: 1"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum INPUT_A {
+    #[doc = "0: Connect input buffer"]
+    CONNECT,
+    #[doc = "1: Disconnect input buffer"]
+    DISCONNECT,
+}
+impl From<INPUT_A> for bool {
+    #[inline(always)]
+    fn from(variant: INPUT_A) -> Self {
+        match variant {
+            INPUT_A::CONNECT => false,
+            INPUT_A::DISCONNECT => true,
+        }
+    }
+}
+#[doc = "Reader of field `INPUT`"]
+pub type INPUT_R = crate::R<bool, INPUT_A>;
+impl INPUT_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> INPUT_A {
+        match self.bits {
+            false => INPUT_A::CONNECT,
+            true => INPUT_A::DISCONNECT,
         }
     }
     #[doc = "Checks if the value of the field is `CONNECT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_connect(&self) -> bool {
-        *self == INPUTR::CONNECT
+        *self == INPUT_A::CONNECT
     }
     #[doc = "Checks if the value of the field is `DISCONNECT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disconnect(&self) -> bool {
-        *self == INPUTR::DISCONNECT
+        *self == INPUT_A::DISCONNECT
     }
 }
-#[doc = "Possible values of the field `PULL`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PULLR {
-    #[doc = "No pull"]
-    DISABLED,
-    #[doc = "Pull down on pin"]
-    PULLDOWN,
-    #[doc = "Pull up on pin"]
-    PULLUP,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
+#[doc = "Write proxy for field `INPUT`"]
+pub struct INPUT_W<'a> {
+    w: &'a mut W,
 }
-impl PULLR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            PULLR::DISABLED => 0,
-            PULLR::PULLDOWN => 1,
-            PULLR::PULLUP => 3,
-            PULLR::_Reserved(bits) => bits,
+impl<'a> INPUT_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: INPUT_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> PULLR {
-        match value {
-            0 => PULLR::DISABLED,
-            1 => PULLR::PULLDOWN,
-            3 => PULLR::PULLUP,
-            i => PULLR::_Reserved(i),
+    #[doc = "Connect input buffer"]
+    #[inline(always)]
+    pub fn connect(self) -> &'a mut W {
+        self.variant(INPUT_A::CONNECT)
+    }
+    #[doc = "Disconnect input buffer"]
+    #[inline(always)]
+    pub fn disconnect(self) -> &'a mut W {
+        self.variant(INPUT_A::DISCONNECT)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w
+    }
+}
+#[doc = "Pull configuration\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PULL_A {
+    #[doc = "0: No pull"]
+    DISABLED,
+    #[doc = "1: Pull down on pin"]
+    PULLDOWN,
+    #[doc = "3: Pull up on pin"]
+    PULLUP,
+}
+impl From<PULL_A> for u8 {
+    #[inline(always)]
+    fn from(variant: PULL_A) -> Self {
+        match variant {
+            PULL_A::DISABLED => 0,
+            PULL_A::PULLDOWN => 1,
+            PULL_A::PULLUP => 3,
+        }
+    }
+}
+#[doc = "Reader of field `PULL`"]
+pub type PULL_R = crate::R<u8, PULL_A>;
+impl PULL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, PULL_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(PULL_A::DISABLED),
+            1 => Val(PULL_A::PULLDOWN),
+            3 => Val(PULL_A::PULLUP),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == PULLR::DISABLED
+        *self == PULL_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `PULLDOWN`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pulldown(&self) -> bool {
-        *self == PULLR::PULLDOWN
+        *self == PULL_A::PULLDOWN
     }
     #[doc = "Checks if the value of the field is `PULLUP`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pullup(&self) -> bool {
-        *self == PULLR::PULLUP
+        *self == PULL_A::PULLUP
     }
 }
-#[doc = "Possible values of the field `DRIVE`"]
+#[doc = "Write proxy for field `PULL`"]
+pub struct PULL_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> PULL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PULL_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
+    }
+    #[doc = "No pull"]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(PULL_A::DISABLED)
+    }
+    #[doc = "Pull down on pin"]
+    #[inline(always)]
+    pub fn pulldown(self) -> &'a mut W {
+        self.variant(PULL_A::PULLDOWN)
+    }
+    #[doc = "Pull up on pin"]
+    #[inline(always)]
+    pub fn pullup(self) -> &'a mut W {
+        self.variant(PULL_A::PULLUP)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 2)) | (((value as u32) & 0x03) << 2);
+        self.w
+    }
+}
+#[doc = "Drive configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DRIVER {
-    #[doc = "Standard '0', standard '1'"]
+pub enum DRIVE_A {
+    #[doc = "0: Standard '0', standard '1'"]
     S0S1,
-    #[doc = "High drive '0', standard '1'"]
+    #[doc = "1: High drive '0', standard '1'"]
     H0S1,
-    #[doc = "Standard '0', high drive '1'"]
+    #[doc = "2: Standard '0', high drive '1'"]
     S0H1,
-    #[doc = "High drive '0', high 'drive '1''"]
+    #[doc = "3: High drive '0', high 'drive '1''"]
     H0H1,
-    #[doc = "Disconnect '0' standard '1' (normally used for wired-or connections)"]
+    #[doc = "4: Disconnect '0' standard '1' (normally used for wired-or connections)"]
     D0S1,
-    #[doc = "Disconnect '0', high drive '1' (normally used for wired-or connections)"]
+    #[doc = "5: Disconnect '0', high drive '1' (normally used for wired-or connections)"]
     D0H1,
-    #[doc = "Standard '0'. disconnect '1' (normally used for wired-and connections)"]
+    #[doc = "6: Standard '0'. disconnect '1' (normally used for wired-and connections)"]
     S0D1,
-    #[doc = "High drive '0', disconnect '1' (normally used for wired-and connections)"]
+    #[doc = "7: High drive '0', disconnect '1' (normally used for wired-and connections)"]
     H0D1,
 }
-impl DRIVER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            DRIVER::S0S1 => 0,
-            DRIVER::H0S1 => 1,
-            DRIVER::S0H1 => 2,
-            DRIVER::H0H1 => 3,
-            DRIVER::D0S1 => 4,
-            DRIVER::D0H1 => 5,
-            DRIVER::S0D1 => 6,
-            DRIVER::H0D1 => 7,
+impl From<DRIVE_A> for u8 {
+    #[inline(always)]
+    fn from(variant: DRIVE_A) -> Self {
+        match variant {
+            DRIVE_A::S0S1 => 0,
+            DRIVE_A::H0S1 => 1,
+            DRIVE_A::S0H1 => 2,
+            DRIVE_A::H0H1 => 3,
+            DRIVE_A::D0S1 => 4,
+            DRIVE_A::D0H1 => 5,
+            DRIVE_A::S0D1 => 6,
+            DRIVE_A::H0D1 => 7,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> DRIVER {
-        match value {
-            0 => DRIVER::S0S1,
-            1 => DRIVER::H0S1,
-            2 => DRIVER::S0H1,
-            3 => DRIVER::H0H1,
-            4 => DRIVER::D0S1,
-            5 => DRIVER::D0H1,
-            6 => DRIVER::S0D1,
-            7 => DRIVER::H0D1,
+}
+#[doc = "Reader of field `DRIVE`"]
+pub type DRIVE_R = crate::R<u8, DRIVE_A>;
+impl DRIVE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DRIVE_A {
+        match self.bits {
+            0 => DRIVE_A::S0S1,
+            1 => DRIVE_A::H0S1,
+            2 => DRIVE_A::S0H1,
+            3 => DRIVE_A::H0H1,
+            4 => DRIVE_A::D0S1,
+            5 => DRIVE_A::D0H1,
+            6 => DRIVE_A::S0D1,
+            7 => DRIVE_A::H0D1,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `S0S1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_s0s1(&self) -> bool {
-        *self == DRIVER::S0S1
+        *self == DRIVE_A::S0S1
     }
     #[doc = "Checks if the value of the field is `H0S1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_h0s1(&self) -> bool {
-        *self == DRIVER::H0S1
+        *self == DRIVE_A::H0S1
     }
     #[doc = "Checks if the value of the field is `S0H1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_s0h1(&self) -> bool {
-        *self == DRIVER::S0H1
+        *self == DRIVE_A::S0H1
     }
     #[doc = "Checks if the value of the field is `H0H1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_h0h1(&self) -> bool {
-        *self == DRIVER::H0H1
+        *self == DRIVE_A::H0H1
     }
     #[doc = "Checks if the value of the field is `D0S1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_d0s1(&self) -> bool {
-        *self == DRIVER::D0S1
+        *self == DRIVE_A::D0S1
     }
     #[doc = "Checks if the value of the field is `D0H1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_d0h1(&self) -> bool {
-        *self == DRIVER::D0H1
+        *self == DRIVE_A::D0H1
     }
     #[doc = "Checks if the value of the field is `S0D1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_s0d1(&self) -> bool {
-        *self == DRIVER::S0D1
+        *self == DRIVE_A::S0D1
     }
     #[doc = "Checks if the value of the field is `H0D1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_h0d1(&self) -> bool {
-        *self == DRIVER::H0D1
+        *self == DRIVE_A::H0D1
     }
 }
-#[doc = "Possible values of the field `SENSE`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SENSER {
-    #[doc = "Disabled"]
-    DISABLED,
-    #[doc = "Sense for high level"]
-    HIGH,
-    #[doc = "Sense for low level"]
-    LOW,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
+#[doc = "Write proxy for field `DRIVE`"]
+pub struct DRIVE_W<'a> {
+    w: &'a mut W,
 }
-impl SENSER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            SENSER::DISABLED => 0,
-            SENSER::HIGH => 2,
-            SENSER::LOW => 3,
-            SENSER::_Reserved(bits) => bits,
+impl<'a> DRIVE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: DRIVE_A) -> &'a mut W {
+        {
+            self.bits(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> SENSER {
-        match value {
-            0 => SENSER::DISABLED,
-            2 => SENSER::HIGH,
-            3 => SENSER::LOW,
-            i => SENSER::_Reserved(i),
+    #[doc = "Standard '0', standard '1'"]
+    #[inline(always)]
+    pub fn s0s1(self) -> &'a mut W {
+        self.variant(DRIVE_A::S0S1)
+    }
+    #[doc = "High drive '0', standard '1'"]
+    #[inline(always)]
+    pub fn h0s1(self) -> &'a mut W {
+        self.variant(DRIVE_A::H0S1)
+    }
+    #[doc = "Standard '0', high drive '1'"]
+    #[inline(always)]
+    pub fn s0h1(self) -> &'a mut W {
+        self.variant(DRIVE_A::S0H1)
+    }
+    #[doc = "High drive '0', high 'drive '1''"]
+    #[inline(always)]
+    pub fn h0h1(self) -> &'a mut W {
+        self.variant(DRIVE_A::H0H1)
+    }
+    #[doc = "Disconnect '0' standard '1' (normally used for wired-or connections)"]
+    #[inline(always)]
+    pub fn d0s1(self) -> &'a mut W {
+        self.variant(DRIVE_A::D0S1)
+    }
+    #[doc = "Disconnect '0', high drive '1' (normally used for wired-or connections)"]
+    #[inline(always)]
+    pub fn d0h1(self) -> &'a mut W {
+        self.variant(DRIVE_A::D0H1)
+    }
+    #[doc = "Standard '0'. disconnect '1' (normally used for wired-and connections)"]
+    #[inline(always)]
+    pub fn s0d1(self) -> &'a mut W {
+        self.variant(DRIVE_A::S0D1)
+    }
+    #[doc = "High drive '0', disconnect '1' (normally used for wired-and connections)"]
+    #[inline(always)]
+    pub fn h0d1(self) -> &'a mut W {
+        self.variant(DRIVE_A::H0D1)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x07 << 8)) | (((value as u32) & 0x07) << 8);
+        self.w
+    }
+}
+#[doc = "Pin sensing mechanism\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SENSE_A {
+    #[doc = "0: Disabled"]
+    DISABLED,
+    #[doc = "2: Sense for high level"]
+    HIGH,
+    #[doc = "3: Sense for low level"]
+    LOW,
+}
+impl From<SENSE_A> for u8 {
+    #[inline(always)]
+    fn from(variant: SENSE_A) -> Self {
+        match variant {
+            SENSE_A::DISABLED => 0,
+            SENSE_A::HIGH => 2,
+            SENSE_A::LOW => 3,
+        }
+    }
+}
+#[doc = "Reader of field `SENSE`"]
+pub type SENSE_R = crate::R<u8, SENSE_A>;
+impl SENSE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, SENSE_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(SENSE_A::DISABLED),
+            2 => Val(SENSE_A::HIGH),
+            3 => Val(SENSE_A::LOW),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == SENSER::DISABLED
+        *self == SENSE_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == SENSER::HIGH
+        *self == SENSE_A::HIGH
     }
     #[doc = "Checks if the value of the field is `LOW`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == SENSER::LOW
+        *self == SENSE_A::LOW
     }
 }
-#[doc = "Values that can be written to the field `DIR`"]
-pub enum DIRW {
-    #[doc = "Configure pin as an input pin"]
-    INPUT,
-    #[doc = "Configure pin as an output pin"]
-    OUTPUT,
-}
-impl DIRW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            DIRW::INPUT => false,
-            DIRW::OUTPUT => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _DIRW<'a> {
+#[doc = "Write proxy for field `SENSE`"]
+pub struct SENSE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DIRW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: DIRW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Configure pin as an input pin"]
-    #[inline]
-    pub fn input(self) -> &'a mut W {
-        self.variant(DIRW::INPUT)
-    }
-    #[doc = "Configure pin as an output pin"]
-    #[inline]
-    pub fn output(self) -> &'a mut W {
-        self.variant(DIRW::OUTPUT)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `INPUT`"]
-pub enum INPUTW {
-    #[doc = "Connect input buffer"]
-    CONNECT,
-    #[doc = "Disconnect input buffer"]
-    DISCONNECT,
-}
-impl INPUTW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            INPUTW::CONNECT => false,
-            INPUTW::DISCONNECT => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _INPUTW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _INPUTW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: INPUTW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Connect input buffer"]
-    #[inline]
-    pub fn connect(self) -> &'a mut W {
-        self.variant(INPUTW::CONNECT)
-    }
-    #[doc = "Disconnect input buffer"]
-    #[inline]
-    pub fn disconnect(self) -> &'a mut W {
-        self.variant(INPUTW::DISCONNECT)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `PULL`"]
-pub enum PULLW {
-    #[doc = "No pull"]
-    DISABLED,
-    #[doc = "Pull down on pin"]
-    PULLDOWN,
-    #[doc = "Pull up on pin"]
-    PULLUP,
-}
-impl PULLW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            PULLW::DISABLED => 0,
-            PULLW::PULLDOWN => 1,
-            PULLW::PULLUP => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PULLW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PULLW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PULLW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "No pull"]
-    #[inline]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(PULLW::DISABLED)
-    }
-    #[doc = "Pull down on pin"]
-    #[inline]
-    pub fn pulldown(self) -> &'a mut W {
-        self.variant(PULLW::PULLDOWN)
-    }
-    #[doc = "Pull up on pin"]
-    #[inline]
-    pub fn pullup(self) -> &'a mut W {
-        self.variant(PULLW::PULLUP)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `DRIVE`"]
-pub enum DRIVEW {
-    #[doc = "Standard '0', standard '1'"]
-    S0S1,
-    #[doc = "High drive '0', standard '1'"]
-    H0S1,
-    #[doc = "Standard '0', high drive '1'"]
-    S0H1,
-    #[doc = "High drive '0', high 'drive '1''"]
-    H0H1,
-    #[doc = "Disconnect '0' standard '1' (normally used for wired-or connections)"]
-    D0S1,
-    #[doc = "Disconnect '0', high drive '1' (normally used for wired-or connections)"]
-    D0H1,
-    #[doc = "Standard '0'. disconnect '1' (normally used for wired-and connections)"]
-    S0D1,
-    #[doc = "High drive '0', disconnect '1' (normally used for wired-and connections)"]
-    H0D1,
-}
-impl DRIVEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            DRIVEW::S0S1 => 0,
-            DRIVEW::H0S1 => 1,
-            DRIVEW::S0H1 => 2,
-            DRIVEW::H0H1 => 3,
-            DRIVEW::D0S1 => 4,
-            DRIVEW::D0H1 => 5,
-            DRIVEW::S0D1 => 6,
-            DRIVEW::H0D1 => 7,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _DRIVEW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _DRIVEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: DRIVEW) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "Standard '0', standard '1'"]
-    #[inline]
-    pub fn s0s1(self) -> &'a mut W {
-        self.variant(DRIVEW::S0S1)
-    }
-    #[doc = "High drive '0', standard '1'"]
-    #[inline]
-    pub fn h0s1(self) -> &'a mut W {
-        self.variant(DRIVEW::H0S1)
-    }
-    #[doc = "Standard '0', high drive '1'"]
-    #[inline]
-    pub fn s0h1(self) -> &'a mut W {
-        self.variant(DRIVEW::S0H1)
-    }
-    #[doc = "High drive '0', high 'drive '1''"]
-    #[inline]
-    pub fn h0h1(self) -> &'a mut W {
-        self.variant(DRIVEW::H0H1)
-    }
-    #[doc = "Disconnect '0' standard '1' (normally used for wired-or connections)"]
-    #[inline]
-    pub fn d0s1(self) -> &'a mut W {
-        self.variant(DRIVEW::D0S1)
-    }
-    #[doc = "Disconnect '0', high drive '1' (normally used for wired-or connections)"]
-    #[inline]
-    pub fn d0h1(self) -> &'a mut W {
-        self.variant(DRIVEW::D0H1)
-    }
-    #[doc = "Standard '0'. disconnect '1' (normally used for wired-and connections)"]
-    #[inline]
-    pub fn s0d1(self) -> &'a mut W {
-        self.variant(DRIVEW::S0D1)
-    }
-    #[doc = "High drive '0', disconnect '1' (normally used for wired-and connections)"]
-    #[inline]
-    pub fn h0d1(self) -> &'a mut W {
-        self.variant(DRIVEW::H0D1)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `SENSE`"]
-pub enum SENSEW {
-    #[doc = "Disabled"]
-    DISABLED,
-    #[doc = "Sense for high level"]
-    HIGH,
-    #[doc = "Sense for low level"]
-    LOW,
-}
-impl SENSEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            SENSEW::DISABLED => 0,
-            SENSEW::HIGH => 2,
-            SENSEW::LOW => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SENSEW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _SENSEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SENSEW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+impl<'a> SENSE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SENSE_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Disabled"]
-    #[inline]
+    #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(SENSEW::DISABLED)
+        self.variant(SENSE_A::DISABLED)
     }
     #[doc = "Sense for high level"]
-    #[inline]
+    #[inline(always)]
     pub fn high(self) -> &'a mut W {
-        self.variant(SENSEW::HIGH)
+        self.variant(SENSE_A::HIGH)
     }
     #[doc = "Sense for low level"]
-    #[inline]
+    #[inline(always)]
     pub fn low(self) -> &'a mut W {
-        self.variant(SENSEW::LOW)
+        self.variant(SENSE_A::LOW)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 16)) | (((value as u32) & 0x03) << 16);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Pin direction. Same physical register as DIR register"]
-    #[inline]
-    pub fn dir(&self) -> DIRR {
-        DIRR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn dir(&self) -> DIR_R {
+        DIR_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Connect or disconnect input buffer"]
-    #[inline]
-    pub fn input(&self) -> INPUTR {
-        INPUTR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn input(&self) -> INPUT_R {
+        INPUT_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bits 2:3 - Pull configuration"]
-    #[inline]
-    pub fn pull(&self) -> PULLR {
-        PULLR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn pull(&self) -> PULL_R {
+        PULL_R::new(((self.bits >> 2) & 0x03) as u8)
     }
     #[doc = "Bits 8:10 - Drive configuration"]
-    #[inline]
-    pub fn drive(&self) -> DRIVER {
-        DRIVER::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn drive(&self) -> DRIVE_R {
+        DRIVE_R::new(((self.bits >> 8) & 0x07) as u8)
     }
     #[doc = "Bits 16:17 - Pin sensing mechanism"]
-    #[inline]
-    pub fn sense(&self) -> SENSER {
-        SENSER::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn sense(&self) -> SENSE_R {
+        SENSE_R::new(((self.bits >> 16) & 0x03) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 2 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Pin direction. Same physical register as DIR register"]
-    #[inline]
-    pub fn dir(&mut self) -> _DIRW {
-        _DIRW { w: self }
+    #[inline(always)]
+    pub fn dir(&mut self) -> DIR_W {
+        DIR_W { w: self }
     }
     #[doc = "Bit 1 - Connect or disconnect input buffer"]
-    #[inline]
-    pub fn input(&mut self) -> _INPUTW {
-        _INPUTW { w: self }
+    #[inline(always)]
+    pub fn input(&mut self) -> INPUT_W {
+        INPUT_W { w: self }
     }
     #[doc = "Bits 2:3 - Pull configuration"]
-    #[inline]
-    pub fn pull(&mut self) -> _PULLW {
-        _PULLW { w: self }
+    #[inline(always)]
+    pub fn pull(&mut self) -> PULL_W {
+        PULL_W { w: self }
     }
     #[doc = "Bits 8:10 - Drive configuration"]
-    #[inline]
-    pub fn drive(&mut self) -> _DRIVEW {
-        _DRIVEW { w: self }
+    #[inline(always)]
+    pub fn drive(&mut self) -> DRIVE_W {
+        DRIVE_W { w: self }
     }
     #[doc = "Bits 16:17 - Pin sensing mechanism"]
-    #[inline]
-    pub fn sense(&mut self) -> _SENSEW {
-        _SENSEW { w: self }
+    #[inline(always)]
+    pub fn sense(&mut self) -> SENSE_W {
+        SENSE_W { w: self }
     }
 }

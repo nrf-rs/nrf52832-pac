@@ -1,3872 +1,2832 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::SUBS {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register SUBS"]
+pub type R = crate::R<u32, super::SUBS>;
+#[doc = "Writer for register SUBS"]
+pub type W = crate::W<u32, super::SUBS>;
+#[doc = "Register SUBS `reset()`'s with value 0"]
+impl crate::ResetValue for super::SUBS {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `SR0`"]
+#[doc = "Include or exclude subregion 0 in region\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SR0R {
-    #[doc = "Exclude"]
+pub enum SR0_A {
+    #[doc = "0: Exclude"]
     EXCLUDE,
-    #[doc = "Include"]
+    #[doc = "1: Include"]
     INCLUDE,
 }
-impl SR0R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SR0R::EXCLUDE => false,
-            SR0R::INCLUDE => true,
+impl From<SR0_A> for bool {
+    #[inline(always)]
+    fn from(variant: SR0_A) -> Self {
+        match variant {
+            SR0_A::EXCLUDE => false,
+            SR0_A::INCLUDE => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SR0R {
-        match value {
-            false => SR0R::EXCLUDE,
-            true => SR0R::INCLUDE,
+}
+#[doc = "Reader of field `SR0`"]
+pub type SR0_R = crate::R<bool, SR0_A>;
+impl SR0_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SR0_A {
+        match self.bits {
+            false => SR0_A::EXCLUDE,
+            true => SR0_A::INCLUDE,
         }
     }
     #[doc = "Checks if the value of the field is `EXCLUDE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_exclude(&self) -> bool {
-        *self == SR0R::EXCLUDE
+        *self == SR0_A::EXCLUDE
     }
     #[doc = "Checks if the value of the field is `INCLUDE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_include(&self) -> bool {
-        *self == SR0R::INCLUDE
+        *self == SR0_A::INCLUDE
     }
 }
-#[doc = "Possible values of the field `SR1`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SR1R {
-    #[doc = "Exclude"]
-    EXCLUDE,
-    #[doc = "Include"]
-    INCLUDE,
-}
-impl SR1R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SR1R::EXCLUDE => false,
-            SR1R::INCLUDE => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SR1R {
-        match value {
-            false => SR1R::EXCLUDE,
-            true => SR1R::INCLUDE,
-        }
-    }
-    #[doc = "Checks if the value of the field is `EXCLUDE`"]
-    #[inline]
-    pub fn is_exclude(&self) -> bool {
-        *self == SR1R::EXCLUDE
-    }
-    #[doc = "Checks if the value of the field is `INCLUDE`"]
-    #[inline]
-    pub fn is_include(&self) -> bool {
-        *self == SR1R::INCLUDE
-    }
-}
-#[doc = "Possible values of the field `SR2`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SR2R {
-    #[doc = "Exclude"]
-    EXCLUDE,
-    #[doc = "Include"]
-    INCLUDE,
-}
-impl SR2R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SR2R::EXCLUDE => false,
-            SR2R::INCLUDE => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SR2R {
-        match value {
-            false => SR2R::EXCLUDE,
-            true => SR2R::INCLUDE,
-        }
-    }
-    #[doc = "Checks if the value of the field is `EXCLUDE`"]
-    #[inline]
-    pub fn is_exclude(&self) -> bool {
-        *self == SR2R::EXCLUDE
-    }
-    #[doc = "Checks if the value of the field is `INCLUDE`"]
-    #[inline]
-    pub fn is_include(&self) -> bool {
-        *self == SR2R::INCLUDE
-    }
-}
-#[doc = "Possible values of the field `SR3`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SR3R {
-    #[doc = "Exclude"]
-    EXCLUDE,
-    #[doc = "Include"]
-    INCLUDE,
-}
-impl SR3R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SR3R::EXCLUDE => false,
-            SR3R::INCLUDE => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SR3R {
-        match value {
-            false => SR3R::EXCLUDE,
-            true => SR3R::INCLUDE,
-        }
-    }
-    #[doc = "Checks if the value of the field is `EXCLUDE`"]
-    #[inline]
-    pub fn is_exclude(&self) -> bool {
-        *self == SR3R::EXCLUDE
-    }
-    #[doc = "Checks if the value of the field is `INCLUDE`"]
-    #[inline]
-    pub fn is_include(&self) -> bool {
-        *self == SR3R::INCLUDE
-    }
-}
-#[doc = "Possible values of the field `SR4`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SR4R {
-    #[doc = "Exclude"]
-    EXCLUDE,
-    #[doc = "Include"]
-    INCLUDE,
-}
-impl SR4R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SR4R::EXCLUDE => false,
-            SR4R::INCLUDE => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SR4R {
-        match value {
-            false => SR4R::EXCLUDE,
-            true => SR4R::INCLUDE,
-        }
-    }
-    #[doc = "Checks if the value of the field is `EXCLUDE`"]
-    #[inline]
-    pub fn is_exclude(&self) -> bool {
-        *self == SR4R::EXCLUDE
-    }
-    #[doc = "Checks if the value of the field is `INCLUDE`"]
-    #[inline]
-    pub fn is_include(&self) -> bool {
-        *self == SR4R::INCLUDE
-    }
-}
-#[doc = "Possible values of the field `SR5`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SR5R {
-    #[doc = "Exclude"]
-    EXCLUDE,
-    #[doc = "Include"]
-    INCLUDE,
-}
-impl SR5R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SR5R::EXCLUDE => false,
-            SR5R::INCLUDE => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SR5R {
-        match value {
-            false => SR5R::EXCLUDE,
-            true => SR5R::INCLUDE,
-        }
-    }
-    #[doc = "Checks if the value of the field is `EXCLUDE`"]
-    #[inline]
-    pub fn is_exclude(&self) -> bool {
-        *self == SR5R::EXCLUDE
-    }
-    #[doc = "Checks if the value of the field is `INCLUDE`"]
-    #[inline]
-    pub fn is_include(&self) -> bool {
-        *self == SR5R::INCLUDE
-    }
-}
-#[doc = "Possible values of the field `SR6`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SR6R {
-    #[doc = "Exclude"]
-    EXCLUDE,
-    #[doc = "Include"]
-    INCLUDE,
-}
-impl SR6R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SR6R::EXCLUDE => false,
-            SR6R::INCLUDE => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SR6R {
-        match value {
-            false => SR6R::EXCLUDE,
-            true => SR6R::INCLUDE,
-        }
-    }
-    #[doc = "Checks if the value of the field is `EXCLUDE`"]
-    #[inline]
-    pub fn is_exclude(&self) -> bool {
-        *self == SR6R::EXCLUDE
-    }
-    #[doc = "Checks if the value of the field is `INCLUDE`"]
-    #[inline]
-    pub fn is_include(&self) -> bool {
-        *self == SR6R::INCLUDE
-    }
-}
-#[doc = "Possible values of the field `SR7`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SR7R {
-    #[doc = "Exclude"]
-    EXCLUDE,
-    #[doc = "Include"]
-    INCLUDE,
-}
-impl SR7R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SR7R::EXCLUDE => false,
-            SR7R::INCLUDE => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SR7R {
-        match value {
-            false => SR7R::EXCLUDE,
-            true => SR7R::INCLUDE,
-        }
-    }
-    #[doc = "Checks if the value of the field is `EXCLUDE`"]
-    #[inline]
-    pub fn is_exclude(&self) -> bool {
-        *self == SR7R::EXCLUDE
-    }
-    #[doc = "Checks if the value of the field is `INCLUDE`"]
-    #[inline]
-    pub fn is_include(&self) -> bool {
-        *self == SR7R::INCLUDE
-    }
-}
-#[doc = "Possible values of the field `SR8`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SR8R {
-    #[doc = "Exclude"]
-    EXCLUDE,
-    #[doc = "Include"]
-    INCLUDE,
-}
-impl SR8R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SR8R::EXCLUDE => false,
-            SR8R::INCLUDE => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SR8R {
-        match value {
-            false => SR8R::EXCLUDE,
-            true => SR8R::INCLUDE,
-        }
-    }
-    #[doc = "Checks if the value of the field is `EXCLUDE`"]
-    #[inline]
-    pub fn is_exclude(&self) -> bool {
-        *self == SR8R::EXCLUDE
-    }
-    #[doc = "Checks if the value of the field is `INCLUDE`"]
-    #[inline]
-    pub fn is_include(&self) -> bool {
-        *self == SR8R::INCLUDE
-    }
-}
-#[doc = "Possible values of the field `SR9`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SR9R {
-    #[doc = "Exclude"]
-    EXCLUDE,
-    #[doc = "Include"]
-    INCLUDE,
-}
-impl SR9R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SR9R::EXCLUDE => false,
-            SR9R::INCLUDE => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SR9R {
-        match value {
-            false => SR9R::EXCLUDE,
-            true => SR9R::INCLUDE,
-        }
-    }
-    #[doc = "Checks if the value of the field is `EXCLUDE`"]
-    #[inline]
-    pub fn is_exclude(&self) -> bool {
-        *self == SR9R::EXCLUDE
-    }
-    #[doc = "Checks if the value of the field is `INCLUDE`"]
-    #[inline]
-    pub fn is_include(&self) -> bool {
-        *self == SR9R::INCLUDE
-    }
-}
-#[doc = "Possible values of the field `SR10`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SR10R {
-    #[doc = "Exclude"]
-    EXCLUDE,
-    #[doc = "Include"]
-    INCLUDE,
-}
-impl SR10R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SR10R::EXCLUDE => false,
-            SR10R::INCLUDE => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SR10R {
-        match value {
-            false => SR10R::EXCLUDE,
-            true => SR10R::INCLUDE,
-        }
-    }
-    #[doc = "Checks if the value of the field is `EXCLUDE`"]
-    #[inline]
-    pub fn is_exclude(&self) -> bool {
-        *self == SR10R::EXCLUDE
-    }
-    #[doc = "Checks if the value of the field is `INCLUDE`"]
-    #[inline]
-    pub fn is_include(&self) -> bool {
-        *self == SR10R::INCLUDE
-    }
-}
-#[doc = "Possible values of the field `SR11`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SR11R {
-    #[doc = "Exclude"]
-    EXCLUDE,
-    #[doc = "Include"]
-    INCLUDE,
-}
-impl SR11R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SR11R::EXCLUDE => false,
-            SR11R::INCLUDE => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SR11R {
-        match value {
-            false => SR11R::EXCLUDE,
-            true => SR11R::INCLUDE,
-        }
-    }
-    #[doc = "Checks if the value of the field is `EXCLUDE`"]
-    #[inline]
-    pub fn is_exclude(&self) -> bool {
-        *self == SR11R::EXCLUDE
-    }
-    #[doc = "Checks if the value of the field is `INCLUDE`"]
-    #[inline]
-    pub fn is_include(&self) -> bool {
-        *self == SR11R::INCLUDE
-    }
-}
-#[doc = "Possible values of the field `SR12`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SR12R {
-    #[doc = "Exclude"]
-    EXCLUDE,
-    #[doc = "Include"]
-    INCLUDE,
-}
-impl SR12R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SR12R::EXCLUDE => false,
-            SR12R::INCLUDE => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SR12R {
-        match value {
-            false => SR12R::EXCLUDE,
-            true => SR12R::INCLUDE,
-        }
-    }
-    #[doc = "Checks if the value of the field is `EXCLUDE`"]
-    #[inline]
-    pub fn is_exclude(&self) -> bool {
-        *self == SR12R::EXCLUDE
-    }
-    #[doc = "Checks if the value of the field is `INCLUDE`"]
-    #[inline]
-    pub fn is_include(&self) -> bool {
-        *self == SR12R::INCLUDE
-    }
-}
-#[doc = "Possible values of the field `SR13`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SR13R {
-    #[doc = "Exclude"]
-    EXCLUDE,
-    #[doc = "Include"]
-    INCLUDE,
-}
-impl SR13R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SR13R::EXCLUDE => false,
-            SR13R::INCLUDE => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SR13R {
-        match value {
-            false => SR13R::EXCLUDE,
-            true => SR13R::INCLUDE,
-        }
-    }
-    #[doc = "Checks if the value of the field is `EXCLUDE`"]
-    #[inline]
-    pub fn is_exclude(&self) -> bool {
-        *self == SR13R::EXCLUDE
-    }
-    #[doc = "Checks if the value of the field is `INCLUDE`"]
-    #[inline]
-    pub fn is_include(&self) -> bool {
-        *self == SR13R::INCLUDE
-    }
-}
-#[doc = "Possible values of the field `SR14`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SR14R {
-    #[doc = "Exclude"]
-    EXCLUDE,
-    #[doc = "Include"]
-    INCLUDE,
-}
-impl SR14R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SR14R::EXCLUDE => false,
-            SR14R::INCLUDE => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SR14R {
-        match value {
-            false => SR14R::EXCLUDE,
-            true => SR14R::INCLUDE,
-        }
-    }
-    #[doc = "Checks if the value of the field is `EXCLUDE`"]
-    #[inline]
-    pub fn is_exclude(&self) -> bool {
-        *self == SR14R::EXCLUDE
-    }
-    #[doc = "Checks if the value of the field is `INCLUDE`"]
-    #[inline]
-    pub fn is_include(&self) -> bool {
-        *self == SR14R::INCLUDE
-    }
-}
-#[doc = "Possible values of the field `SR15`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SR15R {
-    #[doc = "Exclude"]
-    EXCLUDE,
-    #[doc = "Include"]
-    INCLUDE,
-}
-impl SR15R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SR15R::EXCLUDE => false,
-            SR15R::INCLUDE => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SR15R {
-        match value {
-            false => SR15R::EXCLUDE,
-            true => SR15R::INCLUDE,
-        }
-    }
-    #[doc = "Checks if the value of the field is `EXCLUDE`"]
-    #[inline]
-    pub fn is_exclude(&self) -> bool {
-        *self == SR15R::EXCLUDE
-    }
-    #[doc = "Checks if the value of the field is `INCLUDE`"]
-    #[inline]
-    pub fn is_include(&self) -> bool {
-        *self == SR15R::INCLUDE
-    }
-}
-#[doc = "Possible values of the field `SR16`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SR16R {
-    #[doc = "Exclude"]
-    EXCLUDE,
-    #[doc = "Include"]
-    INCLUDE,
-}
-impl SR16R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SR16R::EXCLUDE => false,
-            SR16R::INCLUDE => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SR16R {
-        match value {
-            false => SR16R::EXCLUDE,
-            true => SR16R::INCLUDE,
-        }
-    }
-    #[doc = "Checks if the value of the field is `EXCLUDE`"]
-    #[inline]
-    pub fn is_exclude(&self) -> bool {
-        *self == SR16R::EXCLUDE
-    }
-    #[doc = "Checks if the value of the field is `INCLUDE`"]
-    #[inline]
-    pub fn is_include(&self) -> bool {
-        *self == SR16R::INCLUDE
-    }
-}
-#[doc = "Possible values of the field `SR17`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SR17R {
-    #[doc = "Exclude"]
-    EXCLUDE,
-    #[doc = "Include"]
-    INCLUDE,
-}
-impl SR17R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SR17R::EXCLUDE => false,
-            SR17R::INCLUDE => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SR17R {
-        match value {
-            false => SR17R::EXCLUDE,
-            true => SR17R::INCLUDE,
-        }
-    }
-    #[doc = "Checks if the value of the field is `EXCLUDE`"]
-    #[inline]
-    pub fn is_exclude(&self) -> bool {
-        *self == SR17R::EXCLUDE
-    }
-    #[doc = "Checks if the value of the field is `INCLUDE`"]
-    #[inline]
-    pub fn is_include(&self) -> bool {
-        *self == SR17R::INCLUDE
-    }
-}
-#[doc = "Possible values of the field `SR18`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SR18R {
-    #[doc = "Exclude"]
-    EXCLUDE,
-    #[doc = "Include"]
-    INCLUDE,
-}
-impl SR18R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SR18R::EXCLUDE => false,
-            SR18R::INCLUDE => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SR18R {
-        match value {
-            false => SR18R::EXCLUDE,
-            true => SR18R::INCLUDE,
-        }
-    }
-    #[doc = "Checks if the value of the field is `EXCLUDE`"]
-    #[inline]
-    pub fn is_exclude(&self) -> bool {
-        *self == SR18R::EXCLUDE
-    }
-    #[doc = "Checks if the value of the field is `INCLUDE`"]
-    #[inline]
-    pub fn is_include(&self) -> bool {
-        *self == SR18R::INCLUDE
-    }
-}
-#[doc = "Possible values of the field `SR19`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SR19R {
-    #[doc = "Exclude"]
-    EXCLUDE,
-    #[doc = "Include"]
-    INCLUDE,
-}
-impl SR19R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SR19R::EXCLUDE => false,
-            SR19R::INCLUDE => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SR19R {
-        match value {
-            false => SR19R::EXCLUDE,
-            true => SR19R::INCLUDE,
-        }
-    }
-    #[doc = "Checks if the value of the field is `EXCLUDE`"]
-    #[inline]
-    pub fn is_exclude(&self) -> bool {
-        *self == SR19R::EXCLUDE
-    }
-    #[doc = "Checks if the value of the field is `INCLUDE`"]
-    #[inline]
-    pub fn is_include(&self) -> bool {
-        *self == SR19R::INCLUDE
-    }
-}
-#[doc = "Possible values of the field `SR20`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SR20R {
-    #[doc = "Exclude"]
-    EXCLUDE,
-    #[doc = "Include"]
-    INCLUDE,
-}
-impl SR20R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SR20R::EXCLUDE => false,
-            SR20R::INCLUDE => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SR20R {
-        match value {
-            false => SR20R::EXCLUDE,
-            true => SR20R::INCLUDE,
-        }
-    }
-    #[doc = "Checks if the value of the field is `EXCLUDE`"]
-    #[inline]
-    pub fn is_exclude(&self) -> bool {
-        *self == SR20R::EXCLUDE
-    }
-    #[doc = "Checks if the value of the field is `INCLUDE`"]
-    #[inline]
-    pub fn is_include(&self) -> bool {
-        *self == SR20R::INCLUDE
-    }
-}
-#[doc = "Possible values of the field `SR21`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SR21R {
-    #[doc = "Exclude"]
-    EXCLUDE,
-    #[doc = "Include"]
-    INCLUDE,
-}
-impl SR21R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SR21R::EXCLUDE => false,
-            SR21R::INCLUDE => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SR21R {
-        match value {
-            false => SR21R::EXCLUDE,
-            true => SR21R::INCLUDE,
-        }
-    }
-    #[doc = "Checks if the value of the field is `EXCLUDE`"]
-    #[inline]
-    pub fn is_exclude(&self) -> bool {
-        *self == SR21R::EXCLUDE
-    }
-    #[doc = "Checks if the value of the field is `INCLUDE`"]
-    #[inline]
-    pub fn is_include(&self) -> bool {
-        *self == SR21R::INCLUDE
-    }
-}
-#[doc = "Possible values of the field `SR22`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SR22R {
-    #[doc = "Exclude"]
-    EXCLUDE,
-    #[doc = "Include"]
-    INCLUDE,
-}
-impl SR22R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SR22R::EXCLUDE => false,
-            SR22R::INCLUDE => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SR22R {
-        match value {
-            false => SR22R::EXCLUDE,
-            true => SR22R::INCLUDE,
-        }
-    }
-    #[doc = "Checks if the value of the field is `EXCLUDE`"]
-    #[inline]
-    pub fn is_exclude(&self) -> bool {
-        *self == SR22R::EXCLUDE
-    }
-    #[doc = "Checks if the value of the field is `INCLUDE`"]
-    #[inline]
-    pub fn is_include(&self) -> bool {
-        *self == SR22R::INCLUDE
-    }
-}
-#[doc = "Possible values of the field `SR23`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SR23R {
-    #[doc = "Exclude"]
-    EXCLUDE,
-    #[doc = "Include"]
-    INCLUDE,
-}
-impl SR23R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SR23R::EXCLUDE => false,
-            SR23R::INCLUDE => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SR23R {
-        match value {
-            false => SR23R::EXCLUDE,
-            true => SR23R::INCLUDE,
-        }
-    }
-    #[doc = "Checks if the value of the field is `EXCLUDE`"]
-    #[inline]
-    pub fn is_exclude(&self) -> bool {
-        *self == SR23R::EXCLUDE
-    }
-    #[doc = "Checks if the value of the field is `INCLUDE`"]
-    #[inline]
-    pub fn is_include(&self) -> bool {
-        *self == SR23R::INCLUDE
-    }
-}
-#[doc = "Possible values of the field `SR24`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SR24R {
-    #[doc = "Exclude"]
-    EXCLUDE,
-    #[doc = "Include"]
-    INCLUDE,
-}
-impl SR24R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SR24R::EXCLUDE => false,
-            SR24R::INCLUDE => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SR24R {
-        match value {
-            false => SR24R::EXCLUDE,
-            true => SR24R::INCLUDE,
-        }
-    }
-    #[doc = "Checks if the value of the field is `EXCLUDE`"]
-    #[inline]
-    pub fn is_exclude(&self) -> bool {
-        *self == SR24R::EXCLUDE
-    }
-    #[doc = "Checks if the value of the field is `INCLUDE`"]
-    #[inline]
-    pub fn is_include(&self) -> bool {
-        *self == SR24R::INCLUDE
-    }
-}
-#[doc = "Possible values of the field `SR25`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SR25R {
-    #[doc = "Exclude"]
-    EXCLUDE,
-    #[doc = "Include"]
-    INCLUDE,
-}
-impl SR25R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SR25R::EXCLUDE => false,
-            SR25R::INCLUDE => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SR25R {
-        match value {
-            false => SR25R::EXCLUDE,
-            true => SR25R::INCLUDE,
-        }
-    }
-    #[doc = "Checks if the value of the field is `EXCLUDE`"]
-    #[inline]
-    pub fn is_exclude(&self) -> bool {
-        *self == SR25R::EXCLUDE
-    }
-    #[doc = "Checks if the value of the field is `INCLUDE`"]
-    #[inline]
-    pub fn is_include(&self) -> bool {
-        *self == SR25R::INCLUDE
-    }
-}
-#[doc = "Possible values of the field `SR26`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SR26R {
-    #[doc = "Exclude"]
-    EXCLUDE,
-    #[doc = "Include"]
-    INCLUDE,
-}
-impl SR26R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SR26R::EXCLUDE => false,
-            SR26R::INCLUDE => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SR26R {
-        match value {
-            false => SR26R::EXCLUDE,
-            true => SR26R::INCLUDE,
-        }
-    }
-    #[doc = "Checks if the value of the field is `EXCLUDE`"]
-    #[inline]
-    pub fn is_exclude(&self) -> bool {
-        *self == SR26R::EXCLUDE
-    }
-    #[doc = "Checks if the value of the field is `INCLUDE`"]
-    #[inline]
-    pub fn is_include(&self) -> bool {
-        *self == SR26R::INCLUDE
-    }
-}
-#[doc = "Possible values of the field `SR27`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SR27R {
-    #[doc = "Exclude"]
-    EXCLUDE,
-    #[doc = "Include"]
-    INCLUDE,
-}
-impl SR27R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SR27R::EXCLUDE => false,
-            SR27R::INCLUDE => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SR27R {
-        match value {
-            false => SR27R::EXCLUDE,
-            true => SR27R::INCLUDE,
-        }
-    }
-    #[doc = "Checks if the value of the field is `EXCLUDE`"]
-    #[inline]
-    pub fn is_exclude(&self) -> bool {
-        *self == SR27R::EXCLUDE
-    }
-    #[doc = "Checks if the value of the field is `INCLUDE`"]
-    #[inline]
-    pub fn is_include(&self) -> bool {
-        *self == SR27R::INCLUDE
-    }
-}
-#[doc = "Possible values of the field `SR28`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SR28R {
-    #[doc = "Exclude"]
-    EXCLUDE,
-    #[doc = "Include"]
-    INCLUDE,
-}
-impl SR28R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SR28R::EXCLUDE => false,
-            SR28R::INCLUDE => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SR28R {
-        match value {
-            false => SR28R::EXCLUDE,
-            true => SR28R::INCLUDE,
-        }
-    }
-    #[doc = "Checks if the value of the field is `EXCLUDE`"]
-    #[inline]
-    pub fn is_exclude(&self) -> bool {
-        *self == SR28R::EXCLUDE
-    }
-    #[doc = "Checks if the value of the field is `INCLUDE`"]
-    #[inline]
-    pub fn is_include(&self) -> bool {
-        *self == SR28R::INCLUDE
-    }
-}
-#[doc = "Possible values of the field `SR29`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SR29R {
-    #[doc = "Exclude"]
-    EXCLUDE,
-    #[doc = "Include"]
-    INCLUDE,
-}
-impl SR29R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SR29R::EXCLUDE => false,
-            SR29R::INCLUDE => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SR29R {
-        match value {
-            false => SR29R::EXCLUDE,
-            true => SR29R::INCLUDE,
-        }
-    }
-    #[doc = "Checks if the value of the field is `EXCLUDE`"]
-    #[inline]
-    pub fn is_exclude(&self) -> bool {
-        *self == SR29R::EXCLUDE
-    }
-    #[doc = "Checks if the value of the field is `INCLUDE`"]
-    #[inline]
-    pub fn is_include(&self) -> bool {
-        *self == SR29R::INCLUDE
-    }
-}
-#[doc = "Possible values of the field `SR30`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SR30R {
-    #[doc = "Exclude"]
-    EXCLUDE,
-    #[doc = "Include"]
-    INCLUDE,
-}
-impl SR30R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SR30R::EXCLUDE => false,
-            SR30R::INCLUDE => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SR30R {
-        match value {
-            false => SR30R::EXCLUDE,
-            true => SR30R::INCLUDE,
-        }
-    }
-    #[doc = "Checks if the value of the field is `EXCLUDE`"]
-    #[inline]
-    pub fn is_exclude(&self) -> bool {
-        *self == SR30R::EXCLUDE
-    }
-    #[doc = "Checks if the value of the field is `INCLUDE`"]
-    #[inline]
-    pub fn is_include(&self) -> bool {
-        *self == SR30R::INCLUDE
-    }
-}
-#[doc = "Possible values of the field `SR31`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SR31R {
-    #[doc = "Exclude"]
-    EXCLUDE,
-    #[doc = "Include"]
-    INCLUDE,
-}
-impl SR31R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SR31R::EXCLUDE => false,
-            SR31R::INCLUDE => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SR31R {
-        match value {
-            false => SR31R::EXCLUDE,
-            true => SR31R::INCLUDE,
-        }
-    }
-    #[doc = "Checks if the value of the field is `EXCLUDE`"]
-    #[inline]
-    pub fn is_exclude(&self) -> bool {
-        *self == SR31R::EXCLUDE
-    }
-    #[doc = "Checks if the value of the field is `INCLUDE`"]
-    #[inline]
-    pub fn is_include(&self) -> bool {
-        *self == SR31R::INCLUDE
-    }
-}
-#[doc = "Values that can be written to the field `SR0`"]
-pub enum SR0W {
-    #[doc = "Exclude"]
-    EXCLUDE,
-    #[doc = "Include"]
-    INCLUDE,
-}
-impl SR0W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SR0W::EXCLUDE => false,
-            SR0W::INCLUDE => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SR0W<'a> {
+#[doc = "Write proxy for field `SR0`"]
+pub struct SR0_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SR0W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SR0W) -> &'a mut W {
+impl<'a> SR0_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SR0_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Exclude"]
-    #[inline]
+    #[inline(always)]
     pub fn exclude(self) -> &'a mut W {
-        self.variant(SR0W::EXCLUDE)
+        self.variant(SR0_A::EXCLUDE)
     }
     #[doc = "Include"]
-    #[inline]
+    #[inline(always)]
     pub fn include(self) -> &'a mut W {
-        self.variant(SR0W::INCLUDE)
+        self.variant(SR0_A::INCLUDE)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `SR1`"]
-pub enum SR1W {
-    #[doc = "Exclude"]
+#[doc = "Include or exclude subregion 1 in region\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SR1_A {
+    #[doc = "0: Exclude"]
     EXCLUDE,
-    #[doc = "Include"]
+    #[doc = "1: Include"]
     INCLUDE,
 }
-impl SR1W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SR1W::EXCLUDE => false,
-            SR1W::INCLUDE => true,
+impl From<SR1_A> for bool {
+    #[inline(always)]
+    fn from(variant: SR1_A) -> Self {
+        match variant {
+            SR1_A::EXCLUDE => false,
+            SR1_A::INCLUDE => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _SR1W<'a> {
+#[doc = "Reader of field `SR1`"]
+pub type SR1_R = crate::R<bool, SR1_A>;
+impl SR1_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SR1_A {
+        match self.bits {
+            false => SR1_A::EXCLUDE,
+            true => SR1_A::INCLUDE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `EXCLUDE`"]
+    #[inline(always)]
+    pub fn is_exclude(&self) -> bool {
+        *self == SR1_A::EXCLUDE
+    }
+    #[doc = "Checks if the value of the field is `INCLUDE`"]
+    #[inline(always)]
+    pub fn is_include(&self) -> bool {
+        *self == SR1_A::INCLUDE
+    }
+}
+#[doc = "Write proxy for field `SR1`"]
+pub struct SR1_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SR1W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SR1W) -> &'a mut W {
+impl<'a> SR1_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SR1_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Exclude"]
-    #[inline]
+    #[inline(always)]
     pub fn exclude(self) -> &'a mut W {
-        self.variant(SR1W::EXCLUDE)
+        self.variant(SR1_A::EXCLUDE)
     }
     #[doc = "Include"]
-    #[inline]
+    #[inline(always)]
     pub fn include(self) -> &'a mut W {
-        self.variant(SR1W::INCLUDE)
+        self.variant(SR1_A::INCLUDE)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `SR2`"]
-pub enum SR2W {
-    #[doc = "Exclude"]
+#[doc = "Include or exclude subregion 2 in region\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SR2_A {
+    #[doc = "0: Exclude"]
     EXCLUDE,
-    #[doc = "Include"]
+    #[doc = "1: Include"]
     INCLUDE,
 }
-impl SR2W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SR2W::EXCLUDE => false,
-            SR2W::INCLUDE => true,
+impl From<SR2_A> for bool {
+    #[inline(always)]
+    fn from(variant: SR2_A) -> Self {
+        match variant {
+            SR2_A::EXCLUDE => false,
+            SR2_A::INCLUDE => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _SR2W<'a> {
+#[doc = "Reader of field `SR2`"]
+pub type SR2_R = crate::R<bool, SR2_A>;
+impl SR2_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SR2_A {
+        match self.bits {
+            false => SR2_A::EXCLUDE,
+            true => SR2_A::INCLUDE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `EXCLUDE`"]
+    #[inline(always)]
+    pub fn is_exclude(&self) -> bool {
+        *self == SR2_A::EXCLUDE
+    }
+    #[doc = "Checks if the value of the field is `INCLUDE`"]
+    #[inline(always)]
+    pub fn is_include(&self) -> bool {
+        *self == SR2_A::INCLUDE
+    }
+}
+#[doc = "Write proxy for field `SR2`"]
+pub struct SR2_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SR2W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SR2W) -> &'a mut W {
+impl<'a> SR2_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SR2_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Exclude"]
-    #[inline]
+    #[inline(always)]
     pub fn exclude(self) -> &'a mut W {
-        self.variant(SR2W::EXCLUDE)
+        self.variant(SR2_A::EXCLUDE)
     }
     #[doc = "Include"]
-    #[inline]
+    #[inline(always)]
     pub fn include(self) -> &'a mut W {
-        self.variant(SR2W::INCLUDE)
+        self.variant(SR2_A::INCLUDE)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `SR3`"]
-pub enum SR3W {
-    #[doc = "Exclude"]
+#[doc = "Include or exclude subregion 3 in region\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SR3_A {
+    #[doc = "0: Exclude"]
     EXCLUDE,
-    #[doc = "Include"]
+    #[doc = "1: Include"]
     INCLUDE,
 }
-impl SR3W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SR3W::EXCLUDE => false,
-            SR3W::INCLUDE => true,
+impl From<SR3_A> for bool {
+    #[inline(always)]
+    fn from(variant: SR3_A) -> Self {
+        match variant {
+            SR3_A::EXCLUDE => false,
+            SR3_A::INCLUDE => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _SR3W<'a> {
+#[doc = "Reader of field `SR3`"]
+pub type SR3_R = crate::R<bool, SR3_A>;
+impl SR3_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SR3_A {
+        match self.bits {
+            false => SR3_A::EXCLUDE,
+            true => SR3_A::INCLUDE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `EXCLUDE`"]
+    #[inline(always)]
+    pub fn is_exclude(&self) -> bool {
+        *self == SR3_A::EXCLUDE
+    }
+    #[doc = "Checks if the value of the field is `INCLUDE`"]
+    #[inline(always)]
+    pub fn is_include(&self) -> bool {
+        *self == SR3_A::INCLUDE
+    }
+}
+#[doc = "Write proxy for field `SR3`"]
+pub struct SR3_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SR3W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SR3W) -> &'a mut W {
+impl<'a> SR3_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SR3_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Exclude"]
-    #[inline]
+    #[inline(always)]
     pub fn exclude(self) -> &'a mut W {
-        self.variant(SR3W::EXCLUDE)
+        self.variant(SR3_A::EXCLUDE)
     }
     #[doc = "Include"]
-    #[inline]
+    #[inline(always)]
     pub fn include(self) -> &'a mut W {
-        self.variant(SR3W::INCLUDE)
+        self.variant(SR3_A::INCLUDE)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `SR4`"]
-pub enum SR4W {
-    #[doc = "Exclude"]
+#[doc = "Include or exclude subregion 4 in region\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SR4_A {
+    #[doc = "0: Exclude"]
     EXCLUDE,
-    #[doc = "Include"]
+    #[doc = "1: Include"]
     INCLUDE,
 }
-impl SR4W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SR4W::EXCLUDE => false,
-            SR4W::INCLUDE => true,
+impl From<SR4_A> for bool {
+    #[inline(always)]
+    fn from(variant: SR4_A) -> Self {
+        match variant {
+            SR4_A::EXCLUDE => false,
+            SR4_A::INCLUDE => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _SR4W<'a> {
+#[doc = "Reader of field `SR4`"]
+pub type SR4_R = crate::R<bool, SR4_A>;
+impl SR4_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SR4_A {
+        match self.bits {
+            false => SR4_A::EXCLUDE,
+            true => SR4_A::INCLUDE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `EXCLUDE`"]
+    #[inline(always)]
+    pub fn is_exclude(&self) -> bool {
+        *self == SR4_A::EXCLUDE
+    }
+    #[doc = "Checks if the value of the field is `INCLUDE`"]
+    #[inline(always)]
+    pub fn is_include(&self) -> bool {
+        *self == SR4_A::INCLUDE
+    }
+}
+#[doc = "Write proxy for field `SR4`"]
+pub struct SR4_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SR4W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SR4W) -> &'a mut W {
+impl<'a> SR4_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SR4_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Exclude"]
-    #[inline]
+    #[inline(always)]
     pub fn exclude(self) -> &'a mut W {
-        self.variant(SR4W::EXCLUDE)
+        self.variant(SR4_A::EXCLUDE)
     }
     #[doc = "Include"]
-    #[inline]
+    #[inline(always)]
     pub fn include(self) -> &'a mut W {
-        self.variant(SR4W::INCLUDE)
+        self.variant(SR4_A::INCLUDE)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `SR5`"]
-pub enum SR5W {
-    #[doc = "Exclude"]
+#[doc = "Include or exclude subregion 5 in region\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SR5_A {
+    #[doc = "0: Exclude"]
     EXCLUDE,
-    #[doc = "Include"]
+    #[doc = "1: Include"]
     INCLUDE,
 }
-impl SR5W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SR5W::EXCLUDE => false,
-            SR5W::INCLUDE => true,
+impl From<SR5_A> for bool {
+    #[inline(always)]
+    fn from(variant: SR5_A) -> Self {
+        match variant {
+            SR5_A::EXCLUDE => false,
+            SR5_A::INCLUDE => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _SR5W<'a> {
+#[doc = "Reader of field `SR5`"]
+pub type SR5_R = crate::R<bool, SR5_A>;
+impl SR5_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SR5_A {
+        match self.bits {
+            false => SR5_A::EXCLUDE,
+            true => SR5_A::INCLUDE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `EXCLUDE`"]
+    #[inline(always)]
+    pub fn is_exclude(&self) -> bool {
+        *self == SR5_A::EXCLUDE
+    }
+    #[doc = "Checks if the value of the field is `INCLUDE`"]
+    #[inline(always)]
+    pub fn is_include(&self) -> bool {
+        *self == SR5_A::INCLUDE
+    }
+}
+#[doc = "Write proxy for field `SR5`"]
+pub struct SR5_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SR5W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SR5W) -> &'a mut W {
+impl<'a> SR5_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SR5_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Exclude"]
-    #[inline]
+    #[inline(always)]
     pub fn exclude(self) -> &'a mut W {
-        self.variant(SR5W::EXCLUDE)
+        self.variant(SR5_A::EXCLUDE)
     }
     #[doc = "Include"]
-    #[inline]
+    #[inline(always)]
     pub fn include(self) -> &'a mut W {
-        self.variant(SR5W::INCLUDE)
+        self.variant(SR5_A::INCLUDE)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `SR6`"]
-pub enum SR6W {
-    #[doc = "Exclude"]
+#[doc = "Include or exclude subregion 6 in region\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SR6_A {
+    #[doc = "0: Exclude"]
     EXCLUDE,
-    #[doc = "Include"]
+    #[doc = "1: Include"]
     INCLUDE,
 }
-impl SR6W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SR6W::EXCLUDE => false,
-            SR6W::INCLUDE => true,
+impl From<SR6_A> for bool {
+    #[inline(always)]
+    fn from(variant: SR6_A) -> Self {
+        match variant {
+            SR6_A::EXCLUDE => false,
+            SR6_A::INCLUDE => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _SR6W<'a> {
+#[doc = "Reader of field `SR6`"]
+pub type SR6_R = crate::R<bool, SR6_A>;
+impl SR6_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SR6_A {
+        match self.bits {
+            false => SR6_A::EXCLUDE,
+            true => SR6_A::INCLUDE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `EXCLUDE`"]
+    #[inline(always)]
+    pub fn is_exclude(&self) -> bool {
+        *self == SR6_A::EXCLUDE
+    }
+    #[doc = "Checks if the value of the field is `INCLUDE`"]
+    #[inline(always)]
+    pub fn is_include(&self) -> bool {
+        *self == SR6_A::INCLUDE
+    }
+}
+#[doc = "Write proxy for field `SR6`"]
+pub struct SR6_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SR6W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SR6W) -> &'a mut W {
+impl<'a> SR6_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SR6_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Exclude"]
-    #[inline]
+    #[inline(always)]
     pub fn exclude(self) -> &'a mut W {
-        self.variant(SR6W::EXCLUDE)
+        self.variant(SR6_A::EXCLUDE)
     }
     #[doc = "Include"]
-    #[inline]
+    #[inline(always)]
     pub fn include(self) -> &'a mut W {
-        self.variant(SR6W::INCLUDE)
+        self.variant(SR6_A::INCLUDE)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `SR7`"]
-pub enum SR7W {
-    #[doc = "Exclude"]
+#[doc = "Include or exclude subregion 7 in region\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SR7_A {
+    #[doc = "0: Exclude"]
     EXCLUDE,
-    #[doc = "Include"]
+    #[doc = "1: Include"]
     INCLUDE,
 }
-impl SR7W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SR7W::EXCLUDE => false,
-            SR7W::INCLUDE => true,
+impl From<SR7_A> for bool {
+    #[inline(always)]
+    fn from(variant: SR7_A) -> Self {
+        match variant {
+            SR7_A::EXCLUDE => false,
+            SR7_A::INCLUDE => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _SR7W<'a> {
+#[doc = "Reader of field `SR7`"]
+pub type SR7_R = crate::R<bool, SR7_A>;
+impl SR7_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SR7_A {
+        match self.bits {
+            false => SR7_A::EXCLUDE,
+            true => SR7_A::INCLUDE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `EXCLUDE`"]
+    #[inline(always)]
+    pub fn is_exclude(&self) -> bool {
+        *self == SR7_A::EXCLUDE
+    }
+    #[doc = "Checks if the value of the field is `INCLUDE`"]
+    #[inline(always)]
+    pub fn is_include(&self) -> bool {
+        *self == SR7_A::INCLUDE
+    }
+}
+#[doc = "Write proxy for field `SR7`"]
+pub struct SR7_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SR7W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SR7W) -> &'a mut W {
+impl<'a> SR7_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SR7_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Exclude"]
-    #[inline]
+    #[inline(always)]
     pub fn exclude(self) -> &'a mut W {
-        self.variant(SR7W::EXCLUDE)
+        self.variant(SR7_A::EXCLUDE)
     }
     #[doc = "Include"]
-    #[inline]
+    #[inline(always)]
     pub fn include(self) -> &'a mut W {
-        self.variant(SR7W::INCLUDE)
+        self.variant(SR7_A::INCLUDE)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 7;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `SR8`"]
-pub enum SR8W {
-    #[doc = "Exclude"]
+#[doc = "Include or exclude subregion 8 in region\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SR8_A {
+    #[doc = "0: Exclude"]
     EXCLUDE,
-    #[doc = "Include"]
+    #[doc = "1: Include"]
     INCLUDE,
 }
-impl SR8W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SR8W::EXCLUDE => false,
-            SR8W::INCLUDE => true,
+impl From<SR8_A> for bool {
+    #[inline(always)]
+    fn from(variant: SR8_A) -> Self {
+        match variant {
+            SR8_A::EXCLUDE => false,
+            SR8_A::INCLUDE => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _SR8W<'a> {
+#[doc = "Reader of field `SR8`"]
+pub type SR8_R = crate::R<bool, SR8_A>;
+impl SR8_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SR8_A {
+        match self.bits {
+            false => SR8_A::EXCLUDE,
+            true => SR8_A::INCLUDE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `EXCLUDE`"]
+    #[inline(always)]
+    pub fn is_exclude(&self) -> bool {
+        *self == SR8_A::EXCLUDE
+    }
+    #[doc = "Checks if the value of the field is `INCLUDE`"]
+    #[inline(always)]
+    pub fn is_include(&self) -> bool {
+        *self == SR8_A::INCLUDE
+    }
+}
+#[doc = "Write proxy for field `SR8`"]
+pub struct SR8_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SR8W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SR8W) -> &'a mut W {
+impl<'a> SR8_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SR8_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Exclude"]
-    #[inline]
+    #[inline(always)]
     pub fn exclude(self) -> &'a mut W {
-        self.variant(SR8W::EXCLUDE)
+        self.variant(SR8_A::EXCLUDE)
     }
     #[doc = "Include"]
-    #[inline]
+    #[inline(always)]
     pub fn include(self) -> &'a mut W {
-        self.variant(SR8W::INCLUDE)
+        self.variant(SR8_A::INCLUDE)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `SR9`"]
-pub enum SR9W {
-    #[doc = "Exclude"]
+#[doc = "Include or exclude subregion 9 in region\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SR9_A {
+    #[doc = "0: Exclude"]
     EXCLUDE,
-    #[doc = "Include"]
+    #[doc = "1: Include"]
     INCLUDE,
 }
-impl SR9W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SR9W::EXCLUDE => false,
-            SR9W::INCLUDE => true,
+impl From<SR9_A> for bool {
+    #[inline(always)]
+    fn from(variant: SR9_A) -> Self {
+        match variant {
+            SR9_A::EXCLUDE => false,
+            SR9_A::INCLUDE => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _SR9W<'a> {
+#[doc = "Reader of field `SR9`"]
+pub type SR9_R = crate::R<bool, SR9_A>;
+impl SR9_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SR9_A {
+        match self.bits {
+            false => SR9_A::EXCLUDE,
+            true => SR9_A::INCLUDE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `EXCLUDE`"]
+    #[inline(always)]
+    pub fn is_exclude(&self) -> bool {
+        *self == SR9_A::EXCLUDE
+    }
+    #[doc = "Checks if the value of the field is `INCLUDE`"]
+    #[inline(always)]
+    pub fn is_include(&self) -> bool {
+        *self == SR9_A::INCLUDE
+    }
+}
+#[doc = "Write proxy for field `SR9`"]
+pub struct SR9_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SR9W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SR9W) -> &'a mut W {
+impl<'a> SR9_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SR9_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Exclude"]
-    #[inline]
+    #[inline(always)]
     pub fn exclude(self) -> &'a mut W {
-        self.variant(SR9W::EXCLUDE)
+        self.variant(SR9_A::EXCLUDE)
     }
     #[doc = "Include"]
-    #[inline]
+    #[inline(always)]
     pub fn include(self) -> &'a mut W {
-        self.variant(SR9W::INCLUDE)
+        self.variant(SR9_A::INCLUDE)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 9;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `SR10`"]
-pub enum SR10W {
-    #[doc = "Exclude"]
+#[doc = "Include or exclude subregion 10 in region\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SR10_A {
+    #[doc = "0: Exclude"]
     EXCLUDE,
-    #[doc = "Include"]
+    #[doc = "1: Include"]
     INCLUDE,
 }
-impl SR10W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SR10W::EXCLUDE => false,
-            SR10W::INCLUDE => true,
+impl From<SR10_A> for bool {
+    #[inline(always)]
+    fn from(variant: SR10_A) -> Self {
+        match variant {
+            SR10_A::EXCLUDE => false,
+            SR10_A::INCLUDE => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _SR10W<'a> {
+#[doc = "Reader of field `SR10`"]
+pub type SR10_R = crate::R<bool, SR10_A>;
+impl SR10_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SR10_A {
+        match self.bits {
+            false => SR10_A::EXCLUDE,
+            true => SR10_A::INCLUDE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `EXCLUDE`"]
+    #[inline(always)]
+    pub fn is_exclude(&self) -> bool {
+        *self == SR10_A::EXCLUDE
+    }
+    #[doc = "Checks if the value of the field is `INCLUDE`"]
+    #[inline(always)]
+    pub fn is_include(&self) -> bool {
+        *self == SR10_A::INCLUDE
+    }
+}
+#[doc = "Write proxy for field `SR10`"]
+pub struct SR10_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SR10W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SR10W) -> &'a mut W {
+impl<'a> SR10_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SR10_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Exclude"]
-    #[inline]
+    #[inline(always)]
     pub fn exclude(self) -> &'a mut W {
-        self.variant(SR10W::EXCLUDE)
+        self.variant(SR10_A::EXCLUDE)
     }
     #[doc = "Include"]
-    #[inline]
+    #[inline(always)]
     pub fn include(self) -> &'a mut W {
-        self.variant(SR10W::INCLUDE)
+        self.variant(SR10_A::INCLUDE)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 10;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `SR11`"]
-pub enum SR11W {
-    #[doc = "Exclude"]
+#[doc = "Include or exclude subregion 11 in region\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SR11_A {
+    #[doc = "0: Exclude"]
     EXCLUDE,
-    #[doc = "Include"]
+    #[doc = "1: Include"]
     INCLUDE,
 }
-impl SR11W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SR11W::EXCLUDE => false,
-            SR11W::INCLUDE => true,
+impl From<SR11_A> for bool {
+    #[inline(always)]
+    fn from(variant: SR11_A) -> Self {
+        match variant {
+            SR11_A::EXCLUDE => false,
+            SR11_A::INCLUDE => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _SR11W<'a> {
+#[doc = "Reader of field `SR11`"]
+pub type SR11_R = crate::R<bool, SR11_A>;
+impl SR11_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SR11_A {
+        match self.bits {
+            false => SR11_A::EXCLUDE,
+            true => SR11_A::INCLUDE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `EXCLUDE`"]
+    #[inline(always)]
+    pub fn is_exclude(&self) -> bool {
+        *self == SR11_A::EXCLUDE
+    }
+    #[doc = "Checks if the value of the field is `INCLUDE`"]
+    #[inline(always)]
+    pub fn is_include(&self) -> bool {
+        *self == SR11_A::INCLUDE
+    }
+}
+#[doc = "Write proxy for field `SR11`"]
+pub struct SR11_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SR11W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SR11W) -> &'a mut W {
+impl<'a> SR11_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SR11_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Exclude"]
-    #[inline]
+    #[inline(always)]
     pub fn exclude(self) -> &'a mut W {
-        self.variant(SR11W::EXCLUDE)
+        self.variant(SR11_A::EXCLUDE)
     }
     #[doc = "Include"]
-    #[inline]
+    #[inline(always)]
     pub fn include(self) -> &'a mut W {
-        self.variant(SR11W::INCLUDE)
+        self.variant(SR11_A::INCLUDE)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 11;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `SR12`"]
-pub enum SR12W {
-    #[doc = "Exclude"]
+#[doc = "Include or exclude subregion 12 in region\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SR12_A {
+    #[doc = "0: Exclude"]
     EXCLUDE,
-    #[doc = "Include"]
+    #[doc = "1: Include"]
     INCLUDE,
 }
-impl SR12W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SR12W::EXCLUDE => false,
-            SR12W::INCLUDE => true,
+impl From<SR12_A> for bool {
+    #[inline(always)]
+    fn from(variant: SR12_A) -> Self {
+        match variant {
+            SR12_A::EXCLUDE => false,
+            SR12_A::INCLUDE => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _SR12W<'a> {
+#[doc = "Reader of field `SR12`"]
+pub type SR12_R = crate::R<bool, SR12_A>;
+impl SR12_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SR12_A {
+        match self.bits {
+            false => SR12_A::EXCLUDE,
+            true => SR12_A::INCLUDE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `EXCLUDE`"]
+    #[inline(always)]
+    pub fn is_exclude(&self) -> bool {
+        *self == SR12_A::EXCLUDE
+    }
+    #[doc = "Checks if the value of the field is `INCLUDE`"]
+    #[inline(always)]
+    pub fn is_include(&self) -> bool {
+        *self == SR12_A::INCLUDE
+    }
+}
+#[doc = "Write proxy for field `SR12`"]
+pub struct SR12_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SR12W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SR12W) -> &'a mut W {
+impl<'a> SR12_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SR12_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Exclude"]
-    #[inline]
+    #[inline(always)]
     pub fn exclude(self) -> &'a mut W {
-        self.variant(SR12W::EXCLUDE)
+        self.variant(SR12_A::EXCLUDE)
     }
     #[doc = "Include"]
-    #[inline]
+    #[inline(always)]
     pub fn include(self) -> &'a mut W {
-        self.variant(SR12W::INCLUDE)
+        self.variant(SR12_A::INCLUDE)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 12;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `SR13`"]
-pub enum SR13W {
-    #[doc = "Exclude"]
+#[doc = "Include or exclude subregion 13 in region\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SR13_A {
+    #[doc = "0: Exclude"]
     EXCLUDE,
-    #[doc = "Include"]
+    #[doc = "1: Include"]
     INCLUDE,
 }
-impl SR13W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SR13W::EXCLUDE => false,
-            SR13W::INCLUDE => true,
+impl From<SR13_A> for bool {
+    #[inline(always)]
+    fn from(variant: SR13_A) -> Self {
+        match variant {
+            SR13_A::EXCLUDE => false,
+            SR13_A::INCLUDE => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _SR13W<'a> {
+#[doc = "Reader of field `SR13`"]
+pub type SR13_R = crate::R<bool, SR13_A>;
+impl SR13_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SR13_A {
+        match self.bits {
+            false => SR13_A::EXCLUDE,
+            true => SR13_A::INCLUDE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `EXCLUDE`"]
+    #[inline(always)]
+    pub fn is_exclude(&self) -> bool {
+        *self == SR13_A::EXCLUDE
+    }
+    #[doc = "Checks if the value of the field is `INCLUDE`"]
+    #[inline(always)]
+    pub fn is_include(&self) -> bool {
+        *self == SR13_A::INCLUDE
+    }
+}
+#[doc = "Write proxy for field `SR13`"]
+pub struct SR13_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SR13W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SR13W) -> &'a mut W {
+impl<'a> SR13_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SR13_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Exclude"]
-    #[inline]
+    #[inline(always)]
     pub fn exclude(self) -> &'a mut W {
-        self.variant(SR13W::EXCLUDE)
+        self.variant(SR13_A::EXCLUDE)
     }
     #[doc = "Include"]
-    #[inline]
+    #[inline(always)]
     pub fn include(self) -> &'a mut W {
-        self.variant(SR13W::INCLUDE)
+        self.variant(SR13_A::INCLUDE)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 13;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `SR14`"]
-pub enum SR14W {
-    #[doc = "Exclude"]
+#[doc = "Include or exclude subregion 14 in region\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SR14_A {
+    #[doc = "0: Exclude"]
     EXCLUDE,
-    #[doc = "Include"]
+    #[doc = "1: Include"]
     INCLUDE,
 }
-impl SR14W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SR14W::EXCLUDE => false,
-            SR14W::INCLUDE => true,
+impl From<SR14_A> for bool {
+    #[inline(always)]
+    fn from(variant: SR14_A) -> Self {
+        match variant {
+            SR14_A::EXCLUDE => false,
+            SR14_A::INCLUDE => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _SR14W<'a> {
+#[doc = "Reader of field `SR14`"]
+pub type SR14_R = crate::R<bool, SR14_A>;
+impl SR14_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SR14_A {
+        match self.bits {
+            false => SR14_A::EXCLUDE,
+            true => SR14_A::INCLUDE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `EXCLUDE`"]
+    #[inline(always)]
+    pub fn is_exclude(&self) -> bool {
+        *self == SR14_A::EXCLUDE
+    }
+    #[doc = "Checks if the value of the field is `INCLUDE`"]
+    #[inline(always)]
+    pub fn is_include(&self) -> bool {
+        *self == SR14_A::INCLUDE
+    }
+}
+#[doc = "Write proxy for field `SR14`"]
+pub struct SR14_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SR14W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SR14W) -> &'a mut W {
+impl<'a> SR14_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SR14_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Exclude"]
-    #[inline]
+    #[inline(always)]
     pub fn exclude(self) -> &'a mut W {
-        self.variant(SR14W::EXCLUDE)
+        self.variant(SR14_A::EXCLUDE)
     }
     #[doc = "Include"]
-    #[inline]
+    #[inline(always)]
     pub fn include(self) -> &'a mut W {
-        self.variant(SR14W::INCLUDE)
+        self.variant(SR14_A::INCLUDE)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 14;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `SR15`"]
-pub enum SR15W {
-    #[doc = "Exclude"]
+#[doc = "Include or exclude subregion 15 in region\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SR15_A {
+    #[doc = "0: Exclude"]
     EXCLUDE,
-    #[doc = "Include"]
+    #[doc = "1: Include"]
     INCLUDE,
 }
-impl SR15W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SR15W::EXCLUDE => false,
-            SR15W::INCLUDE => true,
+impl From<SR15_A> for bool {
+    #[inline(always)]
+    fn from(variant: SR15_A) -> Self {
+        match variant {
+            SR15_A::EXCLUDE => false,
+            SR15_A::INCLUDE => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _SR15W<'a> {
+#[doc = "Reader of field `SR15`"]
+pub type SR15_R = crate::R<bool, SR15_A>;
+impl SR15_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SR15_A {
+        match self.bits {
+            false => SR15_A::EXCLUDE,
+            true => SR15_A::INCLUDE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `EXCLUDE`"]
+    #[inline(always)]
+    pub fn is_exclude(&self) -> bool {
+        *self == SR15_A::EXCLUDE
+    }
+    #[doc = "Checks if the value of the field is `INCLUDE`"]
+    #[inline(always)]
+    pub fn is_include(&self) -> bool {
+        *self == SR15_A::INCLUDE
+    }
+}
+#[doc = "Write proxy for field `SR15`"]
+pub struct SR15_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SR15W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SR15W) -> &'a mut W {
+impl<'a> SR15_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SR15_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Exclude"]
-    #[inline]
+    #[inline(always)]
     pub fn exclude(self) -> &'a mut W {
-        self.variant(SR15W::EXCLUDE)
+        self.variant(SR15_A::EXCLUDE)
     }
     #[doc = "Include"]
-    #[inline]
+    #[inline(always)]
     pub fn include(self) -> &'a mut W {
-        self.variant(SR15W::INCLUDE)
+        self.variant(SR15_A::INCLUDE)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 15;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `SR16`"]
-pub enum SR16W {
-    #[doc = "Exclude"]
+#[doc = "Include or exclude subregion 16 in region\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SR16_A {
+    #[doc = "0: Exclude"]
     EXCLUDE,
-    #[doc = "Include"]
+    #[doc = "1: Include"]
     INCLUDE,
 }
-impl SR16W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SR16W::EXCLUDE => false,
-            SR16W::INCLUDE => true,
+impl From<SR16_A> for bool {
+    #[inline(always)]
+    fn from(variant: SR16_A) -> Self {
+        match variant {
+            SR16_A::EXCLUDE => false,
+            SR16_A::INCLUDE => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _SR16W<'a> {
+#[doc = "Reader of field `SR16`"]
+pub type SR16_R = crate::R<bool, SR16_A>;
+impl SR16_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SR16_A {
+        match self.bits {
+            false => SR16_A::EXCLUDE,
+            true => SR16_A::INCLUDE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `EXCLUDE`"]
+    #[inline(always)]
+    pub fn is_exclude(&self) -> bool {
+        *self == SR16_A::EXCLUDE
+    }
+    #[doc = "Checks if the value of the field is `INCLUDE`"]
+    #[inline(always)]
+    pub fn is_include(&self) -> bool {
+        *self == SR16_A::INCLUDE
+    }
+}
+#[doc = "Write proxy for field `SR16`"]
+pub struct SR16_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SR16W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SR16W) -> &'a mut W {
+impl<'a> SR16_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SR16_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Exclude"]
-    #[inline]
+    #[inline(always)]
     pub fn exclude(self) -> &'a mut W {
-        self.variant(SR16W::EXCLUDE)
+        self.variant(SR16_A::EXCLUDE)
     }
     #[doc = "Include"]
-    #[inline]
+    #[inline(always)]
     pub fn include(self) -> &'a mut W {
-        self.variant(SR16W::INCLUDE)
+        self.variant(SR16_A::INCLUDE)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `SR17`"]
-pub enum SR17W {
-    #[doc = "Exclude"]
+#[doc = "Include or exclude subregion 17 in region\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SR17_A {
+    #[doc = "0: Exclude"]
     EXCLUDE,
-    #[doc = "Include"]
+    #[doc = "1: Include"]
     INCLUDE,
 }
-impl SR17W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SR17W::EXCLUDE => false,
-            SR17W::INCLUDE => true,
+impl From<SR17_A> for bool {
+    #[inline(always)]
+    fn from(variant: SR17_A) -> Self {
+        match variant {
+            SR17_A::EXCLUDE => false,
+            SR17_A::INCLUDE => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _SR17W<'a> {
+#[doc = "Reader of field `SR17`"]
+pub type SR17_R = crate::R<bool, SR17_A>;
+impl SR17_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SR17_A {
+        match self.bits {
+            false => SR17_A::EXCLUDE,
+            true => SR17_A::INCLUDE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `EXCLUDE`"]
+    #[inline(always)]
+    pub fn is_exclude(&self) -> bool {
+        *self == SR17_A::EXCLUDE
+    }
+    #[doc = "Checks if the value of the field is `INCLUDE`"]
+    #[inline(always)]
+    pub fn is_include(&self) -> bool {
+        *self == SR17_A::INCLUDE
+    }
+}
+#[doc = "Write proxy for field `SR17`"]
+pub struct SR17_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SR17W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SR17W) -> &'a mut W {
+impl<'a> SR17_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SR17_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Exclude"]
-    #[inline]
+    #[inline(always)]
     pub fn exclude(self) -> &'a mut W {
-        self.variant(SR17W::EXCLUDE)
+        self.variant(SR17_A::EXCLUDE)
     }
     #[doc = "Include"]
-    #[inline]
+    #[inline(always)]
     pub fn include(self) -> &'a mut W {
-        self.variant(SR17W::INCLUDE)
+        self.variant(SR17_A::INCLUDE)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 17;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 17)) | (((value as u32) & 0x01) << 17);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `SR18`"]
-pub enum SR18W {
-    #[doc = "Exclude"]
+#[doc = "Include or exclude subregion 18 in region\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SR18_A {
+    #[doc = "0: Exclude"]
     EXCLUDE,
-    #[doc = "Include"]
+    #[doc = "1: Include"]
     INCLUDE,
 }
-impl SR18W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SR18W::EXCLUDE => false,
-            SR18W::INCLUDE => true,
+impl From<SR18_A> for bool {
+    #[inline(always)]
+    fn from(variant: SR18_A) -> Self {
+        match variant {
+            SR18_A::EXCLUDE => false,
+            SR18_A::INCLUDE => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _SR18W<'a> {
+#[doc = "Reader of field `SR18`"]
+pub type SR18_R = crate::R<bool, SR18_A>;
+impl SR18_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SR18_A {
+        match self.bits {
+            false => SR18_A::EXCLUDE,
+            true => SR18_A::INCLUDE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `EXCLUDE`"]
+    #[inline(always)]
+    pub fn is_exclude(&self) -> bool {
+        *self == SR18_A::EXCLUDE
+    }
+    #[doc = "Checks if the value of the field is `INCLUDE`"]
+    #[inline(always)]
+    pub fn is_include(&self) -> bool {
+        *self == SR18_A::INCLUDE
+    }
+}
+#[doc = "Write proxy for field `SR18`"]
+pub struct SR18_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SR18W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SR18W) -> &'a mut W {
+impl<'a> SR18_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SR18_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Exclude"]
-    #[inline]
+    #[inline(always)]
     pub fn exclude(self) -> &'a mut W {
-        self.variant(SR18W::EXCLUDE)
+        self.variant(SR18_A::EXCLUDE)
     }
     #[doc = "Include"]
-    #[inline]
+    #[inline(always)]
     pub fn include(self) -> &'a mut W {
-        self.variant(SR18W::INCLUDE)
+        self.variant(SR18_A::INCLUDE)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 18;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 18)) | (((value as u32) & 0x01) << 18);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `SR19`"]
-pub enum SR19W {
-    #[doc = "Exclude"]
+#[doc = "Include or exclude subregion 19 in region\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SR19_A {
+    #[doc = "0: Exclude"]
     EXCLUDE,
-    #[doc = "Include"]
+    #[doc = "1: Include"]
     INCLUDE,
 }
-impl SR19W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SR19W::EXCLUDE => false,
-            SR19W::INCLUDE => true,
+impl From<SR19_A> for bool {
+    #[inline(always)]
+    fn from(variant: SR19_A) -> Self {
+        match variant {
+            SR19_A::EXCLUDE => false,
+            SR19_A::INCLUDE => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _SR19W<'a> {
+#[doc = "Reader of field `SR19`"]
+pub type SR19_R = crate::R<bool, SR19_A>;
+impl SR19_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SR19_A {
+        match self.bits {
+            false => SR19_A::EXCLUDE,
+            true => SR19_A::INCLUDE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `EXCLUDE`"]
+    #[inline(always)]
+    pub fn is_exclude(&self) -> bool {
+        *self == SR19_A::EXCLUDE
+    }
+    #[doc = "Checks if the value of the field is `INCLUDE`"]
+    #[inline(always)]
+    pub fn is_include(&self) -> bool {
+        *self == SR19_A::INCLUDE
+    }
+}
+#[doc = "Write proxy for field `SR19`"]
+pub struct SR19_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SR19W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SR19W) -> &'a mut W {
+impl<'a> SR19_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SR19_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Exclude"]
-    #[inline]
+    #[inline(always)]
     pub fn exclude(self) -> &'a mut W {
-        self.variant(SR19W::EXCLUDE)
+        self.variant(SR19_A::EXCLUDE)
     }
     #[doc = "Include"]
-    #[inline]
+    #[inline(always)]
     pub fn include(self) -> &'a mut W {
-        self.variant(SR19W::INCLUDE)
+        self.variant(SR19_A::INCLUDE)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 19;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 19)) | (((value as u32) & 0x01) << 19);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `SR20`"]
-pub enum SR20W {
-    #[doc = "Exclude"]
+#[doc = "Include or exclude subregion 20 in region\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SR20_A {
+    #[doc = "0: Exclude"]
     EXCLUDE,
-    #[doc = "Include"]
+    #[doc = "1: Include"]
     INCLUDE,
 }
-impl SR20W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SR20W::EXCLUDE => false,
-            SR20W::INCLUDE => true,
+impl From<SR20_A> for bool {
+    #[inline(always)]
+    fn from(variant: SR20_A) -> Self {
+        match variant {
+            SR20_A::EXCLUDE => false,
+            SR20_A::INCLUDE => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _SR20W<'a> {
+#[doc = "Reader of field `SR20`"]
+pub type SR20_R = crate::R<bool, SR20_A>;
+impl SR20_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SR20_A {
+        match self.bits {
+            false => SR20_A::EXCLUDE,
+            true => SR20_A::INCLUDE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `EXCLUDE`"]
+    #[inline(always)]
+    pub fn is_exclude(&self) -> bool {
+        *self == SR20_A::EXCLUDE
+    }
+    #[doc = "Checks if the value of the field is `INCLUDE`"]
+    #[inline(always)]
+    pub fn is_include(&self) -> bool {
+        *self == SR20_A::INCLUDE
+    }
+}
+#[doc = "Write proxy for field `SR20`"]
+pub struct SR20_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SR20W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SR20W) -> &'a mut W {
+impl<'a> SR20_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SR20_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Exclude"]
-    #[inline]
+    #[inline(always)]
     pub fn exclude(self) -> &'a mut W {
-        self.variant(SR20W::EXCLUDE)
+        self.variant(SR20_A::EXCLUDE)
     }
     #[doc = "Include"]
-    #[inline]
+    #[inline(always)]
     pub fn include(self) -> &'a mut W {
-        self.variant(SR20W::INCLUDE)
+        self.variant(SR20_A::INCLUDE)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 20;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 20)) | (((value as u32) & 0x01) << 20);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `SR21`"]
-pub enum SR21W {
-    #[doc = "Exclude"]
+#[doc = "Include or exclude subregion 21 in region\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SR21_A {
+    #[doc = "0: Exclude"]
     EXCLUDE,
-    #[doc = "Include"]
+    #[doc = "1: Include"]
     INCLUDE,
 }
-impl SR21W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SR21W::EXCLUDE => false,
-            SR21W::INCLUDE => true,
+impl From<SR21_A> for bool {
+    #[inline(always)]
+    fn from(variant: SR21_A) -> Self {
+        match variant {
+            SR21_A::EXCLUDE => false,
+            SR21_A::INCLUDE => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _SR21W<'a> {
+#[doc = "Reader of field `SR21`"]
+pub type SR21_R = crate::R<bool, SR21_A>;
+impl SR21_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SR21_A {
+        match self.bits {
+            false => SR21_A::EXCLUDE,
+            true => SR21_A::INCLUDE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `EXCLUDE`"]
+    #[inline(always)]
+    pub fn is_exclude(&self) -> bool {
+        *self == SR21_A::EXCLUDE
+    }
+    #[doc = "Checks if the value of the field is `INCLUDE`"]
+    #[inline(always)]
+    pub fn is_include(&self) -> bool {
+        *self == SR21_A::INCLUDE
+    }
+}
+#[doc = "Write proxy for field `SR21`"]
+pub struct SR21_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SR21W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SR21W) -> &'a mut W {
+impl<'a> SR21_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SR21_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Exclude"]
-    #[inline]
+    #[inline(always)]
     pub fn exclude(self) -> &'a mut W {
-        self.variant(SR21W::EXCLUDE)
+        self.variant(SR21_A::EXCLUDE)
     }
     #[doc = "Include"]
-    #[inline]
+    #[inline(always)]
     pub fn include(self) -> &'a mut W {
-        self.variant(SR21W::INCLUDE)
+        self.variant(SR21_A::INCLUDE)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 21;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 21)) | (((value as u32) & 0x01) << 21);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `SR22`"]
-pub enum SR22W {
-    #[doc = "Exclude"]
+#[doc = "Include or exclude subregion 22 in region\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SR22_A {
+    #[doc = "0: Exclude"]
     EXCLUDE,
-    #[doc = "Include"]
+    #[doc = "1: Include"]
     INCLUDE,
 }
-impl SR22W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SR22W::EXCLUDE => false,
-            SR22W::INCLUDE => true,
+impl From<SR22_A> for bool {
+    #[inline(always)]
+    fn from(variant: SR22_A) -> Self {
+        match variant {
+            SR22_A::EXCLUDE => false,
+            SR22_A::INCLUDE => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _SR22W<'a> {
+#[doc = "Reader of field `SR22`"]
+pub type SR22_R = crate::R<bool, SR22_A>;
+impl SR22_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SR22_A {
+        match self.bits {
+            false => SR22_A::EXCLUDE,
+            true => SR22_A::INCLUDE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `EXCLUDE`"]
+    #[inline(always)]
+    pub fn is_exclude(&self) -> bool {
+        *self == SR22_A::EXCLUDE
+    }
+    #[doc = "Checks if the value of the field is `INCLUDE`"]
+    #[inline(always)]
+    pub fn is_include(&self) -> bool {
+        *self == SR22_A::INCLUDE
+    }
+}
+#[doc = "Write proxy for field `SR22`"]
+pub struct SR22_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SR22W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SR22W) -> &'a mut W {
+impl<'a> SR22_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SR22_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Exclude"]
-    #[inline]
+    #[inline(always)]
     pub fn exclude(self) -> &'a mut W {
-        self.variant(SR22W::EXCLUDE)
+        self.variant(SR22_A::EXCLUDE)
     }
     #[doc = "Include"]
-    #[inline]
+    #[inline(always)]
     pub fn include(self) -> &'a mut W {
-        self.variant(SR22W::INCLUDE)
+        self.variant(SR22_A::INCLUDE)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 22;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 22)) | (((value as u32) & 0x01) << 22);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `SR23`"]
-pub enum SR23W {
-    #[doc = "Exclude"]
+#[doc = "Include or exclude subregion 23 in region\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SR23_A {
+    #[doc = "0: Exclude"]
     EXCLUDE,
-    #[doc = "Include"]
+    #[doc = "1: Include"]
     INCLUDE,
 }
-impl SR23W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SR23W::EXCLUDE => false,
-            SR23W::INCLUDE => true,
+impl From<SR23_A> for bool {
+    #[inline(always)]
+    fn from(variant: SR23_A) -> Self {
+        match variant {
+            SR23_A::EXCLUDE => false,
+            SR23_A::INCLUDE => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _SR23W<'a> {
+#[doc = "Reader of field `SR23`"]
+pub type SR23_R = crate::R<bool, SR23_A>;
+impl SR23_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SR23_A {
+        match self.bits {
+            false => SR23_A::EXCLUDE,
+            true => SR23_A::INCLUDE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `EXCLUDE`"]
+    #[inline(always)]
+    pub fn is_exclude(&self) -> bool {
+        *self == SR23_A::EXCLUDE
+    }
+    #[doc = "Checks if the value of the field is `INCLUDE`"]
+    #[inline(always)]
+    pub fn is_include(&self) -> bool {
+        *self == SR23_A::INCLUDE
+    }
+}
+#[doc = "Write proxy for field `SR23`"]
+pub struct SR23_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SR23W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SR23W) -> &'a mut W {
+impl<'a> SR23_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SR23_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Exclude"]
-    #[inline]
+    #[inline(always)]
     pub fn exclude(self) -> &'a mut W {
-        self.variant(SR23W::EXCLUDE)
+        self.variant(SR23_A::EXCLUDE)
     }
     #[doc = "Include"]
-    #[inline]
+    #[inline(always)]
     pub fn include(self) -> &'a mut W {
-        self.variant(SR23W::INCLUDE)
+        self.variant(SR23_A::INCLUDE)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 23;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 23)) | (((value as u32) & 0x01) << 23);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `SR24`"]
-pub enum SR24W {
-    #[doc = "Exclude"]
+#[doc = "Include or exclude subregion 24 in region\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SR24_A {
+    #[doc = "0: Exclude"]
     EXCLUDE,
-    #[doc = "Include"]
+    #[doc = "1: Include"]
     INCLUDE,
 }
-impl SR24W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SR24W::EXCLUDE => false,
-            SR24W::INCLUDE => true,
+impl From<SR24_A> for bool {
+    #[inline(always)]
+    fn from(variant: SR24_A) -> Self {
+        match variant {
+            SR24_A::EXCLUDE => false,
+            SR24_A::INCLUDE => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _SR24W<'a> {
+#[doc = "Reader of field `SR24`"]
+pub type SR24_R = crate::R<bool, SR24_A>;
+impl SR24_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SR24_A {
+        match self.bits {
+            false => SR24_A::EXCLUDE,
+            true => SR24_A::INCLUDE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `EXCLUDE`"]
+    #[inline(always)]
+    pub fn is_exclude(&self) -> bool {
+        *self == SR24_A::EXCLUDE
+    }
+    #[doc = "Checks if the value of the field is `INCLUDE`"]
+    #[inline(always)]
+    pub fn is_include(&self) -> bool {
+        *self == SR24_A::INCLUDE
+    }
+}
+#[doc = "Write proxy for field `SR24`"]
+pub struct SR24_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SR24W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SR24W) -> &'a mut W {
+impl<'a> SR24_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SR24_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Exclude"]
-    #[inline]
+    #[inline(always)]
     pub fn exclude(self) -> &'a mut W {
-        self.variant(SR24W::EXCLUDE)
+        self.variant(SR24_A::EXCLUDE)
     }
     #[doc = "Include"]
-    #[inline]
+    #[inline(always)]
     pub fn include(self) -> &'a mut W {
-        self.variant(SR24W::INCLUDE)
+        self.variant(SR24_A::INCLUDE)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 24;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `SR25`"]
-pub enum SR25W {
-    #[doc = "Exclude"]
+#[doc = "Include or exclude subregion 25 in region\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SR25_A {
+    #[doc = "0: Exclude"]
     EXCLUDE,
-    #[doc = "Include"]
+    #[doc = "1: Include"]
     INCLUDE,
 }
-impl SR25W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SR25W::EXCLUDE => false,
-            SR25W::INCLUDE => true,
+impl From<SR25_A> for bool {
+    #[inline(always)]
+    fn from(variant: SR25_A) -> Self {
+        match variant {
+            SR25_A::EXCLUDE => false,
+            SR25_A::INCLUDE => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _SR25W<'a> {
+#[doc = "Reader of field `SR25`"]
+pub type SR25_R = crate::R<bool, SR25_A>;
+impl SR25_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SR25_A {
+        match self.bits {
+            false => SR25_A::EXCLUDE,
+            true => SR25_A::INCLUDE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `EXCLUDE`"]
+    #[inline(always)]
+    pub fn is_exclude(&self) -> bool {
+        *self == SR25_A::EXCLUDE
+    }
+    #[doc = "Checks if the value of the field is `INCLUDE`"]
+    #[inline(always)]
+    pub fn is_include(&self) -> bool {
+        *self == SR25_A::INCLUDE
+    }
+}
+#[doc = "Write proxy for field `SR25`"]
+pub struct SR25_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SR25W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SR25W) -> &'a mut W {
+impl<'a> SR25_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SR25_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Exclude"]
-    #[inline]
+    #[inline(always)]
     pub fn exclude(self) -> &'a mut W {
-        self.variant(SR25W::EXCLUDE)
+        self.variant(SR25_A::EXCLUDE)
     }
     #[doc = "Include"]
-    #[inline]
+    #[inline(always)]
     pub fn include(self) -> &'a mut W {
-        self.variant(SR25W::INCLUDE)
+        self.variant(SR25_A::INCLUDE)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 25;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 25)) | (((value as u32) & 0x01) << 25);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `SR26`"]
-pub enum SR26W {
-    #[doc = "Exclude"]
+#[doc = "Include or exclude subregion 26 in region\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SR26_A {
+    #[doc = "0: Exclude"]
     EXCLUDE,
-    #[doc = "Include"]
+    #[doc = "1: Include"]
     INCLUDE,
 }
-impl SR26W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SR26W::EXCLUDE => false,
-            SR26W::INCLUDE => true,
+impl From<SR26_A> for bool {
+    #[inline(always)]
+    fn from(variant: SR26_A) -> Self {
+        match variant {
+            SR26_A::EXCLUDE => false,
+            SR26_A::INCLUDE => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _SR26W<'a> {
+#[doc = "Reader of field `SR26`"]
+pub type SR26_R = crate::R<bool, SR26_A>;
+impl SR26_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SR26_A {
+        match self.bits {
+            false => SR26_A::EXCLUDE,
+            true => SR26_A::INCLUDE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `EXCLUDE`"]
+    #[inline(always)]
+    pub fn is_exclude(&self) -> bool {
+        *self == SR26_A::EXCLUDE
+    }
+    #[doc = "Checks if the value of the field is `INCLUDE`"]
+    #[inline(always)]
+    pub fn is_include(&self) -> bool {
+        *self == SR26_A::INCLUDE
+    }
+}
+#[doc = "Write proxy for field `SR26`"]
+pub struct SR26_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SR26W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SR26W) -> &'a mut W {
+impl<'a> SR26_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SR26_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Exclude"]
-    #[inline]
+    #[inline(always)]
     pub fn exclude(self) -> &'a mut W {
-        self.variant(SR26W::EXCLUDE)
+        self.variant(SR26_A::EXCLUDE)
     }
     #[doc = "Include"]
-    #[inline]
+    #[inline(always)]
     pub fn include(self) -> &'a mut W {
-        self.variant(SR26W::INCLUDE)
+        self.variant(SR26_A::INCLUDE)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 26;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 26)) | (((value as u32) & 0x01) << 26);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `SR27`"]
-pub enum SR27W {
-    #[doc = "Exclude"]
+#[doc = "Include or exclude subregion 27 in region\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SR27_A {
+    #[doc = "0: Exclude"]
     EXCLUDE,
-    #[doc = "Include"]
+    #[doc = "1: Include"]
     INCLUDE,
 }
-impl SR27W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SR27W::EXCLUDE => false,
-            SR27W::INCLUDE => true,
+impl From<SR27_A> for bool {
+    #[inline(always)]
+    fn from(variant: SR27_A) -> Self {
+        match variant {
+            SR27_A::EXCLUDE => false,
+            SR27_A::INCLUDE => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _SR27W<'a> {
+#[doc = "Reader of field `SR27`"]
+pub type SR27_R = crate::R<bool, SR27_A>;
+impl SR27_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SR27_A {
+        match self.bits {
+            false => SR27_A::EXCLUDE,
+            true => SR27_A::INCLUDE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `EXCLUDE`"]
+    #[inline(always)]
+    pub fn is_exclude(&self) -> bool {
+        *self == SR27_A::EXCLUDE
+    }
+    #[doc = "Checks if the value of the field is `INCLUDE`"]
+    #[inline(always)]
+    pub fn is_include(&self) -> bool {
+        *self == SR27_A::INCLUDE
+    }
+}
+#[doc = "Write proxy for field `SR27`"]
+pub struct SR27_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SR27W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SR27W) -> &'a mut W {
+impl<'a> SR27_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SR27_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Exclude"]
-    #[inline]
+    #[inline(always)]
     pub fn exclude(self) -> &'a mut W {
-        self.variant(SR27W::EXCLUDE)
+        self.variant(SR27_A::EXCLUDE)
     }
     #[doc = "Include"]
-    #[inline]
+    #[inline(always)]
     pub fn include(self) -> &'a mut W {
-        self.variant(SR27W::INCLUDE)
+        self.variant(SR27_A::INCLUDE)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 27;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 27)) | (((value as u32) & 0x01) << 27);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `SR28`"]
-pub enum SR28W {
-    #[doc = "Exclude"]
+#[doc = "Include or exclude subregion 28 in region\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SR28_A {
+    #[doc = "0: Exclude"]
     EXCLUDE,
-    #[doc = "Include"]
+    #[doc = "1: Include"]
     INCLUDE,
 }
-impl SR28W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SR28W::EXCLUDE => false,
-            SR28W::INCLUDE => true,
+impl From<SR28_A> for bool {
+    #[inline(always)]
+    fn from(variant: SR28_A) -> Self {
+        match variant {
+            SR28_A::EXCLUDE => false,
+            SR28_A::INCLUDE => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _SR28W<'a> {
+#[doc = "Reader of field `SR28`"]
+pub type SR28_R = crate::R<bool, SR28_A>;
+impl SR28_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SR28_A {
+        match self.bits {
+            false => SR28_A::EXCLUDE,
+            true => SR28_A::INCLUDE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `EXCLUDE`"]
+    #[inline(always)]
+    pub fn is_exclude(&self) -> bool {
+        *self == SR28_A::EXCLUDE
+    }
+    #[doc = "Checks if the value of the field is `INCLUDE`"]
+    #[inline(always)]
+    pub fn is_include(&self) -> bool {
+        *self == SR28_A::INCLUDE
+    }
+}
+#[doc = "Write proxy for field `SR28`"]
+pub struct SR28_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SR28W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SR28W) -> &'a mut W {
+impl<'a> SR28_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SR28_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Exclude"]
-    #[inline]
+    #[inline(always)]
     pub fn exclude(self) -> &'a mut W {
-        self.variant(SR28W::EXCLUDE)
+        self.variant(SR28_A::EXCLUDE)
     }
     #[doc = "Include"]
-    #[inline]
+    #[inline(always)]
     pub fn include(self) -> &'a mut W {
-        self.variant(SR28W::INCLUDE)
+        self.variant(SR28_A::INCLUDE)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 28;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 28)) | (((value as u32) & 0x01) << 28);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `SR29`"]
-pub enum SR29W {
-    #[doc = "Exclude"]
+#[doc = "Include or exclude subregion 29 in region\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SR29_A {
+    #[doc = "0: Exclude"]
     EXCLUDE,
-    #[doc = "Include"]
+    #[doc = "1: Include"]
     INCLUDE,
 }
-impl SR29W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SR29W::EXCLUDE => false,
-            SR29W::INCLUDE => true,
+impl From<SR29_A> for bool {
+    #[inline(always)]
+    fn from(variant: SR29_A) -> Self {
+        match variant {
+            SR29_A::EXCLUDE => false,
+            SR29_A::INCLUDE => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _SR29W<'a> {
+#[doc = "Reader of field `SR29`"]
+pub type SR29_R = crate::R<bool, SR29_A>;
+impl SR29_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SR29_A {
+        match self.bits {
+            false => SR29_A::EXCLUDE,
+            true => SR29_A::INCLUDE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `EXCLUDE`"]
+    #[inline(always)]
+    pub fn is_exclude(&self) -> bool {
+        *self == SR29_A::EXCLUDE
+    }
+    #[doc = "Checks if the value of the field is `INCLUDE`"]
+    #[inline(always)]
+    pub fn is_include(&self) -> bool {
+        *self == SR29_A::INCLUDE
+    }
+}
+#[doc = "Write proxy for field `SR29`"]
+pub struct SR29_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SR29W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SR29W) -> &'a mut W {
+impl<'a> SR29_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SR29_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Exclude"]
-    #[inline]
+    #[inline(always)]
     pub fn exclude(self) -> &'a mut W {
-        self.variant(SR29W::EXCLUDE)
+        self.variant(SR29_A::EXCLUDE)
     }
     #[doc = "Include"]
-    #[inline]
+    #[inline(always)]
     pub fn include(self) -> &'a mut W {
-        self.variant(SR29W::INCLUDE)
+        self.variant(SR29_A::INCLUDE)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 29;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 29)) | (((value as u32) & 0x01) << 29);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `SR30`"]
-pub enum SR30W {
-    #[doc = "Exclude"]
+#[doc = "Include or exclude subregion 30 in region\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SR30_A {
+    #[doc = "0: Exclude"]
     EXCLUDE,
-    #[doc = "Include"]
+    #[doc = "1: Include"]
     INCLUDE,
 }
-impl SR30W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SR30W::EXCLUDE => false,
-            SR30W::INCLUDE => true,
+impl From<SR30_A> for bool {
+    #[inline(always)]
+    fn from(variant: SR30_A) -> Self {
+        match variant {
+            SR30_A::EXCLUDE => false,
+            SR30_A::INCLUDE => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _SR30W<'a> {
+#[doc = "Reader of field `SR30`"]
+pub type SR30_R = crate::R<bool, SR30_A>;
+impl SR30_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SR30_A {
+        match self.bits {
+            false => SR30_A::EXCLUDE,
+            true => SR30_A::INCLUDE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `EXCLUDE`"]
+    #[inline(always)]
+    pub fn is_exclude(&self) -> bool {
+        *self == SR30_A::EXCLUDE
+    }
+    #[doc = "Checks if the value of the field is `INCLUDE`"]
+    #[inline(always)]
+    pub fn is_include(&self) -> bool {
+        *self == SR30_A::INCLUDE
+    }
+}
+#[doc = "Write proxy for field `SR30`"]
+pub struct SR30_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SR30W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SR30W) -> &'a mut W {
+impl<'a> SR30_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SR30_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Exclude"]
-    #[inline]
+    #[inline(always)]
     pub fn exclude(self) -> &'a mut W {
-        self.variant(SR30W::EXCLUDE)
+        self.variant(SR30_A::EXCLUDE)
     }
     #[doc = "Include"]
-    #[inline]
+    #[inline(always)]
     pub fn include(self) -> &'a mut W {
-        self.variant(SR30W::INCLUDE)
+        self.variant(SR30_A::INCLUDE)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 30;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 30)) | (((value as u32) & 0x01) << 30);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `SR31`"]
-pub enum SR31W {
-    #[doc = "Exclude"]
+#[doc = "Include or exclude subregion 31 in region\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SR31_A {
+    #[doc = "0: Exclude"]
     EXCLUDE,
-    #[doc = "Include"]
+    #[doc = "1: Include"]
     INCLUDE,
 }
-impl SR31W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SR31W::EXCLUDE => false,
-            SR31W::INCLUDE => true,
+impl From<SR31_A> for bool {
+    #[inline(always)]
+    fn from(variant: SR31_A) -> Self {
+        match variant {
+            SR31_A::EXCLUDE => false,
+            SR31_A::INCLUDE => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _SR31W<'a> {
+#[doc = "Reader of field `SR31`"]
+pub type SR31_R = crate::R<bool, SR31_A>;
+impl SR31_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SR31_A {
+        match self.bits {
+            false => SR31_A::EXCLUDE,
+            true => SR31_A::INCLUDE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `EXCLUDE`"]
+    #[inline(always)]
+    pub fn is_exclude(&self) -> bool {
+        *self == SR31_A::EXCLUDE
+    }
+    #[doc = "Checks if the value of the field is `INCLUDE`"]
+    #[inline(always)]
+    pub fn is_include(&self) -> bool {
+        *self == SR31_A::INCLUDE
+    }
+}
+#[doc = "Write proxy for field `SR31`"]
+pub struct SR31_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SR31W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SR31W) -> &'a mut W {
+impl<'a> SR31_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SR31_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Exclude"]
-    #[inline]
+    #[inline(always)]
     pub fn exclude(self) -> &'a mut W {
-        self.variant(SR31W::EXCLUDE)
+        self.variant(SR31_A::EXCLUDE)
     }
     #[doc = "Include"]
-    #[inline]
+    #[inline(always)]
     pub fn include(self) -> &'a mut W {
-        self.variant(SR31W::INCLUDE)
+        self.variant(SR31_A::INCLUDE)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 31;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Include or exclude subregion 0 in region"]
-    #[inline]
-    pub fn sr0(&self) -> SR0R {
-        SR0R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sr0(&self) -> SR0_R {
+        SR0_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Include or exclude subregion 1 in region"]
-    #[inline]
-    pub fn sr1(&self) -> SR1R {
-        SR1R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sr1(&self) -> SR1_R {
+        SR1_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Include or exclude subregion 2 in region"]
-    #[inline]
-    pub fn sr2(&self) -> SR2R {
-        SR2R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sr2(&self) -> SR2_R {
+        SR2_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - Include or exclude subregion 3 in region"]
-    #[inline]
-    pub fn sr3(&self) -> SR3R {
-        SR3R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sr3(&self) -> SR3_R {
+        SR3_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - Include or exclude subregion 4 in region"]
-    #[inline]
-    pub fn sr4(&self) -> SR4R {
-        SR4R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sr4(&self) -> SR4_R {
+        SR4_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - Include or exclude subregion 5 in region"]
-    #[inline]
-    pub fn sr5(&self) -> SR5R {
-        SR5R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sr5(&self) -> SR5_R {
+        SR5_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - Include or exclude subregion 6 in region"]
-    #[inline]
-    pub fn sr6(&self) -> SR6R {
-        SR6R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sr6(&self) -> SR6_R {
+        SR6_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - Include or exclude subregion 7 in region"]
-    #[inline]
-    pub fn sr7(&self) -> SR7R {
-        SR7R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sr7(&self) -> SR7_R {
+        SR7_R::new(((self.bits >> 7) & 0x01) != 0)
     }
     #[doc = "Bit 8 - Include or exclude subregion 8 in region"]
-    #[inline]
-    pub fn sr8(&self) -> SR8R {
-        SR8R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sr8(&self) -> SR8_R {
+        SR8_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bit 9 - Include or exclude subregion 9 in region"]
-    #[inline]
-    pub fn sr9(&self) -> SR9R {
-        SR9R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sr9(&self) -> SR9_R {
+        SR9_R::new(((self.bits >> 9) & 0x01) != 0)
     }
     #[doc = "Bit 10 - Include or exclude subregion 10 in region"]
-    #[inline]
-    pub fn sr10(&self) -> SR10R {
-        SR10R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sr10(&self) -> SR10_R {
+        SR10_R::new(((self.bits >> 10) & 0x01) != 0)
     }
     #[doc = "Bit 11 - Include or exclude subregion 11 in region"]
-    #[inline]
-    pub fn sr11(&self) -> SR11R {
-        SR11R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 11;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sr11(&self) -> SR11_R {
+        SR11_R::new(((self.bits >> 11) & 0x01) != 0)
     }
     #[doc = "Bit 12 - Include or exclude subregion 12 in region"]
-    #[inline]
-    pub fn sr12(&self) -> SR12R {
-        SR12R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sr12(&self) -> SR12_R {
+        SR12_R::new(((self.bits >> 12) & 0x01) != 0)
     }
     #[doc = "Bit 13 - Include or exclude subregion 13 in region"]
-    #[inline]
-    pub fn sr13(&self) -> SR13R {
-        SR13R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 13;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sr13(&self) -> SR13_R {
+        SR13_R::new(((self.bits >> 13) & 0x01) != 0)
     }
     #[doc = "Bit 14 - Include or exclude subregion 14 in region"]
-    #[inline]
-    pub fn sr14(&self) -> SR14R {
-        SR14R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 14;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sr14(&self) -> SR14_R {
+        SR14_R::new(((self.bits >> 14) & 0x01) != 0)
     }
     #[doc = "Bit 15 - Include or exclude subregion 15 in region"]
-    #[inline]
-    pub fn sr15(&self) -> SR15R {
-        SR15R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 15;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sr15(&self) -> SR15_R {
+        SR15_R::new(((self.bits >> 15) & 0x01) != 0)
     }
     #[doc = "Bit 16 - Include or exclude subregion 16 in region"]
-    #[inline]
-    pub fn sr16(&self) -> SR16R {
-        SR16R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sr16(&self) -> SR16_R {
+        SR16_R::new(((self.bits >> 16) & 0x01) != 0)
     }
     #[doc = "Bit 17 - Include or exclude subregion 17 in region"]
-    #[inline]
-    pub fn sr17(&self) -> SR17R {
-        SR17R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 17;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sr17(&self) -> SR17_R {
+        SR17_R::new(((self.bits >> 17) & 0x01) != 0)
     }
     #[doc = "Bit 18 - Include or exclude subregion 18 in region"]
-    #[inline]
-    pub fn sr18(&self) -> SR18R {
-        SR18R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 18;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sr18(&self) -> SR18_R {
+        SR18_R::new(((self.bits >> 18) & 0x01) != 0)
     }
     #[doc = "Bit 19 - Include or exclude subregion 19 in region"]
-    #[inline]
-    pub fn sr19(&self) -> SR19R {
-        SR19R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 19;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sr19(&self) -> SR19_R {
+        SR19_R::new(((self.bits >> 19) & 0x01) != 0)
     }
     #[doc = "Bit 20 - Include or exclude subregion 20 in region"]
-    #[inline]
-    pub fn sr20(&self) -> SR20R {
-        SR20R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 20;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sr20(&self) -> SR20_R {
+        SR20_R::new(((self.bits >> 20) & 0x01) != 0)
     }
     #[doc = "Bit 21 - Include or exclude subregion 21 in region"]
-    #[inline]
-    pub fn sr21(&self) -> SR21R {
-        SR21R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 21;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sr21(&self) -> SR21_R {
+        SR21_R::new(((self.bits >> 21) & 0x01) != 0)
     }
     #[doc = "Bit 22 - Include or exclude subregion 22 in region"]
-    #[inline]
-    pub fn sr22(&self) -> SR22R {
-        SR22R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 22;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sr22(&self) -> SR22_R {
+        SR22_R::new(((self.bits >> 22) & 0x01) != 0)
     }
     #[doc = "Bit 23 - Include or exclude subregion 23 in region"]
-    #[inline]
-    pub fn sr23(&self) -> SR23R {
-        SR23R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 23;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sr23(&self) -> SR23_R {
+        SR23_R::new(((self.bits >> 23) & 0x01) != 0)
     }
     #[doc = "Bit 24 - Include or exclude subregion 24 in region"]
-    #[inline]
-    pub fn sr24(&self) -> SR24R {
-        SR24R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sr24(&self) -> SR24_R {
+        SR24_R::new(((self.bits >> 24) & 0x01) != 0)
     }
     #[doc = "Bit 25 - Include or exclude subregion 25 in region"]
-    #[inline]
-    pub fn sr25(&self) -> SR25R {
-        SR25R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 25;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sr25(&self) -> SR25_R {
+        SR25_R::new(((self.bits >> 25) & 0x01) != 0)
     }
     #[doc = "Bit 26 - Include or exclude subregion 26 in region"]
-    #[inline]
-    pub fn sr26(&self) -> SR26R {
-        SR26R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 26;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sr26(&self) -> SR26_R {
+        SR26_R::new(((self.bits >> 26) & 0x01) != 0)
     }
     #[doc = "Bit 27 - Include or exclude subregion 27 in region"]
-    #[inline]
-    pub fn sr27(&self) -> SR27R {
-        SR27R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 27;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sr27(&self) -> SR27_R {
+        SR27_R::new(((self.bits >> 27) & 0x01) != 0)
     }
     #[doc = "Bit 28 - Include or exclude subregion 28 in region"]
-    #[inline]
-    pub fn sr28(&self) -> SR28R {
-        SR28R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 28;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sr28(&self) -> SR28_R {
+        SR28_R::new(((self.bits >> 28) & 0x01) != 0)
     }
     #[doc = "Bit 29 - Include or exclude subregion 29 in region"]
-    #[inline]
-    pub fn sr29(&self) -> SR29R {
-        SR29R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 29;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sr29(&self) -> SR29_R {
+        SR29_R::new(((self.bits >> 29) & 0x01) != 0)
     }
     #[doc = "Bit 30 - Include or exclude subregion 30 in region"]
-    #[inline]
-    pub fn sr30(&self) -> SR30R {
-        SR30R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 30;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sr30(&self) -> SR30_R {
+        SR30_R::new(((self.bits >> 30) & 0x01) != 0)
     }
     #[doc = "Bit 31 - Include or exclude subregion 31 in region"]
-    #[inline]
-    pub fn sr31(&self) -> SR31R {
-        SR31R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 31;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sr31(&self) -> SR31_R {
+        SR31_R::new(((self.bits >> 31) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Include or exclude subregion 0 in region"]
-    #[inline]
-    pub fn sr0(&mut self) -> _SR0W {
-        _SR0W { w: self }
+    #[inline(always)]
+    pub fn sr0(&mut self) -> SR0_W {
+        SR0_W { w: self }
     }
     #[doc = "Bit 1 - Include or exclude subregion 1 in region"]
-    #[inline]
-    pub fn sr1(&mut self) -> _SR1W {
-        _SR1W { w: self }
+    #[inline(always)]
+    pub fn sr1(&mut self) -> SR1_W {
+        SR1_W { w: self }
     }
     #[doc = "Bit 2 - Include or exclude subregion 2 in region"]
-    #[inline]
-    pub fn sr2(&mut self) -> _SR2W {
-        _SR2W { w: self }
+    #[inline(always)]
+    pub fn sr2(&mut self) -> SR2_W {
+        SR2_W { w: self }
     }
     #[doc = "Bit 3 - Include or exclude subregion 3 in region"]
-    #[inline]
-    pub fn sr3(&mut self) -> _SR3W {
-        _SR3W { w: self }
+    #[inline(always)]
+    pub fn sr3(&mut self) -> SR3_W {
+        SR3_W { w: self }
     }
     #[doc = "Bit 4 - Include or exclude subregion 4 in region"]
-    #[inline]
-    pub fn sr4(&mut self) -> _SR4W {
-        _SR4W { w: self }
+    #[inline(always)]
+    pub fn sr4(&mut self) -> SR4_W {
+        SR4_W { w: self }
     }
     #[doc = "Bit 5 - Include or exclude subregion 5 in region"]
-    #[inline]
-    pub fn sr5(&mut self) -> _SR5W {
-        _SR5W { w: self }
+    #[inline(always)]
+    pub fn sr5(&mut self) -> SR5_W {
+        SR5_W { w: self }
     }
     #[doc = "Bit 6 - Include or exclude subregion 6 in region"]
-    #[inline]
-    pub fn sr6(&mut self) -> _SR6W {
-        _SR6W { w: self }
+    #[inline(always)]
+    pub fn sr6(&mut self) -> SR6_W {
+        SR6_W { w: self }
     }
     #[doc = "Bit 7 - Include or exclude subregion 7 in region"]
-    #[inline]
-    pub fn sr7(&mut self) -> _SR7W {
-        _SR7W { w: self }
+    #[inline(always)]
+    pub fn sr7(&mut self) -> SR7_W {
+        SR7_W { w: self }
     }
     #[doc = "Bit 8 - Include or exclude subregion 8 in region"]
-    #[inline]
-    pub fn sr8(&mut self) -> _SR8W {
-        _SR8W { w: self }
+    #[inline(always)]
+    pub fn sr8(&mut self) -> SR8_W {
+        SR8_W { w: self }
     }
     #[doc = "Bit 9 - Include or exclude subregion 9 in region"]
-    #[inline]
-    pub fn sr9(&mut self) -> _SR9W {
-        _SR9W { w: self }
+    #[inline(always)]
+    pub fn sr9(&mut self) -> SR9_W {
+        SR9_W { w: self }
     }
     #[doc = "Bit 10 - Include or exclude subregion 10 in region"]
-    #[inline]
-    pub fn sr10(&mut self) -> _SR10W {
-        _SR10W { w: self }
+    #[inline(always)]
+    pub fn sr10(&mut self) -> SR10_W {
+        SR10_W { w: self }
     }
     #[doc = "Bit 11 - Include or exclude subregion 11 in region"]
-    #[inline]
-    pub fn sr11(&mut self) -> _SR11W {
-        _SR11W { w: self }
+    #[inline(always)]
+    pub fn sr11(&mut self) -> SR11_W {
+        SR11_W { w: self }
     }
     #[doc = "Bit 12 - Include or exclude subregion 12 in region"]
-    #[inline]
-    pub fn sr12(&mut self) -> _SR12W {
-        _SR12W { w: self }
+    #[inline(always)]
+    pub fn sr12(&mut self) -> SR12_W {
+        SR12_W { w: self }
     }
     #[doc = "Bit 13 - Include or exclude subregion 13 in region"]
-    #[inline]
-    pub fn sr13(&mut self) -> _SR13W {
-        _SR13W { w: self }
+    #[inline(always)]
+    pub fn sr13(&mut self) -> SR13_W {
+        SR13_W { w: self }
     }
     #[doc = "Bit 14 - Include or exclude subregion 14 in region"]
-    #[inline]
-    pub fn sr14(&mut self) -> _SR14W {
-        _SR14W { w: self }
+    #[inline(always)]
+    pub fn sr14(&mut self) -> SR14_W {
+        SR14_W { w: self }
     }
     #[doc = "Bit 15 - Include or exclude subregion 15 in region"]
-    #[inline]
-    pub fn sr15(&mut self) -> _SR15W {
-        _SR15W { w: self }
+    #[inline(always)]
+    pub fn sr15(&mut self) -> SR15_W {
+        SR15_W { w: self }
     }
     #[doc = "Bit 16 - Include or exclude subregion 16 in region"]
-    #[inline]
-    pub fn sr16(&mut self) -> _SR16W {
-        _SR16W { w: self }
+    #[inline(always)]
+    pub fn sr16(&mut self) -> SR16_W {
+        SR16_W { w: self }
     }
     #[doc = "Bit 17 - Include or exclude subregion 17 in region"]
-    #[inline]
-    pub fn sr17(&mut self) -> _SR17W {
-        _SR17W { w: self }
+    #[inline(always)]
+    pub fn sr17(&mut self) -> SR17_W {
+        SR17_W { w: self }
     }
     #[doc = "Bit 18 - Include or exclude subregion 18 in region"]
-    #[inline]
-    pub fn sr18(&mut self) -> _SR18W {
-        _SR18W { w: self }
+    #[inline(always)]
+    pub fn sr18(&mut self) -> SR18_W {
+        SR18_W { w: self }
     }
     #[doc = "Bit 19 - Include or exclude subregion 19 in region"]
-    #[inline]
-    pub fn sr19(&mut self) -> _SR19W {
-        _SR19W { w: self }
+    #[inline(always)]
+    pub fn sr19(&mut self) -> SR19_W {
+        SR19_W { w: self }
     }
     #[doc = "Bit 20 - Include or exclude subregion 20 in region"]
-    #[inline]
-    pub fn sr20(&mut self) -> _SR20W {
-        _SR20W { w: self }
+    #[inline(always)]
+    pub fn sr20(&mut self) -> SR20_W {
+        SR20_W { w: self }
     }
     #[doc = "Bit 21 - Include or exclude subregion 21 in region"]
-    #[inline]
-    pub fn sr21(&mut self) -> _SR21W {
-        _SR21W { w: self }
+    #[inline(always)]
+    pub fn sr21(&mut self) -> SR21_W {
+        SR21_W { w: self }
     }
     #[doc = "Bit 22 - Include or exclude subregion 22 in region"]
-    #[inline]
-    pub fn sr22(&mut self) -> _SR22W {
-        _SR22W { w: self }
+    #[inline(always)]
+    pub fn sr22(&mut self) -> SR22_W {
+        SR22_W { w: self }
     }
     #[doc = "Bit 23 - Include or exclude subregion 23 in region"]
-    #[inline]
-    pub fn sr23(&mut self) -> _SR23W {
-        _SR23W { w: self }
+    #[inline(always)]
+    pub fn sr23(&mut self) -> SR23_W {
+        SR23_W { w: self }
     }
     #[doc = "Bit 24 - Include or exclude subregion 24 in region"]
-    #[inline]
-    pub fn sr24(&mut self) -> _SR24W {
-        _SR24W { w: self }
+    #[inline(always)]
+    pub fn sr24(&mut self) -> SR24_W {
+        SR24_W { w: self }
     }
     #[doc = "Bit 25 - Include or exclude subregion 25 in region"]
-    #[inline]
-    pub fn sr25(&mut self) -> _SR25W {
-        _SR25W { w: self }
+    #[inline(always)]
+    pub fn sr25(&mut self) -> SR25_W {
+        SR25_W { w: self }
     }
     #[doc = "Bit 26 - Include or exclude subregion 26 in region"]
-    #[inline]
-    pub fn sr26(&mut self) -> _SR26W {
-        _SR26W { w: self }
+    #[inline(always)]
+    pub fn sr26(&mut self) -> SR26_W {
+        SR26_W { w: self }
     }
     #[doc = "Bit 27 - Include or exclude subregion 27 in region"]
-    #[inline]
-    pub fn sr27(&mut self) -> _SR27W {
-        _SR27W { w: self }
+    #[inline(always)]
+    pub fn sr27(&mut self) -> SR27_W {
+        SR27_W { w: self }
     }
     #[doc = "Bit 28 - Include or exclude subregion 28 in region"]
-    #[inline]
-    pub fn sr28(&mut self) -> _SR28W {
-        _SR28W { w: self }
+    #[inline(always)]
+    pub fn sr28(&mut self) -> SR28_W {
+        SR28_W { w: self }
     }
     #[doc = "Bit 29 - Include or exclude subregion 29 in region"]
-    #[inline]
-    pub fn sr29(&mut self) -> _SR29W {
-        _SR29W { w: self }
+    #[inline(always)]
+    pub fn sr29(&mut self) -> SR29_W {
+        SR29_W { w: self }
     }
     #[doc = "Bit 30 - Include or exclude subregion 30 in region"]
-    #[inline]
-    pub fn sr30(&mut self) -> _SR30W {
-        _SR30W { w: self }
+    #[inline(always)]
+    pub fn sr30(&mut self) -> SR30_W {
+        SR30_W { w: self }
     }
     #[doc = "Bit 31 - Include or exclude subregion 31 in region"]
-    #[inline]
-    pub fn sr31(&mut self) -> _SR31W {
-        _SR31W { w: self }
+    #[inline(always)]
+    pub fn sr31(&mut self) -> SR31_W {
+        SR31_W { w: self }
     }
 }

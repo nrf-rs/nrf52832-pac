@@ -1,76 +1,48 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::READY {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-}
-#[doc = "Possible values of the field `READY`"]
+#[doc = "Reader of register READY"]
+pub type R = crate::R<u32, super::READY>;
+#[doc = "NVMC is ready or busy\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum READYR {
-    #[doc = "NVMC is busy (on-going write or erase operation)"]
+pub enum READY_A {
+    #[doc = "0: NVMC is busy (on-going write or erase operation)"]
     BUSY,
-    #[doc = "NVMC is ready"]
+    #[doc = "1: NVMC is ready"]
     READY,
 }
-impl READYR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            READYR::BUSY => false,
-            READYR::READY => true,
+impl From<READY_A> for bool {
+    #[inline(always)]
+    fn from(variant: READY_A) -> Self {
+        match variant {
+            READY_A::BUSY => false,
+            READY_A::READY => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> READYR {
-        match value {
-            false => READYR::BUSY,
-            true => READYR::READY,
+}
+#[doc = "Reader of field `READY`"]
+pub type READY_R = crate::R<bool, READY_A>;
+impl READY_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> READY_A {
+        match self.bits {
+            false => READY_A::BUSY,
+            true => READY_A::READY,
         }
     }
     #[doc = "Checks if the value of the field is `BUSY`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_busy(&self) -> bool {
-        *self == READYR::BUSY
+        *self == READY_A::BUSY
     }
     #[doc = "Checks if the value of the field is `READY`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_ready(&self) -> bool {
-        *self == READYR::READY
+        *self == READY_A::READY
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - NVMC is ready or busy"]
-    #[inline]
-    pub fn ready(&self) -> READYR {
-        READYR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ready(&self) -> READY_R {
+        READY_R::new((self.bits & 0x01) != 0)
     }
 }
