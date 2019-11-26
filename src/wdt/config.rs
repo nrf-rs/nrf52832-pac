@@ -1,302 +1,192 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::CONFIG {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register CONFIG"]
+pub type R = crate::R<u32, super::CONFIG>;
+#[doc = "Writer for register CONFIG"]
+pub type W = crate::W<u32, super::CONFIG>;
+#[doc = "Register CONFIG `reset()`'s with value 0x01"]
+impl crate::ResetValue for super::CONFIG {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x01
     }
 }
-#[doc = "Possible values of the field `SLEEP`"]
+#[doc = "Configure the watchdog to either be paused, or kept running, while the CPU is sleeping\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SLEEPR {
-    #[doc = "Pause watchdog while the CPU is sleeping"]
+pub enum SLEEP_A {
+    #[doc = "0: Pause watchdog while the CPU is sleeping"]
     PAUSE,
-    #[doc = "Keep the watchdog running while the CPU is sleeping"]
+    #[doc = "1: Keep the watchdog running while the CPU is sleeping"]
     RUN,
 }
-impl SLEEPR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SLEEPR::PAUSE => false,
-            SLEEPR::RUN => true,
+impl From<SLEEP_A> for bool {
+    #[inline(always)]
+    fn from(variant: SLEEP_A) -> Self {
+        match variant {
+            SLEEP_A::PAUSE => false,
+            SLEEP_A::RUN => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SLEEPR {
-        match value {
-            false => SLEEPR::PAUSE,
-            true => SLEEPR::RUN,
+}
+#[doc = "Reader of field `SLEEP`"]
+pub type SLEEP_R = crate::R<bool, SLEEP_A>;
+impl SLEEP_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SLEEP_A {
+        match self.bits {
+            false => SLEEP_A::PAUSE,
+            true => SLEEP_A::RUN,
         }
     }
     #[doc = "Checks if the value of the field is `PAUSE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pause(&self) -> bool {
-        *self == SLEEPR::PAUSE
+        *self == SLEEP_A::PAUSE
     }
     #[doc = "Checks if the value of the field is `RUN`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_run(&self) -> bool {
-        *self == SLEEPR::RUN
+        *self == SLEEP_A::RUN
     }
 }
-#[doc = "Possible values of the field `HALT`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum HALTR {
-    #[doc = "Pause watchdog while the CPU is halted by the debugger"]
-    PAUSE,
-    #[doc = "Keep the watchdog running while the CPU is halted by the debugger"]
-    RUN,
-}
-impl HALTR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            HALTR::PAUSE => false,
-            HALTR::RUN => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> HALTR {
-        match value {
-            false => HALTR::PAUSE,
-            true => HALTR::RUN,
-        }
-    }
-    #[doc = "Checks if the value of the field is `PAUSE`"]
-    #[inline]
-    pub fn is_pause(&self) -> bool {
-        *self == HALTR::PAUSE
-    }
-    #[doc = "Checks if the value of the field is `RUN`"]
-    #[inline]
-    pub fn is_run(&self) -> bool {
-        *self == HALTR::RUN
-    }
-}
-#[doc = "Values that can be written to the field `SLEEP`"]
-pub enum SLEEPW {
-    #[doc = "Pause watchdog while the CPU is sleeping"]
-    PAUSE,
-    #[doc = "Keep the watchdog running while the CPU is sleeping"]
-    RUN,
-}
-impl SLEEPW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SLEEPW::PAUSE => false,
-            SLEEPW::RUN => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SLEEPW<'a> {
+#[doc = "Write proxy for field `SLEEP`"]
+pub struct SLEEP_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SLEEPW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SLEEPW) -> &'a mut W {
+impl<'a> SLEEP_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SLEEP_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Pause watchdog while the CPU is sleeping"]
-    #[inline]
+    #[inline(always)]
     pub fn pause(self) -> &'a mut W {
-        self.variant(SLEEPW::PAUSE)
+        self.variant(SLEEP_A::PAUSE)
     }
     #[doc = "Keep the watchdog running while the CPU is sleeping"]
-    #[inline]
+    #[inline(always)]
     pub fn run(self) -> &'a mut W {
-        self.variant(SLEEPW::RUN)
+        self.variant(SLEEP_A::RUN)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `HALT`"]
-pub enum HALTW {
-    #[doc = "Pause watchdog while the CPU is halted by the debugger"]
+#[doc = "Configure the watchdog to either be paused, or kept running, while the CPU is halted by the debugger\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum HALT_A {
+    #[doc = "0: Pause watchdog while the CPU is halted by the debugger"]
     PAUSE,
-    #[doc = "Keep the watchdog running while the CPU is halted by the debugger"]
+    #[doc = "1: Keep the watchdog running while the CPU is halted by the debugger"]
     RUN,
 }
-impl HALTW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            HALTW::PAUSE => false,
-            HALTW::RUN => true,
+impl From<HALT_A> for bool {
+    #[inline(always)]
+    fn from(variant: HALT_A) -> Self {
+        match variant {
+            HALT_A::PAUSE => false,
+            HALT_A::RUN => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _HALTW<'a> {
+#[doc = "Reader of field `HALT`"]
+pub type HALT_R = crate::R<bool, HALT_A>;
+impl HALT_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> HALT_A {
+        match self.bits {
+            false => HALT_A::PAUSE,
+            true => HALT_A::RUN,
+        }
+    }
+    #[doc = "Checks if the value of the field is `PAUSE`"]
+    #[inline(always)]
+    pub fn is_pause(&self) -> bool {
+        *self == HALT_A::PAUSE
+    }
+    #[doc = "Checks if the value of the field is `RUN`"]
+    #[inline(always)]
+    pub fn is_run(&self) -> bool {
+        *self == HALT_A::RUN
+    }
+}
+#[doc = "Write proxy for field `HALT`"]
+pub struct HALT_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _HALTW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: HALTW) -> &'a mut W {
+impl<'a> HALT_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: HALT_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Pause watchdog while the CPU is halted by the debugger"]
-    #[inline]
+    #[inline(always)]
     pub fn pause(self) -> &'a mut W {
-        self.variant(HALTW::PAUSE)
+        self.variant(HALT_A::PAUSE)
     }
     #[doc = "Keep the watchdog running while the CPU is halted by the debugger"]
-    #[inline]
+    #[inline(always)]
     pub fn run(self) -> &'a mut W {
-        self.variant(HALTW::RUN)
+        self.variant(HALT_A::RUN)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Configure the watchdog to either be paused, or kept running, while the CPU is sleeping"]
-    #[inline]
-    pub fn sleep(&self) -> SLEEPR {
-        SLEEPR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sleep(&self) -> SLEEP_R {
+        SLEEP_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 3 - Configure the watchdog to either be paused, or kept running, while the CPU is halted by the debugger"]
-    #[inline]
-    pub fn halt(&self) -> HALTR {
-        HALTR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn halt(&self) -> HALT_R {
+        HALT_R::new(((self.bits >> 3) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 1 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Configure the watchdog to either be paused, or kept running, while the CPU is sleeping"]
-    #[inline]
-    pub fn sleep(&mut self) -> _SLEEPW {
-        _SLEEPW { w: self }
+    #[inline(always)]
+    pub fn sleep(&mut self) -> SLEEP_W {
+        SLEEP_W { w: self }
     }
     #[doc = "Bit 3 - Configure the watchdog to either be paused, or kept running, while the CPU is halted by the debugger"]
-    #[inline]
-    pub fn halt(&mut self) -> _HALTW {
-        _HALTW { w: self }
+    #[inline(always)]
+    pub fn halt(&mut self) -> HALT_W {
+        HALT_W { w: self }
     }
 }

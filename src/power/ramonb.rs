@@ -1,540 +1,368 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::RAMONB {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register RAMONB"]
+pub type R = crate::R<u32, super::RAMONB>;
+#[doc = "Writer for register RAMONB"]
+pub type W = crate::W<u32, super::RAMONB>;
+#[doc = "Register RAMONB `reset()`'s with value 0x03"]
+impl crate::ResetValue for super::RAMONB {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x03
     }
 }
-#[doc = "Possible values of the field `ONRAM2`"]
+#[doc = "Keep RAM block 2 on or off in system ON Mode\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ONRAM2R {
-    #[doc = "Off"]
+pub enum ONRAM2_A {
+    #[doc = "0: Off"]
     RAM2OFF,
-    #[doc = "On"]
+    #[doc = "1: On"]
     RAM2ON,
 }
-impl ONRAM2R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ONRAM2R::RAM2OFF => false,
-            ONRAM2R::RAM2ON => true,
+impl From<ONRAM2_A> for bool {
+    #[inline(always)]
+    fn from(variant: ONRAM2_A) -> Self {
+        match variant {
+            ONRAM2_A::RAM2OFF => false,
+            ONRAM2_A::RAM2ON => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ONRAM2R {
-        match value {
-            false => ONRAM2R::RAM2OFF,
-            true => ONRAM2R::RAM2ON,
+}
+#[doc = "Reader of field `ONRAM2`"]
+pub type ONRAM2_R = crate::R<bool, ONRAM2_A>;
+impl ONRAM2_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ONRAM2_A {
+        match self.bits {
+            false => ONRAM2_A::RAM2OFF,
+            true => ONRAM2_A::RAM2ON,
         }
     }
     #[doc = "Checks if the value of the field is `RAM2OFF`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_ram2off(&self) -> bool {
-        *self == ONRAM2R::RAM2OFF
+        *self == ONRAM2_A::RAM2OFF
     }
     #[doc = "Checks if the value of the field is `RAM2ON`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_ram2on(&self) -> bool {
-        *self == ONRAM2R::RAM2ON
+        *self == ONRAM2_A::RAM2ON
     }
 }
-#[doc = "Possible values of the field `ONRAM3`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ONRAM3R {
-    #[doc = "Off"]
-    RAM3OFF,
-    #[doc = "On"]
-    RAM3ON,
+#[doc = "Write proxy for field `ONRAM2`"]
+pub struct ONRAM2_W<'a> {
+    w: &'a mut W,
 }
-impl ONRAM3R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ONRAM3R::RAM3OFF => false,
-            ONRAM3R::RAM3ON => true,
+impl<'a> ONRAM2_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ONRAM2_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ONRAM3R {
-        match value {
-            false => ONRAM3R::RAM3OFF,
-            true => ONRAM3R::RAM3ON,
+    #[doc = "Off"]
+    #[inline(always)]
+    pub fn ram2off(self) -> &'a mut W {
+        self.variant(ONRAM2_A::RAM2OFF)
+    }
+    #[doc = "On"]
+    #[inline(always)]
+    pub fn ram2on(self) -> &'a mut W {
+        self.variant(ONRAM2_A::RAM2ON)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w
+    }
+}
+#[doc = "Keep RAM block 3 on or off in system ON Mode\n\nValue on reset: 1"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ONRAM3_A {
+    #[doc = "0: Off"]
+    RAM3OFF,
+    #[doc = "1: On"]
+    RAM3ON,
+}
+impl From<ONRAM3_A> for bool {
+    #[inline(always)]
+    fn from(variant: ONRAM3_A) -> Self {
+        match variant {
+            ONRAM3_A::RAM3OFF => false,
+            ONRAM3_A::RAM3ON => true,
+        }
+    }
+}
+#[doc = "Reader of field `ONRAM3`"]
+pub type ONRAM3_R = crate::R<bool, ONRAM3_A>;
+impl ONRAM3_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ONRAM3_A {
+        match self.bits {
+            false => ONRAM3_A::RAM3OFF,
+            true => ONRAM3_A::RAM3ON,
         }
     }
     #[doc = "Checks if the value of the field is `RAM3OFF`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_ram3off(&self) -> bool {
-        *self == ONRAM3R::RAM3OFF
+        *self == ONRAM3_A::RAM3OFF
     }
     #[doc = "Checks if the value of the field is `RAM3ON`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_ram3on(&self) -> bool {
-        *self == ONRAM3R::RAM3ON
+        *self == ONRAM3_A::RAM3ON
     }
 }
-#[doc = "Possible values of the field `OFFRAM2`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum OFFRAM2R {
-    #[doc = "Off"]
-    RAM2OFF,
-    #[doc = "On"]
-    RAM2ON,
+#[doc = "Write proxy for field `ONRAM3`"]
+pub struct ONRAM3_W<'a> {
+    w: &'a mut W,
 }
-impl OFFRAM2R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            OFFRAM2R::RAM2OFF => false,
-            OFFRAM2R::RAM2ON => true,
+impl<'a> ONRAM3_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ONRAM3_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> OFFRAM2R {
-        match value {
-            false => OFFRAM2R::RAM2OFF,
-            true => OFFRAM2R::RAM2ON,
+    #[doc = "Off"]
+    #[inline(always)]
+    pub fn ram3off(self) -> &'a mut W {
+        self.variant(ONRAM3_A::RAM3OFF)
+    }
+    #[doc = "On"]
+    #[inline(always)]
+    pub fn ram3on(self) -> &'a mut W {
+        self.variant(ONRAM3_A::RAM3ON)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w
+    }
+}
+#[doc = "Keep retention on RAM block 2 when RAM block is switched off\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum OFFRAM2_A {
+    #[doc = "0: Off"]
+    RAM2OFF,
+    #[doc = "1: On"]
+    RAM2ON,
+}
+impl From<OFFRAM2_A> for bool {
+    #[inline(always)]
+    fn from(variant: OFFRAM2_A) -> Self {
+        match variant {
+            OFFRAM2_A::RAM2OFF => false,
+            OFFRAM2_A::RAM2ON => true,
+        }
+    }
+}
+#[doc = "Reader of field `OFFRAM2`"]
+pub type OFFRAM2_R = crate::R<bool, OFFRAM2_A>;
+impl OFFRAM2_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> OFFRAM2_A {
+        match self.bits {
+            false => OFFRAM2_A::RAM2OFF,
+            true => OFFRAM2_A::RAM2ON,
         }
     }
     #[doc = "Checks if the value of the field is `RAM2OFF`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_ram2off(&self) -> bool {
-        *self == OFFRAM2R::RAM2OFF
+        *self == OFFRAM2_A::RAM2OFF
     }
     #[doc = "Checks if the value of the field is `RAM2ON`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_ram2on(&self) -> bool {
-        *self == OFFRAM2R::RAM2ON
+        *self == OFFRAM2_A::RAM2ON
     }
 }
-#[doc = "Possible values of the field `OFFRAM3`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum OFFRAM3R {
-    #[doc = "Off"]
-    RAM3OFF,
-    #[doc = "On"]
-    RAM3ON,
+#[doc = "Write proxy for field `OFFRAM2`"]
+pub struct OFFRAM2_W<'a> {
+    w: &'a mut W,
 }
-impl OFFRAM3R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            OFFRAM3R::RAM3OFF => false,
-            OFFRAM3R::RAM3ON => true,
+impl<'a> OFFRAM2_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: OFFRAM2_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> OFFRAM3R {
-        match value {
-            false => OFFRAM3R::RAM3OFF,
-            true => OFFRAM3R::RAM3ON,
+    #[doc = "Off"]
+    #[inline(always)]
+    pub fn ram2off(self) -> &'a mut W {
+        self.variant(OFFRAM2_A::RAM2OFF)
+    }
+    #[doc = "On"]
+    #[inline(always)]
+    pub fn ram2on(self) -> &'a mut W {
+        self.variant(OFFRAM2_A::RAM2ON)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
+        self.w
+    }
+}
+#[doc = "Keep retention on RAM block 3 when RAM block is switched off\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum OFFRAM3_A {
+    #[doc = "0: Off"]
+    RAM3OFF,
+    #[doc = "1: On"]
+    RAM3ON,
+}
+impl From<OFFRAM3_A> for bool {
+    #[inline(always)]
+    fn from(variant: OFFRAM3_A) -> Self {
+        match variant {
+            OFFRAM3_A::RAM3OFF => false,
+            OFFRAM3_A::RAM3ON => true,
+        }
+    }
+}
+#[doc = "Reader of field `OFFRAM3`"]
+pub type OFFRAM3_R = crate::R<bool, OFFRAM3_A>;
+impl OFFRAM3_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> OFFRAM3_A {
+        match self.bits {
+            false => OFFRAM3_A::RAM3OFF,
+            true => OFFRAM3_A::RAM3ON,
         }
     }
     #[doc = "Checks if the value of the field is `RAM3OFF`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_ram3off(&self) -> bool {
-        *self == OFFRAM3R::RAM3OFF
+        *self == OFFRAM3_A::RAM3OFF
     }
     #[doc = "Checks if the value of the field is `RAM3ON`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_ram3on(&self) -> bool {
-        *self == OFFRAM3R::RAM3ON
+        *self == OFFRAM3_A::RAM3ON
     }
 }
-#[doc = "Values that can be written to the field `ONRAM2`"]
-pub enum ONRAM2W {
-    #[doc = "Off"]
-    RAM2OFF,
-    #[doc = "On"]
-    RAM2ON,
-}
-impl ONRAM2W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ONRAM2W::RAM2OFF => false,
-            ONRAM2W::RAM2ON => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ONRAM2W<'a> {
+#[doc = "Write proxy for field `OFFRAM3`"]
+pub struct OFFRAM3_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ONRAM2W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ONRAM2W) -> &'a mut W {
+impl<'a> OFFRAM3_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: OFFRAM3_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Off"]
-    #[inline]
-    pub fn ram2off(self) -> &'a mut W {
-        self.variant(ONRAM2W::RAM2OFF)
-    }
-    #[doc = "On"]
-    #[inline]
-    pub fn ram2on(self) -> &'a mut W {
-        self.variant(ONRAM2W::RAM2ON)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `ONRAM3`"]
-pub enum ONRAM3W {
-    #[doc = "Off"]
-    RAM3OFF,
-    #[doc = "On"]
-    RAM3ON,
-}
-impl ONRAM3W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ONRAM3W::RAM3OFF => false,
-            ONRAM3W::RAM3ON => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ONRAM3W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _ONRAM3W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ONRAM3W) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Off"]
-    #[inline]
+    #[inline(always)]
     pub fn ram3off(self) -> &'a mut W {
-        self.variant(ONRAM3W::RAM3OFF)
+        self.variant(OFFRAM3_A::RAM3OFF)
     }
     #[doc = "On"]
-    #[inline]
+    #[inline(always)]
     pub fn ram3on(self) -> &'a mut W {
-        self.variant(ONRAM3W::RAM3ON)
+        self.variant(OFFRAM3_A::RAM3ON)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `OFFRAM2`"]
-pub enum OFFRAM2W {
-    #[doc = "Off"]
-    RAM2OFF,
-    #[doc = "On"]
-    RAM2ON,
-}
-impl OFFRAM2W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            OFFRAM2W::RAM2OFF => false,
-            OFFRAM2W::RAM2ON => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _OFFRAM2W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _OFFRAM2W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: OFFRAM2W) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Off"]
-    #[inline]
-    pub fn ram2off(self) -> &'a mut W {
-        self.variant(OFFRAM2W::RAM2OFF)
-    }
-    #[doc = "On"]
-    #[inline]
-    pub fn ram2on(self) -> &'a mut W {
-        self.variant(OFFRAM2W::RAM2ON)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `OFFRAM3`"]
-pub enum OFFRAM3W {
-    #[doc = "Off"]
-    RAM3OFF,
-    #[doc = "On"]
-    RAM3ON,
-}
-impl OFFRAM3W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            OFFRAM3W::RAM3OFF => false,
-            OFFRAM3W::RAM3ON => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _OFFRAM3W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _OFFRAM3W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: OFFRAM3W) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Off"]
-    #[inline]
-    pub fn ram3off(self) -> &'a mut W {
-        self.variant(OFFRAM3W::RAM3OFF)
-    }
-    #[doc = "On"]
-    #[inline]
-    pub fn ram3on(self) -> &'a mut W {
-        self.variant(OFFRAM3W::RAM3ON)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 17;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 17)) | (((value as u32) & 0x01) << 17);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Keep RAM block 2 on or off in system ON Mode"]
-    #[inline]
-    pub fn onram2(&self) -> ONRAM2R {
-        ONRAM2R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn onram2(&self) -> ONRAM2_R {
+        ONRAM2_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Keep RAM block 3 on or off in system ON Mode"]
-    #[inline]
-    pub fn onram3(&self) -> ONRAM3R {
-        ONRAM3R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn onram3(&self) -> ONRAM3_R {
+        ONRAM3_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 16 - Keep retention on RAM block 2 when RAM block is switched off"]
-    #[inline]
-    pub fn offram2(&self) -> OFFRAM2R {
-        OFFRAM2R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn offram2(&self) -> OFFRAM2_R {
+        OFFRAM2_R::new(((self.bits >> 16) & 0x01) != 0)
     }
     #[doc = "Bit 17 - Keep retention on RAM block 3 when RAM block is switched off"]
-    #[inline]
-    pub fn offram3(&self) -> OFFRAM3R {
-        OFFRAM3R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 17;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn offram3(&self) -> OFFRAM3_R {
+        OFFRAM3_R::new(((self.bits >> 17) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 3 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Keep RAM block 2 on or off in system ON Mode"]
-    #[inline]
-    pub fn onram2(&mut self) -> _ONRAM2W {
-        _ONRAM2W { w: self }
+    #[inline(always)]
+    pub fn onram2(&mut self) -> ONRAM2_W {
+        ONRAM2_W { w: self }
     }
     #[doc = "Bit 1 - Keep RAM block 3 on or off in system ON Mode"]
-    #[inline]
-    pub fn onram3(&mut self) -> _ONRAM3W {
-        _ONRAM3W { w: self }
+    #[inline(always)]
+    pub fn onram3(&mut self) -> ONRAM3_W {
+        ONRAM3_W { w: self }
     }
     #[doc = "Bit 16 - Keep retention on RAM block 2 when RAM block is switched off"]
-    #[inline]
-    pub fn offram2(&mut self) -> _OFFRAM2W {
-        _OFFRAM2W { w: self }
+    #[inline(always)]
+    pub fn offram2(&mut self) -> OFFRAM2_W {
+        OFFRAM2_W { w: self }
     }
     #[doc = "Bit 17 - Keep retention on RAM block 3 when RAM block is switched off"]
-    #[inline]
-    pub fn offram3(&mut self) -> _OFFRAM3W {
-        _OFFRAM3W { w: self }
+    #[inline(always)]
+    pub fn offram3(&mut self) -> OFFRAM3_W {
+        OFFRAM3_W { w: self }
     }
 }

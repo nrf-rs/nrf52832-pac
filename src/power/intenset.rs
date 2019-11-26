@@ -1,397 +1,307 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::INTENSET {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register INTENSET"]
+pub type R = crate::R<u32, super::INTENSET>;
+#[doc = "Writer for register INTENSET"]
+pub type W = crate::W<u32, super::INTENSET>;
+#[doc = "Register INTENSET `reset()`'s with value 0"]
+impl crate::ResetValue for super::INTENSET {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `POFWARN`"]
+#[doc = "Write '1' to Enable interrupt for POFWARN event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum POFWARNR {
-    #[doc = "Read: Disabled"]
+pub enum POFWARN_A {
+    #[doc = "0: Read: Disabled"]
     DISABLED,
-    #[doc = "Read: Enabled"]
+    #[doc = "1: Read: Enabled"]
     ENABLED,
 }
-impl POFWARNR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            POFWARNR::DISABLED => false,
-            POFWARNR::ENABLED => true,
+impl From<POFWARN_A> for bool {
+    #[inline(always)]
+    fn from(variant: POFWARN_A) -> Self {
+        match variant {
+            POFWARN_A::DISABLED => false,
+            POFWARN_A::ENABLED => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> POFWARNR {
-        match value {
-            false => POFWARNR::DISABLED,
-            true => POFWARNR::ENABLED,
+}
+#[doc = "Reader of field `POFWARN`"]
+pub type POFWARN_R = crate::R<bool, POFWARN_A>;
+impl POFWARN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> POFWARN_A {
+        match self.bits {
+            false => POFWARN_A::DISABLED,
+            true => POFWARN_A::ENABLED,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == POFWARNR::DISABLED
+        *self == POFWARN_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == POFWARNR::ENABLED
+        *self == POFWARN_A::ENABLED
     }
 }
-#[doc = "Possible values of the field `SLEEPENTER`"]
+#[doc = "Write '1' to Enable interrupt for POFWARN event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SLEEPENTERR {
-    #[doc = "Read: Disabled"]
-    DISABLED,
-    #[doc = "Read: Enabled"]
-    ENABLED,
-}
-impl SLEEPENTERR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SLEEPENTERR::DISABLED => false,
-            SLEEPENTERR::ENABLED => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SLEEPENTERR {
-        match value {
-            false => SLEEPENTERR::DISABLED,
-            true => SLEEPENTERR::ENABLED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
-    pub fn is_disabled(&self) -> bool {
-        *self == SLEEPENTERR::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
-    pub fn is_enabled(&self) -> bool {
-        *self == SLEEPENTERR::ENABLED
-    }
-}
-#[doc = "Possible values of the field `SLEEPEXIT`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SLEEPEXITR {
-    #[doc = "Read: Disabled"]
-    DISABLED,
-    #[doc = "Read: Enabled"]
-    ENABLED,
-}
-impl SLEEPEXITR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SLEEPEXITR::DISABLED => false,
-            SLEEPEXITR::ENABLED => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SLEEPEXITR {
-        match value {
-            false => SLEEPEXITR::DISABLED,
-            true => SLEEPEXITR::ENABLED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
-    pub fn is_disabled(&self) -> bool {
-        *self == SLEEPEXITR::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
-    pub fn is_enabled(&self) -> bool {
-        *self == SLEEPEXITR::ENABLED
-    }
-}
-#[doc = "Values that can be written to the field `POFWARN`"]
-pub enum POFWARNW {
-    #[doc = "Enable"]
+pub enum POFWARN_AW {
+    #[doc = "1: Enable"]
     SET,
 }
-impl POFWARNW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            POFWARNW::SET => true,
+impl From<POFWARN_AW> for bool {
+    #[inline(always)]
+    fn from(variant: POFWARN_AW) -> Self {
+        match variant {
+            POFWARN_AW::SET => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _POFWARNW<'a> {
+#[doc = "Write proxy for field `POFWARN`"]
+pub struct POFWARN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _POFWARNW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: POFWARNW) -> &'a mut W {
+impl<'a> POFWARN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: POFWARN_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Enable"]
-    #[inline]
+    #[inline(always)]
     pub fn set(self) -> &'a mut W {
-        self.variant(POFWARNW::SET)
+        self.variant(POFWARN_AW::SET)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `SLEEPENTER`"]
-pub enum SLEEPENTERW {
-    #[doc = "Enable"]
+#[doc = "Write '1' to Enable interrupt for SLEEPENTER event\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SLEEPENTER_A {
+    #[doc = "0: Read: Disabled"]
+    DISABLED,
+    #[doc = "1: Read: Enabled"]
+    ENABLED,
+}
+impl From<SLEEPENTER_A> for bool {
+    #[inline(always)]
+    fn from(variant: SLEEPENTER_A) -> Self {
+        match variant {
+            SLEEPENTER_A::DISABLED => false,
+            SLEEPENTER_A::ENABLED => true,
+        }
+    }
+}
+#[doc = "Reader of field `SLEEPENTER`"]
+pub type SLEEPENTER_R = crate::R<bool, SLEEPENTER_A>;
+impl SLEEPENTER_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SLEEPENTER_A {
+        match self.bits {
+            false => SLEEPENTER_A::DISABLED,
+            true => SLEEPENTER_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == SLEEPENTER_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == SLEEPENTER_A::ENABLED
+    }
+}
+#[doc = "Write '1' to Enable interrupt for SLEEPENTER event\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SLEEPENTER_AW {
+    #[doc = "1: Enable"]
     SET,
 }
-impl SLEEPENTERW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SLEEPENTERW::SET => true,
+impl From<SLEEPENTER_AW> for bool {
+    #[inline(always)]
+    fn from(variant: SLEEPENTER_AW) -> Self {
+        match variant {
+            SLEEPENTER_AW::SET => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _SLEEPENTERW<'a> {
+#[doc = "Write proxy for field `SLEEPENTER`"]
+pub struct SLEEPENTER_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SLEEPENTERW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SLEEPENTERW) -> &'a mut W {
+impl<'a> SLEEPENTER_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SLEEPENTER_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Enable"]
-    #[inline]
+    #[inline(always)]
     pub fn set(self) -> &'a mut W {
-        self.variant(SLEEPENTERW::SET)
+        self.variant(SLEEPENTER_AW::SET)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `SLEEPEXIT`"]
-pub enum SLEEPEXITW {
-    #[doc = "Enable"]
+#[doc = "Write '1' to Enable interrupt for SLEEPEXIT event\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SLEEPEXIT_A {
+    #[doc = "0: Read: Disabled"]
+    DISABLED,
+    #[doc = "1: Read: Enabled"]
+    ENABLED,
+}
+impl From<SLEEPEXIT_A> for bool {
+    #[inline(always)]
+    fn from(variant: SLEEPEXIT_A) -> Self {
+        match variant {
+            SLEEPEXIT_A::DISABLED => false,
+            SLEEPEXIT_A::ENABLED => true,
+        }
+    }
+}
+#[doc = "Reader of field `SLEEPEXIT`"]
+pub type SLEEPEXIT_R = crate::R<bool, SLEEPEXIT_A>;
+impl SLEEPEXIT_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SLEEPEXIT_A {
+        match self.bits {
+            false => SLEEPEXIT_A::DISABLED,
+            true => SLEEPEXIT_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == SLEEPEXIT_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == SLEEPEXIT_A::ENABLED
+    }
+}
+#[doc = "Write '1' to Enable interrupt for SLEEPEXIT event\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SLEEPEXIT_AW {
+    #[doc = "1: Enable"]
     SET,
 }
-impl SLEEPEXITW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SLEEPEXITW::SET => true,
+impl From<SLEEPEXIT_AW> for bool {
+    #[inline(always)]
+    fn from(variant: SLEEPEXIT_AW) -> Self {
+        match variant {
+            SLEEPEXIT_AW::SET => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _SLEEPEXITW<'a> {
+#[doc = "Write proxy for field `SLEEPEXIT`"]
+pub struct SLEEPEXIT_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SLEEPEXITW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SLEEPEXITW) -> &'a mut W {
+impl<'a> SLEEPEXIT_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SLEEPEXIT_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Enable"]
-    #[inline]
+    #[inline(always)]
     pub fn set(self) -> &'a mut W {
-        self.variant(SLEEPEXITW::SET)
+        self.variant(SLEEPEXIT_AW::SET)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 2 - Write '1' to Enable interrupt for POFWARN event"]
-    #[inline]
-    pub fn pofwarn(&self) -> POFWARNR {
-        POFWARNR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pofwarn(&self) -> POFWARN_R {
+        POFWARN_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 5 - Write '1' to Enable interrupt for SLEEPENTER event"]
-    #[inline]
-    pub fn sleepenter(&self) -> SLEEPENTERR {
-        SLEEPENTERR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sleepenter(&self) -> SLEEPENTER_R {
+        SLEEPENTER_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - Write '1' to Enable interrupt for SLEEPEXIT event"]
-    #[inline]
-    pub fn sleepexit(&self) -> SLEEPEXITR {
-        SLEEPEXITR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sleepexit(&self) -> SLEEPEXIT_R {
+        SLEEPEXIT_R::new(((self.bits >> 6) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 2 - Write '1' to Enable interrupt for POFWARN event"]
-    #[inline]
-    pub fn pofwarn(&mut self) -> _POFWARNW {
-        _POFWARNW { w: self }
+    #[inline(always)]
+    pub fn pofwarn(&mut self) -> POFWARN_W {
+        POFWARN_W { w: self }
     }
     #[doc = "Bit 5 - Write '1' to Enable interrupt for SLEEPENTER event"]
-    #[inline]
-    pub fn sleepenter(&mut self) -> _SLEEPENTERW {
-        _SLEEPENTERW { w: self }
+    #[inline(always)]
+    pub fn sleepenter(&mut self) -> SLEEPENTER_W {
+        SLEEPENTER_W { w: self }
     }
     #[doc = "Bit 6 - Write '1' to Enable interrupt for SLEEPEXIT event"]
-    #[inline]
-    pub fn sleepexit(&mut self) -> _SLEEPEXITW {
-        _SLEEPEXITW { w: self }
+    #[inline(always)]
+    pub fn sleepexit(&mut self) -> SLEEPEXIT_W {
+        SLEEPEXIT_W { w: self }
     }
 }

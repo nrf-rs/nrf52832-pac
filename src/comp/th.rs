@@ -1,146 +1,64 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::TH {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register TH"]
+pub type R = crate::R<u32, super::TH>;
+#[doc = "Writer for register TH"]
+pub type W = crate::W<u32, super::TH>;
+#[doc = "Register TH `reset()`'s with value 0"]
+impl crate::ResetValue for super::TH {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct THDOWNR {
-    bits: u8,
-}
-impl THDOWNR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct THUPR {
-    bits: u8,
-}
-impl THUPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Proxy"]
-pub struct _THDOWNW<'a> {
+#[doc = "Reader of field `THDOWN`"]
+pub type THDOWN_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `THDOWN`"]
+pub struct THDOWN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _THDOWNW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> THDOWN_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 63;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x3f) | ((value as u32) & 0x3f);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _THUPW<'a> {
+#[doc = "Reader of field `THUP`"]
+pub type THUP_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `THUP`"]
+pub struct THUP_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _THUPW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> THUP_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 63;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x3f << 8)) | (((value as u32) & 0x3f) << 8);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:5 - VDOWN = (THDOWN+1)/64*VREF"]
-    #[inline]
-    pub fn thdown(&self) -> THDOWNR {
-        let bits = {
-            const MASK: u8 = 63;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        THDOWNR { bits }
+    #[inline(always)]
+    pub fn thdown(&self) -> THDOWN_R {
+        THDOWN_R::new((self.bits & 0x3f) as u8)
     }
     #[doc = "Bits 8:13 - VUP = (THUP+1)/64*VREF"]
-    #[inline]
-    pub fn thup(&self) -> THUPR {
-        let bits = {
-            const MASK: u8 = 63;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        THUPR { bits }
+    #[inline(always)]
+    pub fn thup(&self) -> THUP_R {
+        THUP_R::new(((self.bits >> 8) & 0x3f) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:5 - VDOWN = (THDOWN+1)/64*VREF"]
-    #[inline]
-    pub fn thdown(&mut self) -> _THDOWNW {
-        _THDOWNW { w: self }
+    #[inline(always)]
+    pub fn thdown(&mut self) -> THDOWN_W {
+        THDOWN_W { w: self }
     }
     #[doc = "Bits 8:13 - VUP = (THUP+1)/64*VREF"]
-    #[inline]
-    pub fn thup(&mut self) -> _THUPW {
-        _THUPW { w: self }
+    #[inline(always)]
+    pub fn thup(&mut self) -> THUP_W {
+        THUP_W { w: self }
     }
 }

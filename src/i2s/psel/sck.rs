@@ -1,224 +1,128 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::SCK {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register SCK"]
+pub type R = crate::R<u32, super::SCK>;
+#[doc = "Writer for register SCK"]
+pub type W = crate::W<u32, super::SCK>;
+#[doc = "Register SCK `reset()`'s with value 0xffff_ffff"]
+impl crate::ResetValue for super::SCK {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0xffff_ffff
     }
 }
-#[doc = r" Value of the field"]
-pub struct PINR {
-    bits: u8,
-}
-impl PINR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = "Possible values of the field `CONNECT`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CONNECTR {
-    #[doc = "Disconnect"]
-    DISCONNECTED,
-    #[doc = "Connect"]
-    CONNECTED,
-}
-impl CONNECTR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CONNECTR::DISCONNECTED => true,
-            CONNECTR::CONNECTED => false,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CONNECTR {
-        match value {
-            true => CONNECTR::DISCONNECTED,
-            false => CONNECTR::CONNECTED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISCONNECTED`"]
-    #[inline]
-    pub fn is_disconnected(&self) -> bool {
-        *self == CONNECTR::DISCONNECTED
-    }
-    #[doc = "Checks if the value of the field is `CONNECTED`"]
-    #[inline]
-    pub fn is_connected(&self) -> bool {
-        *self == CONNECTR::CONNECTED
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PINW<'a> {
+#[doc = "Reader of field `PIN`"]
+pub type PIN_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `PIN`"]
+pub struct PIN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PINW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> PIN_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 31;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x1f) | ((value as u32) & 0x1f);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `CONNECT`"]
-pub enum CONNECTW {
-    #[doc = "Disconnect"]
+#[doc = "Connection\n\nValue on reset: 1"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CONNECT_A {
+    #[doc = "1: Disconnect"]
     DISCONNECTED,
-    #[doc = "Connect"]
+    #[doc = "0: Connect"]
     CONNECTED,
 }
-impl CONNECTW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CONNECTW::DISCONNECTED => true,
-            CONNECTW::CONNECTED => false,
+impl From<CONNECT_A> for bool {
+    #[inline(always)]
+    fn from(variant: CONNECT_A) -> Self {
+        match variant {
+            CONNECT_A::DISCONNECTED => true,
+            CONNECT_A::CONNECTED => false,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _CONNECTW<'a> {
+#[doc = "Reader of field `CONNECT`"]
+pub type CONNECT_R = crate::R<bool, CONNECT_A>;
+impl CONNECT_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CONNECT_A {
+        match self.bits {
+            true => CONNECT_A::DISCONNECTED,
+            false => CONNECT_A::CONNECTED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISCONNECTED`"]
+    #[inline(always)]
+    pub fn is_disconnected(&self) -> bool {
+        *self == CONNECT_A::DISCONNECTED
+    }
+    #[doc = "Checks if the value of the field is `CONNECTED`"]
+    #[inline(always)]
+    pub fn is_connected(&self) -> bool {
+        *self == CONNECT_A::CONNECTED
+    }
+}
+#[doc = "Write proxy for field `CONNECT`"]
+pub struct CONNECT_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CONNECTW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CONNECTW) -> &'a mut W {
+impl<'a> CONNECT_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CONNECT_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disconnect"]
-    #[inline]
+    #[inline(always)]
     pub fn disconnected(self) -> &'a mut W {
-        self.variant(CONNECTW::DISCONNECTED)
+        self.variant(CONNECT_A::DISCONNECTED)
     }
     #[doc = "Connect"]
-    #[inline]
+    #[inline(always)]
     pub fn connected(self) -> &'a mut W {
-        self.variant(CONNECTW::CONNECTED)
+        self.variant(CONNECT_A::CONNECTED)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 31;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:4 - Pin number"]
-    #[inline]
-    pub fn pin(&self) -> PINR {
-        let bits = {
-            const MASK: u8 = 31;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        PINR { bits }
+    #[inline(always)]
+    pub fn pin(&self) -> PIN_R {
+        PIN_R::new((self.bits & 0x1f) as u8)
     }
     #[doc = "Bit 31 - Connection"]
-    #[inline]
-    pub fn connect(&self) -> CONNECTR {
-        CONNECTR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 31;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn connect(&self) -> CONNECT_R {
+        CONNECT_R::new(((self.bits >> 31) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 4294967295 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:4 - Pin number"]
-    #[inline]
-    pub fn pin(&mut self) -> _PINW {
-        _PINW { w: self }
+    #[inline(always)]
+    pub fn pin(&mut self) -> PIN_W {
+        PIN_W { w: self }
     }
     #[doc = "Bit 31 - Connection"]
-    #[inline]
-    pub fn connect(&mut self) -> _CONNECTW {
-        _CONNECTW { w: self }
+    #[inline(always)]
+    pub fn connect(&mut self) -> CONNECT_W {
+        CONNECT_W { w: self }
     }
 }

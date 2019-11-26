@@ -1,421 +1,280 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::MODE {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register MODE"]
+pub type R = crate::R<u32, super::MODE>;
+#[doc = "Writer for register MODE"]
+pub type W = crate::W<u32, super::MODE>;
+#[doc = "Register MODE `reset()`'s with value 0x01"]
+impl crate::ResetValue for super::MODE {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x01
     }
 }
-#[doc = "Possible values of the field `MODE`"]
+#[doc = "The mode of operation to be used\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MODER {
-    #[doc = "AES CCM packet encryption mode"]
+pub enum MODE_A {
+    #[doc = "0: AES CCM packet encryption mode"]
     ENCRYPTION,
-    #[doc = "AES CCM packet decryption mode"]
+    #[doc = "1: AES CCM packet decryption mode"]
     DECRYPTION,
 }
-impl MODER {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            MODER::ENCRYPTION => false,
-            MODER::DECRYPTION => true,
+impl From<MODE_A> for bool {
+    #[inline(always)]
+    fn from(variant: MODE_A) -> Self {
+        match variant {
+            MODE_A::ENCRYPTION => false,
+            MODE_A::DECRYPTION => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> MODER {
-        match value {
-            false => MODER::ENCRYPTION,
-            true => MODER::DECRYPTION,
+}
+#[doc = "Reader of field `MODE`"]
+pub type MODE_R = crate::R<bool, MODE_A>;
+impl MODE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> MODE_A {
+        match self.bits {
+            false => MODE_A::ENCRYPTION,
+            true => MODE_A::DECRYPTION,
         }
     }
     #[doc = "Checks if the value of the field is `ENCRYPTION`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_encryption(&self) -> bool {
-        *self == MODER::ENCRYPTION
+        *self == MODE_A::ENCRYPTION
     }
     #[doc = "Checks if the value of the field is `DECRYPTION`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_decryption(&self) -> bool {
-        *self == MODER::DECRYPTION
+        *self == MODE_A::DECRYPTION
     }
 }
-#[doc = "Possible values of the field `DATARATE`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DATARATER {
-    #[doc = "In synch with 1 Mbit data rate"]
-    _1MBIT,
-    #[doc = "In synch with 2 Mbit data rate"]
-    _2MBIT,
+#[doc = "Write proxy for field `MODE`"]
+pub struct MODE_W<'a> {
+    w: &'a mut W,
 }
-impl DATARATER {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            DATARATER::_1MBIT => false,
-            DATARATER::_2MBIT => true,
+impl<'a> MODE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: MODE_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> DATARATER {
-        match value {
-            false => DATARATER::_1MBIT,
-            true => DATARATER::_2MBIT,
+    #[doc = "AES CCM packet encryption mode"]
+    #[inline(always)]
+    pub fn encryption(self) -> &'a mut W {
+        self.variant(MODE_A::ENCRYPTION)
+    }
+    #[doc = "AES CCM packet decryption mode"]
+    #[inline(always)]
+    pub fn decryption(self) -> &'a mut W {
+        self.variant(MODE_A::DECRYPTION)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w
+    }
+}
+#[doc = "Data rate that the CCM shall run in synch with\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum DATARATE_A {
+    #[doc = "0: In synch with 1 Mbit data rate"]
+    _1MBIT,
+    #[doc = "1: In synch with 2 Mbit data rate"]
+    _2MBIT,
+}
+impl From<DATARATE_A> for bool {
+    #[inline(always)]
+    fn from(variant: DATARATE_A) -> Self {
+        match variant {
+            DATARATE_A::_1MBIT => false,
+            DATARATE_A::_2MBIT => true,
+        }
+    }
+}
+#[doc = "Reader of field `DATARATE`"]
+pub type DATARATE_R = crate::R<bool, DATARATE_A>;
+impl DATARATE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DATARATE_A {
+        match self.bits {
+            false => DATARATE_A::_1MBIT,
+            true => DATARATE_A::_2MBIT,
         }
     }
     #[doc = "Checks if the value of the field is `_1MBIT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1mbit(&self) -> bool {
-        *self == DATARATER::_1MBIT
+        *self == DATARATE_A::_1MBIT
     }
     #[doc = "Checks if the value of the field is `_2MBIT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_2mbit(&self) -> bool {
-        *self == DATARATER::_2MBIT
+        *self == DATARATE_A::_2MBIT
     }
 }
-#[doc = "Possible values of the field `LENGTH`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LENGTHR {
-    #[doc = "Default length. Effective length of LENGTH field is 5-bit"]
-    DEFAULT,
-    #[doc = "Extended length. Effective length of LENGTH field is 8-bit"]
-    EXTENDED,
+#[doc = "Write proxy for field `DATARATE`"]
+pub struct DATARATE_W<'a> {
+    w: &'a mut W,
 }
-impl LENGTHR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            LENGTHR::DEFAULT => false,
-            LENGTHR::EXTENDED => true,
+impl<'a> DATARATE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: DATARATE_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> LENGTHR {
-        match value {
-            false => LENGTHR::DEFAULT,
-            true => LENGTHR::EXTENDED,
+    #[doc = "In synch with 1 Mbit data rate"]
+    #[inline(always)]
+    pub fn _1mbit(self) -> &'a mut W {
+        self.variant(DATARATE_A::_1MBIT)
+    }
+    #[doc = "In synch with 2 Mbit data rate"]
+    #[inline(always)]
+    pub fn _2mbit(self) -> &'a mut W {
+        self.variant(DATARATE_A::_2MBIT)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
+        self.w
+    }
+}
+#[doc = "Packet length configuration\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum LENGTH_A {
+    #[doc = "0: Default length. Effective length of LENGTH field is 5-bit"]
+    DEFAULT,
+    #[doc = "1: Extended length. Effective length of LENGTH field is 8-bit"]
+    EXTENDED,
+}
+impl From<LENGTH_A> for bool {
+    #[inline(always)]
+    fn from(variant: LENGTH_A) -> Self {
+        match variant {
+            LENGTH_A::DEFAULT => false,
+            LENGTH_A::EXTENDED => true,
+        }
+    }
+}
+#[doc = "Reader of field `LENGTH`"]
+pub type LENGTH_R = crate::R<bool, LENGTH_A>;
+impl LENGTH_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LENGTH_A {
+        match self.bits {
+            false => LENGTH_A::DEFAULT,
+            true => LENGTH_A::EXTENDED,
         }
     }
     #[doc = "Checks if the value of the field is `DEFAULT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_default(&self) -> bool {
-        *self == LENGTHR::DEFAULT
+        *self == LENGTH_A::DEFAULT
     }
     #[doc = "Checks if the value of the field is `EXTENDED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_extended(&self) -> bool {
-        *self == LENGTHR::EXTENDED
+        *self == LENGTH_A::EXTENDED
     }
 }
-#[doc = "Values that can be written to the field `MODE`"]
-pub enum MODEW {
-    #[doc = "AES CCM packet encryption mode"]
-    ENCRYPTION,
-    #[doc = "AES CCM packet decryption mode"]
-    DECRYPTION,
-}
-impl MODEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            MODEW::ENCRYPTION => false,
-            MODEW::DECRYPTION => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _MODEW<'a> {
+#[doc = "Write proxy for field `LENGTH`"]
+pub struct LENGTH_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _MODEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: MODEW) -> &'a mut W {
+impl<'a> LENGTH_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: LENGTH_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "AES CCM packet encryption mode"]
-    #[inline]
-    pub fn encryption(self) -> &'a mut W {
-        self.variant(MODEW::ENCRYPTION)
-    }
-    #[doc = "AES CCM packet decryption mode"]
-    #[inline]
-    pub fn decryption(self) -> &'a mut W {
-        self.variant(MODEW::DECRYPTION)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `DATARATE`"]
-pub enum DATARATEW {
-    #[doc = "In synch with 1 Mbit data rate"]
-    _1MBIT,
-    #[doc = "In synch with 2 Mbit data rate"]
-    _2MBIT,
-}
-impl DATARATEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            DATARATEW::_1MBIT => false,
-            DATARATEW::_2MBIT => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _DATARATEW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _DATARATEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: DATARATEW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "In synch with 1 Mbit data rate"]
-    #[inline]
-    pub fn _1mbit(self) -> &'a mut W {
-        self.variant(DATARATEW::_1MBIT)
-    }
-    #[doc = "In synch with 2 Mbit data rate"]
-    #[inline]
-    pub fn _2mbit(self) -> &'a mut W {
-        self.variant(DATARATEW::_2MBIT)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `LENGTH`"]
-pub enum LENGTHW {
-    #[doc = "Default length. Effective length of LENGTH field is 5-bit"]
-    DEFAULT,
-    #[doc = "Extended length. Effective length of LENGTH field is 8-bit"]
-    EXTENDED,
-}
-impl LENGTHW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            LENGTHW::DEFAULT => false,
-            LENGTHW::EXTENDED => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _LENGTHW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _LENGTHW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: LENGTHW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Default length. Effective length of LENGTH field is 5-bit"]
-    #[inline]
+    #[inline(always)]
     pub fn default(self) -> &'a mut W {
-        self.variant(LENGTHW::DEFAULT)
+        self.variant(LENGTH_A::DEFAULT)
     }
     #[doc = "Extended length. Effective length of LENGTH field is 8-bit"]
-    #[inline]
+    #[inline(always)]
     pub fn extended(self) -> &'a mut W {
-        self.variant(LENGTHW::EXTENDED)
+        self.variant(LENGTH_A::EXTENDED)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 24;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - The mode of operation to be used"]
-    #[inline]
-    pub fn mode(&self) -> MODER {
-        MODER::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn mode(&self) -> MODE_R {
+        MODE_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 16 - Data rate that the CCM shall run in synch with"]
-    #[inline]
-    pub fn datarate(&self) -> DATARATER {
-        DATARATER::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn datarate(&self) -> DATARATE_R {
+        DATARATE_R::new(((self.bits >> 16) & 0x01) != 0)
     }
     #[doc = "Bit 24 - Packet length configuration"]
-    #[inline]
-    pub fn length(&self) -> LENGTHR {
-        LENGTHR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn length(&self) -> LENGTH_R {
+        LENGTH_R::new(((self.bits >> 24) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 1 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - The mode of operation to be used"]
-    #[inline]
-    pub fn mode(&mut self) -> _MODEW {
-        _MODEW { w: self }
+    #[inline(always)]
+    pub fn mode(&mut self) -> MODE_W {
+        MODE_W { w: self }
     }
     #[doc = "Bit 16 - Data rate that the CCM shall run in synch with"]
-    #[inline]
-    pub fn datarate(&mut self) -> _DATARATEW {
-        _DATARATEW { w: self }
+    #[inline(always)]
+    pub fn datarate(&mut self) -> DATARATE_W {
+        DATARATE_W { w: self }
     }
     #[doc = "Bit 24 - Packet length configuration"]
-    #[inline]
-    pub fn length(&mut self) -> _LENGTHW {
-        _LENGTHW { w: self }
+    #[inline(always)]
+    pub fn length(&mut self) -> LENGTH_W {
+        LENGTH_W { w: self }
     }
 }

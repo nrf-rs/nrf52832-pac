@@ -1,302 +1,192 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::ICACHECNF {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register ICACHECNF"]
+pub type R = crate::R<u32, super::ICACHECNF>;
+#[doc = "Writer for register ICACHECNF"]
+pub type W = crate::W<u32, super::ICACHECNF>;
+#[doc = "Register ICACHECNF `reset()`'s with value 0"]
+impl crate::ResetValue for super::ICACHECNF {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `CACHEEN`"]
+#[doc = "Cache enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CACHEENR {
-    #[doc = "Disable cache. Invalidates all cache entries."]
+pub enum CACHEEN_A {
+    #[doc = "0: Disable cache. Invalidates all cache entries."]
     DISABLED,
-    #[doc = "Enable cache"]
+    #[doc = "1: Enable cache"]
     ENABLED,
 }
-impl CACHEENR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CACHEENR::DISABLED => false,
-            CACHEENR::ENABLED => true,
+impl From<CACHEEN_A> for bool {
+    #[inline(always)]
+    fn from(variant: CACHEEN_A) -> Self {
+        match variant {
+            CACHEEN_A::DISABLED => false,
+            CACHEEN_A::ENABLED => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CACHEENR {
-        match value {
-            false => CACHEENR::DISABLED,
-            true => CACHEENR::ENABLED,
+}
+#[doc = "Reader of field `CACHEEN`"]
+pub type CACHEEN_R = crate::R<bool, CACHEEN_A>;
+impl CACHEEN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CACHEEN_A {
+        match self.bits {
+            false => CACHEEN_A::DISABLED,
+            true => CACHEEN_A::ENABLED,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == CACHEENR::DISABLED
+        *self == CACHEEN_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == CACHEENR::ENABLED
+        *self == CACHEEN_A::ENABLED
     }
 }
-#[doc = "Possible values of the field `CACHEPROFEN`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CACHEPROFENR {
-    #[doc = "Disable cache profiling"]
-    DISABLED,
-    #[doc = "Enable cache profiling"]
-    ENABLED,
-}
-impl CACHEPROFENR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CACHEPROFENR::DISABLED => false,
-            CACHEPROFENR::ENABLED => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CACHEPROFENR {
-        match value {
-            false => CACHEPROFENR::DISABLED,
-            true => CACHEPROFENR::ENABLED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
-    pub fn is_disabled(&self) -> bool {
-        *self == CACHEPROFENR::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
-    pub fn is_enabled(&self) -> bool {
-        *self == CACHEPROFENR::ENABLED
-    }
-}
-#[doc = "Values that can be written to the field `CACHEEN`"]
-pub enum CACHEENW {
-    #[doc = "Disable cache. Invalidates all cache entries."]
-    DISABLED,
-    #[doc = "Enable cache"]
-    ENABLED,
-}
-impl CACHEENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CACHEENW::DISABLED => false,
-            CACHEENW::ENABLED => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CACHEENW<'a> {
+#[doc = "Write proxy for field `CACHEEN`"]
+pub struct CACHEEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CACHEENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CACHEENW) -> &'a mut W {
+impl<'a> CACHEEN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CACHEEN_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable cache. Invalidates all cache entries."]
-    #[inline]
+    #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(CACHEENW::DISABLED)
+        self.variant(CACHEEN_A::DISABLED)
     }
     #[doc = "Enable cache"]
-    #[inline]
+    #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(CACHEENW::ENABLED)
+        self.variant(CACHEEN_A::ENABLED)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `CACHEPROFEN`"]
-pub enum CACHEPROFENW {
-    #[doc = "Disable cache profiling"]
+#[doc = "Cache profiling enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CACHEPROFEN_A {
+    #[doc = "0: Disable cache profiling"]
     DISABLED,
-    #[doc = "Enable cache profiling"]
+    #[doc = "1: Enable cache profiling"]
     ENABLED,
 }
-impl CACHEPROFENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CACHEPROFENW::DISABLED => false,
-            CACHEPROFENW::ENABLED => true,
+impl From<CACHEPROFEN_A> for bool {
+    #[inline(always)]
+    fn from(variant: CACHEPROFEN_A) -> Self {
+        match variant {
+            CACHEPROFEN_A::DISABLED => false,
+            CACHEPROFEN_A::ENABLED => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _CACHEPROFENW<'a> {
+#[doc = "Reader of field `CACHEPROFEN`"]
+pub type CACHEPROFEN_R = crate::R<bool, CACHEPROFEN_A>;
+impl CACHEPROFEN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CACHEPROFEN_A {
+        match self.bits {
+            false => CACHEPROFEN_A::DISABLED,
+            true => CACHEPROFEN_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == CACHEPROFEN_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == CACHEPROFEN_A::ENABLED
+    }
+}
+#[doc = "Write proxy for field `CACHEPROFEN`"]
+pub struct CACHEPROFEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CACHEPROFENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CACHEPROFENW) -> &'a mut W {
+impl<'a> CACHEPROFEN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CACHEPROFEN_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable cache profiling"]
-    #[inline]
+    #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(CACHEPROFENW::DISABLED)
+        self.variant(CACHEPROFEN_A::DISABLED)
     }
     #[doc = "Enable cache profiling"]
-    #[inline]
+    #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(CACHEPROFENW::ENABLED)
+        self.variant(CACHEPROFEN_A::ENABLED)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Cache enable"]
-    #[inline]
-    pub fn cacheen(&self) -> CACHEENR {
-        CACHEENR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn cacheen(&self) -> CACHEEN_R {
+        CACHEEN_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 8 - Cache profiling enable"]
-    #[inline]
-    pub fn cacheprofen(&self) -> CACHEPROFENR {
-        CACHEPROFENR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn cacheprofen(&self) -> CACHEPROFEN_R {
+        CACHEPROFEN_R::new(((self.bits >> 8) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Cache enable"]
-    #[inline]
-    pub fn cacheen(&mut self) -> _CACHEENW {
-        _CACHEENW { w: self }
+    #[inline(always)]
+    pub fn cacheen(&mut self) -> CACHEEN_W {
+        CACHEEN_W { w: self }
     }
     #[doc = "Bit 8 - Cache profiling enable"]
-    #[inline]
-    pub fn cacheprofen(&mut self) -> _CACHEPROFENW {
-        _CACHEPROFENW { w: self }
+    #[inline(always)]
+    pub fn cacheprofen(&mut self) -> CACHEPROFEN_W {
+        CACHEPROFEN_W { w: self }
     }
 }

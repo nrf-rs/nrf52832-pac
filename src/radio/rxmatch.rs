@@ -1,41 +1,11 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::RXMATCH {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RXMATCHR {
-    bits: u8,
-}
-impl RXMATCHR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
+#[doc = "Reader of register RXMATCH"]
+pub type R = crate::R<u32, super::RXMATCH>;
+#[doc = "Reader of field `RXMATCH`"]
+pub type RXMATCH_R = crate::R<u8, u8>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:2 - Received address"]
-    #[inline]
-    pub fn rxmatch(&self) -> RXMATCHR {
-        let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        RXMATCHR { bits }
+    #[inline(always)]
+    pub fn rxmatch(&self) -> RXMATCH_R {
+        RXMATCH_R::new((self.bits & 0x07) as u8)
     }
 }

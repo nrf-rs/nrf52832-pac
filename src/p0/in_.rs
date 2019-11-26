@@ -1,1812 +1,1412 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::IN {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-}
-#[doc = "Possible values of the field `PIN0`"]
+#[doc = "Reader of register IN"]
+pub type R = crate::R<u32, super::IN>;
+#[doc = "Pin 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIN0R {
-    #[doc = "Pin input is low"]
+pub enum PIN0_A {
+    #[doc = "0: Pin input is low"]
     LOW,
-    #[doc = "Pin input is high"]
+    #[doc = "1: Pin input is high"]
     HIGH,
 }
-impl PIN0R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PIN0R::LOW => false,
-            PIN0R::HIGH => true,
+impl From<PIN0_A> for bool {
+    #[inline(always)]
+    fn from(variant: PIN0_A) -> Self {
+        match variant {
+            PIN0_A::LOW => false,
+            PIN0_A::HIGH => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PIN0R {
-        match value {
-            false => PIN0R::LOW,
-            true => PIN0R::HIGH,
+}
+#[doc = "Reader of field `PIN0`"]
+pub type PIN0_R = crate::R<bool, PIN0_A>;
+impl PIN0_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PIN0_A {
+        match self.bits {
+            false => PIN0_A::LOW,
+            true => PIN0_A::HIGH,
         }
     }
     #[doc = "Checks if the value of the field is `LOW`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == PIN0R::LOW
+        *self == PIN0_A::LOW
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == PIN0R::HIGH
+        *self == PIN0_A::HIGH
     }
 }
-#[doc = "Possible values of the field `PIN1`"]
+#[doc = "Pin 1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIN1R {
-    #[doc = "Pin input is low"]
+pub enum PIN1_A {
+    #[doc = "0: Pin input is low"]
     LOW,
-    #[doc = "Pin input is high"]
+    #[doc = "1: Pin input is high"]
     HIGH,
 }
-impl PIN1R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PIN1R::LOW => false,
-            PIN1R::HIGH => true,
+impl From<PIN1_A> for bool {
+    #[inline(always)]
+    fn from(variant: PIN1_A) -> Self {
+        match variant {
+            PIN1_A::LOW => false,
+            PIN1_A::HIGH => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PIN1R {
-        match value {
-            false => PIN1R::LOW,
-            true => PIN1R::HIGH,
+}
+#[doc = "Reader of field `PIN1`"]
+pub type PIN1_R = crate::R<bool, PIN1_A>;
+impl PIN1_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PIN1_A {
+        match self.bits {
+            false => PIN1_A::LOW,
+            true => PIN1_A::HIGH,
         }
     }
     #[doc = "Checks if the value of the field is `LOW`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == PIN1R::LOW
+        *self == PIN1_A::LOW
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == PIN1R::HIGH
+        *self == PIN1_A::HIGH
     }
 }
-#[doc = "Possible values of the field `PIN2`"]
+#[doc = "Pin 2\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIN2R {
-    #[doc = "Pin input is low"]
+pub enum PIN2_A {
+    #[doc = "0: Pin input is low"]
     LOW,
-    #[doc = "Pin input is high"]
+    #[doc = "1: Pin input is high"]
     HIGH,
 }
-impl PIN2R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PIN2R::LOW => false,
-            PIN2R::HIGH => true,
+impl From<PIN2_A> for bool {
+    #[inline(always)]
+    fn from(variant: PIN2_A) -> Self {
+        match variant {
+            PIN2_A::LOW => false,
+            PIN2_A::HIGH => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PIN2R {
-        match value {
-            false => PIN2R::LOW,
-            true => PIN2R::HIGH,
+}
+#[doc = "Reader of field `PIN2`"]
+pub type PIN2_R = crate::R<bool, PIN2_A>;
+impl PIN2_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PIN2_A {
+        match self.bits {
+            false => PIN2_A::LOW,
+            true => PIN2_A::HIGH,
         }
     }
     #[doc = "Checks if the value of the field is `LOW`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == PIN2R::LOW
+        *self == PIN2_A::LOW
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == PIN2R::HIGH
+        *self == PIN2_A::HIGH
     }
 }
-#[doc = "Possible values of the field `PIN3`"]
+#[doc = "Pin 3\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIN3R {
-    #[doc = "Pin input is low"]
+pub enum PIN3_A {
+    #[doc = "0: Pin input is low"]
     LOW,
-    #[doc = "Pin input is high"]
+    #[doc = "1: Pin input is high"]
     HIGH,
 }
-impl PIN3R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PIN3R::LOW => false,
-            PIN3R::HIGH => true,
+impl From<PIN3_A> for bool {
+    #[inline(always)]
+    fn from(variant: PIN3_A) -> Self {
+        match variant {
+            PIN3_A::LOW => false,
+            PIN3_A::HIGH => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PIN3R {
-        match value {
-            false => PIN3R::LOW,
-            true => PIN3R::HIGH,
+}
+#[doc = "Reader of field `PIN3`"]
+pub type PIN3_R = crate::R<bool, PIN3_A>;
+impl PIN3_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PIN3_A {
+        match self.bits {
+            false => PIN3_A::LOW,
+            true => PIN3_A::HIGH,
         }
     }
     #[doc = "Checks if the value of the field is `LOW`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == PIN3R::LOW
+        *self == PIN3_A::LOW
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == PIN3R::HIGH
+        *self == PIN3_A::HIGH
     }
 }
-#[doc = "Possible values of the field `PIN4`"]
+#[doc = "Pin 4\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIN4R {
-    #[doc = "Pin input is low"]
+pub enum PIN4_A {
+    #[doc = "0: Pin input is low"]
     LOW,
-    #[doc = "Pin input is high"]
+    #[doc = "1: Pin input is high"]
     HIGH,
 }
-impl PIN4R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PIN4R::LOW => false,
-            PIN4R::HIGH => true,
+impl From<PIN4_A> for bool {
+    #[inline(always)]
+    fn from(variant: PIN4_A) -> Self {
+        match variant {
+            PIN4_A::LOW => false,
+            PIN4_A::HIGH => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PIN4R {
-        match value {
-            false => PIN4R::LOW,
-            true => PIN4R::HIGH,
+}
+#[doc = "Reader of field `PIN4`"]
+pub type PIN4_R = crate::R<bool, PIN4_A>;
+impl PIN4_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PIN4_A {
+        match self.bits {
+            false => PIN4_A::LOW,
+            true => PIN4_A::HIGH,
         }
     }
     #[doc = "Checks if the value of the field is `LOW`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == PIN4R::LOW
+        *self == PIN4_A::LOW
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == PIN4R::HIGH
+        *self == PIN4_A::HIGH
     }
 }
-#[doc = "Possible values of the field `PIN5`"]
+#[doc = "Pin 5\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIN5R {
-    #[doc = "Pin input is low"]
+pub enum PIN5_A {
+    #[doc = "0: Pin input is low"]
     LOW,
-    #[doc = "Pin input is high"]
+    #[doc = "1: Pin input is high"]
     HIGH,
 }
-impl PIN5R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PIN5R::LOW => false,
-            PIN5R::HIGH => true,
+impl From<PIN5_A> for bool {
+    #[inline(always)]
+    fn from(variant: PIN5_A) -> Self {
+        match variant {
+            PIN5_A::LOW => false,
+            PIN5_A::HIGH => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PIN5R {
-        match value {
-            false => PIN5R::LOW,
-            true => PIN5R::HIGH,
+}
+#[doc = "Reader of field `PIN5`"]
+pub type PIN5_R = crate::R<bool, PIN5_A>;
+impl PIN5_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PIN5_A {
+        match self.bits {
+            false => PIN5_A::LOW,
+            true => PIN5_A::HIGH,
         }
     }
     #[doc = "Checks if the value of the field is `LOW`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == PIN5R::LOW
+        *self == PIN5_A::LOW
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == PIN5R::HIGH
+        *self == PIN5_A::HIGH
     }
 }
-#[doc = "Possible values of the field `PIN6`"]
+#[doc = "Pin 6\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIN6R {
-    #[doc = "Pin input is low"]
+pub enum PIN6_A {
+    #[doc = "0: Pin input is low"]
     LOW,
-    #[doc = "Pin input is high"]
+    #[doc = "1: Pin input is high"]
     HIGH,
 }
-impl PIN6R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PIN6R::LOW => false,
-            PIN6R::HIGH => true,
+impl From<PIN6_A> for bool {
+    #[inline(always)]
+    fn from(variant: PIN6_A) -> Self {
+        match variant {
+            PIN6_A::LOW => false,
+            PIN6_A::HIGH => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PIN6R {
-        match value {
-            false => PIN6R::LOW,
-            true => PIN6R::HIGH,
+}
+#[doc = "Reader of field `PIN6`"]
+pub type PIN6_R = crate::R<bool, PIN6_A>;
+impl PIN6_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PIN6_A {
+        match self.bits {
+            false => PIN6_A::LOW,
+            true => PIN6_A::HIGH,
         }
     }
     #[doc = "Checks if the value of the field is `LOW`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == PIN6R::LOW
+        *self == PIN6_A::LOW
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == PIN6R::HIGH
+        *self == PIN6_A::HIGH
     }
 }
-#[doc = "Possible values of the field `PIN7`"]
+#[doc = "Pin 7\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIN7R {
-    #[doc = "Pin input is low"]
+pub enum PIN7_A {
+    #[doc = "0: Pin input is low"]
     LOW,
-    #[doc = "Pin input is high"]
+    #[doc = "1: Pin input is high"]
     HIGH,
 }
-impl PIN7R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PIN7R::LOW => false,
-            PIN7R::HIGH => true,
+impl From<PIN7_A> for bool {
+    #[inline(always)]
+    fn from(variant: PIN7_A) -> Self {
+        match variant {
+            PIN7_A::LOW => false,
+            PIN7_A::HIGH => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PIN7R {
-        match value {
-            false => PIN7R::LOW,
-            true => PIN7R::HIGH,
+}
+#[doc = "Reader of field `PIN7`"]
+pub type PIN7_R = crate::R<bool, PIN7_A>;
+impl PIN7_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PIN7_A {
+        match self.bits {
+            false => PIN7_A::LOW,
+            true => PIN7_A::HIGH,
         }
     }
     #[doc = "Checks if the value of the field is `LOW`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == PIN7R::LOW
+        *self == PIN7_A::LOW
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == PIN7R::HIGH
+        *self == PIN7_A::HIGH
     }
 }
-#[doc = "Possible values of the field `PIN8`"]
+#[doc = "Pin 8\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIN8R {
-    #[doc = "Pin input is low"]
+pub enum PIN8_A {
+    #[doc = "0: Pin input is low"]
     LOW,
-    #[doc = "Pin input is high"]
+    #[doc = "1: Pin input is high"]
     HIGH,
 }
-impl PIN8R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PIN8R::LOW => false,
-            PIN8R::HIGH => true,
+impl From<PIN8_A> for bool {
+    #[inline(always)]
+    fn from(variant: PIN8_A) -> Self {
+        match variant {
+            PIN8_A::LOW => false,
+            PIN8_A::HIGH => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PIN8R {
-        match value {
-            false => PIN8R::LOW,
-            true => PIN8R::HIGH,
+}
+#[doc = "Reader of field `PIN8`"]
+pub type PIN8_R = crate::R<bool, PIN8_A>;
+impl PIN8_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PIN8_A {
+        match self.bits {
+            false => PIN8_A::LOW,
+            true => PIN8_A::HIGH,
         }
     }
     #[doc = "Checks if the value of the field is `LOW`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == PIN8R::LOW
+        *self == PIN8_A::LOW
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == PIN8R::HIGH
+        *self == PIN8_A::HIGH
     }
 }
-#[doc = "Possible values of the field `PIN9`"]
+#[doc = "Pin 9\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIN9R {
-    #[doc = "Pin input is low"]
+pub enum PIN9_A {
+    #[doc = "0: Pin input is low"]
     LOW,
-    #[doc = "Pin input is high"]
+    #[doc = "1: Pin input is high"]
     HIGH,
 }
-impl PIN9R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PIN9R::LOW => false,
-            PIN9R::HIGH => true,
+impl From<PIN9_A> for bool {
+    #[inline(always)]
+    fn from(variant: PIN9_A) -> Self {
+        match variant {
+            PIN9_A::LOW => false,
+            PIN9_A::HIGH => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PIN9R {
-        match value {
-            false => PIN9R::LOW,
-            true => PIN9R::HIGH,
+}
+#[doc = "Reader of field `PIN9`"]
+pub type PIN9_R = crate::R<bool, PIN9_A>;
+impl PIN9_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PIN9_A {
+        match self.bits {
+            false => PIN9_A::LOW,
+            true => PIN9_A::HIGH,
         }
     }
     #[doc = "Checks if the value of the field is `LOW`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == PIN9R::LOW
+        *self == PIN9_A::LOW
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == PIN9R::HIGH
+        *self == PIN9_A::HIGH
     }
 }
-#[doc = "Possible values of the field `PIN10`"]
+#[doc = "Pin 10\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIN10R {
-    #[doc = "Pin input is low"]
+pub enum PIN10_A {
+    #[doc = "0: Pin input is low"]
     LOW,
-    #[doc = "Pin input is high"]
+    #[doc = "1: Pin input is high"]
     HIGH,
 }
-impl PIN10R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PIN10R::LOW => false,
-            PIN10R::HIGH => true,
+impl From<PIN10_A> for bool {
+    #[inline(always)]
+    fn from(variant: PIN10_A) -> Self {
+        match variant {
+            PIN10_A::LOW => false,
+            PIN10_A::HIGH => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PIN10R {
-        match value {
-            false => PIN10R::LOW,
-            true => PIN10R::HIGH,
+}
+#[doc = "Reader of field `PIN10`"]
+pub type PIN10_R = crate::R<bool, PIN10_A>;
+impl PIN10_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PIN10_A {
+        match self.bits {
+            false => PIN10_A::LOW,
+            true => PIN10_A::HIGH,
         }
     }
     #[doc = "Checks if the value of the field is `LOW`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == PIN10R::LOW
+        *self == PIN10_A::LOW
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == PIN10R::HIGH
+        *self == PIN10_A::HIGH
     }
 }
-#[doc = "Possible values of the field `PIN11`"]
+#[doc = "Pin 11\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIN11R {
-    #[doc = "Pin input is low"]
+pub enum PIN11_A {
+    #[doc = "0: Pin input is low"]
     LOW,
-    #[doc = "Pin input is high"]
+    #[doc = "1: Pin input is high"]
     HIGH,
 }
-impl PIN11R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PIN11R::LOW => false,
-            PIN11R::HIGH => true,
+impl From<PIN11_A> for bool {
+    #[inline(always)]
+    fn from(variant: PIN11_A) -> Self {
+        match variant {
+            PIN11_A::LOW => false,
+            PIN11_A::HIGH => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PIN11R {
-        match value {
-            false => PIN11R::LOW,
-            true => PIN11R::HIGH,
+}
+#[doc = "Reader of field `PIN11`"]
+pub type PIN11_R = crate::R<bool, PIN11_A>;
+impl PIN11_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PIN11_A {
+        match self.bits {
+            false => PIN11_A::LOW,
+            true => PIN11_A::HIGH,
         }
     }
     #[doc = "Checks if the value of the field is `LOW`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == PIN11R::LOW
+        *self == PIN11_A::LOW
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == PIN11R::HIGH
+        *self == PIN11_A::HIGH
     }
 }
-#[doc = "Possible values of the field `PIN12`"]
+#[doc = "Pin 12\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIN12R {
-    #[doc = "Pin input is low"]
+pub enum PIN12_A {
+    #[doc = "0: Pin input is low"]
     LOW,
-    #[doc = "Pin input is high"]
+    #[doc = "1: Pin input is high"]
     HIGH,
 }
-impl PIN12R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PIN12R::LOW => false,
-            PIN12R::HIGH => true,
+impl From<PIN12_A> for bool {
+    #[inline(always)]
+    fn from(variant: PIN12_A) -> Self {
+        match variant {
+            PIN12_A::LOW => false,
+            PIN12_A::HIGH => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PIN12R {
-        match value {
-            false => PIN12R::LOW,
-            true => PIN12R::HIGH,
+}
+#[doc = "Reader of field `PIN12`"]
+pub type PIN12_R = crate::R<bool, PIN12_A>;
+impl PIN12_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PIN12_A {
+        match self.bits {
+            false => PIN12_A::LOW,
+            true => PIN12_A::HIGH,
         }
     }
     #[doc = "Checks if the value of the field is `LOW`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == PIN12R::LOW
+        *self == PIN12_A::LOW
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == PIN12R::HIGH
+        *self == PIN12_A::HIGH
     }
 }
-#[doc = "Possible values of the field `PIN13`"]
+#[doc = "Pin 13\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIN13R {
-    #[doc = "Pin input is low"]
+pub enum PIN13_A {
+    #[doc = "0: Pin input is low"]
     LOW,
-    #[doc = "Pin input is high"]
+    #[doc = "1: Pin input is high"]
     HIGH,
 }
-impl PIN13R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PIN13R::LOW => false,
-            PIN13R::HIGH => true,
+impl From<PIN13_A> for bool {
+    #[inline(always)]
+    fn from(variant: PIN13_A) -> Self {
+        match variant {
+            PIN13_A::LOW => false,
+            PIN13_A::HIGH => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PIN13R {
-        match value {
-            false => PIN13R::LOW,
-            true => PIN13R::HIGH,
+}
+#[doc = "Reader of field `PIN13`"]
+pub type PIN13_R = crate::R<bool, PIN13_A>;
+impl PIN13_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PIN13_A {
+        match self.bits {
+            false => PIN13_A::LOW,
+            true => PIN13_A::HIGH,
         }
     }
     #[doc = "Checks if the value of the field is `LOW`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == PIN13R::LOW
+        *self == PIN13_A::LOW
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == PIN13R::HIGH
+        *self == PIN13_A::HIGH
     }
 }
-#[doc = "Possible values of the field `PIN14`"]
+#[doc = "Pin 14\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIN14R {
-    #[doc = "Pin input is low"]
+pub enum PIN14_A {
+    #[doc = "0: Pin input is low"]
     LOW,
-    #[doc = "Pin input is high"]
+    #[doc = "1: Pin input is high"]
     HIGH,
 }
-impl PIN14R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PIN14R::LOW => false,
-            PIN14R::HIGH => true,
+impl From<PIN14_A> for bool {
+    #[inline(always)]
+    fn from(variant: PIN14_A) -> Self {
+        match variant {
+            PIN14_A::LOW => false,
+            PIN14_A::HIGH => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PIN14R {
-        match value {
-            false => PIN14R::LOW,
-            true => PIN14R::HIGH,
+}
+#[doc = "Reader of field `PIN14`"]
+pub type PIN14_R = crate::R<bool, PIN14_A>;
+impl PIN14_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PIN14_A {
+        match self.bits {
+            false => PIN14_A::LOW,
+            true => PIN14_A::HIGH,
         }
     }
     #[doc = "Checks if the value of the field is `LOW`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == PIN14R::LOW
+        *self == PIN14_A::LOW
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == PIN14R::HIGH
+        *self == PIN14_A::HIGH
     }
 }
-#[doc = "Possible values of the field `PIN15`"]
+#[doc = "Pin 15\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIN15R {
-    #[doc = "Pin input is low"]
+pub enum PIN15_A {
+    #[doc = "0: Pin input is low"]
     LOW,
-    #[doc = "Pin input is high"]
+    #[doc = "1: Pin input is high"]
     HIGH,
 }
-impl PIN15R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PIN15R::LOW => false,
-            PIN15R::HIGH => true,
+impl From<PIN15_A> for bool {
+    #[inline(always)]
+    fn from(variant: PIN15_A) -> Self {
+        match variant {
+            PIN15_A::LOW => false,
+            PIN15_A::HIGH => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PIN15R {
-        match value {
-            false => PIN15R::LOW,
-            true => PIN15R::HIGH,
+}
+#[doc = "Reader of field `PIN15`"]
+pub type PIN15_R = crate::R<bool, PIN15_A>;
+impl PIN15_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PIN15_A {
+        match self.bits {
+            false => PIN15_A::LOW,
+            true => PIN15_A::HIGH,
         }
     }
     #[doc = "Checks if the value of the field is `LOW`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == PIN15R::LOW
+        *self == PIN15_A::LOW
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == PIN15R::HIGH
+        *self == PIN15_A::HIGH
     }
 }
-#[doc = "Possible values of the field `PIN16`"]
+#[doc = "Pin 16\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIN16R {
-    #[doc = "Pin input is low"]
+pub enum PIN16_A {
+    #[doc = "0: Pin input is low"]
     LOW,
-    #[doc = "Pin input is high"]
+    #[doc = "1: Pin input is high"]
     HIGH,
 }
-impl PIN16R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PIN16R::LOW => false,
-            PIN16R::HIGH => true,
+impl From<PIN16_A> for bool {
+    #[inline(always)]
+    fn from(variant: PIN16_A) -> Self {
+        match variant {
+            PIN16_A::LOW => false,
+            PIN16_A::HIGH => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PIN16R {
-        match value {
-            false => PIN16R::LOW,
-            true => PIN16R::HIGH,
+}
+#[doc = "Reader of field `PIN16`"]
+pub type PIN16_R = crate::R<bool, PIN16_A>;
+impl PIN16_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PIN16_A {
+        match self.bits {
+            false => PIN16_A::LOW,
+            true => PIN16_A::HIGH,
         }
     }
     #[doc = "Checks if the value of the field is `LOW`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == PIN16R::LOW
+        *self == PIN16_A::LOW
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == PIN16R::HIGH
+        *self == PIN16_A::HIGH
     }
 }
-#[doc = "Possible values of the field `PIN17`"]
+#[doc = "Pin 17\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIN17R {
-    #[doc = "Pin input is low"]
+pub enum PIN17_A {
+    #[doc = "0: Pin input is low"]
     LOW,
-    #[doc = "Pin input is high"]
+    #[doc = "1: Pin input is high"]
     HIGH,
 }
-impl PIN17R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PIN17R::LOW => false,
-            PIN17R::HIGH => true,
+impl From<PIN17_A> for bool {
+    #[inline(always)]
+    fn from(variant: PIN17_A) -> Self {
+        match variant {
+            PIN17_A::LOW => false,
+            PIN17_A::HIGH => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PIN17R {
-        match value {
-            false => PIN17R::LOW,
-            true => PIN17R::HIGH,
+}
+#[doc = "Reader of field `PIN17`"]
+pub type PIN17_R = crate::R<bool, PIN17_A>;
+impl PIN17_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PIN17_A {
+        match self.bits {
+            false => PIN17_A::LOW,
+            true => PIN17_A::HIGH,
         }
     }
     #[doc = "Checks if the value of the field is `LOW`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == PIN17R::LOW
+        *self == PIN17_A::LOW
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == PIN17R::HIGH
+        *self == PIN17_A::HIGH
     }
 }
-#[doc = "Possible values of the field `PIN18`"]
+#[doc = "Pin 18\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIN18R {
-    #[doc = "Pin input is low"]
+pub enum PIN18_A {
+    #[doc = "0: Pin input is low"]
     LOW,
-    #[doc = "Pin input is high"]
+    #[doc = "1: Pin input is high"]
     HIGH,
 }
-impl PIN18R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PIN18R::LOW => false,
-            PIN18R::HIGH => true,
+impl From<PIN18_A> for bool {
+    #[inline(always)]
+    fn from(variant: PIN18_A) -> Self {
+        match variant {
+            PIN18_A::LOW => false,
+            PIN18_A::HIGH => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PIN18R {
-        match value {
-            false => PIN18R::LOW,
-            true => PIN18R::HIGH,
+}
+#[doc = "Reader of field `PIN18`"]
+pub type PIN18_R = crate::R<bool, PIN18_A>;
+impl PIN18_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PIN18_A {
+        match self.bits {
+            false => PIN18_A::LOW,
+            true => PIN18_A::HIGH,
         }
     }
     #[doc = "Checks if the value of the field is `LOW`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == PIN18R::LOW
+        *self == PIN18_A::LOW
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == PIN18R::HIGH
+        *self == PIN18_A::HIGH
     }
 }
-#[doc = "Possible values of the field `PIN19`"]
+#[doc = "Pin 19\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIN19R {
-    #[doc = "Pin input is low"]
+pub enum PIN19_A {
+    #[doc = "0: Pin input is low"]
     LOW,
-    #[doc = "Pin input is high"]
+    #[doc = "1: Pin input is high"]
     HIGH,
 }
-impl PIN19R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PIN19R::LOW => false,
-            PIN19R::HIGH => true,
+impl From<PIN19_A> for bool {
+    #[inline(always)]
+    fn from(variant: PIN19_A) -> Self {
+        match variant {
+            PIN19_A::LOW => false,
+            PIN19_A::HIGH => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PIN19R {
-        match value {
-            false => PIN19R::LOW,
-            true => PIN19R::HIGH,
+}
+#[doc = "Reader of field `PIN19`"]
+pub type PIN19_R = crate::R<bool, PIN19_A>;
+impl PIN19_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PIN19_A {
+        match self.bits {
+            false => PIN19_A::LOW,
+            true => PIN19_A::HIGH,
         }
     }
     #[doc = "Checks if the value of the field is `LOW`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == PIN19R::LOW
+        *self == PIN19_A::LOW
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == PIN19R::HIGH
+        *self == PIN19_A::HIGH
     }
 }
-#[doc = "Possible values of the field `PIN20`"]
+#[doc = "Pin 20\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIN20R {
-    #[doc = "Pin input is low"]
+pub enum PIN20_A {
+    #[doc = "0: Pin input is low"]
     LOW,
-    #[doc = "Pin input is high"]
+    #[doc = "1: Pin input is high"]
     HIGH,
 }
-impl PIN20R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PIN20R::LOW => false,
-            PIN20R::HIGH => true,
+impl From<PIN20_A> for bool {
+    #[inline(always)]
+    fn from(variant: PIN20_A) -> Self {
+        match variant {
+            PIN20_A::LOW => false,
+            PIN20_A::HIGH => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PIN20R {
-        match value {
-            false => PIN20R::LOW,
-            true => PIN20R::HIGH,
+}
+#[doc = "Reader of field `PIN20`"]
+pub type PIN20_R = crate::R<bool, PIN20_A>;
+impl PIN20_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PIN20_A {
+        match self.bits {
+            false => PIN20_A::LOW,
+            true => PIN20_A::HIGH,
         }
     }
     #[doc = "Checks if the value of the field is `LOW`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == PIN20R::LOW
+        *self == PIN20_A::LOW
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == PIN20R::HIGH
+        *self == PIN20_A::HIGH
     }
 }
-#[doc = "Possible values of the field `PIN21`"]
+#[doc = "Pin 21\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIN21R {
-    #[doc = "Pin input is low"]
+pub enum PIN21_A {
+    #[doc = "0: Pin input is low"]
     LOW,
-    #[doc = "Pin input is high"]
+    #[doc = "1: Pin input is high"]
     HIGH,
 }
-impl PIN21R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PIN21R::LOW => false,
-            PIN21R::HIGH => true,
+impl From<PIN21_A> for bool {
+    #[inline(always)]
+    fn from(variant: PIN21_A) -> Self {
+        match variant {
+            PIN21_A::LOW => false,
+            PIN21_A::HIGH => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PIN21R {
-        match value {
-            false => PIN21R::LOW,
-            true => PIN21R::HIGH,
+}
+#[doc = "Reader of field `PIN21`"]
+pub type PIN21_R = crate::R<bool, PIN21_A>;
+impl PIN21_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PIN21_A {
+        match self.bits {
+            false => PIN21_A::LOW,
+            true => PIN21_A::HIGH,
         }
     }
     #[doc = "Checks if the value of the field is `LOW`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == PIN21R::LOW
+        *self == PIN21_A::LOW
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == PIN21R::HIGH
+        *self == PIN21_A::HIGH
     }
 }
-#[doc = "Possible values of the field `PIN22`"]
+#[doc = "Pin 22\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIN22R {
-    #[doc = "Pin input is low"]
+pub enum PIN22_A {
+    #[doc = "0: Pin input is low"]
     LOW,
-    #[doc = "Pin input is high"]
+    #[doc = "1: Pin input is high"]
     HIGH,
 }
-impl PIN22R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PIN22R::LOW => false,
-            PIN22R::HIGH => true,
+impl From<PIN22_A> for bool {
+    #[inline(always)]
+    fn from(variant: PIN22_A) -> Self {
+        match variant {
+            PIN22_A::LOW => false,
+            PIN22_A::HIGH => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PIN22R {
-        match value {
-            false => PIN22R::LOW,
-            true => PIN22R::HIGH,
+}
+#[doc = "Reader of field `PIN22`"]
+pub type PIN22_R = crate::R<bool, PIN22_A>;
+impl PIN22_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PIN22_A {
+        match self.bits {
+            false => PIN22_A::LOW,
+            true => PIN22_A::HIGH,
         }
     }
     #[doc = "Checks if the value of the field is `LOW`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == PIN22R::LOW
+        *self == PIN22_A::LOW
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == PIN22R::HIGH
+        *self == PIN22_A::HIGH
     }
 }
-#[doc = "Possible values of the field `PIN23`"]
+#[doc = "Pin 23\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIN23R {
-    #[doc = "Pin input is low"]
+pub enum PIN23_A {
+    #[doc = "0: Pin input is low"]
     LOW,
-    #[doc = "Pin input is high"]
+    #[doc = "1: Pin input is high"]
     HIGH,
 }
-impl PIN23R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PIN23R::LOW => false,
-            PIN23R::HIGH => true,
+impl From<PIN23_A> for bool {
+    #[inline(always)]
+    fn from(variant: PIN23_A) -> Self {
+        match variant {
+            PIN23_A::LOW => false,
+            PIN23_A::HIGH => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PIN23R {
-        match value {
-            false => PIN23R::LOW,
-            true => PIN23R::HIGH,
+}
+#[doc = "Reader of field `PIN23`"]
+pub type PIN23_R = crate::R<bool, PIN23_A>;
+impl PIN23_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PIN23_A {
+        match self.bits {
+            false => PIN23_A::LOW,
+            true => PIN23_A::HIGH,
         }
     }
     #[doc = "Checks if the value of the field is `LOW`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == PIN23R::LOW
+        *self == PIN23_A::LOW
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == PIN23R::HIGH
+        *self == PIN23_A::HIGH
     }
 }
-#[doc = "Possible values of the field `PIN24`"]
+#[doc = "Pin 24\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIN24R {
-    #[doc = "Pin input is low"]
+pub enum PIN24_A {
+    #[doc = "0: Pin input is low"]
     LOW,
-    #[doc = "Pin input is high"]
+    #[doc = "1: Pin input is high"]
     HIGH,
 }
-impl PIN24R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PIN24R::LOW => false,
-            PIN24R::HIGH => true,
+impl From<PIN24_A> for bool {
+    #[inline(always)]
+    fn from(variant: PIN24_A) -> Self {
+        match variant {
+            PIN24_A::LOW => false,
+            PIN24_A::HIGH => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PIN24R {
-        match value {
-            false => PIN24R::LOW,
-            true => PIN24R::HIGH,
+}
+#[doc = "Reader of field `PIN24`"]
+pub type PIN24_R = crate::R<bool, PIN24_A>;
+impl PIN24_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PIN24_A {
+        match self.bits {
+            false => PIN24_A::LOW,
+            true => PIN24_A::HIGH,
         }
     }
     #[doc = "Checks if the value of the field is `LOW`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == PIN24R::LOW
+        *self == PIN24_A::LOW
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == PIN24R::HIGH
+        *self == PIN24_A::HIGH
     }
 }
-#[doc = "Possible values of the field `PIN25`"]
+#[doc = "Pin 25\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIN25R {
-    #[doc = "Pin input is low"]
+pub enum PIN25_A {
+    #[doc = "0: Pin input is low"]
     LOW,
-    #[doc = "Pin input is high"]
+    #[doc = "1: Pin input is high"]
     HIGH,
 }
-impl PIN25R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PIN25R::LOW => false,
-            PIN25R::HIGH => true,
+impl From<PIN25_A> for bool {
+    #[inline(always)]
+    fn from(variant: PIN25_A) -> Self {
+        match variant {
+            PIN25_A::LOW => false,
+            PIN25_A::HIGH => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PIN25R {
-        match value {
-            false => PIN25R::LOW,
-            true => PIN25R::HIGH,
+}
+#[doc = "Reader of field `PIN25`"]
+pub type PIN25_R = crate::R<bool, PIN25_A>;
+impl PIN25_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PIN25_A {
+        match self.bits {
+            false => PIN25_A::LOW,
+            true => PIN25_A::HIGH,
         }
     }
     #[doc = "Checks if the value of the field is `LOW`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == PIN25R::LOW
+        *self == PIN25_A::LOW
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == PIN25R::HIGH
+        *self == PIN25_A::HIGH
     }
 }
-#[doc = "Possible values of the field `PIN26`"]
+#[doc = "Pin 26\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIN26R {
-    #[doc = "Pin input is low"]
+pub enum PIN26_A {
+    #[doc = "0: Pin input is low"]
     LOW,
-    #[doc = "Pin input is high"]
+    #[doc = "1: Pin input is high"]
     HIGH,
 }
-impl PIN26R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PIN26R::LOW => false,
-            PIN26R::HIGH => true,
+impl From<PIN26_A> for bool {
+    #[inline(always)]
+    fn from(variant: PIN26_A) -> Self {
+        match variant {
+            PIN26_A::LOW => false,
+            PIN26_A::HIGH => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PIN26R {
-        match value {
-            false => PIN26R::LOW,
-            true => PIN26R::HIGH,
+}
+#[doc = "Reader of field `PIN26`"]
+pub type PIN26_R = crate::R<bool, PIN26_A>;
+impl PIN26_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PIN26_A {
+        match self.bits {
+            false => PIN26_A::LOW,
+            true => PIN26_A::HIGH,
         }
     }
     #[doc = "Checks if the value of the field is `LOW`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == PIN26R::LOW
+        *self == PIN26_A::LOW
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == PIN26R::HIGH
+        *self == PIN26_A::HIGH
     }
 }
-#[doc = "Possible values of the field `PIN27`"]
+#[doc = "Pin 27\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIN27R {
-    #[doc = "Pin input is low"]
+pub enum PIN27_A {
+    #[doc = "0: Pin input is low"]
     LOW,
-    #[doc = "Pin input is high"]
+    #[doc = "1: Pin input is high"]
     HIGH,
 }
-impl PIN27R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PIN27R::LOW => false,
-            PIN27R::HIGH => true,
+impl From<PIN27_A> for bool {
+    #[inline(always)]
+    fn from(variant: PIN27_A) -> Self {
+        match variant {
+            PIN27_A::LOW => false,
+            PIN27_A::HIGH => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PIN27R {
-        match value {
-            false => PIN27R::LOW,
-            true => PIN27R::HIGH,
+}
+#[doc = "Reader of field `PIN27`"]
+pub type PIN27_R = crate::R<bool, PIN27_A>;
+impl PIN27_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PIN27_A {
+        match self.bits {
+            false => PIN27_A::LOW,
+            true => PIN27_A::HIGH,
         }
     }
     #[doc = "Checks if the value of the field is `LOW`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == PIN27R::LOW
+        *self == PIN27_A::LOW
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == PIN27R::HIGH
+        *self == PIN27_A::HIGH
     }
 }
-#[doc = "Possible values of the field `PIN28`"]
+#[doc = "Pin 28\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIN28R {
-    #[doc = "Pin input is low"]
+pub enum PIN28_A {
+    #[doc = "0: Pin input is low"]
     LOW,
-    #[doc = "Pin input is high"]
+    #[doc = "1: Pin input is high"]
     HIGH,
 }
-impl PIN28R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PIN28R::LOW => false,
-            PIN28R::HIGH => true,
+impl From<PIN28_A> for bool {
+    #[inline(always)]
+    fn from(variant: PIN28_A) -> Self {
+        match variant {
+            PIN28_A::LOW => false,
+            PIN28_A::HIGH => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PIN28R {
-        match value {
-            false => PIN28R::LOW,
-            true => PIN28R::HIGH,
+}
+#[doc = "Reader of field `PIN28`"]
+pub type PIN28_R = crate::R<bool, PIN28_A>;
+impl PIN28_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PIN28_A {
+        match self.bits {
+            false => PIN28_A::LOW,
+            true => PIN28_A::HIGH,
         }
     }
     #[doc = "Checks if the value of the field is `LOW`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == PIN28R::LOW
+        *self == PIN28_A::LOW
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == PIN28R::HIGH
+        *self == PIN28_A::HIGH
     }
 }
-#[doc = "Possible values of the field `PIN29`"]
+#[doc = "Pin 29\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIN29R {
-    #[doc = "Pin input is low"]
+pub enum PIN29_A {
+    #[doc = "0: Pin input is low"]
     LOW,
-    #[doc = "Pin input is high"]
+    #[doc = "1: Pin input is high"]
     HIGH,
 }
-impl PIN29R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PIN29R::LOW => false,
-            PIN29R::HIGH => true,
+impl From<PIN29_A> for bool {
+    #[inline(always)]
+    fn from(variant: PIN29_A) -> Self {
+        match variant {
+            PIN29_A::LOW => false,
+            PIN29_A::HIGH => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PIN29R {
-        match value {
-            false => PIN29R::LOW,
-            true => PIN29R::HIGH,
+}
+#[doc = "Reader of field `PIN29`"]
+pub type PIN29_R = crate::R<bool, PIN29_A>;
+impl PIN29_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PIN29_A {
+        match self.bits {
+            false => PIN29_A::LOW,
+            true => PIN29_A::HIGH,
         }
     }
     #[doc = "Checks if the value of the field is `LOW`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == PIN29R::LOW
+        *self == PIN29_A::LOW
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == PIN29R::HIGH
+        *self == PIN29_A::HIGH
     }
 }
-#[doc = "Possible values of the field `PIN30`"]
+#[doc = "Pin 30\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIN30R {
-    #[doc = "Pin input is low"]
+pub enum PIN30_A {
+    #[doc = "0: Pin input is low"]
     LOW,
-    #[doc = "Pin input is high"]
+    #[doc = "1: Pin input is high"]
     HIGH,
 }
-impl PIN30R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PIN30R::LOW => false,
-            PIN30R::HIGH => true,
+impl From<PIN30_A> for bool {
+    #[inline(always)]
+    fn from(variant: PIN30_A) -> Self {
+        match variant {
+            PIN30_A::LOW => false,
+            PIN30_A::HIGH => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PIN30R {
-        match value {
-            false => PIN30R::LOW,
-            true => PIN30R::HIGH,
+}
+#[doc = "Reader of field `PIN30`"]
+pub type PIN30_R = crate::R<bool, PIN30_A>;
+impl PIN30_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PIN30_A {
+        match self.bits {
+            false => PIN30_A::LOW,
+            true => PIN30_A::HIGH,
         }
     }
     #[doc = "Checks if the value of the field is `LOW`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == PIN30R::LOW
+        *self == PIN30_A::LOW
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == PIN30R::HIGH
+        *self == PIN30_A::HIGH
     }
 }
-#[doc = "Possible values of the field `PIN31`"]
+#[doc = "Pin 31\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PIN31R {
-    #[doc = "Pin input is low"]
+pub enum PIN31_A {
+    #[doc = "0: Pin input is low"]
     LOW,
-    #[doc = "Pin input is high"]
+    #[doc = "1: Pin input is high"]
     HIGH,
 }
-impl PIN31R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PIN31R::LOW => false,
-            PIN31R::HIGH => true,
+impl From<PIN31_A> for bool {
+    #[inline(always)]
+    fn from(variant: PIN31_A) -> Self {
+        match variant {
+            PIN31_A::LOW => false,
+            PIN31_A::HIGH => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PIN31R {
-        match value {
-            false => PIN31R::LOW,
-            true => PIN31R::HIGH,
+}
+#[doc = "Reader of field `PIN31`"]
+pub type PIN31_R = crate::R<bool, PIN31_A>;
+impl PIN31_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PIN31_A {
+        match self.bits {
+            false => PIN31_A::LOW,
+            true => PIN31_A::HIGH,
         }
     }
     #[doc = "Checks if the value of the field is `LOW`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == PIN31R::LOW
+        *self == PIN31_A::LOW
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == PIN31R::HIGH
+        *self == PIN31_A::HIGH
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Pin 0"]
-    #[inline]
-    pub fn pin0(&self) -> PIN0R {
-        PIN0R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pin0(&self) -> PIN0_R {
+        PIN0_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Pin 1"]
-    #[inline]
-    pub fn pin1(&self) -> PIN1R {
-        PIN1R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pin1(&self) -> PIN1_R {
+        PIN1_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Pin 2"]
-    #[inline]
-    pub fn pin2(&self) -> PIN2R {
-        PIN2R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pin2(&self) -> PIN2_R {
+        PIN2_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - Pin 3"]
-    #[inline]
-    pub fn pin3(&self) -> PIN3R {
-        PIN3R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pin3(&self) -> PIN3_R {
+        PIN3_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - Pin 4"]
-    #[inline]
-    pub fn pin4(&self) -> PIN4R {
-        PIN4R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pin4(&self) -> PIN4_R {
+        PIN4_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - Pin 5"]
-    #[inline]
-    pub fn pin5(&self) -> PIN5R {
-        PIN5R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pin5(&self) -> PIN5_R {
+        PIN5_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - Pin 6"]
-    #[inline]
-    pub fn pin6(&self) -> PIN6R {
-        PIN6R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pin6(&self) -> PIN6_R {
+        PIN6_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - Pin 7"]
-    #[inline]
-    pub fn pin7(&self) -> PIN7R {
-        PIN7R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pin7(&self) -> PIN7_R {
+        PIN7_R::new(((self.bits >> 7) & 0x01) != 0)
     }
     #[doc = "Bit 8 - Pin 8"]
-    #[inline]
-    pub fn pin8(&self) -> PIN8R {
-        PIN8R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pin8(&self) -> PIN8_R {
+        PIN8_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bit 9 - Pin 9"]
-    #[inline]
-    pub fn pin9(&self) -> PIN9R {
-        PIN9R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pin9(&self) -> PIN9_R {
+        PIN9_R::new(((self.bits >> 9) & 0x01) != 0)
     }
     #[doc = "Bit 10 - Pin 10"]
-    #[inline]
-    pub fn pin10(&self) -> PIN10R {
-        PIN10R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pin10(&self) -> PIN10_R {
+        PIN10_R::new(((self.bits >> 10) & 0x01) != 0)
     }
     #[doc = "Bit 11 - Pin 11"]
-    #[inline]
-    pub fn pin11(&self) -> PIN11R {
-        PIN11R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 11;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pin11(&self) -> PIN11_R {
+        PIN11_R::new(((self.bits >> 11) & 0x01) != 0)
     }
     #[doc = "Bit 12 - Pin 12"]
-    #[inline]
-    pub fn pin12(&self) -> PIN12R {
-        PIN12R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pin12(&self) -> PIN12_R {
+        PIN12_R::new(((self.bits >> 12) & 0x01) != 0)
     }
     #[doc = "Bit 13 - Pin 13"]
-    #[inline]
-    pub fn pin13(&self) -> PIN13R {
-        PIN13R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 13;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pin13(&self) -> PIN13_R {
+        PIN13_R::new(((self.bits >> 13) & 0x01) != 0)
     }
     #[doc = "Bit 14 - Pin 14"]
-    #[inline]
-    pub fn pin14(&self) -> PIN14R {
-        PIN14R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 14;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pin14(&self) -> PIN14_R {
+        PIN14_R::new(((self.bits >> 14) & 0x01) != 0)
     }
     #[doc = "Bit 15 - Pin 15"]
-    #[inline]
-    pub fn pin15(&self) -> PIN15R {
-        PIN15R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 15;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pin15(&self) -> PIN15_R {
+        PIN15_R::new(((self.bits >> 15) & 0x01) != 0)
     }
     #[doc = "Bit 16 - Pin 16"]
-    #[inline]
-    pub fn pin16(&self) -> PIN16R {
-        PIN16R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pin16(&self) -> PIN16_R {
+        PIN16_R::new(((self.bits >> 16) & 0x01) != 0)
     }
     #[doc = "Bit 17 - Pin 17"]
-    #[inline]
-    pub fn pin17(&self) -> PIN17R {
-        PIN17R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 17;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pin17(&self) -> PIN17_R {
+        PIN17_R::new(((self.bits >> 17) & 0x01) != 0)
     }
     #[doc = "Bit 18 - Pin 18"]
-    #[inline]
-    pub fn pin18(&self) -> PIN18R {
-        PIN18R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 18;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pin18(&self) -> PIN18_R {
+        PIN18_R::new(((self.bits >> 18) & 0x01) != 0)
     }
     #[doc = "Bit 19 - Pin 19"]
-    #[inline]
-    pub fn pin19(&self) -> PIN19R {
-        PIN19R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 19;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pin19(&self) -> PIN19_R {
+        PIN19_R::new(((self.bits >> 19) & 0x01) != 0)
     }
     #[doc = "Bit 20 - Pin 20"]
-    #[inline]
-    pub fn pin20(&self) -> PIN20R {
-        PIN20R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 20;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pin20(&self) -> PIN20_R {
+        PIN20_R::new(((self.bits >> 20) & 0x01) != 0)
     }
     #[doc = "Bit 21 - Pin 21"]
-    #[inline]
-    pub fn pin21(&self) -> PIN21R {
-        PIN21R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 21;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pin21(&self) -> PIN21_R {
+        PIN21_R::new(((self.bits >> 21) & 0x01) != 0)
     }
     #[doc = "Bit 22 - Pin 22"]
-    #[inline]
-    pub fn pin22(&self) -> PIN22R {
-        PIN22R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 22;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pin22(&self) -> PIN22_R {
+        PIN22_R::new(((self.bits >> 22) & 0x01) != 0)
     }
     #[doc = "Bit 23 - Pin 23"]
-    #[inline]
-    pub fn pin23(&self) -> PIN23R {
-        PIN23R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 23;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pin23(&self) -> PIN23_R {
+        PIN23_R::new(((self.bits >> 23) & 0x01) != 0)
     }
     #[doc = "Bit 24 - Pin 24"]
-    #[inline]
-    pub fn pin24(&self) -> PIN24R {
-        PIN24R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pin24(&self) -> PIN24_R {
+        PIN24_R::new(((self.bits >> 24) & 0x01) != 0)
     }
     #[doc = "Bit 25 - Pin 25"]
-    #[inline]
-    pub fn pin25(&self) -> PIN25R {
-        PIN25R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 25;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pin25(&self) -> PIN25_R {
+        PIN25_R::new(((self.bits >> 25) & 0x01) != 0)
     }
     #[doc = "Bit 26 - Pin 26"]
-    #[inline]
-    pub fn pin26(&self) -> PIN26R {
-        PIN26R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 26;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pin26(&self) -> PIN26_R {
+        PIN26_R::new(((self.bits >> 26) & 0x01) != 0)
     }
     #[doc = "Bit 27 - Pin 27"]
-    #[inline]
-    pub fn pin27(&self) -> PIN27R {
-        PIN27R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 27;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pin27(&self) -> PIN27_R {
+        PIN27_R::new(((self.bits >> 27) & 0x01) != 0)
     }
     #[doc = "Bit 28 - Pin 28"]
-    #[inline]
-    pub fn pin28(&self) -> PIN28R {
-        PIN28R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 28;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pin28(&self) -> PIN28_R {
+        PIN28_R::new(((self.bits >> 28) & 0x01) != 0)
     }
     #[doc = "Bit 29 - Pin 29"]
-    #[inline]
-    pub fn pin29(&self) -> PIN29R {
-        PIN29R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 29;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pin29(&self) -> PIN29_R {
+        PIN29_R::new(((self.bits >> 29) & 0x01) != 0)
     }
     #[doc = "Bit 30 - Pin 30"]
-    #[inline]
-    pub fn pin30(&self) -> PIN30R {
-        PIN30R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 30;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pin30(&self) -> PIN30_R {
+        PIN30_R::new(((self.bits >> 30) & 0x01) != 0)
     }
     #[doc = "Bit 31 - Pin 31"]
-    #[inline]
-    pub fn pin31(&self) -> PIN31R {
-        PIN31R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 31;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pin31(&self) -> PIN31_R {
+        PIN31_R::new(((self.bits >> 31) & 0x01) != 0)
     }
 }

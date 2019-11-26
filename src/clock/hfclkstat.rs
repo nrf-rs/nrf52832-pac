@@ -1,132 +1,92 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::HFCLKSTAT {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-}
-#[doc = "Possible values of the field `SRC`"]
+#[doc = "Reader of register HFCLKSTAT"]
+pub type R = crate::R<u32, super::HFCLKSTAT>;
+#[doc = "Source of HFCLK\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SRCR {
-    #[doc = "64 MHz internal oscillator (HFINT)"]
+pub enum SRC_A {
+    #[doc = "0: 64 MHz internal oscillator (HFINT)"]
     RC,
-    #[doc = "64 MHz crystal oscillator (HFXO)"]
+    #[doc = "1: 64 MHz crystal oscillator (HFXO)"]
     XTAL,
 }
-impl SRCR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SRCR::RC => false,
-            SRCR::XTAL => true,
+impl From<SRC_A> for bool {
+    #[inline(always)]
+    fn from(variant: SRC_A) -> Self {
+        match variant {
+            SRC_A::RC => false,
+            SRC_A::XTAL => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SRCR {
-        match value {
-            false => SRCR::RC,
-            true => SRCR::XTAL,
+}
+#[doc = "Reader of field `SRC`"]
+pub type SRC_R = crate::R<bool, SRC_A>;
+impl SRC_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SRC_A {
+        match self.bits {
+            false => SRC_A::RC,
+            true => SRC_A::XTAL,
         }
     }
     #[doc = "Checks if the value of the field is `RC`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_rc(&self) -> bool {
-        *self == SRCR::RC
+        *self == SRC_A::RC
     }
     #[doc = "Checks if the value of the field is `XTAL`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_xtal(&self) -> bool {
-        *self == SRCR::XTAL
+        *self == SRC_A::XTAL
     }
 }
-#[doc = "Possible values of the field `STATE`"]
+#[doc = "HFCLK state\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum STATER {
-    #[doc = "HFCLK not running"]
+pub enum STATE_A {
+    #[doc = "0: HFCLK not running"]
     NOTRUNNING,
-    #[doc = "HFCLK running"]
+    #[doc = "1: HFCLK running"]
     RUNNING,
 }
-impl STATER {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            STATER::NOTRUNNING => false,
-            STATER::RUNNING => true,
+impl From<STATE_A> for bool {
+    #[inline(always)]
+    fn from(variant: STATE_A) -> Self {
+        match variant {
+            STATE_A::NOTRUNNING => false,
+            STATE_A::RUNNING => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> STATER {
-        match value {
-            false => STATER::NOTRUNNING,
-            true => STATER::RUNNING,
+}
+#[doc = "Reader of field `STATE`"]
+pub type STATE_R = crate::R<bool, STATE_A>;
+impl STATE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> STATE_A {
+        match self.bits {
+            false => STATE_A::NOTRUNNING,
+            true => STATE_A::RUNNING,
         }
     }
     #[doc = "Checks if the value of the field is `NOTRUNNING`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_not_running(&self) -> bool {
-        *self == STATER::NOTRUNNING
+        *self == STATE_A::NOTRUNNING
     }
     #[doc = "Checks if the value of the field is `RUNNING`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_running(&self) -> bool {
-        *self == STATER::RUNNING
+        *self == STATE_A::RUNNING
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Source of HFCLK"]
-    #[inline]
-    pub fn src(&self) -> SRCR {
-        SRCR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn src(&self) -> SRC_R {
+        SRC_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 16 - HFCLK state"]
-    #[inline]
-    pub fn state(&self) -> STATER {
-        STATER::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn state(&self) -> STATE_R {
+        STATE_R::new(((self.bits >> 16) & 0x01) != 0)
     }
 }

@@ -1,302 +1,192 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::MODE {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register MODE"]
+pub type R = crate::R<u32, super::MODE>;
+#[doc = "Writer for register MODE"]
+pub type W = crate::W<u32, super::MODE>;
+#[doc = "Register MODE `reset()`'s with value 0"]
+impl crate::ResetValue for super::MODE {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `OPERATION`"]
+#[doc = "Mono or stereo operation\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum OPERATIONR {
-    #[doc = "Sample and store one pair (Left + Right) of 16bit samples per RAM word R=\\[31:16\\]; L=\\[15:0\\]"]
+pub enum OPERATION_A {
+    #[doc = "0: Sample and store one pair (Left + Right) of 16bit samples per RAM word R=\\[31:16\\]; L=\\[15:0\\]"]
     STEREO,
-    #[doc = "Sample and store two successive Left samples (16 bit each) per RAM word L1=\\[31:16\\]; L0=\\[15:0\\]"]
+    #[doc = "1: Sample and store two successive Left samples (16 bit each) per RAM word L1=\\[31:16\\]; L0=\\[15:0\\]"]
     MONO,
 }
-impl OPERATIONR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            OPERATIONR::STEREO => false,
-            OPERATIONR::MONO => true,
+impl From<OPERATION_A> for bool {
+    #[inline(always)]
+    fn from(variant: OPERATION_A) -> Self {
+        match variant {
+            OPERATION_A::STEREO => false,
+            OPERATION_A::MONO => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> OPERATIONR {
-        match value {
-            false => OPERATIONR::STEREO,
-            true => OPERATIONR::MONO,
+}
+#[doc = "Reader of field `OPERATION`"]
+pub type OPERATION_R = crate::R<bool, OPERATION_A>;
+impl OPERATION_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> OPERATION_A {
+        match self.bits {
+            false => OPERATION_A::STEREO,
+            true => OPERATION_A::MONO,
         }
     }
     #[doc = "Checks if the value of the field is `STEREO`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_stereo(&self) -> bool {
-        *self == OPERATIONR::STEREO
+        *self == OPERATION_A::STEREO
     }
     #[doc = "Checks if the value of the field is `MONO`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_mono(&self) -> bool {
-        *self == OPERATIONR::MONO
+        *self == OPERATION_A::MONO
     }
 }
-#[doc = "Possible values of the field `EDGE`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EDGER {
-    #[doc = "Left (or mono) is sampled on falling edge of PDM_CLK"]
-    LEFTFALLING,
-    #[doc = "Left (or mono) is sampled on rising edge of PDM_CLK"]
-    LEFTRISING,
-}
-impl EDGER {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            EDGER::LEFTFALLING => false,
-            EDGER::LEFTRISING => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> EDGER {
-        match value {
-            false => EDGER::LEFTFALLING,
-            true => EDGER::LEFTRISING,
-        }
-    }
-    #[doc = "Checks if the value of the field is `LEFTFALLING`"]
-    #[inline]
-    pub fn is_left_falling(&self) -> bool {
-        *self == EDGER::LEFTFALLING
-    }
-    #[doc = "Checks if the value of the field is `LEFTRISING`"]
-    #[inline]
-    pub fn is_left_rising(&self) -> bool {
-        *self == EDGER::LEFTRISING
-    }
-}
-#[doc = "Values that can be written to the field `OPERATION`"]
-pub enum OPERATIONW {
-    #[doc = "Sample and store one pair (Left + Right) of 16bit samples per RAM word R=\\[31:16\\]; L=\\[15:0\\]"]
-    STEREO,
-    #[doc = "Sample and store two successive Left samples (16 bit each) per RAM word L1=\\[31:16\\]; L0=\\[15:0\\]"]
-    MONO,
-}
-impl OPERATIONW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            OPERATIONW::STEREO => false,
-            OPERATIONW::MONO => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _OPERATIONW<'a> {
+#[doc = "Write proxy for field `OPERATION`"]
+pub struct OPERATION_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _OPERATIONW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: OPERATIONW) -> &'a mut W {
+impl<'a> OPERATION_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: OPERATION_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Sample and store one pair (Left + Right) of 16bit samples per RAM word R=\\[31:16\\]; L=\\[15:0\\]"]
-    #[inline]
+    #[inline(always)]
     pub fn stereo(self) -> &'a mut W {
-        self.variant(OPERATIONW::STEREO)
+        self.variant(OPERATION_A::STEREO)
     }
     #[doc = "Sample and store two successive Left samples (16 bit each) per RAM word L1=\\[31:16\\]; L0=\\[15:0\\]"]
-    #[inline]
+    #[inline(always)]
     pub fn mono(self) -> &'a mut W {
-        self.variant(OPERATIONW::MONO)
+        self.variant(OPERATION_A::MONO)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `EDGE`"]
-pub enum EDGEW {
-    #[doc = "Left (or mono) is sampled on falling edge of PDM_CLK"]
+#[doc = "Defines on which PDM_CLK edge Left (or mono) is sampled\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum EDGE_A {
+    #[doc = "0: Left (or mono) is sampled on falling edge of PDM_CLK"]
     LEFTFALLING,
-    #[doc = "Left (or mono) is sampled on rising edge of PDM_CLK"]
+    #[doc = "1: Left (or mono) is sampled on rising edge of PDM_CLK"]
     LEFTRISING,
 }
-impl EDGEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            EDGEW::LEFTFALLING => false,
-            EDGEW::LEFTRISING => true,
+impl From<EDGE_A> for bool {
+    #[inline(always)]
+    fn from(variant: EDGE_A) -> Self {
+        match variant {
+            EDGE_A::LEFTFALLING => false,
+            EDGE_A::LEFTRISING => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _EDGEW<'a> {
+#[doc = "Reader of field `EDGE`"]
+pub type EDGE_R = crate::R<bool, EDGE_A>;
+impl EDGE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EDGE_A {
+        match self.bits {
+            false => EDGE_A::LEFTFALLING,
+            true => EDGE_A::LEFTRISING,
+        }
+    }
+    #[doc = "Checks if the value of the field is `LEFTFALLING`"]
+    #[inline(always)]
+    pub fn is_left_falling(&self) -> bool {
+        *self == EDGE_A::LEFTFALLING
+    }
+    #[doc = "Checks if the value of the field is `LEFTRISING`"]
+    #[inline(always)]
+    pub fn is_left_rising(&self) -> bool {
+        *self == EDGE_A::LEFTRISING
+    }
+}
+#[doc = "Write proxy for field `EDGE`"]
+pub struct EDGE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _EDGEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: EDGEW) -> &'a mut W {
+impl<'a> EDGE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: EDGE_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Left (or mono) is sampled on falling edge of PDM_CLK"]
-    #[inline]
+    #[inline(always)]
     pub fn left_falling(self) -> &'a mut W {
-        self.variant(EDGEW::LEFTFALLING)
+        self.variant(EDGE_A::LEFTFALLING)
     }
     #[doc = "Left (or mono) is sampled on rising edge of PDM_CLK"]
-    #[inline]
+    #[inline(always)]
     pub fn left_rising(self) -> &'a mut W {
-        self.variant(EDGEW::LEFTRISING)
+        self.variant(EDGE_A::LEFTRISING)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Mono or stereo operation"]
-    #[inline]
-    pub fn operation(&self) -> OPERATIONR {
-        OPERATIONR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn operation(&self) -> OPERATION_R {
+        OPERATION_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Defines on which PDM_CLK edge Left (or mono) is sampled"]
-    #[inline]
-    pub fn edge(&self) -> EDGER {
-        EDGER::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn edge(&self) -> EDGE_R {
+        EDGE_R::new(((self.bits >> 1) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Mono or stereo operation"]
-    #[inline]
-    pub fn operation(&mut self) -> _OPERATIONW {
-        _OPERATIONW { w: self }
+    #[inline(always)]
+    pub fn operation(&mut self) -> OPERATION_W {
+        OPERATION_W { w: self }
     }
     #[doc = "Bit 1 - Defines on which PDM_CLK edge Left (or mono) is sampled"]
-    #[inline]
-    pub fn edge(&mut self) -> _EDGEW {
-        _EDGEW { w: self }
+    #[inline(always)]
+    pub fn edge(&mut self) -> EDGE_W {
+        EDGE_W { w: self }
     }
 }

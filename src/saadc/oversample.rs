@@ -1,286 +1,192 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::OVERSAMPLE {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register OVERSAMPLE"]
+pub type R = crate::R<u32, super::OVERSAMPLE>;
+#[doc = "Writer for register OVERSAMPLE"]
+pub type W = crate::W<u32, super::OVERSAMPLE>;
+#[doc = "Register OVERSAMPLE `reset()`'s with value 0"]
+impl crate::ResetValue for super::OVERSAMPLE {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `OVERSAMPLE`"]
+#[doc = "Oversample control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum OVERSAMPLER {
-    #[doc = "Bypass oversampling"]
+pub enum OVERSAMPLE_A {
+    #[doc = "0: Bypass oversampling"]
     BYPASS,
-    #[doc = "Oversample 2x"]
+    #[doc = "1: Oversample 2x"]
     OVER2X,
-    #[doc = "Oversample 4x"]
+    #[doc = "2: Oversample 4x"]
     OVER4X,
-    #[doc = "Oversample 8x"]
+    #[doc = "3: Oversample 8x"]
     OVER8X,
-    #[doc = "Oversample 16x"]
+    #[doc = "4: Oversample 16x"]
     OVER16X,
-    #[doc = "Oversample 32x"]
+    #[doc = "5: Oversample 32x"]
     OVER32X,
-    #[doc = "Oversample 64x"]
+    #[doc = "6: Oversample 64x"]
     OVER64X,
-    #[doc = "Oversample 128x"]
+    #[doc = "7: Oversample 128x"]
     OVER128X,
-    #[doc = "Oversample 256x"]
+    #[doc = "8: Oversample 256x"]
     OVER256X,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl OVERSAMPLER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            OVERSAMPLER::BYPASS => 0,
-            OVERSAMPLER::OVER2X => 1,
-            OVERSAMPLER::OVER4X => 2,
-            OVERSAMPLER::OVER8X => 3,
-            OVERSAMPLER::OVER16X => 4,
-            OVERSAMPLER::OVER32X => 5,
-            OVERSAMPLER::OVER64X => 6,
-            OVERSAMPLER::OVER128X => 7,
-            OVERSAMPLER::OVER256X => 8,
-            OVERSAMPLER::_Reserved(bits) => bits,
+impl From<OVERSAMPLE_A> for u8 {
+    #[inline(always)]
+    fn from(variant: OVERSAMPLE_A) -> Self {
+        match variant {
+            OVERSAMPLE_A::BYPASS => 0,
+            OVERSAMPLE_A::OVER2X => 1,
+            OVERSAMPLE_A::OVER4X => 2,
+            OVERSAMPLE_A::OVER8X => 3,
+            OVERSAMPLE_A::OVER16X => 4,
+            OVERSAMPLE_A::OVER32X => 5,
+            OVERSAMPLE_A::OVER64X => 6,
+            OVERSAMPLE_A::OVER128X => 7,
+            OVERSAMPLE_A::OVER256X => 8,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> OVERSAMPLER {
-        match value {
-            0 => OVERSAMPLER::BYPASS,
-            1 => OVERSAMPLER::OVER2X,
-            2 => OVERSAMPLER::OVER4X,
-            3 => OVERSAMPLER::OVER8X,
-            4 => OVERSAMPLER::OVER16X,
-            5 => OVERSAMPLER::OVER32X,
-            6 => OVERSAMPLER::OVER64X,
-            7 => OVERSAMPLER::OVER128X,
-            8 => OVERSAMPLER::OVER256X,
-            i => OVERSAMPLER::_Reserved(i),
+}
+#[doc = "Reader of field `OVERSAMPLE`"]
+pub type OVERSAMPLE_R = crate::R<u8, OVERSAMPLE_A>;
+impl OVERSAMPLE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, OVERSAMPLE_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(OVERSAMPLE_A::BYPASS),
+            1 => Val(OVERSAMPLE_A::OVER2X),
+            2 => Val(OVERSAMPLE_A::OVER4X),
+            3 => Val(OVERSAMPLE_A::OVER8X),
+            4 => Val(OVERSAMPLE_A::OVER16X),
+            5 => Val(OVERSAMPLE_A::OVER32X),
+            6 => Val(OVERSAMPLE_A::OVER64X),
+            7 => Val(OVERSAMPLE_A::OVER128X),
+            8 => Val(OVERSAMPLE_A::OVER256X),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `BYPASS`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_bypass(&self) -> bool {
-        *self == OVERSAMPLER::BYPASS
+        *self == OVERSAMPLE_A::BYPASS
     }
     #[doc = "Checks if the value of the field is `OVER2X`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_over2x(&self) -> bool {
-        *self == OVERSAMPLER::OVER2X
+        *self == OVERSAMPLE_A::OVER2X
     }
     #[doc = "Checks if the value of the field is `OVER4X`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_over4x(&self) -> bool {
-        *self == OVERSAMPLER::OVER4X
+        *self == OVERSAMPLE_A::OVER4X
     }
     #[doc = "Checks if the value of the field is `OVER8X`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_over8x(&self) -> bool {
-        *self == OVERSAMPLER::OVER8X
+        *self == OVERSAMPLE_A::OVER8X
     }
     #[doc = "Checks if the value of the field is `OVER16X`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_over16x(&self) -> bool {
-        *self == OVERSAMPLER::OVER16X
+        *self == OVERSAMPLE_A::OVER16X
     }
     #[doc = "Checks if the value of the field is `OVER32X`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_over32x(&self) -> bool {
-        *self == OVERSAMPLER::OVER32X
+        *self == OVERSAMPLE_A::OVER32X
     }
     #[doc = "Checks if the value of the field is `OVER64X`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_over64x(&self) -> bool {
-        *self == OVERSAMPLER::OVER64X
+        *self == OVERSAMPLE_A::OVER64X
     }
     #[doc = "Checks if the value of the field is `OVER128X`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_over128x(&self) -> bool {
-        *self == OVERSAMPLER::OVER128X
+        *self == OVERSAMPLE_A::OVER128X
     }
     #[doc = "Checks if the value of the field is `OVER256X`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_over256x(&self) -> bool {
-        *self == OVERSAMPLER::OVER256X
+        *self == OVERSAMPLE_A::OVER256X
     }
 }
-#[doc = "Values that can be written to the field `OVERSAMPLE`"]
-pub enum OVERSAMPLEW {
-    #[doc = "Bypass oversampling"]
-    BYPASS,
-    #[doc = "Oversample 2x"]
-    OVER2X,
-    #[doc = "Oversample 4x"]
-    OVER4X,
-    #[doc = "Oversample 8x"]
-    OVER8X,
-    #[doc = "Oversample 16x"]
-    OVER16X,
-    #[doc = "Oversample 32x"]
-    OVER32X,
-    #[doc = "Oversample 64x"]
-    OVER64X,
-    #[doc = "Oversample 128x"]
-    OVER128X,
-    #[doc = "Oversample 256x"]
-    OVER256X,
-}
-impl OVERSAMPLEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            OVERSAMPLEW::BYPASS => 0,
-            OVERSAMPLEW::OVER2X => 1,
-            OVERSAMPLEW::OVER4X => 2,
-            OVERSAMPLEW::OVER8X => 3,
-            OVERSAMPLEW::OVER16X => 4,
-            OVERSAMPLEW::OVER32X => 5,
-            OVERSAMPLEW::OVER64X => 6,
-            OVERSAMPLEW::OVER128X => 7,
-            OVERSAMPLEW::OVER256X => 8,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _OVERSAMPLEW<'a> {
+#[doc = "Write proxy for field `OVERSAMPLE`"]
+pub struct OVERSAMPLE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _OVERSAMPLEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: OVERSAMPLEW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+impl<'a> OVERSAMPLE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: OVERSAMPLE_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Bypass oversampling"]
-    #[inline]
+    #[inline(always)]
     pub fn bypass(self) -> &'a mut W {
-        self.variant(OVERSAMPLEW::BYPASS)
+        self.variant(OVERSAMPLE_A::BYPASS)
     }
     #[doc = "Oversample 2x"]
-    #[inline]
+    #[inline(always)]
     pub fn over2x(self) -> &'a mut W {
-        self.variant(OVERSAMPLEW::OVER2X)
+        self.variant(OVERSAMPLE_A::OVER2X)
     }
     #[doc = "Oversample 4x"]
-    #[inline]
+    #[inline(always)]
     pub fn over4x(self) -> &'a mut W {
-        self.variant(OVERSAMPLEW::OVER4X)
+        self.variant(OVERSAMPLE_A::OVER4X)
     }
     #[doc = "Oversample 8x"]
-    #[inline]
+    #[inline(always)]
     pub fn over8x(self) -> &'a mut W {
-        self.variant(OVERSAMPLEW::OVER8X)
+        self.variant(OVERSAMPLE_A::OVER8X)
     }
     #[doc = "Oversample 16x"]
-    #[inline]
+    #[inline(always)]
     pub fn over16x(self) -> &'a mut W {
-        self.variant(OVERSAMPLEW::OVER16X)
+        self.variant(OVERSAMPLE_A::OVER16X)
     }
     #[doc = "Oversample 32x"]
-    #[inline]
+    #[inline(always)]
     pub fn over32x(self) -> &'a mut W {
-        self.variant(OVERSAMPLEW::OVER32X)
+        self.variant(OVERSAMPLE_A::OVER32X)
     }
     #[doc = "Oversample 64x"]
-    #[inline]
+    #[inline(always)]
     pub fn over64x(self) -> &'a mut W {
-        self.variant(OVERSAMPLEW::OVER64X)
+        self.variant(OVERSAMPLE_A::OVER64X)
     }
     #[doc = "Oversample 128x"]
-    #[inline]
+    #[inline(always)]
     pub fn over128x(self) -> &'a mut W {
-        self.variant(OVERSAMPLEW::OVER128X)
+        self.variant(OVERSAMPLE_A::OVER128X)
     }
     #[doc = "Oversample 256x"]
-    #[inline]
+    #[inline(always)]
     pub fn over256x(self) -> &'a mut W {
-        self.variant(OVERSAMPLEW::OVER256X)
+        self.variant(OVERSAMPLE_A::OVER256X)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x0f) | ((value as u32) & 0x0f);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:3 - Oversample control"]
-    #[inline]
-    pub fn oversample(&self) -> OVERSAMPLER {
-        OVERSAMPLER::_from({
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn oversample(&self) -> OVERSAMPLE_R {
+        OVERSAMPLE_R::new((self.bits & 0x0f) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:3 - Oversample control"]
-    #[inline]
-    pub fn oversample(&mut self) -> _OVERSAMPLEW {
-        _OVERSAMPLEW { w: self }
+    #[inline(always)]
+    pub fn oversample(&mut self) -> OVERSAMPLE_W {
+        OVERSAMPLE_W { w: self }
     }
 }

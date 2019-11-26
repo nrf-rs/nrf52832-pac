@@ -1,659 +1,456 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::SHORTS {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register SHORTS"]
+pub type R = crate::R<u32, super::SHORTS>;
+#[doc = "Writer for register SHORTS"]
+pub type W = crate::W<u32, super::SHORTS>;
+#[doc = "Register SHORTS `reset()`'s with value 0"]
+impl crate::ResetValue for super::SHORTS {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `READY_SAMPLE`"]
+#[doc = "Shortcut between READY event and SAMPLE task\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum READY_SAMPLER {
-    #[doc = "Disable shortcut"]
+pub enum READY_SAMPLE_A {
+    #[doc = "0: Disable shortcut"]
     DISABLED,
-    #[doc = "Enable shortcut"]
+    #[doc = "1: Enable shortcut"]
     ENABLED,
 }
-impl READY_SAMPLER {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            READY_SAMPLER::DISABLED => false,
-            READY_SAMPLER::ENABLED => true,
+impl From<READY_SAMPLE_A> for bool {
+    #[inline(always)]
+    fn from(variant: READY_SAMPLE_A) -> Self {
+        match variant {
+            READY_SAMPLE_A::DISABLED => false,
+            READY_SAMPLE_A::ENABLED => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> READY_SAMPLER {
-        match value {
-            false => READY_SAMPLER::DISABLED,
-            true => READY_SAMPLER::ENABLED,
+}
+#[doc = "Reader of field `READY_SAMPLE`"]
+pub type READY_SAMPLE_R = crate::R<bool, READY_SAMPLE_A>;
+impl READY_SAMPLE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> READY_SAMPLE_A {
+        match self.bits {
+            false => READY_SAMPLE_A::DISABLED,
+            true => READY_SAMPLE_A::ENABLED,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == READY_SAMPLER::DISABLED
+        *self == READY_SAMPLE_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == READY_SAMPLER::ENABLED
+        *self == READY_SAMPLE_A::ENABLED
     }
 }
-#[doc = "Possible values of the field `READY_STOP`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum READY_STOPR {
-    #[doc = "Disable shortcut"]
-    DISABLED,
-    #[doc = "Enable shortcut"]
-    ENABLED,
-}
-impl READY_STOPR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            READY_STOPR::DISABLED => false,
-            READY_STOPR::ENABLED => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> READY_STOPR {
-        match value {
-            false => READY_STOPR::DISABLED,
-            true => READY_STOPR::ENABLED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
-    pub fn is_disabled(&self) -> bool {
-        *self == READY_STOPR::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
-    pub fn is_enabled(&self) -> bool {
-        *self == READY_STOPR::ENABLED
-    }
-}
-#[doc = "Possible values of the field `DOWN_STOP`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DOWN_STOPR {
-    #[doc = "Disable shortcut"]
-    DISABLED,
-    #[doc = "Enable shortcut"]
-    ENABLED,
-}
-impl DOWN_STOPR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            DOWN_STOPR::DISABLED => false,
-            DOWN_STOPR::ENABLED => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> DOWN_STOPR {
-        match value {
-            false => DOWN_STOPR::DISABLED,
-            true => DOWN_STOPR::ENABLED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
-    pub fn is_disabled(&self) -> bool {
-        *self == DOWN_STOPR::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
-    pub fn is_enabled(&self) -> bool {
-        *self == DOWN_STOPR::ENABLED
-    }
-}
-#[doc = "Possible values of the field `UP_STOP`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum UP_STOPR {
-    #[doc = "Disable shortcut"]
-    DISABLED,
-    #[doc = "Enable shortcut"]
-    ENABLED,
-}
-impl UP_STOPR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            UP_STOPR::DISABLED => false,
-            UP_STOPR::ENABLED => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> UP_STOPR {
-        match value {
-            false => UP_STOPR::DISABLED,
-            true => UP_STOPR::ENABLED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
-    pub fn is_disabled(&self) -> bool {
-        *self == UP_STOPR::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
-    pub fn is_enabled(&self) -> bool {
-        *self == UP_STOPR::ENABLED
-    }
-}
-#[doc = "Possible values of the field `CROSS_STOP`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CROSS_STOPR {
-    #[doc = "Disable shortcut"]
-    DISABLED,
-    #[doc = "Enable shortcut"]
-    ENABLED,
-}
-impl CROSS_STOPR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CROSS_STOPR::DISABLED => false,
-            CROSS_STOPR::ENABLED => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CROSS_STOPR {
-        match value {
-            false => CROSS_STOPR::DISABLED,
-            true => CROSS_STOPR::ENABLED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
-    pub fn is_disabled(&self) -> bool {
-        *self == CROSS_STOPR::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
-    pub fn is_enabled(&self) -> bool {
-        *self == CROSS_STOPR::ENABLED
-    }
-}
-#[doc = "Values that can be written to the field `READY_SAMPLE`"]
-pub enum READY_SAMPLEW {
-    #[doc = "Disable shortcut"]
-    DISABLED,
-    #[doc = "Enable shortcut"]
-    ENABLED,
-}
-impl READY_SAMPLEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            READY_SAMPLEW::DISABLED => false,
-            READY_SAMPLEW::ENABLED => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _READY_SAMPLEW<'a> {
+#[doc = "Write proxy for field `READY_SAMPLE`"]
+pub struct READY_SAMPLE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _READY_SAMPLEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: READY_SAMPLEW) -> &'a mut W {
+impl<'a> READY_SAMPLE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: READY_SAMPLE_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable shortcut"]
-    #[inline]
+    #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(READY_SAMPLEW::DISABLED)
+        self.variant(READY_SAMPLE_A::DISABLED)
     }
     #[doc = "Enable shortcut"]
-    #[inline]
+    #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(READY_SAMPLEW::ENABLED)
+        self.variant(READY_SAMPLE_A::ENABLED)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `READY_STOP`"]
-pub enum READY_STOPW {
-    #[doc = "Disable shortcut"]
+#[doc = "Shortcut between READY event and STOP task\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum READY_STOP_A {
+    #[doc = "0: Disable shortcut"]
     DISABLED,
-    #[doc = "Enable shortcut"]
+    #[doc = "1: Enable shortcut"]
     ENABLED,
 }
-impl READY_STOPW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            READY_STOPW::DISABLED => false,
-            READY_STOPW::ENABLED => true,
+impl From<READY_STOP_A> for bool {
+    #[inline(always)]
+    fn from(variant: READY_STOP_A) -> Self {
+        match variant {
+            READY_STOP_A::DISABLED => false,
+            READY_STOP_A::ENABLED => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _READY_STOPW<'a> {
+#[doc = "Reader of field `READY_STOP`"]
+pub type READY_STOP_R = crate::R<bool, READY_STOP_A>;
+impl READY_STOP_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> READY_STOP_A {
+        match self.bits {
+            false => READY_STOP_A::DISABLED,
+            true => READY_STOP_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == READY_STOP_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == READY_STOP_A::ENABLED
+    }
+}
+#[doc = "Write proxy for field `READY_STOP`"]
+pub struct READY_STOP_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _READY_STOPW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: READY_STOPW) -> &'a mut W {
+impl<'a> READY_STOP_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: READY_STOP_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable shortcut"]
-    #[inline]
+    #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(READY_STOPW::DISABLED)
+        self.variant(READY_STOP_A::DISABLED)
     }
     #[doc = "Enable shortcut"]
-    #[inline]
+    #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(READY_STOPW::ENABLED)
+        self.variant(READY_STOP_A::ENABLED)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `DOWN_STOP`"]
-pub enum DOWN_STOPW {
-    #[doc = "Disable shortcut"]
+#[doc = "Shortcut between DOWN event and STOP task\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum DOWN_STOP_A {
+    #[doc = "0: Disable shortcut"]
     DISABLED,
-    #[doc = "Enable shortcut"]
+    #[doc = "1: Enable shortcut"]
     ENABLED,
 }
-impl DOWN_STOPW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            DOWN_STOPW::DISABLED => false,
-            DOWN_STOPW::ENABLED => true,
+impl From<DOWN_STOP_A> for bool {
+    #[inline(always)]
+    fn from(variant: DOWN_STOP_A) -> Self {
+        match variant {
+            DOWN_STOP_A::DISABLED => false,
+            DOWN_STOP_A::ENABLED => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _DOWN_STOPW<'a> {
+#[doc = "Reader of field `DOWN_STOP`"]
+pub type DOWN_STOP_R = crate::R<bool, DOWN_STOP_A>;
+impl DOWN_STOP_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DOWN_STOP_A {
+        match self.bits {
+            false => DOWN_STOP_A::DISABLED,
+            true => DOWN_STOP_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == DOWN_STOP_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == DOWN_STOP_A::ENABLED
+    }
+}
+#[doc = "Write proxy for field `DOWN_STOP`"]
+pub struct DOWN_STOP_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DOWN_STOPW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: DOWN_STOPW) -> &'a mut W {
+impl<'a> DOWN_STOP_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: DOWN_STOP_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable shortcut"]
-    #[inline]
+    #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(DOWN_STOPW::DISABLED)
+        self.variant(DOWN_STOP_A::DISABLED)
     }
     #[doc = "Enable shortcut"]
-    #[inline]
+    #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(DOWN_STOPW::ENABLED)
+        self.variant(DOWN_STOP_A::ENABLED)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `UP_STOP`"]
-pub enum UP_STOPW {
-    #[doc = "Disable shortcut"]
+#[doc = "Shortcut between UP event and STOP task\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum UP_STOP_A {
+    #[doc = "0: Disable shortcut"]
     DISABLED,
-    #[doc = "Enable shortcut"]
+    #[doc = "1: Enable shortcut"]
     ENABLED,
 }
-impl UP_STOPW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            UP_STOPW::DISABLED => false,
-            UP_STOPW::ENABLED => true,
+impl From<UP_STOP_A> for bool {
+    #[inline(always)]
+    fn from(variant: UP_STOP_A) -> Self {
+        match variant {
+            UP_STOP_A::DISABLED => false,
+            UP_STOP_A::ENABLED => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _UP_STOPW<'a> {
+#[doc = "Reader of field `UP_STOP`"]
+pub type UP_STOP_R = crate::R<bool, UP_STOP_A>;
+impl UP_STOP_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> UP_STOP_A {
+        match self.bits {
+            false => UP_STOP_A::DISABLED,
+            true => UP_STOP_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == UP_STOP_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == UP_STOP_A::ENABLED
+    }
+}
+#[doc = "Write proxy for field `UP_STOP`"]
+pub struct UP_STOP_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _UP_STOPW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: UP_STOPW) -> &'a mut W {
+impl<'a> UP_STOP_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: UP_STOP_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable shortcut"]
-    #[inline]
+    #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(UP_STOPW::DISABLED)
+        self.variant(UP_STOP_A::DISABLED)
     }
     #[doc = "Enable shortcut"]
-    #[inline]
+    #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(UP_STOPW::ENABLED)
+        self.variant(UP_STOP_A::ENABLED)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `CROSS_STOP`"]
-pub enum CROSS_STOPW {
-    #[doc = "Disable shortcut"]
+#[doc = "Shortcut between CROSS event and STOP task\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CROSS_STOP_A {
+    #[doc = "0: Disable shortcut"]
     DISABLED,
-    #[doc = "Enable shortcut"]
+    #[doc = "1: Enable shortcut"]
     ENABLED,
 }
-impl CROSS_STOPW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CROSS_STOPW::DISABLED => false,
-            CROSS_STOPW::ENABLED => true,
+impl From<CROSS_STOP_A> for bool {
+    #[inline(always)]
+    fn from(variant: CROSS_STOP_A) -> Self {
+        match variant {
+            CROSS_STOP_A::DISABLED => false,
+            CROSS_STOP_A::ENABLED => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _CROSS_STOPW<'a> {
+#[doc = "Reader of field `CROSS_STOP`"]
+pub type CROSS_STOP_R = crate::R<bool, CROSS_STOP_A>;
+impl CROSS_STOP_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CROSS_STOP_A {
+        match self.bits {
+            false => CROSS_STOP_A::DISABLED,
+            true => CROSS_STOP_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == CROSS_STOP_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == CROSS_STOP_A::ENABLED
+    }
+}
+#[doc = "Write proxy for field `CROSS_STOP`"]
+pub struct CROSS_STOP_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CROSS_STOPW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CROSS_STOPW) -> &'a mut W {
+impl<'a> CROSS_STOP_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CROSS_STOP_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable shortcut"]
-    #[inline]
+    #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(CROSS_STOPW::DISABLED)
+        self.variant(CROSS_STOP_A::DISABLED)
     }
     #[doc = "Enable shortcut"]
-    #[inline]
+    #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(CROSS_STOPW::ENABLED)
+        self.variant(CROSS_STOP_A::ENABLED)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Shortcut between READY event and SAMPLE task"]
-    #[inline]
-    pub fn ready_sample(&self) -> READY_SAMPLER {
-        READY_SAMPLER::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ready_sample(&self) -> READY_SAMPLE_R {
+        READY_SAMPLE_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Shortcut between READY event and STOP task"]
-    #[inline]
-    pub fn ready_stop(&self) -> READY_STOPR {
-        READY_STOPR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ready_stop(&self) -> READY_STOP_R {
+        READY_STOP_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Shortcut between DOWN event and STOP task"]
-    #[inline]
-    pub fn down_stop(&self) -> DOWN_STOPR {
-        DOWN_STOPR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn down_stop(&self) -> DOWN_STOP_R {
+        DOWN_STOP_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - Shortcut between UP event and STOP task"]
-    #[inline]
-    pub fn up_stop(&self) -> UP_STOPR {
-        UP_STOPR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn up_stop(&self) -> UP_STOP_R {
+        UP_STOP_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - Shortcut between CROSS event and STOP task"]
-    #[inline]
-    pub fn cross_stop(&self) -> CROSS_STOPR {
-        CROSS_STOPR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn cross_stop(&self) -> CROSS_STOP_R {
+        CROSS_STOP_R::new(((self.bits >> 4) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Shortcut between READY event and SAMPLE task"]
-    #[inline]
-    pub fn ready_sample(&mut self) -> _READY_SAMPLEW {
-        _READY_SAMPLEW { w: self }
+    #[inline(always)]
+    pub fn ready_sample(&mut self) -> READY_SAMPLE_W {
+        READY_SAMPLE_W { w: self }
     }
     #[doc = "Bit 1 - Shortcut between READY event and STOP task"]
-    #[inline]
-    pub fn ready_stop(&mut self) -> _READY_STOPW {
-        _READY_STOPW { w: self }
+    #[inline(always)]
+    pub fn ready_stop(&mut self) -> READY_STOP_W {
+        READY_STOP_W { w: self }
     }
     #[doc = "Bit 2 - Shortcut between DOWN event and STOP task"]
-    #[inline]
-    pub fn down_stop(&mut self) -> _DOWN_STOPW {
-        _DOWN_STOPW { w: self }
+    #[inline(always)]
+    pub fn down_stop(&mut self) -> DOWN_STOP_W {
+        DOWN_STOP_W { w: self }
     }
     #[doc = "Bit 3 - Shortcut between UP event and STOP task"]
-    #[inline]
-    pub fn up_stop(&mut self) -> _UP_STOPW {
-        _UP_STOPW { w: self }
+    #[inline(always)]
+    pub fn up_stop(&mut self) -> UP_STOP_W {
+        UP_STOP_W { w: self }
     }
     #[doc = "Bit 4 - Shortcut between CROSS event and STOP task"]
-    #[inline]
-    pub fn cross_stop(&mut self) -> _CROSS_STOPW {
-        _CROSS_STOPW { w: self }
+    #[inline(always)]
+    pub fn cross_stop(&mut self) -> CROSS_STOP_W {
+        CROSS_STOP_W { w: self }
     }
 }

@@ -1,1840 +1,1568 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::INTENCLR {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register INTENCLR"]
+pub type R = crate::R<u32, super::INTENCLR>;
+#[doc = "Writer for register INTENCLR"]
+pub type W = crate::W<u32, super::INTENCLR>;
+#[doc = "Register INTENCLR `reset()`'s with value 0"]
+impl crate::ResetValue for super::INTENCLR {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `TRIGGERED0`"]
+#[doc = "Write '1' to Disable interrupt for TRIGGERED\\[0\\] event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TRIGGERED0R {
-    #[doc = "Read: Disabled"]
+pub enum TRIGGERED0_A {
+    #[doc = "0: Read: Disabled"]
     DISABLED,
-    #[doc = "Read: Enabled"]
+    #[doc = "1: Read: Enabled"]
     ENABLED,
 }
-impl TRIGGERED0R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            TRIGGERED0R::DISABLED => false,
-            TRIGGERED0R::ENABLED => true,
+impl From<TRIGGERED0_A> for bool {
+    #[inline(always)]
+    fn from(variant: TRIGGERED0_A) -> Self {
+        match variant {
+            TRIGGERED0_A::DISABLED => false,
+            TRIGGERED0_A::ENABLED => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> TRIGGERED0R {
-        match value {
-            false => TRIGGERED0R::DISABLED,
-            true => TRIGGERED0R::ENABLED,
+}
+#[doc = "Reader of field `TRIGGERED0`"]
+pub type TRIGGERED0_R = crate::R<bool, TRIGGERED0_A>;
+impl TRIGGERED0_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TRIGGERED0_A {
+        match self.bits {
+            false => TRIGGERED0_A::DISABLED,
+            true => TRIGGERED0_A::ENABLED,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == TRIGGERED0R::DISABLED
+        *self == TRIGGERED0_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == TRIGGERED0R::ENABLED
+        *self == TRIGGERED0_A::ENABLED
     }
 }
-#[doc = "Possible values of the field `TRIGGERED1`"]
+#[doc = "Write '1' to Disable interrupt for TRIGGERED\\[0\\] event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TRIGGERED1R {
-    #[doc = "Read: Disabled"]
-    DISABLED,
-    #[doc = "Read: Enabled"]
-    ENABLED,
-}
-impl TRIGGERED1R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            TRIGGERED1R::DISABLED => false,
-            TRIGGERED1R::ENABLED => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> TRIGGERED1R {
-        match value {
-            false => TRIGGERED1R::DISABLED,
-            true => TRIGGERED1R::ENABLED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
-    pub fn is_disabled(&self) -> bool {
-        *self == TRIGGERED1R::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
-    pub fn is_enabled(&self) -> bool {
-        *self == TRIGGERED1R::ENABLED
-    }
-}
-#[doc = "Possible values of the field `TRIGGERED2`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TRIGGERED2R {
-    #[doc = "Read: Disabled"]
-    DISABLED,
-    #[doc = "Read: Enabled"]
-    ENABLED,
-}
-impl TRIGGERED2R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            TRIGGERED2R::DISABLED => false,
-            TRIGGERED2R::ENABLED => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> TRIGGERED2R {
-        match value {
-            false => TRIGGERED2R::DISABLED,
-            true => TRIGGERED2R::ENABLED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
-    pub fn is_disabled(&self) -> bool {
-        *self == TRIGGERED2R::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
-    pub fn is_enabled(&self) -> bool {
-        *self == TRIGGERED2R::ENABLED
-    }
-}
-#[doc = "Possible values of the field `TRIGGERED3`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TRIGGERED3R {
-    #[doc = "Read: Disabled"]
-    DISABLED,
-    #[doc = "Read: Enabled"]
-    ENABLED,
-}
-impl TRIGGERED3R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            TRIGGERED3R::DISABLED => false,
-            TRIGGERED3R::ENABLED => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> TRIGGERED3R {
-        match value {
-            false => TRIGGERED3R::DISABLED,
-            true => TRIGGERED3R::ENABLED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
-    pub fn is_disabled(&self) -> bool {
-        *self == TRIGGERED3R::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
-    pub fn is_enabled(&self) -> bool {
-        *self == TRIGGERED3R::ENABLED
-    }
-}
-#[doc = "Possible values of the field `TRIGGERED4`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TRIGGERED4R {
-    #[doc = "Read: Disabled"]
-    DISABLED,
-    #[doc = "Read: Enabled"]
-    ENABLED,
-}
-impl TRIGGERED4R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            TRIGGERED4R::DISABLED => false,
-            TRIGGERED4R::ENABLED => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> TRIGGERED4R {
-        match value {
-            false => TRIGGERED4R::DISABLED,
-            true => TRIGGERED4R::ENABLED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
-    pub fn is_disabled(&self) -> bool {
-        *self == TRIGGERED4R::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
-    pub fn is_enabled(&self) -> bool {
-        *self == TRIGGERED4R::ENABLED
-    }
-}
-#[doc = "Possible values of the field `TRIGGERED5`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TRIGGERED5R {
-    #[doc = "Read: Disabled"]
-    DISABLED,
-    #[doc = "Read: Enabled"]
-    ENABLED,
-}
-impl TRIGGERED5R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            TRIGGERED5R::DISABLED => false,
-            TRIGGERED5R::ENABLED => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> TRIGGERED5R {
-        match value {
-            false => TRIGGERED5R::DISABLED,
-            true => TRIGGERED5R::ENABLED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
-    pub fn is_disabled(&self) -> bool {
-        *self == TRIGGERED5R::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
-    pub fn is_enabled(&self) -> bool {
-        *self == TRIGGERED5R::ENABLED
-    }
-}
-#[doc = "Possible values of the field `TRIGGERED6`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TRIGGERED6R {
-    #[doc = "Read: Disabled"]
-    DISABLED,
-    #[doc = "Read: Enabled"]
-    ENABLED,
-}
-impl TRIGGERED6R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            TRIGGERED6R::DISABLED => false,
-            TRIGGERED6R::ENABLED => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> TRIGGERED6R {
-        match value {
-            false => TRIGGERED6R::DISABLED,
-            true => TRIGGERED6R::ENABLED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
-    pub fn is_disabled(&self) -> bool {
-        *self == TRIGGERED6R::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
-    pub fn is_enabled(&self) -> bool {
-        *self == TRIGGERED6R::ENABLED
-    }
-}
-#[doc = "Possible values of the field `TRIGGERED7`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TRIGGERED7R {
-    #[doc = "Read: Disabled"]
-    DISABLED,
-    #[doc = "Read: Enabled"]
-    ENABLED,
-}
-impl TRIGGERED7R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            TRIGGERED7R::DISABLED => false,
-            TRIGGERED7R::ENABLED => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> TRIGGERED7R {
-        match value {
-            false => TRIGGERED7R::DISABLED,
-            true => TRIGGERED7R::ENABLED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
-    pub fn is_disabled(&self) -> bool {
-        *self == TRIGGERED7R::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
-    pub fn is_enabled(&self) -> bool {
-        *self == TRIGGERED7R::ENABLED
-    }
-}
-#[doc = "Possible values of the field `TRIGGERED8`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TRIGGERED8R {
-    #[doc = "Read: Disabled"]
-    DISABLED,
-    #[doc = "Read: Enabled"]
-    ENABLED,
-}
-impl TRIGGERED8R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            TRIGGERED8R::DISABLED => false,
-            TRIGGERED8R::ENABLED => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> TRIGGERED8R {
-        match value {
-            false => TRIGGERED8R::DISABLED,
-            true => TRIGGERED8R::ENABLED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
-    pub fn is_disabled(&self) -> bool {
-        *self == TRIGGERED8R::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
-    pub fn is_enabled(&self) -> bool {
-        *self == TRIGGERED8R::ENABLED
-    }
-}
-#[doc = "Possible values of the field `TRIGGERED9`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TRIGGERED9R {
-    #[doc = "Read: Disabled"]
-    DISABLED,
-    #[doc = "Read: Enabled"]
-    ENABLED,
-}
-impl TRIGGERED9R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            TRIGGERED9R::DISABLED => false,
-            TRIGGERED9R::ENABLED => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> TRIGGERED9R {
-        match value {
-            false => TRIGGERED9R::DISABLED,
-            true => TRIGGERED9R::ENABLED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
-    pub fn is_disabled(&self) -> bool {
-        *self == TRIGGERED9R::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
-    pub fn is_enabled(&self) -> bool {
-        *self == TRIGGERED9R::ENABLED
-    }
-}
-#[doc = "Possible values of the field `TRIGGERED10`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TRIGGERED10R {
-    #[doc = "Read: Disabled"]
-    DISABLED,
-    #[doc = "Read: Enabled"]
-    ENABLED,
-}
-impl TRIGGERED10R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            TRIGGERED10R::DISABLED => false,
-            TRIGGERED10R::ENABLED => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> TRIGGERED10R {
-        match value {
-            false => TRIGGERED10R::DISABLED,
-            true => TRIGGERED10R::ENABLED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
-    pub fn is_disabled(&self) -> bool {
-        *self == TRIGGERED10R::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
-    pub fn is_enabled(&self) -> bool {
-        *self == TRIGGERED10R::ENABLED
-    }
-}
-#[doc = "Possible values of the field `TRIGGERED11`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TRIGGERED11R {
-    #[doc = "Read: Disabled"]
-    DISABLED,
-    #[doc = "Read: Enabled"]
-    ENABLED,
-}
-impl TRIGGERED11R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            TRIGGERED11R::DISABLED => false,
-            TRIGGERED11R::ENABLED => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> TRIGGERED11R {
-        match value {
-            false => TRIGGERED11R::DISABLED,
-            true => TRIGGERED11R::ENABLED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
-    pub fn is_disabled(&self) -> bool {
-        *self == TRIGGERED11R::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
-    pub fn is_enabled(&self) -> bool {
-        *self == TRIGGERED11R::ENABLED
-    }
-}
-#[doc = "Possible values of the field `TRIGGERED12`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TRIGGERED12R {
-    #[doc = "Read: Disabled"]
-    DISABLED,
-    #[doc = "Read: Enabled"]
-    ENABLED,
-}
-impl TRIGGERED12R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            TRIGGERED12R::DISABLED => false,
-            TRIGGERED12R::ENABLED => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> TRIGGERED12R {
-        match value {
-            false => TRIGGERED12R::DISABLED,
-            true => TRIGGERED12R::ENABLED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
-    pub fn is_disabled(&self) -> bool {
-        *self == TRIGGERED12R::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
-    pub fn is_enabled(&self) -> bool {
-        *self == TRIGGERED12R::ENABLED
-    }
-}
-#[doc = "Possible values of the field `TRIGGERED13`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TRIGGERED13R {
-    #[doc = "Read: Disabled"]
-    DISABLED,
-    #[doc = "Read: Enabled"]
-    ENABLED,
-}
-impl TRIGGERED13R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            TRIGGERED13R::DISABLED => false,
-            TRIGGERED13R::ENABLED => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> TRIGGERED13R {
-        match value {
-            false => TRIGGERED13R::DISABLED,
-            true => TRIGGERED13R::ENABLED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
-    pub fn is_disabled(&self) -> bool {
-        *self == TRIGGERED13R::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
-    pub fn is_enabled(&self) -> bool {
-        *self == TRIGGERED13R::ENABLED
-    }
-}
-#[doc = "Possible values of the field `TRIGGERED14`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TRIGGERED14R {
-    #[doc = "Read: Disabled"]
-    DISABLED,
-    #[doc = "Read: Enabled"]
-    ENABLED,
-}
-impl TRIGGERED14R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            TRIGGERED14R::DISABLED => false,
-            TRIGGERED14R::ENABLED => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> TRIGGERED14R {
-        match value {
-            false => TRIGGERED14R::DISABLED,
-            true => TRIGGERED14R::ENABLED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
-    pub fn is_disabled(&self) -> bool {
-        *self == TRIGGERED14R::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
-    pub fn is_enabled(&self) -> bool {
-        *self == TRIGGERED14R::ENABLED
-    }
-}
-#[doc = "Possible values of the field `TRIGGERED15`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TRIGGERED15R {
-    #[doc = "Read: Disabled"]
-    DISABLED,
-    #[doc = "Read: Enabled"]
-    ENABLED,
-}
-impl TRIGGERED15R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            TRIGGERED15R::DISABLED => false,
-            TRIGGERED15R::ENABLED => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> TRIGGERED15R {
-        match value {
-            false => TRIGGERED15R::DISABLED,
-            true => TRIGGERED15R::ENABLED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
-    pub fn is_disabled(&self) -> bool {
-        *self == TRIGGERED15R::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
-    pub fn is_enabled(&self) -> bool {
-        *self == TRIGGERED15R::ENABLED
-    }
-}
-#[doc = "Values that can be written to the field `TRIGGERED0`"]
-pub enum TRIGGERED0W {
-    #[doc = "Disable"]
+pub enum TRIGGERED0_AW {
+    #[doc = "1: Disable"]
     CLEAR,
 }
-impl TRIGGERED0W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            TRIGGERED0W::CLEAR => true,
+impl From<TRIGGERED0_AW> for bool {
+    #[inline(always)]
+    fn from(variant: TRIGGERED0_AW) -> Self {
+        match variant {
+            TRIGGERED0_AW::CLEAR => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _TRIGGERED0W<'a> {
+#[doc = "Write proxy for field `TRIGGERED0`"]
+pub struct TRIGGERED0_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TRIGGERED0W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: TRIGGERED0W) -> &'a mut W {
+impl<'a> TRIGGERED0_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: TRIGGERED0_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable"]
-    #[inline]
+    #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(TRIGGERED0W::CLEAR)
+        self.variant(TRIGGERED0_AW::CLEAR)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `TRIGGERED1`"]
-pub enum TRIGGERED1W {
-    #[doc = "Disable"]
+#[doc = "Write '1' to Disable interrupt for TRIGGERED\\[1\\] event\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TRIGGERED1_A {
+    #[doc = "0: Read: Disabled"]
+    DISABLED,
+    #[doc = "1: Read: Enabled"]
+    ENABLED,
+}
+impl From<TRIGGERED1_A> for bool {
+    #[inline(always)]
+    fn from(variant: TRIGGERED1_A) -> Self {
+        match variant {
+            TRIGGERED1_A::DISABLED => false,
+            TRIGGERED1_A::ENABLED => true,
+        }
+    }
+}
+#[doc = "Reader of field `TRIGGERED1`"]
+pub type TRIGGERED1_R = crate::R<bool, TRIGGERED1_A>;
+impl TRIGGERED1_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TRIGGERED1_A {
+        match self.bits {
+            false => TRIGGERED1_A::DISABLED,
+            true => TRIGGERED1_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == TRIGGERED1_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == TRIGGERED1_A::ENABLED
+    }
+}
+#[doc = "Write '1' to Disable interrupt for TRIGGERED\\[1\\] event\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TRIGGERED1_AW {
+    #[doc = "1: Disable"]
     CLEAR,
 }
-impl TRIGGERED1W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            TRIGGERED1W::CLEAR => true,
+impl From<TRIGGERED1_AW> for bool {
+    #[inline(always)]
+    fn from(variant: TRIGGERED1_AW) -> Self {
+        match variant {
+            TRIGGERED1_AW::CLEAR => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _TRIGGERED1W<'a> {
+#[doc = "Write proxy for field `TRIGGERED1`"]
+pub struct TRIGGERED1_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TRIGGERED1W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: TRIGGERED1W) -> &'a mut W {
+impl<'a> TRIGGERED1_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: TRIGGERED1_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable"]
-    #[inline]
+    #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(TRIGGERED1W::CLEAR)
+        self.variant(TRIGGERED1_AW::CLEAR)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `TRIGGERED2`"]
-pub enum TRIGGERED2W {
-    #[doc = "Disable"]
+#[doc = "Write '1' to Disable interrupt for TRIGGERED\\[2\\] event\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TRIGGERED2_A {
+    #[doc = "0: Read: Disabled"]
+    DISABLED,
+    #[doc = "1: Read: Enabled"]
+    ENABLED,
+}
+impl From<TRIGGERED2_A> for bool {
+    #[inline(always)]
+    fn from(variant: TRIGGERED2_A) -> Self {
+        match variant {
+            TRIGGERED2_A::DISABLED => false,
+            TRIGGERED2_A::ENABLED => true,
+        }
+    }
+}
+#[doc = "Reader of field `TRIGGERED2`"]
+pub type TRIGGERED2_R = crate::R<bool, TRIGGERED2_A>;
+impl TRIGGERED2_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TRIGGERED2_A {
+        match self.bits {
+            false => TRIGGERED2_A::DISABLED,
+            true => TRIGGERED2_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == TRIGGERED2_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == TRIGGERED2_A::ENABLED
+    }
+}
+#[doc = "Write '1' to Disable interrupt for TRIGGERED\\[2\\] event\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TRIGGERED2_AW {
+    #[doc = "1: Disable"]
     CLEAR,
 }
-impl TRIGGERED2W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            TRIGGERED2W::CLEAR => true,
+impl From<TRIGGERED2_AW> for bool {
+    #[inline(always)]
+    fn from(variant: TRIGGERED2_AW) -> Self {
+        match variant {
+            TRIGGERED2_AW::CLEAR => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _TRIGGERED2W<'a> {
+#[doc = "Write proxy for field `TRIGGERED2`"]
+pub struct TRIGGERED2_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TRIGGERED2W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: TRIGGERED2W) -> &'a mut W {
+impl<'a> TRIGGERED2_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: TRIGGERED2_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable"]
-    #[inline]
+    #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(TRIGGERED2W::CLEAR)
+        self.variant(TRIGGERED2_AW::CLEAR)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `TRIGGERED3`"]
-pub enum TRIGGERED3W {
-    #[doc = "Disable"]
+#[doc = "Write '1' to Disable interrupt for TRIGGERED\\[3\\] event\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TRIGGERED3_A {
+    #[doc = "0: Read: Disabled"]
+    DISABLED,
+    #[doc = "1: Read: Enabled"]
+    ENABLED,
+}
+impl From<TRIGGERED3_A> for bool {
+    #[inline(always)]
+    fn from(variant: TRIGGERED3_A) -> Self {
+        match variant {
+            TRIGGERED3_A::DISABLED => false,
+            TRIGGERED3_A::ENABLED => true,
+        }
+    }
+}
+#[doc = "Reader of field `TRIGGERED3`"]
+pub type TRIGGERED3_R = crate::R<bool, TRIGGERED3_A>;
+impl TRIGGERED3_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TRIGGERED3_A {
+        match self.bits {
+            false => TRIGGERED3_A::DISABLED,
+            true => TRIGGERED3_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == TRIGGERED3_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == TRIGGERED3_A::ENABLED
+    }
+}
+#[doc = "Write '1' to Disable interrupt for TRIGGERED\\[3\\] event\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TRIGGERED3_AW {
+    #[doc = "1: Disable"]
     CLEAR,
 }
-impl TRIGGERED3W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            TRIGGERED3W::CLEAR => true,
+impl From<TRIGGERED3_AW> for bool {
+    #[inline(always)]
+    fn from(variant: TRIGGERED3_AW) -> Self {
+        match variant {
+            TRIGGERED3_AW::CLEAR => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _TRIGGERED3W<'a> {
+#[doc = "Write proxy for field `TRIGGERED3`"]
+pub struct TRIGGERED3_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TRIGGERED3W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: TRIGGERED3W) -> &'a mut W {
+impl<'a> TRIGGERED3_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: TRIGGERED3_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable"]
-    #[inline]
+    #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(TRIGGERED3W::CLEAR)
+        self.variant(TRIGGERED3_AW::CLEAR)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `TRIGGERED4`"]
-pub enum TRIGGERED4W {
-    #[doc = "Disable"]
+#[doc = "Write '1' to Disable interrupt for TRIGGERED\\[4\\] event\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TRIGGERED4_A {
+    #[doc = "0: Read: Disabled"]
+    DISABLED,
+    #[doc = "1: Read: Enabled"]
+    ENABLED,
+}
+impl From<TRIGGERED4_A> for bool {
+    #[inline(always)]
+    fn from(variant: TRIGGERED4_A) -> Self {
+        match variant {
+            TRIGGERED4_A::DISABLED => false,
+            TRIGGERED4_A::ENABLED => true,
+        }
+    }
+}
+#[doc = "Reader of field `TRIGGERED4`"]
+pub type TRIGGERED4_R = crate::R<bool, TRIGGERED4_A>;
+impl TRIGGERED4_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TRIGGERED4_A {
+        match self.bits {
+            false => TRIGGERED4_A::DISABLED,
+            true => TRIGGERED4_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == TRIGGERED4_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == TRIGGERED4_A::ENABLED
+    }
+}
+#[doc = "Write '1' to Disable interrupt for TRIGGERED\\[4\\] event\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TRIGGERED4_AW {
+    #[doc = "1: Disable"]
     CLEAR,
 }
-impl TRIGGERED4W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            TRIGGERED4W::CLEAR => true,
+impl From<TRIGGERED4_AW> for bool {
+    #[inline(always)]
+    fn from(variant: TRIGGERED4_AW) -> Self {
+        match variant {
+            TRIGGERED4_AW::CLEAR => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _TRIGGERED4W<'a> {
+#[doc = "Write proxy for field `TRIGGERED4`"]
+pub struct TRIGGERED4_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TRIGGERED4W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: TRIGGERED4W) -> &'a mut W {
+impl<'a> TRIGGERED4_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: TRIGGERED4_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable"]
-    #[inline]
+    #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(TRIGGERED4W::CLEAR)
+        self.variant(TRIGGERED4_AW::CLEAR)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `TRIGGERED5`"]
-pub enum TRIGGERED5W {
-    #[doc = "Disable"]
+#[doc = "Write '1' to Disable interrupt for TRIGGERED\\[5\\] event\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TRIGGERED5_A {
+    #[doc = "0: Read: Disabled"]
+    DISABLED,
+    #[doc = "1: Read: Enabled"]
+    ENABLED,
+}
+impl From<TRIGGERED5_A> for bool {
+    #[inline(always)]
+    fn from(variant: TRIGGERED5_A) -> Self {
+        match variant {
+            TRIGGERED5_A::DISABLED => false,
+            TRIGGERED5_A::ENABLED => true,
+        }
+    }
+}
+#[doc = "Reader of field `TRIGGERED5`"]
+pub type TRIGGERED5_R = crate::R<bool, TRIGGERED5_A>;
+impl TRIGGERED5_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TRIGGERED5_A {
+        match self.bits {
+            false => TRIGGERED5_A::DISABLED,
+            true => TRIGGERED5_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == TRIGGERED5_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == TRIGGERED5_A::ENABLED
+    }
+}
+#[doc = "Write '1' to Disable interrupt for TRIGGERED\\[5\\] event\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TRIGGERED5_AW {
+    #[doc = "1: Disable"]
     CLEAR,
 }
-impl TRIGGERED5W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            TRIGGERED5W::CLEAR => true,
+impl From<TRIGGERED5_AW> for bool {
+    #[inline(always)]
+    fn from(variant: TRIGGERED5_AW) -> Self {
+        match variant {
+            TRIGGERED5_AW::CLEAR => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _TRIGGERED5W<'a> {
+#[doc = "Write proxy for field `TRIGGERED5`"]
+pub struct TRIGGERED5_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TRIGGERED5W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: TRIGGERED5W) -> &'a mut W {
+impl<'a> TRIGGERED5_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: TRIGGERED5_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable"]
-    #[inline]
+    #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(TRIGGERED5W::CLEAR)
+        self.variant(TRIGGERED5_AW::CLEAR)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `TRIGGERED6`"]
-pub enum TRIGGERED6W {
-    #[doc = "Disable"]
+#[doc = "Write '1' to Disable interrupt for TRIGGERED\\[6\\] event\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TRIGGERED6_A {
+    #[doc = "0: Read: Disabled"]
+    DISABLED,
+    #[doc = "1: Read: Enabled"]
+    ENABLED,
+}
+impl From<TRIGGERED6_A> for bool {
+    #[inline(always)]
+    fn from(variant: TRIGGERED6_A) -> Self {
+        match variant {
+            TRIGGERED6_A::DISABLED => false,
+            TRIGGERED6_A::ENABLED => true,
+        }
+    }
+}
+#[doc = "Reader of field `TRIGGERED6`"]
+pub type TRIGGERED6_R = crate::R<bool, TRIGGERED6_A>;
+impl TRIGGERED6_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TRIGGERED6_A {
+        match self.bits {
+            false => TRIGGERED6_A::DISABLED,
+            true => TRIGGERED6_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == TRIGGERED6_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == TRIGGERED6_A::ENABLED
+    }
+}
+#[doc = "Write '1' to Disable interrupt for TRIGGERED\\[6\\] event\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TRIGGERED6_AW {
+    #[doc = "1: Disable"]
     CLEAR,
 }
-impl TRIGGERED6W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            TRIGGERED6W::CLEAR => true,
+impl From<TRIGGERED6_AW> for bool {
+    #[inline(always)]
+    fn from(variant: TRIGGERED6_AW) -> Self {
+        match variant {
+            TRIGGERED6_AW::CLEAR => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _TRIGGERED6W<'a> {
+#[doc = "Write proxy for field `TRIGGERED6`"]
+pub struct TRIGGERED6_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TRIGGERED6W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: TRIGGERED6W) -> &'a mut W {
+impl<'a> TRIGGERED6_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: TRIGGERED6_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable"]
-    #[inline]
+    #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(TRIGGERED6W::CLEAR)
+        self.variant(TRIGGERED6_AW::CLEAR)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `TRIGGERED7`"]
-pub enum TRIGGERED7W {
-    #[doc = "Disable"]
+#[doc = "Write '1' to Disable interrupt for TRIGGERED\\[7\\] event\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TRIGGERED7_A {
+    #[doc = "0: Read: Disabled"]
+    DISABLED,
+    #[doc = "1: Read: Enabled"]
+    ENABLED,
+}
+impl From<TRIGGERED7_A> for bool {
+    #[inline(always)]
+    fn from(variant: TRIGGERED7_A) -> Self {
+        match variant {
+            TRIGGERED7_A::DISABLED => false,
+            TRIGGERED7_A::ENABLED => true,
+        }
+    }
+}
+#[doc = "Reader of field `TRIGGERED7`"]
+pub type TRIGGERED7_R = crate::R<bool, TRIGGERED7_A>;
+impl TRIGGERED7_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TRIGGERED7_A {
+        match self.bits {
+            false => TRIGGERED7_A::DISABLED,
+            true => TRIGGERED7_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == TRIGGERED7_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == TRIGGERED7_A::ENABLED
+    }
+}
+#[doc = "Write '1' to Disable interrupt for TRIGGERED\\[7\\] event\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TRIGGERED7_AW {
+    #[doc = "1: Disable"]
     CLEAR,
 }
-impl TRIGGERED7W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            TRIGGERED7W::CLEAR => true,
+impl From<TRIGGERED7_AW> for bool {
+    #[inline(always)]
+    fn from(variant: TRIGGERED7_AW) -> Self {
+        match variant {
+            TRIGGERED7_AW::CLEAR => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _TRIGGERED7W<'a> {
+#[doc = "Write proxy for field `TRIGGERED7`"]
+pub struct TRIGGERED7_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TRIGGERED7W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: TRIGGERED7W) -> &'a mut W {
+impl<'a> TRIGGERED7_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: TRIGGERED7_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable"]
-    #[inline]
+    #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(TRIGGERED7W::CLEAR)
+        self.variant(TRIGGERED7_AW::CLEAR)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 7;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `TRIGGERED8`"]
-pub enum TRIGGERED8W {
-    #[doc = "Disable"]
+#[doc = "Write '1' to Disable interrupt for TRIGGERED\\[8\\] event\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TRIGGERED8_A {
+    #[doc = "0: Read: Disabled"]
+    DISABLED,
+    #[doc = "1: Read: Enabled"]
+    ENABLED,
+}
+impl From<TRIGGERED8_A> for bool {
+    #[inline(always)]
+    fn from(variant: TRIGGERED8_A) -> Self {
+        match variant {
+            TRIGGERED8_A::DISABLED => false,
+            TRIGGERED8_A::ENABLED => true,
+        }
+    }
+}
+#[doc = "Reader of field `TRIGGERED8`"]
+pub type TRIGGERED8_R = crate::R<bool, TRIGGERED8_A>;
+impl TRIGGERED8_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TRIGGERED8_A {
+        match self.bits {
+            false => TRIGGERED8_A::DISABLED,
+            true => TRIGGERED8_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == TRIGGERED8_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == TRIGGERED8_A::ENABLED
+    }
+}
+#[doc = "Write '1' to Disable interrupt for TRIGGERED\\[8\\] event\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TRIGGERED8_AW {
+    #[doc = "1: Disable"]
     CLEAR,
 }
-impl TRIGGERED8W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            TRIGGERED8W::CLEAR => true,
+impl From<TRIGGERED8_AW> for bool {
+    #[inline(always)]
+    fn from(variant: TRIGGERED8_AW) -> Self {
+        match variant {
+            TRIGGERED8_AW::CLEAR => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _TRIGGERED8W<'a> {
+#[doc = "Write proxy for field `TRIGGERED8`"]
+pub struct TRIGGERED8_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TRIGGERED8W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: TRIGGERED8W) -> &'a mut W {
+impl<'a> TRIGGERED8_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: TRIGGERED8_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable"]
-    #[inline]
+    #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(TRIGGERED8W::CLEAR)
+        self.variant(TRIGGERED8_AW::CLEAR)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `TRIGGERED9`"]
-pub enum TRIGGERED9W {
-    #[doc = "Disable"]
+#[doc = "Write '1' to Disable interrupt for TRIGGERED\\[9\\] event\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TRIGGERED9_A {
+    #[doc = "0: Read: Disabled"]
+    DISABLED,
+    #[doc = "1: Read: Enabled"]
+    ENABLED,
+}
+impl From<TRIGGERED9_A> for bool {
+    #[inline(always)]
+    fn from(variant: TRIGGERED9_A) -> Self {
+        match variant {
+            TRIGGERED9_A::DISABLED => false,
+            TRIGGERED9_A::ENABLED => true,
+        }
+    }
+}
+#[doc = "Reader of field `TRIGGERED9`"]
+pub type TRIGGERED9_R = crate::R<bool, TRIGGERED9_A>;
+impl TRIGGERED9_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TRIGGERED9_A {
+        match self.bits {
+            false => TRIGGERED9_A::DISABLED,
+            true => TRIGGERED9_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == TRIGGERED9_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == TRIGGERED9_A::ENABLED
+    }
+}
+#[doc = "Write '1' to Disable interrupt for TRIGGERED\\[9\\] event\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TRIGGERED9_AW {
+    #[doc = "1: Disable"]
     CLEAR,
 }
-impl TRIGGERED9W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            TRIGGERED9W::CLEAR => true,
+impl From<TRIGGERED9_AW> for bool {
+    #[inline(always)]
+    fn from(variant: TRIGGERED9_AW) -> Self {
+        match variant {
+            TRIGGERED9_AW::CLEAR => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _TRIGGERED9W<'a> {
+#[doc = "Write proxy for field `TRIGGERED9`"]
+pub struct TRIGGERED9_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TRIGGERED9W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: TRIGGERED9W) -> &'a mut W {
+impl<'a> TRIGGERED9_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: TRIGGERED9_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable"]
-    #[inline]
+    #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(TRIGGERED9W::CLEAR)
+        self.variant(TRIGGERED9_AW::CLEAR)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 9;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `TRIGGERED10`"]
-pub enum TRIGGERED10W {
-    #[doc = "Disable"]
+#[doc = "Write '1' to Disable interrupt for TRIGGERED\\[10\\] event\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TRIGGERED10_A {
+    #[doc = "0: Read: Disabled"]
+    DISABLED,
+    #[doc = "1: Read: Enabled"]
+    ENABLED,
+}
+impl From<TRIGGERED10_A> for bool {
+    #[inline(always)]
+    fn from(variant: TRIGGERED10_A) -> Self {
+        match variant {
+            TRIGGERED10_A::DISABLED => false,
+            TRIGGERED10_A::ENABLED => true,
+        }
+    }
+}
+#[doc = "Reader of field `TRIGGERED10`"]
+pub type TRIGGERED10_R = crate::R<bool, TRIGGERED10_A>;
+impl TRIGGERED10_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TRIGGERED10_A {
+        match self.bits {
+            false => TRIGGERED10_A::DISABLED,
+            true => TRIGGERED10_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == TRIGGERED10_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == TRIGGERED10_A::ENABLED
+    }
+}
+#[doc = "Write '1' to Disable interrupt for TRIGGERED\\[10\\] event\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TRIGGERED10_AW {
+    #[doc = "1: Disable"]
     CLEAR,
 }
-impl TRIGGERED10W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            TRIGGERED10W::CLEAR => true,
+impl From<TRIGGERED10_AW> for bool {
+    #[inline(always)]
+    fn from(variant: TRIGGERED10_AW) -> Self {
+        match variant {
+            TRIGGERED10_AW::CLEAR => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _TRIGGERED10W<'a> {
+#[doc = "Write proxy for field `TRIGGERED10`"]
+pub struct TRIGGERED10_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TRIGGERED10W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: TRIGGERED10W) -> &'a mut W {
+impl<'a> TRIGGERED10_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: TRIGGERED10_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable"]
-    #[inline]
+    #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(TRIGGERED10W::CLEAR)
+        self.variant(TRIGGERED10_AW::CLEAR)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 10;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `TRIGGERED11`"]
-pub enum TRIGGERED11W {
-    #[doc = "Disable"]
+#[doc = "Write '1' to Disable interrupt for TRIGGERED\\[11\\] event\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TRIGGERED11_A {
+    #[doc = "0: Read: Disabled"]
+    DISABLED,
+    #[doc = "1: Read: Enabled"]
+    ENABLED,
+}
+impl From<TRIGGERED11_A> for bool {
+    #[inline(always)]
+    fn from(variant: TRIGGERED11_A) -> Self {
+        match variant {
+            TRIGGERED11_A::DISABLED => false,
+            TRIGGERED11_A::ENABLED => true,
+        }
+    }
+}
+#[doc = "Reader of field `TRIGGERED11`"]
+pub type TRIGGERED11_R = crate::R<bool, TRIGGERED11_A>;
+impl TRIGGERED11_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TRIGGERED11_A {
+        match self.bits {
+            false => TRIGGERED11_A::DISABLED,
+            true => TRIGGERED11_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == TRIGGERED11_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == TRIGGERED11_A::ENABLED
+    }
+}
+#[doc = "Write '1' to Disable interrupt for TRIGGERED\\[11\\] event\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TRIGGERED11_AW {
+    #[doc = "1: Disable"]
     CLEAR,
 }
-impl TRIGGERED11W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            TRIGGERED11W::CLEAR => true,
+impl From<TRIGGERED11_AW> for bool {
+    #[inline(always)]
+    fn from(variant: TRIGGERED11_AW) -> Self {
+        match variant {
+            TRIGGERED11_AW::CLEAR => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _TRIGGERED11W<'a> {
+#[doc = "Write proxy for field `TRIGGERED11`"]
+pub struct TRIGGERED11_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TRIGGERED11W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: TRIGGERED11W) -> &'a mut W {
+impl<'a> TRIGGERED11_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: TRIGGERED11_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable"]
-    #[inline]
+    #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(TRIGGERED11W::CLEAR)
+        self.variant(TRIGGERED11_AW::CLEAR)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 11;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `TRIGGERED12`"]
-pub enum TRIGGERED12W {
-    #[doc = "Disable"]
+#[doc = "Write '1' to Disable interrupt for TRIGGERED\\[12\\] event\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TRIGGERED12_A {
+    #[doc = "0: Read: Disabled"]
+    DISABLED,
+    #[doc = "1: Read: Enabled"]
+    ENABLED,
+}
+impl From<TRIGGERED12_A> for bool {
+    #[inline(always)]
+    fn from(variant: TRIGGERED12_A) -> Self {
+        match variant {
+            TRIGGERED12_A::DISABLED => false,
+            TRIGGERED12_A::ENABLED => true,
+        }
+    }
+}
+#[doc = "Reader of field `TRIGGERED12`"]
+pub type TRIGGERED12_R = crate::R<bool, TRIGGERED12_A>;
+impl TRIGGERED12_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TRIGGERED12_A {
+        match self.bits {
+            false => TRIGGERED12_A::DISABLED,
+            true => TRIGGERED12_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == TRIGGERED12_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == TRIGGERED12_A::ENABLED
+    }
+}
+#[doc = "Write '1' to Disable interrupt for TRIGGERED\\[12\\] event\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TRIGGERED12_AW {
+    #[doc = "1: Disable"]
     CLEAR,
 }
-impl TRIGGERED12W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            TRIGGERED12W::CLEAR => true,
+impl From<TRIGGERED12_AW> for bool {
+    #[inline(always)]
+    fn from(variant: TRIGGERED12_AW) -> Self {
+        match variant {
+            TRIGGERED12_AW::CLEAR => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _TRIGGERED12W<'a> {
+#[doc = "Write proxy for field `TRIGGERED12`"]
+pub struct TRIGGERED12_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TRIGGERED12W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: TRIGGERED12W) -> &'a mut W {
+impl<'a> TRIGGERED12_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: TRIGGERED12_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable"]
-    #[inline]
+    #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(TRIGGERED12W::CLEAR)
+        self.variant(TRIGGERED12_AW::CLEAR)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 12;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `TRIGGERED13`"]
-pub enum TRIGGERED13W {
-    #[doc = "Disable"]
+#[doc = "Write '1' to Disable interrupt for TRIGGERED\\[13\\] event\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TRIGGERED13_A {
+    #[doc = "0: Read: Disabled"]
+    DISABLED,
+    #[doc = "1: Read: Enabled"]
+    ENABLED,
+}
+impl From<TRIGGERED13_A> for bool {
+    #[inline(always)]
+    fn from(variant: TRIGGERED13_A) -> Self {
+        match variant {
+            TRIGGERED13_A::DISABLED => false,
+            TRIGGERED13_A::ENABLED => true,
+        }
+    }
+}
+#[doc = "Reader of field `TRIGGERED13`"]
+pub type TRIGGERED13_R = crate::R<bool, TRIGGERED13_A>;
+impl TRIGGERED13_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TRIGGERED13_A {
+        match self.bits {
+            false => TRIGGERED13_A::DISABLED,
+            true => TRIGGERED13_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == TRIGGERED13_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == TRIGGERED13_A::ENABLED
+    }
+}
+#[doc = "Write '1' to Disable interrupt for TRIGGERED\\[13\\] event\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TRIGGERED13_AW {
+    #[doc = "1: Disable"]
     CLEAR,
 }
-impl TRIGGERED13W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            TRIGGERED13W::CLEAR => true,
+impl From<TRIGGERED13_AW> for bool {
+    #[inline(always)]
+    fn from(variant: TRIGGERED13_AW) -> Self {
+        match variant {
+            TRIGGERED13_AW::CLEAR => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _TRIGGERED13W<'a> {
+#[doc = "Write proxy for field `TRIGGERED13`"]
+pub struct TRIGGERED13_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TRIGGERED13W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: TRIGGERED13W) -> &'a mut W {
+impl<'a> TRIGGERED13_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: TRIGGERED13_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable"]
-    #[inline]
+    #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(TRIGGERED13W::CLEAR)
+        self.variant(TRIGGERED13_AW::CLEAR)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 13;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `TRIGGERED14`"]
-pub enum TRIGGERED14W {
-    #[doc = "Disable"]
+#[doc = "Write '1' to Disable interrupt for TRIGGERED\\[14\\] event\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TRIGGERED14_A {
+    #[doc = "0: Read: Disabled"]
+    DISABLED,
+    #[doc = "1: Read: Enabled"]
+    ENABLED,
+}
+impl From<TRIGGERED14_A> for bool {
+    #[inline(always)]
+    fn from(variant: TRIGGERED14_A) -> Self {
+        match variant {
+            TRIGGERED14_A::DISABLED => false,
+            TRIGGERED14_A::ENABLED => true,
+        }
+    }
+}
+#[doc = "Reader of field `TRIGGERED14`"]
+pub type TRIGGERED14_R = crate::R<bool, TRIGGERED14_A>;
+impl TRIGGERED14_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TRIGGERED14_A {
+        match self.bits {
+            false => TRIGGERED14_A::DISABLED,
+            true => TRIGGERED14_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == TRIGGERED14_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == TRIGGERED14_A::ENABLED
+    }
+}
+#[doc = "Write '1' to Disable interrupt for TRIGGERED\\[14\\] event\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TRIGGERED14_AW {
+    #[doc = "1: Disable"]
     CLEAR,
 }
-impl TRIGGERED14W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            TRIGGERED14W::CLEAR => true,
+impl From<TRIGGERED14_AW> for bool {
+    #[inline(always)]
+    fn from(variant: TRIGGERED14_AW) -> Self {
+        match variant {
+            TRIGGERED14_AW::CLEAR => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _TRIGGERED14W<'a> {
+#[doc = "Write proxy for field `TRIGGERED14`"]
+pub struct TRIGGERED14_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TRIGGERED14W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: TRIGGERED14W) -> &'a mut W {
+impl<'a> TRIGGERED14_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: TRIGGERED14_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable"]
-    #[inline]
+    #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(TRIGGERED14W::CLEAR)
+        self.variant(TRIGGERED14_AW::CLEAR)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 14;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `TRIGGERED15`"]
-pub enum TRIGGERED15W {
-    #[doc = "Disable"]
+#[doc = "Write '1' to Disable interrupt for TRIGGERED\\[15\\] event\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TRIGGERED15_A {
+    #[doc = "0: Read: Disabled"]
+    DISABLED,
+    #[doc = "1: Read: Enabled"]
+    ENABLED,
+}
+impl From<TRIGGERED15_A> for bool {
+    #[inline(always)]
+    fn from(variant: TRIGGERED15_A) -> Self {
+        match variant {
+            TRIGGERED15_A::DISABLED => false,
+            TRIGGERED15_A::ENABLED => true,
+        }
+    }
+}
+#[doc = "Reader of field `TRIGGERED15`"]
+pub type TRIGGERED15_R = crate::R<bool, TRIGGERED15_A>;
+impl TRIGGERED15_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TRIGGERED15_A {
+        match self.bits {
+            false => TRIGGERED15_A::DISABLED,
+            true => TRIGGERED15_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == TRIGGERED15_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == TRIGGERED15_A::ENABLED
+    }
+}
+#[doc = "Write '1' to Disable interrupt for TRIGGERED\\[15\\] event\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TRIGGERED15_AW {
+    #[doc = "1: Disable"]
     CLEAR,
 }
-impl TRIGGERED15W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            TRIGGERED15W::CLEAR => true,
+impl From<TRIGGERED15_AW> for bool {
+    #[inline(always)]
+    fn from(variant: TRIGGERED15_AW) -> Self {
+        match variant {
+            TRIGGERED15_AW::CLEAR => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _TRIGGERED15W<'a> {
+#[doc = "Write proxy for field `TRIGGERED15`"]
+pub struct TRIGGERED15_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TRIGGERED15W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: TRIGGERED15W) -> &'a mut W {
+impl<'a> TRIGGERED15_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: TRIGGERED15_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable"]
-    #[inline]
+    #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(TRIGGERED15W::CLEAR)
+        self.variant(TRIGGERED15_AW::CLEAR)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 15;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Write '1' to Disable interrupt for TRIGGERED\\[0\\] event"]
-    #[inline]
-    pub fn triggered0(&self) -> TRIGGERED0R {
-        TRIGGERED0R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn triggered0(&self) -> TRIGGERED0_R {
+        TRIGGERED0_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Write '1' to Disable interrupt for TRIGGERED\\[1\\] event"]
-    #[inline]
-    pub fn triggered1(&self) -> TRIGGERED1R {
-        TRIGGERED1R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn triggered1(&self) -> TRIGGERED1_R {
+        TRIGGERED1_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Write '1' to Disable interrupt for TRIGGERED\\[2\\] event"]
-    #[inline]
-    pub fn triggered2(&self) -> TRIGGERED2R {
-        TRIGGERED2R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn triggered2(&self) -> TRIGGERED2_R {
+        TRIGGERED2_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - Write '1' to Disable interrupt for TRIGGERED\\[3\\] event"]
-    #[inline]
-    pub fn triggered3(&self) -> TRIGGERED3R {
-        TRIGGERED3R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn triggered3(&self) -> TRIGGERED3_R {
+        TRIGGERED3_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - Write '1' to Disable interrupt for TRIGGERED\\[4\\] event"]
-    #[inline]
-    pub fn triggered4(&self) -> TRIGGERED4R {
-        TRIGGERED4R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn triggered4(&self) -> TRIGGERED4_R {
+        TRIGGERED4_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - Write '1' to Disable interrupt for TRIGGERED\\[5\\] event"]
-    #[inline]
-    pub fn triggered5(&self) -> TRIGGERED5R {
-        TRIGGERED5R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn triggered5(&self) -> TRIGGERED5_R {
+        TRIGGERED5_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - Write '1' to Disable interrupt for TRIGGERED\\[6\\] event"]
-    #[inline]
-    pub fn triggered6(&self) -> TRIGGERED6R {
-        TRIGGERED6R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn triggered6(&self) -> TRIGGERED6_R {
+        TRIGGERED6_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - Write '1' to Disable interrupt for TRIGGERED\\[7\\] event"]
-    #[inline]
-    pub fn triggered7(&self) -> TRIGGERED7R {
-        TRIGGERED7R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn triggered7(&self) -> TRIGGERED7_R {
+        TRIGGERED7_R::new(((self.bits >> 7) & 0x01) != 0)
     }
     #[doc = "Bit 8 - Write '1' to Disable interrupt for TRIGGERED\\[8\\] event"]
-    #[inline]
-    pub fn triggered8(&self) -> TRIGGERED8R {
-        TRIGGERED8R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn triggered8(&self) -> TRIGGERED8_R {
+        TRIGGERED8_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bit 9 - Write '1' to Disable interrupt for TRIGGERED\\[9\\] event"]
-    #[inline]
-    pub fn triggered9(&self) -> TRIGGERED9R {
-        TRIGGERED9R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn triggered9(&self) -> TRIGGERED9_R {
+        TRIGGERED9_R::new(((self.bits >> 9) & 0x01) != 0)
     }
     #[doc = "Bit 10 - Write '1' to Disable interrupt for TRIGGERED\\[10\\] event"]
-    #[inline]
-    pub fn triggered10(&self) -> TRIGGERED10R {
-        TRIGGERED10R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn triggered10(&self) -> TRIGGERED10_R {
+        TRIGGERED10_R::new(((self.bits >> 10) & 0x01) != 0)
     }
     #[doc = "Bit 11 - Write '1' to Disable interrupt for TRIGGERED\\[11\\] event"]
-    #[inline]
-    pub fn triggered11(&self) -> TRIGGERED11R {
-        TRIGGERED11R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 11;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn triggered11(&self) -> TRIGGERED11_R {
+        TRIGGERED11_R::new(((self.bits >> 11) & 0x01) != 0)
     }
     #[doc = "Bit 12 - Write '1' to Disable interrupt for TRIGGERED\\[12\\] event"]
-    #[inline]
-    pub fn triggered12(&self) -> TRIGGERED12R {
-        TRIGGERED12R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn triggered12(&self) -> TRIGGERED12_R {
+        TRIGGERED12_R::new(((self.bits >> 12) & 0x01) != 0)
     }
     #[doc = "Bit 13 - Write '1' to Disable interrupt for TRIGGERED\\[13\\] event"]
-    #[inline]
-    pub fn triggered13(&self) -> TRIGGERED13R {
-        TRIGGERED13R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 13;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn triggered13(&self) -> TRIGGERED13_R {
+        TRIGGERED13_R::new(((self.bits >> 13) & 0x01) != 0)
     }
     #[doc = "Bit 14 - Write '1' to Disable interrupt for TRIGGERED\\[14\\] event"]
-    #[inline]
-    pub fn triggered14(&self) -> TRIGGERED14R {
-        TRIGGERED14R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 14;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn triggered14(&self) -> TRIGGERED14_R {
+        TRIGGERED14_R::new(((self.bits >> 14) & 0x01) != 0)
     }
     #[doc = "Bit 15 - Write '1' to Disable interrupt for TRIGGERED\\[15\\] event"]
-    #[inline]
-    pub fn triggered15(&self) -> TRIGGERED15R {
-        TRIGGERED15R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 15;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn triggered15(&self) -> TRIGGERED15_R {
+        TRIGGERED15_R::new(((self.bits >> 15) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Write '1' to Disable interrupt for TRIGGERED\\[0\\] event"]
-    #[inline]
-    pub fn triggered0(&mut self) -> _TRIGGERED0W {
-        _TRIGGERED0W { w: self }
+    #[inline(always)]
+    pub fn triggered0(&mut self) -> TRIGGERED0_W {
+        TRIGGERED0_W { w: self }
     }
     #[doc = "Bit 1 - Write '1' to Disable interrupt for TRIGGERED\\[1\\] event"]
-    #[inline]
-    pub fn triggered1(&mut self) -> _TRIGGERED1W {
-        _TRIGGERED1W { w: self }
+    #[inline(always)]
+    pub fn triggered1(&mut self) -> TRIGGERED1_W {
+        TRIGGERED1_W { w: self }
     }
     #[doc = "Bit 2 - Write '1' to Disable interrupt for TRIGGERED\\[2\\] event"]
-    #[inline]
-    pub fn triggered2(&mut self) -> _TRIGGERED2W {
-        _TRIGGERED2W { w: self }
+    #[inline(always)]
+    pub fn triggered2(&mut self) -> TRIGGERED2_W {
+        TRIGGERED2_W { w: self }
     }
     #[doc = "Bit 3 - Write '1' to Disable interrupt for TRIGGERED\\[3\\] event"]
-    #[inline]
-    pub fn triggered3(&mut self) -> _TRIGGERED3W {
-        _TRIGGERED3W { w: self }
+    #[inline(always)]
+    pub fn triggered3(&mut self) -> TRIGGERED3_W {
+        TRIGGERED3_W { w: self }
     }
     #[doc = "Bit 4 - Write '1' to Disable interrupt for TRIGGERED\\[4\\] event"]
-    #[inline]
-    pub fn triggered4(&mut self) -> _TRIGGERED4W {
-        _TRIGGERED4W { w: self }
+    #[inline(always)]
+    pub fn triggered4(&mut self) -> TRIGGERED4_W {
+        TRIGGERED4_W { w: self }
     }
     #[doc = "Bit 5 - Write '1' to Disable interrupt for TRIGGERED\\[5\\] event"]
-    #[inline]
-    pub fn triggered5(&mut self) -> _TRIGGERED5W {
-        _TRIGGERED5W { w: self }
+    #[inline(always)]
+    pub fn triggered5(&mut self) -> TRIGGERED5_W {
+        TRIGGERED5_W { w: self }
     }
     #[doc = "Bit 6 - Write '1' to Disable interrupt for TRIGGERED\\[6\\] event"]
-    #[inline]
-    pub fn triggered6(&mut self) -> _TRIGGERED6W {
-        _TRIGGERED6W { w: self }
+    #[inline(always)]
+    pub fn triggered6(&mut self) -> TRIGGERED6_W {
+        TRIGGERED6_W { w: self }
     }
     #[doc = "Bit 7 - Write '1' to Disable interrupt for TRIGGERED\\[7\\] event"]
-    #[inline]
-    pub fn triggered7(&mut self) -> _TRIGGERED7W {
-        _TRIGGERED7W { w: self }
+    #[inline(always)]
+    pub fn triggered7(&mut self) -> TRIGGERED7_W {
+        TRIGGERED7_W { w: self }
     }
     #[doc = "Bit 8 - Write '1' to Disable interrupt for TRIGGERED\\[8\\] event"]
-    #[inline]
-    pub fn triggered8(&mut self) -> _TRIGGERED8W {
-        _TRIGGERED8W { w: self }
+    #[inline(always)]
+    pub fn triggered8(&mut self) -> TRIGGERED8_W {
+        TRIGGERED8_W { w: self }
     }
     #[doc = "Bit 9 - Write '1' to Disable interrupt for TRIGGERED\\[9\\] event"]
-    #[inline]
-    pub fn triggered9(&mut self) -> _TRIGGERED9W {
-        _TRIGGERED9W { w: self }
+    #[inline(always)]
+    pub fn triggered9(&mut self) -> TRIGGERED9_W {
+        TRIGGERED9_W { w: self }
     }
     #[doc = "Bit 10 - Write '1' to Disable interrupt for TRIGGERED\\[10\\] event"]
-    #[inline]
-    pub fn triggered10(&mut self) -> _TRIGGERED10W {
-        _TRIGGERED10W { w: self }
+    #[inline(always)]
+    pub fn triggered10(&mut self) -> TRIGGERED10_W {
+        TRIGGERED10_W { w: self }
     }
     #[doc = "Bit 11 - Write '1' to Disable interrupt for TRIGGERED\\[11\\] event"]
-    #[inline]
-    pub fn triggered11(&mut self) -> _TRIGGERED11W {
-        _TRIGGERED11W { w: self }
+    #[inline(always)]
+    pub fn triggered11(&mut self) -> TRIGGERED11_W {
+        TRIGGERED11_W { w: self }
     }
     #[doc = "Bit 12 - Write '1' to Disable interrupt for TRIGGERED\\[12\\] event"]
-    #[inline]
-    pub fn triggered12(&mut self) -> _TRIGGERED12W {
-        _TRIGGERED12W { w: self }
+    #[inline(always)]
+    pub fn triggered12(&mut self) -> TRIGGERED12_W {
+        TRIGGERED12_W { w: self }
     }
     #[doc = "Bit 13 - Write '1' to Disable interrupt for TRIGGERED\\[13\\] event"]
-    #[inline]
-    pub fn triggered13(&mut self) -> _TRIGGERED13W {
-        _TRIGGERED13W { w: self }
+    #[inline(always)]
+    pub fn triggered13(&mut self) -> TRIGGERED13_W {
+        TRIGGERED13_W { w: self }
     }
     #[doc = "Bit 14 - Write '1' to Disable interrupt for TRIGGERED\\[14\\] event"]
-    #[inline]
-    pub fn triggered14(&mut self) -> _TRIGGERED14W {
-        _TRIGGERED14W { w: self }
+    #[inline(always)]
+    pub fn triggered14(&mut self) -> TRIGGERED14_W {
+        TRIGGERED14_W { w: self }
     }
     #[doc = "Bit 15 - Write '1' to Disable interrupt for TRIGGERED\\[15\\] event"]
-    #[inline]
-    pub fn triggered15(&mut self) -> _TRIGGERED15W {
-        _TRIGGERED15W { w: self }
+    #[inline(always)]
+    pub fn triggered15(&mut self) -> TRIGGERED15_W {
+        TRIGGERED15_W { w: self }
     }
 }

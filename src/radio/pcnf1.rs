@@ -1,425 +1,264 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::PCNF1 {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register PCNF1"]
+pub type R = crate::R<u32, super::PCNF1>;
+#[doc = "Writer for register PCNF1"]
+pub type W = crate::W<u32, super::PCNF1>;
+#[doc = "Register PCNF1 `reset()`'s with value 0"]
+impl crate::ResetValue for super::PCNF1 {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct MAXLENR {
-    bits: u8,
+#[doc = "Reader of field `MAXLEN`"]
+pub type MAXLEN_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `MAXLEN`"]
+pub struct MAXLEN_W<'a> {
+    w: &'a mut W,
 }
-impl MAXLENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+impl<'a> MAXLEN_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0xff) | ((value as u32) & 0xff);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct STATLENR {
-    bits: u8,
+#[doc = "Reader of field `STATLEN`"]
+pub type STATLEN_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `STATLEN`"]
+pub struct STATLEN_W<'a> {
+    w: &'a mut W,
 }
-impl STATLENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+impl<'a> STATLEN_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0xff << 8)) | (((value as u32) & 0xff) << 8);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct BALENR {
-    bits: u8,
+#[doc = "Reader of field `BALEN`"]
+pub type BALEN_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `BALEN`"]
+pub struct BALEN_W<'a> {
+    w: &'a mut W,
 }
-impl BALENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+impl<'a> BALEN_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x07 << 16)) | (((value as u32) & 0x07) << 16);
+        self.w
     }
 }
-#[doc = "Possible values of the field `ENDIAN`"]
+#[doc = "On air endianness of packet, this applies to the S0, LENGTH, S1 and the PAYLOAD fields.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ENDIANR {
-    #[doc = "Least Significant bit on air first"]
+pub enum ENDIAN_A {
+    #[doc = "0: Least Significant bit on air first"]
     LITTLE,
-    #[doc = "Most significant bit on air first"]
+    #[doc = "1: Most significant bit on air first"]
     BIG,
 }
-impl ENDIANR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ENDIANR::LITTLE => false,
-            ENDIANR::BIG => true,
+impl From<ENDIAN_A> for bool {
+    #[inline(always)]
+    fn from(variant: ENDIAN_A) -> Self {
+        match variant {
+            ENDIAN_A::LITTLE => false,
+            ENDIAN_A::BIG => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ENDIANR {
-        match value {
-            false => ENDIANR::LITTLE,
-            true => ENDIANR::BIG,
+}
+#[doc = "Reader of field `ENDIAN`"]
+pub type ENDIAN_R = crate::R<bool, ENDIAN_A>;
+impl ENDIAN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ENDIAN_A {
+        match self.bits {
+            false => ENDIAN_A::LITTLE,
+            true => ENDIAN_A::BIG,
         }
     }
     #[doc = "Checks if the value of the field is `LITTLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_little(&self) -> bool {
-        *self == ENDIANR::LITTLE
+        *self == ENDIAN_A::LITTLE
     }
     #[doc = "Checks if the value of the field is `BIG`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_big(&self) -> bool {
-        *self == ENDIANR::BIG
+        *self == ENDIAN_A::BIG
     }
 }
-#[doc = "Possible values of the field `WHITEEN`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum WHITEENR {
-    #[doc = "Disable"]
-    DISABLED,
-    #[doc = "Enable"]
-    ENABLED,
+#[doc = "Write proxy for field `ENDIAN`"]
+pub struct ENDIAN_W<'a> {
+    w: &'a mut W,
 }
-impl WHITEENR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            WHITEENR::DISABLED => false,
-            WHITEENR::ENABLED => true,
+impl<'a> ENDIAN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ENDIAN_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> WHITEENR {
-        match value {
-            false => WHITEENR::DISABLED,
-            true => WHITEENR::ENABLED,
+    #[doc = "Least Significant bit on air first"]
+    #[inline(always)]
+    pub fn little(self) -> &'a mut W {
+        self.variant(ENDIAN_A::LITTLE)
+    }
+    #[doc = "Most significant bit on air first"]
+    #[inline(always)]
+    pub fn big(self) -> &'a mut W {
+        self.variant(ENDIAN_A::BIG)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
+        self.w
+    }
+}
+#[doc = "Enable or disable packet whitening\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum WHITEEN_A {
+    #[doc = "0: Disable"]
+    DISABLED,
+    #[doc = "1: Enable"]
+    ENABLED,
+}
+impl From<WHITEEN_A> for bool {
+    #[inline(always)]
+    fn from(variant: WHITEEN_A) -> Self {
+        match variant {
+            WHITEEN_A::DISABLED => false,
+            WHITEEN_A::ENABLED => true,
+        }
+    }
+}
+#[doc = "Reader of field `WHITEEN`"]
+pub type WHITEEN_R = crate::R<bool, WHITEEN_A>;
+impl WHITEEN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> WHITEEN_A {
+        match self.bits {
+            false => WHITEEN_A::DISABLED,
+            true => WHITEEN_A::ENABLED,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == WHITEENR::DISABLED
+        *self == WHITEEN_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == WHITEENR::ENABLED
+        *self == WHITEEN_A::ENABLED
     }
 }
-#[doc = r" Proxy"]
-pub struct _MAXLENW<'a> {
+#[doc = "Write proxy for field `WHITEEN`"]
+pub struct WHITEEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _MAXLENW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 255;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _STATLENW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _STATLENW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 255;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _BALENW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _BALENW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `ENDIAN`"]
-pub enum ENDIANW {
-    #[doc = "Least Significant bit on air first"]
-    LITTLE,
-    #[doc = "Most significant bit on air first"]
-    BIG,
-}
-impl ENDIANW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ENDIANW::LITTLE => false,
-            ENDIANW::BIG => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ENDIANW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _ENDIANW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ENDIANW) -> &'a mut W {
+impl<'a> WHITEEN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: WHITEEN_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Least Significant bit on air first"]
-    #[inline]
-    pub fn little(self) -> &'a mut W {
-        self.variant(ENDIANW::LITTLE)
-    }
-    #[doc = "Most significant bit on air first"]
-    #[inline]
-    pub fn big(self) -> &'a mut W {
-        self.variant(ENDIANW::BIG)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 24;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `WHITEEN`"]
-pub enum WHITEENW {
-    #[doc = "Disable"]
-    DISABLED,
-    #[doc = "Enable"]
-    ENABLED,
-}
-impl WHITEENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            WHITEENW::DISABLED => false,
-            WHITEENW::ENABLED => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _WHITEENW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _WHITEENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: WHITEENW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable"]
-    #[inline]
+    #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(WHITEENW::DISABLED)
+        self.variant(WHITEEN_A::DISABLED)
     }
     #[doc = "Enable"]
-    #[inline]
+    #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(WHITEENW::ENABLED)
+        self.variant(WHITEEN_A::ENABLED)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 25;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 25)) | (((value as u32) & 0x01) << 25);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:7 - Maximum length of packet payload. If the packet payload is larger than MAXLEN, the radio will truncate the payload to MAXLEN."]
-    #[inline]
-    pub fn maxlen(&self) -> MAXLENR {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        MAXLENR { bits }
+    #[inline(always)]
+    pub fn maxlen(&self) -> MAXLEN_R {
+        MAXLEN_R::new((self.bits & 0xff) as u8)
     }
     #[doc = "Bits 8:15 - Static length in number of bytes"]
-    #[inline]
-    pub fn statlen(&self) -> STATLENR {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        STATLENR { bits }
+    #[inline(always)]
+    pub fn statlen(&self) -> STATLEN_R {
+        STATLEN_R::new(((self.bits >> 8) & 0xff) as u8)
     }
     #[doc = "Bits 16:18 - Base address length in number of bytes"]
-    #[inline]
-    pub fn balen(&self) -> BALENR {
-        let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        BALENR { bits }
+    #[inline(always)]
+    pub fn balen(&self) -> BALEN_R {
+        BALEN_R::new(((self.bits >> 16) & 0x07) as u8)
     }
     #[doc = "Bit 24 - On air endianness of packet, this applies to the S0, LENGTH, S1 and the PAYLOAD fields."]
-    #[inline]
-    pub fn endian(&self) -> ENDIANR {
-        ENDIANR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn endian(&self) -> ENDIAN_R {
+        ENDIAN_R::new(((self.bits >> 24) & 0x01) != 0)
     }
     #[doc = "Bit 25 - Enable or disable packet whitening"]
-    #[inline]
-    pub fn whiteen(&self) -> WHITEENR {
-        WHITEENR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 25;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn whiteen(&self) -> WHITEEN_R {
+        WHITEEN_R::new(((self.bits >> 25) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:7 - Maximum length of packet payload. If the packet payload is larger than MAXLEN, the radio will truncate the payload to MAXLEN."]
-    #[inline]
-    pub fn maxlen(&mut self) -> _MAXLENW {
-        _MAXLENW { w: self }
+    #[inline(always)]
+    pub fn maxlen(&mut self) -> MAXLEN_W {
+        MAXLEN_W { w: self }
     }
     #[doc = "Bits 8:15 - Static length in number of bytes"]
-    #[inline]
-    pub fn statlen(&mut self) -> _STATLENW {
-        _STATLENW { w: self }
+    #[inline(always)]
+    pub fn statlen(&mut self) -> STATLEN_W {
+        STATLEN_W { w: self }
     }
     #[doc = "Bits 16:18 - Base address length in number of bytes"]
-    #[inline]
-    pub fn balen(&mut self) -> _BALENW {
-        _BALENW { w: self }
+    #[inline(always)]
+    pub fn balen(&mut self) -> BALEN_W {
+        BALEN_W { w: self }
     }
     #[doc = "Bit 24 - On air endianness of packet, this applies to the S0, LENGTH, S1 and the PAYLOAD fields."]
-    #[inline]
-    pub fn endian(&mut self) -> _ENDIANW {
-        _ENDIANW { w: self }
+    #[inline(always)]
+    pub fn endian(&mut self) -> ENDIAN_W {
+        ENDIAN_W { w: self }
     }
     #[doc = "Bit 25 - Enable or disable packet whitening"]
-    #[inline]
-    pub fn whiteen(&mut self) -> _WHITEENW {
-        _WHITEENW { w: self }
+    #[inline(always)]
+    pub fn whiteen(&mut self) -> WHITEEN_W {
+        WHITEEN_W { w: self }
     }
 }

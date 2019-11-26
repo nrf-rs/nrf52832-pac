@@ -1,84 +1,65 @@
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::SYSTEMOFF {
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
+#[doc = "Writer for register SYSTEMOFF"]
+pub type W = crate::W<u32, super::SYSTEMOFF>;
+#[doc = "Register SYSTEMOFF `reset()`'s with value 0"]
+impl crate::ResetValue for super::SYSTEMOFF {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Values that can be written to the field `SYSTEMOFF`"]
-pub enum SYSTEMOFFW {
-    #[doc = "Enable System OFF mode"]
+#[doc = "Enable System OFF mode\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SYSTEMOFF_AW {
+    #[doc = "1: Enable System OFF mode"]
     ENTER,
 }
-impl SYSTEMOFFW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SYSTEMOFFW::ENTER => true,
+impl From<SYSTEMOFF_AW> for bool {
+    #[inline(always)]
+    fn from(variant: SYSTEMOFF_AW) -> Self {
+        match variant {
+            SYSTEMOFF_AW::ENTER => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _SYSTEMOFFW<'a> {
+#[doc = "Write proxy for field `SYSTEMOFF`"]
+pub struct SYSTEMOFF_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SYSTEMOFFW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SYSTEMOFFW) -> &'a mut W {
+impl<'a> SYSTEMOFF_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SYSTEMOFF_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Enable System OFF mode"]
-    #[inline]
+    #[inline(always)]
     pub fn enter(self) -> &'a mut W {
-        self.variant(SYSTEMOFFW::ENTER)
+        self.variant(SYSTEMOFF_AW::ENTER)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Enable System OFF mode"]
-    #[inline]
-    pub fn systemoff(&mut self) -> _SYSTEMOFFW {
-        _SYSTEMOFFW { w: self }
+    #[inline(always)]
+    pub fn systemoff(&mut self) -> SYSTEMOFF_W {
+        SYSTEMOFF_W { w: self }
     }
 }

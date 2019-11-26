@@ -1,218 +1,136 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::REFSEL {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register REFSEL"]
+pub type R = crate::R<u32, super::REFSEL>;
+#[doc = "Writer for register REFSEL"]
+pub type W = crate::W<u32, super::REFSEL>;
+#[doc = "Register REFSEL `reset()`'s with value 0x04"]
+impl crate::ResetValue for super::REFSEL {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x04
     }
 }
-#[doc = "Possible values of the field `REFSEL`"]
+#[doc = "Reference select\n\nValue on reset: 4"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum REFSELR {
-    #[doc = "VREF = internal 1.2 V reference (VDD &gt;= 1.7 V)"]
+pub enum REFSEL_A {
+    #[doc = "0: VREF = internal 1.2 V reference (VDD &gt;= 1.7 V)"]
     INT1V2,
-    #[doc = "VREF = internal 1.8 V reference (VDD &gt;= VREF + 0.2 V)"]
+    #[doc = "1: VREF = internal 1.8 V reference (VDD &gt;= VREF + 0.2 V)"]
     INT1V8,
-    #[doc = "VREF = internal 2.4 V reference (VDD &gt;= VREF + 0.2 V)"]
+    #[doc = "2: VREF = internal 2.4 V reference (VDD &gt;= VREF + 0.2 V)"]
     INT2V4,
-    #[doc = "VREF = VDD"]
+    #[doc = "4: VREF = VDD"]
     VDD,
-    #[doc = "VREF = AREF (VDD &gt;= VREF &gt;= AREFMIN)"]
+    #[doc = "7: VREF = AREF (VDD &gt;= VREF &gt;= AREFMIN)"]
     AREF,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl REFSELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            REFSELR::INT1V2 => 0,
-            REFSELR::INT1V8 => 1,
-            REFSELR::INT2V4 => 2,
-            REFSELR::VDD => 4,
-            REFSELR::AREF => 7,
-            REFSELR::_Reserved(bits) => bits,
+impl From<REFSEL_A> for u8 {
+    #[inline(always)]
+    fn from(variant: REFSEL_A) -> Self {
+        match variant {
+            REFSEL_A::INT1V2 => 0,
+            REFSEL_A::INT1V8 => 1,
+            REFSEL_A::INT2V4 => 2,
+            REFSEL_A::VDD => 4,
+            REFSEL_A::AREF => 7,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> REFSELR {
-        match value {
-            0 => REFSELR::INT1V2,
-            1 => REFSELR::INT1V8,
-            2 => REFSELR::INT2V4,
-            4 => REFSELR::VDD,
-            7 => REFSELR::AREF,
-            i => REFSELR::_Reserved(i),
+}
+#[doc = "Reader of field `REFSEL`"]
+pub type REFSEL_R = crate::R<u8, REFSEL_A>;
+impl REFSEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, REFSEL_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(REFSEL_A::INT1V2),
+            1 => Val(REFSEL_A::INT1V8),
+            2 => Val(REFSEL_A::INT2V4),
+            4 => Val(REFSEL_A::VDD),
+            7 => Val(REFSEL_A::AREF),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `INT1V2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_int1v2(&self) -> bool {
-        *self == REFSELR::INT1V2
+        *self == REFSEL_A::INT1V2
     }
     #[doc = "Checks if the value of the field is `INT1V8`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_int1v8(&self) -> bool {
-        *self == REFSELR::INT1V8
+        *self == REFSEL_A::INT1V8
     }
     #[doc = "Checks if the value of the field is `INT2V4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_int2v4(&self) -> bool {
-        *self == REFSELR::INT2V4
+        *self == REFSEL_A::INT2V4
     }
     #[doc = "Checks if the value of the field is `VDD`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_vdd(&self) -> bool {
-        *self == REFSELR::VDD
+        *self == REFSEL_A::VDD
     }
     #[doc = "Checks if the value of the field is `AREF`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_aref(&self) -> bool {
-        *self == REFSELR::AREF
+        *self == REFSEL_A::AREF
     }
 }
-#[doc = "Values that can be written to the field `REFSEL`"]
-pub enum REFSELW {
-    #[doc = "VREF = internal 1.2 V reference (VDD &gt;= 1.7 V)"]
-    INT1V2,
-    #[doc = "VREF = internal 1.8 V reference (VDD &gt;= VREF + 0.2 V)"]
-    INT1V8,
-    #[doc = "VREF = internal 2.4 V reference (VDD &gt;= VREF + 0.2 V)"]
-    INT2V4,
-    #[doc = "VREF = VDD"]
-    VDD,
-    #[doc = "VREF = AREF (VDD &gt;= VREF &gt;= AREFMIN)"]
-    AREF,
-}
-impl REFSELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            REFSELW::INT1V2 => 0,
-            REFSELW::INT1V8 => 1,
-            REFSELW::INT2V4 => 2,
-            REFSELW::VDD => 4,
-            REFSELW::AREF => 7,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _REFSELW<'a> {
+#[doc = "Write proxy for field `REFSEL`"]
+pub struct REFSEL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _REFSELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: REFSELW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+impl<'a> REFSEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: REFSEL_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "VREF = internal 1.2 V reference (VDD &gt;= 1.7 V)"]
-    #[inline]
+    #[inline(always)]
     pub fn int1v2(self) -> &'a mut W {
-        self.variant(REFSELW::INT1V2)
+        self.variant(REFSEL_A::INT1V2)
     }
     #[doc = "VREF = internal 1.8 V reference (VDD &gt;= VREF + 0.2 V)"]
-    #[inline]
+    #[inline(always)]
     pub fn int1v8(self) -> &'a mut W {
-        self.variant(REFSELW::INT1V8)
+        self.variant(REFSEL_A::INT1V8)
     }
     #[doc = "VREF = internal 2.4 V reference (VDD &gt;= VREF + 0.2 V)"]
-    #[inline]
+    #[inline(always)]
     pub fn int2v4(self) -> &'a mut W {
-        self.variant(REFSELW::INT2V4)
+        self.variant(REFSEL_A::INT2V4)
     }
     #[doc = "VREF = VDD"]
-    #[inline]
+    #[inline(always)]
     pub fn vdd(self) -> &'a mut W {
-        self.variant(REFSELW::VDD)
+        self.variant(REFSEL_A::VDD)
     }
     #[doc = "VREF = AREF (VDD &gt;= VREF &gt;= AREFMIN)"]
-    #[inline]
+    #[inline(always)]
     pub fn aref(self) -> &'a mut W {
-        self.variant(REFSELW::AREF)
+        self.variant(REFSEL_A::AREF)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x07) | ((value as u32) & 0x07);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:2 - Reference select"]
-    #[inline]
-    pub fn refsel(&self) -> REFSELR {
-        REFSELR::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn refsel(&self) -> REFSEL_R {
+        REFSEL_R::new((self.bits & 0x07) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 4 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:2 - Reference select"]
-    #[inline]
-    pub fn refsel(&mut self) -> _REFSELW {
-        _REFSELW { w: self }
+    #[inline(always)]
+    pub fn refsel(&mut self) -> REFSEL_W {
+        REFSEL_W { w: self }
     }
 }

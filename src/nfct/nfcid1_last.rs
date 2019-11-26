@@ -1,228 +1,112 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::NFCID1_LAST {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register NFCID1_LAST"]
+pub type R = crate::R<u32, super::NFCID1_LAST>;
+#[doc = "Writer for register NFCID1_LAST"]
+pub type W = crate::W<u32, super::NFCID1_LAST>;
+#[doc = "Register NFCID1_LAST `reset()`'s with value 0x6363"]
+impl crate::ResetValue for super::NFCID1_LAST {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x6363
     }
 }
-#[doc = r" Value of the field"]
-pub struct NFCID1_ZR {
-    bits: u8,
-}
-impl NFCID1_ZR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct NFCID1_YR {
-    bits: u8,
-}
-impl NFCID1_YR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct NFCID1_XR {
-    bits: u8,
-}
-impl NFCID1_XR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct NFCID1_WR {
-    bits: u8,
-}
-impl NFCID1_WR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Proxy"]
-pub struct _NFCID1_ZW<'a> {
+#[doc = "Reader of field `NFCID1_Z`"]
+pub type NFCID1_Z_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `NFCID1_Z`"]
+pub struct NFCID1_Z_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _NFCID1_ZW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> NFCID1_Z_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 255;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0xff) | ((value as u32) & 0xff);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _NFCID1_YW<'a> {
+#[doc = "Reader of field `NFCID1_Y`"]
+pub type NFCID1_Y_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `NFCID1_Y`"]
+pub struct NFCID1_Y_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _NFCID1_YW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> NFCID1_Y_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 255;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0xff << 8)) | (((value as u32) & 0xff) << 8);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _NFCID1_XW<'a> {
+#[doc = "Reader of field `NFCID1_X`"]
+pub type NFCID1_X_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `NFCID1_X`"]
+pub struct NFCID1_X_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _NFCID1_XW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> NFCID1_X_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 255;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0xff << 16)) | (((value as u32) & 0xff) << 16);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _NFCID1_WW<'a> {
+#[doc = "Reader of field `NFCID1_W`"]
+pub type NFCID1_W_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `NFCID1_W`"]
+pub struct NFCID1_W_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _NFCID1_WW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> NFCID1_W_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 255;
-        const OFFSET: u8 = 24;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0xff << 24)) | (((value as u32) & 0xff) << 24);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:7 - NFCID1 byte Z (very last byte sent)"]
-    #[inline]
-    pub fn nfcid1_z(&self) -> NFCID1_ZR {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        NFCID1_ZR { bits }
+    #[inline(always)]
+    pub fn nfcid1_z(&self) -> NFCID1_Z_R {
+        NFCID1_Z_R::new((self.bits & 0xff) as u8)
     }
     #[doc = "Bits 8:15 - NFCID1 byte Y"]
-    #[inline]
-    pub fn nfcid1_y(&self) -> NFCID1_YR {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        NFCID1_YR { bits }
+    #[inline(always)]
+    pub fn nfcid1_y(&self) -> NFCID1_Y_R {
+        NFCID1_Y_R::new(((self.bits >> 8) & 0xff) as u8)
     }
     #[doc = "Bits 16:23 - NFCID1 byte X"]
-    #[inline]
-    pub fn nfcid1_x(&self) -> NFCID1_XR {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        NFCID1_XR { bits }
+    #[inline(always)]
+    pub fn nfcid1_x(&self) -> NFCID1_X_R {
+        NFCID1_X_R::new(((self.bits >> 16) & 0xff) as u8)
     }
     #[doc = "Bits 24:31 - NFCID1 byte W"]
-    #[inline]
-    pub fn nfcid1_w(&self) -> NFCID1_WR {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        NFCID1_WR { bits }
+    #[inline(always)]
+    pub fn nfcid1_w(&self) -> NFCID1_W_R {
+        NFCID1_W_R::new(((self.bits >> 24) & 0xff) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 25443 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:7 - NFCID1 byte Z (very last byte sent)"]
-    #[inline]
-    pub fn nfcid1_z(&mut self) -> _NFCID1_ZW {
-        _NFCID1_ZW { w: self }
+    #[inline(always)]
+    pub fn nfcid1_z(&mut self) -> NFCID1_Z_W {
+        NFCID1_Z_W { w: self }
     }
     #[doc = "Bits 8:15 - NFCID1 byte Y"]
-    #[inline]
-    pub fn nfcid1_y(&mut self) -> _NFCID1_YW {
-        _NFCID1_YW { w: self }
+    #[inline(always)]
+    pub fn nfcid1_y(&mut self) -> NFCID1_Y_W {
+        NFCID1_Y_W { w: self }
     }
     #[doc = "Bits 16:23 - NFCID1 byte X"]
-    #[inline]
-    pub fn nfcid1_x(&mut self) -> _NFCID1_XW {
-        _NFCID1_XW { w: self }
+    #[inline(always)]
+    pub fn nfcid1_x(&mut self) -> NFCID1_X_W {
+        NFCID1_X_W { w: self }
     }
     #[doc = "Bits 24:31 - NFCID1 byte W"]
-    #[inline]
-    pub fn nfcid1_w(&mut self) -> _NFCID1_WW {
-        _NFCID1_WW { w: self }
+    #[inline(always)]
+    pub fn nfcid1_w(&mut self) -> NFCID1_W_W {
+        NFCID1_W_W { w: self }
     }
 }

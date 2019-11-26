@@ -1,421 +1,280 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::RX {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register RX"]
+pub type R = crate::R<u32, super::RX>;
+#[doc = "Writer for register RX"]
+pub type W = crate::W<u32, super::RX>;
+#[doc = "Register RX `reset()`'s with value 0"]
+impl crate::ResetValue for super::RX {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `CRCERROR`"]
+#[doc = "No valid End of Frame detected\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CRCERRORR {
-    #[doc = "Valid CRC detected"]
+pub enum CRCERROR_A {
+    #[doc = "0: Valid CRC detected"]
     CRCCORRECT,
-    #[doc = "CRC received does not match local check"]
+    #[doc = "1: CRC received does not match local check"]
     CRCERROR,
 }
-impl CRCERRORR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CRCERRORR::CRCCORRECT => false,
-            CRCERRORR::CRCERROR => true,
+impl From<CRCERROR_A> for bool {
+    #[inline(always)]
+    fn from(variant: CRCERROR_A) -> Self {
+        match variant {
+            CRCERROR_A::CRCCORRECT => false,
+            CRCERROR_A::CRCERROR => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CRCERRORR {
-        match value {
-            false => CRCERRORR::CRCCORRECT,
-            true => CRCERRORR::CRCERROR,
+}
+#[doc = "Reader of field `CRCERROR`"]
+pub type CRCERROR_R = crate::R<bool, CRCERROR_A>;
+impl CRCERROR_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CRCERROR_A {
+        match self.bits {
+            false => CRCERROR_A::CRCCORRECT,
+            true => CRCERROR_A::CRCERROR,
         }
     }
     #[doc = "Checks if the value of the field is `CRCCORRECT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_crccorrect(&self) -> bool {
-        *self == CRCERRORR::CRCCORRECT
+        *self == CRCERROR_A::CRCCORRECT
     }
     #[doc = "Checks if the value of the field is `CRCERROR`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_crcerror(&self) -> bool {
-        *self == CRCERRORR::CRCERROR
+        *self == CRCERROR_A::CRCERROR
     }
 }
-#[doc = "Possible values of the field `PARITYSTATUS`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PARITYSTATUSR {
-    #[doc = "Frame received with parity OK"]
-    PARITYOK,
-    #[doc = "Frame received with parity error"]
-    PARITYERROR,
+#[doc = "Write proxy for field `CRCERROR`"]
+pub struct CRCERROR_W<'a> {
+    w: &'a mut W,
 }
-impl PARITYSTATUSR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PARITYSTATUSR::PARITYOK => false,
-            PARITYSTATUSR::PARITYERROR => true,
+impl<'a> CRCERROR_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CRCERROR_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PARITYSTATUSR {
-        match value {
-            false => PARITYSTATUSR::PARITYOK,
-            true => PARITYSTATUSR::PARITYERROR,
+    #[doc = "Valid CRC detected"]
+    #[inline(always)]
+    pub fn crccorrect(self) -> &'a mut W {
+        self.variant(CRCERROR_A::CRCCORRECT)
+    }
+    #[doc = "CRC received does not match local check"]
+    #[inline(always)]
+    pub fn crcerror(self) -> &'a mut W {
+        self.variant(CRCERROR_A::CRCERROR)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w
+    }
+}
+#[doc = "Parity status of received frame\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PARITYSTATUS_A {
+    #[doc = "0: Frame received with parity OK"]
+    PARITYOK,
+    #[doc = "1: Frame received with parity error"]
+    PARITYERROR,
+}
+impl From<PARITYSTATUS_A> for bool {
+    #[inline(always)]
+    fn from(variant: PARITYSTATUS_A) -> Self {
+        match variant {
+            PARITYSTATUS_A::PARITYOK => false,
+            PARITYSTATUS_A::PARITYERROR => true,
+        }
+    }
+}
+#[doc = "Reader of field `PARITYSTATUS`"]
+pub type PARITYSTATUS_R = crate::R<bool, PARITYSTATUS_A>;
+impl PARITYSTATUS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PARITYSTATUS_A {
+        match self.bits {
+            false => PARITYSTATUS_A::PARITYOK,
+            true => PARITYSTATUS_A::PARITYERROR,
         }
     }
     #[doc = "Checks if the value of the field is `PARITYOK`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_parity_ok(&self) -> bool {
-        *self == PARITYSTATUSR::PARITYOK
+        *self == PARITYSTATUS_A::PARITYOK
     }
     #[doc = "Checks if the value of the field is `PARITYERROR`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_parity_error(&self) -> bool {
-        *self == PARITYSTATUSR::PARITYERROR
+        *self == PARITYSTATUS_A::PARITYERROR
     }
 }
-#[doc = "Possible values of the field `OVERRUN`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum OVERRUNR {
-    #[doc = "No overrun detected"]
-    NOOVERRUN,
-    #[doc = "Overrun error"]
-    OVERRUN,
+#[doc = "Write proxy for field `PARITYSTATUS`"]
+pub struct PARITYSTATUS_W<'a> {
+    w: &'a mut W,
 }
-impl OVERRUNR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            OVERRUNR::NOOVERRUN => false,
-            OVERRUNR::OVERRUN => true,
+impl<'a> PARITYSTATUS_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PARITYSTATUS_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> OVERRUNR {
-        match value {
-            false => OVERRUNR::NOOVERRUN,
-            true => OVERRUNR::OVERRUN,
+    #[doc = "Frame received with parity OK"]
+    #[inline(always)]
+    pub fn parity_ok(self) -> &'a mut W {
+        self.variant(PARITYSTATUS_A::PARITYOK)
+    }
+    #[doc = "Frame received with parity error"]
+    #[inline(always)]
+    pub fn parity_error(self) -> &'a mut W {
+        self.variant(PARITYSTATUS_A::PARITYERROR)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w
+    }
+}
+#[doc = "Overrun detected\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum OVERRUN_A {
+    #[doc = "0: No overrun detected"]
+    NOOVERRUN,
+    #[doc = "1: Overrun error"]
+    OVERRUN,
+}
+impl From<OVERRUN_A> for bool {
+    #[inline(always)]
+    fn from(variant: OVERRUN_A) -> Self {
+        match variant {
+            OVERRUN_A::NOOVERRUN => false,
+            OVERRUN_A::OVERRUN => true,
+        }
+    }
+}
+#[doc = "Reader of field `OVERRUN`"]
+pub type OVERRUN_R = crate::R<bool, OVERRUN_A>;
+impl OVERRUN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> OVERRUN_A {
+        match self.bits {
+            false => OVERRUN_A::NOOVERRUN,
+            true => OVERRUN_A::OVERRUN,
         }
     }
     #[doc = "Checks if the value of the field is `NOOVERRUN`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_no_overrun(&self) -> bool {
-        *self == OVERRUNR::NOOVERRUN
+        *self == OVERRUN_A::NOOVERRUN
     }
     #[doc = "Checks if the value of the field is `OVERRUN`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_overrun(&self) -> bool {
-        *self == OVERRUNR::OVERRUN
+        *self == OVERRUN_A::OVERRUN
     }
 }
-#[doc = "Values that can be written to the field `CRCERROR`"]
-pub enum CRCERRORW {
-    #[doc = "Valid CRC detected"]
-    CRCCORRECT,
-    #[doc = "CRC received does not match local check"]
-    CRCERROR,
-}
-impl CRCERRORW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CRCERRORW::CRCCORRECT => false,
-            CRCERRORW::CRCERROR => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CRCERRORW<'a> {
+#[doc = "Write proxy for field `OVERRUN`"]
+pub struct OVERRUN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CRCERRORW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CRCERRORW) -> &'a mut W {
+impl<'a> OVERRUN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: OVERRUN_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Valid CRC detected"]
-    #[inline]
-    pub fn crccorrect(self) -> &'a mut W {
-        self.variant(CRCERRORW::CRCCORRECT)
-    }
-    #[doc = "CRC received does not match local check"]
-    #[inline]
-    pub fn crcerror(self) -> &'a mut W {
-        self.variant(CRCERRORW::CRCERROR)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `PARITYSTATUS`"]
-pub enum PARITYSTATUSW {
-    #[doc = "Frame received with parity OK"]
-    PARITYOK,
-    #[doc = "Frame received with parity error"]
-    PARITYERROR,
-}
-impl PARITYSTATUSW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PARITYSTATUSW::PARITYOK => false,
-            PARITYSTATUSW::PARITYERROR => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PARITYSTATUSW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PARITYSTATUSW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PARITYSTATUSW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Frame received with parity OK"]
-    #[inline]
-    pub fn parity_ok(self) -> &'a mut W {
-        self.variant(PARITYSTATUSW::PARITYOK)
-    }
-    #[doc = "Frame received with parity error"]
-    #[inline]
-    pub fn parity_error(self) -> &'a mut W {
-        self.variant(PARITYSTATUSW::PARITYERROR)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `OVERRUN`"]
-pub enum OVERRUNW {
-    #[doc = "No overrun detected"]
-    NOOVERRUN,
-    #[doc = "Overrun error"]
-    OVERRUN,
-}
-impl OVERRUNW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            OVERRUNW::NOOVERRUN => false,
-            OVERRUNW::OVERRUN => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _OVERRUNW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _OVERRUNW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: OVERRUNW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No overrun detected"]
-    #[inline]
+    #[inline(always)]
     pub fn no_overrun(self) -> &'a mut W {
-        self.variant(OVERRUNW::NOOVERRUN)
+        self.variant(OVERRUN_A::NOOVERRUN)
     }
     #[doc = "Overrun error"]
-    #[inline]
+    #[inline(always)]
     pub fn overrun(self) -> &'a mut W {
-        self.variant(OVERRUNW::OVERRUN)
+        self.variant(OVERRUN_A::OVERRUN)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - No valid End of Frame detected"]
-    #[inline]
-    pub fn crcerror(&self) -> CRCERRORR {
-        CRCERRORR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn crcerror(&self) -> CRCERROR_R {
+        CRCERROR_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 2 - Parity status of received frame"]
-    #[inline]
-    pub fn paritystatus(&self) -> PARITYSTATUSR {
-        PARITYSTATUSR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn paritystatus(&self) -> PARITYSTATUS_R {
+        PARITYSTATUS_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - Overrun detected"]
-    #[inline]
-    pub fn overrun(&self) -> OVERRUNR {
-        OVERRUNR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn overrun(&self) -> OVERRUN_R {
+        OVERRUN_R::new(((self.bits >> 3) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - No valid End of Frame detected"]
-    #[inline]
-    pub fn crcerror(&mut self) -> _CRCERRORW {
-        _CRCERRORW { w: self }
+    #[inline(always)]
+    pub fn crcerror(&mut self) -> CRCERROR_W {
+        CRCERROR_W { w: self }
     }
     #[doc = "Bit 2 - Parity status of received frame"]
-    #[inline]
-    pub fn paritystatus(&mut self) -> _PARITYSTATUSW {
-        _PARITYSTATUSW { w: self }
+    #[inline(always)]
+    pub fn paritystatus(&mut self) -> PARITYSTATUS_W {
+        PARITYSTATUS_W { w: self }
     }
     #[doc = "Bit 3 - Overrun detected"]
-    #[inline]
-    pub fn overrun(&mut self) -> _OVERRUNW {
-        _OVERRUNW { w: self }
+    #[inline(always)]
+    pub fn overrun(&mut self) -> OVERRUN_W {
+        OVERRUN_W { w: self }
     }
 }

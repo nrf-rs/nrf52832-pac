@@ -1,252 +1,164 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::FREQUENCY {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register FREQUENCY"]
+pub type R = crate::R<u32, super::FREQUENCY>;
+#[doc = "Writer for register FREQUENCY"]
+pub type W = crate::W<u32, super::FREQUENCY>;
+#[doc = "Register FREQUENCY `reset()`'s with value 0x0400_0000"]
+impl crate::ResetValue for super::FREQUENCY {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x0400_0000
     }
 }
-#[doc = "Possible values of the field `FREQUENCY`"]
+#[doc = "SPI master data rate\n\nValue on reset: 67108864"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FREQUENCYR {
-    #[doc = "125 kbps"]
+pub enum FREQUENCY_A {
+    #[doc = "33554432: 125 kbps"]
     K125,
-    #[doc = "250 kbps"]
+    #[doc = "67108864: 250 kbps"]
     K250,
-    #[doc = "500 kbps"]
+    #[doc = "134217728: 500 kbps"]
     K500,
-    #[doc = "1 Mbps"]
+    #[doc = "268435456: 1 Mbps"]
     M1,
-    #[doc = "2 Mbps"]
+    #[doc = "536870912: 2 Mbps"]
     M2,
-    #[doc = "4 Mbps"]
+    #[doc = "1073741824: 4 Mbps"]
     M4,
-    #[doc = "8 Mbps"]
+    #[doc = "2147483648: 8 Mbps"]
     M8,
-    #[doc = r" Reserved"]
-    _Reserved(u32),
 }
-impl FREQUENCYR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        match *self {
-            FREQUENCYR::K125 => 33554432,
-            FREQUENCYR::K250 => 67108864,
-            FREQUENCYR::K500 => 134217728,
-            FREQUENCYR::M1 => 268435456,
-            FREQUENCYR::M2 => 536870912,
-            FREQUENCYR::M4 => 1073741824,
-            FREQUENCYR::M8 => 2147483648,
-            FREQUENCYR::_Reserved(bits) => bits,
+impl From<FREQUENCY_A> for u32 {
+    #[inline(always)]
+    fn from(variant: FREQUENCY_A) -> Self {
+        match variant {
+            FREQUENCY_A::K125 => 33554432,
+            FREQUENCY_A::K250 => 67108864,
+            FREQUENCY_A::K500 => 134217728,
+            FREQUENCY_A::M1 => 268435456,
+            FREQUENCY_A::M2 => 536870912,
+            FREQUENCY_A::M4 => 1073741824,
+            FREQUENCY_A::M8 => 2147483648,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u32) -> FREQUENCYR {
-        match value {
-            33554432 => FREQUENCYR::K125,
-            67108864 => FREQUENCYR::K250,
-            134217728 => FREQUENCYR::K500,
-            268435456 => FREQUENCYR::M1,
-            536870912 => FREQUENCYR::M2,
-            1073741824 => FREQUENCYR::M4,
-            2147483648 => FREQUENCYR::M8,
-            i => FREQUENCYR::_Reserved(i),
+}
+#[doc = "Reader of field `FREQUENCY`"]
+pub type FREQUENCY_R = crate::R<u32, FREQUENCY_A>;
+impl FREQUENCY_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u32, FREQUENCY_A> {
+        use crate::Variant::*;
+        match self.bits {
+            33554432 => Val(FREQUENCY_A::K125),
+            67108864 => Val(FREQUENCY_A::K250),
+            134217728 => Val(FREQUENCY_A::K500),
+            268435456 => Val(FREQUENCY_A::M1),
+            536870912 => Val(FREQUENCY_A::M2),
+            1073741824 => Val(FREQUENCY_A::M4),
+            2147483648 => Val(FREQUENCY_A::M8),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `K125`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_k125(&self) -> bool {
-        *self == FREQUENCYR::K125
+        *self == FREQUENCY_A::K125
     }
     #[doc = "Checks if the value of the field is `K250`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_k250(&self) -> bool {
-        *self == FREQUENCYR::K250
+        *self == FREQUENCY_A::K250
     }
     #[doc = "Checks if the value of the field is `K500`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_k500(&self) -> bool {
-        *self == FREQUENCYR::K500
+        *self == FREQUENCY_A::K500
     }
     #[doc = "Checks if the value of the field is `M1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_m1(&self) -> bool {
-        *self == FREQUENCYR::M1
+        *self == FREQUENCY_A::M1
     }
     #[doc = "Checks if the value of the field is `M2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_m2(&self) -> bool {
-        *self == FREQUENCYR::M2
+        *self == FREQUENCY_A::M2
     }
     #[doc = "Checks if the value of the field is `M4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_m4(&self) -> bool {
-        *self == FREQUENCYR::M4
+        *self == FREQUENCY_A::M4
     }
     #[doc = "Checks if the value of the field is `M8`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_m8(&self) -> bool {
-        *self == FREQUENCYR::M8
+        *self == FREQUENCY_A::M8
     }
 }
-#[doc = "Values that can be written to the field `FREQUENCY`"]
-pub enum FREQUENCYW {
-    #[doc = "125 kbps"]
-    K125,
-    #[doc = "250 kbps"]
-    K250,
-    #[doc = "500 kbps"]
-    K500,
-    #[doc = "1 Mbps"]
-    M1,
-    #[doc = "2 Mbps"]
-    M2,
-    #[doc = "4 Mbps"]
-    M4,
-    #[doc = "8 Mbps"]
-    M8,
-}
-impl FREQUENCYW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u32 {
-        match *self {
-            FREQUENCYW::K125 => 33554432,
-            FREQUENCYW::K250 => 67108864,
-            FREQUENCYW::K500 => 134217728,
-            FREQUENCYW::M1 => 268435456,
-            FREQUENCYW::M2 => 536870912,
-            FREQUENCYW::M4 => 1073741824,
-            FREQUENCYW::M8 => 2147483648,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _FREQUENCYW<'a> {
+#[doc = "Write proxy for field `FREQUENCY`"]
+pub struct FREQUENCY_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _FREQUENCYW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: FREQUENCYW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+impl<'a> FREQUENCY_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: FREQUENCY_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "125 kbps"]
-    #[inline]
+    #[inline(always)]
     pub fn k125(self) -> &'a mut W {
-        self.variant(FREQUENCYW::K125)
+        self.variant(FREQUENCY_A::K125)
     }
     #[doc = "250 kbps"]
-    #[inline]
+    #[inline(always)]
     pub fn k250(self) -> &'a mut W {
-        self.variant(FREQUENCYW::K250)
+        self.variant(FREQUENCY_A::K250)
     }
     #[doc = "500 kbps"]
-    #[inline]
+    #[inline(always)]
     pub fn k500(self) -> &'a mut W {
-        self.variant(FREQUENCYW::K500)
+        self.variant(FREQUENCY_A::K500)
     }
     #[doc = "1 Mbps"]
-    #[inline]
+    #[inline(always)]
     pub fn m1(self) -> &'a mut W {
-        self.variant(FREQUENCYW::M1)
+        self.variant(FREQUENCY_A::M1)
     }
     #[doc = "2 Mbps"]
-    #[inline]
+    #[inline(always)]
     pub fn m2(self) -> &'a mut W {
-        self.variant(FREQUENCYW::M2)
+        self.variant(FREQUENCY_A::M2)
     }
     #[doc = "4 Mbps"]
-    #[inline]
+    #[inline(always)]
     pub fn m4(self) -> &'a mut W {
-        self.variant(FREQUENCYW::M4)
+        self.variant(FREQUENCY_A::M4)
     }
     #[doc = "8 Mbps"]
-    #[inline]
+    #[inline(always)]
     pub fn m8(self) -> &'a mut W {
-        self.variant(FREQUENCYW::M8)
+        self.variant(FREQUENCY_A::M8)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        const MASK: u32 = 4294967295;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0xffff_ffff) | ((value as u32) & 0xffff_ffff);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:31 - SPI master data rate"]
-    #[inline]
-    pub fn frequency(&self) -> FREQUENCYR {
-        FREQUENCYR::_from({
-            const MASK: u32 = 4294967295;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u32
-        })
+    #[inline(always)]
+    pub fn frequency(&self) -> FREQUENCY_R {
+        FREQUENCY_R::new((self.bits & 0xffff_ffff) as u32)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 67108864 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:31 - SPI master data rate"]
-    #[inline]
-    pub fn frequency(&mut self) -> _FREQUENCYW {
-        _FREQUENCYW { w: self }
+    #[inline(always)]
+    pub fn frequency(&mut self) -> FREQUENCY_W {
+        FREQUENCY_W { w: self }
     }
 }

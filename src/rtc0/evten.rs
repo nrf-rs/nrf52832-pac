@@ -1,778 +1,544 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::EVTEN {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register EVTEN"]
+pub type R = crate::R<u32, super::EVTEN>;
+#[doc = "Writer for register EVTEN"]
+pub type W = crate::W<u32, super::EVTEN>;
+#[doc = "Register EVTEN `reset()`'s with value 0"]
+impl crate::ResetValue for super::EVTEN {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `TICK`"]
+#[doc = "Enable or disable event routing for TICK event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TICKR {
-    #[doc = "Disable"]
+pub enum TICK_A {
+    #[doc = "0: Disable"]
     DISABLED,
-    #[doc = "Enable"]
+    #[doc = "1: Enable"]
     ENABLED,
 }
-impl TICKR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            TICKR::DISABLED => false,
-            TICKR::ENABLED => true,
+impl From<TICK_A> for bool {
+    #[inline(always)]
+    fn from(variant: TICK_A) -> Self {
+        match variant {
+            TICK_A::DISABLED => false,
+            TICK_A::ENABLED => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> TICKR {
-        match value {
-            false => TICKR::DISABLED,
-            true => TICKR::ENABLED,
+}
+#[doc = "Reader of field `TICK`"]
+pub type TICK_R = crate::R<bool, TICK_A>;
+impl TICK_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TICK_A {
+        match self.bits {
+            false => TICK_A::DISABLED,
+            true => TICK_A::ENABLED,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == TICKR::DISABLED
+        *self == TICK_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == TICKR::ENABLED
+        *self == TICK_A::ENABLED
     }
 }
-#[doc = "Possible values of the field `OVRFLW`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum OVRFLWR {
-    #[doc = "Disable"]
-    DISABLED,
-    #[doc = "Enable"]
-    ENABLED,
-}
-impl OVRFLWR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            OVRFLWR::DISABLED => false,
-            OVRFLWR::ENABLED => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> OVRFLWR {
-        match value {
-            false => OVRFLWR::DISABLED,
-            true => OVRFLWR::ENABLED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
-    pub fn is_disabled(&self) -> bool {
-        *self == OVRFLWR::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
-    pub fn is_enabled(&self) -> bool {
-        *self == OVRFLWR::ENABLED
-    }
-}
-#[doc = "Possible values of the field `COMPARE0`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum COMPARE0R {
-    #[doc = "Disable"]
-    DISABLED,
-    #[doc = "Enable"]
-    ENABLED,
-}
-impl COMPARE0R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            COMPARE0R::DISABLED => false,
-            COMPARE0R::ENABLED => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> COMPARE0R {
-        match value {
-            false => COMPARE0R::DISABLED,
-            true => COMPARE0R::ENABLED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
-    pub fn is_disabled(&self) -> bool {
-        *self == COMPARE0R::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
-    pub fn is_enabled(&self) -> bool {
-        *self == COMPARE0R::ENABLED
-    }
-}
-#[doc = "Possible values of the field `COMPARE1`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum COMPARE1R {
-    #[doc = "Disable"]
-    DISABLED,
-    #[doc = "Enable"]
-    ENABLED,
-}
-impl COMPARE1R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            COMPARE1R::DISABLED => false,
-            COMPARE1R::ENABLED => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> COMPARE1R {
-        match value {
-            false => COMPARE1R::DISABLED,
-            true => COMPARE1R::ENABLED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
-    pub fn is_disabled(&self) -> bool {
-        *self == COMPARE1R::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
-    pub fn is_enabled(&self) -> bool {
-        *self == COMPARE1R::ENABLED
-    }
-}
-#[doc = "Possible values of the field `COMPARE2`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum COMPARE2R {
-    #[doc = "Disable"]
-    DISABLED,
-    #[doc = "Enable"]
-    ENABLED,
-}
-impl COMPARE2R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            COMPARE2R::DISABLED => false,
-            COMPARE2R::ENABLED => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> COMPARE2R {
-        match value {
-            false => COMPARE2R::DISABLED,
-            true => COMPARE2R::ENABLED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
-    pub fn is_disabled(&self) -> bool {
-        *self == COMPARE2R::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
-    pub fn is_enabled(&self) -> bool {
-        *self == COMPARE2R::ENABLED
-    }
-}
-#[doc = "Possible values of the field `COMPARE3`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum COMPARE3R {
-    #[doc = "Disable"]
-    DISABLED,
-    #[doc = "Enable"]
-    ENABLED,
-}
-impl COMPARE3R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            COMPARE3R::DISABLED => false,
-            COMPARE3R::ENABLED => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> COMPARE3R {
-        match value {
-            false => COMPARE3R::DISABLED,
-            true => COMPARE3R::ENABLED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
-    pub fn is_disabled(&self) -> bool {
-        *self == COMPARE3R::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
-    pub fn is_enabled(&self) -> bool {
-        *self == COMPARE3R::ENABLED
-    }
-}
-#[doc = "Values that can be written to the field `TICK`"]
-pub enum TICKW {
-    #[doc = "Disable"]
-    DISABLED,
-    #[doc = "Enable"]
-    ENABLED,
-}
-impl TICKW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            TICKW::DISABLED => false,
-            TICKW::ENABLED => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _TICKW<'a> {
+#[doc = "Write proxy for field `TICK`"]
+pub struct TICK_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TICKW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: TICKW) -> &'a mut W {
+impl<'a> TICK_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: TICK_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable"]
-    #[inline]
+    #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(TICKW::DISABLED)
+        self.variant(TICK_A::DISABLED)
     }
     #[doc = "Enable"]
-    #[inline]
+    #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(TICKW::ENABLED)
+        self.variant(TICK_A::ENABLED)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `OVRFLW`"]
-pub enum OVRFLWW {
-    #[doc = "Disable"]
+#[doc = "Enable or disable event routing for OVRFLW event\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum OVRFLW_A {
+    #[doc = "0: Disable"]
     DISABLED,
-    #[doc = "Enable"]
+    #[doc = "1: Enable"]
     ENABLED,
 }
-impl OVRFLWW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            OVRFLWW::DISABLED => false,
-            OVRFLWW::ENABLED => true,
+impl From<OVRFLW_A> for bool {
+    #[inline(always)]
+    fn from(variant: OVRFLW_A) -> Self {
+        match variant {
+            OVRFLW_A::DISABLED => false,
+            OVRFLW_A::ENABLED => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _OVRFLWW<'a> {
+#[doc = "Reader of field `OVRFLW`"]
+pub type OVRFLW_R = crate::R<bool, OVRFLW_A>;
+impl OVRFLW_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> OVRFLW_A {
+        match self.bits {
+            false => OVRFLW_A::DISABLED,
+            true => OVRFLW_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == OVRFLW_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == OVRFLW_A::ENABLED
+    }
+}
+#[doc = "Write proxy for field `OVRFLW`"]
+pub struct OVRFLW_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _OVRFLWW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: OVRFLWW) -> &'a mut W {
+impl<'a> OVRFLW_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: OVRFLW_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable"]
-    #[inline]
+    #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(OVRFLWW::DISABLED)
+        self.variant(OVRFLW_A::DISABLED)
     }
     #[doc = "Enable"]
-    #[inline]
+    #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(OVRFLWW::ENABLED)
+        self.variant(OVRFLW_A::ENABLED)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `COMPARE0`"]
-pub enum COMPARE0W {
-    #[doc = "Disable"]
+#[doc = "Enable or disable event routing for COMPARE\\[0\\] event\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum COMPARE0_A {
+    #[doc = "0: Disable"]
     DISABLED,
-    #[doc = "Enable"]
+    #[doc = "1: Enable"]
     ENABLED,
 }
-impl COMPARE0W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            COMPARE0W::DISABLED => false,
-            COMPARE0W::ENABLED => true,
+impl From<COMPARE0_A> for bool {
+    #[inline(always)]
+    fn from(variant: COMPARE0_A) -> Self {
+        match variant {
+            COMPARE0_A::DISABLED => false,
+            COMPARE0_A::ENABLED => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _COMPARE0W<'a> {
+#[doc = "Reader of field `COMPARE0`"]
+pub type COMPARE0_R = crate::R<bool, COMPARE0_A>;
+impl COMPARE0_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> COMPARE0_A {
+        match self.bits {
+            false => COMPARE0_A::DISABLED,
+            true => COMPARE0_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == COMPARE0_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == COMPARE0_A::ENABLED
+    }
+}
+#[doc = "Write proxy for field `COMPARE0`"]
+pub struct COMPARE0_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _COMPARE0W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: COMPARE0W) -> &'a mut W {
+impl<'a> COMPARE0_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: COMPARE0_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable"]
-    #[inline]
+    #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(COMPARE0W::DISABLED)
+        self.variant(COMPARE0_A::DISABLED)
     }
     #[doc = "Enable"]
-    #[inline]
+    #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(COMPARE0W::ENABLED)
+        self.variant(COMPARE0_A::ENABLED)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `COMPARE1`"]
-pub enum COMPARE1W {
-    #[doc = "Disable"]
+#[doc = "Enable or disable event routing for COMPARE\\[1\\] event\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum COMPARE1_A {
+    #[doc = "0: Disable"]
     DISABLED,
-    #[doc = "Enable"]
+    #[doc = "1: Enable"]
     ENABLED,
 }
-impl COMPARE1W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            COMPARE1W::DISABLED => false,
-            COMPARE1W::ENABLED => true,
+impl From<COMPARE1_A> for bool {
+    #[inline(always)]
+    fn from(variant: COMPARE1_A) -> Self {
+        match variant {
+            COMPARE1_A::DISABLED => false,
+            COMPARE1_A::ENABLED => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _COMPARE1W<'a> {
+#[doc = "Reader of field `COMPARE1`"]
+pub type COMPARE1_R = crate::R<bool, COMPARE1_A>;
+impl COMPARE1_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> COMPARE1_A {
+        match self.bits {
+            false => COMPARE1_A::DISABLED,
+            true => COMPARE1_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == COMPARE1_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == COMPARE1_A::ENABLED
+    }
+}
+#[doc = "Write proxy for field `COMPARE1`"]
+pub struct COMPARE1_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _COMPARE1W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: COMPARE1W) -> &'a mut W {
+impl<'a> COMPARE1_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: COMPARE1_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable"]
-    #[inline]
+    #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(COMPARE1W::DISABLED)
+        self.variant(COMPARE1_A::DISABLED)
     }
     #[doc = "Enable"]
-    #[inline]
+    #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(COMPARE1W::ENABLED)
+        self.variant(COMPARE1_A::ENABLED)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 17;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 17)) | (((value as u32) & 0x01) << 17);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `COMPARE2`"]
-pub enum COMPARE2W {
-    #[doc = "Disable"]
+#[doc = "Enable or disable event routing for COMPARE\\[2\\] event\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum COMPARE2_A {
+    #[doc = "0: Disable"]
     DISABLED,
-    #[doc = "Enable"]
+    #[doc = "1: Enable"]
     ENABLED,
 }
-impl COMPARE2W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            COMPARE2W::DISABLED => false,
-            COMPARE2W::ENABLED => true,
+impl From<COMPARE2_A> for bool {
+    #[inline(always)]
+    fn from(variant: COMPARE2_A) -> Self {
+        match variant {
+            COMPARE2_A::DISABLED => false,
+            COMPARE2_A::ENABLED => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _COMPARE2W<'a> {
+#[doc = "Reader of field `COMPARE2`"]
+pub type COMPARE2_R = crate::R<bool, COMPARE2_A>;
+impl COMPARE2_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> COMPARE2_A {
+        match self.bits {
+            false => COMPARE2_A::DISABLED,
+            true => COMPARE2_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == COMPARE2_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == COMPARE2_A::ENABLED
+    }
+}
+#[doc = "Write proxy for field `COMPARE2`"]
+pub struct COMPARE2_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _COMPARE2W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: COMPARE2W) -> &'a mut W {
+impl<'a> COMPARE2_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: COMPARE2_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable"]
-    #[inline]
+    #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(COMPARE2W::DISABLED)
+        self.variant(COMPARE2_A::DISABLED)
     }
     #[doc = "Enable"]
-    #[inline]
+    #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(COMPARE2W::ENABLED)
+        self.variant(COMPARE2_A::ENABLED)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 18;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 18)) | (((value as u32) & 0x01) << 18);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `COMPARE3`"]
-pub enum COMPARE3W {
-    #[doc = "Disable"]
+#[doc = "Enable or disable event routing for COMPARE\\[3\\] event\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum COMPARE3_A {
+    #[doc = "0: Disable"]
     DISABLED,
-    #[doc = "Enable"]
+    #[doc = "1: Enable"]
     ENABLED,
 }
-impl COMPARE3W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            COMPARE3W::DISABLED => false,
-            COMPARE3W::ENABLED => true,
+impl From<COMPARE3_A> for bool {
+    #[inline(always)]
+    fn from(variant: COMPARE3_A) -> Self {
+        match variant {
+            COMPARE3_A::DISABLED => false,
+            COMPARE3_A::ENABLED => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _COMPARE3W<'a> {
+#[doc = "Reader of field `COMPARE3`"]
+pub type COMPARE3_R = crate::R<bool, COMPARE3_A>;
+impl COMPARE3_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> COMPARE3_A {
+        match self.bits {
+            false => COMPARE3_A::DISABLED,
+            true => COMPARE3_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == COMPARE3_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == COMPARE3_A::ENABLED
+    }
+}
+#[doc = "Write proxy for field `COMPARE3`"]
+pub struct COMPARE3_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _COMPARE3W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: COMPARE3W) -> &'a mut W {
+impl<'a> COMPARE3_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: COMPARE3_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable"]
-    #[inline]
+    #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(COMPARE3W::DISABLED)
+        self.variant(COMPARE3_A::DISABLED)
     }
     #[doc = "Enable"]
-    #[inline]
+    #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(COMPARE3W::ENABLED)
+        self.variant(COMPARE3_A::ENABLED)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 19;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 19)) | (((value as u32) & 0x01) << 19);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Enable or disable event routing for TICK event"]
-    #[inline]
-    pub fn tick(&self) -> TICKR {
-        TICKR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn tick(&self) -> TICK_R {
+        TICK_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Enable or disable event routing for OVRFLW event"]
-    #[inline]
-    pub fn ovrflw(&self) -> OVRFLWR {
-        OVRFLWR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ovrflw(&self) -> OVRFLW_R {
+        OVRFLW_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 16 - Enable or disable event routing for COMPARE\\[0\\] event"]
-    #[inline]
-    pub fn compare0(&self) -> COMPARE0R {
-        COMPARE0R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn compare0(&self) -> COMPARE0_R {
+        COMPARE0_R::new(((self.bits >> 16) & 0x01) != 0)
     }
     #[doc = "Bit 17 - Enable or disable event routing for COMPARE\\[1\\] event"]
-    #[inline]
-    pub fn compare1(&self) -> COMPARE1R {
-        COMPARE1R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 17;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn compare1(&self) -> COMPARE1_R {
+        COMPARE1_R::new(((self.bits >> 17) & 0x01) != 0)
     }
     #[doc = "Bit 18 - Enable or disable event routing for COMPARE\\[2\\] event"]
-    #[inline]
-    pub fn compare2(&self) -> COMPARE2R {
-        COMPARE2R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 18;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn compare2(&self) -> COMPARE2_R {
+        COMPARE2_R::new(((self.bits >> 18) & 0x01) != 0)
     }
     #[doc = "Bit 19 - Enable or disable event routing for COMPARE\\[3\\] event"]
-    #[inline]
-    pub fn compare3(&self) -> COMPARE3R {
-        COMPARE3R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 19;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn compare3(&self) -> COMPARE3_R {
+        COMPARE3_R::new(((self.bits >> 19) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Enable or disable event routing for TICK event"]
-    #[inline]
-    pub fn tick(&mut self) -> _TICKW {
-        _TICKW { w: self }
+    #[inline(always)]
+    pub fn tick(&mut self) -> TICK_W {
+        TICK_W { w: self }
     }
     #[doc = "Bit 1 - Enable or disable event routing for OVRFLW event"]
-    #[inline]
-    pub fn ovrflw(&mut self) -> _OVRFLWW {
-        _OVRFLWW { w: self }
+    #[inline(always)]
+    pub fn ovrflw(&mut self) -> OVRFLW_W {
+        OVRFLW_W { w: self }
     }
     #[doc = "Bit 16 - Enable or disable event routing for COMPARE\\[0\\] event"]
-    #[inline]
-    pub fn compare0(&mut self) -> _COMPARE0W {
-        _COMPARE0W { w: self }
+    #[inline(always)]
+    pub fn compare0(&mut self) -> COMPARE0_W {
+        COMPARE0_W { w: self }
     }
     #[doc = "Bit 17 - Enable or disable event routing for COMPARE\\[1\\] event"]
-    #[inline]
-    pub fn compare1(&mut self) -> _COMPARE1W {
-        _COMPARE1W { w: self }
+    #[inline(always)]
+    pub fn compare1(&mut self) -> COMPARE1_W {
+        COMPARE1_W { w: self }
     }
     #[doc = "Bit 18 - Enable or disable event routing for COMPARE\\[2\\] event"]
-    #[inline]
-    pub fn compare2(&mut self) -> _COMPARE2W {
-        _COMPARE2W { w: self }
+    #[inline(always)]
+    pub fn compare2(&mut self) -> COMPARE2_W {
+        COMPARE2_W { w: self }
     }
     #[doc = "Bit 19 - Enable or disable event routing for COMPARE\\[3\\] event"]
-    #[inline]
-    pub fn compare3(&mut self) -> _COMPARE3W {
-        _COMPARE3W { w: self }
+    #[inline(always)]
+    pub fn compare3(&mut self) -> COMPARE3_W {
+        COMPARE3_W { w: self }
     }
 }

@@ -1,105 +1,40 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::B0 {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register B0"]
+pub type R = crate::R<u32, super::B0>;
+#[doc = "Writer for register B0"]
+pub type W = crate::W<u32, super::B0>;
+#[doc = "Register B0 `reset()`'s with value 0x3fcc"]
+impl crate::ResetValue for super::B0 {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x3fcc
     }
 }
-#[doc = r" Value of the field"]
-pub struct B0R {
-    bits: u16,
-}
-impl B0R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
-#[doc = r" Proxy"]
-pub struct _B0W<'a> {
+#[doc = "Reader of field `B0`"]
+pub type B0_R = crate::R<u16, u16>;
+#[doc = "Write proxy for field `B0`"]
+pub struct B0_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _B0W<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> B0_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        const MASK: u16 = 16383;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x3fff) | ((value as u32) & 0x3fff);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:13 - y-intercept of 1st piece wise linear function"]
-    #[inline]
-    pub fn b0(&self) -> B0R {
-        let bits = {
-            const MASK: u16 = 16383;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        B0R { bits }
+    #[inline(always)]
+    pub fn b0(&self) -> B0_R {
+        B0_R::new((self.bits & 0x3fff) as u16)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 16332 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:13 - y-intercept of 1st piece wise linear function"]
-    #[inline]
-    pub fn b0(&mut self) -> _B0W {
-        _B0W { w: self }
+    #[inline(always)]
+    pub fn b0(&mut self) -> B0_W {
+        B0_W { w: self }
     }
 }

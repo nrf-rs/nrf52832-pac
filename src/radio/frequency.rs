@@ -1,224 +1,128 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::FREQUENCY {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register FREQUENCY"]
+pub type R = crate::R<u32, super::FREQUENCY>;
+#[doc = "Writer for register FREQUENCY"]
+pub type W = crate::W<u32, super::FREQUENCY>;
+#[doc = "Register FREQUENCY `reset()`'s with value 0x02"]
+impl crate::ResetValue for super::FREQUENCY {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x02
     }
 }
-#[doc = r" Value of the field"]
-pub struct FREQUENCYR {
-    bits: u8,
-}
-impl FREQUENCYR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = "Possible values of the field `MAP`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MAPR {
-    #[doc = "Channel map between 2400 MHZ .. 2500 MHz"]
-    DEFAULT,
-    #[doc = "Channel map between 2360 MHZ .. 2460 MHz"]
-    LOW,
-}
-impl MAPR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            MAPR::DEFAULT => false,
-            MAPR::LOW => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> MAPR {
-        match value {
-            false => MAPR::DEFAULT,
-            true => MAPR::LOW,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DEFAULT`"]
-    #[inline]
-    pub fn is_default(&self) -> bool {
-        *self == MAPR::DEFAULT
-    }
-    #[doc = "Checks if the value of the field is `LOW`"]
-    #[inline]
-    pub fn is_low(&self) -> bool {
-        *self == MAPR::LOW
-    }
-}
-#[doc = r" Proxy"]
-pub struct _FREQUENCYW<'a> {
+#[doc = "Reader of field `FREQUENCY`"]
+pub type FREQUENCY_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `FREQUENCY`"]
+pub struct FREQUENCY_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _FREQUENCYW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> FREQUENCY_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 127;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x7f) | ((value as u32) & 0x7f);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `MAP`"]
-pub enum MAPW {
-    #[doc = "Channel map between 2400 MHZ .. 2500 MHz"]
+#[doc = "Channel map selection.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum MAP_A {
+    #[doc = "0: Channel map between 2400 MHZ .. 2500 MHz"]
     DEFAULT,
-    #[doc = "Channel map between 2360 MHZ .. 2460 MHz"]
+    #[doc = "1: Channel map between 2360 MHZ .. 2460 MHz"]
     LOW,
 }
-impl MAPW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            MAPW::DEFAULT => false,
-            MAPW::LOW => true,
+impl From<MAP_A> for bool {
+    #[inline(always)]
+    fn from(variant: MAP_A) -> Self {
+        match variant {
+            MAP_A::DEFAULT => false,
+            MAP_A::LOW => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _MAPW<'a> {
+#[doc = "Reader of field `MAP`"]
+pub type MAP_R = crate::R<bool, MAP_A>;
+impl MAP_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> MAP_A {
+        match self.bits {
+            false => MAP_A::DEFAULT,
+            true => MAP_A::LOW,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DEFAULT`"]
+    #[inline(always)]
+    pub fn is_default(&self) -> bool {
+        *self == MAP_A::DEFAULT
+    }
+    #[doc = "Checks if the value of the field is `LOW`"]
+    #[inline(always)]
+    pub fn is_low(&self) -> bool {
+        *self == MAP_A::LOW
+    }
+}
+#[doc = "Write proxy for field `MAP`"]
+pub struct MAP_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _MAPW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: MAPW) -> &'a mut W {
+impl<'a> MAP_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: MAP_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Channel map between 2400 MHZ .. 2500 MHz"]
-    #[inline]
+    #[inline(always)]
     pub fn default(self) -> &'a mut W {
-        self.variant(MAPW::DEFAULT)
+        self.variant(MAP_A::DEFAULT)
     }
     #[doc = "Channel map between 2360 MHZ .. 2460 MHz"]
-    #[inline]
+    #[inline(always)]
     pub fn low(self) -> &'a mut W {
-        self.variant(MAPW::LOW)
+        self.variant(MAP_A::LOW)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:6 - Radio channel frequency"]
-    #[inline]
-    pub fn frequency(&self) -> FREQUENCYR {
-        let bits = {
-            const MASK: u8 = 127;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        FREQUENCYR { bits }
+    #[inline(always)]
+    pub fn frequency(&self) -> FREQUENCY_R {
+        FREQUENCY_R::new((self.bits & 0x7f) as u8)
     }
     #[doc = "Bit 8 - Channel map selection."]
-    #[inline]
-    pub fn map(&self) -> MAPR {
-        MAPR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn map(&self) -> MAP_R {
+        MAP_R::new(((self.bits >> 8) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 2 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:6 - Radio channel frequency"]
-    #[inline]
-    pub fn frequency(&mut self) -> _FREQUENCYW {
-        _FREQUENCYW { w: self }
+    #[inline(always)]
+    pub fn frequency(&mut self) -> FREQUENCY_W {
+        FREQUENCY_W { w: self }
     }
     #[doc = "Bit 8 - Channel map selection."]
-    #[inline]
-    pub fn map(&mut self) -> _MAPW {
-        _MAPW { w: self }
+    #[inline(always)]
+    pub fn map(&mut self) -> MAP_W {
+        MAP_W { w: self }
     }
 }

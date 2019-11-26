@@ -1,443 +1,274 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::PCNF0 {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register PCNF0"]
+pub type R = crate::R<u32, super::PCNF0>;
+#[doc = "Writer for register PCNF0"]
+pub type W = crate::W<u32, super::PCNF0>;
+#[doc = "Register PCNF0 `reset()`'s with value 0"]
+impl crate::ResetValue for super::PCNF0 {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct LFLENR {
-    bits: u8,
+#[doc = "Reader of field `LFLEN`"]
+pub type LFLEN_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `LFLEN`"]
+pub struct LFLEN_W<'a> {
+    w: &'a mut W,
 }
-impl LFLENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+impl<'a> LFLEN_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x0f) | ((value as u32) & 0x0f);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct S0LENR {
-    bits: bool,
+#[doc = "Reader of field `S0LEN`"]
+pub type S0LEN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `S0LEN`"]
+pub struct S0LEN_W<'a> {
+    w: &'a mut W,
 }
-impl S0LENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
+impl<'a> S0LEN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
     }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct S1LENR {
-    bits: u8,
-}
-impl S1LENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w
     }
 }
-#[doc = "Possible values of the field `S1INCL`"]
+#[doc = "Reader of field `S1LEN`"]
+pub type S1LEN_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `S1LEN`"]
+pub struct S1LEN_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> S1LEN_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x0f << 16)) | (((value as u32) & 0x0f) << 16);
+        self.w
+    }
+}
+#[doc = "Include or exclude S1 field in RAM\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum S1INCLR {
-    #[doc = "Include S1 field in RAM only if S1LEN &gt; 0"]
+pub enum S1INCL_A {
+    #[doc = "0: Include S1 field in RAM only if S1LEN &gt; 0"]
     AUTOMATIC,
-    #[doc = "Always include S1 field in RAM independent of S1LEN"]
+    #[doc = "1: Always include S1 field in RAM independent of S1LEN"]
     INCLUDE,
 }
-impl S1INCLR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            S1INCLR::AUTOMATIC => false,
-            S1INCLR::INCLUDE => true,
+impl From<S1INCL_A> for bool {
+    #[inline(always)]
+    fn from(variant: S1INCL_A) -> Self {
+        match variant {
+            S1INCL_A::AUTOMATIC => false,
+            S1INCL_A::INCLUDE => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> S1INCLR {
-        match value {
-            false => S1INCLR::AUTOMATIC,
-            true => S1INCLR::INCLUDE,
+}
+#[doc = "Reader of field `S1INCL`"]
+pub type S1INCL_R = crate::R<bool, S1INCL_A>;
+impl S1INCL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> S1INCL_A {
+        match self.bits {
+            false => S1INCL_A::AUTOMATIC,
+            true => S1INCL_A::INCLUDE,
         }
     }
     #[doc = "Checks if the value of the field is `AUTOMATIC`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_automatic(&self) -> bool {
-        *self == S1INCLR::AUTOMATIC
+        *self == S1INCL_A::AUTOMATIC
     }
     #[doc = "Checks if the value of the field is `INCLUDE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_include(&self) -> bool {
-        *self == S1INCLR::INCLUDE
+        *self == S1INCL_A::INCLUDE
     }
 }
-#[doc = "Possible values of the field `PLEN`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PLENR {
-    #[doc = "8-bit preamble"]
-    _8BIT,
-    #[doc = "16-bit preamble"]
-    _16BIT,
+#[doc = "Write proxy for field `S1INCL`"]
+pub struct S1INCL_W<'a> {
+    w: &'a mut W,
 }
-impl PLENR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PLENR::_8BIT => false,
-            PLENR::_16BIT => true,
+impl<'a> S1INCL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: S1INCL_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PLENR {
-        match value {
-            false => PLENR::_8BIT,
-            true => PLENR::_16BIT,
+    #[doc = "Include S1 field in RAM only if S1LEN &gt; 0"]
+    #[inline(always)]
+    pub fn automatic(self) -> &'a mut W {
+        self.variant(S1INCL_A::AUTOMATIC)
+    }
+    #[doc = "Always include S1 field in RAM independent of S1LEN"]
+    #[inline(always)]
+    pub fn include(self) -> &'a mut W {
+        self.variant(S1INCL_A::INCLUDE)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 20)) | (((value as u32) & 0x01) << 20);
+        self.w
+    }
+}
+#[doc = "Length of preamble on air. Decision point: TASKS_START task\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PLEN_A {
+    #[doc = "0: 8-bit preamble"]
+    _8BIT,
+    #[doc = "1: 16-bit preamble"]
+    _16BIT,
+}
+impl From<PLEN_A> for bool {
+    #[inline(always)]
+    fn from(variant: PLEN_A) -> Self {
+        match variant {
+            PLEN_A::_8BIT => false,
+            PLEN_A::_16BIT => true,
+        }
+    }
+}
+#[doc = "Reader of field `PLEN`"]
+pub type PLEN_R = crate::R<bool, PLEN_A>;
+impl PLEN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PLEN_A {
+        match self.bits {
+            false => PLEN_A::_8BIT,
+            true => PLEN_A::_16BIT,
         }
     }
     #[doc = "Checks if the value of the field is `_8BIT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_8bit(&self) -> bool {
-        *self == PLENR::_8BIT
+        *self == PLEN_A::_8BIT
     }
     #[doc = "Checks if the value of the field is `_16BIT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_16bit(&self) -> bool {
-        *self == PLENR::_16BIT
+        *self == PLEN_A::_16BIT
     }
 }
-#[doc = r" Proxy"]
-pub struct _LFLENW<'a> {
+#[doc = "Write proxy for field `PLEN`"]
+pub struct PLEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _LFLENW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _S0LENW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _S0LENW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _S1LENW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _S1LENW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `S1INCL`"]
-pub enum S1INCLW {
-    #[doc = "Include S1 field in RAM only if S1LEN &gt; 0"]
-    AUTOMATIC,
-    #[doc = "Always include S1 field in RAM independent of S1LEN"]
-    INCLUDE,
-}
-impl S1INCLW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            S1INCLW::AUTOMATIC => false,
-            S1INCLW::INCLUDE => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _S1INCLW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _S1INCLW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: S1INCLW) -> &'a mut W {
+impl<'a> PLEN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PLEN_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Include S1 field in RAM only if S1LEN &gt; 0"]
-    #[inline]
-    pub fn automatic(self) -> &'a mut W {
-        self.variant(S1INCLW::AUTOMATIC)
-    }
-    #[doc = "Always include S1 field in RAM independent of S1LEN"]
-    #[inline]
-    pub fn include(self) -> &'a mut W {
-        self.variant(S1INCLW::INCLUDE)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 20;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `PLEN`"]
-pub enum PLENW {
-    #[doc = "8-bit preamble"]
-    _8BIT,
-    #[doc = "16-bit preamble"]
-    _16BIT,
-}
-impl PLENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PLENW::_8BIT => false,
-            PLENW::_16BIT => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PLENW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PLENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PLENW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "8-bit preamble"]
-    #[inline]
+    #[inline(always)]
     pub fn _8bit(self) -> &'a mut W {
-        self.variant(PLENW::_8BIT)
+        self.variant(PLEN_A::_8BIT)
     }
     #[doc = "16-bit preamble"]
-    #[inline]
+    #[inline(always)]
     pub fn _16bit(self) -> &'a mut W {
-        self.variant(PLENW::_16BIT)
+        self.variant(PLEN_A::_16BIT)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 24;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:3 - Length on air of LENGTH field in number of bits."]
-    #[inline]
-    pub fn lflen(&self) -> LFLENR {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        LFLENR { bits }
+    #[inline(always)]
+    pub fn lflen(&self) -> LFLEN_R {
+        LFLEN_R::new((self.bits & 0x0f) as u8)
     }
     #[doc = "Bit 8 - Length on air of S0 field in number of bytes."]
-    #[inline]
-    pub fn s0len(&self) -> S0LENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        S0LENR { bits }
+    #[inline(always)]
+    pub fn s0len(&self) -> S0LEN_R {
+        S0LEN_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bits 16:19 - Length on air of S1 field in number of bits."]
-    #[inline]
-    pub fn s1len(&self) -> S1LENR {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        S1LENR { bits }
+    #[inline(always)]
+    pub fn s1len(&self) -> S1LEN_R {
+        S1LEN_R::new(((self.bits >> 16) & 0x0f) as u8)
     }
     #[doc = "Bit 20 - Include or exclude S1 field in RAM"]
-    #[inline]
-    pub fn s1incl(&self) -> S1INCLR {
-        S1INCLR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 20;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn s1incl(&self) -> S1INCL_R {
+        S1INCL_R::new(((self.bits >> 20) & 0x01) != 0)
     }
     #[doc = "Bit 24 - Length of preamble on air. Decision point: TASKS_START task"]
-    #[inline]
-    pub fn plen(&self) -> PLENR {
-        PLENR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn plen(&self) -> PLEN_R {
+        PLEN_R::new(((self.bits >> 24) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:3 - Length on air of LENGTH field in number of bits."]
-    #[inline]
-    pub fn lflen(&mut self) -> _LFLENW {
-        _LFLENW { w: self }
+    #[inline(always)]
+    pub fn lflen(&mut self) -> LFLEN_W {
+        LFLEN_W { w: self }
     }
     #[doc = "Bit 8 - Length on air of S0 field in number of bytes."]
-    #[inline]
-    pub fn s0len(&mut self) -> _S0LENW {
-        _S0LENW { w: self }
+    #[inline(always)]
+    pub fn s0len(&mut self) -> S0LEN_W {
+        S0LEN_W { w: self }
     }
     #[doc = "Bits 16:19 - Length on air of S1 field in number of bits."]
-    #[inline]
-    pub fn s1len(&mut self) -> _S1LENW {
-        _S1LENW { w: self }
+    #[inline(always)]
+    pub fn s1len(&mut self) -> S1LEN_W {
+        S1LEN_W { w: self }
     }
     #[doc = "Bit 20 - Include or exclude S1 field in RAM"]
-    #[inline]
-    pub fn s1incl(&mut self) -> _S1INCLW {
-        _S1INCLW { w: self }
+    #[inline(always)]
+    pub fn s1incl(&mut self) -> S1INCL_W {
+        S1INCL_W { w: self }
     }
     #[doc = "Bit 24 - Length of preamble on air. Decision point: TASKS_START task"]
-    #[inline]
-    pub fn plen(&mut self) -> _PLENW {
-        _PLENW { w: self }
+    #[inline(always)]
+    pub fn plen(&mut self) -> PLEN_W {
+        PLEN_W { w: self }
     }
 }

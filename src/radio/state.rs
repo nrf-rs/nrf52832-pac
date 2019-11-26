@@ -1,133 +1,113 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::STATE {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-}
-#[doc = "Possible values of the field `STATE`"]
+#[doc = "Reader of register STATE"]
+pub type R = crate::R<u32, super::STATE>;
+#[doc = "Current radio state\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum STATER {
-    #[doc = "RADIO is in the Disabled state"]
+pub enum STATE_A {
+    #[doc = "0: RADIO is in the Disabled state"]
     DISABLED,
-    #[doc = "RADIO is in the RXRU state"]
+    #[doc = "1: RADIO is in the RXRU state"]
     RXRU,
-    #[doc = "RADIO is in the RXIDLE state"]
+    #[doc = "2: RADIO is in the RXIDLE state"]
     RXIDLE,
-    #[doc = "RADIO is in the RX state"]
+    #[doc = "3: RADIO is in the RX state"]
     RX,
-    #[doc = "RADIO is in the RXDISABLED state"]
+    #[doc = "4: RADIO is in the RXDISABLED state"]
     RXDISABLE,
-    #[doc = "RADIO is in the TXRU state"]
+    #[doc = "9: RADIO is in the TXRU state"]
     TXRU,
-    #[doc = "RADIO is in the TXIDLE state"]
+    #[doc = "10: RADIO is in the TXIDLE state"]
     TXIDLE,
-    #[doc = "RADIO is in the TX state"]
+    #[doc = "11: RADIO is in the TX state"]
     TX,
-    #[doc = "RADIO is in the TXDISABLED state"]
+    #[doc = "12: RADIO is in the TXDISABLED state"]
     TXDISABLE,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl STATER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            STATER::DISABLED => 0,
-            STATER::RXRU => 1,
-            STATER::RXIDLE => 2,
-            STATER::RX => 3,
-            STATER::RXDISABLE => 4,
-            STATER::TXRU => 9,
-            STATER::TXIDLE => 10,
-            STATER::TX => 11,
-            STATER::TXDISABLE => 12,
-            STATER::_Reserved(bits) => bits,
+impl From<STATE_A> for u8 {
+    #[inline(always)]
+    fn from(variant: STATE_A) -> Self {
+        match variant {
+            STATE_A::DISABLED => 0,
+            STATE_A::RXRU => 1,
+            STATE_A::RXIDLE => 2,
+            STATE_A::RX => 3,
+            STATE_A::RXDISABLE => 4,
+            STATE_A::TXRU => 9,
+            STATE_A::TXIDLE => 10,
+            STATE_A::TX => 11,
+            STATE_A::TXDISABLE => 12,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> STATER {
-        match value {
-            0 => STATER::DISABLED,
-            1 => STATER::RXRU,
-            2 => STATER::RXIDLE,
-            3 => STATER::RX,
-            4 => STATER::RXDISABLE,
-            9 => STATER::TXRU,
-            10 => STATER::TXIDLE,
-            11 => STATER::TX,
-            12 => STATER::TXDISABLE,
-            i => STATER::_Reserved(i),
+}
+#[doc = "Reader of field `STATE`"]
+pub type STATE_R = crate::R<u8, STATE_A>;
+impl STATE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, STATE_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(STATE_A::DISABLED),
+            1 => Val(STATE_A::RXRU),
+            2 => Val(STATE_A::RXIDLE),
+            3 => Val(STATE_A::RX),
+            4 => Val(STATE_A::RXDISABLE),
+            9 => Val(STATE_A::TXRU),
+            10 => Val(STATE_A::TXIDLE),
+            11 => Val(STATE_A::TX),
+            12 => Val(STATE_A::TXDISABLE),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == STATER::DISABLED
+        *self == STATE_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `RXRU`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_rx_ru(&self) -> bool {
-        *self == STATER::RXRU
+        *self == STATE_A::RXRU
     }
     #[doc = "Checks if the value of the field is `RXIDLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_rx_idle(&self) -> bool {
-        *self == STATER::RXIDLE
+        *self == STATE_A::RXIDLE
     }
     #[doc = "Checks if the value of the field is `RX`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_rx(&self) -> bool {
-        *self == STATER::RX
+        *self == STATE_A::RX
     }
     #[doc = "Checks if the value of the field is `RXDISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_rx_disable(&self) -> bool {
-        *self == STATER::RXDISABLE
+        *self == STATE_A::RXDISABLE
     }
     #[doc = "Checks if the value of the field is `TXRU`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_tx_ru(&self) -> bool {
-        *self == STATER::TXRU
+        *self == STATE_A::TXRU
     }
     #[doc = "Checks if the value of the field is `TXIDLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_tx_idle(&self) -> bool {
-        *self == STATER::TXIDLE
+        *self == STATE_A::TXIDLE
     }
     #[doc = "Checks if the value of the field is `TX`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_tx(&self) -> bool {
-        *self == STATER::TX
+        *self == STATE_A::TX
     }
     #[doc = "Checks if the value of the field is `TXDISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_tx_disable(&self) -> bool {
-        *self == STATER::TXDISABLE
+        *self == STATE_A::TXDISABLE
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:3 - Current radio state"]
-    #[inline]
-    pub fn state(&self) -> STATER {
-        STATER::_from({
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn state(&self) -> STATE_R {
+        STATE_R::new((self.bits & 0x0f) as u8)
     }
 }

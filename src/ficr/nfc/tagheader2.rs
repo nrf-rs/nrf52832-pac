@@ -1,104 +1,32 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::TAGHEADER2 {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct UD8R {
-    bits: u8,
-}
-impl UD8R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct UD9R {
-    bits: u8,
-}
-impl UD9R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct UD10R {
-    bits: u8,
-}
-impl UD10R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct UD11R {
-    bits: u8,
-}
-impl UD11R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
+#[doc = "Reader of register TAGHEADER2"]
+pub type R = crate::R<u32, super::TAGHEADER2>;
+#[doc = "Reader of field `UD8`"]
+pub type UD8_R = crate::R<u8, u8>;
+#[doc = "Reader of field `UD9`"]
+pub type UD9_R = crate::R<u8, u8>;
+#[doc = "Reader of field `UD10`"]
+pub type UD10_R = crate::R<u8, u8>;
+#[doc = "Reader of field `UD11`"]
+pub type UD11_R = crate::R<u8, u8>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:7 - Unique identifier byte 8"]
-    #[inline]
-    pub fn ud8(&self) -> UD8R {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        UD8R { bits }
+    #[inline(always)]
+    pub fn ud8(&self) -> UD8_R {
+        UD8_R::new((self.bits & 0xff) as u8)
     }
     #[doc = "Bits 8:15 - Unique identifier byte 9"]
-    #[inline]
-    pub fn ud9(&self) -> UD9R {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        UD9R { bits }
+    #[inline(always)]
+    pub fn ud9(&self) -> UD9_R {
+        UD9_R::new(((self.bits >> 8) & 0xff) as u8)
     }
     #[doc = "Bits 16:23 - Unique identifier byte 10"]
-    #[inline]
-    pub fn ud10(&self) -> UD10R {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        UD10R { bits }
+    #[inline(always)]
+    pub fn ud10(&self) -> UD10_R {
+        UD10_R::new(((self.bits >> 16) & 0xff) as u8)
     }
     #[doc = "Bits 24:31 - Unique identifier byte 11"]
-    #[inline]
-    pub fn ud11(&self) -> UD11R {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        UD11R { bits }
+    #[inline(always)]
+    pub fn ud11(&self) -> UD11_R {
+        UD11_R::new(((self.bits >> 24) & 0xff) as u8)
     }
 }

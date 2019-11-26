@@ -1,1016 +1,720 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::RXADDRESSES {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register RXADDRESSES"]
+pub type R = crate::R<u32, super::RXADDRESSES>;
+#[doc = "Writer for register RXADDRESSES"]
+pub type W = crate::W<u32, super::RXADDRESSES>;
+#[doc = "Register RXADDRESSES `reset()`'s with value 0"]
+impl crate::ResetValue for super::RXADDRESSES {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `ADDR0`"]
+#[doc = "Enable or disable reception on logical address 0.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ADDR0R {
-    #[doc = "Disable"]
+pub enum ADDR0_A {
+    #[doc = "0: Disable"]
     DISABLED,
-    #[doc = "Enable"]
+    #[doc = "1: Enable"]
     ENABLED,
 }
-impl ADDR0R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ADDR0R::DISABLED => false,
-            ADDR0R::ENABLED => true,
+impl From<ADDR0_A> for bool {
+    #[inline(always)]
+    fn from(variant: ADDR0_A) -> Self {
+        match variant {
+            ADDR0_A::DISABLED => false,
+            ADDR0_A::ENABLED => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ADDR0R {
-        match value {
-            false => ADDR0R::DISABLED,
-            true => ADDR0R::ENABLED,
+}
+#[doc = "Reader of field `ADDR0`"]
+pub type ADDR0_R = crate::R<bool, ADDR0_A>;
+impl ADDR0_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ADDR0_A {
+        match self.bits {
+            false => ADDR0_A::DISABLED,
+            true => ADDR0_A::ENABLED,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == ADDR0R::DISABLED
+        *self == ADDR0_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == ADDR0R::ENABLED
+        *self == ADDR0_A::ENABLED
     }
 }
-#[doc = "Possible values of the field `ADDR1`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ADDR1R {
-    #[doc = "Disable"]
-    DISABLED,
-    #[doc = "Enable"]
-    ENABLED,
-}
-impl ADDR1R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ADDR1R::DISABLED => false,
-            ADDR1R::ENABLED => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ADDR1R {
-        match value {
-            false => ADDR1R::DISABLED,
-            true => ADDR1R::ENABLED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
-    pub fn is_disabled(&self) -> bool {
-        *self == ADDR1R::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
-    pub fn is_enabled(&self) -> bool {
-        *self == ADDR1R::ENABLED
-    }
-}
-#[doc = "Possible values of the field `ADDR2`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ADDR2R {
-    #[doc = "Disable"]
-    DISABLED,
-    #[doc = "Enable"]
-    ENABLED,
-}
-impl ADDR2R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ADDR2R::DISABLED => false,
-            ADDR2R::ENABLED => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ADDR2R {
-        match value {
-            false => ADDR2R::DISABLED,
-            true => ADDR2R::ENABLED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
-    pub fn is_disabled(&self) -> bool {
-        *self == ADDR2R::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
-    pub fn is_enabled(&self) -> bool {
-        *self == ADDR2R::ENABLED
-    }
-}
-#[doc = "Possible values of the field `ADDR3`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ADDR3R {
-    #[doc = "Disable"]
-    DISABLED,
-    #[doc = "Enable"]
-    ENABLED,
-}
-impl ADDR3R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ADDR3R::DISABLED => false,
-            ADDR3R::ENABLED => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ADDR3R {
-        match value {
-            false => ADDR3R::DISABLED,
-            true => ADDR3R::ENABLED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
-    pub fn is_disabled(&self) -> bool {
-        *self == ADDR3R::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
-    pub fn is_enabled(&self) -> bool {
-        *self == ADDR3R::ENABLED
-    }
-}
-#[doc = "Possible values of the field `ADDR4`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ADDR4R {
-    #[doc = "Disable"]
-    DISABLED,
-    #[doc = "Enable"]
-    ENABLED,
-}
-impl ADDR4R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ADDR4R::DISABLED => false,
-            ADDR4R::ENABLED => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ADDR4R {
-        match value {
-            false => ADDR4R::DISABLED,
-            true => ADDR4R::ENABLED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
-    pub fn is_disabled(&self) -> bool {
-        *self == ADDR4R::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
-    pub fn is_enabled(&self) -> bool {
-        *self == ADDR4R::ENABLED
-    }
-}
-#[doc = "Possible values of the field `ADDR5`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ADDR5R {
-    #[doc = "Disable"]
-    DISABLED,
-    #[doc = "Enable"]
-    ENABLED,
-}
-impl ADDR5R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ADDR5R::DISABLED => false,
-            ADDR5R::ENABLED => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ADDR5R {
-        match value {
-            false => ADDR5R::DISABLED,
-            true => ADDR5R::ENABLED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
-    pub fn is_disabled(&self) -> bool {
-        *self == ADDR5R::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
-    pub fn is_enabled(&self) -> bool {
-        *self == ADDR5R::ENABLED
-    }
-}
-#[doc = "Possible values of the field `ADDR6`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ADDR6R {
-    #[doc = "Disable"]
-    DISABLED,
-    #[doc = "Enable"]
-    ENABLED,
-}
-impl ADDR6R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ADDR6R::DISABLED => false,
-            ADDR6R::ENABLED => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ADDR6R {
-        match value {
-            false => ADDR6R::DISABLED,
-            true => ADDR6R::ENABLED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
-    pub fn is_disabled(&self) -> bool {
-        *self == ADDR6R::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
-    pub fn is_enabled(&self) -> bool {
-        *self == ADDR6R::ENABLED
-    }
-}
-#[doc = "Possible values of the field `ADDR7`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ADDR7R {
-    #[doc = "Disable"]
-    DISABLED,
-    #[doc = "Enable"]
-    ENABLED,
-}
-impl ADDR7R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ADDR7R::DISABLED => false,
-            ADDR7R::ENABLED => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ADDR7R {
-        match value {
-            false => ADDR7R::DISABLED,
-            true => ADDR7R::ENABLED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
-    pub fn is_disabled(&self) -> bool {
-        *self == ADDR7R::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
-    pub fn is_enabled(&self) -> bool {
-        *self == ADDR7R::ENABLED
-    }
-}
-#[doc = "Values that can be written to the field `ADDR0`"]
-pub enum ADDR0W {
-    #[doc = "Disable"]
-    DISABLED,
-    #[doc = "Enable"]
-    ENABLED,
-}
-impl ADDR0W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ADDR0W::DISABLED => false,
-            ADDR0W::ENABLED => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ADDR0W<'a> {
+#[doc = "Write proxy for field `ADDR0`"]
+pub struct ADDR0_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ADDR0W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ADDR0W) -> &'a mut W {
+impl<'a> ADDR0_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ADDR0_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable"]
-    #[inline]
+    #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(ADDR0W::DISABLED)
+        self.variant(ADDR0_A::DISABLED)
     }
     #[doc = "Enable"]
-    #[inline]
+    #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(ADDR0W::ENABLED)
+        self.variant(ADDR0_A::ENABLED)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `ADDR1`"]
-pub enum ADDR1W {
-    #[doc = "Disable"]
+#[doc = "Enable or disable reception on logical address 1.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ADDR1_A {
+    #[doc = "0: Disable"]
     DISABLED,
-    #[doc = "Enable"]
+    #[doc = "1: Enable"]
     ENABLED,
 }
-impl ADDR1W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ADDR1W::DISABLED => false,
-            ADDR1W::ENABLED => true,
+impl From<ADDR1_A> for bool {
+    #[inline(always)]
+    fn from(variant: ADDR1_A) -> Self {
+        match variant {
+            ADDR1_A::DISABLED => false,
+            ADDR1_A::ENABLED => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _ADDR1W<'a> {
+#[doc = "Reader of field `ADDR1`"]
+pub type ADDR1_R = crate::R<bool, ADDR1_A>;
+impl ADDR1_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ADDR1_A {
+        match self.bits {
+            false => ADDR1_A::DISABLED,
+            true => ADDR1_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == ADDR1_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == ADDR1_A::ENABLED
+    }
+}
+#[doc = "Write proxy for field `ADDR1`"]
+pub struct ADDR1_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ADDR1W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ADDR1W) -> &'a mut W {
+impl<'a> ADDR1_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ADDR1_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable"]
-    #[inline]
+    #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(ADDR1W::DISABLED)
+        self.variant(ADDR1_A::DISABLED)
     }
     #[doc = "Enable"]
-    #[inline]
+    #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(ADDR1W::ENABLED)
+        self.variant(ADDR1_A::ENABLED)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `ADDR2`"]
-pub enum ADDR2W {
-    #[doc = "Disable"]
+#[doc = "Enable or disable reception on logical address 2.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ADDR2_A {
+    #[doc = "0: Disable"]
     DISABLED,
-    #[doc = "Enable"]
+    #[doc = "1: Enable"]
     ENABLED,
 }
-impl ADDR2W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ADDR2W::DISABLED => false,
-            ADDR2W::ENABLED => true,
+impl From<ADDR2_A> for bool {
+    #[inline(always)]
+    fn from(variant: ADDR2_A) -> Self {
+        match variant {
+            ADDR2_A::DISABLED => false,
+            ADDR2_A::ENABLED => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _ADDR2W<'a> {
+#[doc = "Reader of field `ADDR2`"]
+pub type ADDR2_R = crate::R<bool, ADDR2_A>;
+impl ADDR2_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ADDR2_A {
+        match self.bits {
+            false => ADDR2_A::DISABLED,
+            true => ADDR2_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == ADDR2_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == ADDR2_A::ENABLED
+    }
+}
+#[doc = "Write proxy for field `ADDR2`"]
+pub struct ADDR2_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ADDR2W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ADDR2W) -> &'a mut W {
+impl<'a> ADDR2_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ADDR2_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable"]
-    #[inline]
+    #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(ADDR2W::DISABLED)
+        self.variant(ADDR2_A::DISABLED)
     }
     #[doc = "Enable"]
-    #[inline]
+    #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(ADDR2W::ENABLED)
+        self.variant(ADDR2_A::ENABLED)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `ADDR3`"]
-pub enum ADDR3W {
-    #[doc = "Disable"]
+#[doc = "Enable or disable reception on logical address 3.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ADDR3_A {
+    #[doc = "0: Disable"]
     DISABLED,
-    #[doc = "Enable"]
+    #[doc = "1: Enable"]
     ENABLED,
 }
-impl ADDR3W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ADDR3W::DISABLED => false,
-            ADDR3W::ENABLED => true,
+impl From<ADDR3_A> for bool {
+    #[inline(always)]
+    fn from(variant: ADDR3_A) -> Self {
+        match variant {
+            ADDR3_A::DISABLED => false,
+            ADDR3_A::ENABLED => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _ADDR3W<'a> {
+#[doc = "Reader of field `ADDR3`"]
+pub type ADDR3_R = crate::R<bool, ADDR3_A>;
+impl ADDR3_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ADDR3_A {
+        match self.bits {
+            false => ADDR3_A::DISABLED,
+            true => ADDR3_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == ADDR3_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == ADDR3_A::ENABLED
+    }
+}
+#[doc = "Write proxy for field `ADDR3`"]
+pub struct ADDR3_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ADDR3W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ADDR3W) -> &'a mut W {
+impl<'a> ADDR3_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ADDR3_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable"]
-    #[inline]
+    #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(ADDR3W::DISABLED)
+        self.variant(ADDR3_A::DISABLED)
     }
     #[doc = "Enable"]
-    #[inline]
+    #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(ADDR3W::ENABLED)
+        self.variant(ADDR3_A::ENABLED)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `ADDR4`"]
-pub enum ADDR4W {
-    #[doc = "Disable"]
+#[doc = "Enable or disable reception on logical address 4.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ADDR4_A {
+    #[doc = "0: Disable"]
     DISABLED,
-    #[doc = "Enable"]
+    #[doc = "1: Enable"]
     ENABLED,
 }
-impl ADDR4W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ADDR4W::DISABLED => false,
-            ADDR4W::ENABLED => true,
+impl From<ADDR4_A> for bool {
+    #[inline(always)]
+    fn from(variant: ADDR4_A) -> Self {
+        match variant {
+            ADDR4_A::DISABLED => false,
+            ADDR4_A::ENABLED => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _ADDR4W<'a> {
+#[doc = "Reader of field `ADDR4`"]
+pub type ADDR4_R = crate::R<bool, ADDR4_A>;
+impl ADDR4_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ADDR4_A {
+        match self.bits {
+            false => ADDR4_A::DISABLED,
+            true => ADDR4_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == ADDR4_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == ADDR4_A::ENABLED
+    }
+}
+#[doc = "Write proxy for field `ADDR4`"]
+pub struct ADDR4_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ADDR4W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ADDR4W) -> &'a mut W {
+impl<'a> ADDR4_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ADDR4_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable"]
-    #[inline]
+    #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(ADDR4W::DISABLED)
+        self.variant(ADDR4_A::DISABLED)
     }
     #[doc = "Enable"]
-    #[inline]
+    #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(ADDR4W::ENABLED)
+        self.variant(ADDR4_A::ENABLED)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `ADDR5`"]
-pub enum ADDR5W {
-    #[doc = "Disable"]
+#[doc = "Enable or disable reception on logical address 5.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ADDR5_A {
+    #[doc = "0: Disable"]
     DISABLED,
-    #[doc = "Enable"]
+    #[doc = "1: Enable"]
     ENABLED,
 }
-impl ADDR5W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ADDR5W::DISABLED => false,
-            ADDR5W::ENABLED => true,
+impl From<ADDR5_A> for bool {
+    #[inline(always)]
+    fn from(variant: ADDR5_A) -> Self {
+        match variant {
+            ADDR5_A::DISABLED => false,
+            ADDR5_A::ENABLED => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _ADDR5W<'a> {
+#[doc = "Reader of field `ADDR5`"]
+pub type ADDR5_R = crate::R<bool, ADDR5_A>;
+impl ADDR5_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ADDR5_A {
+        match self.bits {
+            false => ADDR5_A::DISABLED,
+            true => ADDR5_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == ADDR5_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == ADDR5_A::ENABLED
+    }
+}
+#[doc = "Write proxy for field `ADDR5`"]
+pub struct ADDR5_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ADDR5W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ADDR5W) -> &'a mut W {
+impl<'a> ADDR5_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ADDR5_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable"]
-    #[inline]
+    #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(ADDR5W::DISABLED)
+        self.variant(ADDR5_A::DISABLED)
     }
     #[doc = "Enable"]
-    #[inline]
+    #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(ADDR5W::ENABLED)
+        self.variant(ADDR5_A::ENABLED)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `ADDR6`"]
-pub enum ADDR6W {
-    #[doc = "Disable"]
+#[doc = "Enable or disable reception on logical address 6.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ADDR6_A {
+    #[doc = "0: Disable"]
     DISABLED,
-    #[doc = "Enable"]
+    #[doc = "1: Enable"]
     ENABLED,
 }
-impl ADDR6W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ADDR6W::DISABLED => false,
-            ADDR6W::ENABLED => true,
+impl From<ADDR6_A> for bool {
+    #[inline(always)]
+    fn from(variant: ADDR6_A) -> Self {
+        match variant {
+            ADDR6_A::DISABLED => false,
+            ADDR6_A::ENABLED => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _ADDR6W<'a> {
+#[doc = "Reader of field `ADDR6`"]
+pub type ADDR6_R = crate::R<bool, ADDR6_A>;
+impl ADDR6_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ADDR6_A {
+        match self.bits {
+            false => ADDR6_A::DISABLED,
+            true => ADDR6_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == ADDR6_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == ADDR6_A::ENABLED
+    }
+}
+#[doc = "Write proxy for field `ADDR6`"]
+pub struct ADDR6_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ADDR6W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ADDR6W) -> &'a mut W {
+impl<'a> ADDR6_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ADDR6_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable"]
-    #[inline]
+    #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(ADDR6W::DISABLED)
+        self.variant(ADDR6_A::DISABLED)
     }
     #[doc = "Enable"]
-    #[inline]
+    #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(ADDR6W::ENABLED)
+        self.variant(ADDR6_A::ENABLED)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `ADDR7`"]
-pub enum ADDR7W {
-    #[doc = "Disable"]
+#[doc = "Enable or disable reception on logical address 7.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ADDR7_A {
+    #[doc = "0: Disable"]
     DISABLED,
-    #[doc = "Enable"]
+    #[doc = "1: Enable"]
     ENABLED,
 }
-impl ADDR7W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ADDR7W::DISABLED => false,
-            ADDR7W::ENABLED => true,
+impl From<ADDR7_A> for bool {
+    #[inline(always)]
+    fn from(variant: ADDR7_A) -> Self {
+        match variant {
+            ADDR7_A::DISABLED => false,
+            ADDR7_A::ENABLED => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _ADDR7W<'a> {
+#[doc = "Reader of field `ADDR7`"]
+pub type ADDR7_R = crate::R<bool, ADDR7_A>;
+impl ADDR7_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ADDR7_A {
+        match self.bits {
+            false => ADDR7_A::DISABLED,
+            true => ADDR7_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == ADDR7_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == ADDR7_A::ENABLED
+    }
+}
+#[doc = "Write proxy for field `ADDR7`"]
+pub struct ADDR7_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ADDR7W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ADDR7W) -> &'a mut W {
+impl<'a> ADDR7_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ADDR7_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable"]
-    #[inline]
+    #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(ADDR7W::DISABLED)
+        self.variant(ADDR7_A::DISABLED)
     }
     #[doc = "Enable"]
-    #[inline]
+    #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(ADDR7W::ENABLED)
+        self.variant(ADDR7_A::ENABLED)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 7;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Enable or disable reception on logical address 0."]
-    #[inline]
-    pub fn addr0(&self) -> ADDR0R {
-        ADDR0R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn addr0(&self) -> ADDR0_R {
+        ADDR0_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Enable or disable reception on logical address 1."]
-    #[inline]
-    pub fn addr1(&self) -> ADDR1R {
-        ADDR1R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn addr1(&self) -> ADDR1_R {
+        ADDR1_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Enable or disable reception on logical address 2."]
-    #[inline]
-    pub fn addr2(&self) -> ADDR2R {
-        ADDR2R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn addr2(&self) -> ADDR2_R {
+        ADDR2_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - Enable or disable reception on logical address 3."]
-    #[inline]
-    pub fn addr3(&self) -> ADDR3R {
-        ADDR3R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn addr3(&self) -> ADDR3_R {
+        ADDR3_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - Enable or disable reception on logical address 4."]
-    #[inline]
-    pub fn addr4(&self) -> ADDR4R {
-        ADDR4R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn addr4(&self) -> ADDR4_R {
+        ADDR4_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - Enable or disable reception on logical address 5."]
-    #[inline]
-    pub fn addr5(&self) -> ADDR5R {
-        ADDR5R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn addr5(&self) -> ADDR5_R {
+        ADDR5_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - Enable or disable reception on logical address 6."]
-    #[inline]
-    pub fn addr6(&self) -> ADDR6R {
-        ADDR6R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn addr6(&self) -> ADDR6_R {
+        ADDR6_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - Enable or disable reception on logical address 7."]
-    #[inline]
-    pub fn addr7(&self) -> ADDR7R {
-        ADDR7R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn addr7(&self) -> ADDR7_R {
+        ADDR7_R::new(((self.bits >> 7) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Enable or disable reception on logical address 0."]
-    #[inline]
-    pub fn addr0(&mut self) -> _ADDR0W {
-        _ADDR0W { w: self }
+    #[inline(always)]
+    pub fn addr0(&mut self) -> ADDR0_W {
+        ADDR0_W { w: self }
     }
     #[doc = "Bit 1 - Enable or disable reception on logical address 1."]
-    #[inline]
-    pub fn addr1(&mut self) -> _ADDR1W {
-        _ADDR1W { w: self }
+    #[inline(always)]
+    pub fn addr1(&mut self) -> ADDR1_W {
+        ADDR1_W { w: self }
     }
     #[doc = "Bit 2 - Enable or disable reception on logical address 2."]
-    #[inline]
-    pub fn addr2(&mut self) -> _ADDR2W {
-        _ADDR2W { w: self }
+    #[inline(always)]
+    pub fn addr2(&mut self) -> ADDR2_W {
+        ADDR2_W { w: self }
     }
     #[doc = "Bit 3 - Enable or disable reception on logical address 3."]
-    #[inline]
-    pub fn addr3(&mut self) -> _ADDR3W {
-        _ADDR3W { w: self }
+    #[inline(always)]
+    pub fn addr3(&mut self) -> ADDR3_W {
+        ADDR3_W { w: self }
     }
     #[doc = "Bit 4 - Enable or disable reception on logical address 4."]
-    #[inline]
-    pub fn addr4(&mut self) -> _ADDR4W {
-        _ADDR4W { w: self }
+    #[inline(always)]
+    pub fn addr4(&mut self) -> ADDR4_W {
+        ADDR4_W { w: self }
     }
     #[doc = "Bit 5 - Enable or disable reception on logical address 5."]
-    #[inline]
-    pub fn addr5(&mut self) -> _ADDR5W {
-        _ADDR5W { w: self }
+    #[inline(always)]
+    pub fn addr5(&mut self) -> ADDR5_W {
+        ADDR5_W { w: self }
     }
     #[doc = "Bit 6 - Enable or disable reception on logical address 6."]
-    #[inline]
-    pub fn addr6(&mut self) -> _ADDR6W {
-        _ADDR6W { w: self }
+    #[inline(always)]
+    pub fn addr6(&mut self) -> ADDR6_W {
+        ADDR6_W { w: self }
     }
     #[doc = "Bit 7 - Enable or disable reception on logical address 7."]
-    #[inline]
-    pub fn addr7(&mut self) -> _ADDR7W {
-        _ADDR7W { w: self }
+    #[inline(always)]
+    pub fn addr7(&mut self) -> ADDR7_W {
+        ADDR7_W { w: self }
     }
 }

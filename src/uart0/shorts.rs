@@ -1,302 +1,192 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::SHORTS {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register SHORTS"]
+pub type R = crate::R<u32, super::SHORTS>;
+#[doc = "Writer for register SHORTS"]
+pub type W = crate::W<u32, super::SHORTS>;
+#[doc = "Register SHORTS `reset()`'s with value 0"]
+impl crate::ResetValue for super::SHORTS {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `CTS_STARTRX`"]
+#[doc = "Shortcut between CTS event and STARTRX task\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CTS_STARTRXR {
-    #[doc = "Disable shortcut"]
+pub enum CTS_STARTRX_A {
+    #[doc = "0: Disable shortcut"]
     DISABLED,
-    #[doc = "Enable shortcut"]
+    #[doc = "1: Enable shortcut"]
     ENABLED,
 }
-impl CTS_STARTRXR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CTS_STARTRXR::DISABLED => false,
-            CTS_STARTRXR::ENABLED => true,
+impl From<CTS_STARTRX_A> for bool {
+    #[inline(always)]
+    fn from(variant: CTS_STARTRX_A) -> Self {
+        match variant {
+            CTS_STARTRX_A::DISABLED => false,
+            CTS_STARTRX_A::ENABLED => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CTS_STARTRXR {
-        match value {
-            false => CTS_STARTRXR::DISABLED,
-            true => CTS_STARTRXR::ENABLED,
+}
+#[doc = "Reader of field `CTS_STARTRX`"]
+pub type CTS_STARTRX_R = crate::R<bool, CTS_STARTRX_A>;
+impl CTS_STARTRX_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CTS_STARTRX_A {
+        match self.bits {
+            false => CTS_STARTRX_A::DISABLED,
+            true => CTS_STARTRX_A::ENABLED,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == CTS_STARTRXR::DISABLED
+        *self == CTS_STARTRX_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == CTS_STARTRXR::ENABLED
+        *self == CTS_STARTRX_A::ENABLED
     }
 }
-#[doc = "Possible values of the field `NCTS_STOPRX`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum NCTS_STOPRXR {
-    #[doc = "Disable shortcut"]
-    DISABLED,
-    #[doc = "Enable shortcut"]
-    ENABLED,
-}
-impl NCTS_STOPRXR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            NCTS_STOPRXR::DISABLED => false,
-            NCTS_STOPRXR::ENABLED => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> NCTS_STOPRXR {
-        match value {
-            false => NCTS_STOPRXR::DISABLED,
-            true => NCTS_STOPRXR::ENABLED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
-    pub fn is_disabled(&self) -> bool {
-        *self == NCTS_STOPRXR::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
-    pub fn is_enabled(&self) -> bool {
-        *self == NCTS_STOPRXR::ENABLED
-    }
-}
-#[doc = "Values that can be written to the field `CTS_STARTRX`"]
-pub enum CTS_STARTRXW {
-    #[doc = "Disable shortcut"]
-    DISABLED,
-    #[doc = "Enable shortcut"]
-    ENABLED,
-}
-impl CTS_STARTRXW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CTS_STARTRXW::DISABLED => false,
-            CTS_STARTRXW::ENABLED => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CTS_STARTRXW<'a> {
+#[doc = "Write proxy for field `CTS_STARTRX`"]
+pub struct CTS_STARTRX_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CTS_STARTRXW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CTS_STARTRXW) -> &'a mut W {
+impl<'a> CTS_STARTRX_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CTS_STARTRX_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable shortcut"]
-    #[inline]
+    #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(CTS_STARTRXW::DISABLED)
+        self.variant(CTS_STARTRX_A::DISABLED)
     }
     #[doc = "Enable shortcut"]
-    #[inline]
+    #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(CTS_STARTRXW::ENABLED)
+        self.variant(CTS_STARTRX_A::ENABLED)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `NCTS_STOPRX`"]
-pub enum NCTS_STOPRXW {
-    #[doc = "Disable shortcut"]
+#[doc = "Shortcut between NCTS event and STOPRX task\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum NCTS_STOPRX_A {
+    #[doc = "0: Disable shortcut"]
     DISABLED,
-    #[doc = "Enable shortcut"]
+    #[doc = "1: Enable shortcut"]
     ENABLED,
 }
-impl NCTS_STOPRXW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            NCTS_STOPRXW::DISABLED => false,
-            NCTS_STOPRXW::ENABLED => true,
+impl From<NCTS_STOPRX_A> for bool {
+    #[inline(always)]
+    fn from(variant: NCTS_STOPRX_A) -> Self {
+        match variant {
+            NCTS_STOPRX_A::DISABLED => false,
+            NCTS_STOPRX_A::ENABLED => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _NCTS_STOPRXW<'a> {
+#[doc = "Reader of field `NCTS_STOPRX`"]
+pub type NCTS_STOPRX_R = crate::R<bool, NCTS_STOPRX_A>;
+impl NCTS_STOPRX_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> NCTS_STOPRX_A {
+        match self.bits {
+            false => NCTS_STOPRX_A::DISABLED,
+            true => NCTS_STOPRX_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == NCTS_STOPRX_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == NCTS_STOPRX_A::ENABLED
+    }
+}
+#[doc = "Write proxy for field `NCTS_STOPRX`"]
+pub struct NCTS_STOPRX_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _NCTS_STOPRXW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: NCTS_STOPRXW) -> &'a mut W {
+impl<'a> NCTS_STOPRX_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: NCTS_STOPRX_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable shortcut"]
-    #[inline]
+    #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(NCTS_STOPRXW::DISABLED)
+        self.variant(NCTS_STOPRX_A::DISABLED)
     }
     #[doc = "Enable shortcut"]
-    #[inline]
+    #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(NCTS_STOPRXW::ENABLED)
+        self.variant(NCTS_STOPRX_A::ENABLED)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 3 - Shortcut between CTS event and STARTRX task"]
-    #[inline]
-    pub fn cts_startrx(&self) -> CTS_STARTRXR {
-        CTS_STARTRXR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn cts_startrx(&self) -> CTS_STARTRX_R {
+        CTS_STARTRX_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - Shortcut between NCTS event and STOPRX task"]
-    #[inline]
-    pub fn ncts_stoprx(&self) -> NCTS_STOPRXR {
-        NCTS_STOPRXR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ncts_stoprx(&self) -> NCTS_STOPRX_R {
+        NCTS_STOPRX_R::new(((self.bits >> 4) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 3 - Shortcut between CTS event and STARTRX task"]
-    #[inline]
-    pub fn cts_startrx(&mut self) -> _CTS_STARTRXW {
-        _CTS_STARTRXW { w: self }
+    #[inline(always)]
+    pub fn cts_startrx(&mut self) -> CTS_STARTRX_W {
+        CTS_STARTRX_W { w: self }
     }
     #[doc = "Bit 4 - Shortcut between NCTS event and STOPRX task"]
-    #[inline]
-    pub fn ncts_stoprx(&mut self) -> _NCTS_STOPRXW {
-        _NCTS_STOPRXW { w: self }
+    #[inline(always)]
+    pub fn ncts_stoprx(&mut self) -> NCTS_STOPRX_W {
+        NCTS_STOPRX_W { w: self }
     }
 }

@@ -1,175 +1,113 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::INTENSET {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register INTENSET"]
+pub type R = crate::R<u32, super::INTENSET>;
+#[doc = "Writer for register INTENSET"]
+pub type W = crate::W<u32, super::INTENSET>;
+#[doc = "Register INTENSET `reset()`'s with value 0"]
+impl crate::ResetValue for super::INTENSET {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `DATARDY`"]
+#[doc = "Write '1' to Enable interrupt for DATARDY event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DATARDYR {
-    #[doc = "Read: Disabled"]
+pub enum DATARDY_A {
+    #[doc = "0: Read: Disabled"]
     DISABLED,
-    #[doc = "Read: Enabled"]
+    #[doc = "1: Read: Enabled"]
     ENABLED,
 }
-impl DATARDYR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            DATARDYR::DISABLED => false,
-            DATARDYR::ENABLED => true,
+impl From<DATARDY_A> for bool {
+    #[inline(always)]
+    fn from(variant: DATARDY_A) -> Self {
+        match variant {
+            DATARDY_A::DISABLED => false,
+            DATARDY_A::ENABLED => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> DATARDYR {
-        match value {
-            false => DATARDYR::DISABLED,
-            true => DATARDYR::ENABLED,
+}
+#[doc = "Reader of field `DATARDY`"]
+pub type DATARDY_R = crate::R<bool, DATARDY_A>;
+impl DATARDY_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DATARDY_A {
+        match self.bits {
+            false => DATARDY_A::DISABLED,
+            true => DATARDY_A::ENABLED,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == DATARDYR::DISABLED
+        *self == DATARDY_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == DATARDYR::ENABLED
+        *self == DATARDY_A::ENABLED
     }
 }
-#[doc = "Values that can be written to the field `DATARDY`"]
-pub enum DATARDYW {
-    #[doc = "Enable"]
+#[doc = "Write '1' to Enable interrupt for DATARDY event\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum DATARDY_AW {
+    #[doc = "1: Enable"]
     SET,
 }
-impl DATARDYW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            DATARDYW::SET => true,
+impl From<DATARDY_AW> for bool {
+    #[inline(always)]
+    fn from(variant: DATARDY_AW) -> Self {
+        match variant {
+            DATARDY_AW::SET => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _DATARDYW<'a> {
+#[doc = "Write proxy for field `DATARDY`"]
+pub struct DATARDY_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DATARDYW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: DATARDYW) -> &'a mut W {
+impl<'a> DATARDY_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: DATARDY_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Enable"]
-    #[inline]
+    #[inline(always)]
     pub fn set(self) -> &'a mut W {
-        self.variant(DATARDYW::SET)
+        self.variant(DATARDY_AW::SET)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Write '1' to Enable interrupt for DATARDY event"]
-    #[inline]
-    pub fn datardy(&self) -> DATARDYR {
-        DATARDYR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn datardy(&self) -> DATARDY_R {
+        DATARDY_R::new((self.bits & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Write '1' to Enable interrupt for DATARDY event"]
-    #[inline]
-    pub fn datardy(&mut self) -> _DATARDYW {
-        _DATARDYW { w: self }
+    #[inline(always)]
+    pub fn datardy(&mut self) -> DATARDY_W {
+        DATARDY_W { w: self }
     }
 }

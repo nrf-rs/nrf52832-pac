@@ -1,540 +1,368 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::ERRORSRC {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register ERRORSRC"]
+pub type R = crate::R<u32, super::ERRORSRC>;
+#[doc = "Writer for register ERRORSRC"]
+pub type W = crate::W<u32, super::ERRORSRC>;
+#[doc = "Register ERRORSRC `reset()`'s with value 0"]
+impl crate::ResetValue for super::ERRORSRC {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `OVERRUN`"]
+#[doc = "Overrun error\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum OVERRUNR {
-    #[doc = "Read: error not present"]
+pub enum OVERRUN_A {
+    #[doc = "0: Read: error not present"]
     NOTPRESENT,
-    #[doc = "Read: error present"]
+    #[doc = "1: Read: error present"]
     PRESENT,
 }
-impl OVERRUNR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            OVERRUNR::NOTPRESENT => false,
-            OVERRUNR::PRESENT => true,
+impl From<OVERRUN_A> for bool {
+    #[inline(always)]
+    fn from(variant: OVERRUN_A) -> Self {
+        match variant {
+            OVERRUN_A::NOTPRESENT => false,
+            OVERRUN_A::PRESENT => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> OVERRUNR {
-        match value {
-            false => OVERRUNR::NOTPRESENT,
-            true => OVERRUNR::PRESENT,
+}
+#[doc = "Reader of field `OVERRUN`"]
+pub type OVERRUN_R = crate::R<bool, OVERRUN_A>;
+impl OVERRUN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> OVERRUN_A {
+        match self.bits {
+            false => OVERRUN_A::NOTPRESENT,
+            true => OVERRUN_A::PRESENT,
         }
     }
     #[doc = "Checks if the value of the field is `NOTPRESENT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_not_present(&self) -> bool {
-        *self == OVERRUNR::NOTPRESENT
+        *self == OVERRUN_A::NOTPRESENT
     }
     #[doc = "Checks if the value of the field is `PRESENT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_present(&self) -> bool {
-        *self == OVERRUNR::PRESENT
+        *self == OVERRUN_A::PRESENT
     }
 }
-#[doc = "Possible values of the field `PARITY`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PARITYR {
-    #[doc = "Read: error not present"]
-    NOTPRESENT,
-    #[doc = "Read: error present"]
-    PRESENT,
-}
-impl PARITYR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PARITYR::NOTPRESENT => false,
-            PARITYR::PRESENT => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PARITYR {
-        match value {
-            false => PARITYR::NOTPRESENT,
-            true => PARITYR::PRESENT,
-        }
-    }
-    #[doc = "Checks if the value of the field is `NOTPRESENT`"]
-    #[inline]
-    pub fn is_not_present(&self) -> bool {
-        *self == PARITYR::NOTPRESENT
-    }
-    #[doc = "Checks if the value of the field is `PRESENT`"]
-    #[inline]
-    pub fn is_present(&self) -> bool {
-        *self == PARITYR::PRESENT
-    }
-}
-#[doc = "Possible values of the field `FRAMING`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FRAMINGR {
-    #[doc = "Read: error not present"]
-    NOTPRESENT,
-    #[doc = "Read: error present"]
-    PRESENT,
-}
-impl FRAMINGR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            FRAMINGR::NOTPRESENT => false,
-            FRAMINGR::PRESENT => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> FRAMINGR {
-        match value {
-            false => FRAMINGR::NOTPRESENT,
-            true => FRAMINGR::PRESENT,
-        }
-    }
-    #[doc = "Checks if the value of the field is `NOTPRESENT`"]
-    #[inline]
-    pub fn is_not_present(&self) -> bool {
-        *self == FRAMINGR::NOTPRESENT
-    }
-    #[doc = "Checks if the value of the field is `PRESENT`"]
-    #[inline]
-    pub fn is_present(&self) -> bool {
-        *self == FRAMINGR::PRESENT
-    }
-}
-#[doc = "Possible values of the field `BREAK`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum BREAKR {
-    #[doc = "Read: error not present"]
-    NOTPRESENT,
-    #[doc = "Read: error present"]
-    PRESENT,
-}
-impl BREAKR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            BREAKR::NOTPRESENT => false,
-            BREAKR::PRESENT => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> BREAKR {
-        match value {
-            false => BREAKR::NOTPRESENT,
-            true => BREAKR::PRESENT,
-        }
-    }
-    #[doc = "Checks if the value of the field is `NOTPRESENT`"]
-    #[inline]
-    pub fn is_not_present(&self) -> bool {
-        *self == BREAKR::NOTPRESENT
-    }
-    #[doc = "Checks if the value of the field is `PRESENT`"]
-    #[inline]
-    pub fn is_present(&self) -> bool {
-        *self == BREAKR::PRESENT
-    }
-}
-#[doc = "Values that can be written to the field `OVERRUN`"]
-pub enum OVERRUNW {
-    #[doc = "Read: error not present"]
-    NOTPRESENT,
-    #[doc = "Read: error present"]
-    PRESENT,
-}
-impl OVERRUNW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            OVERRUNW::NOTPRESENT => false,
-            OVERRUNW::PRESENT => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _OVERRUNW<'a> {
+#[doc = "Write proxy for field `OVERRUN`"]
+pub struct OVERRUN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _OVERRUNW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: OVERRUNW) -> &'a mut W {
+impl<'a> OVERRUN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: OVERRUN_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Read: error not present"]
-    #[inline]
+    #[inline(always)]
     pub fn not_present(self) -> &'a mut W {
-        self.variant(OVERRUNW::NOTPRESENT)
+        self.variant(OVERRUN_A::NOTPRESENT)
     }
     #[doc = "Read: error present"]
-    #[inline]
+    #[inline(always)]
     pub fn present(self) -> &'a mut W {
-        self.variant(OVERRUNW::PRESENT)
+        self.variant(OVERRUN_A::PRESENT)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `PARITY`"]
-pub enum PARITYW {
-    #[doc = "Read: error not present"]
+#[doc = "Parity error\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PARITY_A {
+    #[doc = "0: Read: error not present"]
     NOTPRESENT,
-    #[doc = "Read: error present"]
+    #[doc = "1: Read: error present"]
     PRESENT,
 }
-impl PARITYW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PARITYW::NOTPRESENT => false,
-            PARITYW::PRESENT => true,
+impl From<PARITY_A> for bool {
+    #[inline(always)]
+    fn from(variant: PARITY_A) -> Self {
+        match variant {
+            PARITY_A::NOTPRESENT => false,
+            PARITY_A::PRESENT => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _PARITYW<'a> {
+#[doc = "Reader of field `PARITY`"]
+pub type PARITY_R = crate::R<bool, PARITY_A>;
+impl PARITY_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PARITY_A {
+        match self.bits {
+            false => PARITY_A::NOTPRESENT,
+            true => PARITY_A::PRESENT,
+        }
+    }
+    #[doc = "Checks if the value of the field is `NOTPRESENT`"]
+    #[inline(always)]
+    pub fn is_not_present(&self) -> bool {
+        *self == PARITY_A::NOTPRESENT
+    }
+    #[doc = "Checks if the value of the field is `PRESENT`"]
+    #[inline(always)]
+    pub fn is_present(&self) -> bool {
+        *self == PARITY_A::PRESENT
+    }
+}
+#[doc = "Write proxy for field `PARITY`"]
+pub struct PARITY_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PARITYW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PARITYW) -> &'a mut W {
+impl<'a> PARITY_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PARITY_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Read: error not present"]
-    #[inline]
+    #[inline(always)]
     pub fn not_present(self) -> &'a mut W {
-        self.variant(PARITYW::NOTPRESENT)
+        self.variant(PARITY_A::NOTPRESENT)
     }
     #[doc = "Read: error present"]
-    #[inline]
+    #[inline(always)]
     pub fn present(self) -> &'a mut W {
-        self.variant(PARITYW::PRESENT)
+        self.variant(PARITY_A::PRESENT)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `FRAMING`"]
-pub enum FRAMINGW {
-    #[doc = "Read: error not present"]
+#[doc = "Framing error occurred\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum FRAMING_A {
+    #[doc = "0: Read: error not present"]
     NOTPRESENT,
-    #[doc = "Read: error present"]
+    #[doc = "1: Read: error present"]
     PRESENT,
 }
-impl FRAMINGW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            FRAMINGW::NOTPRESENT => false,
-            FRAMINGW::PRESENT => true,
+impl From<FRAMING_A> for bool {
+    #[inline(always)]
+    fn from(variant: FRAMING_A) -> Self {
+        match variant {
+            FRAMING_A::NOTPRESENT => false,
+            FRAMING_A::PRESENT => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _FRAMINGW<'a> {
+#[doc = "Reader of field `FRAMING`"]
+pub type FRAMING_R = crate::R<bool, FRAMING_A>;
+impl FRAMING_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> FRAMING_A {
+        match self.bits {
+            false => FRAMING_A::NOTPRESENT,
+            true => FRAMING_A::PRESENT,
+        }
+    }
+    #[doc = "Checks if the value of the field is `NOTPRESENT`"]
+    #[inline(always)]
+    pub fn is_not_present(&self) -> bool {
+        *self == FRAMING_A::NOTPRESENT
+    }
+    #[doc = "Checks if the value of the field is `PRESENT`"]
+    #[inline(always)]
+    pub fn is_present(&self) -> bool {
+        *self == FRAMING_A::PRESENT
+    }
+}
+#[doc = "Write proxy for field `FRAMING`"]
+pub struct FRAMING_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _FRAMINGW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: FRAMINGW) -> &'a mut W {
+impl<'a> FRAMING_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: FRAMING_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Read: error not present"]
-    #[inline]
+    #[inline(always)]
     pub fn not_present(self) -> &'a mut W {
-        self.variant(FRAMINGW::NOTPRESENT)
+        self.variant(FRAMING_A::NOTPRESENT)
     }
     #[doc = "Read: error present"]
-    #[inline]
+    #[inline(always)]
     pub fn present(self) -> &'a mut W {
-        self.variant(FRAMINGW::PRESENT)
+        self.variant(FRAMING_A::PRESENT)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `BREAK`"]
-pub enum BREAKW {
-    #[doc = "Read: error not present"]
+#[doc = "Break condition\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum BREAK_A {
+    #[doc = "0: Read: error not present"]
     NOTPRESENT,
-    #[doc = "Read: error present"]
+    #[doc = "1: Read: error present"]
     PRESENT,
 }
-impl BREAKW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            BREAKW::NOTPRESENT => false,
-            BREAKW::PRESENT => true,
+impl From<BREAK_A> for bool {
+    #[inline(always)]
+    fn from(variant: BREAK_A) -> Self {
+        match variant {
+            BREAK_A::NOTPRESENT => false,
+            BREAK_A::PRESENT => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _BREAKW<'a> {
+#[doc = "Reader of field `BREAK`"]
+pub type BREAK_R = crate::R<bool, BREAK_A>;
+impl BREAK_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> BREAK_A {
+        match self.bits {
+            false => BREAK_A::NOTPRESENT,
+            true => BREAK_A::PRESENT,
+        }
+    }
+    #[doc = "Checks if the value of the field is `NOTPRESENT`"]
+    #[inline(always)]
+    pub fn is_not_present(&self) -> bool {
+        *self == BREAK_A::NOTPRESENT
+    }
+    #[doc = "Checks if the value of the field is `PRESENT`"]
+    #[inline(always)]
+    pub fn is_present(&self) -> bool {
+        *self == BREAK_A::PRESENT
+    }
+}
+#[doc = "Write proxy for field `BREAK`"]
+pub struct BREAK_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _BREAKW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: BREAKW) -> &'a mut W {
+impl<'a> BREAK_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: BREAK_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Read: error not present"]
-    #[inline]
+    #[inline(always)]
     pub fn not_present(self) -> &'a mut W {
-        self.variant(BREAKW::NOTPRESENT)
+        self.variant(BREAK_A::NOTPRESENT)
     }
     #[doc = "Read: error present"]
-    #[inline]
+    #[inline(always)]
     pub fn present(self) -> &'a mut W {
-        self.variant(BREAKW::PRESENT)
+        self.variant(BREAK_A::PRESENT)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Overrun error"]
-    #[inline]
-    pub fn overrun(&self) -> OVERRUNR {
-        OVERRUNR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn overrun(&self) -> OVERRUN_R {
+        OVERRUN_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Parity error"]
-    #[inline]
-    pub fn parity(&self) -> PARITYR {
-        PARITYR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn parity(&self) -> PARITY_R {
+        PARITY_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Framing error occurred"]
-    #[inline]
-    pub fn framing(&self) -> FRAMINGR {
-        FRAMINGR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn framing(&self) -> FRAMING_R {
+        FRAMING_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - Break condition"]
-    #[inline]
-    pub fn break_(&self) -> BREAKR {
-        BREAKR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn break_(&self) -> BREAK_R {
+        BREAK_R::new(((self.bits >> 3) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Overrun error"]
-    #[inline]
-    pub fn overrun(&mut self) -> _OVERRUNW {
-        _OVERRUNW { w: self }
+    #[inline(always)]
+    pub fn overrun(&mut self) -> OVERRUN_W {
+        OVERRUN_W { w: self }
     }
     #[doc = "Bit 1 - Parity error"]
-    #[inline]
-    pub fn parity(&mut self) -> _PARITYW {
-        _PARITYW { w: self }
+    #[inline(always)]
+    pub fn parity(&mut self) -> PARITY_W {
+        PARITY_W { w: self }
     }
     #[doc = "Bit 2 - Framing error occurred"]
-    #[inline]
-    pub fn framing(&mut self) -> _FRAMINGW {
-        _FRAMINGW { w: self }
+    #[inline(always)]
+    pub fn framing(&mut self) -> FRAMING_W {
+        FRAMING_W { w: self }
     }
     #[doc = "Bit 3 - Break condition"]
-    #[inline]
-    pub fn break_(&mut self) -> _BREAKW {
-        _BREAKW { w: self }
+    #[inline(always)]
+    pub fn break_(&mut self) -> BREAK_W {
+        BREAK_W { w: self }
     }
 }

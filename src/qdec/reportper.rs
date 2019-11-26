@@ -1,286 +1,192 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::REPORTPER {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register REPORTPER"]
+pub type R = crate::R<u32, super::REPORTPER>;
+#[doc = "Writer for register REPORTPER"]
+pub type W = crate::W<u32, super::REPORTPER>;
+#[doc = "Register REPORTPER `reset()`'s with value 0"]
+impl crate::ResetValue for super::REPORTPER {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `REPORTPER`"]
+#[doc = "Specifies the number of samples to be accumulated in the ACC register before the REPORTRDY and DBLRDY events can be generated\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum REPORTPERR {
-    #[doc = "10 samples / report"]
+pub enum REPORTPER_A {
+    #[doc = "0: 10 samples / report"]
     _10SMPL,
-    #[doc = "40 samples / report"]
+    #[doc = "1: 40 samples / report"]
     _40SMPL,
-    #[doc = "80 samples / report"]
+    #[doc = "2: 80 samples / report"]
     _80SMPL,
-    #[doc = "120 samples / report"]
+    #[doc = "3: 120 samples / report"]
     _120SMPL,
-    #[doc = "160 samples / report"]
+    #[doc = "4: 160 samples / report"]
     _160SMPL,
-    #[doc = "200 samples / report"]
+    #[doc = "5: 200 samples / report"]
     _200SMPL,
-    #[doc = "240 samples / report"]
+    #[doc = "6: 240 samples / report"]
     _240SMPL,
-    #[doc = "280 samples / report"]
+    #[doc = "7: 280 samples / report"]
     _280SMPL,
-    #[doc = "1 sample / report"]
+    #[doc = "8: 1 sample / report"]
     _1SMPL,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl REPORTPERR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            REPORTPERR::_10SMPL => 0,
-            REPORTPERR::_40SMPL => 1,
-            REPORTPERR::_80SMPL => 2,
-            REPORTPERR::_120SMPL => 3,
-            REPORTPERR::_160SMPL => 4,
-            REPORTPERR::_200SMPL => 5,
-            REPORTPERR::_240SMPL => 6,
-            REPORTPERR::_280SMPL => 7,
-            REPORTPERR::_1SMPL => 8,
-            REPORTPERR::_Reserved(bits) => bits,
+impl From<REPORTPER_A> for u8 {
+    #[inline(always)]
+    fn from(variant: REPORTPER_A) -> Self {
+        match variant {
+            REPORTPER_A::_10SMPL => 0,
+            REPORTPER_A::_40SMPL => 1,
+            REPORTPER_A::_80SMPL => 2,
+            REPORTPER_A::_120SMPL => 3,
+            REPORTPER_A::_160SMPL => 4,
+            REPORTPER_A::_200SMPL => 5,
+            REPORTPER_A::_240SMPL => 6,
+            REPORTPER_A::_280SMPL => 7,
+            REPORTPER_A::_1SMPL => 8,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> REPORTPERR {
-        match value {
-            0 => REPORTPERR::_10SMPL,
-            1 => REPORTPERR::_40SMPL,
-            2 => REPORTPERR::_80SMPL,
-            3 => REPORTPERR::_120SMPL,
-            4 => REPORTPERR::_160SMPL,
-            5 => REPORTPERR::_200SMPL,
-            6 => REPORTPERR::_240SMPL,
-            7 => REPORTPERR::_280SMPL,
-            8 => REPORTPERR::_1SMPL,
-            i => REPORTPERR::_Reserved(i),
+}
+#[doc = "Reader of field `REPORTPER`"]
+pub type REPORTPER_R = crate::R<u8, REPORTPER_A>;
+impl REPORTPER_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, REPORTPER_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(REPORTPER_A::_10SMPL),
+            1 => Val(REPORTPER_A::_40SMPL),
+            2 => Val(REPORTPER_A::_80SMPL),
+            3 => Val(REPORTPER_A::_120SMPL),
+            4 => Val(REPORTPER_A::_160SMPL),
+            5 => Val(REPORTPER_A::_200SMPL),
+            6 => Val(REPORTPER_A::_240SMPL),
+            7 => Val(REPORTPER_A::_280SMPL),
+            8 => Val(REPORTPER_A::_1SMPL),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `_10SMPL`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_10smpl(&self) -> bool {
-        *self == REPORTPERR::_10SMPL
+        *self == REPORTPER_A::_10SMPL
     }
     #[doc = "Checks if the value of the field is `_40SMPL`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_40smpl(&self) -> bool {
-        *self == REPORTPERR::_40SMPL
+        *self == REPORTPER_A::_40SMPL
     }
     #[doc = "Checks if the value of the field is `_80SMPL`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_80smpl(&self) -> bool {
-        *self == REPORTPERR::_80SMPL
+        *self == REPORTPER_A::_80SMPL
     }
     #[doc = "Checks if the value of the field is `_120SMPL`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_120smpl(&self) -> bool {
-        *self == REPORTPERR::_120SMPL
+        *self == REPORTPER_A::_120SMPL
     }
     #[doc = "Checks if the value of the field is `_160SMPL`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_160smpl(&self) -> bool {
-        *self == REPORTPERR::_160SMPL
+        *self == REPORTPER_A::_160SMPL
     }
     #[doc = "Checks if the value of the field is `_200SMPL`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_200smpl(&self) -> bool {
-        *self == REPORTPERR::_200SMPL
+        *self == REPORTPER_A::_200SMPL
     }
     #[doc = "Checks if the value of the field is `_240SMPL`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_240smpl(&self) -> bool {
-        *self == REPORTPERR::_240SMPL
+        *self == REPORTPER_A::_240SMPL
     }
     #[doc = "Checks if the value of the field is `_280SMPL`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_280smpl(&self) -> bool {
-        *self == REPORTPERR::_280SMPL
+        *self == REPORTPER_A::_280SMPL
     }
     #[doc = "Checks if the value of the field is `_1SMPL`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_1smpl(&self) -> bool {
-        *self == REPORTPERR::_1SMPL
+        *self == REPORTPER_A::_1SMPL
     }
 }
-#[doc = "Values that can be written to the field `REPORTPER`"]
-pub enum REPORTPERW {
-    #[doc = "10 samples / report"]
-    _10SMPL,
-    #[doc = "40 samples / report"]
-    _40SMPL,
-    #[doc = "80 samples / report"]
-    _80SMPL,
-    #[doc = "120 samples / report"]
-    _120SMPL,
-    #[doc = "160 samples / report"]
-    _160SMPL,
-    #[doc = "200 samples / report"]
-    _200SMPL,
-    #[doc = "240 samples / report"]
-    _240SMPL,
-    #[doc = "280 samples / report"]
-    _280SMPL,
-    #[doc = "1 sample / report"]
-    _1SMPL,
-}
-impl REPORTPERW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            REPORTPERW::_10SMPL => 0,
-            REPORTPERW::_40SMPL => 1,
-            REPORTPERW::_80SMPL => 2,
-            REPORTPERW::_120SMPL => 3,
-            REPORTPERW::_160SMPL => 4,
-            REPORTPERW::_200SMPL => 5,
-            REPORTPERW::_240SMPL => 6,
-            REPORTPERW::_280SMPL => 7,
-            REPORTPERW::_1SMPL => 8,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _REPORTPERW<'a> {
+#[doc = "Write proxy for field `REPORTPER`"]
+pub struct REPORTPER_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _REPORTPERW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: REPORTPERW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+impl<'a> REPORTPER_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: REPORTPER_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "10 samples / report"]
-    #[inline]
+    #[inline(always)]
     pub fn _10smpl(self) -> &'a mut W {
-        self.variant(REPORTPERW::_10SMPL)
+        self.variant(REPORTPER_A::_10SMPL)
     }
     #[doc = "40 samples / report"]
-    #[inline]
+    #[inline(always)]
     pub fn _40smpl(self) -> &'a mut W {
-        self.variant(REPORTPERW::_40SMPL)
+        self.variant(REPORTPER_A::_40SMPL)
     }
     #[doc = "80 samples / report"]
-    #[inline]
+    #[inline(always)]
     pub fn _80smpl(self) -> &'a mut W {
-        self.variant(REPORTPERW::_80SMPL)
+        self.variant(REPORTPER_A::_80SMPL)
     }
     #[doc = "120 samples / report"]
-    #[inline]
+    #[inline(always)]
     pub fn _120smpl(self) -> &'a mut W {
-        self.variant(REPORTPERW::_120SMPL)
+        self.variant(REPORTPER_A::_120SMPL)
     }
     #[doc = "160 samples / report"]
-    #[inline]
+    #[inline(always)]
     pub fn _160smpl(self) -> &'a mut W {
-        self.variant(REPORTPERW::_160SMPL)
+        self.variant(REPORTPER_A::_160SMPL)
     }
     #[doc = "200 samples / report"]
-    #[inline]
+    #[inline(always)]
     pub fn _200smpl(self) -> &'a mut W {
-        self.variant(REPORTPERW::_200SMPL)
+        self.variant(REPORTPER_A::_200SMPL)
     }
     #[doc = "240 samples / report"]
-    #[inline]
+    #[inline(always)]
     pub fn _240smpl(self) -> &'a mut W {
-        self.variant(REPORTPERW::_240SMPL)
+        self.variant(REPORTPER_A::_240SMPL)
     }
     #[doc = "280 samples / report"]
-    #[inline]
+    #[inline(always)]
     pub fn _280smpl(self) -> &'a mut W {
-        self.variant(REPORTPERW::_280SMPL)
+        self.variant(REPORTPER_A::_280SMPL)
     }
     #[doc = "1 sample / report"]
-    #[inline]
+    #[inline(always)]
     pub fn _1smpl(self) -> &'a mut W {
-        self.variant(REPORTPERW::_1SMPL)
+        self.variant(REPORTPER_A::_1SMPL)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x0f) | ((value as u32) & 0x0f);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:3 - Specifies the number of samples to be accumulated in the ACC register before the REPORTRDY and DBLRDY events can be generated"]
-    #[inline]
-    pub fn reportper(&self) -> REPORTPERR {
-        REPORTPERR::_from({
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn reportper(&self) -> REPORTPER_R {
+        REPORTPER_R::new((self.bits & 0x0f) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:3 - Specifies the number of samples to be accumulated in the ACC register before the REPORTRDY and DBLRDY events can be generated"]
-    #[inline]
-    pub fn reportper(&mut self) -> _REPORTPERW {
-        _REPORTPERW { w: self }
+    #[inline(always)]
+    pub fn reportper(&mut self) -> REPORTPER_W {
+        REPORTPER_W { w: self }
     }
 }

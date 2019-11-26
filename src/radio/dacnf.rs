@@ -1,1488 +1,992 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::DACNF {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register DACNF"]
+pub type R = crate::R<u32, super::DACNF>;
+#[doc = "Writer for register DACNF"]
+pub type W = crate::W<u32, super::DACNF>;
+#[doc = "Register DACNF `reset()`'s with value 0"]
+impl crate::ResetValue for super::DACNF {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `ENA0`"]
+#[doc = "Enable or disable device address matching using device address 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ENA0R {
-    #[doc = "Disabled"]
+pub enum ENA0_A {
+    #[doc = "0: Disabled"]
     DISABLED,
-    #[doc = "Enabled"]
+    #[doc = "1: Enabled"]
     ENABLED,
 }
-impl ENA0R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ENA0R::DISABLED => false,
-            ENA0R::ENABLED => true,
+impl From<ENA0_A> for bool {
+    #[inline(always)]
+    fn from(variant: ENA0_A) -> Self {
+        match variant {
+            ENA0_A::DISABLED => false,
+            ENA0_A::ENABLED => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ENA0R {
-        match value {
-            false => ENA0R::DISABLED,
-            true => ENA0R::ENABLED,
+}
+#[doc = "Reader of field `ENA0`"]
+pub type ENA0_R = crate::R<bool, ENA0_A>;
+impl ENA0_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ENA0_A {
+        match self.bits {
+            false => ENA0_A::DISABLED,
+            true => ENA0_A::ENABLED,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == ENA0R::DISABLED
+        *self == ENA0_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == ENA0R::ENABLED
+        *self == ENA0_A::ENABLED
     }
 }
-#[doc = "Possible values of the field `ENA1`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ENA1R {
-    #[doc = "Disabled"]
-    DISABLED,
-    #[doc = "Enabled"]
-    ENABLED,
+#[doc = "Write proxy for field `ENA0`"]
+pub struct ENA0_W<'a> {
+    w: &'a mut W,
 }
-impl ENA1R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ENA1R::DISABLED => false,
-            ENA1R::ENABLED => true,
+impl<'a> ENA0_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ENA0_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ENA1R {
-        match value {
-            false => ENA1R::DISABLED,
-            true => ENA1R::ENABLED,
+    #[doc = "Disabled"]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(ENA0_A::DISABLED)
+    }
+    #[doc = "Enabled"]
+    #[inline(always)]
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(ENA0_A::ENABLED)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w
+    }
+}
+#[doc = "Enable or disable device address matching using device address 1\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ENA1_A {
+    #[doc = "0: Disabled"]
+    DISABLED,
+    #[doc = "1: Enabled"]
+    ENABLED,
+}
+impl From<ENA1_A> for bool {
+    #[inline(always)]
+    fn from(variant: ENA1_A) -> Self {
+        match variant {
+            ENA1_A::DISABLED => false,
+            ENA1_A::ENABLED => true,
+        }
+    }
+}
+#[doc = "Reader of field `ENA1`"]
+pub type ENA1_R = crate::R<bool, ENA1_A>;
+impl ENA1_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ENA1_A {
+        match self.bits {
+            false => ENA1_A::DISABLED,
+            true => ENA1_A::ENABLED,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == ENA1R::DISABLED
+        *self == ENA1_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == ENA1R::ENABLED
+        *self == ENA1_A::ENABLED
     }
 }
-#[doc = "Possible values of the field `ENA2`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ENA2R {
-    #[doc = "Disabled"]
-    DISABLED,
-    #[doc = "Enabled"]
-    ENABLED,
+#[doc = "Write proxy for field `ENA1`"]
+pub struct ENA1_W<'a> {
+    w: &'a mut W,
 }
-impl ENA2R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ENA2R::DISABLED => false,
-            ENA2R::ENABLED => true,
+impl<'a> ENA1_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ENA1_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ENA2R {
-        match value {
-            false => ENA2R::DISABLED,
-            true => ENA2R::ENABLED,
+    #[doc = "Disabled"]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(ENA1_A::DISABLED)
+    }
+    #[doc = "Enabled"]
+    #[inline(always)]
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(ENA1_A::ENABLED)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w
+    }
+}
+#[doc = "Enable or disable device address matching using device address 2\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ENA2_A {
+    #[doc = "0: Disabled"]
+    DISABLED,
+    #[doc = "1: Enabled"]
+    ENABLED,
+}
+impl From<ENA2_A> for bool {
+    #[inline(always)]
+    fn from(variant: ENA2_A) -> Self {
+        match variant {
+            ENA2_A::DISABLED => false,
+            ENA2_A::ENABLED => true,
+        }
+    }
+}
+#[doc = "Reader of field `ENA2`"]
+pub type ENA2_R = crate::R<bool, ENA2_A>;
+impl ENA2_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ENA2_A {
+        match self.bits {
+            false => ENA2_A::DISABLED,
+            true => ENA2_A::ENABLED,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == ENA2R::DISABLED
+        *self == ENA2_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == ENA2R::ENABLED
+        *self == ENA2_A::ENABLED
     }
 }
-#[doc = "Possible values of the field `ENA3`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ENA3R {
-    #[doc = "Disabled"]
-    DISABLED,
-    #[doc = "Enabled"]
-    ENABLED,
+#[doc = "Write proxy for field `ENA2`"]
+pub struct ENA2_W<'a> {
+    w: &'a mut W,
 }
-impl ENA3R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ENA3R::DISABLED => false,
-            ENA3R::ENABLED => true,
+impl<'a> ENA2_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ENA2_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ENA3R {
-        match value {
-            false => ENA3R::DISABLED,
-            true => ENA3R::ENABLED,
+    #[doc = "Disabled"]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(ENA2_A::DISABLED)
+    }
+    #[doc = "Enabled"]
+    #[inline(always)]
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(ENA2_A::ENABLED)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w
+    }
+}
+#[doc = "Enable or disable device address matching using device address 3\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ENA3_A {
+    #[doc = "0: Disabled"]
+    DISABLED,
+    #[doc = "1: Enabled"]
+    ENABLED,
+}
+impl From<ENA3_A> for bool {
+    #[inline(always)]
+    fn from(variant: ENA3_A) -> Self {
+        match variant {
+            ENA3_A::DISABLED => false,
+            ENA3_A::ENABLED => true,
+        }
+    }
+}
+#[doc = "Reader of field `ENA3`"]
+pub type ENA3_R = crate::R<bool, ENA3_A>;
+impl ENA3_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ENA3_A {
+        match self.bits {
+            false => ENA3_A::DISABLED,
+            true => ENA3_A::ENABLED,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == ENA3R::DISABLED
+        *self == ENA3_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == ENA3R::ENABLED
+        *self == ENA3_A::ENABLED
     }
 }
-#[doc = "Possible values of the field `ENA4`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ENA4R {
-    #[doc = "Disabled"]
-    DISABLED,
-    #[doc = "Enabled"]
-    ENABLED,
+#[doc = "Write proxy for field `ENA3`"]
+pub struct ENA3_W<'a> {
+    w: &'a mut W,
 }
-impl ENA4R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ENA4R::DISABLED => false,
-            ENA4R::ENABLED => true,
+impl<'a> ENA3_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ENA3_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ENA4R {
-        match value {
-            false => ENA4R::DISABLED,
-            true => ENA4R::ENABLED,
+    #[doc = "Disabled"]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(ENA3_A::DISABLED)
+    }
+    #[doc = "Enabled"]
+    #[inline(always)]
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(ENA3_A::ENABLED)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w
+    }
+}
+#[doc = "Enable or disable device address matching using device address 4\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ENA4_A {
+    #[doc = "0: Disabled"]
+    DISABLED,
+    #[doc = "1: Enabled"]
+    ENABLED,
+}
+impl From<ENA4_A> for bool {
+    #[inline(always)]
+    fn from(variant: ENA4_A) -> Self {
+        match variant {
+            ENA4_A::DISABLED => false,
+            ENA4_A::ENABLED => true,
+        }
+    }
+}
+#[doc = "Reader of field `ENA4`"]
+pub type ENA4_R = crate::R<bool, ENA4_A>;
+impl ENA4_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ENA4_A {
+        match self.bits {
+            false => ENA4_A::DISABLED,
+            true => ENA4_A::ENABLED,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == ENA4R::DISABLED
+        *self == ENA4_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == ENA4R::ENABLED
+        *self == ENA4_A::ENABLED
     }
 }
-#[doc = "Possible values of the field `ENA5`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ENA5R {
-    #[doc = "Disabled"]
-    DISABLED,
-    #[doc = "Enabled"]
-    ENABLED,
+#[doc = "Write proxy for field `ENA4`"]
+pub struct ENA4_W<'a> {
+    w: &'a mut W,
 }
-impl ENA5R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ENA5R::DISABLED => false,
-            ENA5R::ENABLED => true,
+impl<'a> ENA4_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ENA4_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ENA5R {
-        match value {
-            false => ENA5R::DISABLED,
-            true => ENA5R::ENABLED,
+    #[doc = "Disabled"]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(ENA4_A::DISABLED)
+    }
+    #[doc = "Enabled"]
+    #[inline(always)]
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(ENA4_A::ENABLED)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w
+    }
+}
+#[doc = "Enable or disable device address matching using device address 5\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ENA5_A {
+    #[doc = "0: Disabled"]
+    DISABLED,
+    #[doc = "1: Enabled"]
+    ENABLED,
+}
+impl From<ENA5_A> for bool {
+    #[inline(always)]
+    fn from(variant: ENA5_A) -> Self {
+        match variant {
+            ENA5_A::DISABLED => false,
+            ENA5_A::ENABLED => true,
+        }
+    }
+}
+#[doc = "Reader of field `ENA5`"]
+pub type ENA5_R = crate::R<bool, ENA5_A>;
+impl ENA5_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ENA5_A {
+        match self.bits {
+            false => ENA5_A::DISABLED,
+            true => ENA5_A::ENABLED,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == ENA5R::DISABLED
+        *self == ENA5_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == ENA5R::ENABLED
+        *self == ENA5_A::ENABLED
     }
 }
-#[doc = "Possible values of the field `ENA6`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ENA6R {
-    #[doc = "Disabled"]
-    DISABLED,
-    #[doc = "Enabled"]
-    ENABLED,
+#[doc = "Write proxy for field `ENA5`"]
+pub struct ENA5_W<'a> {
+    w: &'a mut W,
 }
-impl ENA6R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ENA6R::DISABLED => false,
-            ENA6R::ENABLED => true,
+impl<'a> ENA5_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ENA5_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ENA6R {
-        match value {
-            false => ENA6R::DISABLED,
-            true => ENA6R::ENABLED,
+    #[doc = "Disabled"]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(ENA5_A::DISABLED)
+    }
+    #[doc = "Enabled"]
+    #[inline(always)]
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(ENA5_A::ENABLED)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w
+    }
+}
+#[doc = "Enable or disable device address matching using device address 6\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ENA6_A {
+    #[doc = "0: Disabled"]
+    DISABLED,
+    #[doc = "1: Enabled"]
+    ENABLED,
+}
+impl From<ENA6_A> for bool {
+    #[inline(always)]
+    fn from(variant: ENA6_A) -> Self {
+        match variant {
+            ENA6_A::DISABLED => false,
+            ENA6_A::ENABLED => true,
+        }
+    }
+}
+#[doc = "Reader of field `ENA6`"]
+pub type ENA6_R = crate::R<bool, ENA6_A>;
+impl ENA6_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ENA6_A {
+        match self.bits {
+            false => ENA6_A::DISABLED,
+            true => ENA6_A::ENABLED,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == ENA6R::DISABLED
+        *self == ENA6_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == ENA6R::ENABLED
+        *self == ENA6_A::ENABLED
     }
 }
-#[doc = "Possible values of the field `ENA7`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ENA7R {
-    #[doc = "Disabled"]
-    DISABLED,
-    #[doc = "Enabled"]
-    ENABLED,
+#[doc = "Write proxy for field `ENA6`"]
+pub struct ENA6_W<'a> {
+    w: &'a mut W,
 }
-impl ENA7R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ENA7R::DISABLED => false,
-            ENA7R::ENABLED => true,
+impl<'a> ENA6_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ENA6_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ENA7R {
-        match value {
-            false => ENA7R::DISABLED,
-            true => ENA7R::ENABLED,
+    #[doc = "Disabled"]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(ENA6_A::DISABLED)
+    }
+    #[doc = "Enabled"]
+    #[inline(always)]
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(ENA6_A::ENABLED)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
+        self.w
+    }
+}
+#[doc = "Enable or disable device address matching using device address 7\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ENA7_A {
+    #[doc = "0: Disabled"]
+    DISABLED,
+    #[doc = "1: Enabled"]
+    ENABLED,
+}
+impl From<ENA7_A> for bool {
+    #[inline(always)]
+    fn from(variant: ENA7_A) -> Self {
+        match variant {
+            ENA7_A::DISABLED => false,
+            ENA7_A::ENABLED => true,
+        }
+    }
+}
+#[doc = "Reader of field `ENA7`"]
+pub type ENA7_R = crate::R<bool, ENA7_A>;
+impl ENA7_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ENA7_A {
+        match self.bits {
+            false => ENA7_A::DISABLED,
+            true => ENA7_A::ENABLED,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == ENA7R::DISABLED
+        *self == ENA7_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == ENA7R::ENABLED
+        *self == ENA7_A::ENABLED
     }
 }
-#[doc = r" Value of the field"]
-pub struct TXADD0R {
-    bits: bool,
-}
-impl TXADD0R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TXADD1R {
-    bits: bool,
-}
-impl TXADD1R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TXADD2R {
-    bits: bool,
-}
-impl TXADD2R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TXADD3R {
-    bits: bool,
-}
-impl TXADD3R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TXADD4R {
-    bits: bool,
-}
-impl TXADD4R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TXADD5R {
-    bits: bool,
-}
-impl TXADD5R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TXADD6R {
-    bits: bool,
-}
-impl TXADD6R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TXADD7R {
-    bits: bool,
-}
-impl TXADD7R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = "Values that can be written to the field `ENA0`"]
-pub enum ENA0W {
-    #[doc = "Disabled"]
-    DISABLED,
-    #[doc = "Enabled"]
-    ENABLED,
-}
-impl ENA0W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ENA0W::DISABLED => false,
-            ENA0W::ENABLED => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ENA0W<'a> {
+#[doc = "Write proxy for field `ENA7`"]
+pub struct ENA7_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ENA0W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ENA0W) -> &'a mut W {
+impl<'a> ENA7_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ENA7_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disabled"]
-    #[inline]
+    #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(ENA0W::DISABLED)
+        self.variant(ENA7_A::DISABLED)
     }
     #[doc = "Enabled"]
-    #[inline]
+    #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(ENA0W::ENABLED)
+        self.variant(ENA7_A::ENABLED)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `ENA1`"]
-pub enum ENA1W {
-    #[doc = "Disabled"]
-    DISABLED,
-    #[doc = "Enabled"]
-    ENABLED,
-}
-impl ENA1W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ENA1W::DISABLED => false,
-            ENA1W::ENABLED => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ENA1W<'a> {
+#[doc = "Reader of field `TXADD0`"]
+pub type TXADD0_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `TXADD0`"]
+pub struct TXADD0_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ENA1W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ENA1W) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Disabled"]
-    #[inline]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(ENA1W::DISABLED)
-    }
-    #[doc = "Enabled"]
-    #[inline]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(ENA1W::ENABLED)
-    }
-    #[doc = r" Sets the field bit"]
+impl<'a> TXADD0_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `ENA2`"]
-pub enum ENA2W {
-    #[doc = "Disabled"]
-    DISABLED,
-    #[doc = "Enabled"]
-    ENABLED,
-}
-impl ENA2W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ENA2W::DISABLED => false,
-            ENA2W::ENABLED => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ENA2W<'a> {
+#[doc = "Reader of field `TXADD1`"]
+pub type TXADD1_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `TXADD1`"]
+pub struct TXADD1_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ENA2W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ENA2W) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Disabled"]
-    #[inline]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(ENA2W::DISABLED)
-    }
-    #[doc = "Enabled"]
-    #[inline]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(ENA2W::ENABLED)
-    }
-    #[doc = r" Sets the field bit"]
+impl<'a> TXADD1_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `ENA3`"]
-pub enum ENA3W {
-    #[doc = "Disabled"]
-    DISABLED,
-    #[doc = "Enabled"]
-    ENABLED,
-}
-impl ENA3W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ENA3W::DISABLED => false,
-            ENA3W::ENABLED => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ENA3W<'a> {
+#[doc = "Reader of field `TXADD2`"]
+pub type TXADD2_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `TXADD2`"]
+pub struct TXADD2_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ENA3W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ENA3W) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Disabled"]
-    #[inline]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(ENA3W::DISABLED)
-    }
-    #[doc = "Enabled"]
-    #[inline]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(ENA3W::ENABLED)
-    }
-    #[doc = r" Sets the field bit"]
+impl<'a> TXADD2_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `ENA4`"]
-pub enum ENA4W {
-    #[doc = "Disabled"]
-    DISABLED,
-    #[doc = "Enabled"]
-    ENABLED,
-}
-impl ENA4W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ENA4W::DISABLED => false,
-            ENA4W::ENABLED => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ENA4W<'a> {
+#[doc = "Reader of field `TXADD3`"]
+pub type TXADD3_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `TXADD3`"]
+pub struct TXADD3_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ENA4W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ENA4W) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Disabled"]
-    #[inline]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(ENA4W::DISABLED)
-    }
-    #[doc = "Enabled"]
-    #[inline]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(ENA4W::ENABLED)
-    }
-    #[doc = r" Sets the field bit"]
+impl<'a> TXADD3_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `ENA5`"]
-pub enum ENA5W {
-    #[doc = "Disabled"]
-    DISABLED,
-    #[doc = "Enabled"]
-    ENABLED,
-}
-impl ENA5W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ENA5W::DISABLED => false,
-            ENA5W::ENABLED => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ENA5W<'a> {
+#[doc = "Reader of field `TXADD4`"]
+pub type TXADD4_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `TXADD4`"]
+pub struct TXADD4_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ENA5W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ENA5W) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Disabled"]
-    #[inline]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(ENA5W::DISABLED)
-    }
-    #[doc = "Enabled"]
-    #[inline]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(ENA5W::ENABLED)
-    }
-    #[doc = r" Sets the field bit"]
+impl<'a> TXADD4_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `ENA6`"]
-pub enum ENA6W {
-    #[doc = "Disabled"]
-    DISABLED,
-    #[doc = "Enabled"]
-    ENABLED,
-}
-impl ENA6W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ENA6W::DISABLED => false,
-            ENA6W::ENABLED => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ENA6W<'a> {
+#[doc = "Reader of field `TXADD5`"]
+pub type TXADD5_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `TXADD5`"]
+pub struct TXADD5_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ENA6W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ENA6W) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Disabled"]
-    #[inline]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(ENA6W::DISABLED)
-    }
-    #[doc = "Enabled"]
-    #[inline]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(ENA6W::ENABLED)
-    }
-    #[doc = r" Sets the field bit"]
+impl<'a> TXADD5_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `ENA7`"]
-pub enum ENA7W {
-    #[doc = "Disabled"]
-    DISABLED,
-    #[doc = "Enabled"]
-    ENABLED,
-}
-impl ENA7W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ENA7W::DISABLED => false,
-            ENA7W::ENABLED => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ENA7W<'a> {
+#[doc = "Reader of field `TXADD6`"]
+pub type TXADD6_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `TXADD6`"]
+pub struct TXADD6_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ENA7W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ENA7W) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Disabled"]
-    #[inline]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(ENA7W::DISABLED)
-    }
-    #[doc = "Enabled"]
-    #[inline]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(ENA7W::ENABLED)
-    }
-    #[doc = r" Sets the field bit"]
+impl<'a> TXADD6_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 7;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _TXADD0W<'a> {
+#[doc = "Reader of field `TXADD7`"]
+pub type TXADD7_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `TXADD7`"]
+pub struct TXADD7_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TXADD0W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> TXADD7_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _TXADD1W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _TXADD1W<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 9;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _TXADD2W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _TXADD2W<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 10;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _TXADD3W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _TXADD3W<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 11;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _TXADD4W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _TXADD4W<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 12;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _TXADD5W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _TXADD5W<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 13;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _TXADD6W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _TXADD6W<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 14;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _TXADD7W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _TXADD7W<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 15;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Enable or disable device address matching using device address 0"]
-    #[inline]
-    pub fn ena0(&self) -> ENA0R {
-        ENA0R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ena0(&self) -> ENA0_R {
+        ENA0_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Enable or disable device address matching using device address 1"]
-    #[inline]
-    pub fn ena1(&self) -> ENA1R {
-        ENA1R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ena1(&self) -> ENA1_R {
+        ENA1_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Enable or disable device address matching using device address 2"]
-    #[inline]
-    pub fn ena2(&self) -> ENA2R {
-        ENA2R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ena2(&self) -> ENA2_R {
+        ENA2_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - Enable or disable device address matching using device address 3"]
-    #[inline]
-    pub fn ena3(&self) -> ENA3R {
-        ENA3R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ena3(&self) -> ENA3_R {
+        ENA3_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - Enable or disable device address matching using device address 4"]
-    #[inline]
-    pub fn ena4(&self) -> ENA4R {
-        ENA4R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ena4(&self) -> ENA4_R {
+        ENA4_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - Enable or disable device address matching using device address 5"]
-    #[inline]
-    pub fn ena5(&self) -> ENA5R {
-        ENA5R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ena5(&self) -> ENA5_R {
+        ENA5_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - Enable or disable device address matching using device address 6"]
-    #[inline]
-    pub fn ena6(&self) -> ENA6R {
-        ENA6R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ena6(&self) -> ENA6_R {
+        ENA6_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - Enable or disable device address matching using device address 7"]
-    #[inline]
-    pub fn ena7(&self) -> ENA7R {
-        ENA7R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ena7(&self) -> ENA7_R {
+        ENA7_R::new(((self.bits >> 7) & 0x01) != 0)
     }
     #[doc = "Bit 8 - TxAdd for device address 0"]
-    #[inline]
-    pub fn txadd0(&self) -> TXADD0R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        TXADD0R { bits }
+    #[inline(always)]
+    pub fn txadd0(&self) -> TXADD0_R {
+        TXADD0_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bit 9 - TxAdd for device address 1"]
-    #[inline]
-    pub fn txadd1(&self) -> TXADD1R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        TXADD1R { bits }
+    #[inline(always)]
+    pub fn txadd1(&self) -> TXADD1_R {
+        TXADD1_R::new(((self.bits >> 9) & 0x01) != 0)
     }
     #[doc = "Bit 10 - TxAdd for device address 2"]
-    #[inline]
-    pub fn txadd2(&self) -> TXADD2R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        TXADD2R { bits }
+    #[inline(always)]
+    pub fn txadd2(&self) -> TXADD2_R {
+        TXADD2_R::new(((self.bits >> 10) & 0x01) != 0)
     }
     #[doc = "Bit 11 - TxAdd for device address 3"]
-    #[inline]
-    pub fn txadd3(&self) -> TXADD3R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 11;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        TXADD3R { bits }
+    #[inline(always)]
+    pub fn txadd3(&self) -> TXADD3_R {
+        TXADD3_R::new(((self.bits >> 11) & 0x01) != 0)
     }
     #[doc = "Bit 12 - TxAdd for device address 4"]
-    #[inline]
-    pub fn txadd4(&self) -> TXADD4R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        TXADD4R { bits }
+    #[inline(always)]
+    pub fn txadd4(&self) -> TXADD4_R {
+        TXADD4_R::new(((self.bits >> 12) & 0x01) != 0)
     }
     #[doc = "Bit 13 - TxAdd for device address 5"]
-    #[inline]
-    pub fn txadd5(&self) -> TXADD5R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 13;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        TXADD5R { bits }
+    #[inline(always)]
+    pub fn txadd5(&self) -> TXADD5_R {
+        TXADD5_R::new(((self.bits >> 13) & 0x01) != 0)
     }
     #[doc = "Bit 14 - TxAdd for device address 6"]
-    #[inline]
-    pub fn txadd6(&self) -> TXADD6R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 14;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        TXADD6R { bits }
+    #[inline(always)]
+    pub fn txadd6(&self) -> TXADD6_R {
+        TXADD6_R::new(((self.bits >> 14) & 0x01) != 0)
     }
     #[doc = "Bit 15 - TxAdd for device address 7"]
-    #[inline]
-    pub fn txadd7(&self) -> TXADD7R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 15;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        TXADD7R { bits }
+    #[inline(always)]
+    pub fn txadd7(&self) -> TXADD7_R {
+        TXADD7_R::new(((self.bits >> 15) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Enable or disable device address matching using device address 0"]
-    #[inline]
-    pub fn ena0(&mut self) -> _ENA0W {
-        _ENA0W { w: self }
+    #[inline(always)]
+    pub fn ena0(&mut self) -> ENA0_W {
+        ENA0_W { w: self }
     }
     #[doc = "Bit 1 - Enable or disable device address matching using device address 1"]
-    #[inline]
-    pub fn ena1(&mut self) -> _ENA1W {
-        _ENA1W { w: self }
+    #[inline(always)]
+    pub fn ena1(&mut self) -> ENA1_W {
+        ENA1_W { w: self }
     }
     #[doc = "Bit 2 - Enable or disable device address matching using device address 2"]
-    #[inline]
-    pub fn ena2(&mut self) -> _ENA2W {
-        _ENA2W { w: self }
+    #[inline(always)]
+    pub fn ena2(&mut self) -> ENA2_W {
+        ENA2_W { w: self }
     }
     #[doc = "Bit 3 - Enable or disable device address matching using device address 3"]
-    #[inline]
-    pub fn ena3(&mut self) -> _ENA3W {
-        _ENA3W { w: self }
+    #[inline(always)]
+    pub fn ena3(&mut self) -> ENA3_W {
+        ENA3_W { w: self }
     }
     #[doc = "Bit 4 - Enable or disable device address matching using device address 4"]
-    #[inline]
-    pub fn ena4(&mut self) -> _ENA4W {
-        _ENA4W { w: self }
+    #[inline(always)]
+    pub fn ena4(&mut self) -> ENA4_W {
+        ENA4_W { w: self }
     }
     #[doc = "Bit 5 - Enable or disable device address matching using device address 5"]
-    #[inline]
-    pub fn ena5(&mut self) -> _ENA5W {
-        _ENA5W { w: self }
+    #[inline(always)]
+    pub fn ena5(&mut self) -> ENA5_W {
+        ENA5_W { w: self }
     }
     #[doc = "Bit 6 - Enable or disable device address matching using device address 6"]
-    #[inline]
-    pub fn ena6(&mut self) -> _ENA6W {
-        _ENA6W { w: self }
+    #[inline(always)]
+    pub fn ena6(&mut self) -> ENA6_W {
+        ENA6_W { w: self }
     }
     #[doc = "Bit 7 - Enable or disable device address matching using device address 7"]
-    #[inline]
-    pub fn ena7(&mut self) -> _ENA7W {
-        _ENA7W { w: self }
+    #[inline(always)]
+    pub fn ena7(&mut self) -> ENA7_W {
+        ENA7_W { w: self }
     }
     #[doc = "Bit 8 - TxAdd for device address 0"]
-    #[inline]
-    pub fn txadd0(&mut self) -> _TXADD0W {
-        _TXADD0W { w: self }
+    #[inline(always)]
+    pub fn txadd0(&mut self) -> TXADD0_W {
+        TXADD0_W { w: self }
     }
     #[doc = "Bit 9 - TxAdd for device address 1"]
-    #[inline]
-    pub fn txadd1(&mut self) -> _TXADD1W {
-        _TXADD1W { w: self }
+    #[inline(always)]
+    pub fn txadd1(&mut self) -> TXADD1_W {
+        TXADD1_W { w: self }
     }
     #[doc = "Bit 10 - TxAdd for device address 2"]
-    #[inline]
-    pub fn txadd2(&mut self) -> _TXADD2W {
-        _TXADD2W { w: self }
+    #[inline(always)]
+    pub fn txadd2(&mut self) -> TXADD2_W {
+        TXADD2_W { w: self }
     }
     #[doc = "Bit 11 - TxAdd for device address 3"]
-    #[inline]
-    pub fn txadd3(&mut self) -> _TXADD3W {
-        _TXADD3W { w: self }
+    #[inline(always)]
+    pub fn txadd3(&mut self) -> TXADD3_W {
+        TXADD3_W { w: self }
     }
     #[doc = "Bit 12 - TxAdd for device address 4"]
-    #[inline]
-    pub fn txadd4(&mut self) -> _TXADD4W {
-        _TXADD4W { w: self }
+    #[inline(always)]
+    pub fn txadd4(&mut self) -> TXADD4_W {
+        TXADD4_W { w: self }
     }
     #[doc = "Bit 13 - TxAdd for device address 5"]
-    #[inline]
-    pub fn txadd5(&mut self) -> _TXADD5W {
-        _TXADD5W { w: self }
+    #[inline(always)]
+    pub fn txadd5(&mut self) -> TXADD5_W {
+        TXADD5_W { w: self }
     }
     #[doc = "Bit 14 - TxAdd for device address 6"]
-    #[inline]
-    pub fn txadd6(&mut self) -> _TXADD6W {
-        _TXADD6W { w: self }
+    #[inline(always)]
+    pub fn txadd6(&mut self) -> TXADD6_W {
+        TXADD6_W { w: self }
     }
     #[doc = "Bit 15 - TxAdd for device address 7"]
-    #[inline]
-    pub fn txadd7(&mut self) -> _TXADD7W {
-        _TXADD7W { w: self }
+    #[inline(always)]
+    pub fn txadd7(&mut self) -> TXADD7_W {
+        TXADD7_W { w: self }
     }
 }

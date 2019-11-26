@@ -1,97 +1,77 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::PACKAGE {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-}
-#[doc = "Possible values of the field `PACKAGE`"]
+#[doc = "Reader of register PACKAGE"]
+pub type R = crate::R<u32, super::PACKAGE>;
+#[doc = "Package option\n\nValue on reset: 8192"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PACKAGER {
-    #[doc = "QFxx - 48-pin QFN"]
+pub enum PACKAGE_A {
+    #[doc = "8192: QFxx - 48-pin QFN"]
     QF,
-    #[doc = "CHxx - 7x8 WLCSP 56 balls"]
+    #[doc = "8193: CHxx - 7x8 WLCSP 56 balls"]
     CH,
-    #[doc = "CIxx - 7x8 WLCSP 56 balls"]
+    #[doc = "8194: CIxx - 7x8 WLCSP 56 balls"]
     CI,
-    #[doc = "CKxx - 7x8 WLCSP 56 balls with backside coating for light protection"]
+    #[doc = "8197: CKxx - 7x8 WLCSP 56 balls with backside coating for light protection"]
     CK,
-    #[doc = "Unspecified"]
+    #[doc = "4294967295: Unspecified"]
     UNSPECIFIED,
-    #[doc = r" Reserved"]
-    _Reserved(u32),
 }
-impl PACKAGER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        match *self {
-            PACKAGER::QF => 8192,
-            PACKAGER::CH => 8193,
-            PACKAGER::CI => 8194,
-            PACKAGER::CK => 8197,
-            PACKAGER::UNSPECIFIED => 4294967295,
-            PACKAGER::_Reserved(bits) => bits,
+impl From<PACKAGE_A> for u32 {
+    #[inline(always)]
+    fn from(variant: PACKAGE_A) -> Self {
+        match variant {
+            PACKAGE_A::QF => 8192,
+            PACKAGE_A::CH => 8193,
+            PACKAGE_A::CI => 8194,
+            PACKAGE_A::CK => 8197,
+            PACKAGE_A::UNSPECIFIED => 4294967295,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u32) -> PACKAGER {
-        match value {
-            8192 => PACKAGER::QF,
-            8193 => PACKAGER::CH,
-            8194 => PACKAGER::CI,
-            8197 => PACKAGER::CK,
-            4294967295 => PACKAGER::UNSPECIFIED,
-            i => PACKAGER::_Reserved(i),
+}
+#[doc = "Reader of field `PACKAGE`"]
+pub type PACKAGE_R = crate::R<u32, PACKAGE_A>;
+impl PACKAGE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u32, PACKAGE_A> {
+        use crate::Variant::*;
+        match self.bits {
+            8192 => Val(PACKAGE_A::QF),
+            8193 => Val(PACKAGE_A::CH),
+            8194 => Val(PACKAGE_A::CI),
+            8197 => Val(PACKAGE_A::CK),
+            4294967295 => Val(PACKAGE_A::UNSPECIFIED),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `QF`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_qf(&self) -> bool {
-        *self == PACKAGER::QF
+        *self == PACKAGE_A::QF
     }
     #[doc = "Checks if the value of the field is `CH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_ch(&self) -> bool {
-        *self == PACKAGER::CH
+        *self == PACKAGE_A::CH
     }
     #[doc = "Checks if the value of the field is `CI`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_ci(&self) -> bool {
-        *self == PACKAGER::CI
+        *self == PACKAGE_A::CI
     }
     #[doc = "Checks if the value of the field is `CK`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_ck(&self) -> bool {
-        *self == PACKAGER::CK
+        *self == PACKAGE_A::CK
     }
     #[doc = "Checks if the value of the field is `UNSPECIFIED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_unspecified(&self) -> bool {
-        *self == PACKAGER::UNSPECIFIED
+        *self == PACKAGE_A::UNSPECIFIED
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:31 - Package option"]
-    #[inline]
-    pub fn package(&self) -> PACKAGER {
-        PACKAGER::_from({
-            const MASK: u32 = 4294967295;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u32
-        })
+    #[inline(always)]
+    pub fn package(&self) -> PACKAGE_R {
+        PACKAGE_R::new((self.bits & 0xffff_ffff) as u32)
     }
 }

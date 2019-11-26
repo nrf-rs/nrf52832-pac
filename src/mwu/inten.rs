@@ -1,1492 +1,1072 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::INTEN {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register INTEN"]
+pub type R = crate::R<u32, super::INTEN>;
+#[doc = "Writer for register INTEN"]
+pub type W = crate::W<u32, super::INTEN>;
+#[doc = "Register INTEN `reset()`'s with value 0"]
+impl crate::ResetValue for super::INTEN {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `REGION0WA`"]
+#[doc = "Enable or disable interrupt for REGION\\[0\\].WA event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum REGION0WAR {
-    #[doc = "Disable"]
+pub enum REGION0WA_A {
+    #[doc = "0: Disable"]
     DISABLED,
-    #[doc = "Enable"]
+    #[doc = "1: Enable"]
     ENABLED,
 }
-impl REGION0WAR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            REGION0WAR::DISABLED => false,
-            REGION0WAR::ENABLED => true,
+impl From<REGION0WA_A> for bool {
+    #[inline(always)]
+    fn from(variant: REGION0WA_A) -> Self {
+        match variant {
+            REGION0WA_A::DISABLED => false,
+            REGION0WA_A::ENABLED => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> REGION0WAR {
-        match value {
-            false => REGION0WAR::DISABLED,
-            true => REGION0WAR::ENABLED,
+}
+#[doc = "Reader of field `REGION0WA`"]
+pub type REGION0WA_R = crate::R<bool, REGION0WA_A>;
+impl REGION0WA_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> REGION0WA_A {
+        match self.bits {
+            false => REGION0WA_A::DISABLED,
+            true => REGION0WA_A::ENABLED,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == REGION0WAR::DISABLED
+        *self == REGION0WA_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == REGION0WAR::ENABLED
+        *self == REGION0WA_A::ENABLED
     }
 }
-#[doc = "Possible values of the field `REGION0RA`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum REGION0RAR {
-    #[doc = "Disable"]
-    DISABLED,
-    #[doc = "Enable"]
-    ENABLED,
-}
-impl REGION0RAR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            REGION0RAR::DISABLED => false,
-            REGION0RAR::ENABLED => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> REGION0RAR {
-        match value {
-            false => REGION0RAR::DISABLED,
-            true => REGION0RAR::ENABLED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
-    pub fn is_disabled(&self) -> bool {
-        *self == REGION0RAR::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
-    pub fn is_enabled(&self) -> bool {
-        *self == REGION0RAR::ENABLED
-    }
-}
-#[doc = "Possible values of the field `REGION1WA`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum REGION1WAR {
-    #[doc = "Disable"]
-    DISABLED,
-    #[doc = "Enable"]
-    ENABLED,
-}
-impl REGION1WAR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            REGION1WAR::DISABLED => false,
-            REGION1WAR::ENABLED => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> REGION1WAR {
-        match value {
-            false => REGION1WAR::DISABLED,
-            true => REGION1WAR::ENABLED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
-    pub fn is_disabled(&self) -> bool {
-        *self == REGION1WAR::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
-    pub fn is_enabled(&self) -> bool {
-        *self == REGION1WAR::ENABLED
-    }
-}
-#[doc = "Possible values of the field `REGION1RA`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum REGION1RAR {
-    #[doc = "Disable"]
-    DISABLED,
-    #[doc = "Enable"]
-    ENABLED,
-}
-impl REGION1RAR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            REGION1RAR::DISABLED => false,
-            REGION1RAR::ENABLED => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> REGION1RAR {
-        match value {
-            false => REGION1RAR::DISABLED,
-            true => REGION1RAR::ENABLED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
-    pub fn is_disabled(&self) -> bool {
-        *self == REGION1RAR::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
-    pub fn is_enabled(&self) -> bool {
-        *self == REGION1RAR::ENABLED
-    }
-}
-#[doc = "Possible values of the field `REGION2WA`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum REGION2WAR {
-    #[doc = "Disable"]
-    DISABLED,
-    #[doc = "Enable"]
-    ENABLED,
-}
-impl REGION2WAR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            REGION2WAR::DISABLED => false,
-            REGION2WAR::ENABLED => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> REGION2WAR {
-        match value {
-            false => REGION2WAR::DISABLED,
-            true => REGION2WAR::ENABLED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
-    pub fn is_disabled(&self) -> bool {
-        *self == REGION2WAR::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
-    pub fn is_enabled(&self) -> bool {
-        *self == REGION2WAR::ENABLED
-    }
-}
-#[doc = "Possible values of the field `REGION2RA`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum REGION2RAR {
-    #[doc = "Disable"]
-    DISABLED,
-    #[doc = "Enable"]
-    ENABLED,
-}
-impl REGION2RAR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            REGION2RAR::DISABLED => false,
-            REGION2RAR::ENABLED => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> REGION2RAR {
-        match value {
-            false => REGION2RAR::DISABLED,
-            true => REGION2RAR::ENABLED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
-    pub fn is_disabled(&self) -> bool {
-        *self == REGION2RAR::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
-    pub fn is_enabled(&self) -> bool {
-        *self == REGION2RAR::ENABLED
-    }
-}
-#[doc = "Possible values of the field `REGION3WA`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum REGION3WAR {
-    #[doc = "Disable"]
-    DISABLED,
-    #[doc = "Enable"]
-    ENABLED,
-}
-impl REGION3WAR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            REGION3WAR::DISABLED => false,
-            REGION3WAR::ENABLED => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> REGION3WAR {
-        match value {
-            false => REGION3WAR::DISABLED,
-            true => REGION3WAR::ENABLED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
-    pub fn is_disabled(&self) -> bool {
-        *self == REGION3WAR::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
-    pub fn is_enabled(&self) -> bool {
-        *self == REGION3WAR::ENABLED
-    }
-}
-#[doc = "Possible values of the field `REGION3RA`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum REGION3RAR {
-    #[doc = "Disable"]
-    DISABLED,
-    #[doc = "Enable"]
-    ENABLED,
-}
-impl REGION3RAR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            REGION3RAR::DISABLED => false,
-            REGION3RAR::ENABLED => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> REGION3RAR {
-        match value {
-            false => REGION3RAR::DISABLED,
-            true => REGION3RAR::ENABLED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
-    pub fn is_disabled(&self) -> bool {
-        *self == REGION3RAR::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
-    pub fn is_enabled(&self) -> bool {
-        *self == REGION3RAR::ENABLED
-    }
-}
-#[doc = "Possible values of the field `PREGION0WA`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PREGION0WAR {
-    #[doc = "Disable"]
-    DISABLED,
-    #[doc = "Enable"]
-    ENABLED,
-}
-impl PREGION0WAR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PREGION0WAR::DISABLED => false,
-            PREGION0WAR::ENABLED => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PREGION0WAR {
-        match value {
-            false => PREGION0WAR::DISABLED,
-            true => PREGION0WAR::ENABLED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
-    pub fn is_disabled(&self) -> bool {
-        *self == PREGION0WAR::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
-    pub fn is_enabled(&self) -> bool {
-        *self == PREGION0WAR::ENABLED
-    }
-}
-#[doc = "Possible values of the field `PREGION0RA`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PREGION0RAR {
-    #[doc = "Disable"]
-    DISABLED,
-    #[doc = "Enable"]
-    ENABLED,
-}
-impl PREGION0RAR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PREGION0RAR::DISABLED => false,
-            PREGION0RAR::ENABLED => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PREGION0RAR {
-        match value {
-            false => PREGION0RAR::DISABLED,
-            true => PREGION0RAR::ENABLED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
-    pub fn is_disabled(&self) -> bool {
-        *self == PREGION0RAR::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
-    pub fn is_enabled(&self) -> bool {
-        *self == PREGION0RAR::ENABLED
-    }
-}
-#[doc = "Possible values of the field `PREGION1WA`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PREGION1WAR {
-    #[doc = "Disable"]
-    DISABLED,
-    #[doc = "Enable"]
-    ENABLED,
-}
-impl PREGION1WAR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PREGION1WAR::DISABLED => false,
-            PREGION1WAR::ENABLED => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PREGION1WAR {
-        match value {
-            false => PREGION1WAR::DISABLED,
-            true => PREGION1WAR::ENABLED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
-    pub fn is_disabled(&self) -> bool {
-        *self == PREGION1WAR::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
-    pub fn is_enabled(&self) -> bool {
-        *self == PREGION1WAR::ENABLED
-    }
-}
-#[doc = "Possible values of the field `PREGION1RA`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PREGION1RAR {
-    #[doc = "Disable"]
-    DISABLED,
-    #[doc = "Enable"]
-    ENABLED,
-}
-impl PREGION1RAR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PREGION1RAR::DISABLED => false,
-            PREGION1RAR::ENABLED => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PREGION1RAR {
-        match value {
-            false => PREGION1RAR::DISABLED,
-            true => PREGION1RAR::ENABLED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
-    pub fn is_disabled(&self) -> bool {
-        *self == PREGION1RAR::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
-    pub fn is_enabled(&self) -> bool {
-        *self == PREGION1RAR::ENABLED
-    }
-}
-#[doc = "Values that can be written to the field `REGION0WA`"]
-pub enum REGION0WAW {
-    #[doc = "Disable"]
-    DISABLED,
-    #[doc = "Enable"]
-    ENABLED,
-}
-impl REGION0WAW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            REGION0WAW::DISABLED => false,
-            REGION0WAW::ENABLED => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _REGION0WAW<'a> {
+#[doc = "Write proxy for field `REGION0WA`"]
+pub struct REGION0WA_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _REGION0WAW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: REGION0WAW) -> &'a mut W {
+impl<'a> REGION0WA_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: REGION0WA_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable"]
-    #[inline]
+    #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(REGION0WAW::DISABLED)
+        self.variant(REGION0WA_A::DISABLED)
     }
     #[doc = "Enable"]
-    #[inline]
+    #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(REGION0WAW::ENABLED)
+        self.variant(REGION0WA_A::ENABLED)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `REGION0RA`"]
-pub enum REGION0RAW {
-    #[doc = "Disable"]
+#[doc = "Enable or disable interrupt for REGION\\[0\\].RA event\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum REGION0RA_A {
+    #[doc = "0: Disable"]
     DISABLED,
-    #[doc = "Enable"]
+    #[doc = "1: Enable"]
     ENABLED,
 }
-impl REGION0RAW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            REGION0RAW::DISABLED => false,
-            REGION0RAW::ENABLED => true,
+impl From<REGION0RA_A> for bool {
+    #[inline(always)]
+    fn from(variant: REGION0RA_A) -> Self {
+        match variant {
+            REGION0RA_A::DISABLED => false,
+            REGION0RA_A::ENABLED => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _REGION0RAW<'a> {
+#[doc = "Reader of field `REGION0RA`"]
+pub type REGION0RA_R = crate::R<bool, REGION0RA_A>;
+impl REGION0RA_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> REGION0RA_A {
+        match self.bits {
+            false => REGION0RA_A::DISABLED,
+            true => REGION0RA_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == REGION0RA_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == REGION0RA_A::ENABLED
+    }
+}
+#[doc = "Write proxy for field `REGION0RA`"]
+pub struct REGION0RA_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _REGION0RAW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: REGION0RAW) -> &'a mut W {
+impl<'a> REGION0RA_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: REGION0RA_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable"]
-    #[inline]
+    #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(REGION0RAW::DISABLED)
+        self.variant(REGION0RA_A::DISABLED)
     }
     #[doc = "Enable"]
-    #[inline]
+    #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(REGION0RAW::ENABLED)
+        self.variant(REGION0RA_A::ENABLED)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `REGION1WA`"]
-pub enum REGION1WAW {
-    #[doc = "Disable"]
+#[doc = "Enable or disable interrupt for REGION\\[1\\].WA event\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum REGION1WA_A {
+    #[doc = "0: Disable"]
     DISABLED,
-    #[doc = "Enable"]
+    #[doc = "1: Enable"]
     ENABLED,
 }
-impl REGION1WAW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            REGION1WAW::DISABLED => false,
-            REGION1WAW::ENABLED => true,
+impl From<REGION1WA_A> for bool {
+    #[inline(always)]
+    fn from(variant: REGION1WA_A) -> Self {
+        match variant {
+            REGION1WA_A::DISABLED => false,
+            REGION1WA_A::ENABLED => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _REGION1WAW<'a> {
+#[doc = "Reader of field `REGION1WA`"]
+pub type REGION1WA_R = crate::R<bool, REGION1WA_A>;
+impl REGION1WA_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> REGION1WA_A {
+        match self.bits {
+            false => REGION1WA_A::DISABLED,
+            true => REGION1WA_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == REGION1WA_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == REGION1WA_A::ENABLED
+    }
+}
+#[doc = "Write proxy for field `REGION1WA`"]
+pub struct REGION1WA_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _REGION1WAW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: REGION1WAW) -> &'a mut W {
+impl<'a> REGION1WA_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: REGION1WA_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable"]
-    #[inline]
+    #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(REGION1WAW::DISABLED)
+        self.variant(REGION1WA_A::DISABLED)
     }
     #[doc = "Enable"]
-    #[inline]
+    #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(REGION1WAW::ENABLED)
+        self.variant(REGION1WA_A::ENABLED)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `REGION1RA`"]
-pub enum REGION1RAW {
-    #[doc = "Disable"]
+#[doc = "Enable or disable interrupt for REGION\\[1\\].RA event\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum REGION1RA_A {
+    #[doc = "0: Disable"]
     DISABLED,
-    #[doc = "Enable"]
+    #[doc = "1: Enable"]
     ENABLED,
 }
-impl REGION1RAW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            REGION1RAW::DISABLED => false,
-            REGION1RAW::ENABLED => true,
+impl From<REGION1RA_A> for bool {
+    #[inline(always)]
+    fn from(variant: REGION1RA_A) -> Self {
+        match variant {
+            REGION1RA_A::DISABLED => false,
+            REGION1RA_A::ENABLED => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _REGION1RAW<'a> {
+#[doc = "Reader of field `REGION1RA`"]
+pub type REGION1RA_R = crate::R<bool, REGION1RA_A>;
+impl REGION1RA_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> REGION1RA_A {
+        match self.bits {
+            false => REGION1RA_A::DISABLED,
+            true => REGION1RA_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == REGION1RA_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == REGION1RA_A::ENABLED
+    }
+}
+#[doc = "Write proxy for field `REGION1RA`"]
+pub struct REGION1RA_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _REGION1RAW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: REGION1RAW) -> &'a mut W {
+impl<'a> REGION1RA_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: REGION1RA_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable"]
-    #[inline]
+    #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(REGION1RAW::DISABLED)
+        self.variant(REGION1RA_A::DISABLED)
     }
     #[doc = "Enable"]
-    #[inline]
+    #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(REGION1RAW::ENABLED)
+        self.variant(REGION1RA_A::ENABLED)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `REGION2WA`"]
-pub enum REGION2WAW {
-    #[doc = "Disable"]
+#[doc = "Enable or disable interrupt for REGION\\[2\\].WA event\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum REGION2WA_A {
+    #[doc = "0: Disable"]
     DISABLED,
-    #[doc = "Enable"]
+    #[doc = "1: Enable"]
     ENABLED,
 }
-impl REGION2WAW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            REGION2WAW::DISABLED => false,
-            REGION2WAW::ENABLED => true,
+impl From<REGION2WA_A> for bool {
+    #[inline(always)]
+    fn from(variant: REGION2WA_A) -> Self {
+        match variant {
+            REGION2WA_A::DISABLED => false,
+            REGION2WA_A::ENABLED => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _REGION2WAW<'a> {
+#[doc = "Reader of field `REGION2WA`"]
+pub type REGION2WA_R = crate::R<bool, REGION2WA_A>;
+impl REGION2WA_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> REGION2WA_A {
+        match self.bits {
+            false => REGION2WA_A::DISABLED,
+            true => REGION2WA_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == REGION2WA_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == REGION2WA_A::ENABLED
+    }
+}
+#[doc = "Write proxy for field `REGION2WA`"]
+pub struct REGION2WA_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _REGION2WAW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: REGION2WAW) -> &'a mut W {
+impl<'a> REGION2WA_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: REGION2WA_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable"]
-    #[inline]
+    #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(REGION2WAW::DISABLED)
+        self.variant(REGION2WA_A::DISABLED)
     }
     #[doc = "Enable"]
-    #[inline]
+    #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(REGION2WAW::ENABLED)
+        self.variant(REGION2WA_A::ENABLED)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `REGION2RA`"]
-pub enum REGION2RAW {
-    #[doc = "Disable"]
+#[doc = "Enable or disable interrupt for REGION\\[2\\].RA event\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum REGION2RA_A {
+    #[doc = "0: Disable"]
     DISABLED,
-    #[doc = "Enable"]
+    #[doc = "1: Enable"]
     ENABLED,
 }
-impl REGION2RAW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            REGION2RAW::DISABLED => false,
-            REGION2RAW::ENABLED => true,
+impl From<REGION2RA_A> for bool {
+    #[inline(always)]
+    fn from(variant: REGION2RA_A) -> Self {
+        match variant {
+            REGION2RA_A::DISABLED => false,
+            REGION2RA_A::ENABLED => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _REGION2RAW<'a> {
+#[doc = "Reader of field `REGION2RA`"]
+pub type REGION2RA_R = crate::R<bool, REGION2RA_A>;
+impl REGION2RA_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> REGION2RA_A {
+        match self.bits {
+            false => REGION2RA_A::DISABLED,
+            true => REGION2RA_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == REGION2RA_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == REGION2RA_A::ENABLED
+    }
+}
+#[doc = "Write proxy for field `REGION2RA`"]
+pub struct REGION2RA_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _REGION2RAW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: REGION2RAW) -> &'a mut W {
+impl<'a> REGION2RA_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: REGION2RA_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable"]
-    #[inline]
+    #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(REGION2RAW::DISABLED)
+        self.variant(REGION2RA_A::DISABLED)
     }
     #[doc = "Enable"]
-    #[inline]
+    #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(REGION2RAW::ENABLED)
+        self.variant(REGION2RA_A::ENABLED)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `REGION3WA`"]
-pub enum REGION3WAW {
-    #[doc = "Disable"]
+#[doc = "Enable or disable interrupt for REGION\\[3\\].WA event\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum REGION3WA_A {
+    #[doc = "0: Disable"]
     DISABLED,
-    #[doc = "Enable"]
+    #[doc = "1: Enable"]
     ENABLED,
 }
-impl REGION3WAW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            REGION3WAW::DISABLED => false,
-            REGION3WAW::ENABLED => true,
+impl From<REGION3WA_A> for bool {
+    #[inline(always)]
+    fn from(variant: REGION3WA_A) -> Self {
+        match variant {
+            REGION3WA_A::DISABLED => false,
+            REGION3WA_A::ENABLED => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _REGION3WAW<'a> {
+#[doc = "Reader of field `REGION3WA`"]
+pub type REGION3WA_R = crate::R<bool, REGION3WA_A>;
+impl REGION3WA_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> REGION3WA_A {
+        match self.bits {
+            false => REGION3WA_A::DISABLED,
+            true => REGION3WA_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == REGION3WA_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == REGION3WA_A::ENABLED
+    }
+}
+#[doc = "Write proxy for field `REGION3WA`"]
+pub struct REGION3WA_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _REGION3WAW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: REGION3WAW) -> &'a mut W {
+impl<'a> REGION3WA_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: REGION3WA_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable"]
-    #[inline]
+    #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(REGION3WAW::DISABLED)
+        self.variant(REGION3WA_A::DISABLED)
     }
     #[doc = "Enable"]
-    #[inline]
+    #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(REGION3WAW::ENABLED)
+        self.variant(REGION3WA_A::ENABLED)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `REGION3RA`"]
-pub enum REGION3RAW {
-    #[doc = "Disable"]
+#[doc = "Enable or disable interrupt for REGION\\[3\\].RA event\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum REGION3RA_A {
+    #[doc = "0: Disable"]
     DISABLED,
-    #[doc = "Enable"]
+    #[doc = "1: Enable"]
     ENABLED,
 }
-impl REGION3RAW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            REGION3RAW::DISABLED => false,
-            REGION3RAW::ENABLED => true,
+impl From<REGION3RA_A> for bool {
+    #[inline(always)]
+    fn from(variant: REGION3RA_A) -> Self {
+        match variant {
+            REGION3RA_A::DISABLED => false,
+            REGION3RA_A::ENABLED => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _REGION3RAW<'a> {
+#[doc = "Reader of field `REGION3RA`"]
+pub type REGION3RA_R = crate::R<bool, REGION3RA_A>;
+impl REGION3RA_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> REGION3RA_A {
+        match self.bits {
+            false => REGION3RA_A::DISABLED,
+            true => REGION3RA_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == REGION3RA_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == REGION3RA_A::ENABLED
+    }
+}
+#[doc = "Write proxy for field `REGION3RA`"]
+pub struct REGION3RA_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _REGION3RAW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: REGION3RAW) -> &'a mut W {
+impl<'a> REGION3RA_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: REGION3RA_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable"]
-    #[inline]
+    #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(REGION3RAW::DISABLED)
+        self.variant(REGION3RA_A::DISABLED)
     }
     #[doc = "Enable"]
-    #[inline]
+    #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(REGION3RAW::ENABLED)
+        self.variant(REGION3RA_A::ENABLED)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 7;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `PREGION0WA`"]
-pub enum PREGION0WAW {
-    #[doc = "Disable"]
+#[doc = "Enable or disable interrupt for PREGION\\[0\\].WA event\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PREGION0WA_A {
+    #[doc = "0: Disable"]
     DISABLED,
-    #[doc = "Enable"]
+    #[doc = "1: Enable"]
     ENABLED,
 }
-impl PREGION0WAW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PREGION0WAW::DISABLED => false,
-            PREGION0WAW::ENABLED => true,
+impl From<PREGION0WA_A> for bool {
+    #[inline(always)]
+    fn from(variant: PREGION0WA_A) -> Self {
+        match variant {
+            PREGION0WA_A::DISABLED => false,
+            PREGION0WA_A::ENABLED => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _PREGION0WAW<'a> {
+#[doc = "Reader of field `PREGION0WA`"]
+pub type PREGION0WA_R = crate::R<bool, PREGION0WA_A>;
+impl PREGION0WA_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PREGION0WA_A {
+        match self.bits {
+            false => PREGION0WA_A::DISABLED,
+            true => PREGION0WA_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == PREGION0WA_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == PREGION0WA_A::ENABLED
+    }
+}
+#[doc = "Write proxy for field `PREGION0WA`"]
+pub struct PREGION0WA_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PREGION0WAW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PREGION0WAW) -> &'a mut W {
+impl<'a> PREGION0WA_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PREGION0WA_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable"]
-    #[inline]
+    #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(PREGION0WAW::DISABLED)
+        self.variant(PREGION0WA_A::DISABLED)
     }
     #[doc = "Enable"]
-    #[inline]
+    #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(PREGION0WAW::ENABLED)
+        self.variant(PREGION0WA_A::ENABLED)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 24;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `PREGION0RA`"]
-pub enum PREGION0RAW {
-    #[doc = "Disable"]
+#[doc = "Enable or disable interrupt for PREGION\\[0\\].RA event\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PREGION0RA_A {
+    #[doc = "0: Disable"]
     DISABLED,
-    #[doc = "Enable"]
+    #[doc = "1: Enable"]
     ENABLED,
 }
-impl PREGION0RAW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PREGION0RAW::DISABLED => false,
-            PREGION0RAW::ENABLED => true,
+impl From<PREGION0RA_A> for bool {
+    #[inline(always)]
+    fn from(variant: PREGION0RA_A) -> Self {
+        match variant {
+            PREGION0RA_A::DISABLED => false,
+            PREGION0RA_A::ENABLED => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _PREGION0RAW<'a> {
+#[doc = "Reader of field `PREGION0RA`"]
+pub type PREGION0RA_R = crate::R<bool, PREGION0RA_A>;
+impl PREGION0RA_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PREGION0RA_A {
+        match self.bits {
+            false => PREGION0RA_A::DISABLED,
+            true => PREGION0RA_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == PREGION0RA_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == PREGION0RA_A::ENABLED
+    }
+}
+#[doc = "Write proxy for field `PREGION0RA`"]
+pub struct PREGION0RA_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PREGION0RAW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PREGION0RAW) -> &'a mut W {
+impl<'a> PREGION0RA_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PREGION0RA_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable"]
-    #[inline]
+    #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(PREGION0RAW::DISABLED)
+        self.variant(PREGION0RA_A::DISABLED)
     }
     #[doc = "Enable"]
-    #[inline]
+    #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(PREGION0RAW::ENABLED)
+        self.variant(PREGION0RA_A::ENABLED)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 25;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 25)) | (((value as u32) & 0x01) << 25);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `PREGION1WA`"]
-pub enum PREGION1WAW {
-    #[doc = "Disable"]
+#[doc = "Enable or disable interrupt for PREGION\\[1\\].WA event\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PREGION1WA_A {
+    #[doc = "0: Disable"]
     DISABLED,
-    #[doc = "Enable"]
+    #[doc = "1: Enable"]
     ENABLED,
 }
-impl PREGION1WAW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PREGION1WAW::DISABLED => false,
-            PREGION1WAW::ENABLED => true,
+impl From<PREGION1WA_A> for bool {
+    #[inline(always)]
+    fn from(variant: PREGION1WA_A) -> Self {
+        match variant {
+            PREGION1WA_A::DISABLED => false,
+            PREGION1WA_A::ENABLED => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _PREGION1WAW<'a> {
+#[doc = "Reader of field `PREGION1WA`"]
+pub type PREGION1WA_R = crate::R<bool, PREGION1WA_A>;
+impl PREGION1WA_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PREGION1WA_A {
+        match self.bits {
+            false => PREGION1WA_A::DISABLED,
+            true => PREGION1WA_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == PREGION1WA_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == PREGION1WA_A::ENABLED
+    }
+}
+#[doc = "Write proxy for field `PREGION1WA`"]
+pub struct PREGION1WA_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PREGION1WAW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PREGION1WAW) -> &'a mut W {
+impl<'a> PREGION1WA_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PREGION1WA_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable"]
-    #[inline]
+    #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(PREGION1WAW::DISABLED)
+        self.variant(PREGION1WA_A::DISABLED)
     }
     #[doc = "Enable"]
-    #[inline]
+    #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(PREGION1WAW::ENABLED)
+        self.variant(PREGION1WA_A::ENABLED)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 26;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 26)) | (((value as u32) & 0x01) << 26);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `PREGION1RA`"]
-pub enum PREGION1RAW {
-    #[doc = "Disable"]
+#[doc = "Enable or disable interrupt for PREGION\\[1\\].RA event\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PREGION1RA_A {
+    #[doc = "0: Disable"]
     DISABLED,
-    #[doc = "Enable"]
+    #[doc = "1: Enable"]
     ENABLED,
 }
-impl PREGION1RAW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PREGION1RAW::DISABLED => false,
-            PREGION1RAW::ENABLED => true,
+impl From<PREGION1RA_A> for bool {
+    #[inline(always)]
+    fn from(variant: PREGION1RA_A) -> Self {
+        match variant {
+            PREGION1RA_A::DISABLED => false,
+            PREGION1RA_A::ENABLED => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _PREGION1RAW<'a> {
+#[doc = "Reader of field `PREGION1RA`"]
+pub type PREGION1RA_R = crate::R<bool, PREGION1RA_A>;
+impl PREGION1RA_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PREGION1RA_A {
+        match self.bits {
+            false => PREGION1RA_A::DISABLED,
+            true => PREGION1RA_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == PREGION1RA_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == PREGION1RA_A::ENABLED
+    }
+}
+#[doc = "Write proxy for field `PREGION1RA`"]
+pub struct PREGION1RA_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PREGION1RAW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PREGION1RAW) -> &'a mut W {
+impl<'a> PREGION1RA_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PREGION1RA_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable"]
-    #[inline]
+    #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(PREGION1RAW::DISABLED)
+        self.variant(PREGION1RA_A::DISABLED)
     }
     #[doc = "Enable"]
-    #[inline]
+    #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(PREGION1RAW::ENABLED)
+        self.variant(PREGION1RA_A::ENABLED)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 27;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 27)) | (((value as u32) & 0x01) << 27);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Enable or disable interrupt for REGION\\[0\\].WA event"]
-    #[inline]
-    pub fn region0wa(&self) -> REGION0WAR {
-        REGION0WAR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn region0wa(&self) -> REGION0WA_R {
+        REGION0WA_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Enable or disable interrupt for REGION\\[0\\].RA event"]
-    #[inline]
-    pub fn region0ra(&self) -> REGION0RAR {
-        REGION0RAR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn region0ra(&self) -> REGION0RA_R {
+        REGION0RA_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Enable or disable interrupt for REGION\\[1\\].WA event"]
-    #[inline]
-    pub fn region1wa(&self) -> REGION1WAR {
-        REGION1WAR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn region1wa(&self) -> REGION1WA_R {
+        REGION1WA_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - Enable or disable interrupt for REGION\\[1\\].RA event"]
-    #[inline]
-    pub fn region1ra(&self) -> REGION1RAR {
-        REGION1RAR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn region1ra(&self) -> REGION1RA_R {
+        REGION1RA_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - Enable or disable interrupt for REGION\\[2\\].WA event"]
-    #[inline]
-    pub fn region2wa(&self) -> REGION2WAR {
-        REGION2WAR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn region2wa(&self) -> REGION2WA_R {
+        REGION2WA_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - Enable or disable interrupt for REGION\\[2\\].RA event"]
-    #[inline]
-    pub fn region2ra(&self) -> REGION2RAR {
-        REGION2RAR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn region2ra(&self) -> REGION2RA_R {
+        REGION2RA_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - Enable or disable interrupt for REGION\\[3\\].WA event"]
-    #[inline]
-    pub fn region3wa(&self) -> REGION3WAR {
-        REGION3WAR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn region3wa(&self) -> REGION3WA_R {
+        REGION3WA_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - Enable or disable interrupt for REGION\\[3\\].RA event"]
-    #[inline]
-    pub fn region3ra(&self) -> REGION3RAR {
-        REGION3RAR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn region3ra(&self) -> REGION3RA_R {
+        REGION3RA_R::new(((self.bits >> 7) & 0x01) != 0)
     }
     #[doc = "Bit 24 - Enable or disable interrupt for PREGION\\[0\\].WA event"]
-    #[inline]
-    pub fn pregion0wa(&self) -> PREGION0WAR {
-        PREGION0WAR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pregion0wa(&self) -> PREGION0WA_R {
+        PREGION0WA_R::new(((self.bits >> 24) & 0x01) != 0)
     }
     #[doc = "Bit 25 - Enable or disable interrupt for PREGION\\[0\\].RA event"]
-    #[inline]
-    pub fn pregion0ra(&self) -> PREGION0RAR {
-        PREGION0RAR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 25;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pregion0ra(&self) -> PREGION0RA_R {
+        PREGION0RA_R::new(((self.bits >> 25) & 0x01) != 0)
     }
     #[doc = "Bit 26 - Enable or disable interrupt for PREGION\\[1\\].WA event"]
-    #[inline]
-    pub fn pregion1wa(&self) -> PREGION1WAR {
-        PREGION1WAR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 26;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pregion1wa(&self) -> PREGION1WA_R {
+        PREGION1WA_R::new(((self.bits >> 26) & 0x01) != 0)
     }
     #[doc = "Bit 27 - Enable or disable interrupt for PREGION\\[1\\].RA event"]
-    #[inline]
-    pub fn pregion1ra(&self) -> PREGION1RAR {
-        PREGION1RAR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 27;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pregion1ra(&self) -> PREGION1RA_R {
+        PREGION1RA_R::new(((self.bits >> 27) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Enable or disable interrupt for REGION\\[0\\].WA event"]
-    #[inline]
-    pub fn region0wa(&mut self) -> _REGION0WAW {
-        _REGION0WAW { w: self }
+    #[inline(always)]
+    pub fn region0wa(&mut self) -> REGION0WA_W {
+        REGION0WA_W { w: self }
     }
     #[doc = "Bit 1 - Enable or disable interrupt for REGION\\[0\\].RA event"]
-    #[inline]
-    pub fn region0ra(&mut self) -> _REGION0RAW {
-        _REGION0RAW { w: self }
+    #[inline(always)]
+    pub fn region0ra(&mut self) -> REGION0RA_W {
+        REGION0RA_W { w: self }
     }
     #[doc = "Bit 2 - Enable or disable interrupt for REGION\\[1\\].WA event"]
-    #[inline]
-    pub fn region1wa(&mut self) -> _REGION1WAW {
-        _REGION1WAW { w: self }
+    #[inline(always)]
+    pub fn region1wa(&mut self) -> REGION1WA_W {
+        REGION1WA_W { w: self }
     }
     #[doc = "Bit 3 - Enable or disable interrupt for REGION\\[1\\].RA event"]
-    #[inline]
-    pub fn region1ra(&mut self) -> _REGION1RAW {
-        _REGION1RAW { w: self }
+    #[inline(always)]
+    pub fn region1ra(&mut self) -> REGION1RA_W {
+        REGION1RA_W { w: self }
     }
     #[doc = "Bit 4 - Enable or disable interrupt for REGION\\[2\\].WA event"]
-    #[inline]
-    pub fn region2wa(&mut self) -> _REGION2WAW {
-        _REGION2WAW { w: self }
+    #[inline(always)]
+    pub fn region2wa(&mut self) -> REGION2WA_W {
+        REGION2WA_W { w: self }
     }
     #[doc = "Bit 5 - Enable or disable interrupt for REGION\\[2\\].RA event"]
-    #[inline]
-    pub fn region2ra(&mut self) -> _REGION2RAW {
-        _REGION2RAW { w: self }
+    #[inline(always)]
+    pub fn region2ra(&mut self) -> REGION2RA_W {
+        REGION2RA_W { w: self }
     }
     #[doc = "Bit 6 - Enable or disable interrupt for REGION\\[3\\].WA event"]
-    #[inline]
-    pub fn region3wa(&mut self) -> _REGION3WAW {
-        _REGION3WAW { w: self }
+    #[inline(always)]
+    pub fn region3wa(&mut self) -> REGION3WA_W {
+        REGION3WA_W { w: self }
     }
     #[doc = "Bit 7 - Enable or disable interrupt for REGION\\[3\\].RA event"]
-    #[inline]
-    pub fn region3ra(&mut self) -> _REGION3RAW {
-        _REGION3RAW { w: self }
+    #[inline(always)]
+    pub fn region3ra(&mut self) -> REGION3RA_W {
+        REGION3RA_W { w: self }
     }
     #[doc = "Bit 24 - Enable or disable interrupt for PREGION\\[0\\].WA event"]
-    #[inline]
-    pub fn pregion0wa(&mut self) -> _PREGION0WAW {
-        _PREGION0WAW { w: self }
+    #[inline(always)]
+    pub fn pregion0wa(&mut self) -> PREGION0WA_W {
+        PREGION0WA_W { w: self }
     }
     #[doc = "Bit 25 - Enable or disable interrupt for PREGION\\[0\\].RA event"]
-    #[inline]
-    pub fn pregion0ra(&mut self) -> _PREGION0RAW {
-        _PREGION0RAW { w: self }
+    #[inline(always)]
+    pub fn pregion0ra(&mut self) -> PREGION0RA_W {
+        PREGION0RA_W { w: self }
     }
     #[doc = "Bit 26 - Enable or disable interrupt for PREGION\\[1\\].WA event"]
-    #[inline]
-    pub fn pregion1wa(&mut self) -> _PREGION1WAW {
-        _PREGION1WAW { w: self }
+    #[inline(always)]
+    pub fn pregion1wa(&mut self) -> PREGION1WA_W {
+        PREGION1WA_W { w: self }
     }
     #[doc = "Bit 27 - Enable or disable interrupt for PREGION\\[1\\].RA event"]
-    #[inline]
-    pub fn pregion1ra(&mut self) -> _PREGION1RAW {
-        _PREGION1RAW { w: self }
+    #[inline(always)]
+    pub fn pregion1ra(&mut self) -> PREGION1RA_W {
+        PREGION1RA_W { w: self }
     }
 }

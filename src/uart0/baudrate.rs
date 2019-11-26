@@ -1,439 +1,318 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::BAUDRATE {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register BAUDRATE"]
+pub type R = crate::R<u32, super::BAUDRATE>;
+#[doc = "Writer for register BAUDRATE"]
+pub type W = crate::W<u32, super::BAUDRATE>;
+#[doc = "Register BAUDRATE `reset()`'s with value 0x0400_0000"]
+impl crate::ResetValue for super::BAUDRATE {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x0400_0000
     }
 }
-#[doc = "Possible values of the field `BAUDRATE`"]
+#[doc = "Baud rate\n\nValue on reset: 67108864"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum BAUDRATER {
-    #[doc = "1200 baud (actual rate: 1205)"]
+pub enum BAUDRATE_A {
+    #[doc = "323584: 1200 baud (actual rate: 1205)"]
     BAUD1200,
-    #[doc = "2400 baud (actual rate: 2396)"]
+    #[doc = "643072: 2400 baud (actual rate: 2396)"]
     BAUD2400,
-    #[doc = "4800 baud (actual rate: 4808)"]
+    #[doc = "1290240: 4800 baud (actual rate: 4808)"]
     BAUD4800,
-    #[doc = "9600 baud (actual rate: 9598)"]
+    #[doc = "2576384: 9600 baud (actual rate: 9598)"]
     BAUD9600,
-    #[doc = "14400 baud (actual rate: 14414)"]
+    #[doc = "3866624: 14400 baud (actual rate: 14414)"]
     BAUD14400,
-    #[doc = "19200 baud (actual rate: 19208)"]
+    #[doc = "5152768: 19200 baud (actual rate: 19208)"]
     BAUD19200,
-    #[doc = "28800 baud (actual rate: 28829)"]
+    #[doc = "7729152: 28800 baud (actual rate: 28829)"]
     BAUD28800,
-    #[doc = "31250 baud"]
+    #[doc = "8388608: 31250 baud"]
     BAUD31250,
-    #[doc = "38400 baud (actual rate: 38462)"]
+    #[doc = "10309632: 38400 baud (actual rate: 38462)"]
     BAUD38400,
-    #[doc = "56000 baud (actual rate: 55944)"]
+    #[doc = "15007744: 56000 baud (actual rate: 55944)"]
     BAUD56000,
-    #[doc = "57600 baud (actual rate: 57762)"]
+    #[doc = "15462400: 57600 baud (actual rate: 57762)"]
     BAUD57600,
-    #[doc = "76800 baud (actual rate: 76923)"]
+    #[doc = "20615168: 76800 baud (actual rate: 76923)"]
     BAUD76800,
-    #[doc = "115200 baud (actual rate: 115942)"]
+    #[doc = "30924800: 115200 baud (actual rate: 115942)"]
     BAUD115200,
-    #[doc = "230400 baud (actual rate: 231884)"]
+    #[doc = "61845504: 230400 baud (actual rate: 231884)"]
     BAUD230400,
-    #[doc = "250000 baud"]
+    #[doc = "67108864: 250000 baud"]
     BAUD250000,
-    #[doc = "460800 baud (actual rate: 470588)"]
+    #[doc = "123695104: 460800 baud (actual rate: 470588)"]
     BAUD460800,
-    #[doc = "921600 baud (actual rate: 941176)"]
+    #[doc = "247386112: 921600 baud (actual rate: 941176)"]
     BAUD921600,
-    #[doc = "1Mega baud"]
+    #[doc = "268435456: 1Mega baud"]
     BAUD1M,
-    #[doc = r" Reserved"]
-    _Reserved(u32),
 }
-impl BAUDRATER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        match *self {
-            BAUDRATER::BAUD1200 => 323584,
-            BAUDRATER::BAUD2400 => 643072,
-            BAUDRATER::BAUD4800 => 1290240,
-            BAUDRATER::BAUD9600 => 2576384,
-            BAUDRATER::BAUD14400 => 3866624,
-            BAUDRATER::BAUD19200 => 5152768,
-            BAUDRATER::BAUD28800 => 7729152,
-            BAUDRATER::BAUD31250 => 8388608,
-            BAUDRATER::BAUD38400 => 10309632,
-            BAUDRATER::BAUD56000 => 15007744,
-            BAUDRATER::BAUD57600 => 15462400,
-            BAUDRATER::BAUD76800 => 20615168,
-            BAUDRATER::BAUD115200 => 30924800,
-            BAUDRATER::BAUD230400 => 61845504,
-            BAUDRATER::BAUD250000 => 67108864,
-            BAUDRATER::BAUD460800 => 123695104,
-            BAUDRATER::BAUD921600 => 247386112,
-            BAUDRATER::BAUD1M => 268435456,
-            BAUDRATER::_Reserved(bits) => bits,
+impl From<BAUDRATE_A> for u32 {
+    #[inline(always)]
+    fn from(variant: BAUDRATE_A) -> Self {
+        match variant {
+            BAUDRATE_A::BAUD1200 => 323584,
+            BAUDRATE_A::BAUD2400 => 643072,
+            BAUDRATE_A::BAUD4800 => 1290240,
+            BAUDRATE_A::BAUD9600 => 2576384,
+            BAUDRATE_A::BAUD14400 => 3866624,
+            BAUDRATE_A::BAUD19200 => 5152768,
+            BAUDRATE_A::BAUD28800 => 7729152,
+            BAUDRATE_A::BAUD31250 => 8388608,
+            BAUDRATE_A::BAUD38400 => 10309632,
+            BAUDRATE_A::BAUD56000 => 15007744,
+            BAUDRATE_A::BAUD57600 => 15462400,
+            BAUDRATE_A::BAUD76800 => 20615168,
+            BAUDRATE_A::BAUD115200 => 30924800,
+            BAUDRATE_A::BAUD230400 => 61845504,
+            BAUDRATE_A::BAUD250000 => 67108864,
+            BAUDRATE_A::BAUD460800 => 123695104,
+            BAUDRATE_A::BAUD921600 => 247386112,
+            BAUDRATE_A::BAUD1M => 268435456,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u32) -> BAUDRATER {
-        match value {
-            323584 => BAUDRATER::BAUD1200,
-            643072 => BAUDRATER::BAUD2400,
-            1290240 => BAUDRATER::BAUD4800,
-            2576384 => BAUDRATER::BAUD9600,
-            3866624 => BAUDRATER::BAUD14400,
-            5152768 => BAUDRATER::BAUD19200,
-            7729152 => BAUDRATER::BAUD28800,
-            8388608 => BAUDRATER::BAUD31250,
-            10309632 => BAUDRATER::BAUD38400,
-            15007744 => BAUDRATER::BAUD56000,
-            15462400 => BAUDRATER::BAUD57600,
-            20615168 => BAUDRATER::BAUD76800,
-            30924800 => BAUDRATER::BAUD115200,
-            61845504 => BAUDRATER::BAUD230400,
-            67108864 => BAUDRATER::BAUD250000,
-            123695104 => BAUDRATER::BAUD460800,
-            247386112 => BAUDRATER::BAUD921600,
-            268435456 => BAUDRATER::BAUD1M,
-            i => BAUDRATER::_Reserved(i),
+}
+#[doc = "Reader of field `BAUDRATE`"]
+pub type BAUDRATE_R = crate::R<u32, BAUDRATE_A>;
+impl BAUDRATE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u32, BAUDRATE_A> {
+        use crate::Variant::*;
+        match self.bits {
+            323584 => Val(BAUDRATE_A::BAUD1200),
+            643072 => Val(BAUDRATE_A::BAUD2400),
+            1290240 => Val(BAUDRATE_A::BAUD4800),
+            2576384 => Val(BAUDRATE_A::BAUD9600),
+            3866624 => Val(BAUDRATE_A::BAUD14400),
+            5152768 => Val(BAUDRATE_A::BAUD19200),
+            7729152 => Val(BAUDRATE_A::BAUD28800),
+            8388608 => Val(BAUDRATE_A::BAUD31250),
+            10309632 => Val(BAUDRATE_A::BAUD38400),
+            15007744 => Val(BAUDRATE_A::BAUD56000),
+            15462400 => Val(BAUDRATE_A::BAUD57600),
+            20615168 => Val(BAUDRATE_A::BAUD76800),
+            30924800 => Val(BAUDRATE_A::BAUD115200),
+            61845504 => Val(BAUDRATE_A::BAUD230400),
+            67108864 => Val(BAUDRATE_A::BAUD250000),
+            123695104 => Val(BAUDRATE_A::BAUD460800),
+            247386112 => Val(BAUDRATE_A::BAUD921600),
+            268435456 => Val(BAUDRATE_A::BAUD1M),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `BAUD1200`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_baud1200(&self) -> bool {
-        *self == BAUDRATER::BAUD1200
+        *self == BAUDRATE_A::BAUD1200
     }
     #[doc = "Checks if the value of the field is `BAUD2400`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_baud2400(&self) -> bool {
-        *self == BAUDRATER::BAUD2400
+        *self == BAUDRATE_A::BAUD2400
     }
     #[doc = "Checks if the value of the field is `BAUD4800`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_baud4800(&self) -> bool {
-        *self == BAUDRATER::BAUD4800
+        *self == BAUDRATE_A::BAUD4800
     }
     #[doc = "Checks if the value of the field is `BAUD9600`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_baud9600(&self) -> bool {
-        *self == BAUDRATER::BAUD9600
+        *self == BAUDRATE_A::BAUD9600
     }
     #[doc = "Checks if the value of the field is `BAUD14400`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_baud14400(&self) -> bool {
-        *self == BAUDRATER::BAUD14400
+        *self == BAUDRATE_A::BAUD14400
     }
     #[doc = "Checks if the value of the field is `BAUD19200`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_baud19200(&self) -> bool {
-        *self == BAUDRATER::BAUD19200
+        *self == BAUDRATE_A::BAUD19200
     }
     #[doc = "Checks if the value of the field is `BAUD28800`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_baud28800(&self) -> bool {
-        *self == BAUDRATER::BAUD28800
+        *self == BAUDRATE_A::BAUD28800
     }
     #[doc = "Checks if the value of the field is `BAUD31250`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_baud31250(&self) -> bool {
-        *self == BAUDRATER::BAUD31250
+        *self == BAUDRATE_A::BAUD31250
     }
     #[doc = "Checks if the value of the field is `BAUD38400`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_baud38400(&self) -> bool {
-        *self == BAUDRATER::BAUD38400
+        *self == BAUDRATE_A::BAUD38400
     }
     #[doc = "Checks if the value of the field is `BAUD56000`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_baud56000(&self) -> bool {
-        *self == BAUDRATER::BAUD56000
+        *self == BAUDRATE_A::BAUD56000
     }
     #[doc = "Checks if the value of the field is `BAUD57600`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_baud57600(&self) -> bool {
-        *self == BAUDRATER::BAUD57600
+        *self == BAUDRATE_A::BAUD57600
     }
     #[doc = "Checks if the value of the field is `BAUD76800`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_baud76800(&self) -> bool {
-        *self == BAUDRATER::BAUD76800
+        *self == BAUDRATE_A::BAUD76800
     }
     #[doc = "Checks if the value of the field is `BAUD115200`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_baud115200(&self) -> bool {
-        *self == BAUDRATER::BAUD115200
+        *self == BAUDRATE_A::BAUD115200
     }
     #[doc = "Checks if the value of the field is `BAUD230400`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_baud230400(&self) -> bool {
-        *self == BAUDRATER::BAUD230400
+        *self == BAUDRATE_A::BAUD230400
     }
     #[doc = "Checks if the value of the field is `BAUD250000`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_baud250000(&self) -> bool {
-        *self == BAUDRATER::BAUD250000
+        *self == BAUDRATE_A::BAUD250000
     }
     #[doc = "Checks if the value of the field is `BAUD460800`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_baud460800(&self) -> bool {
-        *self == BAUDRATER::BAUD460800
+        *self == BAUDRATE_A::BAUD460800
     }
     #[doc = "Checks if the value of the field is `BAUD921600`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_baud921600(&self) -> bool {
-        *self == BAUDRATER::BAUD921600
+        *self == BAUDRATE_A::BAUD921600
     }
     #[doc = "Checks if the value of the field is `BAUD1M`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_baud1m(&self) -> bool {
-        *self == BAUDRATER::BAUD1M
+        *self == BAUDRATE_A::BAUD1M
     }
 }
-#[doc = "Values that can be written to the field `BAUDRATE`"]
-pub enum BAUDRATEW {
-    #[doc = "1200 baud (actual rate: 1205)"]
-    BAUD1200,
-    #[doc = "2400 baud (actual rate: 2396)"]
-    BAUD2400,
-    #[doc = "4800 baud (actual rate: 4808)"]
-    BAUD4800,
-    #[doc = "9600 baud (actual rate: 9598)"]
-    BAUD9600,
-    #[doc = "14400 baud (actual rate: 14414)"]
-    BAUD14400,
-    #[doc = "19200 baud (actual rate: 19208)"]
-    BAUD19200,
-    #[doc = "28800 baud (actual rate: 28829)"]
-    BAUD28800,
-    #[doc = "31250 baud"]
-    BAUD31250,
-    #[doc = "38400 baud (actual rate: 38462)"]
-    BAUD38400,
-    #[doc = "56000 baud (actual rate: 55944)"]
-    BAUD56000,
-    #[doc = "57600 baud (actual rate: 57762)"]
-    BAUD57600,
-    #[doc = "76800 baud (actual rate: 76923)"]
-    BAUD76800,
-    #[doc = "115200 baud (actual rate: 115942)"]
-    BAUD115200,
-    #[doc = "230400 baud (actual rate: 231884)"]
-    BAUD230400,
-    #[doc = "250000 baud"]
-    BAUD250000,
-    #[doc = "460800 baud (actual rate: 470588)"]
-    BAUD460800,
-    #[doc = "921600 baud (actual rate: 941176)"]
-    BAUD921600,
-    #[doc = "1Mega baud"]
-    BAUD1M,
-}
-impl BAUDRATEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u32 {
-        match *self {
-            BAUDRATEW::BAUD1200 => 323584,
-            BAUDRATEW::BAUD2400 => 643072,
-            BAUDRATEW::BAUD4800 => 1290240,
-            BAUDRATEW::BAUD9600 => 2576384,
-            BAUDRATEW::BAUD14400 => 3866624,
-            BAUDRATEW::BAUD19200 => 5152768,
-            BAUDRATEW::BAUD28800 => 7729152,
-            BAUDRATEW::BAUD31250 => 8388608,
-            BAUDRATEW::BAUD38400 => 10309632,
-            BAUDRATEW::BAUD56000 => 15007744,
-            BAUDRATEW::BAUD57600 => 15462400,
-            BAUDRATEW::BAUD76800 => 20615168,
-            BAUDRATEW::BAUD115200 => 30924800,
-            BAUDRATEW::BAUD230400 => 61845504,
-            BAUDRATEW::BAUD250000 => 67108864,
-            BAUDRATEW::BAUD460800 => 123695104,
-            BAUDRATEW::BAUD921600 => 247386112,
-            BAUDRATEW::BAUD1M => 268435456,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _BAUDRATEW<'a> {
+#[doc = "Write proxy for field `BAUDRATE`"]
+pub struct BAUDRATE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _BAUDRATEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: BAUDRATEW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+impl<'a> BAUDRATE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: BAUDRATE_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "1200 baud (actual rate: 1205)"]
-    #[inline]
+    #[inline(always)]
     pub fn baud1200(self) -> &'a mut W {
-        self.variant(BAUDRATEW::BAUD1200)
+        self.variant(BAUDRATE_A::BAUD1200)
     }
     #[doc = "2400 baud (actual rate: 2396)"]
-    #[inline]
+    #[inline(always)]
     pub fn baud2400(self) -> &'a mut W {
-        self.variant(BAUDRATEW::BAUD2400)
+        self.variant(BAUDRATE_A::BAUD2400)
     }
     #[doc = "4800 baud (actual rate: 4808)"]
-    #[inline]
+    #[inline(always)]
     pub fn baud4800(self) -> &'a mut W {
-        self.variant(BAUDRATEW::BAUD4800)
+        self.variant(BAUDRATE_A::BAUD4800)
     }
     #[doc = "9600 baud (actual rate: 9598)"]
-    #[inline]
+    #[inline(always)]
     pub fn baud9600(self) -> &'a mut W {
-        self.variant(BAUDRATEW::BAUD9600)
+        self.variant(BAUDRATE_A::BAUD9600)
     }
     #[doc = "14400 baud (actual rate: 14414)"]
-    #[inline]
+    #[inline(always)]
     pub fn baud14400(self) -> &'a mut W {
-        self.variant(BAUDRATEW::BAUD14400)
+        self.variant(BAUDRATE_A::BAUD14400)
     }
     #[doc = "19200 baud (actual rate: 19208)"]
-    #[inline]
+    #[inline(always)]
     pub fn baud19200(self) -> &'a mut W {
-        self.variant(BAUDRATEW::BAUD19200)
+        self.variant(BAUDRATE_A::BAUD19200)
     }
     #[doc = "28800 baud (actual rate: 28829)"]
-    #[inline]
+    #[inline(always)]
     pub fn baud28800(self) -> &'a mut W {
-        self.variant(BAUDRATEW::BAUD28800)
+        self.variant(BAUDRATE_A::BAUD28800)
     }
     #[doc = "31250 baud"]
-    #[inline]
+    #[inline(always)]
     pub fn baud31250(self) -> &'a mut W {
-        self.variant(BAUDRATEW::BAUD31250)
+        self.variant(BAUDRATE_A::BAUD31250)
     }
     #[doc = "38400 baud (actual rate: 38462)"]
-    #[inline]
+    #[inline(always)]
     pub fn baud38400(self) -> &'a mut W {
-        self.variant(BAUDRATEW::BAUD38400)
+        self.variant(BAUDRATE_A::BAUD38400)
     }
     #[doc = "56000 baud (actual rate: 55944)"]
-    #[inline]
+    #[inline(always)]
     pub fn baud56000(self) -> &'a mut W {
-        self.variant(BAUDRATEW::BAUD56000)
+        self.variant(BAUDRATE_A::BAUD56000)
     }
     #[doc = "57600 baud (actual rate: 57762)"]
-    #[inline]
+    #[inline(always)]
     pub fn baud57600(self) -> &'a mut W {
-        self.variant(BAUDRATEW::BAUD57600)
+        self.variant(BAUDRATE_A::BAUD57600)
     }
     #[doc = "76800 baud (actual rate: 76923)"]
-    #[inline]
+    #[inline(always)]
     pub fn baud76800(self) -> &'a mut W {
-        self.variant(BAUDRATEW::BAUD76800)
+        self.variant(BAUDRATE_A::BAUD76800)
     }
     #[doc = "115200 baud (actual rate: 115942)"]
-    #[inline]
+    #[inline(always)]
     pub fn baud115200(self) -> &'a mut W {
-        self.variant(BAUDRATEW::BAUD115200)
+        self.variant(BAUDRATE_A::BAUD115200)
     }
     #[doc = "230400 baud (actual rate: 231884)"]
-    #[inline]
+    #[inline(always)]
     pub fn baud230400(self) -> &'a mut W {
-        self.variant(BAUDRATEW::BAUD230400)
+        self.variant(BAUDRATE_A::BAUD230400)
     }
     #[doc = "250000 baud"]
-    #[inline]
+    #[inline(always)]
     pub fn baud250000(self) -> &'a mut W {
-        self.variant(BAUDRATEW::BAUD250000)
+        self.variant(BAUDRATE_A::BAUD250000)
     }
     #[doc = "460800 baud (actual rate: 470588)"]
-    #[inline]
+    #[inline(always)]
     pub fn baud460800(self) -> &'a mut W {
-        self.variant(BAUDRATEW::BAUD460800)
+        self.variant(BAUDRATE_A::BAUD460800)
     }
     #[doc = "921600 baud (actual rate: 941176)"]
-    #[inline]
+    #[inline(always)]
     pub fn baud921600(self) -> &'a mut W {
-        self.variant(BAUDRATEW::BAUD921600)
+        self.variant(BAUDRATE_A::BAUD921600)
     }
     #[doc = "1Mega baud"]
-    #[inline]
+    #[inline(always)]
     pub fn baud1m(self) -> &'a mut W {
-        self.variant(BAUDRATEW::BAUD1M)
+        self.variant(BAUDRATE_A::BAUD1M)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        const MASK: u32 = 4294967295;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0xffff_ffff) | ((value as u32) & 0xffff_ffff);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:31 - Baud rate"]
-    #[inline]
-    pub fn baudrate(&self) -> BAUDRATER {
-        BAUDRATER::_from({
-            const MASK: u32 = 4294967295;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u32
-        })
+    #[inline(always)]
+    pub fn baudrate(&self) -> BAUDRATE_R {
+        BAUDRATE_R::new((self.bits & 0xffff_ffff) as u32)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 67108864 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:31 - Baud rate"]
-    #[inline]
-    pub fn baudrate(&mut self) -> _BAUDRATEW {
-        _BAUDRATEW { w: self }
+    #[inline(always)]
+    pub fn baudrate(&mut self) -> BAUDRATE_W {
+        BAUDRATE_W { w: self }
     }
 }

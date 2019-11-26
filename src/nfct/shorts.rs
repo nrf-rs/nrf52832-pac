@@ -1,302 +1,192 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::SHORTS {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register SHORTS"]
+pub type R = crate::R<u32, super::SHORTS>;
+#[doc = "Writer for register SHORTS"]
+pub type W = crate::W<u32, super::SHORTS>;
+#[doc = "Register SHORTS `reset()`'s with value 0"]
+impl crate::ResetValue for super::SHORTS {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `FIELDDETECTED_ACTIVATE`"]
+#[doc = "Shortcut between FIELDDETECTED event and ACTIVATE task\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FIELDDETECTED_ACTIVATER {
-    #[doc = "Disable shortcut"]
+pub enum FIELDDETECTED_ACTIVATE_A {
+    #[doc = "0: Disable shortcut"]
     DISABLED,
-    #[doc = "Enable shortcut"]
+    #[doc = "1: Enable shortcut"]
     ENABLED,
 }
-impl FIELDDETECTED_ACTIVATER {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            FIELDDETECTED_ACTIVATER::DISABLED => false,
-            FIELDDETECTED_ACTIVATER::ENABLED => true,
+impl From<FIELDDETECTED_ACTIVATE_A> for bool {
+    #[inline(always)]
+    fn from(variant: FIELDDETECTED_ACTIVATE_A) -> Self {
+        match variant {
+            FIELDDETECTED_ACTIVATE_A::DISABLED => false,
+            FIELDDETECTED_ACTIVATE_A::ENABLED => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> FIELDDETECTED_ACTIVATER {
-        match value {
-            false => FIELDDETECTED_ACTIVATER::DISABLED,
-            true => FIELDDETECTED_ACTIVATER::ENABLED,
+}
+#[doc = "Reader of field `FIELDDETECTED_ACTIVATE`"]
+pub type FIELDDETECTED_ACTIVATE_R = crate::R<bool, FIELDDETECTED_ACTIVATE_A>;
+impl FIELDDETECTED_ACTIVATE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> FIELDDETECTED_ACTIVATE_A {
+        match self.bits {
+            false => FIELDDETECTED_ACTIVATE_A::DISABLED,
+            true => FIELDDETECTED_ACTIVATE_A::ENABLED,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == FIELDDETECTED_ACTIVATER::DISABLED
+        *self == FIELDDETECTED_ACTIVATE_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == FIELDDETECTED_ACTIVATER::ENABLED
+        *self == FIELDDETECTED_ACTIVATE_A::ENABLED
     }
 }
-#[doc = "Possible values of the field `FIELDLOST_SENSE`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FIELDLOST_SENSER {
-    #[doc = "Disable shortcut"]
-    DISABLED,
-    #[doc = "Enable shortcut"]
-    ENABLED,
-}
-impl FIELDLOST_SENSER {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            FIELDLOST_SENSER::DISABLED => false,
-            FIELDLOST_SENSER::ENABLED => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> FIELDLOST_SENSER {
-        match value {
-            false => FIELDLOST_SENSER::DISABLED,
-            true => FIELDLOST_SENSER::ENABLED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
-    pub fn is_disabled(&self) -> bool {
-        *self == FIELDLOST_SENSER::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
-    pub fn is_enabled(&self) -> bool {
-        *self == FIELDLOST_SENSER::ENABLED
-    }
-}
-#[doc = "Values that can be written to the field `FIELDDETECTED_ACTIVATE`"]
-pub enum FIELDDETECTED_ACTIVATEW {
-    #[doc = "Disable shortcut"]
-    DISABLED,
-    #[doc = "Enable shortcut"]
-    ENABLED,
-}
-impl FIELDDETECTED_ACTIVATEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            FIELDDETECTED_ACTIVATEW::DISABLED => false,
-            FIELDDETECTED_ACTIVATEW::ENABLED => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _FIELDDETECTED_ACTIVATEW<'a> {
+#[doc = "Write proxy for field `FIELDDETECTED_ACTIVATE`"]
+pub struct FIELDDETECTED_ACTIVATE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _FIELDDETECTED_ACTIVATEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: FIELDDETECTED_ACTIVATEW) -> &'a mut W {
+impl<'a> FIELDDETECTED_ACTIVATE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: FIELDDETECTED_ACTIVATE_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable shortcut"]
-    #[inline]
+    #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(FIELDDETECTED_ACTIVATEW::DISABLED)
+        self.variant(FIELDDETECTED_ACTIVATE_A::DISABLED)
     }
     #[doc = "Enable shortcut"]
-    #[inline]
+    #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(FIELDDETECTED_ACTIVATEW::ENABLED)
+        self.variant(FIELDDETECTED_ACTIVATE_A::ENABLED)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `FIELDLOST_SENSE`"]
-pub enum FIELDLOST_SENSEW {
-    #[doc = "Disable shortcut"]
+#[doc = "Shortcut between FIELDLOST event and SENSE task\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum FIELDLOST_SENSE_A {
+    #[doc = "0: Disable shortcut"]
     DISABLED,
-    #[doc = "Enable shortcut"]
+    #[doc = "1: Enable shortcut"]
     ENABLED,
 }
-impl FIELDLOST_SENSEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            FIELDLOST_SENSEW::DISABLED => false,
-            FIELDLOST_SENSEW::ENABLED => true,
+impl From<FIELDLOST_SENSE_A> for bool {
+    #[inline(always)]
+    fn from(variant: FIELDLOST_SENSE_A) -> Self {
+        match variant {
+            FIELDLOST_SENSE_A::DISABLED => false,
+            FIELDLOST_SENSE_A::ENABLED => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _FIELDLOST_SENSEW<'a> {
+#[doc = "Reader of field `FIELDLOST_SENSE`"]
+pub type FIELDLOST_SENSE_R = crate::R<bool, FIELDLOST_SENSE_A>;
+impl FIELDLOST_SENSE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> FIELDLOST_SENSE_A {
+        match self.bits {
+            false => FIELDLOST_SENSE_A::DISABLED,
+            true => FIELDLOST_SENSE_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == FIELDLOST_SENSE_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == FIELDLOST_SENSE_A::ENABLED
+    }
+}
+#[doc = "Write proxy for field `FIELDLOST_SENSE`"]
+pub struct FIELDLOST_SENSE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _FIELDLOST_SENSEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: FIELDLOST_SENSEW) -> &'a mut W {
+impl<'a> FIELDLOST_SENSE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: FIELDLOST_SENSE_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable shortcut"]
-    #[inline]
+    #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(FIELDLOST_SENSEW::DISABLED)
+        self.variant(FIELDLOST_SENSE_A::DISABLED)
     }
     #[doc = "Enable shortcut"]
-    #[inline]
+    #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(FIELDLOST_SENSEW::ENABLED)
+        self.variant(FIELDLOST_SENSE_A::ENABLED)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Shortcut between FIELDDETECTED event and ACTIVATE task"]
-    #[inline]
-    pub fn fielddetected_activate(&self) -> FIELDDETECTED_ACTIVATER {
-        FIELDDETECTED_ACTIVATER::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn fielddetected_activate(&self) -> FIELDDETECTED_ACTIVATE_R {
+        FIELDDETECTED_ACTIVATE_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Shortcut between FIELDLOST event and SENSE task"]
-    #[inline]
-    pub fn fieldlost_sense(&self) -> FIELDLOST_SENSER {
-        FIELDLOST_SENSER::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn fieldlost_sense(&self) -> FIELDLOST_SENSE_R {
+        FIELDLOST_SENSE_R::new(((self.bits >> 1) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Shortcut between FIELDDETECTED event and ACTIVATE task"]
-    #[inline]
-    pub fn fielddetected_activate(&mut self) -> _FIELDDETECTED_ACTIVATEW {
-        _FIELDDETECTED_ACTIVATEW { w: self }
+    #[inline(always)]
+    pub fn fielddetected_activate(&mut self) -> FIELDDETECTED_ACTIVATE_W {
+        FIELDDETECTED_ACTIVATE_W { w: self }
     }
     #[doc = "Bit 1 - Shortcut between FIELDLOST event and SENSE task"]
-    #[inline]
-    pub fn fieldlost_sense(&mut self) -> _FIELDLOST_SENSEW {
-        _FIELDLOST_SENSEW { w: self }
+    #[inline(always)]
+    pub fn fieldlost_sense(&mut self) -> FIELDLOST_SENSE_W {
+        FIELDLOST_SENSE_W { w: self }
     }
 }

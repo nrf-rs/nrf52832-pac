@@ -1,319 +1,211 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::DECODER {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register DECODER"]
+pub type R = crate::R<u32, super::DECODER>;
+#[doc = "Writer for register DECODER"]
+pub type W = crate::W<u32, super::DECODER>;
+#[doc = "Register DECODER `reset()`'s with value 0"]
+impl crate::ResetValue for super::DECODER {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `LOAD`"]
+#[doc = "How a sequence is read from RAM and spread to the compare register\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LOADR {
-    #[doc = "1st half word (16-bit) used in all PWM channels 0..3"]
+pub enum LOAD_A {
+    #[doc = "0: 1st half word (16-bit) used in all PWM channels 0..3"]
     COMMON,
-    #[doc = "1st half word (16-bit) used in channel 0..1; 2nd word in channel 2..3"]
+    #[doc = "1: 1st half word (16-bit) used in channel 0..1; 2nd word in channel 2..3"]
     GROUPED,
-    #[doc = "1st half word (16-bit) in ch.0; 2nd in ch.1; ...; 4th in ch.3"]
+    #[doc = "2: 1st half word (16-bit) in ch.0; 2nd in ch.1; ...; 4th in ch.3"]
     INDIVIDUAL,
-    #[doc = "1st half word (16-bit) in ch.0; 2nd in ch.1; ...; 4th in COUNTERTOP"]
+    #[doc = "3: 1st half word (16-bit) in ch.0; 2nd in ch.1; ...; 4th in COUNTERTOP"]
     WAVEFORM,
 }
-impl LOADR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            LOADR::COMMON => 0,
-            LOADR::GROUPED => 1,
-            LOADR::INDIVIDUAL => 2,
-            LOADR::WAVEFORM => 3,
+impl From<LOAD_A> for u8 {
+    #[inline(always)]
+    fn from(variant: LOAD_A) -> Self {
+        match variant {
+            LOAD_A::COMMON => 0,
+            LOAD_A::GROUPED => 1,
+            LOAD_A::INDIVIDUAL => 2,
+            LOAD_A::WAVEFORM => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> LOADR {
-        match value {
-            0 => LOADR::COMMON,
-            1 => LOADR::GROUPED,
-            2 => LOADR::INDIVIDUAL,
-            3 => LOADR::WAVEFORM,
+}
+#[doc = "Reader of field `LOAD`"]
+pub type LOAD_R = crate::R<u8, LOAD_A>;
+impl LOAD_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LOAD_A {
+        match self.bits {
+            0 => LOAD_A::COMMON,
+            1 => LOAD_A::GROUPED,
+            2 => LOAD_A::INDIVIDUAL,
+            3 => LOAD_A::WAVEFORM,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `COMMON`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_common(&self) -> bool {
-        *self == LOADR::COMMON
+        *self == LOAD_A::COMMON
     }
     #[doc = "Checks if the value of the field is `GROUPED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_grouped(&self) -> bool {
-        *self == LOADR::GROUPED
+        *self == LOAD_A::GROUPED
     }
     #[doc = "Checks if the value of the field is `INDIVIDUAL`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_individual(&self) -> bool {
-        *self == LOADR::INDIVIDUAL
+        *self == LOAD_A::INDIVIDUAL
     }
     #[doc = "Checks if the value of the field is `WAVEFORM`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wave_form(&self) -> bool {
-        *self == LOADR::WAVEFORM
+        *self == LOAD_A::WAVEFORM
     }
 }
-#[doc = "Possible values of the field `MODE`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MODER {
-    #[doc = "SEQ\\[n\\].REFRESH is used to determine loading internal compare registers"]
-    REFRESHCOUNT,
-    #[doc = "NEXTSTEP task causes a new value to be loaded to internal compare registers"]
-    NEXTSTEP,
-}
-impl MODER {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            MODER::REFRESHCOUNT => false,
-            MODER::NEXTSTEP => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> MODER {
-        match value {
-            false => MODER::REFRESHCOUNT,
-            true => MODER::NEXTSTEP,
-        }
-    }
-    #[doc = "Checks if the value of the field is `REFRESHCOUNT`"]
-    #[inline]
-    pub fn is_refresh_count(&self) -> bool {
-        *self == MODER::REFRESHCOUNT
-    }
-    #[doc = "Checks if the value of the field is `NEXTSTEP`"]
-    #[inline]
-    pub fn is_next_step(&self) -> bool {
-        *self == MODER::NEXTSTEP
-    }
-}
-#[doc = "Values that can be written to the field `LOAD`"]
-pub enum LOADW {
-    #[doc = "1st half word (16-bit) used in all PWM channels 0..3"]
-    COMMON,
-    #[doc = "1st half word (16-bit) used in channel 0..1; 2nd word in channel 2..3"]
-    GROUPED,
-    #[doc = "1st half word (16-bit) in ch.0; 2nd in ch.1; ...; 4th in ch.3"]
-    INDIVIDUAL,
-    #[doc = "1st half word (16-bit) in ch.0; 2nd in ch.1; ...; 4th in COUNTERTOP"]
-    WAVEFORM,
-}
-impl LOADW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            LOADW::COMMON => 0,
-            LOADW::GROUPED => 1,
-            LOADW::INDIVIDUAL => 2,
-            LOADW::WAVEFORM => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _LOADW<'a> {
+#[doc = "Write proxy for field `LOAD`"]
+pub struct LOAD_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _LOADW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: LOADW) -> &'a mut W {
+impl<'a> LOAD_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: LOAD_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "1st half word (16-bit) used in all PWM channels 0..3"]
-    #[inline]
+    #[inline(always)]
     pub fn common(self) -> &'a mut W {
-        self.variant(LOADW::COMMON)
+        self.variant(LOAD_A::COMMON)
     }
     #[doc = "1st half word (16-bit) used in channel 0..1; 2nd word in channel 2..3"]
-    #[inline]
+    #[inline(always)]
     pub fn grouped(self) -> &'a mut W {
-        self.variant(LOADW::GROUPED)
+        self.variant(LOAD_A::GROUPED)
     }
     #[doc = "1st half word (16-bit) in ch.0; 2nd in ch.1; ...; 4th in ch.3"]
-    #[inline]
+    #[inline(always)]
     pub fn individual(self) -> &'a mut W {
-        self.variant(LOADW::INDIVIDUAL)
+        self.variant(LOAD_A::INDIVIDUAL)
     }
     #[doc = "1st half word (16-bit) in ch.0; 2nd in ch.1; ...; 4th in COUNTERTOP"]
-    #[inline]
+    #[inline(always)]
     pub fn wave_form(self) -> &'a mut W {
-        self.variant(LOADW::WAVEFORM)
+        self.variant(LOAD_A::WAVEFORM)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x03) | ((value as u32) & 0x03);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `MODE`"]
-pub enum MODEW {
-    #[doc = "SEQ\\[n\\].REFRESH is used to determine loading internal compare registers"]
+#[doc = "Selects source for advancing the active sequence\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum MODE_A {
+    #[doc = "0: SEQ\\[n\\].REFRESH is used to determine loading internal compare registers"]
     REFRESHCOUNT,
-    #[doc = "NEXTSTEP task causes a new value to be loaded to internal compare registers"]
+    #[doc = "1: NEXTSTEP task causes a new value to be loaded to internal compare registers"]
     NEXTSTEP,
 }
-impl MODEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            MODEW::REFRESHCOUNT => false,
-            MODEW::NEXTSTEP => true,
+impl From<MODE_A> for bool {
+    #[inline(always)]
+    fn from(variant: MODE_A) -> Self {
+        match variant {
+            MODE_A::REFRESHCOUNT => false,
+            MODE_A::NEXTSTEP => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _MODEW<'a> {
+#[doc = "Reader of field `MODE`"]
+pub type MODE_R = crate::R<bool, MODE_A>;
+impl MODE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> MODE_A {
+        match self.bits {
+            false => MODE_A::REFRESHCOUNT,
+            true => MODE_A::NEXTSTEP,
+        }
+    }
+    #[doc = "Checks if the value of the field is `REFRESHCOUNT`"]
+    #[inline(always)]
+    pub fn is_refresh_count(&self) -> bool {
+        *self == MODE_A::REFRESHCOUNT
+    }
+    #[doc = "Checks if the value of the field is `NEXTSTEP`"]
+    #[inline(always)]
+    pub fn is_next_step(&self) -> bool {
+        *self == MODE_A::NEXTSTEP
+    }
+}
+#[doc = "Write proxy for field `MODE`"]
+pub struct MODE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _MODEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: MODEW) -> &'a mut W {
+impl<'a> MODE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: MODE_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "SEQ\\[n\\].REFRESH is used to determine loading internal compare registers"]
-    #[inline]
+    #[inline(always)]
     pub fn refresh_count(self) -> &'a mut W {
-        self.variant(MODEW::REFRESHCOUNT)
+        self.variant(MODE_A::REFRESHCOUNT)
     }
     #[doc = "NEXTSTEP task causes a new value to be loaded to internal compare registers"]
-    #[inline]
+    #[inline(always)]
     pub fn next_step(self) -> &'a mut W {
-        self.variant(MODEW::NEXTSTEP)
+        self.variant(MODE_A::NEXTSTEP)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:1 - How a sequence is read from RAM and spread to the compare register"]
-    #[inline]
-    pub fn load(&self) -> LOADR {
-        LOADR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn load(&self) -> LOAD_R {
+        LOAD_R::new((self.bits & 0x03) as u8)
     }
     #[doc = "Bit 8 - Selects source for advancing the active sequence"]
-    #[inline]
-    pub fn mode(&self) -> MODER {
-        MODER::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn mode(&self) -> MODE_R {
+        MODE_R::new(((self.bits >> 8) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:1 - How a sequence is read from RAM and spread to the compare register"]
-    #[inline]
-    pub fn load(&mut self) -> _LOADW {
-        _LOADW { w: self }
+    #[inline(always)]
+    pub fn load(&mut self) -> LOAD_W {
+        LOAD_W { w: self }
     }
     #[doc = "Bit 8 - Selects source for advancing the active sequence"]
-    #[inline]
-    pub fn mode(&mut self) -> _MODEW {
-        _MODEW { w: self }
+    #[inline(always)]
+    pub fn mode(&mut self) -> MODE_W {
+        MODE_W { w: self }
     }
 }

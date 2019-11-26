@@ -1,88 +1,68 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::RAM {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-}
-#[doc = "Possible values of the field `RAM`"]
+#[doc = "Reader of register RAM"]
+pub type R = crate::R<u32, super::RAM>;
+#[doc = "RAM variant\n\nValue on reset: 64"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RAMR {
-    #[doc = "16 kByte RAM"]
+pub enum RAM_A {
+    #[doc = "16: 16 kByte RAM"]
     K16,
-    #[doc = "32 kByte RAM"]
+    #[doc = "32: 32 kByte RAM"]
     K32,
-    #[doc = "64 kByte RAM"]
+    #[doc = "64: 64 kByte RAM"]
     K64,
-    #[doc = "Unspecified"]
+    #[doc = "4294967295: Unspecified"]
     UNSPECIFIED,
-    #[doc = r" Reserved"]
-    _Reserved(u32),
 }
-impl RAMR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        match *self {
-            RAMR::K16 => 16,
-            RAMR::K32 => 32,
-            RAMR::K64 => 64,
-            RAMR::UNSPECIFIED => 4294967295,
-            RAMR::_Reserved(bits) => bits,
+impl From<RAM_A> for u32 {
+    #[inline(always)]
+    fn from(variant: RAM_A) -> Self {
+        match variant {
+            RAM_A::K16 => 16,
+            RAM_A::K32 => 32,
+            RAM_A::K64 => 64,
+            RAM_A::UNSPECIFIED => 4294967295,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u32) -> RAMR {
-        match value {
-            16 => RAMR::K16,
-            32 => RAMR::K32,
-            64 => RAMR::K64,
-            4294967295 => RAMR::UNSPECIFIED,
-            i => RAMR::_Reserved(i),
+}
+#[doc = "Reader of field `RAM`"]
+pub type RAM_R = crate::R<u32, RAM_A>;
+impl RAM_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u32, RAM_A> {
+        use crate::Variant::*;
+        match self.bits {
+            16 => Val(RAM_A::K16),
+            32 => Val(RAM_A::K32),
+            64 => Val(RAM_A::K64),
+            4294967295 => Val(RAM_A::UNSPECIFIED),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `K16`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_k16(&self) -> bool {
-        *self == RAMR::K16
+        *self == RAM_A::K16
     }
     #[doc = "Checks if the value of the field is `K32`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_k32(&self) -> bool {
-        *self == RAMR::K32
+        *self == RAM_A::K32
     }
     #[doc = "Checks if the value of the field is `K64`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_k64(&self) -> bool {
-        *self == RAMR::K64
+        *self == RAM_A::K64
     }
     #[doc = "Checks if the value of the field is `UNSPECIFIED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_unspecified(&self) -> bool {
-        *self == RAMR::UNSPECIFIED
+        *self == RAM_A::UNSPECIFIED
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:31 - RAM variant"]
-    #[inline]
-    pub fn ram(&self) -> RAMR {
-        RAMR::_from({
-            const MASK: u32 = 4294967295;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u32
-        })
+    #[inline(always)]
+    pub fn ram(&self) -> RAM_R {
+        RAM_R::new((self.bits & 0xffff_ffff) as u32)
     }
 }

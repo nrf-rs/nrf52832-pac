@@ -1,319 +1,211 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::CRCCNF {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register CRCCNF"]
+pub type R = crate::R<u32, super::CRCCNF>;
+#[doc = "Writer for register CRCCNF"]
+pub type W = crate::W<u32, super::CRCCNF>;
+#[doc = "Register CRCCNF `reset()`'s with value 0"]
+impl crate::ResetValue for super::CRCCNF {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `LEN`"]
+#[doc = "CRC length in number of bytes.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LENR {
-    #[doc = "CRC length is zero and CRC calculation is disabled"]
+pub enum LEN_A {
+    #[doc = "0: CRC length is zero and CRC calculation is disabled"]
     DISABLED,
-    #[doc = "CRC length is one byte and CRC calculation is enabled"]
+    #[doc = "1: CRC length is one byte and CRC calculation is enabled"]
     ONE,
-    #[doc = "CRC length is two bytes and CRC calculation is enabled"]
+    #[doc = "2: CRC length is two bytes and CRC calculation is enabled"]
     TWO,
-    #[doc = "CRC length is three bytes and CRC calculation is enabled"]
+    #[doc = "3: CRC length is three bytes and CRC calculation is enabled"]
     THREE,
 }
-impl LENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            LENR::DISABLED => 0,
-            LENR::ONE => 1,
-            LENR::TWO => 2,
-            LENR::THREE => 3,
+impl From<LEN_A> for u8 {
+    #[inline(always)]
+    fn from(variant: LEN_A) -> Self {
+        match variant {
+            LEN_A::DISABLED => 0,
+            LEN_A::ONE => 1,
+            LEN_A::TWO => 2,
+            LEN_A::THREE => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> LENR {
-        match value {
-            0 => LENR::DISABLED,
-            1 => LENR::ONE,
-            2 => LENR::TWO,
-            3 => LENR::THREE,
+}
+#[doc = "Reader of field `LEN`"]
+pub type LEN_R = crate::R<u8, LEN_A>;
+impl LEN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LEN_A {
+        match self.bits {
+            0 => LEN_A::DISABLED,
+            1 => LEN_A::ONE,
+            2 => LEN_A::TWO,
+            3 => LEN_A::THREE,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == LENR::DISABLED
+        *self == LEN_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ONE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_one(&self) -> bool {
-        *self == LENR::ONE
+        *self == LEN_A::ONE
     }
     #[doc = "Checks if the value of the field is `TWO`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_two(&self) -> bool {
-        *self == LENR::TWO
+        *self == LEN_A::TWO
     }
     #[doc = "Checks if the value of the field is `THREE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_three(&self) -> bool {
-        *self == LENR::THREE
+        *self == LEN_A::THREE
     }
 }
-#[doc = "Possible values of the field `SKIPADDR`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SKIPADDRR {
-    #[doc = "CRC calculation includes address field"]
-    INCLUDE,
-    #[doc = "CRC calculation does not include address field. The CRC calculation will start at the first byte after the address."]
-    SKIP,
-}
-impl SKIPADDRR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SKIPADDRR::INCLUDE => false,
-            SKIPADDRR::SKIP => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SKIPADDRR {
-        match value {
-            false => SKIPADDRR::INCLUDE,
-            true => SKIPADDRR::SKIP,
-        }
-    }
-    #[doc = "Checks if the value of the field is `INCLUDE`"]
-    #[inline]
-    pub fn is_include(&self) -> bool {
-        *self == SKIPADDRR::INCLUDE
-    }
-    #[doc = "Checks if the value of the field is `SKIP`"]
-    #[inline]
-    pub fn is_skip(&self) -> bool {
-        *self == SKIPADDRR::SKIP
-    }
-}
-#[doc = "Values that can be written to the field `LEN`"]
-pub enum LENW {
-    #[doc = "CRC length is zero and CRC calculation is disabled"]
-    DISABLED,
-    #[doc = "CRC length is one byte and CRC calculation is enabled"]
-    ONE,
-    #[doc = "CRC length is two bytes and CRC calculation is enabled"]
-    TWO,
-    #[doc = "CRC length is three bytes and CRC calculation is enabled"]
-    THREE,
-}
-impl LENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            LENW::DISABLED => 0,
-            LENW::ONE => 1,
-            LENW::TWO => 2,
-            LENW::THREE => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _LENW<'a> {
+#[doc = "Write proxy for field `LEN`"]
+pub struct LEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _LENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: LENW) -> &'a mut W {
+impl<'a> LEN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: LEN_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "CRC length is zero and CRC calculation is disabled"]
-    #[inline]
+    #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(LENW::DISABLED)
+        self.variant(LEN_A::DISABLED)
     }
     #[doc = "CRC length is one byte and CRC calculation is enabled"]
-    #[inline]
+    #[inline(always)]
     pub fn one(self) -> &'a mut W {
-        self.variant(LENW::ONE)
+        self.variant(LEN_A::ONE)
     }
     #[doc = "CRC length is two bytes and CRC calculation is enabled"]
-    #[inline]
+    #[inline(always)]
     pub fn two(self) -> &'a mut W {
-        self.variant(LENW::TWO)
+        self.variant(LEN_A::TWO)
     }
     #[doc = "CRC length is three bytes and CRC calculation is enabled"]
-    #[inline]
+    #[inline(always)]
     pub fn three(self) -> &'a mut W {
-        self.variant(LENW::THREE)
+        self.variant(LEN_A::THREE)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x03) | ((value as u32) & 0x03);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `SKIPADDR`"]
-pub enum SKIPADDRW {
-    #[doc = "CRC calculation includes address field"]
+#[doc = "Include or exclude packet address field out of CRC calculation.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SKIPADDR_A {
+    #[doc = "0: CRC calculation includes address field"]
     INCLUDE,
-    #[doc = "CRC calculation does not include address field. The CRC calculation will start at the first byte after the address."]
+    #[doc = "1: CRC calculation does not include address field. The CRC calculation will start at the first byte after the address."]
     SKIP,
 }
-impl SKIPADDRW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SKIPADDRW::INCLUDE => false,
-            SKIPADDRW::SKIP => true,
+impl From<SKIPADDR_A> for bool {
+    #[inline(always)]
+    fn from(variant: SKIPADDR_A) -> Self {
+        match variant {
+            SKIPADDR_A::INCLUDE => false,
+            SKIPADDR_A::SKIP => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _SKIPADDRW<'a> {
+#[doc = "Reader of field `SKIPADDR`"]
+pub type SKIPADDR_R = crate::R<bool, SKIPADDR_A>;
+impl SKIPADDR_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SKIPADDR_A {
+        match self.bits {
+            false => SKIPADDR_A::INCLUDE,
+            true => SKIPADDR_A::SKIP,
+        }
+    }
+    #[doc = "Checks if the value of the field is `INCLUDE`"]
+    #[inline(always)]
+    pub fn is_include(&self) -> bool {
+        *self == SKIPADDR_A::INCLUDE
+    }
+    #[doc = "Checks if the value of the field is `SKIP`"]
+    #[inline(always)]
+    pub fn is_skip(&self) -> bool {
+        *self == SKIPADDR_A::SKIP
+    }
+}
+#[doc = "Write proxy for field `SKIPADDR`"]
+pub struct SKIPADDR_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SKIPADDRW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SKIPADDRW) -> &'a mut W {
+impl<'a> SKIPADDR_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SKIPADDR_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "CRC calculation includes address field"]
-    #[inline]
+    #[inline(always)]
     pub fn include(self) -> &'a mut W {
-        self.variant(SKIPADDRW::INCLUDE)
+        self.variant(SKIPADDR_A::INCLUDE)
     }
     #[doc = "CRC calculation does not include address field. The CRC calculation will start at the first byte after the address."]
-    #[inline]
+    #[inline(always)]
     pub fn skip(self) -> &'a mut W {
-        self.variant(SKIPADDRW::SKIP)
+        self.variant(SKIPADDR_A::SKIP)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:1 - CRC length in number of bytes."]
-    #[inline]
-    pub fn len(&self) -> LENR {
-        LENR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn len(&self) -> LEN_R {
+        LEN_R::new((self.bits & 0x03) as u8)
     }
     #[doc = "Bit 8 - Include or exclude packet address field out of CRC calculation."]
-    #[inline]
-    pub fn skipaddr(&self) -> SKIPADDRR {
-        SKIPADDRR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn skipaddr(&self) -> SKIPADDR_R {
+        SKIPADDR_R::new(((self.bits >> 8) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:1 - CRC length in number of bytes."]
-    #[inline]
-    pub fn len(&mut self) -> _LENW {
-        _LENW { w: self }
+    #[inline(always)]
+    pub fn len(&mut self) -> LEN_W {
+        LEN_W { w: self }
     }
     #[doc = "Bit 8 - Include or exclude packet address field out of CRC calculation."]
-    #[inline]
-    pub fn skipaddr(&mut self) -> _SKIPADDRW {
-        _SKIPADDRW { w: self }
+    #[inline(always)]
+    pub fn skipaddr(&mut self) -> SKIPADDR_W {
+        SKIPADDR_W { w: self }
     }
 }
