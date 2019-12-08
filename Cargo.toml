@@ -1,15 +1,15 @@
 [package]
-version = "0.4.0"
+version = "0.4.1"
 authors = [
     "James Munns <james.munns@gmail.com>",
     "Hanno Braun <hanno@braun-robotics.com>"
 ]
-description = "Peripheral access API for nrf52 microcontrollers"
+description = "DEPRECATED: Use `nrf52832-pac` instead"
 documentation = "https://docs.rs/nrf52"
 keywords = ["no-std", "arm", "cortex-m", "nrf52"]
 license = "MIT OR Apache-2.0"
 name = "nrf52"
-repository = "https://github.com/jamesmunns/nrf52"
+repository = "https://github.com/nrf-rs/nrf52832-pac"
 
 [dependencies]
 bare-metal = "0.2.1"
