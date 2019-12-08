@@ -1,12 +1,13 @@
-# `nrf52XXX`
+# `nrf52832-pac`
 
-> Peripheral access API for nrf52 family microcontrollers
+> Peripheral access API for the nRF52832 microcontroller
 
-This repo contains the sources used to generate the code for the nrf family
-of microcontrollers from the corresponding SVD files that are also included
+This repo contains the sources used to generate the code for the nRF52832
+microcontroller from the corresponding SVD files that are also included
 in this repo.
 
-We use `svd2rust` to generate the code, `form` to organize it, and `cargo fmt` to make it pretty
+We use `svd2rust` to generate the code, `form` to organize it, and `cargo fmt`
+to make it pretty.
 
 # License
 
