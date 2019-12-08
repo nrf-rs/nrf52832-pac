@@ -1,6 +1,5 @@
 #![doc = "Peripheral access API for NRF52 microcontrollers (generated using svd2rust v0.13.1)\n\nYou can find an overview of the API [here].\n\n[here]: https://docs.rs/svd2rust/0.13.1/svd2rust/#peripheral-api"]
 #![deny(missing_docs)]
-#![deny(warnings)]
 #![allow(non_camel_case_types)]
 #![no_std]
 extern crate bare_metal;
