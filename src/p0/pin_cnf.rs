@@ -2,7 +2,8 @@
 pub type R = crate::R<u32, super::PIN_CNF>;
 #[doc = "Writer for register PIN_CNF[%s]"]
 pub type W = crate::W<u32, super::PIN_CNF>;
-#[doc = "Register PIN_CNF[%s] `reset()`'s with value 0x02"]
+#[doc = "Register PIN_CNF[%s]
+`reset()`'s with value 0x02"]
 impl crate::ResetValue for super::PIN_CNF {
     type Type = u32;
     #[inline(always)]
@@ -14,17 +15,14 @@ impl crate::ResetValue for super::PIN_CNF {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DIR_A {
     #[doc = "0: Configure pin as an input pin"]
-    INPUT,
+    INPUT = 0,
     #[doc = "1: Configure pin as an output pin"]
-    OUTPUT,
+    OUTPUT = 1,
 }
 impl From<DIR_A> for bool {
     #[inline(always)]
     fn from(variant: DIR_A) -> Self {
-        match variant {
-            DIR_A::INPUT => false,
-            DIR_A::OUTPUT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DIR`"]
@@ -92,17 +90,14 @@ impl<'a> DIR_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INPUT_A {
     #[doc = "0: Connect input buffer"]
-    CONNECT,
+    CONNECT = 0,
     #[doc = "1: Disconnect input buffer"]
-    DISCONNECT,
+    DISCONNECT = 1,
 }
 impl From<INPUT_A> for bool {
     #[inline(always)]
     fn from(variant: INPUT_A) -> Self {
-        match variant {
-            INPUT_A::CONNECT => false,
-            INPUT_A::DISCONNECT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `INPUT`"]
@@ -168,22 +163,19 @@ impl<'a> INPUT_W<'a> {
 }
 #[doc = "Pull configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PULL_A {
     #[doc = "0: No pull"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Pull down on pin"]
-    PULLDOWN,
+    PULLDOWN = 1,
     #[doc = "3: Pull up on pin"]
-    PULLUP,
+    PULLUP = 3,
 }
 impl From<PULL_A> for u8 {
     #[inline(always)]
     fn from(variant: PULL_A) -> Self {
-        match variant {
-            PULL_A::DISABLED => 0,
-            PULL_A::PULLDOWN => 1,
-            PULL_A::PULLUP => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PULL`"]
@@ -250,37 +242,29 @@ impl<'a> PULL_W<'a> {
 }
 #[doc = "Drive configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum DRIVE_A {
     #[doc = "0: Standard '0', standard '1'"]
-    S0S1,
+    S0S1 = 0,
     #[doc = "1: High drive '0', standard '1'"]
-    H0S1,
+    H0S1 = 1,
     #[doc = "2: Standard '0', high drive '1'"]
-    S0H1,
+    S0H1 = 2,
     #[doc = "3: High drive '0', high 'drive '1''"]
-    H0H1,
+    H0H1 = 3,
     #[doc = "4: Disconnect '0' standard '1' (normally used for wired-or connections)"]
-    D0S1,
+    D0S1 = 4,
     #[doc = "5: Disconnect '0', high drive '1' (normally used for wired-or connections)"]
-    D0H1,
+    D0H1 = 5,
     #[doc = "6: Standard '0'. disconnect '1' (normally used for wired-and connections)"]
-    S0D1,
+    S0D1 = 6,
     #[doc = "7: High drive '0', disconnect '1' (normally used for wired-and connections)"]
-    H0D1,
+    H0D1 = 7,
 }
 impl From<DRIVE_A> for u8 {
     #[inline(always)]
     fn from(variant: DRIVE_A) -> Self {
-        match variant {
-            DRIVE_A::S0S1 => 0,
-            DRIVE_A::H0S1 => 1,
-            DRIVE_A::S0H1 => 2,
-            DRIVE_A::H0H1 => 3,
-            DRIVE_A::D0S1 => 4,
-            DRIVE_A::D0H1 => 5,
-            DRIVE_A::S0D1 => 6,
-            DRIVE_A::H0D1 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `DRIVE`"]
@@ -403,22 +387,19 @@ impl<'a> DRIVE_W<'a> {
 }
 #[doc = "Pin sensing mechanism\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SENSE_A {
     #[doc = "0: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "2: Sense for high level"]
-    HIGH,
+    HIGH = 2,
     #[doc = "3: Sense for low level"]
-    LOW,
+    LOW = 3,
 }
 impl From<SENSE_A> for u8 {
     #[inline(always)]
     fn from(variant: SENSE_A) -> Self {
-        match variant {
-            SENSE_A::DISABLED => 0,
-            SENSE_A::HIGH => 2,
-            SENSE_A::LOW => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SENSE`"]

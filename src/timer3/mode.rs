@@ -12,22 +12,19 @@ impl crate::ResetValue for super::MODE {
 }
 #[doc = "Timer mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MODE_A {
     #[doc = "0: Select Timer mode"]
-    TIMER,
+    TIMER = 0,
     #[doc = "1: Deprecated enumerator -  Select Counter mode"]
-    COUNTER,
+    COUNTER = 1,
     #[doc = "2: Select Low Power Counter mode"]
-    LOWPOWERCOUNTER,
+    LOWPOWERCOUNTER = 2,
 }
 impl From<MODE_A> for u8 {
     #[inline(always)]
     fn from(variant: MODE_A) -> Self {
-        match variant {
-            MODE_A::TIMER => 0,
-            MODE_A::COUNTER => 1,
-            MODE_A::LOWPOWERCOUNTER => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MODE`"]

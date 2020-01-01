@@ -4,17 +4,14 @@ pub type R = crate::R<u32, super::RAMSTATUS>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RAMBLOCK0_A {
     #[doc = "0: Off"]
-    OFF,
+    OFF = 0,
     #[doc = "1: On"]
-    ON,
+    ON = 1,
 }
 impl From<RAMBLOCK0_A> for bool {
     #[inline(always)]
     fn from(variant: RAMBLOCK0_A) -> Self {
-        match variant {
-            RAMBLOCK0_A::OFF => false,
-            RAMBLOCK0_A::ON => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RAMBLOCK0`"]
@@ -43,17 +40,14 @@ impl RAMBLOCK0_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RAMBLOCK1_A {
     #[doc = "0: Off"]
-    OFF,
+    OFF = 0,
     #[doc = "1: On"]
-    ON,
+    ON = 1,
 }
 impl From<RAMBLOCK1_A> for bool {
     #[inline(always)]
     fn from(variant: RAMBLOCK1_A) -> Self {
-        match variant {
-            RAMBLOCK1_A::OFF => false,
-            RAMBLOCK1_A::ON => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RAMBLOCK1`"]
@@ -82,17 +76,14 @@ impl RAMBLOCK1_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RAMBLOCK2_A {
     #[doc = "0: Off"]
-    OFF,
+    OFF = 0,
     #[doc = "1: On"]
-    ON,
+    ON = 1,
 }
 impl From<RAMBLOCK2_A> for bool {
     #[inline(always)]
     fn from(variant: RAMBLOCK2_A) -> Self {
-        match variant {
-            RAMBLOCK2_A::OFF => false,
-            RAMBLOCK2_A::ON => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RAMBLOCK2`"]
@@ -121,17 +112,14 @@ impl RAMBLOCK2_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RAMBLOCK3_A {
     #[doc = "0: Off"]
-    OFF,
+    OFF = 0,
     #[doc = "1: On"]
-    ON,
+    ON = 1,
 }
 impl From<RAMBLOCK3_A> for bool {
     #[inline(always)]
     fn from(variant: RAMBLOCK3_A) -> Self {
-        match variant {
-            RAMBLOCK3_A::OFF => false,
-            RAMBLOCK3_A::ON => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RAMBLOCK3`"]

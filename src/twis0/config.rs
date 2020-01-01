@@ -14,17 +14,14 @@ impl crate::ResetValue for super::CONFIG {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADDRESS0_A {
     #[doc = "0: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<ADDRESS0_A> for bool {
     #[inline(always)]
     fn from(variant: ADDRESS0_A) -> Self {
-        match variant {
-            ADDRESS0_A::DISABLED => false,
-            ADDRESS0_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ADDRESS0`"]
@@ -92,17 +89,14 @@ impl<'a> ADDRESS0_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADDRESS1_A {
     #[doc = "0: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<ADDRESS1_A> for bool {
     #[inline(always)]
     fn from(variant: ADDRESS1_A) -> Self {
-        match variant {
-            ADDRESS1_A::DISABLED => false,
-            ADDRESS1_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ADDRESS1`"]

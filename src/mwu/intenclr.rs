@@ -14,17 +14,14 @@ impl crate::ResetValue for super::INTENCLR {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION0WA_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<REGION0WA_A> for bool {
     #[inline(always)]
     fn from(variant: REGION0WA_A) -> Self {
-        match variant {
-            REGION0WA_A::DISABLED => false,
-            REGION0WA_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REGION0WA`"]
@@ -53,14 +50,12 @@ impl REGION0WA_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION0WA_AW {
     #[doc = "1: Disable"]
-    CLEAR,
+    CLEAR = 1,
 }
 impl From<REGION0WA_AW> for bool {
     #[inline(always)]
     fn from(variant: REGION0WA_AW) -> Self {
-        match variant {
-            REGION0WA_AW::CLEAR => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `REGION0WA`"]
@@ -101,17 +96,14 @@ impl<'a> REGION0WA_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION0RA_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<REGION0RA_A> for bool {
     #[inline(always)]
     fn from(variant: REGION0RA_A) -> Self {
-        match variant {
-            REGION0RA_A::DISABLED => false,
-            REGION0RA_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REGION0RA`"]
@@ -140,14 +132,12 @@ impl REGION0RA_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION0RA_AW {
     #[doc = "1: Disable"]
-    CLEAR,
+    CLEAR = 1,
 }
 impl From<REGION0RA_AW> for bool {
     #[inline(always)]
     fn from(variant: REGION0RA_AW) -> Self {
-        match variant {
-            REGION0RA_AW::CLEAR => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `REGION0RA`"]
@@ -188,17 +178,14 @@ impl<'a> REGION0RA_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION1WA_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<REGION1WA_A> for bool {
     #[inline(always)]
     fn from(variant: REGION1WA_A) -> Self {
-        match variant {
-            REGION1WA_A::DISABLED => false,
-            REGION1WA_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REGION1WA`"]
@@ -227,14 +214,12 @@ impl REGION1WA_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION1WA_AW {
     #[doc = "1: Disable"]
-    CLEAR,
+    CLEAR = 1,
 }
 impl From<REGION1WA_AW> for bool {
     #[inline(always)]
     fn from(variant: REGION1WA_AW) -> Self {
-        match variant {
-            REGION1WA_AW::CLEAR => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `REGION1WA`"]
@@ -275,17 +260,14 @@ impl<'a> REGION1WA_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION1RA_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<REGION1RA_A> for bool {
     #[inline(always)]
     fn from(variant: REGION1RA_A) -> Self {
-        match variant {
-            REGION1RA_A::DISABLED => false,
-            REGION1RA_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REGION1RA`"]
@@ -314,14 +296,12 @@ impl REGION1RA_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION1RA_AW {
     #[doc = "1: Disable"]
-    CLEAR,
+    CLEAR = 1,
 }
 impl From<REGION1RA_AW> for bool {
     #[inline(always)]
     fn from(variant: REGION1RA_AW) -> Self {
-        match variant {
-            REGION1RA_AW::CLEAR => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `REGION1RA`"]
@@ -362,17 +342,14 @@ impl<'a> REGION1RA_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION2WA_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<REGION2WA_A> for bool {
     #[inline(always)]
     fn from(variant: REGION2WA_A) -> Self {
-        match variant {
-            REGION2WA_A::DISABLED => false,
-            REGION2WA_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REGION2WA`"]
@@ -401,14 +378,12 @@ impl REGION2WA_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION2WA_AW {
     #[doc = "1: Disable"]
-    CLEAR,
+    CLEAR = 1,
 }
 impl From<REGION2WA_AW> for bool {
     #[inline(always)]
     fn from(variant: REGION2WA_AW) -> Self {
-        match variant {
-            REGION2WA_AW::CLEAR => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `REGION2WA`"]
@@ -449,17 +424,14 @@ impl<'a> REGION2WA_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION2RA_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<REGION2RA_A> for bool {
     #[inline(always)]
     fn from(variant: REGION2RA_A) -> Self {
-        match variant {
-            REGION2RA_A::DISABLED => false,
-            REGION2RA_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REGION2RA`"]
@@ -488,14 +460,12 @@ impl REGION2RA_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION2RA_AW {
     #[doc = "1: Disable"]
-    CLEAR,
+    CLEAR = 1,
 }
 impl From<REGION2RA_AW> for bool {
     #[inline(always)]
     fn from(variant: REGION2RA_AW) -> Self {
-        match variant {
-            REGION2RA_AW::CLEAR => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `REGION2RA`"]
@@ -536,17 +506,14 @@ impl<'a> REGION2RA_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION3WA_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<REGION3WA_A> for bool {
     #[inline(always)]
     fn from(variant: REGION3WA_A) -> Self {
-        match variant {
-            REGION3WA_A::DISABLED => false,
-            REGION3WA_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REGION3WA`"]
@@ -575,14 +542,12 @@ impl REGION3WA_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION3WA_AW {
     #[doc = "1: Disable"]
-    CLEAR,
+    CLEAR = 1,
 }
 impl From<REGION3WA_AW> for bool {
     #[inline(always)]
     fn from(variant: REGION3WA_AW) -> Self {
-        match variant {
-            REGION3WA_AW::CLEAR => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `REGION3WA`"]
@@ -623,17 +588,14 @@ impl<'a> REGION3WA_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION3RA_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<REGION3RA_A> for bool {
     #[inline(always)]
     fn from(variant: REGION3RA_A) -> Self {
-        match variant {
-            REGION3RA_A::DISABLED => false,
-            REGION3RA_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REGION3RA`"]
@@ -662,14 +624,12 @@ impl REGION3RA_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION3RA_AW {
     #[doc = "1: Disable"]
-    CLEAR,
+    CLEAR = 1,
 }
 impl From<REGION3RA_AW> for bool {
     #[inline(always)]
     fn from(variant: REGION3RA_AW) -> Self {
-        match variant {
-            REGION3RA_AW::CLEAR => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `REGION3RA`"]
@@ -710,17 +670,14 @@ impl<'a> REGION3RA_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PREGION0WA_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<PREGION0WA_A> for bool {
     #[inline(always)]
     fn from(variant: PREGION0WA_A) -> Self {
-        match variant {
-            PREGION0WA_A::DISABLED => false,
-            PREGION0WA_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PREGION0WA`"]
@@ -749,14 +706,12 @@ impl PREGION0WA_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PREGION0WA_AW {
     #[doc = "1: Disable"]
-    CLEAR,
+    CLEAR = 1,
 }
 impl From<PREGION0WA_AW> for bool {
     #[inline(always)]
     fn from(variant: PREGION0WA_AW) -> Self {
-        match variant {
-            PREGION0WA_AW::CLEAR => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `PREGION0WA`"]
@@ -797,17 +752,14 @@ impl<'a> PREGION0WA_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PREGION0RA_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<PREGION0RA_A> for bool {
     #[inline(always)]
     fn from(variant: PREGION0RA_A) -> Self {
-        match variant {
-            PREGION0RA_A::DISABLED => false,
-            PREGION0RA_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PREGION0RA`"]
@@ -836,14 +788,12 @@ impl PREGION0RA_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PREGION0RA_AW {
     #[doc = "1: Disable"]
-    CLEAR,
+    CLEAR = 1,
 }
 impl From<PREGION0RA_AW> for bool {
     #[inline(always)]
     fn from(variant: PREGION0RA_AW) -> Self {
-        match variant {
-            PREGION0RA_AW::CLEAR => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `PREGION0RA`"]
@@ -884,17 +834,14 @@ impl<'a> PREGION0RA_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PREGION1WA_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<PREGION1WA_A> for bool {
     #[inline(always)]
     fn from(variant: PREGION1WA_A) -> Self {
-        match variant {
-            PREGION1WA_A::DISABLED => false,
-            PREGION1WA_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PREGION1WA`"]
@@ -923,14 +870,12 @@ impl PREGION1WA_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PREGION1WA_AW {
     #[doc = "1: Disable"]
-    CLEAR,
+    CLEAR = 1,
 }
 impl From<PREGION1WA_AW> for bool {
     #[inline(always)]
     fn from(variant: PREGION1WA_AW) -> Self {
-        match variant {
-            PREGION1WA_AW::CLEAR => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `PREGION1WA`"]
@@ -971,17 +916,14 @@ impl<'a> PREGION1WA_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PREGION1RA_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<PREGION1RA_A> for bool {
     #[inline(always)]
     fn from(variant: PREGION1RA_A) -> Self {
-        match variant {
-            PREGION1RA_A::DISABLED => false,
-            PREGION1RA_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PREGION1RA`"]
@@ -1010,14 +952,12 @@ impl PREGION1RA_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PREGION1RA_AW {
     #[doc = "1: Disable"]
-    CLEAR,
+    CLEAR = 1,
 }
 impl From<PREGION1RA_AW> for bool {
     #[inline(always)]
     fn from(variant: PREGION1RA_AW) -> Self {
-        match variant {
-            PREGION1RA_AW::CLEAR => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `PREGION1RA`"]

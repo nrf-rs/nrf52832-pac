@@ -2,7 +2,8 @@
 pub type R = crate::R<u32, super::CC>;
 #[doc = "Writer for register CC[%s]"]
 pub type W = crate::W<u32, super::CC>;
-#[doc = "Register CC[%s] `reset()`'s with value 0"]
+#[doc = "Register CC[%s]
+`reset()`'s with value 0"]
 impl crate::ResetValue for super::CC {
     type Type = u32;
     #[inline(always)]

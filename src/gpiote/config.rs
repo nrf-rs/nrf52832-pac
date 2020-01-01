@@ -2,7 +2,8 @@
 pub type R = crate::R<u32, super::CONFIG>;
 #[doc = "Writer for register CONFIG[%s]"]
 pub type W = crate::W<u32, super::CONFIG>;
-#[doc = "Register CONFIG[%s] `reset()`'s with value 0"]
+#[doc = "Register CONFIG[%s]
+`reset()`'s with value 0"]
 impl crate::ResetValue for super::CONFIG {
     type Type = u32;
     #[inline(always)]
@@ -12,22 +13,19 @@ impl crate::ResetValue for super::CONFIG {
 }
 #[doc = "Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MODE_A {
     #[doc = "0: Disabled. Pin specified by PSEL will not be acquired by the GPIOTE module."]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Event mode"]
-    EVENT,
+    EVENT = 1,
     #[doc = "3: Task mode"]
-    TASK,
+    TASK = 3,
 }
 impl From<MODE_A> for u8 {
     #[inline(always)]
     fn from(variant: MODE_A) -> Self {
-        match variant {
-            MODE_A::DISABLED => 0,
-            MODE_A::EVENT => 1,
-            MODE_A::TASK => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MODE`"]
@@ -106,27 +104,32 @@ impl<'a> PSEL_W<'a> {
         self.w
     }
 }
-#[doc = "When In task mode: Operation to be performed on output when OUT\\[n\\] task is triggered. When In event mode: Operation on input that shall trigger IN\\[n\\] event.\n\nValue on reset: 0"]
+#[doc = "When In task mode: Operation to be performed on output when OUT\\[n\\]
+task is triggered. When In event mode: Operation on input that shall trigger IN\\[n\\]
+event.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum POLARITY_A {
-    #[doc = "0: Task mode: No effect on pin from OUT\\[n\\] task. Event mode: no IN\\[n\\] event generated on pin activity."]
-    NONE,
-    #[doc = "1: Task mode: Set pin from OUT\\[n\\] task. Event mode: Generate IN\\[n\\] event when rising edge on pin."]
-    LOTOHI,
-    #[doc = "2: Task mode: Clear pin from OUT\\[n\\] task. Event mode: Generate IN\\[n\\] event when falling edge on pin."]
-    HITOLO,
-    #[doc = "3: Task mode: Toggle pin from OUT\\[n\\]. Event mode: Generate IN\\[n\\] when any change on pin."]
-    TOGGLE,
+    #[doc = "0: Task mode: No effect on pin from OUT\\[n\\]
+task. Event mode: no IN\\[n\\]
+event generated on pin activity."]
+    NONE = 0,
+    #[doc = "1: Task mode: Set pin from OUT\\[n\\]
+task. Event mode: Generate IN\\[n\\]
+event when rising edge on pin."]
+    LOTOHI = 1,
+    #[doc = "2: Task mode: Clear pin from OUT\\[n\\]
+task. Event mode: Generate IN\\[n\\]
+event when falling edge on pin."]
+    HITOLO = 2,
+    #[doc = "3: Task mode: Toggle pin from OUT\\[n\\]. Event mode: Generate IN\\[n\\]
+when any change on pin."]
+    TOGGLE = 3,
 }
 impl From<POLARITY_A> for u8 {
     #[inline(always)]
     fn from(variant: POLARITY_A) -> Self {
-        match variant {
-            POLARITY_A::NONE => 0,
-            POLARITY_A::LOTOHI => 1,
-            POLARITY_A::HITOLO => 2,
-            POLARITY_A::TOGGLE => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `POLARITY`"]
@@ -176,22 +179,29 @@ impl<'a> POLARITY_W<'a> {
             self.bits(variant.into())
         }
     }
-    #[doc = "Task mode: No effect on pin from OUT\\[n\\] task. Event mode: no IN\\[n\\] event generated on pin activity."]
+    #[doc = "Task mode: No effect on pin from OUT\\[n\\]
+task. Event mode: no IN\\[n\\]
+event generated on pin activity."]
     #[inline(always)]
     pub fn none(self) -> &'a mut W {
         self.variant(POLARITY_A::NONE)
     }
-    #[doc = "Task mode: Set pin from OUT\\[n\\] task. Event mode: Generate IN\\[n\\] event when rising edge on pin."]
+    #[doc = "Task mode: Set pin from OUT\\[n\\]
+task. Event mode: Generate IN\\[n\\]
+event when rising edge on pin."]
     #[inline(always)]
     pub fn lo_to_hi(self) -> &'a mut W {
         self.variant(POLARITY_A::LOTOHI)
     }
-    #[doc = "Task mode: Clear pin from OUT\\[n\\] task. Event mode: Generate IN\\[n\\] event when falling edge on pin."]
+    #[doc = "Task mode: Clear pin from OUT\\[n\\]
+task. Event mode: Generate IN\\[n\\]
+event when falling edge on pin."]
     #[inline(always)]
     pub fn hi_to_lo(self) -> &'a mut W {
         self.variant(POLARITY_A::HITOLO)
     }
-    #[doc = "Task mode: Toggle pin from OUT\\[n\\]. Event mode: Generate IN\\[n\\] when any change on pin."]
+    #[doc = "Task mode: Toggle pin from OUT\\[n\\]. Event mode: Generate IN\\[n\\]
+when any change on pin."]
     #[inline(always)]
     pub fn toggle(self) -> &'a mut W {
         self.variant(POLARITY_A::TOGGLE)
@@ -207,17 +217,14 @@ impl<'a> POLARITY_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OUTINIT_A {
     #[doc = "0: Task mode: Initial value of pin before task triggering is low"]
-    LOW,
+    LOW = 0,
     #[doc = "1: Task mode: Initial value of pin before task triggering is high"]
-    HIGH,
+    HIGH = 1,
 }
 impl From<OUTINIT_A> for bool {
     #[inline(always)]
     fn from(variant: OUTINIT_A) -> Self {
-        match variant {
-            OUTINIT_A::LOW => false,
-            OUTINIT_A::HIGH => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `OUTINIT`"]
@@ -287,12 +294,17 @@ impl R {
     pub fn mode(&self) -> MODE_R {
         MODE_R::new((self.bits & 0x03) as u8)
     }
-    #[doc = "Bits 8:12 - GPIO number associated with SET\\[n\\], CLR\\[n\\] and OUT\\[n\\] tasks and IN\\[n\\] event"]
+    #[doc = "Bits 8:12 - GPIO number associated with SET\\[n\\], CLR\\[n\\]
+and OUT\\[n\\]
+tasks and IN\\[n\\]
+event"]
     #[inline(always)]
     pub fn psel(&self) -> PSEL_R {
         PSEL_R::new(((self.bits >> 8) & 0x1f) as u8)
     }
-    #[doc = "Bits 16:17 - When In task mode: Operation to be performed on output when OUT\\[n\\] task is triggered. When In event mode: Operation on input that shall trigger IN\\[n\\] event."]
+    #[doc = "Bits 16:17 - When In task mode: Operation to be performed on output when OUT\\[n\\]
+task is triggered. When In event mode: Operation on input that shall trigger IN\\[n\\]
+event."]
     #[inline(always)]
     pub fn polarity(&self) -> POLARITY_R {
         POLARITY_R::new(((self.bits >> 16) & 0x03) as u8)
@@ -309,12 +321,17 @@ impl W {
     pub fn mode(&mut self) -> MODE_W {
         MODE_W { w: self }
     }
-    #[doc = "Bits 8:12 - GPIO number associated with SET\\[n\\], CLR\\[n\\] and OUT\\[n\\] tasks and IN\\[n\\] event"]
+    #[doc = "Bits 8:12 - GPIO number associated with SET\\[n\\], CLR\\[n\\]
+and OUT\\[n\\]
+tasks and IN\\[n\\]
+event"]
     #[inline(always)]
     pub fn psel(&mut self) -> PSEL_W {
         PSEL_W { w: self }
     }
-    #[doc = "Bits 16:17 - When In task mode: Operation to be performed on output when OUT\\[n\\] task is triggered. When In event mode: Operation on input that shall trigger IN\\[n\\] event."]
+    #[doc = "Bits 16:17 - When In task mode: Operation to be performed on output when OUT\\[n\\]
+task is triggered. When In event mode: Operation on input that shall trigger IN\\[n\\]
+event."]
     #[inline(always)]
     pub fn polarity(&mut self) -> POLARITY_W {
         POLARITY_W { w: self }

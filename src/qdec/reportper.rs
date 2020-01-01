@@ -12,40 +12,31 @@ impl crate::ResetValue for super::REPORTPER {
 }
 #[doc = "Specifies the number of samples to be accumulated in the ACC register before the REPORTRDY and DBLRDY events can be generated\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum REPORTPER_A {
     #[doc = "0: 10 samples / report"]
-    _10SMPL,
+    _10SMPL = 0,
     #[doc = "1: 40 samples / report"]
-    _40SMPL,
+    _40SMPL = 1,
     #[doc = "2: 80 samples / report"]
-    _80SMPL,
+    _80SMPL = 2,
     #[doc = "3: 120 samples / report"]
-    _120SMPL,
+    _120SMPL = 3,
     #[doc = "4: 160 samples / report"]
-    _160SMPL,
+    _160SMPL = 4,
     #[doc = "5: 200 samples / report"]
-    _200SMPL,
+    _200SMPL = 5,
     #[doc = "6: 240 samples / report"]
-    _240SMPL,
+    _240SMPL = 6,
     #[doc = "7: 280 samples / report"]
-    _280SMPL,
+    _280SMPL = 7,
     #[doc = "8: 1 sample / report"]
-    _1SMPL,
+    _1SMPL = 8,
 }
 impl From<REPORTPER_A> for u8 {
     #[inline(always)]
     fn from(variant: REPORTPER_A) -> Self {
-        match variant {
-            REPORTPER_A::_10SMPL => 0,
-            REPORTPER_A::_40SMPL => 1,
-            REPORTPER_A::_80SMPL => 2,
-            REPORTPER_A::_120SMPL => 3,
-            REPORTPER_A::_160SMPL => 4,
-            REPORTPER_A::_200SMPL => 5,
-            REPORTPER_A::_240SMPL => 6,
-            REPORTPER_A::_280SMPL => 7,
-            REPORTPER_A::_1SMPL => 8,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `REPORTPER`"]

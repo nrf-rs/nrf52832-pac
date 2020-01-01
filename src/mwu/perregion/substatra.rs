@@ -14,17 +14,14 @@ impl crate::ResetValue for super::SUBSTATRA {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SR0_A {
     #[doc = "0: No read access occurred in this subregion"]
-    NOACCESS,
+    NOACCESS = 0,
     #[doc = "1: Read access(es) occurred in this subregion"]
-    ACCESS,
+    ACCESS = 1,
 }
 impl From<SR0_A> for bool {
     #[inline(always)]
     fn from(variant: SR0_A) -> Self {
-        match variant {
-            SR0_A::NOACCESS => false,
-            SR0_A::ACCESS => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SR0`"]
@@ -92,17 +89,14 @@ impl<'a> SR0_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SR1_A {
     #[doc = "0: No read access occurred in this subregion"]
-    NOACCESS,
+    NOACCESS = 0,
     #[doc = "1: Read access(es) occurred in this subregion"]
-    ACCESS,
+    ACCESS = 1,
 }
 impl From<SR1_A> for bool {
     #[inline(always)]
     fn from(variant: SR1_A) -> Self {
-        match variant {
-            SR1_A::NOACCESS => false,
-            SR1_A::ACCESS => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SR1`"]
@@ -170,17 +164,14 @@ impl<'a> SR1_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SR2_A {
     #[doc = "0: No read access occurred in this subregion"]
-    NOACCESS,
+    NOACCESS = 0,
     #[doc = "1: Read access(es) occurred in this subregion"]
-    ACCESS,
+    ACCESS = 1,
 }
 impl From<SR2_A> for bool {
     #[inline(always)]
     fn from(variant: SR2_A) -> Self {
-        match variant {
-            SR2_A::NOACCESS => false,
-            SR2_A::ACCESS => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SR2`"]
@@ -248,17 +239,14 @@ impl<'a> SR2_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SR3_A {
     #[doc = "0: No read access occurred in this subregion"]
-    NOACCESS,
+    NOACCESS = 0,
     #[doc = "1: Read access(es) occurred in this subregion"]
-    ACCESS,
+    ACCESS = 1,
 }
 impl From<SR3_A> for bool {
     #[inline(always)]
     fn from(variant: SR3_A) -> Self {
-        match variant {
-            SR3_A::NOACCESS => false,
-            SR3_A::ACCESS => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SR3`"]
@@ -326,17 +314,14 @@ impl<'a> SR3_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SR4_A {
     #[doc = "0: No read access occurred in this subregion"]
-    NOACCESS,
+    NOACCESS = 0,
     #[doc = "1: Read access(es) occurred in this subregion"]
-    ACCESS,
+    ACCESS = 1,
 }
 impl From<SR4_A> for bool {
     #[inline(always)]
     fn from(variant: SR4_A) -> Self {
-        match variant {
-            SR4_A::NOACCESS => false,
-            SR4_A::ACCESS => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SR4`"]
@@ -404,17 +389,14 @@ impl<'a> SR4_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SR5_A {
     #[doc = "0: No read access occurred in this subregion"]
-    NOACCESS,
+    NOACCESS = 0,
     #[doc = "1: Read access(es) occurred in this subregion"]
-    ACCESS,
+    ACCESS = 1,
 }
 impl From<SR5_A> for bool {
     #[inline(always)]
     fn from(variant: SR5_A) -> Self {
-        match variant {
-            SR5_A::NOACCESS => false,
-            SR5_A::ACCESS => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SR5`"]
@@ -482,17 +464,14 @@ impl<'a> SR5_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SR6_A {
     #[doc = "0: No read access occurred in this subregion"]
-    NOACCESS,
+    NOACCESS = 0,
     #[doc = "1: Read access(es) occurred in this subregion"]
-    ACCESS,
+    ACCESS = 1,
 }
 impl From<SR6_A> for bool {
     #[inline(always)]
     fn from(variant: SR6_A) -> Self {
-        match variant {
-            SR6_A::NOACCESS => false,
-            SR6_A::ACCESS => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SR6`"]
@@ -560,17 +539,14 @@ impl<'a> SR6_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SR7_A {
     #[doc = "0: No read access occurred in this subregion"]
-    NOACCESS,
+    NOACCESS = 0,
     #[doc = "1: Read access(es) occurred in this subregion"]
-    ACCESS,
+    ACCESS = 1,
 }
 impl From<SR7_A> for bool {
     #[inline(always)]
     fn from(variant: SR7_A) -> Self {
-        match variant {
-            SR7_A::NOACCESS => false,
-            SR7_A::ACCESS => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SR7`"]
@@ -638,17 +614,14 @@ impl<'a> SR7_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SR8_A {
     #[doc = "0: No read access occurred in this subregion"]
-    NOACCESS,
+    NOACCESS = 0,
     #[doc = "1: Read access(es) occurred in this subregion"]
-    ACCESS,
+    ACCESS = 1,
 }
 impl From<SR8_A> for bool {
     #[inline(always)]
     fn from(variant: SR8_A) -> Self {
-        match variant {
-            SR8_A::NOACCESS => false,
-            SR8_A::ACCESS => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SR8`"]
@@ -716,17 +689,14 @@ impl<'a> SR8_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SR9_A {
     #[doc = "0: No read access occurred in this subregion"]
-    NOACCESS,
+    NOACCESS = 0,
     #[doc = "1: Read access(es) occurred in this subregion"]
-    ACCESS,
+    ACCESS = 1,
 }
 impl From<SR9_A> for bool {
     #[inline(always)]
     fn from(variant: SR9_A) -> Self {
-        match variant {
-            SR9_A::NOACCESS => false,
-            SR9_A::ACCESS => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SR9`"]
@@ -794,17 +764,14 @@ impl<'a> SR9_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SR10_A {
     #[doc = "0: No read access occurred in this subregion"]
-    NOACCESS,
+    NOACCESS = 0,
     #[doc = "1: Read access(es) occurred in this subregion"]
-    ACCESS,
+    ACCESS = 1,
 }
 impl From<SR10_A> for bool {
     #[inline(always)]
     fn from(variant: SR10_A) -> Self {
-        match variant {
-            SR10_A::NOACCESS => false,
-            SR10_A::ACCESS => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SR10`"]
@@ -872,17 +839,14 @@ impl<'a> SR10_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SR11_A {
     #[doc = "0: No read access occurred in this subregion"]
-    NOACCESS,
+    NOACCESS = 0,
     #[doc = "1: Read access(es) occurred in this subregion"]
-    ACCESS,
+    ACCESS = 1,
 }
 impl From<SR11_A> for bool {
     #[inline(always)]
     fn from(variant: SR11_A) -> Self {
-        match variant {
-            SR11_A::NOACCESS => false,
-            SR11_A::ACCESS => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SR11`"]
@@ -950,17 +914,14 @@ impl<'a> SR11_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SR12_A {
     #[doc = "0: No read access occurred in this subregion"]
-    NOACCESS,
+    NOACCESS = 0,
     #[doc = "1: Read access(es) occurred in this subregion"]
-    ACCESS,
+    ACCESS = 1,
 }
 impl From<SR12_A> for bool {
     #[inline(always)]
     fn from(variant: SR12_A) -> Self {
-        match variant {
-            SR12_A::NOACCESS => false,
-            SR12_A::ACCESS => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SR12`"]
@@ -1028,17 +989,14 @@ impl<'a> SR12_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SR13_A {
     #[doc = "0: No read access occurred in this subregion"]
-    NOACCESS,
+    NOACCESS = 0,
     #[doc = "1: Read access(es) occurred in this subregion"]
-    ACCESS,
+    ACCESS = 1,
 }
 impl From<SR13_A> for bool {
     #[inline(always)]
     fn from(variant: SR13_A) -> Self {
-        match variant {
-            SR13_A::NOACCESS => false,
-            SR13_A::ACCESS => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SR13`"]
@@ -1106,17 +1064,14 @@ impl<'a> SR13_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SR14_A {
     #[doc = "0: No read access occurred in this subregion"]
-    NOACCESS,
+    NOACCESS = 0,
     #[doc = "1: Read access(es) occurred in this subregion"]
-    ACCESS,
+    ACCESS = 1,
 }
 impl From<SR14_A> for bool {
     #[inline(always)]
     fn from(variant: SR14_A) -> Self {
-        match variant {
-            SR14_A::NOACCESS => false,
-            SR14_A::ACCESS => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SR14`"]
@@ -1184,17 +1139,14 @@ impl<'a> SR14_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SR15_A {
     #[doc = "0: No read access occurred in this subregion"]
-    NOACCESS,
+    NOACCESS = 0,
     #[doc = "1: Read access(es) occurred in this subregion"]
-    ACCESS,
+    ACCESS = 1,
 }
 impl From<SR15_A> for bool {
     #[inline(always)]
     fn from(variant: SR15_A) -> Self {
-        match variant {
-            SR15_A::NOACCESS => false,
-            SR15_A::ACCESS => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SR15`"]
@@ -1262,17 +1214,14 @@ impl<'a> SR15_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SR16_A {
     #[doc = "0: No read access occurred in this subregion"]
-    NOACCESS,
+    NOACCESS = 0,
     #[doc = "1: Read access(es) occurred in this subregion"]
-    ACCESS,
+    ACCESS = 1,
 }
 impl From<SR16_A> for bool {
     #[inline(always)]
     fn from(variant: SR16_A) -> Self {
-        match variant {
-            SR16_A::NOACCESS => false,
-            SR16_A::ACCESS => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SR16`"]
@@ -1340,17 +1289,14 @@ impl<'a> SR16_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SR17_A {
     #[doc = "0: No read access occurred in this subregion"]
-    NOACCESS,
+    NOACCESS = 0,
     #[doc = "1: Read access(es) occurred in this subregion"]
-    ACCESS,
+    ACCESS = 1,
 }
 impl From<SR17_A> for bool {
     #[inline(always)]
     fn from(variant: SR17_A) -> Self {
-        match variant {
-            SR17_A::NOACCESS => false,
-            SR17_A::ACCESS => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SR17`"]
@@ -1418,17 +1364,14 @@ impl<'a> SR17_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SR18_A {
     #[doc = "0: No read access occurred in this subregion"]
-    NOACCESS,
+    NOACCESS = 0,
     #[doc = "1: Read access(es) occurred in this subregion"]
-    ACCESS,
+    ACCESS = 1,
 }
 impl From<SR18_A> for bool {
     #[inline(always)]
     fn from(variant: SR18_A) -> Self {
-        match variant {
-            SR18_A::NOACCESS => false,
-            SR18_A::ACCESS => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SR18`"]
@@ -1496,17 +1439,14 @@ impl<'a> SR18_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SR19_A {
     #[doc = "0: No read access occurred in this subregion"]
-    NOACCESS,
+    NOACCESS = 0,
     #[doc = "1: Read access(es) occurred in this subregion"]
-    ACCESS,
+    ACCESS = 1,
 }
 impl From<SR19_A> for bool {
     #[inline(always)]
     fn from(variant: SR19_A) -> Self {
-        match variant {
-            SR19_A::NOACCESS => false,
-            SR19_A::ACCESS => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SR19`"]
@@ -1574,17 +1514,14 @@ impl<'a> SR19_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SR20_A {
     #[doc = "0: No read access occurred in this subregion"]
-    NOACCESS,
+    NOACCESS = 0,
     #[doc = "1: Read access(es) occurred in this subregion"]
-    ACCESS,
+    ACCESS = 1,
 }
 impl From<SR20_A> for bool {
     #[inline(always)]
     fn from(variant: SR20_A) -> Self {
-        match variant {
-            SR20_A::NOACCESS => false,
-            SR20_A::ACCESS => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SR20`"]
@@ -1652,17 +1589,14 @@ impl<'a> SR20_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SR21_A {
     #[doc = "0: No read access occurred in this subregion"]
-    NOACCESS,
+    NOACCESS = 0,
     #[doc = "1: Read access(es) occurred in this subregion"]
-    ACCESS,
+    ACCESS = 1,
 }
 impl From<SR21_A> for bool {
     #[inline(always)]
     fn from(variant: SR21_A) -> Self {
-        match variant {
-            SR21_A::NOACCESS => false,
-            SR21_A::ACCESS => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SR21`"]
@@ -1730,17 +1664,14 @@ impl<'a> SR21_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SR22_A {
     #[doc = "0: No read access occurred in this subregion"]
-    NOACCESS,
+    NOACCESS = 0,
     #[doc = "1: Read access(es) occurred in this subregion"]
-    ACCESS,
+    ACCESS = 1,
 }
 impl From<SR22_A> for bool {
     #[inline(always)]
     fn from(variant: SR22_A) -> Self {
-        match variant {
-            SR22_A::NOACCESS => false,
-            SR22_A::ACCESS => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SR22`"]
@@ -1808,17 +1739,14 @@ impl<'a> SR22_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SR23_A {
     #[doc = "0: No read access occurred in this subregion"]
-    NOACCESS,
+    NOACCESS = 0,
     #[doc = "1: Read access(es) occurred in this subregion"]
-    ACCESS,
+    ACCESS = 1,
 }
 impl From<SR23_A> for bool {
     #[inline(always)]
     fn from(variant: SR23_A) -> Self {
-        match variant {
-            SR23_A::NOACCESS => false,
-            SR23_A::ACCESS => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SR23`"]
@@ -1886,17 +1814,14 @@ impl<'a> SR23_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SR24_A {
     #[doc = "0: No read access occurred in this subregion"]
-    NOACCESS,
+    NOACCESS = 0,
     #[doc = "1: Read access(es) occurred in this subregion"]
-    ACCESS,
+    ACCESS = 1,
 }
 impl From<SR24_A> for bool {
     #[inline(always)]
     fn from(variant: SR24_A) -> Self {
-        match variant {
-            SR24_A::NOACCESS => false,
-            SR24_A::ACCESS => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SR24`"]
@@ -1964,17 +1889,14 @@ impl<'a> SR24_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SR25_A {
     #[doc = "0: No read access occurred in this subregion"]
-    NOACCESS,
+    NOACCESS = 0,
     #[doc = "1: Read access(es) occurred in this subregion"]
-    ACCESS,
+    ACCESS = 1,
 }
 impl From<SR25_A> for bool {
     #[inline(always)]
     fn from(variant: SR25_A) -> Self {
-        match variant {
-            SR25_A::NOACCESS => false,
-            SR25_A::ACCESS => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SR25`"]
@@ -2042,17 +1964,14 @@ impl<'a> SR25_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SR26_A {
     #[doc = "0: No read access occurred in this subregion"]
-    NOACCESS,
+    NOACCESS = 0,
     #[doc = "1: Read access(es) occurred in this subregion"]
-    ACCESS,
+    ACCESS = 1,
 }
 impl From<SR26_A> for bool {
     #[inline(always)]
     fn from(variant: SR26_A) -> Self {
-        match variant {
-            SR26_A::NOACCESS => false,
-            SR26_A::ACCESS => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SR26`"]
@@ -2120,17 +2039,14 @@ impl<'a> SR26_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SR27_A {
     #[doc = "0: No read access occurred in this subregion"]
-    NOACCESS,
+    NOACCESS = 0,
     #[doc = "1: Read access(es) occurred in this subregion"]
-    ACCESS,
+    ACCESS = 1,
 }
 impl From<SR27_A> for bool {
     #[inline(always)]
     fn from(variant: SR27_A) -> Self {
-        match variant {
-            SR27_A::NOACCESS => false,
-            SR27_A::ACCESS => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SR27`"]
@@ -2198,17 +2114,14 @@ impl<'a> SR27_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SR28_A {
     #[doc = "0: No read access occurred in this subregion"]
-    NOACCESS,
+    NOACCESS = 0,
     #[doc = "1: Read access(es) occurred in this subregion"]
-    ACCESS,
+    ACCESS = 1,
 }
 impl From<SR28_A> for bool {
     #[inline(always)]
     fn from(variant: SR28_A) -> Self {
-        match variant {
-            SR28_A::NOACCESS => false,
-            SR28_A::ACCESS => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SR28`"]
@@ -2276,17 +2189,14 @@ impl<'a> SR28_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SR29_A {
     #[doc = "0: No read access occurred in this subregion"]
-    NOACCESS,
+    NOACCESS = 0,
     #[doc = "1: Read access(es) occurred in this subregion"]
-    ACCESS,
+    ACCESS = 1,
 }
 impl From<SR29_A> for bool {
     #[inline(always)]
     fn from(variant: SR29_A) -> Self {
-        match variant {
-            SR29_A::NOACCESS => false,
-            SR29_A::ACCESS => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SR29`"]
@@ -2354,17 +2264,14 @@ impl<'a> SR29_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SR30_A {
     #[doc = "0: No read access occurred in this subregion"]
-    NOACCESS,
+    NOACCESS = 0,
     #[doc = "1: Read access(es) occurred in this subregion"]
-    ACCESS,
+    ACCESS = 1,
 }
 impl From<SR30_A> for bool {
     #[inline(always)]
     fn from(variant: SR30_A) -> Self {
-        match variant {
-            SR30_A::NOACCESS => false,
-            SR30_A::ACCESS => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SR30`"]
@@ -2432,17 +2339,14 @@ impl<'a> SR30_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SR31_A {
     #[doc = "0: No read access occurred in this subregion"]
-    NOACCESS,
+    NOACCESS = 0,
     #[doc = "1: Read access(es) occurred in this subregion"]
-    ACCESS,
+    ACCESS = 1,
 }
 impl From<SR31_A> for bool {
     #[inline(always)]
     fn from(variant: SR31_A) -> Self {
-        match variant {
-            SR31_A::NOACCESS => false,
-            SR31_A::ACCESS => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SR31`"]

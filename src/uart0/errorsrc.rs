@@ -14,17 +14,14 @@ impl crate::ResetValue for super::ERRORSRC {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OVERRUN_A {
     #[doc = "0: Read: error not present"]
-    NOTPRESENT,
+    NOTPRESENT = 0,
     #[doc = "1: Read: error present"]
-    PRESENT,
+    PRESENT = 1,
 }
 impl From<OVERRUN_A> for bool {
     #[inline(always)]
     fn from(variant: OVERRUN_A) -> Self {
-        match variant {
-            OVERRUN_A::NOTPRESENT => false,
-            OVERRUN_A::PRESENT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `OVERRUN`"]
@@ -92,17 +89,14 @@ impl<'a> OVERRUN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PARITY_A {
     #[doc = "0: Read: error not present"]
-    NOTPRESENT,
+    NOTPRESENT = 0,
     #[doc = "1: Read: error present"]
-    PRESENT,
+    PRESENT = 1,
 }
 impl From<PARITY_A> for bool {
     #[inline(always)]
     fn from(variant: PARITY_A) -> Self {
-        match variant {
-            PARITY_A::NOTPRESENT => false,
-            PARITY_A::PRESENT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PARITY`"]
@@ -170,17 +164,14 @@ impl<'a> PARITY_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FRAMING_A {
     #[doc = "0: Read: error not present"]
-    NOTPRESENT,
+    NOTPRESENT = 0,
     #[doc = "1: Read: error present"]
-    PRESENT,
+    PRESENT = 1,
 }
 impl From<FRAMING_A> for bool {
     #[inline(always)]
     fn from(variant: FRAMING_A) -> Self {
-        match variant {
-            FRAMING_A::NOTPRESENT => false,
-            FRAMING_A::PRESENT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FRAMING`"]
@@ -248,17 +239,14 @@ impl<'a> FRAMING_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BREAK_A {
     #[doc = "0: Read: error not present"]
-    NOTPRESENT,
+    NOTPRESENT = 0,
     #[doc = "1: Read: error present"]
-    PRESENT,
+    PRESENT = 1,
 }
 impl From<BREAK_A> for bool {
     #[inline(always)]
     fn from(variant: BREAK_A) -> Self {
-        match variant {
-            BREAK_A::NOTPRESENT => false,
-            BREAK_A::PRESENT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `BREAK`"]

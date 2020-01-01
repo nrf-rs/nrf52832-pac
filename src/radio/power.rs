@@ -14,17 +14,14 @@ impl crate::ResetValue for super::POWER {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum POWER_A {
     #[doc = "0: Peripheral is powered off"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Peripheral is powered on"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<POWER_A> for bool {
     #[inline(always)]
     fn from(variant: POWER_A) -> Self {
-        match variant {
-            POWER_A::DISABLED => false,
-            POWER_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `POWER`"]

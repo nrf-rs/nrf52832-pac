@@ -10,21 +10,19 @@ impl crate::ResetValue for super::SHORTS {
         0
     }
 }
-#[doc = "Shortcut between SEQEND\\[0\\] event and STOP task\n\nValue on reset: 0"]
+#[doc = "Shortcut between SEQEND\\[0\\]
+event and STOP task\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SEQEND0_STOP_A {
     #[doc = "0: Disable shortcut"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable shortcut"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<SEQEND0_STOP_A> for bool {
     #[inline(always)]
     fn from(variant: SEQEND0_STOP_A) -> Self {
-        match variant {
-            SEQEND0_STOP_A::DISABLED => false,
-            SEQEND0_STOP_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SEQEND0_STOP`"]
@@ -88,21 +86,19 @@ impl<'a> SEQEND0_STOP_W<'a> {
         self.w
     }
 }
-#[doc = "Shortcut between SEQEND\\[1\\] event and STOP task\n\nValue on reset: 0"]
+#[doc = "Shortcut between SEQEND\\[1\\]
+event and STOP task\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SEQEND1_STOP_A {
     #[doc = "0: Disable shortcut"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable shortcut"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<SEQEND1_STOP_A> for bool {
     #[inline(always)]
     fn from(variant: SEQEND1_STOP_A) -> Self {
-        match variant {
-            SEQEND1_STOP_A::DISABLED => false,
-            SEQEND1_STOP_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SEQEND1_STOP`"]
@@ -166,21 +162,19 @@ impl<'a> SEQEND1_STOP_W<'a> {
         self.w
     }
 }
-#[doc = "Shortcut between LOOPSDONE event and SEQSTART\\[0\\] task\n\nValue on reset: 0"]
+#[doc = "Shortcut between LOOPSDONE event and SEQSTART\\[0\\]
+task\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LOOPSDONE_SEQSTART0_A {
     #[doc = "0: Disable shortcut"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable shortcut"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<LOOPSDONE_SEQSTART0_A> for bool {
     #[inline(always)]
     fn from(variant: LOOPSDONE_SEQSTART0_A) -> Self {
-        match variant {
-            LOOPSDONE_SEQSTART0_A::DISABLED => false,
-            LOOPSDONE_SEQSTART0_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LOOPSDONE_SEQSTART0`"]
@@ -244,21 +238,19 @@ impl<'a> LOOPSDONE_SEQSTART0_W<'a> {
         self.w
     }
 }
-#[doc = "Shortcut between LOOPSDONE event and SEQSTART\\[1\\] task\n\nValue on reset: 0"]
+#[doc = "Shortcut between LOOPSDONE event and SEQSTART\\[1\\]
+task\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LOOPSDONE_SEQSTART1_A {
     #[doc = "0: Disable shortcut"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable shortcut"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<LOOPSDONE_SEQSTART1_A> for bool {
     #[inline(always)]
     fn from(variant: LOOPSDONE_SEQSTART1_A) -> Self {
-        match variant {
-            LOOPSDONE_SEQSTART1_A::DISABLED => false,
-            LOOPSDONE_SEQSTART1_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LOOPSDONE_SEQSTART1`"]
@@ -326,17 +318,14 @@ impl<'a> LOOPSDONE_SEQSTART1_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LOOPSDONE_STOP_A {
     #[doc = "0: Disable shortcut"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable shortcut"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<LOOPSDONE_STOP_A> for bool {
     #[inline(always)]
     fn from(variant: LOOPSDONE_STOP_A) -> Self {
-        match variant {
-            LOOPSDONE_STOP_A::DISABLED => false,
-            LOOPSDONE_STOP_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LOOPSDONE_STOP`"]
@@ -401,22 +390,26 @@ impl<'a> LOOPSDONE_STOP_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bit 0 - Shortcut between SEQEND\\[0\\] event and STOP task"]
+    #[doc = "Bit 0 - Shortcut between SEQEND\\[0\\]
+event and STOP task"]
     #[inline(always)]
     pub fn seqend0_stop(&self) -> SEQEND0_STOP_R {
         SEQEND0_STOP_R::new((self.bits & 0x01) != 0)
     }
-    #[doc = "Bit 1 - Shortcut between SEQEND\\[1\\] event and STOP task"]
+    #[doc = "Bit 1 - Shortcut between SEQEND\\[1\\]
+event and STOP task"]
     #[inline(always)]
     pub fn seqend1_stop(&self) -> SEQEND1_STOP_R {
         SEQEND1_STOP_R::new(((self.bits >> 1) & 0x01) != 0)
     }
-    #[doc = "Bit 2 - Shortcut between LOOPSDONE event and SEQSTART\\[0\\] task"]
+    #[doc = "Bit 2 - Shortcut between LOOPSDONE event and SEQSTART\\[0\\]
+task"]
     #[inline(always)]
     pub fn loopsdone_seqstart0(&self) -> LOOPSDONE_SEQSTART0_R {
         LOOPSDONE_SEQSTART0_R::new(((self.bits >> 2) & 0x01) != 0)
     }
-    #[doc = "Bit 3 - Shortcut between LOOPSDONE event and SEQSTART\\[1\\] task"]
+    #[doc = "Bit 3 - Shortcut between LOOPSDONE event and SEQSTART\\[1\\]
+task"]
     #[inline(always)]
     pub fn loopsdone_seqstart1(&self) -> LOOPSDONE_SEQSTART1_R {
         LOOPSDONE_SEQSTART1_R::new(((self.bits >> 3) & 0x01) != 0)
@@ -428,22 +421,26 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bit 0 - Shortcut between SEQEND\\[0\\] event and STOP task"]
+    #[doc = "Bit 0 - Shortcut between SEQEND\\[0\\]
+event and STOP task"]
     #[inline(always)]
     pub fn seqend0_stop(&mut self) -> SEQEND0_STOP_W {
         SEQEND0_STOP_W { w: self }
     }
-    #[doc = "Bit 1 - Shortcut between SEQEND\\[1\\] event and STOP task"]
+    #[doc = "Bit 1 - Shortcut between SEQEND\\[1\\]
+event and STOP task"]
     #[inline(always)]
     pub fn seqend1_stop(&mut self) -> SEQEND1_STOP_W {
         SEQEND1_STOP_W { w: self }
     }
-    #[doc = "Bit 2 - Shortcut between LOOPSDONE event and SEQSTART\\[0\\] task"]
+    #[doc = "Bit 2 - Shortcut between LOOPSDONE event and SEQSTART\\[0\\]
+task"]
     #[inline(always)]
     pub fn loopsdone_seqstart0(&mut self) -> LOOPSDONE_SEQSTART0_W {
         LOOPSDONE_SEQSTART0_W { w: self }
     }
-    #[doc = "Bit 3 - Shortcut between LOOPSDONE event and SEQSTART\\[1\\] task"]
+    #[doc = "Bit 3 - Shortcut between LOOPSDONE event and SEQSTART\\[1\\]
+task"]
     #[inline(always)]
     pub fn loopsdone_seqstart1(&mut self) -> LOOPSDONE_SEQSTART1_W {
         LOOPSDONE_SEQSTART1_W { w: self }

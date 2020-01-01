@@ -12,40 +12,31 @@ impl crate::ResetValue for super::OVERSAMPLE {
 }
 #[doc = "Oversample control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum OVERSAMPLE_A {
     #[doc = "0: Bypass oversampling"]
-    BYPASS,
+    BYPASS = 0,
     #[doc = "1: Oversample 2x"]
-    OVER2X,
+    OVER2X = 1,
     #[doc = "2: Oversample 4x"]
-    OVER4X,
+    OVER4X = 2,
     #[doc = "3: Oversample 8x"]
-    OVER8X,
+    OVER8X = 3,
     #[doc = "4: Oversample 16x"]
-    OVER16X,
+    OVER16X = 4,
     #[doc = "5: Oversample 32x"]
-    OVER32X,
+    OVER32X = 5,
     #[doc = "6: Oversample 64x"]
-    OVER64X,
+    OVER64X = 6,
     #[doc = "7: Oversample 128x"]
-    OVER128X,
+    OVER128X = 7,
     #[doc = "8: Oversample 256x"]
-    OVER256X,
+    OVER256X = 8,
 }
 impl From<OVERSAMPLE_A> for u8 {
     #[inline(always)]
     fn from(variant: OVERSAMPLE_A) -> Self {
-        match variant {
-            OVERSAMPLE_A::BYPASS => 0,
-            OVERSAMPLE_A::OVER2X => 1,
-            OVERSAMPLE_A::OVER4X => 2,
-            OVERSAMPLE_A::OVER8X => 3,
-            OVERSAMPLE_A::OVER16X => 4,
-            OVERSAMPLE_A::OVER32X => 5,
-            OVERSAMPLE_A::OVER64X => 6,
-            OVERSAMPLE_A::OVER128X => 7,
-            OVERSAMPLE_A::OVER256X => 8,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `OVERSAMPLE`"]

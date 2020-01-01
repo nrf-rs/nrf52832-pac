@@ -4,17 +4,14 @@ pub type R = crate::R<u32, super::RESULT>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RESULT_A {
     #[doc = "0: Input voltage is below the reference threshold (VIN+ &lt; VIN-)."]
-    BELOW,
+    BELOW = 0,
     #[doc = "1: Input voltage is above the reference threshold (VIN+ &gt; VIN-)."]
-    ABOVE,
+    ABOVE = 1,
 }
 impl From<RESULT_A> for bool {
     #[inline(always)]
     fn from(variant: RESULT_A) -> Self {
-        match variant {
-            RESULT_A::BELOW => false,
-            RESULT_A::ABOVE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RESULT`"]

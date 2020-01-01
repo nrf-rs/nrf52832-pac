@@ -10,21 +10,19 @@ impl crate::ResetValue for super::SHORTS {
         0
     }
 }
-#[doc = "Shortcut between COMPARE\\[0\\] event and CLEAR task\n\nValue on reset: 0"]
+#[doc = "Shortcut between COMPARE\\[0\\]
+event and CLEAR task\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum COMPARE0_CLEAR_A {
     #[doc = "0: Disable shortcut"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable shortcut"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<COMPARE0_CLEAR_A> for bool {
     #[inline(always)]
     fn from(variant: COMPARE0_CLEAR_A) -> Self {
-        match variant {
-            COMPARE0_CLEAR_A::DISABLED => false,
-            COMPARE0_CLEAR_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `COMPARE0_CLEAR`"]
@@ -88,21 +86,19 @@ impl<'a> COMPARE0_CLEAR_W<'a> {
         self.w
     }
 }
-#[doc = "Shortcut between COMPARE\\[1\\] event and CLEAR task\n\nValue on reset: 0"]
+#[doc = "Shortcut between COMPARE\\[1\\]
+event and CLEAR task\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum COMPARE1_CLEAR_A {
     #[doc = "0: Disable shortcut"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable shortcut"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<COMPARE1_CLEAR_A> for bool {
     #[inline(always)]
     fn from(variant: COMPARE1_CLEAR_A) -> Self {
-        match variant {
-            COMPARE1_CLEAR_A::DISABLED => false,
-            COMPARE1_CLEAR_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `COMPARE1_CLEAR`"]
@@ -166,21 +162,19 @@ impl<'a> COMPARE1_CLEAR_W<'a> {
         self.w
     }
 }
-#[doc = "Shortcut between COMPARE\\[2\\] event and CLEAR task\n\nValue on reset: 0"]
+#[doc = "Shortcut between COMPARE\\[2\\]
+event and CLEAR task\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum COMPARE2_CLEAR_A {
     #[doc = "0: Disable shortcut"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable shortcut"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<COMPARE2_CLEAR_A> for bool {
     #[inline(always)]
     fn from(variant: COMPARE2_CLEAR_A) -> Self {
-        match variant {
-            COMPARE2_CLEAR_A::DISABLED => false,
-            COMPARE2_CLEAR_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `COMPARE2_CLEAR`"]
@@ -244,21 +238,19 @@ impl<'a> COMPARE2_CLEAR_W<'a> {
         self.w
     }
 }
-#[doc = "Shortcut between COMPARE\\[3\\] event and CLEAR task\n\nValue on reset: 0"]
+#[doc = "Shortcut between COMPARE\\[3\\]
+event and CLEAR task\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum COMPARE3_CLEAR_A {
     #[doc = "0: Disable shortcut"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable shortcut"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<COMPARE3_CLEAR_A> for bool {
     #[inline(always)]
     fn from(variant: COMPARE3_CLEAR_A) -> Self {
-        match variant {
-            COMPARE3_CLEAR_A::DISABLED => false,
-            COMPARE3_CLEAR_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `COMPARE3_CLEAR`"]
@@ -322,21 +314,19 @@ impl<'a> COMPARE3_CLEAR_W<'a> {
         self.w
     }
 }
-#[doc = "Shortcut between COMPARE\\[4\\] event and CLEAR task\n\nValue on reset: 0"]
+#[doc = "Shortcut between COMPARE\\[4\\]
+event and CLEAR task\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum COMPARE4_CLEAR_A {
     #[doc = "0: Disable shortcut"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable shortcut"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<COMPARE4_CLEAR_A> for bool {
     #[inline(always)]
     fn from(variant: COMPARE4_CLEAR_A) -> Self {
-        match variant {
-            COMPARE4_CLEAR_A::DISABLED => false,
-            COMPARE4_CLEAR_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `COMPARE4_CLEAR`"]
@@ -400,21 +390,19 @@ impl<'a> COMPARE4_CLEAR_W<'a> {
         self.w
     }
 }
-#[doc = "Shortcut between COMPARE\\[5\\] event and CLEAR task\n\nValue on reset: 0"]
+#[doc = "Shortcut between COMPARE\\[5\\]
+event and CLEAR task\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum COMPARE5_CLEAR_A {
     #[doc = "0: Disable shortcut"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable shortcut"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<COMPARE5_CLEAR_A> for bool {
     #[inline(always)]
     fn from(variant: COMPARE5_CLEAR_A) -> Self {
-        match variant {
-            COMPARE5_CLEAR_A::DISABLED => false,
-            COMPARE5_CLEAR_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `COMPARE5_CLEAR`"]
@@ -478,21 +466,19 @@ impl<'a> COMPARE5_CLEAR_W<'a> {
         self.w
     }
 }
-#[doc = "Shortcut between COMPARE\\[0\\] event and STOP task\n\nValue on reset: 0"]
+#[doc = "Shortcut between COMPARE\\[0\\]
+event and STOP task\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum COMPARE0_STOP_A {
     #[doc = "0: Disable shortcut"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable shortcut"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<COMPARE0_STOP_A> for bool {
     #[inline(always)]
     fn from(variant: COMPARE0_STOP_A) -> Self {
-        match variant {
-            COMPARE0_STOP_A::DISABLED => false,
-            COMPARE0_STOP_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `COMPARE0_STOP`"]
@@ -556,21 +542,19 @@ impl<'a> COMPARE0_STOP_W<'a> {
         self.w
     }
 }
-#[doc = "Shortcut between COMPARE\\[1\\] event and STOP task\n\nValue on reset: 0"]
+#[doc = "Shortcut between COMPARE\\[1\\]
+event and STOP task\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum COMPARE1_STOP_A {
     #[doc = "0: Disable shortcut"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable shortcut"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<COMPARE1_STOP_A> for bool {
     #[inline(always)]
     fn from(variant: COMPARE1_STOP_A) -> Self {
-        match variant {
-            COMPARE1_STOP_A::DISABLED => false,
-            COMPARE1_STOP_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `COMPARE1_STOP`"]
@@ -634,21 +618,19 @@ impl<'a> COMPARE1_STOP_W<'a> {
         self.w
     }
 }
-#[doc = "Shortcut between COMPARE\\[2\\] event and STOP task\n\nValue on reset: 0"]
+#[doc = "Shortcut between COMPARE\\[2\\]
+event and STOP task\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum COMPARE2_STOP_A {
     #[doc = "0: Disable shortcut"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable shortcut"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<COMPARE2_STOP_A> for bool {
     #[inline(always)]
     fn from(variant: COMPARE2_STOP_A) -> Self {
-        match variant {
-            COMPARE2_STOP_A::DISABLED => false,
-            COMPARE2_STOP_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `COMPARE2_STOP`"]
@@ -712,21 +694,19 @@ impl<'a> COMPARE2_STOP_W<'a> {
         self.w
     }
 }
-#[doc = "Shortcut between COMPARE\\[3\\] event and STOP task\n\nValue on reset: 0"]
+#[doc = "Shortcut between COMPARE\\[3\\]
+event and STOP task\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum COMPARE3_STOP_A {
     #[doc = "0: Disable shortcut"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable shortcut"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<COMPARE3_STOP_A> for bool {
     #[inline(always)]
     fn from(variant: COMPARE3_STOP_A) -> Self {
-        match variant {
-            COMPARE3_STOP_A::DISABLED => false,
-            COMPARE3_STOP_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `COMPARE3_STOP`"]
@@ -790,21 +770,19 @@ impl<'a> COMPARE3_STOP_W<'a> {
         self.w
     }
 }
-#[doc = "Shortcut between COMPARE\\[4\\] event and STOP task\n\nValue on reset: 0"]
+#[doc = "Shortcut between COMPARE\\[4\\]
+event and STOP task\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum COMPARE4_STOP_A {
     #[doc = "0: Disable shortcut"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable shortcut"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<COMPARE4_STOP_A> for bool {
     #[inline(always)]
     fn from(variant: COMPARE4_STOP_A) -> Self {
-        match variant {
-            COMPARE4_STOP_A::DISABLED => false,
-            COMPARE4_STOP_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `COMPARE4_STOP`"]
@@ -868,21 +846,19 @@ impl<'a> COMPARE4_STOP_W<'a> {
         self.w
     }
 }
-#[doc = "Shortcut between COMPARE\\[5\\] event and STOP task\n\nValue on reset: 0"]
+#[doc = "Shortcut between COMPARE\\[5\\]
+event and STOP task\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum COMPARE5_STOP_A {
     #[doc = "0: Disable shortcut"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable shortcut"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<COMPARE5_STOP_A> for bool {
     #[inline(always)]
     fn from(variant: COMPARE5_STOP_A) -> Self {
-        match variant {
-            COMPARE5_STOP_A::DISABLED => false,
-            COMPARE5_STOP_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `COMPARE5_STOP`"]
@@ -947,124 +923,148 @@ impl<'a> COMPARE5_STOP_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bit 0 - Shortcut between COMPARE\\[0\\] event and CLEAR task"]
+    #[doc = "Bit 0 - Shortcut between COMPARE\\[0\\]
+event and CLEAR task"]
     #[inline(always)]
     pub fn compare0_clear(&self) -> COMPARE0_CLEAR_R {
         COMPARE0_CLEAR_R::new((self.bits & 0x01) != 0)
     }
-    #[doc = "Bit 1 - Shortcut between COMPARE\\[1\\] event and CLEAR task"]
+    #[doc = "Bit 1 - Shortcut between COMPARE\\[1\\]
+event and CLEAR task"]
     #[inline(always)]
     pub fn compare1_clear(&self) -> COMPARE1_CLEAR_R {
         COMPARE1_CLEAR_R::new(((self.bits >> 1) & 0x01) != 0)
     }
-    #[doc = "Bit 2 - Shortcut between COMPARE\\[2\\] event and CLEAR task"]
+    #[doc = "Bit 2 - Shortcut between COMPARE\\[2\\]
+event and CLEAR task"]
     #[inline(always)]
     pub fn compare2_clear(&self) -> COMPARE2_CLEAR_R {
         COMPARE2_CLEAR_R::new(((self.bits >> 2) & 0x01) != 0)
     }
-    #[doc = "Bit 3 - Shortcut between COMPARE\\[3\\] event and CLEAR task"]
+    #[doc = "Bit 3 - Shortcut between COMPARE\\[3\\]
+event and CLEAR task"]
     #[inline(always)]
     pub fn compare3_clear(&self) -> COMPARE3_CLEAR_R {
         COMPARE3_CLEAR_R::new(((self.bits >> 3) & 0x01) != 0)
     }
-    #[doc = "Bit 4 - Shortcut between COMPARE\\[4\\] event and CLEAR task"]
+    #[doc = "Bit 4 - Shortcut between COMPARE\\[4\\]
+event and CLEAR task"]
     #[inline(always)]
     pub fn compare4_clear(&self) -> COMPARE4_CLEAR_R {
         COMPARE4_CLEAR_R::new(((self.bits >> 4) & 0x01) != 0)
     }
-    #[doc = "Bit 5 - Shortcut between COMPARE\\[5\\] event and CLEAR task"]
+    #[doc = "Bit 5 - Shortcut between COMPARE\\[5\\]
+event and CLEAR task"]
     #[inline(always)]
     pub fn compare5_clear(&self) -> COMPARE5_CLEAR_R {
         COMPARE5_CLEAR_R::new(((self.bits >> 5) & 0x01) != 0)
     }
-    #[doc = "Bit 8 - Shortcut between COMPARE\\[0\\] event and STOP task"]
+    #[doc = "Bit 8 - Shortcut between COMPARE\\[0\\]
+event and STOP task"]
     #[inline(always)]
     pub fn compare0_stop(&self) -> COMPARE0_STOP_R {
         COMPARE0_STOP_R::new(((self.bits >> 8) & 0x01) != 0)
     }
-    #[doc = "Bit 9 - Shortcut between COMPARE\\[1\\] event and STOP task"]
+    #[doc = "Bit 9 - Shortcut between COMPARE\\[1\\]
+event and STOP task"]
     #[inline(always)]
     pub fn compare1_stop(&self) -> COMPARE1_STOP_R {
         COMPARE1_STOP_R::new(((self.bits >> 9) & 0x01) != 0)
     }
-    #[doc = "Bit 10 - Shortcut between COMPARE\\[2\\] event and STOP task"]
+    #[doc = "Bit 10 - Shortcut between COMPARE\\[2\\]
+event and STOP task"]
     #[inline(always)]
     pub fn compare2_stop(&self) -> COMPARE2_STOP_R {
         COMPARE2_STOP_R::new(((self.bits >> 10) & 0x01) != 0)
     }
-    #[doc = "Bit 11 - Shortcut between COMPARE\\[3\\] event and STOP task"]
+    #[doc = "Bit 11 - Shortcut between COMPARE\\[3\\]
+event and STOP task"]
     #[inline(always)]
     pub fn compare3_stop(&self) -> COMPARE3_STOP_R {
         COMPARE3_STOP_R::new(((self.bits >> 11) & 0x01) != 0)
     }
-    #[doc = "Bit 12 - Shortcut between COMPARE\\[4\\] event and STOP task"]
+    #[doc = "Bit 12 - Shortcut between COMPARE\\[4\\]
+event and STOP task"]
     #[inline(always)]
     pub fn compare4_stop(&self) -> COMPARE4_STOP_R {
         COMPARE4_STOP_R::new(((self.bits >> 12) & 0x01) != 0)
     }
-    #[doc = "Bit 13 - Shortcut between COMPARE\\[5\\] event and STOP task"]
+    #[doc = "Bit 13 - Shortcut between COMPARE\\[5\\]
+event and STOP task"]
     #[inline(always)]
     pub fn compare5_stop(&self) -> COMPARE5_STOP_R {
         COMPARE5_STOP_R::new(((self.bits >> 13) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0 - Shortcut between COMPARE\\[0\\] event and CLEAR task"]
+    #[doc = "Bit 0 - Shortcut between COMPARE\\[0\\]
+event and CLEAR task"]
     #[inline(always)]
     pub fn compare0_clear(&mut self) -> COMPARE0_CLEAR_W {
         COMPARE0_CLEAR_W { w: self }
     }
-    #[doc = "Bit 1 - Shortcut between COMPARE\\[1\\] event and CLEAR task"]
+    #[doc = "Bit 1 - Shortcut between COMPARE\\[1\\]
+event and CLEAR task"]
     #[inline(always)]
     pub fn compare1_clear(&mut self) -> COMPARE1_CLEAR_W {
         COMPARE1_CLEAR_W { w: self }
     }
-    #[doc = "Bit 2 - Shortcut between COMPARE\\[2\\] event and CLEAR task"]
+    #[doc = "Bit 2 - Shortcut between COMPARE\\[2\\]
+event and CLEAR task"]
     #[inline(always)]
     pub fn compare2_clear(&mut self) -> COMPARE2_CLEAR_W {
         COMPARE2_CLEAR_W { w: self }
     }
-    #[doc = "Bit 3 - Shortcut between COMPARE\\[3\\] event and CLEAR task"]
+    #[doc = "Bit 3 - Shortcut between COMPARE\\[3\\]
+event and CLEAR task"]
     #[inline(always)]
     pub fn compare3_clear(&mut self) -> COMPARE3_CLEAR_W {
         COMPARE3_CLEAR_W { w: self }
     }
-    #[doc = "Bit 4 - Shortcut between COMPARE\\[4\\] event and CLEAR task"]
+    #[doc = "Bit 4 - Shortcut between COMPARE\\[4\\]
+event and CLEAR task"]
     #[inline(always)]
     pub fn compare4_clear(&mut self) -> COMPARE4_CLEAR_W {
         COMPARE4_CLEAR_W { w: self }
     }
-    #[doc = "Bit 5 - Shortcut between COMPARE\\[5\\] event and CLEAR task"]
+    #[doc = "Bit 5 - Shortcut between COMPARE\\[5\\]
+event and CLEAR task"]
     #[inline(always)]
     pub fn compare5_clear(&mut self) -> COMPARE5_CLEAR_W {
         COMPARE5_CLEAR_W { w: self }
     }
-    #[doc = "Bit 8 - Shortcut between COMPARE\\[0\\] event and STOP task"]
+    #[doc = "Bit 8 - Shortcut between COMPARE\\[0\\]
+event and STOP task"]
     #[inline(always)]
     pub fn compare0_stop(&mut self) -> COMPARE0_STOP_W {
         COMPARE0_STOP_W { w: self }
     }
-    #[doc = "Bit 9 - Shortcut between COMPARE\\[1\\] event and STOP task"]
+    #[doc = "Bit 9 - Shortcut between COMPARE\\[1\\]
+event and STOP task"]
     #[inline(always)]
     pub fn compare1_stop(&mut self) -> COMPARE1_STOP_W {
         COMPARE1_STOP_W { w: self }
     }
-    #[doc = "Bit 10 - Shortcut between COMPARE\\[2\\] event and STOP task"]
+    #[doc = "Bit 10 - Shortcut between COMPARE\\[2\\]
+event and STOP task"]
     #[inline(always)]
     pub fn compare2_stop(&mut self) -> COMPARE2_STOP_W {
         COMPARE2_STOP_W { w: self }
     }
-    #[doc = "Bit 11 - Shortcut between COMPARE\\[3\\] event and STOP task"]
+    #[doc = "Bit 11 - Shortcut between COMPARE\\[3\\]
+event and STOP task"]
     #[inline(always)]
     pub fn compare3_stop(&mut self) -> COMPARE3_STOP_W {
         COMPARE3_STOP_W { w: self }
     }
-    #[doc = "Bit 12 - Shortcut between COMPARE\\[4\\] event and STOP task"]
+    #[doc = "Bit 12 - Shortcut between COMPARE\\[4\\]
+event and STOP task"]
     #[inline(always)]
     pub fn compare4_stop(&mut self) -> COMPARE4_STOP_W {
         COMPARE4_STOP_W { w: self }
     }
-    #[doc = "Bit 13 - Shortcut between COMPARE\\[5\\] event and STOP task"]
+    #[doc = "Bit 13 - Shortcut between COMPARE\\[5\\]
+event and STOP task"]
     #[inline(always)]
     pub fn compare5_stop(&mut self) -> COMPARE5_STOP_W {
         COMPARE5_STOP_W { w: self }

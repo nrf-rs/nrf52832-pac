@@ -14,17 +14,14 @@ impl crate::ResetValue for super::MODE {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OPERATION_A {
     #[doc = "0: Sample and store one pair (Left + Right) of 16bit samples per RAM word R=\\[31:16\\]; L=\\[15:0\\]"]
-    STEREO,
+    STEREO = 0,
     #[doc = "1: Sample and store two successive Left samples (16 bit each) per RAM word L1=\\[31:16\\]; L0=\\[15:0\\]"]
-    MONO,
+    MONO = 1,
 }
 impl From<OPERATION_A> for bool {
     #[inline(always)]
     fn from(variant: OPERATION_A) -> Self {
-        match variant {
-            OPERATION_A::STEREO => false,
-            OPERATION_A::MONO => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `OPERATION`"]
@@ -92,17 +89,14 @@ impl<'a> OPERATION_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EDGE_A {
     #[doc = "0: Left (or mono) is sampled on falling edge of PDM_CLK"]
-    LEFTFALLING,
+    LEFTFALLING = 0,
     #[doc = "1: Left (or mono) is sampled on rising edge of PDM_CLK"]
-    LEFTRISING,
+    LEFTRISING = 1,
 }
 impl From<EDGE_A> for bool {
     #[inline(always)]
     fn from(variant: EDGE_A) -> Self {
-        match variant {
-            EDGE_A::LEFTFALLING => false,
-            EDGE_A::LEFTRISING => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EDGE`"]

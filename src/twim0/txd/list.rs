@@ -12,19 +12,17 @@ impl crate::ResetValue for super::LIST {
 }
 #[doc = "List type\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum LIST_A {
     #[doc = "0: Disable EasyDMA list"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Use array list"]
-    ARRAYLIST,
+    ARRAYLIST = 1,
 }
 impl From<LIST_A> for u8 {
     #[inline(always)]
     fn from(variant: LIST_A) -> Self {
-        match variant {
-            LIST_A::DISABLED => 0,
-            LIST_A::ARRAYLIST => 1,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `LIST`"]

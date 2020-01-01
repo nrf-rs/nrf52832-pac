@@ -14,17 +14,14 @@ impl crate::ResetValue for super::SHORTS {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum END_START_A {
     #[doc = "0: Disable shortcut"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable shortcut"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<END_START_A> for bool {
     #[inline(always)]
     fn from(variant: END_START_A) -> Self {
-        match variant {
-            END_START_A::DISABLED => false,
-            END_START_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `END_START`"]

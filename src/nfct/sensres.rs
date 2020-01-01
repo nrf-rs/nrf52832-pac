@@ -12,31 +12,25 @@ impl crate::ResetValue for super::SENSRES {
 }
 #[doc = "Bit frame SDD as defined by the b5:b1 of byte 1 in SENS_RES response in the NFC Forum, NFC Digital Protocol Technical Specification\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum BITFRAMESDD_A {
     #[doc = "0: SDD pattern 00000"]
-    SDD00000,
+    SDD00000 = 0,
     #[doc = "1: SDD pattern 00001"]
-    SDD00001,
+    SDD00001 = 1,
     #[doc = "2: SDD pattern 00010"]
-    SDD00010,
+    SDD00010 = 2,
     #[doc = "4: SDD pattern 00100"]
-    SDD00100,
+    SDD00100 = 4,
     #[doc = "8: SDD pattern 01000"]
-    SDD01000,
+    SDD01000 = 8,
     #[doc = "16: SDD pattern 10000"]
-    SDD10000,
+    SDD10000 = 16,
 }
 impl From<BITFRAMESDD_A> for u8 {
     #[inline(always)]
     fn from(variant: BITFRAMESDD_A) -> Self {
-        match variant {
-            BITFRAMESDD_A::SDD00000 => 0,
-            BITFRAMESDD_A::SDD00001 => 1,
-            BITFRAMESDD_A::SDD00010 => 2,
-            BITFRAMESDD_A::SDD00100 => 4,
-            BITFRAMESDD_A::SDD01000 => 8,
-            BITFRAMESDD_A::SDD10000 => 16,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `BITFRAMESDD`"]
@@ -160,22 +154,19 @@ impl<'a> RFU5_W<'a> {
 }
 #[doc = "NFCID1 size. This value is used by the Auto collision resolution engine.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum NFCIDSIZE_A {
     #[doc = "0: NFCID1 size: single (4 bytes)"]
-    NFCID1SINGLE,
+    NFCID1SINGLE = 0,
     #[doc = "1: NFCID1 size: double (7 bytes)"]
-    NFCID1DOUBLE,
+    NFCID1DOUBLE = 1,
     #[doc = "2: NFCID1 size: triple (10 bytes)"]
-    NFCID1TRIPLE,
+    NFCID1TRIPLE = 2,
 }
 impl From<NFCIDSIZE_A> for u8 {
     #[inline(always)]
     fn from(variant: NFCIDSIZE_A) -> Self {
-        match variant {
-            NFCIDSIZE_A::NFCID1SINGLE => 0,
-            NFCIDSIZE_A::NFCID1DOUBLE => 1,
-            NFCIDSIZE_A::NFCID1TRIPLE => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `NFCIDSIZE`"]

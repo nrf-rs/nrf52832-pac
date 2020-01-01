@@ -14,17 +14,14 @@ impl crate::ResetValue for super::REGIONENCLR {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RGN0WA_A {
     #[doc = "0: Write access watch in this region is disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Write access watch in this region is enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<RGN0WA_A> for bool {
     #[inline(always)]
     fn from(variant: RGN0WA_A) -> Self {
-        match variant {
-            RGN0WA_A::DISABLED => false,
-            RGN0WA_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RGN0WA`"]
@@ -53,14 +50,12 @@ impl RGN0WA_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RGN0WA_AW {
     #[doc = "1: Disable write access watch in this region"]
-    CLEAR,
+    CLEAR = 1,
 }
 impl From<RGN0WA_AW> for bool {
     #[inline(always)]
     fn from(variant: RGN0WA_AW) -> Self {
-        match variant {
-            RGN0WA_AW::CLEAR => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `RGN0WA`"]
@@ -101,17 +96,14 @@ impl<'a> RGN0WA_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RGN0RA_A {
     #[doc = "0: Read access watch in this region is disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read access watch in this region is enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<RGN0RA_A> for bool {
     #[inline(always)]
     fn from(variant: RGN0RA_A) -> Self {
-        match variant {
-            RGN0RA_A::DISABLED => false,
-            RGN0RA_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RGN0RA`"]
@@ -140,14 +132,12 @@ impl RGN0RA_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RGN0RA_AW {
     #[doc = "1: Disable read access watch in this region"]
-    CLEAR,
+    CLEAR = 1,
 }
 impl From<RGN0RA_AW> for bool {
     #[inline(always)]
     fn from(variant: RGN0RA_AW) -> Self {
-        match variant {
-            RGN0RA_AW::CLEAR => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `RGN0RA`"]
@@ -188,17 +178,14 @@ impl<'a> RGN0RA_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RGN1WA_A {
     #[doc = "0: Write access watch in this region is disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Write access watch in this region is enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<RGN1WA_A> for bool {
     #[inline(always)]
     fn from(variant: RGN1WA_A) -> Self {
-        match variant {
-            RGN1WA_A::DISABLED => false,
-            RGN1WA_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RGN1WA`"]
@@ -227,14 +214,12 @@ impl RGN1WA_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RGN1WA_AW {
     #[doc = "1: Disable write access watch in this region"]
-    CLEAR,
+    CLEAR = 1,
 }
 impl From<RGN1WA_AW> for bool {
     #[inline(always)]
     fn from(variant: RGN1WA_AW) -> Self {
-        match variant {
-            RGN1WA_AW::CLEAR => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `RGN1WA`"]
@@ -275,17 +260,14 @@ impl<'a> RGN1WA_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RGN1RA_A {
     #[doc = "0: Read access watch in this region is disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read access watch in this region is enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<RGN1RA_A> for bool {
     #[inline(always)]
     fn from(variant: RGN1RA_A) -> Self {
-        match variant {
-            RGN1RA_A::DISABLED => false,
-            RGN1RA_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RGN1RA`"]
@@ -314,14 +296,12 @@ impl RGN1RA_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RGN1RA_AW {
     #[doc = "1: Disable read access watch in this region"]
-    CLEAR,
+    CLEAR = 1,
 }
 impl From<RGN1RA_AW> for bool {
     #[inline(always)]
     fn from(variant: RGN1RA_AW) -> Self {
-        match variant {
-            RGN1RA_AW::CLEAR => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `RGN1RA`"]
@@ -362,17 +342,14 @@ impl<'a> RGN1RA_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RGN2WA_A {
     #[doc = "0: Write access watch in this region is disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Write access watch in this region is enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<RGN2WA_A> for bool {
     #[inline(always)]
     fn from(variant: RGN2WA_A) -> Self {
-        match variant {
-            RGN2WA_A::DISABLED => false,
-            RGN2WA_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RGN2WA`"]
@@ -401,14 +378,12 @@ impl RGN2WA_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RGN2WA_AW {
     #[doc = "1: Disable write access watch in this region"]
-    CLEAR,
+    CLEAR = 1,
 }
 impl From<RGN2WA_AW> for bool {
     #[inline(always)]
     fn from(variant: RGN2WA_AW) -> Self {
-        match variant {
-            RGN2WA_AW::CLEAR => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `RGN2WA`"]
@@ -449,17 +424,14 @@ impl<'a> RGN2WA_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RGN2RA_A {
     #[doc = "0: Read access watch in this region is disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read access watch in this region is enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<RGN2RA_A> for bool {
     #[inline(always)]
     fn from(variant: RGN2RA_A) -> Self {
-        match variant {
-            RGN2RA_A::DISABLED => false,
-            RGN2RA_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RGN2RA`"]
@@ -488,14 +460,12 @@ impl RGN2RA_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RGN2RA_AW {
     #[doc = "1: Disable read access watch in this region"]
-    CLEAR,
+    CLEAR = 1,
 }
 impl From<RGN2RA_AW> for bool {
     #[inline(always)]
     fn from(variant: RGN2RA_AW) -> Self {
-        match variant {
-            RGN2RA_AW::CLEAR => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `RGN2RA`"]
@@ -536,17 +506,14 @@ impl<'a> RGN2RA_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RGN3WA_A {
     #[doc = "0: Write access watch in this region is disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Write access watch in this region is enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<RGN3WA_A> for bool {
     #[inline(always)]
     fn from(variant: RGN3WA_A) -> Self {
-        match variant {
-            RGN3WA_A::DISABLED => false,
-            RGN3WA_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RGN3WA`"]
@@ -575,14 +542,12 @@ impl RGN3WA_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RGN3WA_AW {
     #[doc = "1: Disable write access watch in this region"]
-    CLEAR,
+    CLEAR = 1,
 }
 impl From<RGN3WA_AW> for bool {
     #[inline(always)]
     fn from(variant: RGN3WA_AW) -> Self {
-        match variant {
-            RGN3WA_AW::CLEAR => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `RGN3WA`"]
@@ -623,17 +588,14 @@ impl<'a> RGN3WA_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RGN3RA_A {
     #[doc = "0: Read access watch in this region is disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read access watch in this region is enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<RGN3RA_A> for bool {
     #[inline(always)]
     fn from(variant: RGN3RA_A) -> Self {
-        match variant {
-            RGN3RA_A::DISABLED => false,
-            RGN3RA_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RGN3RA`"]
@@ -662,14 +624,12 @@ impl RGN3RA_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RGN3RA_AW {
     #[doc = "1: Disable read access watch in this region"]
-    CLEAR,
+    CLEAR = 1,
 }
 impl From<RGN3RA_AW> for bool {
     #[inline(always)]
     fn from(variant: RGN3RA_AW) -> Self {
-        match variant {
-            RGN3RA_AW::CLEAR => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `RGN3RA`"]
@@ -710,17 +670,14 @@ impl<'a> RGN3RA_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PRGN0WA_A {
     #[doc = "0: Write access watch in this PREGION is disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Write access watch in this PREGION is enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<PRGN0WA_A> for bool {
     #[inline(always)]
     fn from(variant: PRGN0WA_A) -> Self {
-        match variant {
-            PRGN0WA_A::DISABLED => false,
-            PRGN0WA_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PRGN0WA`"]
@@ -749,14 +706,12 @@ impl PRGN0WA_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PRGN0WA_AW {
     #[doc = "1: Disable write access watch in this PREGION"]
-    CLEAR,
+    CLEAR = 1,
 }
 impl From<PRGN0WA_AW> for bool {
     #[inline(always)]
     fn from(variant: PRGN0WA_AW) -> Self {
-        match variant {
-            PRGN0WA_AW::CLEAR => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `PRGN0WA`"]
@@ -797,17 +752,14 @@ impl<'a> PRGN0WA_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PRGN0RA_A {
     #[doc = "0: Read access watch in this PREGION is disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read access watch in this PREGION is enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<PRGN0RA_A> for bool {
     #[inline(always)]
     fn from(variant: PRGN0RA_A) -> Self {
-        match variant {
-            PRGN0RA_A::DISABLED => false,
-            PRGN0RA_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PRGN0RA`"]
@@ -836,14 +788,12 @@ impl PRGN0RA_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PRGN0RA_AW {
     #[doc = "1: Disable read access watch in this PREGION"]
-    CLEAR,
+    CLEAR = 1,
 }
 impl From<PRGN0RA_AW> for bool {
     #[inline(always)]
     fn from(variant: PRGN0RA_AW) -> Self {
-        match variant {
-            PRGN0RA_AW::CLEAR => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `PRGN0RA`"]
@@ -884,17 +834,14 @@ impl<'a> PRGN0RA_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PRGN1WA_A {
     #[doc = "0: Write access watch in this PREGION is disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Write access watch in this PREGION is enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<PRGN1WA_A> for bool {
     #[inline(always)]
     fn from(variant: PRGN1WA_A) -> Self {
-        match variant {
-            PRGN1WA_A::DISABLED => false,
-            PRGN1WA_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PRGN1WA`"]
@@ -923,14 +870,12 @@ impl PRGN1WA_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PRGN1WA_AW {
     #[doc = "1: Disable write access watch in this PREGION"]
-    CLEAR,
+    CLEAR = 1,
 }
 impl From<PRGN1WA_AW> for bool {
     #[inline(always)]
     fn from(variant: PRGN1WA_AW) -> Self {
-        match variant {
-            PRGN1WA_AW::CLEAR => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `PRGN1WA`"]
@@ -971,17 +916,14 @@ impl<'a> PRGN1WA_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PRGN1RA_A {
     #[doc = "0: Read access watch in this PREGION is disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read access watch in this PREGION is enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<PRGN1RA_A> for bool {
     #[inline(always)]
     fn from(variant: PRGN1RA_A) -> Self {
-        match variant {
-            PRGN1RA_A::DISABLED => false,
-            PRGN1RA_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PRGN1RA`"]
@@ -1010,14 +952,12 @@ impl PRGN1RA_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PRGN1RA_AW {
     #[doc = "1: Disable read access watch in this PREGION"]
-    CLEAR,
+    CLEAR = 1,
 }
 impl From<PRGN1RA_AW> for bool {
     #[inline(always)]
     fn from(variant: PRGN1RA_AW) -> Self {
-        match variant {
-            PRGN1RA_AW::CLEAR => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `PRGN1RA`"]

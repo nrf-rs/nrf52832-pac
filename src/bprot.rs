@@ -15,7 +15,7 @@ pub struct RegisterBlock {
     #[doc = "0x614 - Block protect configuration register 3"]
     pub config3: CONFIG3,
 }
-#[doc = "Block protect configuration register 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [config0](config0) module"]
+#[doc = "Block protect configuration register 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [config0](config0) module"]
 pub type CONFIG0 = crate::Reg<u32, _CONFIG0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -26,7 +26,7 @@ impl crate::Readable for CONFIG0 {}
 impl crate::Writable for CONFIG0 {}
 #[doc = "Block protect configuration register 0"]
 pub mod config0;
-#[doc = "Block protect configuration register 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [config1](config1) module"]
+#[doc = "Block protect configuration register 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [config1](config1) module"]
 pub type CONFIG1 = crate::Reg<u32, _CONFIG1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -37,7 +37,7 @@ impl crate::Readable for CONFIG1 {}
 impl crate::Writable for CONFIG1 {}
 #[doc = "Block protect configuration register 1"]
 pub mod config1;
-#[doc = "Disable protection mechanism in debug interface mode\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [disableindebug](disableindebug) module"]
+#[doc = "Disable protection mechanism in debug interface mode\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [disableindebug](disableindebug) module"]
 pub type DISABLEINDEBUG = crate::Reg<u32, _DISABLEINDEBUG>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -48,7 +48,7 @@ impl crate::Readable for DISABLEINDEBUG {}
 impl crate::Writable for DISABLEINDEBUG {}
 #[doc = "Disable protection mechanism in debug interface mode"]
 pub mod disableindebug;
-#[doc = "Unspecified\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [unused0](unused0) module"]
+#[doc = "Unspecified\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [unused0](unused0) module"]
 pub type UNUSED0 = crate::Reg<u32, _UNUSED0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -59,7 +59,7 @@ impl crate::Readable for UNUSED0 {}
 impl crate::Writable for UNUSED0 {}
 #[doc = "Unspecified"]
 pub mod unused0;
-#[doc = "Block protect configuration register 2\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [config2](config2) module"]
+#[doc = "Block protect configuration register 2\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [config2](config2) module"]
 pub type CONFIG2 = crate::Reg<u32, _CONFIG2>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -70,7 +70,7 @@ impl crate::Readable for CONFIG2 {}
 impl crate::Writable for CONFIG2 {}
 #[doc = "Block protect configuration register 2"]
 pub mod config2;
-#[doc = "Block protect configuration register 3\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [config3](config3) module"]
+#[doc = "Block protect configuration register 3\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [config3](config3) module"]
 pub type CONFIG3 = crate::Reg<u32, _CONFIG3>;
 #[allow(missing_docs)]
 #[doc(hidden)]

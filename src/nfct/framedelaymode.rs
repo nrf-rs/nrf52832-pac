@@ -12,25 +12,21 @@ impl crate::ResetValue for super::FRAMEDELAYMODE {
 }
 #[doc = "Configuration register for the Frame Delay Timer\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum FRAMEDELAYMODE_A {
     #[doc = "0: Transmission is independent of frame timer and will start when the STARTTX task is triggered. No timeout."]
-    FREERUN,
+    FREERUN = 0,
     #[doc = "1: Frame is transmitted between FRAMEDELAYMIN and FRAMEDELAYMAX"]
-    WINDOW,
+    WINDOW = 1,
     #[doc = "2: Frame is transmitted exactly at FRAMEDELAYMAX"]
-    EXACTVAL,
+    EXACTVAL = 2,
     #[doc = "3: Frame is transmitted on a bit grid between FRAMEDELAYMIN and FRAMEDELAYMAX"]
-    WINDOWGRID,
+    WINDOWGRID = 3,
 }
 impl From<FRAMEDELAYMODE_A> for u8 {
     #[inline(always)]
     fn from(variant: FRAMEDELAYMODE_A) -> Self {
-        match variant {
-            FRAMEDELAYMODE_A::FREERUN => 0,
-            FRAMEDELAYMODE_A::WINDOW => 1,
-            FRAMEDELAYMODE_A::EXACTVAL => 2,
-            FRAMEDELAYMODE_A::WINDOWGRID => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `FRAMEDELAYMODE`"]

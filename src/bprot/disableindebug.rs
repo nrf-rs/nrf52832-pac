@@ -14,17 +14,14 @@ impl crate::ResetValue for super::DISABLEINDEBUG {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DISABLEINDEBUG_A {
     #[doc = "1: Disable in debug"]
-    DISABLED,
+    DISABLED = 1,
     #[doc = "0: Enable in debug"]
-    ENABLED,
+    ENABLED = 0,
 }
 impl From<DISABLEINDEBUG_A> for bool {
     #[inline(always)]
     fn from(variant: DISABLEINDEBUG_A) -> Self {
-        match variant {
-            DISABLEINDEBUG_A::DISABLED => true,
-            DISABLEINDEBUG_A::ENABLED => false,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DISABLEINDEBUG`"]

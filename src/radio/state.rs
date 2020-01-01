@@ -2,40 +2,31 @@
 pub type R = crate::R<u32, super::STATE>;
 #[doc = "Current radio state\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum STATE_A {
     #[doc = "0: RADIO is in the Disabled state"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: RADIO is in the RXRU state"]
-    RXRU,
+    RXRU = 1,
     #[doc = "2: RADIO is in the RXIDLE state"]
-    RXIDLE,
+    RXIDLE = 2,
     #[doc = "3: RADIO is in the RX state"]
-    RX,
+    RX = 3,
     #[doc = "4: RADIO is in the RXDISABLED state"]
-    RXDISABLE,
+    RXDISABLE = 4,
     #[doc = "9: RADIO is in the TXRU state"]
-    TXRU,
+    TXRU = 9,
     #[doc = "10: RADIO is in the TXIDLE state"]
-    TXIDLE,
+    TXIDLE = 10,
     #[doc = "11: RADIO is in the TX state"]
-    TX,
+    TX = 11,
     #[doc = "12: RADIO is in the TXDISABLED state"]
-    TXDISABLE,
+    TXDISABLE = 12,
 }
 impl From<STATE_A> for u8 {
     #[inline(always)]
     fn from(variant: STATE_A) -> Self {
-        match variant {
-            STATE_A::DISABLED => 0,
-            STATE_A::RXRU => 1,
-            STATE_A::RXIDLE => 2,
-            STATE_A::RX => 3,
-            STATE_A::RXDISABLE => 4,
-            STATE_A::TXRU => 9,
-            STATE_A::TXIDLE => 10,
-            STATE_A::TX => 11,
-            STATE_A::TXDISABLE => 12,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `STATE`"]

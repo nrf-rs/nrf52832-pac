@@ -4,17 +4,14 @@ pub type R = crate::R<u32, super::MICSTATUS>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MICSTATUS_A {
     #[doc = "0: MIC check failed"]
-    CHECKFAILED,
+    CHECKFAILED = 0,
     #[doc = "1: MIC check passed"]
-    CHECKPASSED,
+    CHECKPASSED = 1,
 }
 impl From<MICSTATUS_A> for bool {
     #[inline(always)]
     fn from(variant: MICSTATUS_A) -> Self {
-        match variant {
-            MICSTATUS_A::CHECKFAILED => false,
-            MICSTATUS_A::CHECKPASSED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MICSTATUS`"]

@@ -14,17 +14,14 @@ impl crate::ResetValue for super::INTENSET {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DATARDY_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<DATARDY_A> for bool {
     #[inline(always)]
     fn from(variant: DATARDY_A) -> Self {
-        match variant {
-            DATARDY_A::DISABLED => false,
-            DATARDY_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DATARDY`"]
@@ -53,14 +50,12 @@ impl DATARDY_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DATARDY_AW {
     #[doc = "1: Enable"]
-    SET,
+    SET = 1,
 }
 impl From<DATARDY_AW> for bool {
     #[inline(always)]
     fn from(variant: DATARDY_AW) -> Self {
-        match variant {
-            DATARDY_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `DATARDY`"]

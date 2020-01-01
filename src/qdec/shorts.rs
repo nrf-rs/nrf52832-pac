@@ -14,17 +14,14 @@ impl crate::ResetValue for super::SHORTS {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REPORTRDY_READCLRACC_A {
     #[doc = "0: Disable shortcut"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable shortcut"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<REPORTRDY_READCLRACC_A> for bool {
     #[inline(always)]
     fn from(variant: REPORTRDY_READCLRACC_A) -> Self {
-        match variant {
-            REPORTRDY_READCLRACC_A::DISABLED => false,
-            REPORTRDY_READCLRACC_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REPORTRDY_READCLRACC`"]
@@ -92,17 +89,14 @@ impl<'a> REPORTRDY_READCLRACC_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SAMPLERDY_STOP_A {
     #[doc = "0: Disable shortcut"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable shortcut"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<SAMPLERDY_STOP_A> for bool {
     #[inline(always)]
     fn from(variant: SAMPLERDY_STOP_A) -> Self {
-        match variant {
-            SAMPLERDY_STOP_A::DISABLED => false,
-            SAMPLERDY_STOP_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SAMPLERDY_STOP`"]
@@ -170,17 +164,14 @@ impl<'a> SAMPLERDY_STOP_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REPORTRDY_RDCLRACC_A {
     #[doc = "0: Disable shortcut"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable shortcut"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<REPORTRDY_RDCLRACC_A> for bool {
     #[inline(always)]
     fn from(variant: REPORTRDY_RDCLRACC_A) -> Self {
-        match variant {
-            REPORTRDY_RDCLRACC_A::DISABLED => false,
-            REPORTRDY_RDCLRACC_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REPORTRDY_RDCLRACC`"]
@@ -248,17 +239,14 @@ impl<'a> REPORTRDY_RDCLRACC_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REPORTRDY_STOP_A {
     #[doc = "0: Disable shortcut"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable shortcut"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<REPORTRDY_STOP_A> for bool {
     #[inline(always)]
     fn from(variant: REPORTRDY_STOP_A) -> Self {
-        match variant {
-            REPORTRDY_STOP_A::DISABLED => false,
-            REPORTRDY_STOP_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REPORTRDY_STOP`"]
@@ -326,17 +314,14 @@ impl<'a> REPORTRDY_STOP_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DBLRDY_RDCLRDBL_A {
     #[doc = "0: Disable shortcut"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable shortcut"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<DBLRDY_RDCLRDBL_A> for bool {
     #[inline(always)]
     fn from(variant: DBLRDY_RDCLRDBL_A) -> Self {
-        match variant {
-            DBLRDY_RDCLRDBL_A::DISABLED => false,
-            DBLRDY_RDCLRDBL_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DBLRDY_RDCLRDBL`"]
@@ -404,17 +389,14 @@ impl<'a> DBLRDY_RDCLRDBL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DBLRDY_STOP_A {
     #[doc = "0: Disable shortcut"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable shortcut"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<DBLRDY_STOP_A> for bool {
     #[inline(always)]
     fn from(variant: DBLRDY_STOP_A) -> Self {
-        match variant {
-            DBLRDY_STOP_A::DISABLED => false,
-            DBLRDY_STOP_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DBLRDY_STOP`"]
@@ -482,17 +464,14 @@ impl<'a> DBLRDY_STOP_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SAMPLERDY_READCLRACC_A {
     #[doc = "0: Disable shortcut"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable shortcut"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<SAMPLERDY_READCLRACC_A> for bool {
     #[inline(always)]
     fn from(variant: SAMPLERDY_READCLRACC_A) -> Self {
-        match variant {
-            SAMPLERDY_READCLRACC_A::DISABLED => false,
-            SAMPLERDY_READCLRACC_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SAMPLERDY_READCLRACC`"]

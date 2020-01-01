@@ -12,43 +12,33 @@ impl crate::ResetValue for super::PSELP {
 }
 #[doc = "Analog positive input channel\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PSELP_A {
     #[doc = "0: Not connected"]
-    NC,
+    NC = 0,
     #[doc = "1: AIN0"]
-    ANALOGINPUT0,
+    ANALOGINPUT0 = 1,
     #[doc = "2: AIN1"]
-    ANALOGINPUT1,
+    ANALOGINPUT1 = 2,
     #[doc = "3: AIN2"]
-    ANALOGINPUT2,
+    ANALOGINPUT2 = 3,
     #[doc = "4: AIN3"]
-    ANALOGINPUT3,
+    ANALOGINPUT3 = 4,
     #[doc = "5: AIN4"]
-    ANALOGINPUT4,
+    ANALOGINPUT4 = 5,
     #[doc = "6: AIN5"]
-    ANALOGINPUT5,
+    ANALOGINPUT5 = 6,
     #[doc = "7: AIN6"]
-    ANALOGINPUT6,
+    ANALOGINPUT6 = 7,
     #[doc = "8: AIN7"]
-    ANALOGINPUT7,
+    ANALOGINPUT7 = 8,
     #[doc = "9: VDD"]
-    VDD,
+    VDD = 9,
 }
 impl From<PSELP_A> for u8 {
     #[inline(always)]
     fn from(variant: PSELP_A) -> Self {
-        match variant {
-            PSELP_A::NC => 0,
-            PSELP_A::ANALOGINPUT0 => 1,
-            PSELP_A::ANALOGINPUT1 => 2,
-            PSELP_A::ANALOGINPUT2 => 3,
-            PSELP_A::ANALOGINPUT3 => 4,
-            PSELP_A::ANALOGINPUT4 => 5,
-            PSELP_A::ANALOGINPUT5 => 6,
-            PSELP_A::ANALOGINPUT6 => 7,
-            PSELP_A::ANALOGINPUT7 => 8,
-            PSELP_A::VDD => 9,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PSELP`"]

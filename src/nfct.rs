@@ -132,7 +132,7 @@ pub struct RXD {
 #[doc = r"Register block"]
 #[doc = "Unspecified"]
 pub mod rxd;
-#[doc = "Activate NFC peripheral for incoming and outgoing frames, change state to activated\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [tasks_activate](tasks_activate) module"]
+#[doc = "Activate NFC peripheral for incoming and outgoing frames, change state to activated\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tasks_activate](tasks_activate) module"]
 pub type TASKS_ACTIVATE = crate::Reg<u32, _TASKS_ACTIVATE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -141,7 +141,7 @@ pub struct _TASKS_ACTIVATE;
 impl crate::Writable for TASKS_ACTIVATE {}
 #[doc = "Activate NFC peripheral for incoming and outgoing frames, change state to activated"]
 pub mod tasks_activate;
-#[doc = "Disable NFC peripheral\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [tasks_disable](tasks_disable) module"]
+#[doc = "Disable NFC peripheral\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tasks_disable](tasks_disable) module"]
 pub type TASKS_DISABLE = crate::Reg<u32, _TASKS_DISABLE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -150,7 +150,7 @@ pub struct _TASKS_DISABLE;
 impl crate::Writable for TASKS_DISABLE {}
 #[doc = "Disable NFC peripheral"]
 pub mod tasks_disable;
-#[doc = "Enable NFC sense field mode, change state to sense mode\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [tasks_sense](tasks_sense) module"]
+#[doc = "Enable NFC sense field mode, change state to sense mode\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tasks_sense](tasks_sense) module"]
 pub type TASKS_SENSE = crate::Reg<u32, _TASKS_SENSE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -159,7 +159,7 @@ pub struct _TASKS_SENSE;
 impl crate::Writable for TASKS_SENSE {}
 #[doc = "Enable NFC sense field mode, change state to sense mode"]
 pub mod tasks_sense;
-#[doc = "Start transmission of a outgoing frame, change state to transmit\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [tasks_starttx](tasks_starttx) module"]
+#[doc = "Start transmission of a outgoing frame, change state to transmit\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tasks_starttx](tasks_starttx) module"]
 pub type TASKS_STARTTX = crate::Reg<u32, _TASKS_STARTTX>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -168,7 +168,7 @@ pub struct _TASKS_STARTTX;
 impl crate::Writable for TASKS_STARTTX {}
 #[doc = "Start transmission of a outgoing frame, change state to transmit"]
 pub mod tasks_starttx;
-#[doc = "Initializes the EasyDMA for receive.\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [tasks_enablerxdata](tasks_enablerxdata) module"]
+#[doc = "Initializes the EasyDMA for receive.\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tasks_enablerxdata](tasks_enablerxdata) module"]
 pub type TASKS_ENABLERXDATA = crate::Reg<u32, _TASKS_ENABLERXDATA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -177,7 +177,7 @@ pub struct _TASKS_ENABLERXDATA;
 impl crate::Writable for TASKS_ENABLERXDATA {}
 #[doc = "Initializes the EasyDMA for receive."]
 pub mod tasks_enablerxdata;
-#[doc = "Force state machine to IDLE state\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [tasks_goidle](tasks_goidle) module"]
+#[doc = "Force state machine to IDLE state\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tasks_goidle](tasks_goidle) module"]
 pub type TASKS_GOIDLE = crate::Reg<u32, _TASKS_GOIDLE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -186,7 +186,7 @@ pub struct _TASKS_GOIDLE;
 impl crate::Writable for TASKS_GOIDLE {}
 #[doc = "Force state machine to IDLE state"]
 pub mod tasks_goidle;
-#[doc = "Force state machine to SLEEP_A state\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [tasks_gosleep](tasks_gosleep) module"]
+#[doc = "Force state machine to SLEEP_A state\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tasks_gosleep](tasks_gosleep) module"]
 pub type TASKS_GOSLEEP = crate::Reg<u32, _TASKS_GOSLEEP>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -195,7 +195,7 @@ pub struct _TASKS_GOSLEEP;
 impl crate::Writable for TASKS_GOSLEEP {}
 #[doc = "Force state machine to SLEEP_A state"]
 pub mod tasks_gosleep;
-#[doc = "The NFC peripheral is ready to receive and send frames\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [events_ready](events_ready) module"]
+#[doc = "The NFC peripheral is ready to receive and send frames\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [events_ready](events_ready) module"]
 pub type EVENTS_READY = crate::Reg<u32, _EVENTS_READY>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -206,7 +206,7 @@ impl crate::Readable for EVENTS_READY {}
 impl crate::Writable for EVENTS_READY {}
 #[doc = "The NFC peripheral is ready to receive and send frames"]
 pub mod events_ready;
-#[doc = "Remote NFC field detected\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [events_fielddetected](events_fielddetected) module"]
+#[doc = "Remote NFC field detected\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [events_fielddetected](events_fielddetected) module"]
 pub type EVENTS_FIELDDETECTED = crate::Reg<u32, _EVENTS_FIELDDETECTED>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -217,7 +217,7 @@ impl crate::Readable for EVENTS_FIELDDETECTED {}
 impl crate::Writable for EVENTS_FIELDDETECTED {}
 #[doc = "Remote NFC field detected"]
 pub mod events_fielddetected;
-#[doc = "Remote NFC field lost\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [events_fieldlost](events_fieldlost) module"]
+#[doc = "Remote NFC field lost\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [events_fieldlost](events_fieldlost) module"]
 pub type EVENTS_FIELDLOST = crate::Reg<u32, _EVENTS_FIELDLOST>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -228,7 +228,7 @@ impl crate::Readable for EVENTS_FIELDLOST {}
 impl crate::Writable for EVENTS_FIELDLOST {}
 #[doc = "Remote NFC field lost"]
 pub mod events_fieldlost;
-#[doc = "Marks the start of the first symbol of a transmitted frame\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [events_txframestart](events_txframestart) module"]
+#[doc = "Marks the start of the first symbol of a transmitted frame\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [events_txframestart](events_txframestart) module"]
 pub type EVENTS_TXFRAMESTART = crate::Reg<u32, _EVENTS_TXFRAMESTART>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -239,7 +239,7 @@ impl crate::Readable for EVENTS_TXFRAMESTART {}
 impl crate::Writable for EVENTS_TXFRAMESTART {}
 #[doc = "Marks the start of the first symbol of a transmitted frame"]
 pub mod events_txframestart;
-#[doc = "Marks the end of the last transmitted on-air symbol of a frame\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [events_txframeend](events_txframeend) module"]
+#[doc = "Marks the end of the last transmitted on-air symbol of a frame\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [events_txframeend](events_txframeend) module"]
 pub type EVENTS_TXFRAMEEND = crate::Reg<u32, _EVENTS_TXFRAMEEND>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -250,7 +250,7 @@ impl crate::Readable for EVENTS_TXFRAMEEND {}
 impl crate::Writable for EVENTS_TXFRAMEEND {}
 #[doc = "Marks the end of the last transmitted on-air symbol of a frame"]
 pub mod events_txframeend;
-#[doc = "Marks the end of the first symbol of a received frame\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [events_rxframestart](events_rxframestart) module"]
+#[doc = "Marks the end of the first symbol of a received frame\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [events_rxframestart](events_rxframestart) module"]
 pub type EVENTS_RXFRAMESTART = crate::Reg<u32, _EVENTS_RXFRAMESTART>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -261,7 +261,7 @@ impl crate::Readable for EVENTS_RXFRAMESTART {}
 impl crate::Writable for EVENTS_RXFRAMESTART {}
 #[doc = "Marks the end of the first symbol of a received frame"]
 pub mod events_rxframestart;
-#[doc = "Received data have been checked (CRC, parity) and transferred to RAM, and EasyDMA has ended accessing the RX buffer\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [events_rxframeend](events_rxframeend) module"]
+#[doc = "Received data have been checked (CRC, parity) and transferred to RAM, and EasyDMA has ended accessing the RX buffer\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [events_rxframeend](events_rxframeend) module"]
 pub type EVENTS_RXFRAMEEND = crate::Reg<u32, _EVENTS_RXFRAMEEND>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -272,7 +272,7 @@ impl crate::Readable for EVENTS_RXFRAMEEND {}
 impl crate::Writable for EVENTS_RXFRAMEEND {}
 #[doc = "Received data have been checked (CRC, parity) and transferred to RAM, and EasyDMA has ended accessing the RX buffer"]
 pub mod events_rxframeend;
-#[doc = "NFC error reported. The ERRORSTATUS register contains details on the source of the error.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [events_error](events_error) module"]
+#[doc = "NFC error reported. The ERRORSTATUS register contains details on the source of the error.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [events_error](events_error) module"]
 pub type EVENTS_ERROR = crate::Reg<u32, _EVENTS_ERROR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -283,7 +283,7 @@ impl crate::Readable for EVENTS_ERROR {}
 impl crate::Writable for EVENTS_ERROR {}
 #[doc = "NFC error reported. The ERRORSTATUS register contains details on the source of the error."]
 pub mod events_error;
-#[doc = "NFC RX frame error reported. The FRAMESTATUS.RX register contains details on the source of the error.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [events_rxerror](events_rxerror) module"]
+#[doc = "NFC RX frame error reported. The FRAMESTATUS.RX register contains details on the source of the error.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [events_rxerror](events_rxerror) module"]
 pub type EVENTS_RXERROR = crate::Reg<u32, _EVENTS_RXERROR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -294,7 +294,7 @@ impl crate::Readable for EVENTS_RXERROR {}
 impl crate::Writable for EVENTS_RXERROR {}
 #[doc = "NFC RX frame error reported. The FRAMESTATUS.RX register contains details on the source of the error."]
 pub mod events_rxerror;
-#[doc = "RX buffer (as defined by PACKETPTR and MAXLEN) in Data RAM full.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [events_endrx](events_endrx) module"]
+#[doc = "RX buffer (as defined by PACKETPTR and MAXLEN) in Data RAM full.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [events_endrx](events_endrx) module"]
 pub type EVENTS_ENDRX = crate::Reg<u32, _EVENTS_ENDRX>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -305,7 +305,7 @@ impl crate::Readable for EVENTS_ENDRX {}
 impl crate::Writable for EVENTS_ENDRX {}
 #[doc = "RX buffer (as defined by PACKETPTR and MAXLEN) in Data RAM full."]
 pub mod events_endrx;
-#[doc = "Transmission of data in RAM has ended, and EasyDMA has ended accessing the TX buffer\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [events_endtx](events_endtx) module"]
+#[doc = "Transmission of data in RAM has ended, and EasyDMA has ended accessing the TX buffer\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [events_endtx](events_endtx) module"]
 pub type EVENTS_ENDTX = crate::Reg<u32, _EVENTS_ENDTX>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -316,7 +316,7 @@ impl crate::Readable for EVENTS_ENDTX {}
 impl crate::Writable for EVENTS_ENDTX {}
 #[doc = "Transmission of data in RAM has ended, and EasyDMA has ended accessing the TX buffer"]
 pub mod events_endtx;
-#[doc = "Auto collision resolution process has started\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [events_autocolresstarted](events_autocolresstarted) module"]
+#[doc = "Auto collision resolution process has started\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [events_autocolresstarted](events_autocolresstarted) module"]
 pub type EVENTS_AUTOCOLRESSTARTED = crate::Reg<u32, _EVENTS_AUTOCOLRESSTARTED>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -327,7 +327,7 @@ impl crate::Readable for EVENTS_AUTOCOLRESSTARTED {}
 impl crate::Writable for EVENTS_AUTOCOLRESSTARTED {}
 #[doc = "Auto collision resolution process has started"]
 pub mod events_autocolresstarted;
-#[doc = "NFC Auto collision resolution error reported.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [events_collision](events_collision) module"]
+#[doc = "NFC Auto collision resolution error reported.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [events_collision](events_collision) module"]
 pub type EVENTS_COLLISION = crate::Reg<u32, _EVENTS_COLLISION>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -338,7 +338,7 @@ impl crate::Readable for EVENTS_COLLISION {}
 impl crate::Writable for EVENTS_COLLISION {}
 #[doc = "NFC Auto collision resolution error reported."]
 pub mod events_collision;
-#[doc = "NFC Auto collision resolution successfully completed\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [events_selected](events_selected) module"]
+#[doc = "NFC Auto collision resolution successfully completed\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [events_selected](events_selected) module"]
 pub type EVENTS_SELECTED = crate::Reg<u32, _EVENTS_SELECTED>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -349,7 +349,7 @@ impl crate::Readable for EVENTS_SELECTED {}
 impl crate::Writable for EVENTS_SELECTED {}
 #[doc = "NFC Auto collision resolution successfully completed"]
 pub mod events_selected;
-#[doc = "EasyDMA is ready to receive or send frames.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [events_started](events_started) module"]
+#[doc = "EasyDMA is ready to receive or send frames.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [events_started](events_started) module"]
 pub type EVENTS_STARTED = crate::Reg<u32, _EVENTS_STARTED>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -360,7 +360,7 @@ impl crate::Readable for EVENTS_STARTED {}
 impl crate::Writable for EVENTS_STARTED {}
 #[doc = "EasyDMA is ready to receive or send frames."]
 pub mod events_started;
-#[doc = "Shortcut register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [shorts](shorts) module"]
+#[doc = "Shortcut register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [shorts](shorts) module"]
 pub type SHORTS = crate::Reg<u32, _SHORTS>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -371,7 +371,7 @@ impl crate::Readable for SHORTS {}
 impl crate::Writable for SHORTS {}
 #[doc = "Shortcut register"]
 pub mod shorts;
-#[doc = "Enable or disable interrupt\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [inten](inten) module"]
+#[doc = "Enable or disable interrupt\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [inten](inten) module"]
 pub type INTEN = crate::Reg<u32, _INTEN>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -382,7 +382,7 @@ impl crate::Readable for INTEN {}
 impl crate::Writable for INTEN {}
 #[doc = "Enable or disable interrupt"]
 pub mod inten;
-#[doc = "Enable interrupt\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [intenset](intenset) module"]
+#[doc = "Enable interrupt\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [intenset](intenset) module"]
 pub type INTENSET = crate::Reg<u32, _INTENSET>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -393,7 +393,7 @@ impl crate::Readable for INTENSET {}
 impl crate::Writable for INTENSET {}
 #[doc = "Enable interrupt"]
 pub mod intenset;
-#[doc = "Disable interrupt\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [intenclr](intenclr) module"]
+#[doc = "Disable interrupt\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [intenclr](intenclr) module"]
 pub type INTENCLR = crate::Reg<u32, _INTENCLR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -404,7 +404,7 @@ impl crate::Readable for INTENCLR {}
 impl crate::Writable for INTENCLR {}
 #[doc = "Disable interrupt"]
 pub mod intenclr;
-#[doc = "NFC Error Status register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [errorstatus](errorstatus) module"]
+#[doc = "NFC Error Status register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [errorstatus](errorstatus) module"]
 pub type ERRORSTATUS = crate::Reg<u32, _ERRORSTATUS>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -415,7 +415,7 @@ impl crate::Readable for ERRORSTATUS {}
 impl crate::Writable for ERRORSTATUS {}
 #[doc = "NFC Error Status register"]
 pub mod errorstatus;
-#[doc = "Current value driven to the NFC Load Control\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [currentloadctrl](currentloadctrl) module"]
+#[doc = "Current value driven to the NFC Load Control\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [currentloadctrl](currentloadctrl) module"]
 pub type CURRENTLOADCTRL = crate::Reg<u32, _CURRENTLOADCTRL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -424,7 +424,7 @@ pub struct _CURRENTLOADCTRL;
 impl crate::Readable for CURRENTLOADCTRL {}
 #[doc = "Current value driven to the NFC Load Control"]
 pub mod currentloadctrl;
-#[doc = "Indicates the presence or not of a valid field\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [fieldpresent](fieldpresent) module"]
+#[doc = "Indicates the presence or not of a valid field\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [fieldpresent](fieldpresent) module"]
 pub type FIELDPRESENT = crate::Reg<u32, _FIELDPRESENT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -433,7 +433,7 @@ pub struct _FIELDPRESENT;
 impl crate::Readable for FIELDPRESENT {}
 #[doc = "Indicates the presence or not of a valid field"]
 pub mod fieldpresent;
-#[doc = "Minimum frame delay\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [framedelaymin](framedelaymin) module"]
+#[doc = "Minimum frame delay\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [framedelaymin](framedelaymin) module"]
 pub type FRAMEDELAYMIN = crate::Reg<u32, _FRAMEDELAYMIN>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -444,7 +444,7 @@ impl crate::Readable for FRAMEDELAYMIN {}
 impl crate::Writable for FRAMEDELAYMIN {}
 #[doc = "Minimum frame delay"]
 pub mod framedelaymin;
-#[doc = "Maximum frame delay\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [framedelaymax](framedelaymax) module"]
+#[doc = "Maximum frame delay\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [framedelaymax](framedelaymax) module"]
 pub type FRAMEDELAYMAX = crate::Reg<u32, _FRAMEDELAYMAX>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -455,7 +455,7 @@ impl crate::Readable for FRAMEDELAYMAX {}
 impl crate::Writable for FRAMEDELAYMAX {}
 #[doc = "Maximum frame delay"]
 pub mod framedelaymax;
-#[doc = "Configuration register for the Frame Delay Timer\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [framedelaymode](framedelaymode) module"]
+#[doc = "Configuration register for the Frame Delay Timer\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [framedelaymode](framedelaymode) module"]
 pub type FRAMEDELAYMODE = crate::Reg<u32, _FRAMEDELAYMODE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -466,7 +466,7 @@ impl crate::Readable for FRAMEDELAYMODE {}
 impl crate::Writable for FRAMEDELAYMODE {}
 #[doc = "Configuration register for the Frame Delay Timer"]
 pub mod framedelaymode;
-#[doc = "Packet pointer for TXD and RXD data storage in Data RAM\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [packetptr](packetptr) module"]
+#[doc = "Packet pointer for TXD and RXD data storage in Data RAM\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [packetptr](packetptr) module"]
 pub type PACKETPTR = crate::Reg<u32, _PACKETPTR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -477,7 +477,7 @@ impl crate::Readable for PACKETPTR {}
 impl crate::Writable for PACKETPTR {}
 #[doc = "Packet pointer for TXD and RXD data storage in Data RAM"]
 pub mod packetptr;
-#[doc = "Size of allocated for TXD and RXD data storage buffer in Data RAM\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [maxlen](maxlen) module"]
+#[doc = "Size of allocated for TXD and RXD data storage buffer in Data RAM\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [maxlen](maxlen) module"]
 pub type MAXLEN = crate::Reg<u32, _MAXLEN>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -488,7 +488,7 @@ impl crate::Readable for MAXLEN {}
 impl crate::Writable for MAXLEN {}
 #[doc = "Size of allocated for TXD and RXD data storage buffer in Data RAM"]
 pub mod maxlen;
-#[doc = "Last NFCID1 part (4, 7 or 10 bytes ID)\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [nfcid1_last](nfcid1_last) module"]
+#[doc = "Last NFCID1 part (4, 7 or 10 bytes ID)\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [nfcid1_last](nfcid1_last) module"]
 pub type NFCID1_LAST = crate::Reg<u32, _NFCID1_LAST>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -499,7 +499,7 @@ impl crate::Readable for NFCID1_LAST {}
 impl crate::Writable for NFCID1_LAST {}
 #[doc = "Last NFCID1 part (4, 7 or 10 bytes ID)"]
 pub mod nfcid1_last;
-#[doc = "Second last NFCID1 part (7 or 10 bytes ID)\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [nfcid1_2nd_last](nfcid1_2nd_last) module"]
+#[doc = "Second last NFCID1 part (7 or 10 bytes ID)\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [nfcid1_2nd_last](nfcid1_2nd_last) module"]
 pub type NFCID1_2ND_LAST = crate::Reg<u32, _NFCID1_2ND_LAST>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -510,7 +510,7 @@ impl crate::Readable for NFCID1_2ND_LAST {}
 impl crate::Writable for NFCID1_2ND_LAST {}
 #[doc = "Second last NFCID1 part (7 or 10 bytes ID)"]
 pub mod nfcid1_2nd_last;
-#[doc = "Third last NFCID1 part (10 bytes ID)\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [nfcid1_3rd_last](nfcid1_3rd_last) module"]
+#[doc = "Third last NFCID1 part (10 bytes ID)\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [nfcid1_3rd_last](nfcid1_3rd_last) module"]
 pub type NFCID1_3RD_LAST = crate::Reg<u32, _NFCID1_3RD_LAST>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -521,7 +521,7 @@ impl crate::Readable for NFCID1_3RD_LAST {}
 impl crate::Writable for NFCID1_3RD_LAST {}
 #[doc = "Third last NFCID1 part (10 bytes ID)"]
 pub mod nfcid1_3rd_last;
-#[doc = "NFC-A SENS_RES auto-response settings\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sensres](sensres) module"]
+#[doc = "NFC-A SENS_RES auto-response settings\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sensres](sensres) module"]
 pub type SENSRES = crate::Reg<u32, _SENSRES>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -532,7 +532,7 @@ impl crate::Readable for SENSRES {}
 impl crate::Writable for SENSRES {}
 #[doc = "NFC-A SENS_RES auto-response settings"]
 pub mod sensres;
-#[doc = "NFC-A SEL_RES auto-response settings\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [selres](selres) module"]
+#[doc = "NFC-A SEL_RES auto-response settings\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [selres](selres) module"]
 pub type SELRES = crate::Reg<u32, _SELRES>;
 #[allow(missing_docs)]
 #[doc(hidden)]

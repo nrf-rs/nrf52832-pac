@@ -4,17 +4,14 @@ pub type R = crate::R<u32, super::IN>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN0_A {
     #[doc = "0: Pin input is low"]
-    LOW,
+    LOW = 0,
     #[doc = "1: Pin input is high"]
-    HIGH,
+    HIGH = 1,
 }
 impl From<PIN0_A> for bool {
     #[inline(always)]
     fn from(variant: PIN0_A) -> Self {
-        match variant {
-            PIN0_A::LOW => false,
-            PIN0_A::HIGH => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIN0`"]
@@ -43,17 +40,14 @@ impl PIN0_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN1_A {
     #[doc = "0: Pin input is low"]
-    LOW,
+    LOW = 0,
     #[doc = "1: Pin input is high"]
-    HIGH,
+    HIGH = 1,
 }
 impl From<PIN1_A> for bool {
     #[inline(always)]
     fn from(variant: PIN1_A) -> Self {
-        match variant {
-            PIN1_A::LOW => false,
-            PIN1_A::HIGH => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIN1`"]
@@ -82,17 +76,14 @@ impl PIN1_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN2_A {
     #[doc = "0: Pin input is low"]
-    LOW,
+    LOW = 0,
     #[doc = "1: Pin input is high"]
-    HIGH,
+    HIGH = 1,
 }
 impl From<PIN2_A> for bool {
     #[inline(always)]
     fn from(variant: PIN2_A) -> Self {
-        match variant {
-            PIN2_A::LOW => false,
-            PIN2_A::HIGH => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIN2`"]
@@ -121,17 +112,14 @@ impl PIN2_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN3_A {
     #[doc = "0: Pin input is low"]
-    LOW,
+    LOW = 0,
     #[doc = "1: Pin input is high"]
-    HIGH,
+    HIGH = 1,
 }
 impl From<PIN3_A> for bool {
     #[inline(always)]
     fn from(variant: PIN3_A) -> Self {
-        match variant {
-            PIN3_A::LOW => false,
-            PIN3_A::HIGH => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIN3`"]
@@ -160,17 +148,14 @@ impl PIN3_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN4_A {
     #[doc = "0: Pin input is low"]
-    LOW,
+    LOW = 0,
     #[doc = "1: Pin input is high"]
-    HIGH,
+    HIGH = 1,
 }
 impl From<PIN4_A> for bool {
     #[inline(always)]
     fn from(variant: PIN4_A) -> Self {
-        match variant {
-            PIN4_A::LOW => false,
-            PIN4_A::HIGH => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIN4`"]
@@ -199,17 +184,14 @@ impl PIN4_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN5_A {
     #[doc = "0: Pin input is low"]
-    LOW,
+    LOW = 0,
     #[doc = "1: Pin input is high"]
-    HIGH,
+    HIGH = 1,
 }
 impl From<PIN5_A> for bool {
     #[inline(always)]
     fn from(variant: PIN5_A) -> Self {
-        match variant {
-            PIN5_A::LOW => false,
-            PIN5_A::HIGH => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIN5`"]
@@ -238,17 +220,14 @@ impl PIN5_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN6_A {
     #[doc = "0: Pin input is low"]
-    LOW,
+    LOW = 0,
     #[doc = "1: Pin input is high"]
-    HIGH,
+    HIGH = 1,
 }
 impl From<PIN6_A> for bool {
     #[inline(always)]
     fn from(variant: PIN6_A) -> Self {
-        match variant {
-            PIN6_A::LOW => false,
-            PIN6_A::HIGH => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIN6`"]
@@ -277,17 +256,14 @@ impl PIN6_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN7_A {
     #[doc = "0: Pin input is low"]
-    LOW,
+    LOW = 0,
     #[doc = "1: Pin input is high"]
-    HIGH,
+    HIGH = 1,
 }
 impl From<PIN7_A> for bool {
     #[inline(always)]
     fn from(variant: PIN7_A) -> Self {
-        match variant {
-            PIN7_A::LOW => false,
-            PIN7_A::HIGH => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIN7`"]
@@ -316,17 +292,14 @@ impl PIN7_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN8_A {
     #[doc = "0: Pin input is low"]
-    LOW,
+    LOW = 0,
     #[doc = "1: Pin input is high"]
-    HIGH,
+    HIGH = 1,
 }
 impl From<PIN8_A> for bool {
     #[inline(always)]
     fn from(variant: PIN8_A) -> Self {
-        match variant {
-            PIN8_A::LOW => false,
-            PIN8_A::HIGH => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIN8`"]
@@ -355,17 +328,14 @@ impl PIN8_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN9_A {
     #[doc = "0: Pin input is low"]
-    LOW,
+    LOW = 0,
     #[doc = "1: Pin input is high"]
-    HIGH,
+    HIGH = 1,
 }
 impl From<PIN9_A> for bool {
     #[inline(always)]
     fn from(variant: PIN9_A) -> Self {
-        match variant {
-            PIN9_A::LOW => false,
-            PIN9_A::HIGH => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIN9`"]
@@ -394,17 +364,14 @@ impl PIN9_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN10_A {
     #[doc = "0: Pin input is low"]
-    LOW,
+    LOW = 0,
     #[doc = "1: Pin input is high"]
-    HIGH,
+    HIGH = 1,
 }
 impl From<PIN10_A> for bool {
     #[inline(always)]
     fn from(variant: PIN10_A) -> Self {
-        match variant {
-            PIN10_A::LOW => false,
-            PIN10_A::HIGH => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIN10`"]
@@ -433,17 +400,14 @@ impl PIN10_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN11_A {
     #[doc = "0: Pin input is low"]
-    LOW,
+    LOW = 0,
     #[doc = "1: Pin input is high"]
-    HIGH,
+    HIGH = 1,
 }
 impl From<PIN11_A> for bool {
     #[inline(always)]
     fn from(variant: PIN11_A) -> Self {
-        match variant {
-            PIN11_A::LOW => false,
-            PIN11_A::HIGH => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIN11`"]
@@ -472,17 +436,14 @@ impl PIN11_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN12_A {
     #[doc = "0: Pin input is low"]
-    LOW,
+    LOW = 0,
     #[doc = "1: Pin input is high"]
-    HIGH,
+    HIGH = 1,
 }
 impl From<PIN12_A> for bool {
     #[inline(always)]
     fn from(variant: PIN12_A) -> Self {
-        match variant {
-            PIN12_A::LOW => false,
-            PIN12_A::HIGH => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIN12`"]
@@ -511,17 +472,14 @@ impl PIN12_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN13_A {
     #[doc = "0: Pin input is low"]
-    LOW,
+    LOW = 0,
     #[doc = "1: Pin input is high"]
-    HIGH,
+    HIGH = 1,
 }
 impl From<PIN13_A> for bool {
     #[inline(always)]
     fn from(variant: PIN13_A) -> Self {
-        match variant {
-            PIN13_A::LOW => false,
-            PIN13_A::HIGH => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIN13`"]
@@ -550,17 +508,14 @@ impl PIN13_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN14_A {
     #[doc = "0: Pin input is low"]
-    LOW,
+    LOW = 0,
     #[doc = "1: Pin input is high"]
-    HIGH,
+    HIGH = 1,
 }
 impl From<PIN14_A> for bool {
     #[inline(always)]
     fn from(variant: PIN14_A) -> Self {
-        match variant {
-            PIN14_A::LOW => false,
-            PIN14_A::HIGH => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIN14`"]
@@ -589,17 +544,14 @@ impl PIN14_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN15_A {
     #[doc = "0: Pin input is low"]
-    LOW,
+    LOW = 0,
     #[doc = "1: Pin input is high"]
-    HIGH,
+    HIGH = 1,
 }
 impl From<PIN15_A> for bool {
     #[inline(always)]
     fn from(variant: PIN15_A) -> Self {
-        match variant {
-            PIN15_A::LOW => false,
-            PIN15_A::HIGH => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIN15`"]
@@ -628,17 +580,14 @@ impl PIN15_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN16_A {
     #[doc = "0: Pin input is low"]
-    LOW,
+    LOW = 0,
     #[doc = "1: Pin input is high"]
-    HIGH,
+    HIGH = 1,
 }
 impl From<PIN16_A> for bool {
     #[inline(always)]
     fn from(variant: PIN16_A) -> Self {
-        match variant {
-            PIN16_A::LOW => false,
-            PIN16_A::HIGH => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIN16`"]
@@ -667,17 +616,14 @@ impl PIN16_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN17_A {
     #[doc = "0: Pin input is low"]
-    LOW,
+    LOW = 0,
     #[doc = "1: Pin input is high"]
-    HIGH,
+    HIGH = 1,
 }
 impl From<PIN17_A> for bool {
     #[inline(always)]
     fn from(variant: PIN17_A) -> Self {
-        match variant {
-            PIN17_A::LOW => false,
-            PIN17_A::HIGH => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIN17`"]
@@ -706,17 +652,14 @@ impl PIN17_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN18_A {
     #[doc = "0: Pin input is low"]
-    LOW,
+    LOW = 0,
     #[doc = "1: Pin input is high"]
-    HIGH,
+    HIGH = 1,
 }
 impl From<PIN18_A> for bool {
     #[inline(always)]
     fn from(variant: PIN18_A) -> Self {
-        match variant {
-            PIN18_A::LOW => false,
-            PIN18_A::HIGH => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIN18`"]
@@ -745,17 +688,14 @@ impl PIN18_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN19_A {
     #[doc = "0: Pin input is low"]
-    LOW,
+    LOW = 0,
     #[doc = "1: Pin input is high"]
-    HIGH,
+    HIGH = 1,
 }
 impl From<PIN19_A> for bool {
     #[inline(always)]
     fn from(variant: PIN19_A) -> Self {
-        match variant {
-            PIN19_A::LOW => false,
-            PIN19_A::HIGH => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIN19`"]
@@ -784,17 +724,14 @@ impl PIN19_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN20_A {
     #[doc = "0: Pin input is low"]
-    LOW,
+    LOW = 0,
     #[doc = "1: Pin input is high"]
-    HIGH,
+    HIGH = 1,
 }
 impl From<PIN20_A> for bool {
     #[inline(always)]
     fn from(variant: PIN20_A) -> Self {
-        match variant {
-            PIN20_A::LOW => false,
-            PIN20_A::HIGH => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIN20`"]
@@ -823,17 +760,14 @@ impl PIN20_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN21_A {
     #[doc = "0: Pin input is low"]
-    LOW,
+    LOW = 0,
     #[doc = "1: Pin input is high"]
-    HIGH,
+    HIGH = 1,
 }
 impl From<PIN21_A> for bool {
     #[inline(always)]
     fn from(variant: PIN21_A) -> Self {
-        match variant {
-            PIN21_A::LOW => false,
-            PIN21_A::HIGH => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIN21`"]
@@ -862,17 +796,14 @@ impl PIN21_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN22_A {
     #[doc = "0: Pin input is low"]
-    LOW,
+    LOW = 0,
     #[doc = "1: Pin input is high"]
-    HIGH,
+    HIGH = 1,
 }
 impl From<PIN22_A> for bool {
     #[inline(always)]
     fn from(variant: PIN22_A) -> Self {
-        match variant {
-            PIN22_A::LOW => false,
-            PIN22_A::HIGH => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIN22`"]
@@ -901,17 +832,14 @@ impl PIN22_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN23_A {
     #[doc = "0: Pin input is low"]
-    LOW,
+    LOW = 0,
     #[doc = "1: Pin input is high"]
-    HIGH,
+    HIGH = 1,
 }
 impl From<PIN23_A> for bool {
     #[inline(always)]
     fn from(variant: PIN23_A) -> Self {
-        match variant {
-            PIN23_A::LOW => false,
-            PIN23_A::HIGH => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIN23`"]
@@ -940,17 +868,14 @@ impl PIN23_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN24_A {
     #[doc = "0: Pin input is low"]
-    LOW,
+    LOW = 0,
     #[doc = "1: Pin input is high"]
-    HIGH,
+    HIGH = 1,
 }
 impl From<PIN24_A> for bool {
     #[inline(always)]
     fn from(variant: PIN24_A) -> Self {
-        match variant {
-            PIN24_A::LOW => false,
-            PIN24_A::HIGH => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIN24`"]
@@ -979,17 +904,14 @@ impl PIN24_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN25_A {
     #[doc = "0: Pin input is low"]
-    LOW,
+    LOW = 0,
     #[doc = "1: Pin input is high"]
-    HIGH,
+    HIGH = 1,
 }
 impl From<PIN25_A> for bool {
     #[inline(always)]
     fn from(variant: PIN25_A) -> Self {
-        match variant {
-            PIN25_A::LOW => false,
-            PIN25_A::HIGH => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIN25`"]
@@ -1018,17 +940,14 @@ impl PIN25_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN26_A {
     #[doc = "0: Pin input is low"]
-    LOW,
+    LOW = 0,
     #[doc = "1: Pin input is high"]
-    HIGH,
+    HIGH = 1,
 }
 impl From<PIN26_A> for bool {
     #[inline(always)]
     fn from(variant: PIN26_A) -> Self {
-        match variant {
-            PIN26_A::LOW => false,
-            PIN26_A::HIGH => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIN26`"]
@@ -1057,17 +976,14 @@ impl PIN26_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN27_A {
     #[doc = "0: Pin input is low"]
-    LOW,
+    LOW = 0,
     #[doc = "1: Pin input is high"]
-    HIGH,
+    HIGH = 1,
 }
 impl From<PIN27_A> for bool {
     #[inline(always)]
     fn from(variant: PIN27_A) -> Self {
-        match variant {
-            PIN27_A::LOW => false,
-            PIN27_A::HIGH => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIN27`"]
@@ -1096,17 +1012,14 @@ impl PIN27_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN28_A {
     #[doc = "0: Pin input is low"]
-    LOW,
+    LOW = 0,
     #[doc = "1: Pin input is high"]
-    HIGH,
+    HIGH = 1,
 }
 impl From<PIN28_A> for bool {
     #[inline(always)]
     fn from(variant: PIN28_A) -> Self {
-        match variant {
-            PIN28_A::LOW => false,
-            PIN28_A::HIGH => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIN28`"]
@@ -1135,17 +1048,14 @@ impl PIN28_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN29_A {
     #[doc = "0: Pin input is low"]
-    LOW,
+    LOW = 0,
     #[doc = "1: Pin input is high"]
-    HIGH,
+    HIGH = 1,
 }
 impl From<PIN29_A> for bool {
     #[inline(always)]
     fn from(variant: PIN29_A) -> Self {
-        match variant {
-            PIN29_A::LOW => false,
-            PIN29_A::HIGH => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIN29`"]
@@ -1174,17 +1084,14 @@ impl PIN29_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN30_A {
     #[doc = "0: Pin input is low"]
-    LOW,
+    LOW = 0,
     #[doc = "1: Pin input is high"]
-    HIGH,
+    HIGH = 1,
 }
 impl From<PIN30_A> for bool {
     #[inline(always)]
     fn from(variant: PIN30_A) -> Self {
-        match variant {
-            PIN30_A::LOW => false,
-            PIN30_A::HIGH => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIN30`"]
@@ -1213,17 +1120,14 @@ impl PIN30_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN31_A {
     #[doc = "0: Pin input is low"]
-    LOW,
+    LOW = 0,
     #[doc = "1: Pin input is high"]
-    HIGH,
+    HIGH = 1,
 }
 impl From<PIN31_A> for bool {
     #[inline(always)]
     fn from(variant: PIN31_A) -> Self {
-        match variant {
-            PIN31_A::LOW => false,
-            PIN31_A::HIGH => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIN31`"]

@@ -14,17 +14,14 @@ impl crate::ResetValue for super::DACNF {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ENA0_A {
     #[doc = "0: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<ENA0_A> for bool {
     #[inline(always)]
     fn from(variant: ENA0_A) -> Self {
-        match variant {
-            ENA0_A::DISABLED => false,
-            ENA0_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ENA0`"]
@@ -92,17 +89,14 @@ impl<'a> ENA0_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ENA1_A {
     #[doc = "0: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<ENA1_A> for bool {
     #[inline(always)]
     fn from(variant: ENA1_A) -> Self {
-        match variant {
-            ENA1_A::DISABLED => false,
-            ENA1_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ENA1`"]
@@ -170,17 +164,14 @@ impl<'a> ENA1_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ENA2_A {
     #[doc = "0: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<ENA2_A> for bool {
     #[inline(always)]
     fn from(variant: ENA2_A) -> Self {
-        match variant {
-            ENA2_A::DISABLED => false,
-            ENA2_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ENA2`"]
@@ -248,17 +239,14 @@ impl<'a> ENA2_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ENA3_A {
     #[doc = "0: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<ENA3_A> for bool {
     #[inline(always)]
     fn from(variant: ENA3_A) -> Self {
-        match variant {
-            ENA3_A::DISABLED => false,
-            ENA3_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ENA3`"]
@@ -326,17 +314,14 @@ impl<'a> ENA3_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ENA4_A {
     #[doc = "0: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<ENA4_A> for bool {
     #[inline(always)]
     fn from(variant: ENA4_A) -> Self {
-        match variant {
-            ENA4_A::DISABLED => false,
-            ENA4_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ENA4`"]
@@ -404,17 +389,14 @@ impl<'a> ENA4_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ENA5_A {
     #[doc = "0: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<ENA5_A> for bool {
     #[inline(always)]
     fn from(variant: ENA5_A) -> Self {
-        match variant {
-            ENA5_A::DISABLED => false,
-            ENA5_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ENA5`"]
@@ -482,17 +464,14 @@ impl<'a> ENA5_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ENA6_A {
     #[doc = "0: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<ENA6_A> for bool {
     #[inline(always)]
     fn from(variant: ENA6_A) -> Self {
-        match variant {
-            ENA6_A::DISABLED => false,
-            ENA6_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ENA6`"]
@@ -560,17 +539,14 @@ impl<'a> ENA6_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ENA7_A {
     #[doc = "0: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<ENA7_A> for bool {
     #[inline(always)]
     fn from(variant: ENA7_A) -> Self {
-        match variant {
-            ENA7_A::DISABLED => false,
-            ENA7_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ENA7`"]

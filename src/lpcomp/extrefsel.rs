@@ -14,17 +14,14 @@ impl crate::ResetValue for super::EXTREFSEL {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EXTREFSEL_A {
     #[doc = "0: Use AIN0 as external analog reference"]
-    ANALOGREFERENCE0,
+    ANALOGREFERENCE0 = 0,
     #[doc = "1: Use AIN1 as external analog reference"]
-    ANALOGREFERENCE1,
+    ANALOGREFERENCE1 = 1,
 }
 impl From<EXTREFSEL_A> for bool {
     #[inline(always)]
     fn from(variant: EXTREFSEL_A) -> Self {
-        match variant {
-            EXTREFSEL_A::ANALOGREFERENCE0 => false,
-            EXTREFSEL_A::ANALOGREFERENCE1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EXTREFSEL`"]

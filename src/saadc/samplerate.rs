@@ -28,17 +28,14 @@ impl<'a> CC_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MODE_A {
     #[doc = "0: Rate is controlled from SAMPLE task"]
-    TASK,
+    TASK = 0,
     #[doc = "1: Rate is controlled from local timer (use CC to control the rate)"]
-    TIMERS,
+    TIMERS = 1,
 }
 impl From<MODE_A> for bool {
     #[inline(always)]
     fn from(variant: MODE_A) -> Self {
-        match variant {
-            MODE_A::TASK => false,
-            MODE_A::TIMERS => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MODE`"]

@@ -14,17 +14,14 @@ impl crate::ResetValue for super::INTENCLR {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ENDECB_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<ENDECB_A> for bool {
     #[inline(always)]
     fn from(variant: ENDECB_A) -> Self {
-        match variant {
-            ENDECB_A::DISABLED => false,
-            ENDECB_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ENDECB`"]
@@ -53,14 +50,12 @@ impl ENDECB_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ENDECB_AW {
     #[doc = "1: Disable"]
-    CLEAR,
+    CLEAR = 1,
 }
 impl From<ENDECB_AW> for bool {
     #[inline(always)]
     fn from(variant: ENDECB_AW) -> Self {
-        match variant {
-            ENDECB_AW::CLEAR => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `ENDECB`"]
@@ -101,17 +96,14 @@ impl<'a> ENDECB_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERRORECB_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<ERRORECB_A> for bool {
     #[inline(always)]
     fn from(variant: ERRORECB_A) -> Self {
-        match variant {
-            ERRORECB_A::DISABLED => false,
-            ERRORECB_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ERRORECB`"]
@@ -140,14 +132,12 @@ impl ERRORECB_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERRORECB_AW {
     #[doc = "1: Disable"]
-    CLEAR,
+    CLEAR = 1,
 }
 impl From<ERRORECB_AW> for bool {
     #[inline(always)]
     fn from(variant: ERRORECB_AW) -> Self {
-        match variant {
-            ERRORECB_AW::CLEAR => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `ERRORECB`"]

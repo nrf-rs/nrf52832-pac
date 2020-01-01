@@ -4,17 +4,14 @@ pub type R = crate::R<u32, super::DEVICEADDRTYPE>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DEVICEADDRTYPE_A {
     #[doc = "0: Public address"]
-    PUBLIC,
+    PUBLIC = 0,
     #[doc = "1: Random address"]
-    RANDOM,
+    RANDOM = 1,
 }
 impl From<DEVICEADDRTYPE_A> for bool {
     #[inline(always)]
     fn from(variant: DEVICEADDRTYPE_A) -> Self {
-        match variant {
-            DEVICEADDRTYPE_A::PUBLIC => false,
-            DEVICEADDRTYPE_A::RANDOM => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DEVICEADDRTYPE`"]

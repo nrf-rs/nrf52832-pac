@@ -4,17 +4,14 @@ pub type R = crate::R<u32, super::FIELDPRESENT>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FIELDPRESENT_A {
     #[doc = "0: No valid field detected"]
-    NOFIELD,
+    NOFIELD = 0,
     #[doc = "1: Valid field detected"]
-    FIELDPRESENT,
+    FIELDPRESENT = 1,
 }
 impl From<FIELDPRESENT_A> for bool {
     #[inline(always)]
     fn from(variant: FIELDPRESENT_A) -> Self {
-        match variant {
-            FIELDPRESENT_A::NOFIELD => false,
-            FIELDPRESENT_A::FIELDPRESENT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FIELDPRESENT`"]
@@ -43,17 +40,14 @@ impl FIELDPRESENT_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LOCKDETECT_A {
     #[doc = "0: Not locked to field"]
-    NOTLOCKED,
+    NOTLOCKED = 0,
     #[doc = "1: Locked to field"]
-    LOCKED,
+    LOCKED = 1,
 }
 impl From<LOCKDETECT_A> for bool {
     #[inline(always)]
     fn from(variant: LOCKDETECT_A) -> Self {
-        match variant {
-            LOCKDETECT_A::NOTLOCKED => false,
-            LOCKDETECT_A::LOCKED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LOCKDETECT`"]

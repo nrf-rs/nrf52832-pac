@@ -14,17 +14,14 @@ impl crate::ResetValue for super::ICACHECNF {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CACHEEN_A {
     #[doc = "0: Disable cache. Invalidates all cache entries."]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable cache"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CACHEEN_A> for bool {
     #[inline(always)]
     fn from(variant: CACHEEN_A) -> Self {
-        match variant {
-            CACHEEN_A::DISABLED => false,
-            CACHEEN_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CACHEEN`"]
@@ -92,17 +89,14 @@ impl<'a> CACHEEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CACHEPROFEN_A {
     #[doc = "0: Disable cache profiling"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable cache profiling"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CACHEPROFEN_A> for bool {
     #[inline(always)]
     fn from(variant: CACHEPROFEN_A) -> Self {
-        match variant {
-            CACHEPROFEN_A::DISABLED => false,
-            CACHEPROFEN_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CACHEPROFEN`"]

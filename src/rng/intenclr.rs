@@ -14,17 +14,14 @@ impl crate::ResetValue for super::INTENCLR {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VALRDY_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<VALRDY_A> for bool {
     #[inline(always)]
     fn from(variant: VALRDY_A) -> Self {
-        match variant {
-            VALRDY_A::DISABLED => false,
-            VALRDY_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `VALRDY`"]
@@ -53,14 +50,12 @@ impl VALRDY_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VALRDY_AW {
     #[doc = "1: Disable"]
-    CLEAR,
+    CLEAR = 1,
 }
 impl From<VALRDY_AW> for bool {
     #[inline(always)]
     fn from(variant: VALRDY_AW) -> Self {
-        match variant {
-            VALRDY_AW::CLEAR => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `VALRDY`"]

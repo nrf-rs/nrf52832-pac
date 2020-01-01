@@ -12,16 +12,15 @@ impl crate::ResetValue for super::PSELSDA {
 }
 #[doc = "Pin number configuration for TWI SDA signal\n\nValue on reset: 4294967295"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u32)]
 pub enum PSELSDA_A {
     #[doc = "4294967295: Disconnect"]
-    DISCONNECTED,
+    DISCONNECTED = 4294967295,
 }
 impl From<PSELSDA_A> for u32 {
     #[inline(always)]
     fn from(variant: PSELSDA_A) -> Self {
-        match variant {
-            PSELSDA_A::DISCONNECTED => 4294967295,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PSELSDA`"]

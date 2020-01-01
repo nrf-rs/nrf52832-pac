@@ -12,25 +12,21 @@ impl crate::ResetValue for super::BITMODE {
 }
 #[doc = "Timer bit width\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum BITMODE_A {
     #[doc = "0: 16 bit timer bit width"]
-    _16BIT,
+    _16BIT = 0,
     #[doc = "1: 8 bit timer bit width"]
-    _08BIT,
+    _08BIT = 1,
     #[doc = "2: 24 bit timer bit width"]
-    _24BIT,
+    _24BIT = 2,
     #[doc = "3: 32 bit timer bit width"]
-    _32BIT,
+    _32BIT = 3,
 }
 impl From<BITMODE_A> for u8 {
     #[inline(always)]
     fn from(variant: BITMODE_A) -> Self {
-        match variant {
-            BITMODE_A::_16BIT => 0,
-            BITMODE_A::_08BIT => 1,
-            BITMODE_A::_24BIT => 2,
-            BITMODE_A::_32BIT => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `BITMODE`"]

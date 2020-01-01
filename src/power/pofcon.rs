@@ -14,17 +14,14 @@ impl crate::ResetValue for super::POFCON {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum POF_A {
     #[doc = "0: Disable"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<POF_A> for bool {
     #[inline(always)]
     fn from(variant: POF_A) -> Self {
-        match variant {
-            POF_A::DISABLED => false,
-            POF_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `POF`"]
@@ -90,49 +87,37 @@ impl<'a> POF_W<'a> {
 }
 #[doc = "Power failure comparator threshold setting\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum THRESHOLD_A {
     #[doc = "4: Set threshold to 1.7 V"]
-    V17,
+    V17 = 4,
     #[doc = "5: Set threshold to 1.8 V"]
-    V18,
+    V18 = 5,
     #[doc = "6: Set threshold to 1.9 V"]
-    V19,
+    V19 = 6,
     #[doc = "7: Set threshold to 2.0 V"]
-    V20,
+    V20 = 7,
     #[doc = "8: Set threshold to 2.1 V"]
-    V21,
+    V21 = 8,
     #[doc = "9: Set threshold to 2.2 V"]
-    V22,
+    V22 = 9,
     #[doc = "10: Set threshold to 2.3 V"]
-    V23,
+    V23 = 10,
     #[doc = "11: Set threshold to 2.4 V"]
-    V24,
+    V24 = 11,
     #[doc = "12: Set threshold to 2.5 V"]
-    V25,
+    V25 = 12,
     #[doc = "13: Set threshold to 2.6 V"]
-    V26,
+    V26 = 13,
     #[doc = "14: Set threshold to 2.7 V"]
-    V27,
+    V27 = 14,
     #[doc = "15: Set threshold to 2.8 V"]
-    V28,
+    V28 = 15,
 }
 impl From<THRESHOLD_A> for u8 {
     #[inline(always)]
     fn from(variant: THRESHOLD_A) -> Self {
-        match variant {
-            THRESHOLD_A::V17 => 4,
-            THRESHOLD_A::V18 => 5,
-            THRESHOLD_A::V19 => 6,
-            THRESHOLD_A::V20 => 7,
-            THRESHOLD_A::V21 => 8,
-            THRESHOLD_A::V22 => 9,
-            THRESHOLD_A::V23 => 10,
-            THRESHOLD_A::V24 => 11,
-            THRESHOLD_A::V25 => 12,
-            THRESHOLD_A::V26 => 13,
-            THRESHOLD_A::V27 => 14,
-            THRESHOLD_A::V28 => 15,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `THRESHOLD`"]

@@ -12,34 +12,27 @@ impl crate::ResetValue for super::FREQUENCY {
 }
 #[doc = "SPI master data rate\n\nValue on reset: 67108864"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u32)]
 pub enum FREQUENCY_A {
     #[doc = "33554432: 125 kbps"]
-    K125,
+    K125 = 33554432,
     #[doc = "67108864: 250 kbps"]
-    K250,
+    K250 = 67108864,
     #[doc = "134217728: 500 kbps"]
-    K500,
+    K500 = 134217728,
     #[doc = "268435456: 1 Mbps"]
-    M1,
+    M1 = 268435456,
     #[doc = "536870912: 2 Mbps"]
-    M2,
+    M2 = 536870912,
     #[doc = "1073741824: 4 Mbps"]
-    M4,
+    M4 = 1073741824,
     #[doc = "2147483648: 8 Mbps"]
-    M8,
+    M8 = 2147483648,
 }
 impl From<FREQUENCY_A> for u32 {
     #[inline(always)]
     fn from(variant: FREQUENCY_A) -> Self {
-        match variant {
-            FREQUENCY_A::K125 => 33554432,
-            FREQUENCY_A::K250 => 67108864,
-            FREQUENCY_A::K500 => 134217728,
-            FREQUENCY_A::M1 => 268435456,
-            FREQUENCY_A::M2 => 536870912,
-            FREQUENCY_A::M4 => 1073741824,
-            FREQUENCY_A::M8 => 2147483648,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `FREQUENCY`"]

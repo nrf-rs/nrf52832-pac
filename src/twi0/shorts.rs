@@ -14,17 +14,14 @@ impl crate::ResetValue for super::SHORTS {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BB_SUSPEND_A {
     #[doc = "0: Disable shortcut"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable shortcut"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<BB_SUSPEND_A> for bool {
     #[inline(always)]
     fn from(variant: BB_SUSPEND_A) -> Self {
-        match variant {
-            BB_SUSPEND_A::DISABLED => false,
-            BB_SUSPEND_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `BB_SUSPEND`"]
@@ -92,17 +89,14 @@ impl<'a> BB_SUSPEND_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BB_STOP_A {
     #[doc = "0: Disable shortcut"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable shortcut"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<BB_STOP_A> for bool {
     #[inline(always)]
     fn from(variant: BB_STOP_A) -> Self {
-        match variant {
-            BB_STOP_A::DISABLED => false,
-            BB_STOP_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `BB_STOP`"]

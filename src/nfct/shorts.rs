@@ -14,17 +14,14 @@ impl crate::ResetValue for super::SHORTS {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FIELDDETECTED_ACTIVATE_A {
     #[doc = "0: Disable shortcut"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable shortcut"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<FIELDDETECTED_ACTIVATE_A> for bool {
     #[inline(always)]
     fn from(variant: FIELDDETECTED_ACTIVATE_A) -> Self {
-        match variant {
-            FIELDDETECTED_ACTIVATE_A::DISABLED => false,
-            FIELDDETECTED_ACTIVATE_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FIELDDETECTED_ACTIVATE`"]
@@ -92,17 +89,14 @@ impl<'a> FIELDDETECTED_ACTIVATE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FIELDLOST_SENSE_A {
     #[doc = "0: Disable shortcut"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable shortcut"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<FIELDLOST_SENSE_A> for bool {
     #[inline(always)]
     fn from(variant: FIELDLOST_SENSE_A) -> Self {
-        match variant {
-            FIELDLOST_SENSE_A::DISABLED => false,
-            FIELDLOST_SENSE_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FIELDLOST_SENSE`"]

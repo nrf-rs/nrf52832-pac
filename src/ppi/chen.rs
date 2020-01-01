@@ -14,17 +14,14 @@ impl crate::ResetValue for super::CHEN {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH0_A {
     #[doc = "0: Disable channel"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable channel"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH0_A> for bool {
     #[inline(always)]
     fn from(variant: CH0_A) -> Self {
-        match variant {
-            CH0_A::DISABLED => false,
-            CH0_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH0`"]
@@ -92,17 +89,14 @@ impl<'a> CH0_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH1_A {
     #[doc = "0: Disable channel"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable channel"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH1_A> for bool {
     #[inline(always)]
     fn from(variant: CH1_A) -> Self {
-        match variant {
-            CH1_A::DISABLED => false,
-            CH1_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH1`"]
@@ -170,17 +164,14 @@ impl<'a> CH1_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH2_A {
     #[doc = "0: Disable channel"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable channel"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH2_A> for bool {
     #[inline(always)]
     fn from(variant: CH2_A) -> Self {
-        match variant {
-            CH2_A::DISABLED => false,
-            CH2_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH2`"]
@@ -248,17 +239,14 @@ impl<'a> CH2_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH3_A {
     #[doc = "0: Disable channel"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable channel"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH3_A> for bool {
     #[inline(always)]
     fn from(variant: CH3_A) -> Self {
-        match variant {
-            CH3_A::DISABLED => false,
-            CH3_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH3`"]
@@ -326,17 +314,14 @@ impl<'a> CH3_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH4_A {
     #[doc = "0: Disable channel"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable channel"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH4_A> for bool {
     #[inline(always)]
     fn from(variant: CH4_A) -> Self {
-        match variant {
-            CH4_A::DISABLED => false,
-            CH4_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH4`"]
@@ -404,17 +389,14 @@ impl<'a> CH4_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH5_A {
     #[doc = "0: Disable channel"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable channel"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH5_A> for bool {
     #[inline(always)]
     fn from(variant: CH5_A) -> Self {
-        match variant {
-            CH5_A::DISABLED => false,
-            CH5_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH5`"]
@@ -482,17 +464,14 @@ impl<'a> CH5_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH6_A {
     #[doc = "0: Disable channel"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable channel"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH6_A> for bool {
     #[inline(always)]
     fn from(variant: CH6_A) -> Self {
-        match variant {
-            CH6_A::DISABLED => false,
-            CH6_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH6`"]
@@ -560,17 +539,14 @@ impl<'a> CH6_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH7_A {
     #[doc = "0: Disable channel"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable channel"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH7_A> for bool {
     #[inline(always)]
     fn from(variant: CH7_A) -> Self {
-        match variant {
-            CH7_A::DISABLED => false,
-            CH7_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH7`"]
@@ -638,17 +614,14 @@ impl<'a> CH7_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH8_A {
     #[doc = "0: Disable channel"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable channel"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH8_A> for bool {
     #[inline(always)]
     fn from(variant: CH8_A) -> Self {
-        match variant {
-            CH8_A::DISABLED => false,
-            CH8_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH8`"]
@@ -716,17 +689,14 @@ impl<'a> CH8_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH9_A {
     #[doc = "0: Disable channel"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable channel"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH9_A> for bool {
     #[inline(always)]
     fn from(variant: CH9_A) -> Self {
-        match variant {
-            CH9_A::DISABLED => false,
-            CH9_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH9`"]
@@ -794,17 +764,14 @@ impl<'a> CH9_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH10_A {
     #[doc = "0: Disable channel"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable channel"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH10_A> for bool {
     #[inline(always)]
     fn from(variant: CH10_A) -> Self {
-        match variant {
-            CH10_A::DISABLED => false,
-            CH10_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH10`"]
@@ -872,17 +839,14 @@ impl<'a> CH10_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH11_A {
     #[doc = "0: Disable channel"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable channel"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH11_A> for bool {
     #[inline(always)]
     fn from(variant: CH11_A) -> Self {
-        match variant {
-            CH11_A::DISABLED => false,
-            CH11_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH11`"]
@@ -950,17 +914,14 @@ impl<'a> CH11_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH12_A {
     #[doc = "0: Disable channel"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable channel"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH12_A> for bool {
     #[inline(always)]
     fn from(variant: CH12_A) -> Self {
-        match variant {
-            CH12_A::DISABLED => false,
-            CH12_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH12`"]
@@ -1028,17 +989,14 @@ impl<'a> CH12_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH13_A {
     #[doc = "0: Disable channel"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable channel"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH13_A> for bool {
     #[inline(always)]
     fn from(variant: CH13_A) -> Self {
-        match variant {
-            CH13_A::DISABLED => false,
-            CH13_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH13`"]
@@ -1106,17 +1064,14 @@ impl<'a> CH13_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH14_A {
     #[doc = "0: Disable channel"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable channel"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH14_A> for bool {
     #[inline(always)]
     fn from(variant: CH14_A) -> Self {
-        match variant {
-            CH14_A::DISABLED => false,
-            CH14_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH14`"]
@@ -1184,17 +1139,14 @@ impl<'a> CH14_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH15_A {
     #[doc = "0: Disable channel"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable channel"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH15_A> for bool {
     #[inline(always)]
     fn from(variant: CH15_A) -> Self {
-        match variant {
-            CH15_A::DISABLED => false,
-            CH15_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH15`"]
@@ -1262,17 +1214,14 @@ impl<'a> CH15_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH16_A {
     #[doc = "0: Disable channel"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable channel"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH16_A> for bool {
     #[inline(always)]
     fn from(variant: CH16_A) -> Self {
-        match variant {
-            CH16_A::DISABLED => false,
-            CH16_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH16`"]
@@ -1340,17 +1289,14 @@ impl<'a> CH16_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH17_A {
     #[doc = "0: Disable channel"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable channel"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH17_A> for bool {
     #[inline(always)]
     fn from(variant: CH17_A) -> Self {
-        match variant {
-            CH17_A::DISABLED => false,
-            CH17_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH17`"]
@@ -1418,17 +1364,14 @@ impl<'a> CH17_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH18_A {
     #[doc = "0: Disable channel"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable channel"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH18_A> for bool {
     #[inline(always)]
     fn from(variant: CH18_A) -> Self {
-        match variant {
-            CH18_A::DISABLED => false,
-            CH18_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH18`"]
@@ -1496,17 +1439,14 @@ impl<'a> CH18_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH19_A {
     #[doc = "0: Disable channel"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable channel"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH19_A> for bool {
     #[inline(always)]
     fn from(variant: CH19_A) -> Self {
-        match variant {
-            CH19_A::DISABLED => false,
-            CH19_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH19`"]
@@ -1574,17 +1514,14 @@ impl<'a> CH19_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH20_A {
     #[doc = "0: Disable channel"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable channel"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH20_A> for bool {
     #[inline(always)]
     fn from(variant: CH20_A) -> Self {
-        match variant {
-            CH20_A::DISABLED => false,
-            CH20_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH20`"]
@@ -1652,17 +1589,14 @@ impl<'a> CH20_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH21_A {
     #[doc = "0: Disable channel"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable channel"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH21_A> for bool {
     #[inline(always)]
     fn from(variant: CH21_A) -> Self {
-        match variant {
-            CH21_A::DISABLED => false,
-            CH21_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH21`"]
@@ -1730,17 +1664,14 @@ impl<'a> CH21_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH22_A {
     #[doc = "0: Disable channel"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable channel"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH22_A> for bool {
     #[inline(always)]
     fn from(variant: CH22_A) -> Self {
-        match variant {
-            CH22_A::DISABLED => false,
-            CH22_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH22`"]
@@ -1808,17 +1739,14 @@ impl<'a> CH22_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH23_A {
     #[doc = "0: Disable channel"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable channel"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH23_A> for bool {
     #[inline(always)]
     fn from(variant: CH23_A) -> Self {
-        match variant {
-            CH23_A::DISABLED => false,
-            CH23_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH23`"]
@@ -1886,17 +1814,14 @@ impl<'a> CH23_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH24_A {
     #[doc = "0: Disable channel"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable channel"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH24_A> for bool {
     #[inline(always)]
     fn from(variant: CH24_A) -> Self {
-        match variant {
-            CH24_A::DISABLED => false,
-            CH24_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH24`"]
@@ -1964,17 +1889,14 @@ impl<'a> CH24_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH25_A {
     #[doc = "0: Disable channel"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable channel"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH25_A> for bool {
     #[inline(always)]
     fn from(variant: CH25_A) -> Self {
-        match variant {
-            CH25_A::DISABLED => false,
-            CH25_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH25`"]
@@ -2042,17 +1964,14 @@ impl<'a> CH25_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH26_A {
     #[doc = "0: Disable channel"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable channel"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH26_A> for bool {
     #[inline(always)]
     fn from(variant: CH26_A) -> Self {
-        match variant {
-            CH26_A::DISABLED => false,
-            CH26_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH26`"]
@@ -2120,17 +2039,14 @@ impl<'a> CH26_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH27_A {
     #[doc = "0: Disable channel"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable channel"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH27_A> for bool {
     #[inline(always)]
     fn from(variant: CH27_A) -> Self {
-        match variant {
-            CH27_A::DISABLED => false,
-            CH27_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH27`"]
@@ -2198,17 +2114,14 @@ impl<'a> CH27_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH28_A {
     #[doc = "0: Disable channel"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable channel"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH28_A> for bool {
     #[inline(always)]
     fn from(variant: CH28_A) -> Self {
-        match variant {
-            CH28_A::DISABLED => false,
-            CH28_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH28`"]
@@ -2276,17 +2189,14 @@ impl<'a> CH28_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH29_A {
     #[doc = "0: Disable channel"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable channel"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH29_A> for bool {
     #[inline(always)]
     fn from(variant: CH29_A) -> Self {
-        match variant {
-            CH29_A::DISABLED => false,
-            CH29_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH29`"]
@@ -2354,17 +2264,14 @@ impl<'a> CH29_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH30_A {
     #[doc = "0: Disable channel"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable channel"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH30_A> for bool {
     #[inline(always)]
     fn from(variant: CH30_A) -> Self {
-        match variant {
-            CH30_A::DISABLED => false,
-            CH30_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH30`"]
@@ -2432,17 +2339,14 @@ impl<'a> CH30_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH31_A {
     #[doc = "0: Disable channel"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable channel"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH31_A> for bool {
     #[inline(always)]
     fn from(variant: CH31_A) -> Self {
-        match variant {
-            CH31_A::DISABLED => false,
-            CH31_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH31`"]

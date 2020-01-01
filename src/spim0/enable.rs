@@ -12,19 +12,17 @@ impl crate::ResetValue for super::ENABLE {
 }
 #[doc = "Enable or disable SPIM\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ENABLE_A {
     #[doc = "0: Disable SPIM"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "7: Enable SPIM"]
-    ENABLED,
+    ENABLED = 7,
 }
 impl From<ENABLE_A> for u8 {
     #[inline(always)]
     fn from(variant: ENABLE_A) -> Self {
-        match variant {
-            ENABLE_A::DISABLED => 0,
-            ENABLE_A::ENABLED => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ENABLE`"]

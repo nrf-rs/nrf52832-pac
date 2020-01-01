@@ -12,61 +12,45 @@ impl crate::ResetValue for super::REFSEL {
 }
 #[doc = "Reference select\n\nValue on reset: 4"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum REFSEL_A {
     #[doc = "0: VDD * 1/8 selected as reference"]
-    REF1_8VDD,
+    REF1_8VDD = 0,
     #[doc = "1: VDD * 2/8 selected as reference"]
-    REF2_8VDD,
+    REF2_8VDD = 1,
     #[doc = "2: VDD * 3/8 selected as reference"]
-    REF3_8VDD,
+    REF3_8VDD = 2,
     #[doc = "3: VDD * 4/8 selected as reference"]
-    REF4_8VDD,
+    REF4_8VDD = 3,
     #[doc = "4: VDD * 5/8 selected as reference"]
-    REF5_8VDD,
+    REF5_8VDD = 4,
     #[doc = "5: VDD * 6/8 selected as reference"]
-    REF6_8VDD,
+    REF6_8VDD = 5,
     #[doc = "6: VDD * 7/8 selected as reference"]
-    REF7_8VDD,
+    REF7_8VDD = 6,
     #[doc = "7: External analog reference selected"]
-    AREF,
+    AREF = 7,
     #[doc = "8: VDD * 1/16 selected as reference"]
-    REF1_16VDD,
+    REF1_16VDD = 8,
     #[doc = "9: VDD * 3/16 selected as reference"]
-    REF3_16VDD,
+    REF3_16VDD = 9,
     #[doc = "10: VDD * 5/16 selected as reference"]
-    REF5_16VDD,
+    REF5_16VDD = 10,
     #[doc = "11: VDD * 7/16 selected as reference"]
-    REF7_16VDD,
+    REF7_16VDD = 11,
     #[doc = "12: VDD * 9/16 selected as reference"]
-    REF9_16VDD,
+    REF9_16VDD = 12,
     #[doc = "13: VDD * 11/16 selected as reference"]
-    REF11_16VDD,
+    REF11_16VDD = 13,
     #[doc = "14: VDD * 13/16 selected as reference"]
-    REF13_16VDD,
+    REF13_16VDD = 14,
     #[doc = "15: VDD * 15/16 selected as reference"]
-    REF15_16VDD,
+    REF15_16VDD = 15,
 }
 impl From<REFSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: REFSEL_A) -> Self {
-        match variant {
-            REFSEL_A::REF1_8VDD => 0,
-            REFSEL_A::REF2_8VDD => 1,
-            REFSEL_A::REF3_8VDD => 2,
-            REFSEL_A::REF4_8VDD => 3,
-            REFSEL_A::REF5_8VDD => 4,
-            REFSEL_A::REF6_8VDD => 5,
-            REFSEL_A::REF7_8VDD => 6,
-            REFSEL_A::AREF => 7,
-            REFSEL_A::REF1_16VDD => 8,
-            REFSEL_A::REF3_16VDD => 9,
-            REFSEL_A::REF5_16VDD => 10,
-            REFSEL_A::REF7_16VDD => 11,
-            REFSEL_A::REF9_16VDD => 12,
-            REFSEL_A::REF11_16VDD => 13,
-            REFSEL_A::REF13_16VDD => 14,
-            REFSEL_A::REF15_16VDD => 15,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `REFSEL`"]

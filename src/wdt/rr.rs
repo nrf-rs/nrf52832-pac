@@ -1,6 +1,7 @@
 #[doc = "Writer for register RR[%s]"]
 pub type W = crate::W<u32, super::RR>;
-#[doc = "Register RR[%s] `reset()`'s with value 0"]
+#[doc = "Register RR[%s]
+`reset()`'s with value 0"]
 impl crate::ResetValue for super::RR {
     type Type = u32;
     #[inline(always)]
@@ -10,16 +11,15 @@ impl crate::ResetValue for super::RR {
 }
 #[doc = "Reload request register\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u32)]
 pub enum RR_AW {
     #[doc = "1850885685: Value to request a reload of the watchdog timer"]
-    RELOAD,
+    RELOAD = 1850885685,
 }
 impl From<RR_AW> for u32 {
     #[inline(always)]
     fn from(variant: RR_AW) -> Self {
-        match variant {
-            RR_AW::RELOAD => 1850885685,
-        }
+        variant as _
     }
 }
 #[doc = "Write proxy for field `RR`"]

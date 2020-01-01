@@ -12,67 +12,49 @@ impl crate::ResetValue for super::BAUDRATE {
 }
 #[doc = "Baud rate\n\nValue on reset: 67108864"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u32)]
 pub enum BAUDRATE_A {
     #[doc = "323584: 1200 baud (actual rate: 1205)"]
-    BAUD1200,
+    BAUD1200 = 323584,
     #[doc = "643072: 2400 baud (actual rate: 2396)"]
-    BAUD2400,
+    BAUD2400 = 643072,
     #[doc = "1290240: 4800 baud (actual rate: 4808)"]
-    BAUD4800,
+    BAUD4800 = 1290240,
     #[doc = "2576384: 9600 baud (actual rate: 9598)"]
-    BAUD9600,
+    BAUD9600 = 2576384,
     #[doc = "3866624: 14400 baud (actual rate: 14414)"]
-    BAUD14400,
+    BAUD14400 = 3866624,
     #[doc = "5152768: 19200 baud (actual rate: 19208)"]
-    BAUD19200,
+    BAUD19200 = 5152768,
     #[doc = "7729152: 28800 baud (actual rate: 28829)"]
-    BAUD28800,
+    BAUD28800 = 7729152,
     #[doc = "8388608: 31250 baud"]
-    BAUD31250,
+    BAUD31250 = 8388608,
     #[doc = "10309632: 38400 baud (actual rate: 38462)"]
-    BAUD38400,
+    BAUD38400 = 10309632,
     #[doc = "15007744: 56000 baud (actual rate: 55944)"]
-    BAUD56000,
+    BAUD56000 = 15007744,
     #[doc = "15462400: 57600 baud (actual rate: 57762)"]
-    BAUD57600,
+    BAUD57600 = 15462400,
     #[doc = "20615168: 76800 baud (actual rate: 76923)"]
-    BAUD76800,
+    BAUD76800 = 20615168,
     #[doc = "30924800: 115200 baud (actual rate: 115942)"]
-    BAUD115200,
+    BAUD115200 = 30924800,
     #[doc = "61845504: 230400 baud (actual rate: 231884)"]
-    BAUD230400,
+    BAUD230400 = 61845504,
     #[doc = "67108864: 250000 baud"]
-    BAUD250000,
+    BAUD250000 = 67108864,
     #[doc = "123695104: 460800 baud (actual rate: 470588)"]
-    BAUD460800,
+    BAUD460800 = 123695104,
     #[doc = "247386112: 921600 baud (actual rate: 941176)"]
-    BAUD921600,
+    BAUD921600 = 247386112,
     #[doc = "268435456: 1Mega baud"]
-    BAUD1M,
+    BAUD1M = 268435456,
 }
 impl From<BAUDRATE_A> for u32 {
     #[inline(always)]
     fn from(variant: BAUDRATE_A) -> Self {
-        match variant {
-            BAUDRATE_A::BAUD1200 => 323584,
-            BAUDRATE_A::BAUD2400 => 643072,
-            BAUDRATE_A::BAUD4800 => 1290240,
-            BAUDRATE_A::BAUD9600 => 2576384,
-            BAUDRATE_A::BAUD14400 => 3866624,
-            BAUDRATE_A::BAUD19200 => 5152768,
-            BAUDRATE_A::BAUD28800 => 7729152,
-            BAUDRATE_A::BAUD31250 => 8388608,
-            BAUDRATE_A::BAUD38400 => 10309632,
-            BAUDRATE_A::BAUD56000 => 15007744,
-            BAUDRATE_A::BAUD57600 => 15462400,
-            BAUDRATE_A::BAUD76800 => 20615168,
-            BAUDRATE_A::BAUD115200 => 30924800,
-            BAUDRATE_A::BAUD230400 => 61845504,
-            BAUDRATE_A::BAUD250000 => 67108864,
-            BAUDRATE_A::BAUD460800 => 123695104,
-            BAUDRATE_A::BAUD921600 => 247386112,
-            BAUDRATE_A::BAUD1M => 268435456,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `BAUDRATE`"]

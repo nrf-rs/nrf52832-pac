@@ -12,37 +12,29 @@ impl crate::ResetValue for super::PSEL {
 }
 #[doc = "Analog pin select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PSEL_A {
     #[doc = "0: AIN0 selected as analog input"]
-    ANALOGINPUT0,
+    ANALOGINPUT0 = 0,
     #[doc = "1: AIN1 selected as analog input"]
-    ANALOGINPUT1,
+    ANALOGINPUT1 = 1,
     #[doc = "2: AIN2 selected as analog input"]
-    ANALOGINPUT2,
+    ANALOGINPUT2 = 2,
     #[doc = "3: AIN3 selected as analog input"]
-    ANALOGINPUT3,
+    ANALOGINPUT3 = 3,
     #[doc = "4: AIN4 selected as analog input"]
-    ANALOGINPUT4,
+    ANALOGINPUT4 = 4,
     #[doc = "5: AIN5 selected as analog input"]
-    ANALOGINPUT5,
+    ANALOGINPUT5 = 5,
     #[doc = "6: AIN6 selected as analog input"]
-    ANALOGINPUT6,
+    ANALOGINPUT6 = 6,
     #[doc = "7: AIN7 selected as analog input"]
-    ANALOGINPUT7,
+    ANALOGINPUT7 = 7,
 }
 impl From<PSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: PSEL_A) -> Self {
-        match variant {
-            PSEL_A::ANALOGINPUT0 => 0,
-            PSEL_A::ANALOGINPUT1 => 1,
-            PSEL_A::ANALOGINPUT2 => 2,
-            PSEL_A::ANALOGINPUT3 => 3,
-            PSEL_A::ANALOGINPUT4 => 4,
-            PSEL_A::ANALOGINPUT5 => 5,
-            PSEL_A::ANALOGINPUT6 => 6,
-            PSEL_A::ANALOGINPUT7 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PSEL`"]

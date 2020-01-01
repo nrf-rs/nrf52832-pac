@@ -12,28 +12,23 @@ impl crate::ResetValue for super::REFSEL {
 }
 #[doc = "Reference select\n\nValue on reset: 4"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum REFSEL_A {
     #[doc = "0: VREF = internal 1.2 V reference (VDD &gt;= 1.7 V)"]
-    INT1V2,
+    INT1V2 = 0,
     #[doc = "1: VREF = internal 1.8 V reference (VDD &gt;= VREF + 0.2 V)"]
-    INT1V8,
+    INT1V8 = 1,
     #[doc = "2: VREF = internal 2.4 V reference (VDD &gt;= VREF + 0.2 V)"]
-    INT2V4,
+    INT2V4 = 2,
     #[doc = "4: VREF = VDD"]
-    VDD,
+    VDD = 4,
     #[doc = "7: VREF = AREF (VDD &gt;= VREF &gt;= AREFMIN)"]
-    AREF,
+    AREF = 7,
 }
 impl From<REFSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: REFSEL_A) -> Self {
-        match variant {
-            REFSEL_A::INT1V2 => 0,
-            REFSEL_A::INT1V8 => 1,
-            REFSEL_A::INT2V4 => 2,
-            REFSEL_A::VDD => 4,
-            REFSEL_A::AREF => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `REFSEL`"]

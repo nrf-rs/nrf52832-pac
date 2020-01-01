@@ -14,17 +14,14 @@ impl crate::ResetValue for super::EVTEN {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TICK_A {
     #[doc = "0: Disable"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<TICK_A> for bool {
     #[inline(always)]
     fn from(variant: TICK_A) -> Self {
-        match variant {
-            TICK_A::DISABLED => false,
-            TICK_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TICK`"]
@@ -92,17 +89,14 @@ impl<'a> TICK_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OVRFLW_A {
     #[doc = "0: Disable"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<OVRFLW_A> for bool {
     #[inline(always)]
     fn from(variant: OVRFLW_A) -> Self {
-        match variant {
-            OVRFLW_A::DISABLED => false,
-            OVRFLW_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `OVRFLW`"]
@@ -166,21 +160,19 @@ impl<'a> OVRFLW_W<'a> {
         self.w
     }
 }
-#[doc = "Enable or disable event routing for COMPARE\\[0\\] event\n\nValue on reset: 0"]
+#[doc = "Enable or disable event routing for COMPARE\\[0\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum COMPARE0_A {
     #[doc = "0: Disable"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<COMPARE0_A> for bool {
     #[inline(always)]
     fn from(variant: COMPARE0_A) -> Self {
-        match variant {
-            COMPARE0_A::DISABLED => false,
-            COMPARE0_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `COMPARE0`"]
@@ -244,21 +236,19 @@ impl<'a> COMPARE0_W<'a> {
         self.w
     }
 }
-#[doc = "Enable or disable event routing for COMPARE\\[1\\] event\n\nValue on reset: 0"]
+#[doc = "Enable or disable event routing for COMPARE\\[1\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum COMPARE1_A {
     #[doc = "0: Disable"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<COMPARE1_A> for bool {
     #[inline(always)]
     fn from(variant: COMPARE1_A) -> Self {
-        match variant {
-            COMPARE1_A::DISABLED => false,
-            COMPARE1_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `COMPARE1`"]
@@ -322,21 +312,19 @@ impl<'a> COMPARE1_W<'a> {
         self.w
     }
 }
-#[doc = "Enable or disable event routing for COMPARE\\[2\\] event\n\nValue on reset: 0"]
+#[doc = "Enable or disable event routing for COMPARE\\[2\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum COMPARE2_A {
     #[doc = "0: Disable"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<COMPARE2_A> for bool {
     #[inline(always)]
     fn from(variant: COMPARE2_A) -> Self {
-        match variant {
-            COMPARE2_A::DISABLED => false,
-            COMPARE2_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `COMPARE2`"]
@@ -400,21 +388,19 @@ impl<'a> COMPARE2_W<'a> {
         self.w
     }
 }
-#[doc = "Enable or disable event routing for COMPARE\\[3\\] event\n\nValue on reset: 0"]
+#[doc = "Enable or disable event routing for COMPARE\\[3\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum COMPARE3_A {
     #[doc = "0: Disable"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<COMPARE3_A> for bool {
     #[inline(always)]
     fn from(variant: COMPARE3_A) -> Self {
-        match variant {
-            COMPARE3_A::DISABLED => false,
-            COMPARE3_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `COMPARE3`"]
@@ -489,22 +475,26 @@ impl R {
     pub fn ovrflw(&self) -> OVRFLW_R {
         OVRFLW_R::new(((self.bits >> 1) & 0x01) != 0)
     }
-    #[doc = "Bit 16 - Enable or disable event routing for COMPARE\\[0\\] event"]
+    #[doc = "Bit 16 - Enable or disable event routing for COMPARE\\[0\\]
+event"]
     #[inline(always)]
     pub fn compare0(&self) -> COMPARE0_R {
         COMPARE0_R::new(((self.bits >> 16) & 0x01) != 0)
     }
-    #[doc = "Bit 17 - Enable or disable event routing for COMPARE\\[1\\] event"]
+    #[doc = "Bit 17 - Enable or disable event routing for COMPARE\\[1\\]
+event"]
     #[inline(always)]
     pub fn compare1(&self) -> COMPARE1_R {
         COMPARE1_R::new(((self.bits >> 17) & 0x01) != 0)
     }
-    #[doc = "Bit 18 - Enable or disable event routing for COMPARE\\[2\\] event"]
+    #[doc = "Bit 18 - Enable or disable event routing for COMPARE\\[2\\]
+event"]
     #[inline(always)]
     pub fn compare2(&self) -> COMPARE2_R {
         COMPARE2_R::new(((self.bits >> 18) & 0x01) != 0)
     }
-    #[doc = "Bit 19 - Enable or disable event routing for COMPARE\\[3\\] event"]
+    #[doc = "Bit 19 - Enable or disable event routing for COMPARE\\[3\\]
+event"]
     #[inline(always)]
     pub fn compare3(&self) -> COMPARE3_R {
         COMPARE3_R::new(((self.bits >> 19) & 0x01) != 0)
@@ -521,22 +511,26 @@ impl W {
     pub fn ovrflw(&mut self) -> OVRFLW_W {
         OVRFLW_W { w: self }
     }
-    #[doc = "Bit 16 - Enable or disable event routing for COMPARE\\[0\\] event"]
+    #[doc = "Bit 16 - Enable or disable event routing for COMPARE\\[0\\]
+event"]
     #[inline(always)]
     pub fn compare0(&mut self) -> COMPARE0_W {
         COMPARE0_W { w: self }
     }
-    #[doc = "Bit 17 - Enable or disable event routing for COMPARE\\[1\\] event"]
+    #[doc = "Bit 17 - Enable or disable event routing for COMPARE\\[1\\]
+event"]
     #[inline(always)]
     pub fn compare1(&mut self) -> COMPARE1_W {
         COMPARE1_W { w: self }
     }
-    #[doc = "Bit 18 - Enable or disable event routing for COMPARE\\[2\\] event"]
+    #[doc = "Bit 18 - Enable or disable event routing for COMPARE\\[2\\]
+event"]
     #[inline(always)]
     pub fn compare2(&mut self) -> COMPARE2_W {
         COMPARE2_W { w: self }
     }
-    #[doc = "Bit 19 - Enable or disable event routing for COMPARE\\[3\\] event"]
+    #[doc = "Bit 19 - Enable or disable event routing for COMPARE\\[3\\]
+event"]
     #[inline(always)]
     pub fn compare3(&mut self) -> COMPARE3_W {
         COMPARE3_W { w: self }

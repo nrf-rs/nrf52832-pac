@@ -12,25 +12,21 @@ impl crate::ResetValue for super::ISOURCE {
 }
 #[doc = "Comparator hysteresis\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ISOURCE_A {
     #[doc = "0: Current source disabled"]
-    OFF,
+    OFF = 0,
     #[doc = "1: Current source enabled (+/- 2.5 uA)"]
-    IEN2MA5,
+    IEN2MA5 = 1,
     #[doc = "2: Current source enabled (+/- 5 uA)"]
-    IEN5MA,
+    IEN5MA = 2,
     #[doc = "3: Current source enabled (+/- 10 uA)"]
-    IEN10MA,
+    IEN10MA = 3,
 }
 impl From<ISOURCE_A> for u8 {
     #[inline(always)]
     fn from(variant: ISOURCE_A) -> Self {
-        match variant {
-            ISOURCE_A::OFF => 0,
-            ISOURCE_A::IEN2MA5 => 1,
-            ISOURCE_A::IEN5MA => 2,
-            ISOURCE_A::IEN10MA => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ISOURCE`"]

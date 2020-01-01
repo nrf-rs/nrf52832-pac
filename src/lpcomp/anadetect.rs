@@ -12,22 +12,19 @@ impl crate::ResetValue for super::ANADETECT {
 }
 #[doc = "Analog detect configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ANADETECT_A {
     #[doc = "0: Generate ANADETECT on crossing, both upward crossing and downward crossing"]
-    CROSS,
+    CROSS = 0,
     #[doc = "1: Generate ANADETECT on upward crossing only"]
-    UP,
+    UP = 1,
     #[doc = "2: Generate ANADETECT on downward crossing only"]
-    DOWN,
+    DOWN = 2,
 }
 impl From<ANADETECT_A> for u8 {
     #[inline(always)]
     fn from(variant: ANADETECT_A) -> Self {
-        match variant {
-            ANADETECT_A::CROSS => 0,
-            ANADETECT_A::UP => 1,
-            ANADETECT_A::DOWN => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ANADETECT`"]

@@ -14,17 +14,14 @@ impl crate::ResetValue for super::INTENSET {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ENDKSGEN_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<ENDKSGEN_A> for bool {
     #[inline(always)]
     fn from(variant: ENDKSGEN_A) -> Self {
-        match variant {
-            ENDKSGEN_A::DISABLED => false,
-            ENDKSGEN_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ENDKSGEN`"]
@@ -53,14 +50,12 @@ impl ENDKSGEN_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ENDKSGEN_AW {
     #[doc = "1: Enable"]
-    SET,
+    SET = 1,
 }
 impl From<ENDKSGEN_AW> for bool {
     #[inline(always)]
     fn from(variant: ENDKSGEN_AW) -> Self {
-        match variant {
-            ENDKSGEN_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `ENDKSGEN`"]
@@ -101,17 +96,14 @@ impl<'a> ENDKSGEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ENDCRYPT_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<ENDCRYPT_A> for bool {
     #[inline(always)]
     fn from(variant: ENDCRYPT_A) -> Self {
-        match variant {
-            ENDCRYPT_A::DISABLED => false,
-            ENDCRYPT_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ENDCRYPT`"]
@@ -140,14 +132,12 @@ impl ENDCRYPT_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ENDCRYPT_AW {
     #[doc = "1: Enable"]
-    SET,
+    SET = 1,
 }
 impl From<ENDCRYPT_AW> for bool {
     #[inline(always)]
     fn from(variant: ENDCRYPT_AW) -> Self {
-        match variant {
-            ENDCRYPT_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `ENDCRYPT`"]
@@ -188,17 +178,14 @@ impl<'a> ENDCRYPT_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERROR_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<ERROR_A> for bool {
     #[inline(always)]
     fn from(variant: ERROR_A) -> Self {
-        match variant {
-            ERROR_A::DISABLED => false,
-            ERROR_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ERROR`"]
@@ -227,14 +214,12 @@ impl ERROR_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERROR_AW {
     #[doc = "1: Enable"]
-    SET,
+    SET = 1,
 }
 impl From<ERROR_AW> for bool {
     #[inline(always)]
     fn from(variant: ERROR_AW) -> Self {
-        match variant {
-            ERROR_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `ERROR`"]

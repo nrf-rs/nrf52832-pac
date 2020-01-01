@@ -12,19 +12,17 @@ impl crate::ResetValue for super::APPROTECT {
 }
 #[doc = "Enable or disable Access Port protection. Any other value than 0xFF being written to this field will enable protection.\n\nValue on reset: 255"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PALL_A {
     #[doc = "255: Disable"]
-    DISABLED,
+    DISABLED = 255,
     #[doc = "0: Enable"]
-    ENABLED,
+    ENABLED = 0,
 }
 impl From<PALL_A> for u8 {
     #[inline(always)]
     fn from(variant: PALL_A) -> Self {
-        match variant {
-            PALL_A::DISABLED => 255,
-            PALL_A::ENABLED => 0,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PALL`"]

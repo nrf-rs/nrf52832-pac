@@ -14,17 +14,14 @@ impl crate::ResetValue for super::DETECTMODE {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DETECTMODE_A {
     #[doc = "0: DETECT directly connected to PIN DETECT signals"]
-    DEFAULT,
+    DEFAULT = 0,
     #[doc = "1: Use the latched LDETECT behaviour"]
-    LDETECT,
+    LDETECT = 1,
 }
 impl From<DETECTMODE_A> for bool {
     #[inline(always)]
     fn from(variant: DETECTMODE_A) -> Self {
-        match variant {
-            DETECTMODE_A::DEFAULT => false,
-            DETECTMODE_A::LDETECT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DETECTMODE`"]

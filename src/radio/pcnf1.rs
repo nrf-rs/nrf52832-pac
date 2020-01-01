@@ -56,17 +56,14 @@ impl<'a> BALEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ENDIAN_A {
     #[doc = "0: Least Significant bit on air first"]
-    LITTLE,
+    LITTLE = 0,
     #[doc = "1: Most significant bit on air first"]
-    BIG,
+    BIG = 1,
 }
 impl From<ENDIAN_A> for bool {
     #[inline(always)]
     fn from(variant: ENDIAN_A) -> Self {
-        match variant {
-            ENDIAN_A::LITTLE => false,
-            ENDIAN_A::BIG => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ENDIAN`"]
@@ -134,17 +131,14 @@ impl<'a> ENDIAN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WHITEEN_A {
     #[doc = "0: Disable"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<WHITEEN_A> for bool {
     #[inline(always)]
     fn from(variant: WHITEEN_A) -> Self {
-        match variant {
-            WHITEEN_A::DISABLED => false,
-            WHITEEN_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `WHITEEN`"]

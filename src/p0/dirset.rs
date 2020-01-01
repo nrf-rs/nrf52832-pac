@@ -14,17 +14,14 @@ impl crate::ResetValue for super::DIRSET {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN0_A {
     #[doc = "0: Read: pin set as input"]
-    INPUT,
+    INPUT = 0,
     #[doc = "1: Read: pin set as output"]
-    OUTPUT,
+    OUTPUT = 1,
 }
 impl From<PIN0_A> for bool {
     #[inline(always)]
     fn from(variant: PIN0_A) -> Self {
-        match variant {
-            PIN0_A::INPUT => false,
-            PIN0_A::OUTPUT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIN0`"]
@@ -53,14 +50,12 @@ impl PIN0_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN0_AW {
     #[doc = "1: Write: writing a '1' sets pin to output; writing a '0' has no effect"]
-    SET,
+    SET = 1,
 }
 impl From<PIN0_AW> for bool {
     #[inline(always)]
     fn from(variant: PIN0_AW) -> Self {
-        match variant {
-            PIN0_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `PIN0`"]
@@ -101,17 +96,14 @@ impl<'a> PIN0_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN1_A {
     #[doc = "0: Read: pin set as input"]
-    INPUT,
+    INPUT = 0,
     #[doc = "1: Read: pin set as output"]
-    OUTPUT,
+    OUTPUT = 1,
 }
 impl From<PIN1_A> for bool {
     #[inline(always)]
     fn from(variant: PIN1_A) -> Self {
-        match variant {
-            PIN1_A::INPUT => false,
-            PIN1_A::OUTPUT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIN1`"]
@@ -140,14 +132,12 @@ impl PIN1_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN1_AW {
     #[doc = "1: Write: writing a '1' sets pin to output; writing a '0' has no effect"]
-    SET,
+    SET = 1,
 }
 impl From<PIN1_AW> for bool {
     #[inline(always)]
     fn from(variant: PIN1_AW) -> Self {
-        match variant {
-            PIN1_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `PIN1`"]
@@ -188,17 +178,14 @@ impl<'a> PIN1_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN2_A {
     #[doc = "0: Read: pin set as input"]
-    INPUT,
+    INPUT = 0,
     #[doc = "1: Read: pin set as output"]
-    OUTPUT,
+    OUTPUT = 1,
 }
 impl From<PIN2_A> for bool {
     #[inline(always)]
     fn from(variant: PIN2_A) -> Self {
-        match variant {
-            PIN2_A::INPUT => false,
-            PIN2_A::OUTPUT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIN2`"]
@@ -227,14 +214,12 @@ impl PIN2_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN2_AW {
     #[doc = "1: Write: writing a '1' sets pin to output; writing a '0' has no effect"]
-    SET,
+    SET = 1,
 }
 impl From<PIN2_AW> for bool {
     #[inline(always)]
     fn from(variant: PIN2_AW) -> Self {
-        match variant {
-            PIN2_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `PIN2`"]
@@ -275,17 +260,14 @@ impl<'a> PIN2_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN3_A {
     #[doc = "0: Read: pin set as input"]
-    INPUT,
+    INPUT = 0,
     #[doc = "1: Read: pin set as output"]
-    OUTPUT,
+    OUTPUT = 1,
 }
 impl From<PIN3_A> for bool {
     #[inline(always)]
     fn from(variant: PIN3_A) -> Self {
-        match variant {
-            PIN3_A::INPUT => false,
-            PIN3_A::OUTPUT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIN3`"]
@@ -314,14 +296,12 @@ impl PIN3_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN3_AW {
     #[doc = "1: Write: writing a '1' sets pin to output; writing a '0' has no effect"]
-    SET,
+    SET = 1,
 }
 impl From<PIN3_AW> for bool {
     #[inline(always)]
     fn from(variant: PIN3_AW) -> Self {
-        match variant {
-            PIN3_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `PIN3`"]
@@ -362,17 +342,14 @@ impl<'a> PIN3_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN4_A {
     #[doc = "0: Read: pin set as input"]
-    INPUT,
+    INPUT = 0,
     #[doc = "1: Read: pin set as output"]
-    OUTPUT,
+    OUTPUT = 1,
 }
 impl From<PIN4_A> for bool {
     #[inline(always)]
     fn from(variant: PIN4_A) -> Self {
-        match variant {
-            PIN4_A::INPUT => false,
-            PIN4_A::OUTPUT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIN4`"]
@@ -401,14 +378,12 @@ impl PIN4_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN4_AW {
     #[doc = "1: Write: writing a '1' sets pin to output; writing a '0' has no effect"]
-    SET,
+    SET = 1,
 }
 impl From<PIN4_AW> for bool {
     #[inline(always)]
     fn from(variant: PIN4_AW) -> Self {
-        match variant {
-            PIN4_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `PIN4`"]
@@ -449,17 +424,14 @@ impl<'a> PIN4_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN5_A {
     #[doc = "0: Read: pin set as input"]
-    INPUT,
+    INPUT = 0,
     #[doc = "1: Read: pin set as output"]
-    OUTPUT,
+    OUTPUT = 1,
 }
 impl From<PIN5_A> for bool {
     #[inline(always)]
     fn from(variant: PIN5_A) -> Self {
-        match variant {
-            PIN5_A::INPUT => false,
-            PIN5_A::OUTPUT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIN5`"]
@@ -488,14 +460,12 @@ impl PIN5_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN5_AW {
     #[doc = "1: Write: writing a '1' sets pin to output; writing a '0' has no effect"]
-    SET,
+    SET = 1,
 }
 impl From<PIN5_AW> for bool {
     #[inline(always)]
     fn from(variant: PIN5_AW) -> Self {
-        match variant {
-            PIN5_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `PIN5`"]
@@ -536,17 +506,14 @@ impl<'a> PIN5_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN6_A {
     #[doc = "0: Read: pin set as input"]
-    INPUT,
+    INPUT = 0,
     #[doc = "1: Read: pin set as output"]
-    OUTPUT,
+    OUTPUT = 1,
 }
 impl From<PIN6_A> for bool {
     #[inline(always)]
     fn from(variant: PIN6_A) -> Self {
-        match variant {
-            PIN6_A::INPUT => false,
-            PIN6_A::OUTPUT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIN6`"]
@@ -575,14 +542,12 @@ impl PIN6_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN6_AW {
     #[doc = "1: Write: writing a '1' sets pin to output; writing a '0' has no effect"]
-    SET,
+    SET = 1,
 }
 impl From<PIN6_AW> for bool {
     #[inline(always)]
     fn from(variant: PIN6_AW) -> Self {
-        match variant {
-            PIN6_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `PIN6`"]
@@ -623,17 +588,14 @@ impl<'a> PIN6_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN7_A {
     #[doc = "0: Read: pin set as input"]
-    INPUT,
+    INPUT = 0,
     #[doc = "1: Read: pin set as output"]
-    OUTPUT,
+    OUTPUT = 1,
 }
 impl From<PIN7_A> for bool {
     #[inline(always)]
     fn from(variant: PIN7_A) -> Self {
-        match variant {
-            PIN7_A::INPUT => false,
-            PIN7_A::OUTPUT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIN7`"]
@@ -662,14 +624,12 @@ impl PIN7_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN7_AW {
     #[doc = "1: Write: writing a '1' sets pin to output; writing a '0' has no effect"]
-    SET,
+    SET = 1,
 }
 impl From<PIN7_AW> for bool {
     #[inline(always)]
     fn from(variant: PIN7_AW) -> Self {
-        match variant {
-            PIN7_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `PIN7`"]
@@ -710,17 +670,14 @@ impl<'a> PIN7_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN8_A {
     #[doc = "0: Read: pin set as input"]
-    INPUT,
+    INPUT = 0,
     #[doc = "1: Read: pin set as output"]
-    OUTPUT,
+    OUTPUT = 1,
 }
 impl From<PIN8_A> for bool {
     #[inline(always)]
     fn from(variant: PIN8_A) -> Self {
-        match variant {
-            PIN8_A::INPUT => false,
-            PIN8_A::OUTPUT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIN8`"]
@@ -749,14 +706,12 @@ impl PIN8_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN8_AW {
     #[doc = "1: Write: writing a '1' sets pin to output; writing a '0' has no effect"]
-    SET,
+    SET = 1,
 }
 impl From<PIN8_AW> for bool {
     #[inline(always)]
     fn from(variant: PIN8_AW) -> Self {
-        match variant {
-            PIN8_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `PIN8`"]
@@ -797,17 +752,14 @@ impl<'a> PIN8_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN9_A {
     #[doc = "0: Read: pin set as input"]
-    INPUT,
+    INPUT = 0,
     #[doc = "1: Read: pin set as output"]
-    OUTPUT,
+    OUTPUT = 1,
 }
 impl From<PIN9_A> for bool {
     #[inline(always)]
     fn from(variant: PIN9_A) -> Self {
-        match variant {
-            PIN9_A::INPUT => false,
-            PIN9_A::OUTPUT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIN9`"]
@@ -836,14 +788,12 @@ impl PIN9_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN9_AW {
     #[doc = "1: Write: writing a '1' sets pin to output; writing a '0' has no effect"]
-    SET,
+    SET = 1,
 }
 impl From<PIN9_AW> for bool {
     #[inline(always)]
     fn from(variant: PIN9_AW) -> Self {
-        match variant {
-            PIN9_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `PIN9`"]
@@ -884,17 +834,14 @@ impl<'a> PIN9_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN10_A {
     #[doc = "0: Read: pin set as input"]
-    INPUT,
+    INPUT = 0,
     #[doc = "1: Read: pin set as output"]
-    OUTPUT,
+    OUTPUT = 1,
 }
 impl From<PIN10_A> for bool {
     #[inline(always)]
     fn from(variant: PIN10_A) -> Self {
-        match variant {
-            PIN10_A::INPUT => false,
-            PIN10_A::OUTPUT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIN10`"]
@@ -923,14 +870,12 @@ impl PIN10_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN10_AW {
     #[doc = "1: Write: writing a '1' sets pin to output; writing a '0' has no effect"]
-    SET,
+    SET = 1,
 }
 impl From<PIN10_AW> for bool {
     #[inline(always)]
     fn from(variant: PIN10_AW) -> Self {
-        match variant {
-            PIN10_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `PIN10`"]
@@ -971,17 +916,14 @@ impl<'a> PIN10_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN11_A {
     #[doc = "0: Read: pin set as input"]
-    INPUT,
+    INPUT = 0,
     #[doc = "1: Read: pin set as output"]
-    OUTPUT,
+    OUTPUT = 1,
 }
 impl From<PIN11_A> for bool {
     #[inline(always)]
     fn from(variant: PIN11_A) -> Self {
-        match variant {
-            PIN11_A::INPUT => false,
-            PIN11_A::OUTPUT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIN11`"]
@@ -1010,14 +952,12 @@ impl PIN11_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN11_AW {
     #[doc = "1: Write: writing a '1' sets pin to output; writing a '0' has no effect"]
-    SET,
+    SET = 1,
 }
 impl From<PIN11_AW> for bool {
     #[inline(always)]
     fn from(variant: PIN11_AW) -> Self {
-        match variant {
-            PIN11_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `PIN11`"]
@@ -1058,17 +998,14 @@ impl<'a> PIN11_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN12_A {
     #[doc = "0: Read: pin set as input"]
-    INPUT,
+    INPUT = 0,
     #[doc = "1: Read: pin set as output"]
-    OUTPUT,
+    OUTPUT = 1,
 }
 impl From<PIN12_A> for bool {
     #[inline(always)]
     fn from(variant: PIN12_A) -> Self {
-        match variant {
-            PIN12_A::INPUT => false,
-            PIN12_A::OUTPUT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIN12`"]
@@ -1097,14 +1034,12 @@ impl PIN12_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN12_AW {
     #[doc = "1: Write: writing a '1' sets pin to output; writing a '0' has no effect"]
-    SET,
+    SET = 1,
 }
 impl From<PIN12_AW> for bool {
     #[inline(always)]
     fn from(variant: PIN12_AW) -> Self {
-        match variant {
-            PIN12_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `PIN12`"]
@@ -1145,17 +1080,14 @@ impl<'a> PIN12_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN13_A {
     #[doc = "0: Read: pin set as input"]
-    INPUT,
+    INPUT = 0,
     #[doc = "1: Read: pin set as output"]
-    OUTPUT,
+    OUTPUT = 1,
 }
 impl From<PIN13_A> for bool {
     #[inline(always)]
     fn from(variant: PIN13_A) -> Self {
-        match variant {
-            PIN13_A::INPUT => false,
-            PIN13_A::OUTPUT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIN13`"]
@@ -1184,14 +1116,12 @@ impl PIN13_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN13_AW {
     #[doc = "1: Write: writing a '1' sets pin to output; writing a '0' has no effect"]
-    SET,
+    SET = 1,
 }
 impl From<PIN13_AW> for bool {
     #[inline(always)]
     fn from(variant: PIN13_AW) -> Self {
-        match variant {
-            PIN13_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `PIN13`"]
@@ -1232,17 +1162,14 @@ impl<'a> PIN13_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN14_A {
     #[doc = "0: Read: pin set as input"]
-    INPUT,
+    INPUT = 0,
     #[doc = "1: Read: pin set as output"]
-    OUTPUT,
+    OUTPUT = 1,
 }
 impl From<PIN14_A> for bool {
     #[inline(always)]
     fn from(variant: PIN14_A) -> Self {
-        match variant {
-            PIN14_A::INPUT => false,
-            PIN14_A::OUTPUT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIN14`"]
@@ -1271,14 +1198,12 @@ impl PIN14_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN14_AW {
     #[doc = "1: Write: writing a '1' sets pin to output; writing a '0' has no effect"]
-    SET,
+    SET = 1,
 }
 impl From<PIN14_AW> for bool {
     #[inline(always)]
     fn from(variant: PIN14_AW) -> Self {
-        match variant {
-            PIN14_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `PIN14`"]
@@ -1319,17 +1244,14 @@ impl<'a> PIN14_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN15_A {
     #[doc = "0: Read: pin set as input"]
-    INPUT,
+    INPUT = 0,
     #[doc = "1: Read: pin set as output"]
-    OUTPUT,
+    OUTPUT = 1,
 }
 impl From<PIN15_A> for bool {
     #[inline(always)]
     fn from(variant: PIN15_A) -> Self {
-        match variant {
-            PIN15_A::INPUT => false,
-            PIN15_A::OUTPUT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIN15`"]
@@ -1358,14 +1280,12 @@ impl PIN15_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN15_AW {
     #[doc = "1: Write: writing a '1' sets pin to output; writing a '0' has no effect"]
-    SET,
+    SET = 1,
 }
 impl From<PIN15_AW> for bool {
     #[inline(always)]
     fn from(variant: PIN15_AW) -> Self {
-        match variant {
-            PIN15_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `PIN15`"]
@@ -1406,17 +1326,14 @@ impl<'a> PIN15_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN16_A {
     #[doc = "0: Read: pin set as input"]
-    INPUT,
+    INPUT = 0,
     #[doc = "1: Read: pin set as output"]
-    OUTPUT,
+    OUTPUT = 1,
 }
 impl From<PIN16_A> for bool {
     #[inline(always)]
     fn from(variant: PIN16_A) -> Self {
-        match variant {
-            PIN16_A::INPUT => false,
-            PIN16_A::OUTPUT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIN16`"]
@@ -1445,14 +1362,12 @@ impl PIN16_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN16_AW {
     #[doc = "1: Write: writing a '1' sets pin to output; writing a '0' has no effect"]
-    SET,
+    SET = 1,
 }
 impl From<PIN16_AW> for bool {
     #[inline(always)]
     fn from(variant: PIN16_AW) -> Self {
-        match variant {
-            PIN16_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `PIN16`"]
@@ -1493,17 +1408,14 @@ impl<'a> PIN16_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN17_A {
     #[doc = "0: Read: pin set as input"]
-    INPUT,
+    INPUT = 0,
     #[doc = "1: Read: pin set as output"]
-    OUTPUT,
+    OUTPUT = 1,
 }
 impl From<PIN17_A> for bool {
     #[inline(always)]
     fn from(variant: PIN17_A) -> Self {
-        match variant {
-            PIN17_A::INPUT => false,
-            PIN17_A::OUTPUT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIN17`"]
@@ -1532,14 +1444,12 @@ impl PIN17_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN17_AW {
     #[doc = "1: Write: writing a '1' sets pin to output; writing a '0' has no effect"]
-    SET,
+    SET = 1,
 }
 impl From<PIN17_AW> for bool {
     #[inline(always)]
     fn from(variant: PIN17_AW) -> Self {
-        match variant {
-            PIN17_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `PIN17`"]
@@ -1580,17 +1490,14 @@ impl<'a> PIN17_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN18_A {
     #[doc = "0: Read: pin set as input"]
-    INPUT,
+    INPUT = 0,
     #[doc = "1: Read: pin set as output"]
-    OUTPUT,
+    OUTPUT = 1,
 }
 impl From<PIN18_A> for bool {
     #[inline(always)]
     fn from(variant: PIN18_A) -> Self {
-        match variant {
-            PIN18_A::INPUT => false,
-            PIN18_A::OUTPUT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIN18`"]
@@ -1619,14 +1526,12 @@ impl PIN18_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN18_AW {
     #[doc = "1: Write: writing a '1' sets pin to output; writing a '0' has no effect"]
-    SET,
+    SET = 1,
 }
 impl From<PIN18_AW> for bool {
     #[inline(always)]
     fn from(variant: PIN18_AW) -> Self {
-        match variant {
-            PIN18_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `PIN18`"]
@@ -1667,17 +1572,14 @@ impl<'a> PIN18_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN19_A {
     #[doc = "0: Read: pin set as input"]
-    INPUT,
+    INPUT = 0,
     #[doc = "1: Read: pin set as output"]
-    OUTPUT,
+    OUTPUT = 1,
 }
 impl From<PIN19_A> for bool {
     #[inline(always)]
     fn from(variant: PIN19_A) -> Self {
-        match variant {
-            PIN19_A::INPUT => false,
-            PIN19_A::OUTPUT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIN19`"]
@@ -1706,14 +1608,12 @@ impl PIN19_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN19_AW {
     #[doc = "1: Write: writing a '1' sets pin to output; writing a '0' has no effect"]
-    SET,
+    SET = 1,
 }
 impl From<PIN19_AW> for bool {
     #[inline(always)]
     fn from(variant: PIN19_AW) -> Self {
-        match variant {
-            PIN19_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `PIN19`"]
@@ -1754,17 +1654,14 @@ impl<'a> PIN19_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN20_A {
     #[doc = "0: Read: pin set as input"]
-    INPUT,
+    INPUT = 0,
     #[doc = "1: Read: pin set as output"]
-    OUTPUT,
+    OUTPUT = 1,
 }
 impl From<PIN20_A> for bool {
     #[inline(always)]
     fn from(variant: PIN20_A) -> Self {
-        match variant {
-            PIN20_A::INPUT => false,
-            PIN20_A::OUTPUT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIN20`"]
@@ -1793,14 +1690,12 @@ impl PIN20_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN20_AW {
     #[doc = "1: Write: writing a '1' sets pin to output; writing a '0' has no effect"]
-    SET,
+    SET = 1,
 }
 impl From<PIN20_AW> for bool {
     #[inline(always)]
     fn from(variant: PIN20_AW) -> Self {
-        match variant {
-            PIN20_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `PIN20`"]
@@ -1841,17 +1736,14 @@ impl<'a> PIN20_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN21_A {
     #[doc = "0: Read: pin set as input"]
-    INPUT,
+    INPUT = 0,
     #[doc = "1: Read: pin set as output"]
-    OUTPUT,
+    OUTPUT = 1,
 }
 impl From<PIN21_A> for bool {
     #[inline(always)]
     fn from(variant: PIN21_A) -> Self {
-        match variant {
-            PIN21_A::INPUT => false,
-            PIN21_A::OUTPUT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIN21`"]
@@ -1880,14 +1772,12 @@ impl PIN21_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN21_AW {
     #[doc = "1: Write: writing a '1' sets pin to output; writing a '0' has no effect"]
-    SET,
+    SET = 1,
 }
 impl From<PIN21_AW> for bool {
     #[inline(always)]
     fn from(variant: PIN21_AW) -> Self {
-        match variant {
-            PIN21_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `PIN21`"]
@@ -1928,17 +1818,14 @@ impl<'a> PIN21_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN22_A {
     #[doc = "0: Read: pin set as input"]
-    INPUT,
+    INPUT = 0,
     #[doc = "1: Read: pin set as output"]
-    OUTPUT,
+    OUTPUT = 1,
 }
 impl From<PIN22_A> for bool {
     #[inline(always)]
     fn from(variant: PIN22_A) -> Self {
-        match variant {
-            PIN22_A::INPUT => false,
-            PIN22_A::OUTPUT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIN22`"]
@@ -1967,14 +1854,12 @@ impl PIN22_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN22_AW {
     #[doc = "1: Write: writing a '1' sets pin to output; writing a '0' has no effect"]
-    SET,
+    SET = 1,
 }
 impl From<PIN22_AW> for bool {
     #[inline(always)]
     fn from(variant: PIN22_AW) -> Self {
-        match variant {
-            PIN22_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `PIN22`"]
@@ -2015,17 +1900,14 @@ impl<'a> PIN22_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN23_A {
     #[doc = "0: Read: pin set as input"]
-    INPUT,
+    INPUT = 0,
     #[doc = "1: Read: pin set as output"]
-    OUTPUT,
+    OUTPUT = 1,
 }
 impl From<PIN23_A> for bool {
     #[inline(always)]
     fn from(variant: PIN23_A) -> Self {
-        match variant {
-            PIN23_A::INPUT => false,
-            PIN23_A::OUTPUT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIN23`"]
@@ -2054,14 +1936,12 @@ impl PIN23_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN23_AW {
     #[doc = "1: Write: writing a '1' sets pin to output; writing a '0' has no effect"]
-    SET,
+    SET = 1,
 }
 impl From<PIN23_AW> for bool {
     #[inline(always)]
     fn from(variant: PIN23_AW) -> Self {
-        match variant {
-            PIN23_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `PIN23`"]
@@ -2102,17 +1982,14 @@ impl<'a> PIN23_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN24_A {
     #[doc = "0: Read: pin set as input"]
-    INPUT,
+    INPUT = 0,
     #[doc = "1: Read: pin set as output"]
-    OUTPUT,
+    OUTPUT = 1,
 }
 impl From<PIN24_A> for bool {
     #[inline(always)]
     fn from(variant: PIN24_A) -> Self {
-        match variant {
-            PIN24_A::INPUT => false,
-            PIN24_A::OUTPUT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIN24`"]
@@ -2141,14 +2018,12 @@ impl PIN24_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN24_AW {
     #[doc = "1: Write: writing a '1' sets pin to output; writing a '0' has no effect"]
-    SET,
+    SET = 1,
 }
 impl From<PIN24_AW> for bool {
     #[inline(always)]
     fn from(variant: PIN24_AW) -> Self {
-        match variant {
-            PIN24_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `PIN24`"]
@@ -2189,17 +2064,14 @@ impl<'a> PIN24_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN25_A {
     #[doc = "0: Read: pin set as input"]
-    INPUT,
+    INPUT = 0,
     #[doc = "1: Read: pin set as output"]
-    OUTPUT,
+    OUTPUT = 1,
 }
 impl From<PIN25_A> for bool {
     #[inline(always)]
     fn from(variant: PIN25_A) -> Self {
-        match variant {
-            PIN25_A::INPUT => false,
-            PIN25_A::OUTPUT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIN25`"]
@@ -2228,14 +2100,12 @@ impl PIN25_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN25_AW {
     #[doc = "1: Write: writing a '1' sets pin to output; writing a '0' has no effect"]
-    SET,
+    SET = 1,
 }
 impl From<PIN25_AW> for bool {
     #[inline(always)]
     fn from(variant: PIN25_AW) -> Self {
-        match variant {
-            PIN25_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `PIN25`"]
@@ -2276,17 +2146,14 @@ impl<'a> PIN25_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN26_A {
     #[doc = "0: Read: pin set as input"]
-    INPUT,
+    INPUT = 0,
     #[doc = "1: Read: pin set as output"]
-    OUTPUT,
+    OUTPUT = 1,
 }
 impl From<PIN26_A> for bool {
     #[inline(always)]
     fn from(variant: PIN26_A) -> Self {
-        match variant {
-            PIN26_A::INPUT => false,
-            PIN26_A::OUTPUT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIN26`"]
@@ -2315,14 +2182,12 @@ impl PIN26_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN26_AW {
     #[doc = "1: Write: writing a '1' sets pin to output; writing a '0' has no effect"]
-    SET,
+    SET = 1,
 }
 impl From<PIN26_AW> for bool {
     #[inline(always)]
     fn from(variant: PIN26_AW) -> Self {
-        match variant {
-            PIN26_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `PIN26`"]
@@ -2363,17 +2228,14 @@ impl<'a> PIN26_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN27_A {
     #[doc = "0: Read: pin set as input"]
-    INPUT,
+    INPUT = 0,
     #[doc = "1: Read: pin set as output"]
-    OUTPUT,
+    OUTPUT = 1,
 }
 impl From<PIN27_A> for bool {
     #[inline(always)]
     fn from(variant: PIN27_A) -> Self {
-        match variant {
-            PIN27_A::INPUT => false,
-            PIN27_A::OUTPUT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIN27`"]
@@ -2402,14 +2264,12 @@ impl PIN27_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN27_AW {
     #[doc = "1: Write: writing a '1' sets pin to output; writing a '0' has no effect"]
-    SET,
+    SET = 1,
 }
 impl From<PIN27_AW> for bool {
     #[inline(always)]
     fn from(variant: PIN27_AW) -> Self {
-        match variant {
-            PIN27_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `PIN27`"]
@@ -2450,17 +2310,14 @@ impl<'a> PIN27_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN28_A {
     #[doc = "0: Read: pin set as input"]
-    INPUT,
+    INPUT = 0,
     #[doc = "1: Read: pin set as output"]
-    OUTPUT,
+    OUTPUT = 1,
 }
 impl From<PIN28_A> for bool {
     #[inline(always)]
     fn from(variant: PIN28_A) -> Self {
-        match variant {
-            PIN28_A::INPUT => false,
-            PIN28_A::OUTPUT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIN28`"]
@@ -2489,14 +2346,12 @@ impl PIN28_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN28_AW {
     #[doc = "1: Write: writing a '1' sets pin to output; writing a '0' has no effect"]
-    SET,
+    SET = 1,
 }
 impl From<PIN28_AW> for bool {
     #[inline(always)]
     fn from(variant: PIN28_AW) -> Self {
-        match variant {
-            PIN28_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `PIN28`"]
@@ -2537,17 +2392,14 @@ impl<'a> PIN28_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN29_A {
     #[doc = "0: Read: pin set as input"]
-    INPUT,
+    INPUT = 0,
     #[doc = "1: Read: pin set as output"]
-    OUTPUT,
+    OUTPUT = 1,
 }
 impl From<PIN29_A> for bool {
     #[inline(always)]
     fn from(variant: PIN29_A) -> Self {
-        match variant {
-            PIN29_A::INPUT => false,
-            PIN29_A::OUTPUT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIN29`"]
@@ -2576,14 +2428,12 @@ impl PIN29_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN29_AW {
     #[doc = "1: Write: writing a '1' sets pin to output; writing a '0' has no effect"]
-    SET,
+    SET = 1,
 }
 impl From<PIN29_AW> for bool {
     #[inline(always)]
     fn from(variant: PIN29_AW) -> Self {
-        match variant {
-            PIN29_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `PIN29`"]
@@ -2624,17 +2474,14 @@ impl<'a> PIN29_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN30_A {
     #[doc = "0: Read: pin set as input"]
-    INPUT,
+    INPUT = 0,
     #[doc = "1: Read: pin set as output"]
-    OUTPUT,
+    OUTPUT = 1,
 }
 impl From<PIN30_A> for bool {
     #[inline(always)]
     fn from(variant: PIN30_A) -> Self {
-        match variant {
-            PIN30_A::INPUT => false,
-            PIN30_A::OUTPUT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIN30`"]
@@ -2663,14 +2510,12 @@ impl PIN30_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN30_AW {
     #[doc = "1: Write: writing a '1' sets pin to output; writing a '0' has no effect"]
-    SET,
+    SET = 1,
 }
 impl From<PIN30_AW> for bool {
     #[inline(always)]
     fn from(variant: PIN30_AW) -> Self {
-        match variant {
-            PIN30_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `PIN30`"]
@@ -2711,17 +2556,14 @@ impl<'a> PIN30_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN31_A {
     #[doc = "0: Read: pin set as input"]
-    INPUT,
+    INPUT = 0,
     #[doc = "1: Read: pin set as output"]
-    OUTPUT,
+    OUTPUT = 1,
 }
 impl From<PIN31_A> for bool {
     #[inline(always)]
     fn from(variant: PIN31_A) -> Self {
-        match variant {
-            PIN31_A::INPUT => false,
-            PIN31_A::OUTPUT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIN31`"]
@@ -2750,14 +2592,12 @@ impl PIN31_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIN31_AW {
     #[doc = "1: Write: writing a '1' sets pin to output; writing a '0' has no effect"]
-    SET,
+    SET = 1,
 }
 impl From<PIN31_AW> for bool {
     #[inline(always)]
     fn from(variant: PIN31_AW) -> Self {
-        match variant {
-            PIN31_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `PIN31`"]

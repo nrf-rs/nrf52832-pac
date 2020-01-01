@@ -12,22 +12,19 @@ impl crate::ResetValue for super::CHANNELS {
 }
 #[doc = "Enable channels.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CHANNELS_A {
     #[doc = "0: Stereo."]
-    STEREO,
+    STEREO = 0,
     #[doc = "1: Left only."]
-    LEFT,
+    LEFT = 1,
     #[doc = "2: Right only."]
-    RIGHT,
+    RIGHT = 2,
 }
 impl From<CHANNELS_A> for u8 {
     #[inline(always)]
     fn from(variant: CHANNELS_A) -> Self {
-        match variant {
-            CHANNELS_A::STEREO => 0,
-            CHANNELS_A::LEFT => 1,
-            CHANNELS_A::RIGHT => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CHANNELS`"]

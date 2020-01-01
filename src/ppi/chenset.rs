@@ -14,17 +14,14 @@ impl crate::ResetValue for super::CHENSET {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH0_A {
     #[doc = "0: Read: channel disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: channel enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH0_A> for bool {
     #[inline(always)]
     fn from(variant: CH0_A) -> Self {
-        match variant {
-            CH0_A::DISABLED => false,
-            CH0_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH0`"]
@@ -53,14 +50,12 @@ impl CH0_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH0_AW {
     #[doc = "1: Write: Enable channel"]
-    SET,
+    SET = 1,
 }
 impl From<CH0_AW> for bool {
     #[inline(always)]
     fn from(variant: CH0_AW) -> Self {
-        match variant {
-            CH0_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CH0`"]
@@ -101,17 +96,14 @@ impl<'a> CH0_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH1_A {
     #[doc = "0: Read: channel disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: channel enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH1_A> for bool {
     #[inline(always)]
     fn from(variant: CH1_A) -> Self {
-        match variant {
-            CH1_A::DISABLED => false,
-            CH1_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH1`"]
@@ -140,14 +132,12 @@ impl CH1_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH1_AW {
     #[doc = "1: Write: Enable channel"]
-    SET,
+    SET = 1,
 }
 impl From<CH1_AW> for bool {
     #[inline(always)]
     fn from(variant: CH1_AW) -> Self {
-        match variant {
-            CH1_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CH1`"]
@@ -188,17 +178,14 @@ impl<'a> CH1_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH2_A {
     #[doc = "0: Read: channel disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: channel enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH2_A> for bool {
     #[inline(always)]
     fn from(variant: CH2_A) -> Self {
-        match variant {
-            CH2_A::DISABLED => false,
-            CH2_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH2`"]
@@ -227,14 +214,12 @@ impl CH2_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH2_AW {
     #[doc = "1: Write: Enable channel"]
-    SET,
+    SET = 1,
 }
 impl From<CH2_AW> for bool {
     #[inline(always)]
     fn from(variant: CH2_AW) -> Self {
-        match variant {
-            CH2_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CH2`"]
@@ -275,17 +260,14 @@ impl<'a> CH2_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH3_A {
     #[doc = "0: Read: channel disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: channel enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH3_A> for bool {
     #[inline(always)]
     fn from(variant: CH3_A) -> Self {
-        match variant {
-            CH3_A::DISABLED => false,
-            CH3_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH3`"]
@@ -314,14 +296,12 @@ impl CH3_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH3_AW {
     #[doc = "1: Write: Enable channel"]
-    SET,
+    SET = 1,
 }
 impl From<CH3_AW> for bool {
     #[inline(always)]
     fn from(variant: CH3_AW) -> Self {
-        match variant {
-            CH3_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CH3`"]
@@ -362,17 +342,14 @@ impl<'a> CH3_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH4_A {
     #[doc = "0: Read: channel disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: channel enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH4_A> for bool {
     #[inline(always)]
     fn from(variant: CH4_A) -> Self {
-        match variant {
-            CH4_A::DISABLED => false,
-            CH4_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH4`"]
@@ -401,14 +378,12 @@ impl CH4_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH4_AW {
     #[doc = "1: Write: Enable channel"]
-    SET,
+    SET = 1,
 }
 impl From<CH4_AW> for bool {
     #[inline(always)]
     fn from(variant: CH4_AW) -> Self {
-        match variant {
-            CH4_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CH4`"]
@@ -449,17 +424,14 @@ impl<'a> CH4_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH5_A {
     #[doc = "0: Read: channel disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: channel enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH5_A> for bool {
     #[inline(always)]
     fn from(variant: CH5_A) -> Self {
-        match variant {
-            CH5_A::DISABLED => false,
-            CH5_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH5`"]
@@ -488,14 +460,12 @@ impl CH5_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH5_AW {
     #[doc = "1: Write: Enable channel"]
-    SET,
+    SET = 1,
 }
 impl From<CH5_AW> for bool {
     #[inline(always)]
     fn from(variant: CH5_AW) -> Self {
-        match variant {
-            CH5_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CH5`"]
@@ -536,17 +506,14 @@ impl<'a> CH5_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH6_A {
     #[doc = "0: Read: channel disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: channel enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH6_A> for bool {
     #[inline(always)]
     fn from(variant: CH6_A) -> Self {
-        match variant {
-            CH6_A::DISABLED => false,
-            CH6_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH6`"]
@@ -575,14 +542,12 @@ impl CH6_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH6_AW {
     #[doc = "1: Write: Enable channel"]
-    SET,
+    SET = 1,
 }
 impl From<CH6_AW> for bool {
     #[inline(always)]
     fn from(variant: CH6_AW) -> Self {
-        match variant {
-            CH6_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CH6`"]
@@ -623,17 +588,14 @@ impl<'a> CH6_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH7_A {
     #[doc = "0: Read: channel disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: channel enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH7_A> for bool {
     #[inline(always)]
     fn from(variant: CH7_A) -> Self {
-        match variant {
-            CH7_A::DISABLED => false,
-            CH7_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH7`"]
@@ -662,14 +624,12 @@ impl CH7_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH7_AW {
     #[doc = "1: Write: Enable channel"]
-    SET,
+    SET = 1,
 }
 impl From<CH7_AW> for bool {
     #[inline(always)]
     fn from(variant: CH7_AW) -> Self {
-        match variant {
-            CH7_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CH7`"]
@@ -710,17 +670,14 @@ impl<'a> CH7_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH8_A {
     #[doc = "0: Read: channel disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: channel enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH8_A> for bool {
     #[inline(always)]
     fn from(variant: CH8_A) -> Self {
-        match variant {
-            CH8_A::DISABLED => false,
-            CH8_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH8`"]
@@ -749,14 +706,12 @@ impl CH8_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH8_AW {
     #[doc = "1: Write: Enable channel"]
-    SET,
+    SET = 1,
 }
 impl From<CH8_AW> for bool {
     #[inline(always)]
     fn from(variant: CH8_AW) -> Self {
-        match variant {
-            CH8_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CH8`"]
@@ -797,17 +752,14 @@ impl<'a> CH8_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH9_A {
     #[doc = "0: Read: channel disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: channel enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH9_A> for bool {
     #[inline(always)]
     fn from(variant: CH9_A) -> Self {
-        match variant {
-            CH9_A::DISABLED => false,
-            CH9_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH9`"]
@@ -836,14 +788,12 @@ impl CH9_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH9_AW {
     #[doc = "1: Write: Enable channel"]
-    SET,
+    SET = 1,
 }
 impl From<CH9_AW> for bool {
     #[inline(always)]
     fn from(variant: CH9_AW) -> Self {
-        match variant {
-            CH9_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CH9`"]
@@ -884,17 +834,14 @@ impl<'a> CH9_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH10_A {
     #[doc = "0: Read: channel disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: channel enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH10_A> for bool {
     #[inline(always)]
     fn from(variant: CH10_A) -> Self {
-        match variant {
-            CH10_A::DISABLED => false,
-            CH10_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH10`"]
@@ -923,14 +870,12 @@ impl CH10_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH10_AW {
     #[doc = "1: Write: Enable channel"]
-    SET,
+    SET = 1,
 }
 impl From<CH10_AW> for bool {
     #[inline(always)]
     fn from(variant: CH10_AW) -> Self {
-        match variant {
-            CH10_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CH10`"]
@@ -971,17 +916,14 @@ impl<'a> CH10_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH11_A {
     #[doc = "0: Read: channel disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: channel enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH11_A> for bool {
     #[inline(always)]
     fn from(variant: CH11_A) -> Self {
-        match variant {
-            CH11_A::DISABLED => false,
-            CH11_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH11`"]
@@ -1010,14 +952,12 @@ impl CH11_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH11_AW {
     #[doc = "1: Write: Enable channel"]
-    SET,
+    SET = 1,
 }
 impl From<CH11_AW> for bool {
     #[inline(always)]
     fn from(variant: CH11_AW) -> Self {
-        match variant {
-            CH11_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CH11`"]
@@ -1058,17 +998,14 @@ impl<'a> CH11_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH12_A {
     #[doc = "0: Read: channel disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: channel enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH12_A> for bool {
     #[inline(always)]
     fn from(variant: CH12_A) -> Self {
-        match variant {
-            CH12_A::DISABLED => false,
-            CH12_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH12`"]
@@ -1097,14 +1034,12 @@ impl CH12_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH12_AW {
     #[doc = "1: Write: Enable channel"]
-    SET,
+    SET = 1,
 }
 impl From<CH12_AW> for bool {
     #[inline(always)]
     fn from(variant: CH12_AW) -> Self {
-        match variant {
-            CH12_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CH12`"]
@@ -1145,17 +1080,14 @@ impl<'a> CH12_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH13_A {
     #[doc = "0: Read: channel disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: channel enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH13_A> for bool {
     #[inline(always)]
     fn from(variant: CH13_A) -> Self {
-        match variant {
-            CH13_A::DISABLED => false,
-            CH13_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH13`"]
@@ -1184,14 +1116,12 @@ impl CH13_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH13_AW {
     #[doc = "1: Write: Enable channel"]
-    SET,
+    SET = 1,
 }
 impl From<CH13_AW> for bool {
     #[inline(always)]
     fn from(variant: CH13_AW) -> Self {
-        match variant {
-            CH13_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CH13`"]
@@ -1232,17 +1162,14 @@ impl<'a> CH13_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH14_A {
     #[doc = "0: Read: channel disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: channel enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH14_A> for bool {
     #[inline(always)]
     fn from(variant: CH14_A) -> Self {
-        match variant {
-            CH14_A::DISABLED => false,
-            CH14_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH14`"]
@@ -1271,14 +1198,12 @@ impl CH14_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH14_AW {
     #[doc = "1: Write: Enable channel"]
-    SET,
+    SET = 1,
 }
 impl From<CH14_AW> for bool {
     #[inline(always)]
     fn from(variant: CH14_AW) -> Self {
-        match variant {
-            CH14_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CH14`"]
@@ -1319,17 +1244,14 @@ impl<'a> CH14_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH15_A {
     #[doc = "0: Read: channel disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: channel enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH15_A> for bool {
     #[inline(always)]
     fn from(variant: CH15_A) -> Self {
-        match variant {
-            CH15_A::DISABLED => false,
-            CH15_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH15`"]
@@ -1358,14 +1280,12 @@ impl CH15_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH15_AW {
     #[doc = "1: Write: Enable channel"]
-    SET,
+    SET = 1,
 }
 impl From<CH15_AW> for bool {
     #[inline(always)]
     fn from(variant: CH15_AW) -> Self {
-        match variant {
-            CH15_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CH15`"]
@@ -1406,17 +1326,14 @@ impl<'a> CH15_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH16_A {
     #[doc = "0: Read: channel disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: channel enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH16_A> for bool {
     #[inline(always)]
     fn from(variant: CH16_A) -> Self {
-        match variant {
-            CH16_A::DISABLED => false,
-            CH16_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH16`"]
@@ -1445,14 +1362,12 @@ impl CH16_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH16_AW {
     #[doc = "1: Write: Enable channel"]
-    SET,
+    SET = 1,
 }
 impl From<CH16_AW> for bool {
     #[inline(always)]
     fn from(variant: CH16_AW) -> Self {
-        match variant {
-            CH16_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CH16`"]
@@ -1493,17 +1408,14 @@ impl<'a> CH16_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH17_A {
     #[doc = "0: Read: channel disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: channel enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH17_A> for bool {
     #[inline(always)]
     fn from(variant: CH17_A) -> Self {
-        match variant {
-            CH17_A::DISABLED => false,
-            CH17_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH17`"]
@@ -1532,14 +1444,12 @@ impl CH17_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH17_AW {
     #[doc = "1: Write: Enable channel"]
-    SET,
+    SET = 1,
 }
 impl From<CH17_AW> for bool {
     #[inline(always)]
     fn from(variant: CH17_AW) -> Self {
-        match variant {
-            CH17_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CH17`"]
@@ -1580,17 +1490,14 @@ impl<'a> CH17_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH18_A {
     #[doc = "0: Read: channel disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: channel enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH18_A> for bool {
     #[inline(always)]
     fn from(variant: CH18_A) -> Self {
-        match variant {
-            CH18_A::DISABLED => false,
-            CH18_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH18`"]
@@ -1619,14 +1526,12 @@ impl CH18_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH18_AW {
     #[doc = "1: Write: Enable channel"]
-    SET,
+    SET = 1,
 }
 impl From<CH18_AW> for bool {
     #[inline(always)]
     fn from(variant: CH18_AW) -> Self {
-        match variant {
-            CH18_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CH18`"]
@@ -1667,17 +1572,14 @@ impl<'a> CH18_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH19_A {
     #[doc = "0: Read: channel disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: channel enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH19_A> for bool {
     #[inline(always)]
     fn from(variant: CH19_A) -> Self {
-        match variant {
-            CH19_A::DISABLED => false,
-            CH19_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH19`"]
@@ -1706,14 +1608,12 @@ impl CH19_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH19_AW {
     #[doc = "1: Write: Enable channel"]
-    SET,
+    SET = 1,
 }
 impl From<CH19_AW> for bool {
     #[inline(always)]
     fn from(variant: CH19_AW) -> Self {
-        match variant {
-            CH19_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CH19`"]
@@ -1754,17 +1654,14 @@ impl<'a> CH19_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH20_A {
     #[doc = "0: Read: channel disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: channel enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH20_A> for bool {
     #[inline(always)]
     fn from(variant: CH20_A) -> Self {
-        match variant {
-            CH20_A::DISABLED => false,
-            CH20_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH20`"]
@@ -1793,14 +1690,12 @@ impl CH20_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH20_AW {
     #[doc = "1: Write: Enable channel"]
-    SET,
+    SET = 1,
 }
 impl From<CH20_AW> for bool {
     #[inline(always)]
     fn from(variant: CH20_AW) -> Self {
-        match variant {
-            CH20_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CH20`"]
@@ -1841,17 +1736,14 @@ impl<'a> CH20_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH21_A {
     #[doc = "0: Read: channel disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: channel enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH21_A> for bool {
     #[inline(always)]
     fn from(variant: CH21_A) -> Self {
-        match variant {
-            CH21_A::DISABLED => false,
-            CH21_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH21`"]
@@ -1880,14 +1772,12 @@ impl CH21_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH21_AW {
     #[doc = "1: Write: Enable channel"]
-    SET,
+    SET = 1,
 }
 impl From<CH21_AW> for bool {
     #[inline(always)]
     fn from(variant: CH21_AW) -> Self {
-        match variant {
-            CH21_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CH21`"]
@@ -1928,17 +1818,14 @@ impl<'a> CH21_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH22_A {
     #[doc = "0: Read: channel disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: channel enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH22_A> for bool {
     #[inline(always)]
     fn from(variant: CH22_A) -> Self {
-        match variant {
-            CH22_A::DISABLED => false,
-            CH22_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH22`"]
@@ -1967,14 +1854,12 @@ impl CH22_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH22_AW {
     #[doc = "1: Write: Enable channel"]
-    SET,
+    SET = 1,
 }
 impl From<CH22_AW> for bool {
     #[inline(always)]
     fn from(variant: CH22_AW) -> Self {
-        match variant {
-            CH22_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CH22`"]
@@ -2015,17 +1900,14 @@ impl<'a> CH22_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH23_A {
     #[doc = "0: Read: channel disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: channel enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH23_A> for bool {
     #[inline(always)]
     fn from(variant: CH23_A) -> Self {
-        match variant {
-            CH23_A::DISABLED => false,
-            CH23_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH23`"]
@@ -2054,14 +1936,12 @@ impl CH23_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH23_AW {
     #[doc = "1: Write: Enable channel"]
-    SET,
+    SET = 1,
 }
 impl From<CH23_AW> for bool {
     #[inline(always)]
     fn from(variant: CH23_AW) -> Self {
-        match variant {
-            CH23_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CH23`"]
@@ -2102,17 +1982,14 @@ impl<'a> CH23_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH24_A {
     #[doc = "0: Read: channel disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: channel enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH24_A> for bool {
     #[inline(always)]
     fn from(variant: CH24_A) -> Self {
-        match variant {
-            CH24_A::DISABLED => false,
-            CH24_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH24`"]
@@ -2141,14 +2018,12 @@ impl CH24_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH24_AW {
     #[doc = "1: Write: Enable channel"]
-    SET,
+    SET = 1,
 }
 impl From<CH24_AW> for bool {
     #[inline(always)]
     fn from(variant: CH24_AW) -> Self {
-        match variant {
-            CH24_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CH24`"]
@@ -2189,17 +2064,14 @@ impl<'a> CH24_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH25_A {
     #[doc = "0: Read: channel disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: channel enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH25_A> for bool {
     #[inline(always)]
     fn from(variant: CH25_A) -> Self {
-        match variant {
-            CH25_A::DISABLED => false,
-            CH25_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH25`"]
@@ -2228,14 +2100,12 @@ impl CH25_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH25_AW {
     #[doc = "1: Write: Enable channel"]
-    SET,
+    SET = 1,
 }
 impl From<CH25_AW> for bool {
     #[inline(always)]
     fn from(variant: CH25_AW) -> Self {
-        match variant {
-            CH25_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CH25`"]
@@ -2276,17 +2146,14 @@ impl<'a> CH25_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH26_A {
     #[doc = "0: Read: channel disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: channel enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH26_A> for bool {
     #[inline(always)]
     fn from(variant: CH26_A) -> Self {
-        match variant {
-            CH26_A::DISABLED => false,
-            CH26_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH26`"]
@@ -2315,14 +2182,12 @@ impl CH26_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH26_AW {
     #[doc = "1: Write: Enable channel"]
-    SET,
+    SET = 1,
 }
 impl From<CH26_AW> for bool {
     #[inline(always)]
     fn from(variant: CH26_AW) -> Self {
-        match variant {
-            CH26_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CH26`"]
@@ -2363,17 +2228,14 @@ impl<'a> CH26_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH27_A {
     #[doc = "0: Read: channel disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: channel enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH27_A> for bool {
     #[inline(always)]
     fn from(variant: CH27_A) -> Self {
-        match variant {
-            CH27_A::DISABLED => false,
-            CH27_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH27`"]
@@ -2402,14 +2264,12 @@ impl CH27_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH27_AW {
     #[doc = "1: Write: Enable channel"]
-    SET,
+    SET = 1,
 }
 impl From<CH27_AW> for bool {
     #[inline(always)]
     fn from(variant: CH27_AW) -> Self {
-        match variant {
-            CH27_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CH27`"]
@@ -2450,17 +2310,14 @@ impl<'a> CH27_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH28_A {
     #[doc = "0: Read: channel disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: channel enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH28_A> for bool {
     #[inline(always)]
     fn from(variant: CH28_A) -> Self {
-        match variant {
-            CH28_A::DISABLED => false,
-            CH28_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH28`"]
@@ -2489,14 +2346,12 @@ impl CH28_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH28_AW {
     #[doc = "1: Write: Enable channel"]
-    SET,
+    SET = 1,
 }
 impl From<CH28_AW> for bool {
     #[inline(always)]
     fn from(variant: CH28_AW) -> Self {
-        match variant {
-            CH28_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CH28`"]
@@ -2537,17 +2392,14 @@ impl<'a> CH28_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH29_A {
     #[doc = "0: Read: channel disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: channel enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH29_A> for bool {
     #[inline(always)]
     fn from(variant: CH29_A) -> Self {
-        match variant {
-            CH29_A::DISABLED => false,
-            CH29_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH29`"]
@@ -2576,14 +2428,12 @@ impl CH29_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH29_AW {
     #[doc = "1: Write: Enable channel"]
-    SET,
+    SET = 1,
 }
 impl From<CH29_AW> for bool {
     #[inline(always)]
     fn from(variant: CH29_AW) -> Self {
-        match variant {
-            CH29_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CH29`"]
@@ -2624,17 +2474,14 @@ impl<'a> CH29_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH30_A {
     #[doc = "0: Read: channel disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: channel enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH30_A> for bool {
     #[inline(always)]
     fn from(variant: CH30_A) -> Self {
-        match variant {
-            CH30_A::DISABLED => false,
-            CH30_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH30`"]
@@ -2663,14 +2510,12 @@ impl CH30_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH30_AW {
     #[doc = "1: Write: Enable channel"]
-    SET,
+    SET = 1,
 }
 impl From<CH30_AW> for bool {
     #[inline(always)]
     fn from(variant: CH30_AW) -> Self {
-        match variant {
-            CH30_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CH30`"]
@@ -2711,17 +2556,14 @@ impl<'a> CH30_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH31_A {
     #[doc = "0: Read: channel disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: channel enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH31_A> for bool {
     #[inline(always)]
     fn from(variant: CH31_A) -> Self {
-        match variant {
-            CH31_A::DISABLED => false,
-            CH31_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH31`"]
@@ -2750,14 +2592,12 @@ impl CH31_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH31_AW {
     #[doc = "1: Write: Enable channel"]
-    SET,
+    SET = 1,
 }
 impl From<CH31_AW> for bool {
     #[inline(always)]
     fn from(variant: CH31_AW) -> Self {
-        match variant {
-            CH31_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CH31`"]

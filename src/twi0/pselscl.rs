@@ -12,16 +12,15 @@ impl crate::ResetValue for super::PSELSCL {
 }
 #[doc = "Pin number configuration for TWI SCL signal\n\nValue on reset: 4294967295"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u32)]
 pub enum PSELSCL_A {
     #[doc = "4294967295: Disconnect"]
-    DISCONNECTED,
+    DISCONNECTED = 4294967295,
 }
 impl From<PSELSCL_A> for u32 {
     #[inline(always)]
     fn from(variant: PSELSCL_A) -> Self {
-        match variant {
-            PSELSCL_A::DISCONNECTED => 4294967295,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PSELSCL`"]

@@ -2,25 +2,21 @@
 pub type R = crate::R<u32, super::SEMSTAT>;
 #[doc = "Semaphore status\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SEMSTAT_A {
     #[doc = "0: Semaphore is free"]
-    FREE,
+    FREE = 0,
     #[doc = "1: Semaphore is assigned to CPU"]
-    CPU,
+    CPU = 1,
     #[doc = "2: Semaphore is assigned to SPI slave"]
-    SPIS,
+    SPIS = 2,
     #[doc = "3: Semaphore is assigned to SPI but a handover to the CPU is pending"]
-    CPUPENDING,
+    CPUPENDING = 3,
 }
 impl From<SEMSTAT_A> for u8 {
     #[inline(always)]
     fn from(variant: SEMSTAT_A) -> Self {
-        match variant {
-            SEMSTAT_A::FREE => 0,
-            SEMSTAT_A::CPU => 1,
-            SEMSTAT_A::SPIS => 2,
-            SEMSTAT_A::CPUPENDING => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SEMSTAT`"]

@@ -12,46 +12,35 @@ impl crate::ResetValue for super::SAMPLEPER {
 }
 #[doc = "Sample period. The SAMPLE register will be updated for every new sample\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SAMPLEPER_A {
     #[doc = "0: 128 us"]
-    _128US,
+    _128US = 0,
     #[doc = "1: 256 us"]
-    _256US,
+    _256US = 1,
     #[doc = "2: 512 us"]
-    _512US,
+    _512US = 2,
     #[doc = "3: 1024 us"]
-    _1024US,
+    _1024US = 3,
     #[doc = "4: 2048 us"]
-    _2048US,
+    _2048US = 4,
     #[doc = "5: 4096 us"]
-    _4096US,
+    _4096US = 5,
     #[doc = "6: 8192 us"]
-    _8192US,
+    _8192US = 6,
     #[doc = "7: 16384 us"]
-    _16384US,
+    _16384US = 7,
     #[doc = "8: 32768 us"]
-    _32MS,
+    _32MS = 8,
     #[doc = "9: 65536 us"]
-    _65MS,
+    _65MS = 9,
     #[doc = "10: 131072 us"]
-    _131MS,
+    _131MS = 10,
 }
 impl From<SAMPLEPER_A> for u8 {
     #[inline(always)]
     fn from(variant: SAMPLEPER_A) -> Self {
-        match variant {
-            SAMPLEPER_A::_128US => 0,
-            SAMPLEPER_A::_256US => 1,
-            SAMPLEPER_A::_512US => 2,
-            SAMPLEPER_A::_1024US => 3,
-            SAMPLEPER_A::_2048US => 4,
-            SAMPLEPER_A::_4096US => 5,
-            SAMPLEPER_A::_8192US => 6,
-            SAMPLEPER_A::_16384US => 7,
-            SAMPLEPER_A::_32MS => 8,
-            SAMPLEPER_A::_65MS => 9,
-            SAMPLEPER_A::_131MS => 10,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SAMPLEPER`"]

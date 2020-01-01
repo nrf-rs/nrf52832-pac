@@ -14,17 +14,14 @@ impl crate::ResetValue for super::RAMON {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ONRAM0_A {
     #[doc = "0: Off"]
-    RAM0OFF,
+    RAM0OFF = 0,
     #[doc = "1: On"]
-    RAM0ON,
+    RAM0ON = 1,
 }
 impl From<ONRAM0_A> for bool {
     #[inline(always)]
     fn from(variant: ONRAM0_A) -> Self {
-        match variant {
-            ONRAM0_A::RAM0OFF => false,
-            ONRAM0_A::RAM0ON => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ONRAM0`"]
@@ -92,17 +89,14 @@ impl<'a> ONRAM0_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ONRAM1_A {
     #[doc = "0: Off"]
-    RAM1OFF,
+    RAM1OFF = 0,
     #[doc = "1: On"]
-    RAM1ON,
+    RAM1ON = 1,
 }
 impl From<ONRAM1_A> for bool {
     #[inline(always)]
     fn from(variant: ONRAM1_A) -> Self {
-        match variant {
-            ONRAM1_A::RAM1OFF => false,
-            ONRAM1_A::RAM1ON => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ONRAM1`"]
@@ -170,17 +164,14 @@ impl<'a> ONRAM1_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OFFRAM0_A {
     #[doc = "0: Off"]
-    RAM0OFF,
+    RAM0OFF = 0,
     #[doc = "1: On"]
-    RAM0ON,
+    RAM0ON = 1,
 }
 impl From<OFFRAM0_A> for bool {
     #[inline(always)]
     fn from(variant: OFFRAM0_A) -> Self {
-        match variant {
-            OFFRAM0_A::RAM0OFF => false,
-            OFFRAM0_A::RAM0ON => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `OFFRAM0`"]
@@ -248,17 +239,14 @@ impl<'a> OFFRAM0_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OFFRAM1_A {
     #[doc = "0: Off"]
-    RAM1OFF,
+    RAM1OFF = 0,
     #[doc = "1: On"]
-    RAM1ON,
+    RAM1ON = 1,
 }
 impl From<OFFRAM1_A> for bool {
     #[inline(always)]
     fn from(variant: OFFRAM1_A) -> Self {
-        match variant {
-            OFFRAM1_A::RAM1OFF => false,
-            OFFRAM1_A::RAM1ON => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `OFFRAM1`"]

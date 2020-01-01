@@ -10,21 +10,19 @@ impl crate::ResetValue for super::INTENCLR {
         0
     }
 }
-#[doc = "Write '1' to Disable interrupt for IN\\[0\\] event\n\nValue on reset: 0"]
+#[doc = "Write '1' to Disable interrupt for IN\\[0\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IN0_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<IN0_A> for bool {
     #[inline(always)]
     fn from(variant: IN0_A) -> Self {
-        match variant {
-            IN0_A::DISABLED => false,
-            IN0_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `IN0`"]
@@ -49,18 +47,17 @@ impl IN0_R {
         *self == IN0_A::ENABLED
     }
 }
-#[doc = "Write '1' to Disable interrupt for IN\\[0\\] event\n\nValue on reset: 0"]
+#[doc = "Write '1' to Disable interrupt for IN\\[0\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IN0_AW {
     #[doc = "1: Disable"]
-    CLEAR,
+    CLEAR = 1,
 }
 impl From<IN0_AW> for bool {
     #[inline(always)]
     fn from(variant: IN0_AW) -> Self {
-        match variant {
-            IN0_AW::CLEAR => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `IN0`"]
@@ -97,21 +94,19 @@ impl<'a> IN0_W<'a> {
         self.w
     }
 }
-#[doc = "Write '1' to Disable interrupt for IN\\[1\\] event\n\nValue on reset: 0"]
+#[doc = "Write '1' to Disable interrupt for IN\\[1\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IN1_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<IN1_A> for bool {
     #[inline(always)]
     fn from(variant: IN1_A) -> Self {
-        match variant {
-            IN1_A::DISABLED => false,
-            IN1_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `IN1`"]
@@ -136,18 +131,17 @@ impl IN1_R {
         *self == IN1_A::ENABLED
     }
 }
-#[doc = "Write '1' to Disable interrupt for IN\\[1\\] event\n\nValue on reset: 0"]
+#[doc = "Write '1' to Disable interrupt for IN\\[1\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IN1_AW {
     #[doc = "1: Disable"]
-    CLEAR,
+    CLEAR = 1,
 }
 impl From<IN1_AW> for bool {
     #[inline(always)]
     fn from(variant: IN1_AW) -> Self {
-        match variant {
-            IN1_AW::CLEAR => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `IN1`"]
@@ -184,21 +178,19 @@ impl<'a> IN1_W<'a> {
         self.w
     }
 }
-#[doc = "Write '1' to Disable interrupt for IN\\[2\\] event\n\nValue on reset: 0"]
+#[doc = "Write '1' to Disable interrupt for IN\\[2\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IN2_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<IN2_A> for bool {
     #[inline(always)]
     fn from(variant: IN2_A) -> Self {
-        match variant {
-            IN2_A::DISABLED => false,
-            IN2_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `IN2`"]
@@ -223,18 +215,17 @@ impl IN2_R {
         *self == IN2_A::ENABLED
     }
 }
-#[doc = "Write '1' to Disable interrupt for IN\\[2\\] event\n\nValue on reset: 0"]
+#[doc = "Write '1' to Disable interrupt for IN\\[2\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IN2_AW {
     #[doc = "1: Disable"]
-    CLEAR,
+    CLEAR = 1,
 }
 impl From<IN2_AW> for bool {
     #[inline(always)]
     fn from(variant: IN2_AW) -> Self {
-        match variant {
-            IN2_AW::CLEAR => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `IN2`"]
@@ -271,21 +262,19 @@ impl<'a> IN2_W<'a> {
         self.w
     }
 }
-#[doc = "Write '1' to Disable interrupt for IN\\[3\\] event\n\nValue on reset: 0"]
+#[doc = "Write '1' to Disable interrupt for IN\\[3\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IN3_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<IN3_A> for bool {
     #[inline(always)]
     fn from(variant: IN3_A) -> Self {
-        match variant {
-            IN3_A::DISABLED => false,
-            IN3_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `IN3`"]
@@ -310,18 +299,17 @@ impl IN3_R {
         *self == IN3_A::ENABLED
     }
 }
-#[doc = "Write '1' to Disable interrupt for IN\\[3\\] event\n\nValue on reset: 0"]
+#[doc = "Write '1' to Disable interrupt for IN\\[3\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IN3_AW {
     #[doc = "1: Disable"]
-    CLEAR,
+    CLEAR = 1,
 }
 impl From<IN3_AW> for bool {
     #[inline(always)]
     fn from(variant: IN3_AW) -> Self {
-        match variant {
-            IN3_AW::CLEAR => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `IN3`"]
@@ -358,21 +346,19 @@ impl<'a> IN3_W<'a> {
         self.w
     }
 }
-#[doc = "Write '1' to Disable interrupt for IN\\[4\\] event\n\nValue on reset: 0"]
+#[doc = "Write '1' to Disable interrupt for IN\\[4\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IN4_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<IN4_A> for bool {
     #[inline(always)]
     fn from(variant: IN4_A) -> Self {
-        match variant {
-            IN4_A::DISABLED => false,
-            IN4_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `IN4`"]
@@ -397,18 +383,17 @@ impl IN4_R {
         *self == IN4_A::ENABLED
     }
 }
-#[doc = "Write '1' to Disable interrupt for IN\\[4\\] event\n\nValue on reset: 0"]
+#[doc = "Write '1' to Disable interrupt for IN\\[4\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IN4_AW {
     #[doc = "1: Disable"]
-    CLEAR,
+    CLEAR = 1,
 }
 impl From<IN4_AW> for bool {
     #[inline(always)]
     fn from(variant: IN4_AW) -> Self {
-        match variant {
-            IN4_AW::CLEAR => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `IN4`"]
@@ -445,21 +430,19 @@ impl<'a> IN4_W<'a> {
         self.w
     }
 }
-#[doc = "Write '1' to Disable interrupt for IN\\[5\\] event\n\nValue on reset: 0"]
+#[doc = "Write '1' to Disable interrupt for IN\\[5\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IN5_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<IN5_A> for bool {
     #[inline(always)]
     fn from(variant: IN5_A) -> Self {
-        match variant {
-            IN5_A::DISABLED => false,
-            IN5_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `IN5`"]
@@ -484,18 +467,17 @@ impl IN5_R {
         *self == IN5_A::ENABLED
     }
 }
-#[doc = "Write '1' to Disable interrupt for IN\\[5\\] event\n\nValue on reset: 0"]
+#[doc = "Write '1' to Disable interrupt for IN\\[5\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IN5_AW {
     #[doc = "1: Disable"]
-    CLEAR,
+    CLEAR = 1,
 }
 impl From<IN5_AW> for bool {
     #[inline(always)]
     fn from(variant: IN5_AW) -> Self {
-        match variant {
-            IN5_AW::CLEAR => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `IN5`"]
@@ -532,21 +514,19 @@ impl<'a> IN5_W<'a> {
         self.w
     }
 }
-#[doc = "Write '1' to Disable interrupt for IN\\[6\\] event\n\nValue on reset: 0"]
+#[doc = "Write '1' to Disable interrupt for IN\\[6\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IN6_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<IN6_A> for bool {
     #[inline(always)]
     fn from(variant: IN6_A) -> Self {
-        match variant {
-            IN6_A::DISABLED => false,
-            IN6_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `IN6`"]
@@ -571,18 +551,17 @@ impl IN6_R {
         *self == IN6_A::ENABLED
     }
 }
-#[doc = "Write '1' to Disable interrupt for IN\\[6\\] event\n\nValue on reset: 0"]
+#[doc = "Write '1' to Disable interrupt for IN\\[6\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IN6_AW {
     #[doc = "1: Disable"]
-    CLEAR,
+    CLEAR = 1,
 }
 impl From<IN6_AW> for bool {
     #[inline(always)]
     fn from(variant: IN6_AW) -> Self {
-        match variant {
-            IN6_AW::CLEAR => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `IN6`"]
@@ -619,21 +598,19 @@ impl<'a> IN6_W<'a> {
         self.w
     }
 }
-#[doc = "Write '1' to Disable interrupt for IN\\[7\\] event\n\nValue on reset: 0"]
+#[doc = "Write '1' to Disable interrupt for IN\\[7\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IN7_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<IN7_A> for bool {
     #[inline(always)]
     fn from(variant: IN7_A) -> Self {
-        match variant {
-            IN7_A::DISABLED => false,
-            IN7_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `IN7`"]
@@ -658,18 +635,17 @@ impl IN7_R {
         *self == IN7_A::ENABLED
     }
 }
-#[doc = "Write '1' to Disable interrupt for IN\\[7\\] event\n\nValue on reset: 0"]
+#[doc = "Write '1' to Disable interrupt for IN\\[7\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IN7_AW {
     #[doc = "1: Disable"]
-    CLEAR,
+    CLEAR = 1,
 }
 impl From<IN7_AW> for bool {
     #[inline(always)]
     fn from(variant: IN7_AW) -> Self {
-        match variant {
-            IN7_AW::CLEAR => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `IN7`"]
@@ -710,17 +686,14 @@ impl<'a> IN7_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PORT_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<PORT_A> for bool {
     #[inline(always)]
     fn from(variant: PORT_A) -> Self {
-        match variant {
-            PORT_A::DISABLED => false,
-            PORT_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PORT`"]
@@ -749,14 +722,12 @@ impl PORT_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PORT_AW {
     #[doc = "1: Disable"]
-    CLEAR,
+    CLEAR = 1,
 }
 impl From<PORT_AW> for bool {
     #[inline(always)]
     fn from(variant: PORT_AW) -> Self {
-        match variant {
-            PORT_AW::CLEAR => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `PORT`"]
@@ -794,42 +765,50 @@ impl<'a> PORT_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bit 0 - Write '1' to Disable interrupt for IN\\[0\\] event"]
+    #[doc = "Bit 0 - Write '1' to Disable interrupt for IN\\[0\\]
+event"]
     #[inline(always)]
     pub fn in0(&self) -> IN0_R {
         IN0_R::new((self.bits & 0x01) != 0)
     }
-    #[doc = "Bit 1 - Write '1' to Disable interrupt for IN\\[1\\] event"]
+    #[doc = "Bit 1 - Write '1' to Disable interrupt for IN\\[1\\]
+event"]
     #[inline(always)]
     pub fn in1(&self) -> IN1_R {
         IN1_R::new(((self.bits >> 1) & 0x01) != 0)
     }
-    #[doc = "Bit 2 - Write '1' to Disable interrupt for IN\\[2\\] event"]
+    #[doc = "Bit 2 - Write '1' to Disable interrupt for IN\\[2\\]
+event"]
     #[inline(always)]
     pub fn in2(&self) -> IN2_R {
         IN2_R::new(((self.bits >> 2) & 0x01) != 0)
     }
-    #[doc = "Bit 3 - Write '1' to Disable interrupt for IN\\[3\\] event"]
+    #[doc = "Bit 3 - Write '1' to Disable interrupt for IN\\[3\\]
+event"]
     #[inline(always)]
     pub fn in3(&self) -> IN3_R {
         IN3_R::new(((self.bits >> 3) & 0x01) != 0)
     }
-    #[doc = "Bit 4 - Write '1' to Disable interrupt for IN\\[4\\] event"]
+    #[doc = "Bit 4 - Write '1' to Disable interrupt for IN\\[4\\]
+event"]
     #[inline(always)]
     pub fn in4(&self) -> IN4_R {
         IN4_R::new(((self.bits >> 4) & 0x01) != 0)
     }
-    #[doc = "Bit 5 - Write '1' to Disable interrupt for IN\\[5\\] event"]
+    #[doc = "Bit 5 - Write '1' to Disable interrupt for IN\\[5\\]
+event"]
     #[inline(always)]
     pub fn in5(&self) -> IN5_R {
         IN5_R::new(((self.bits >> 5) & 0x01) != 0)
     }
-    #[doc = "Bit 6 - Write '1' to Disable interrupt for IN\\[6\\] event"]
+    #[doc = "Bit 6 - Write '1' to Disable interrupt for IN\\[6\\]
+event"]
     #[inline(always)]
     pub fn in6(&self) -> IN6_R {
         IN6_R::new(((self.bits >> 6) & 0x01) != 0)
     }
-    #[doc = "Bit 7 - Write '1' to Disable interrupt for IN\\[7\\] event"]
+    #[doc = "Bit 7 - Write '1' to Disable interrupt for IN\\[7\\]
+event"]
     #[inline(always)]
     pub fn in7(&self) -> IN7_R {
         IN7_R::new(((self.bits >> 7) & 0x01) != 0)
@@ -841,42 +820,50 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bit 0 - Write '1' to Disable interrupt for IN\\[0\\] event"]
+    #[doc = "Bit 0 - Write '1' to Disable interrupt for IN\\[0\\]
+event"]
     #[inline(always)]
     pub fn in0(&mut self) -> IN0_W {
         IN0_W { w: self }
     }
-    #[doc = "Bit 1 - Write '1' to Disable interrupt for IN\\[1\\] event"]
+    #[doc = "Bit 1 - Write '1' to Disable interrupt for IN\\[1\\]
+event"]
     #[inline(always)]
     pub fn in1(&mut self) -> IN1_W {
         IN1_W { w: self }
     }
-    #[doc = "Bit 2 - Write '1' to Disable interrupt for IN\\[2\\] event"]
+    #[doc = "Bit 2 - Write '1' to Disable interrupt for IN\\[2\\]
+event"]
     #[inline(always)]
     pub fn in2(&mut self) -> IN2_W {
         IN2_W { w: self }
     }
-    #[doc = "Bit 3 - Write '1' to Disable interrupt for IN\\[3\\] event"]
+    #[doc = "Bit 3 - Write '1' to Disable interrupt for IN\\[3\\]
+event"]
     #[inline(always)]
     pub fn in3(&mut self) -> IN3_W {
         IN3_W { w: self }
     }
-    #[doc = "Bit 4 - Write '1' to Disable interrupt for IN\\[4\\] event"]
+    #[doc = "Bit 4 - Write '1' to Disable interrupt for IN\\[4\\]
+event"]
     #[inline(always)]
     pub fn in4(&mut self) -> IN4_W {
         IN4_W { w: self }
     }
-    #[doc = "Bit 5 - Write '1' to Disable interrupt for IN\\[5\\] event"]
+    #[doc = "Bit 5 - Write '1' to Disable interrupt for IN\\[5\\]
+event"]
     #[inline(always)]
     pub fn in5(&mut self) -> IN5_W {
         IN5_W { w: self }
     }
-    #[doc = "Bit 6 - Write '1' to Disable interrupt for IN\\[6\\] event"]
+    #[doc = "Bit 6 - Write '1' to Disable interrupt for IN\\[6\\]
+event"]
     #[inline(always)]
     pub fn in6(&mut self) -> IN6_W {
         IN6_W { w: self }
     }
-    #[doc = "Bit 7 - Write '1' to Disable interrupt for IN\\[7\\] event"]
+    #[doc = "Bit 7 - Write '1' to Disable interrupt for IN\\[7\\]
+event"]
     #[inline(always)]
     pub fn in7(&mut self) -> IN7_W {
         IN7_W { w: self }

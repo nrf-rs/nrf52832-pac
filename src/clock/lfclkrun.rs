@@ -4,17 +4,14 @@ pub type R = crate::R<u32, super::LFCLKRUN>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum STATUS_A {
     #[doc = "0: Task not triggered"]
-    NOTTRIGGERED,
+    NOTTRIGGERED = 0,
     #[doc = "1: Task triggered"]
-    TRIGGERED,
+    TRIGGERED = 1,
 }
 impl From<STATUS_A> for bool {
     #[inline(always)]
     fn from(variant: STATUS_A) -> Self {
-        match variant {
-            STATUS_A::NOTTRIGGERED => false,
-            STATUS_A::TRIGGERED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `STATUS`"]

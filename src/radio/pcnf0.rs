@@ -66,17 +66,14 @@ impl<'a> S1LEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum S1INCL_A {
     #[doc = "0: Include S1 field in RAM only if S1LEN &gt; 0"]
-    AUTOMATIC,
+    AUTOMATIC = 0,
     #[doc = "1: Always include S1 field in RAM independent of S1LEN"]
-    INCLUDE,
+    INCLUDE = 1,
 }
 impl From<S1INCL_A> for bool {
     #[inline(always)]
     fn from(variant: S1INCL_A) -> Self {
-        match variant {
-            S1INCL_A::AUTOMATIC => false,
-            S1INCL_A::INCLUDE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `S1INCL`"]
@@ -144,17 +141,14 @@ impl<'a> S1INCL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PLEN_A {
     #[doc = "0: 8-bit preamble"]
-    _8BIT,
+    _8BIT = 0,
     #[doc = "1: 16-bit preamble"]
-    _16BIT,
+    _16BIT = 1,
 }
 impl From<PLEN_A> for bool {
     #[inline(always)]
     fn from(variant: PLEN_A) -> Self {
-        match variant {
-            PLEN_A::_8BIT => false,
-            PLEN_A::_16BIT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PLEN`"]

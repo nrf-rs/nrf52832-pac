@@ -14,17 +14,14 @@ impl crate::ResetValue for super::INTENCLR {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TIMEOUT_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<TIMEOUT_A> for bool {
     #[inline(always)]
     fn from(variant: TIMEOUT_A) -> Self {
-        match variant {
-            TIMEOUT_A::DISABLED => false,
-            TIMEOUT_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TIMEOUT`"]
@@ -53,14 +50,12 @@ impl TIMEOUT_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TIMEOUT_AW {
     #[doc = "1: Disable"]
-    CLEAR,
+    CLEAR = 1,
 }
 impl From<TIMEOUT_AW> for bool {
     #[inline(always)]
     fn from(variant: TIMEOUT_AW) -> Self {
-        match variant {
-            TIMEOUT_AW::CLEAR => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `TIMEOUT`"]

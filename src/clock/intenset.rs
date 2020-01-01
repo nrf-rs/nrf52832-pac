@@ -14,17 +14,14 @@ impl crate::ResetValue for super::INTENSET {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HFCLKSTARTED_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<HFCLKSTARTED_A> for bool {
     #[inline(always)]
     fn from(variant: HFCLKSTARTED_A) -> Self {
-        match variant {
-            HFCLKSTARTED_A::DISABLED => false,
-            HFCLKSTARTED_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `HFCLKSTARTED`"]
@@ -53,14 +50,12 @@ impl HFCLKSTARTED_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HFCLKSTARTED_AW {
     #[doc = "1: Enable"]
-    SET,
+    SET = 1,
 }
 impl From<HFCLKSTARTED_AW> for bool {
     #[inline(always)]
     fn from(variant: HFCLKSTARTED_AW) -> Self {
-        match variant {
-            HFCLKSTARTED_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `HFCLKSTARTED`"]
@@ -101,17 +96,14 @@ impl<'a> HFCLKSTARTED_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LFCLKSTARTED_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<LFCLKSTARTED_A> for bool {
     #[inline(always)]
     fn from(variant: LFCLKSTARTED_A) -> Self {
-        match variant {
-            LFCLKSTARTED_A::DISABLED => false,
-            LFCLKSTARTED_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LFCLKSTARTED`"]
@@ -140,14 +132,12 @@ impl LFCLKSTARTED_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LFCLKSTARTED_AW {
     #[doc = "1: Enable"]
-    SET,
+    SET = 1,
 }
 impl From<LFCLKSTARTED_AW> for bool {
     #[inline(always)]
     fn from(variant: LFCLKSTARTED_AW) -> Self {
-        match variant {
-            LFCLKSTARTED_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `LFCLKSTARTED`"]
@@ -188,17 +178,14 @@ impl<'a> LFCLKSTARTED_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DONE_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<DONE_A> for bool {
     #[inline(always)]
     fn from(variant: DONE_A) -> Self {
-        match variant {
-            DONE_A::DISABLED => false,
-            DONE_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DONE`"]
@@ -227,14 +214,12 @@ impl DONE_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DONE_AW {
     #[doc = "1: Enable"]
-    SET,
+    SET = 1,
 }
 impl From<DONE_AW> for bool {
     #[inline(always)]
     fn from(variant: DONE_AW) -> Self {
-        match variant {
-            DONE_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `DONE`"]
@@ -275,17 +260,14 @@ impl<'a> DONE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CTTO_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CTTO_A> for bool {
     #[inline(always)]
     fn from(variant: CTTO_A) -> Self {
-        match variant {
-            CTTO_A::DISABLED => false,
-            CTTO_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CTTO`"]
@@ -314,14 +296,12 @@ impl CTTO_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CTTO_AW {
     #[doc = "1: Enable"]
-    SET,
+    SET = 1,
 }
 impl From<CTTO_AW> for bool {
     #[inline(always)]
     fn from(variant: CTTO_AW) -> Self {
-        match variant {
-            CTTO_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CTTO`"]

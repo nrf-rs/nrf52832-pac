@@ -14,17 +14,14 @@ impl crate::ResetValue for super::INTENSET {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum POFWARN_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<POFWARN_A> for bool {
     #[inline(always)]
     fn from(variant: POFWARN_A) -> Self {
-        match variant {
-            POFWARN_A::DISABLED => false,
-            POFWARN_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `POFWARN`"]
@@ -53,14 +50,12 @@ impl POFWARN_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum POFWARN_AW {
     #[doc = "1: Enable"]
-    SET,
+    SET = 1,
 }
 impl From<POFWARN_AW> for bool {
     #[inline(always)]
     fn from(variant: POFWARN_AW) -> Self {
-        match variant {
-            POFWARN_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `POFWARN`"]
@@ -101,17 +96,14 @@ impl<'a> POFWARN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SLEEPENTER_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<SLEEPENTER_A> for bool {
     #[inline(always)]
     fn from(variant: SLEEPENTER_A) -> Self {
-        match variant {
-            SLEEPENTER_A::DISABLED => false,
-            SLEEPENTER_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SLEEPENTER`"]
@@ -140,14 +132,12 @@ impl SLEEPENTER_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SLEEPENTER_AW {
     #[doc = "1: Enable"]
-    SET,
+    SET = 1,
 }
 impl From<SLEEPENTER_AW> for bool {
     #[inline(always)]
     fn from(variant: SLEEPENTER_AW) -> Self {
-        match variant {
-            SLEEPENTER_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `SLEEPENTER`"]
@@ -188,17 +178,14 @@ impl<'a> SLEEPENTER_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SLEEPEXIT_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<SLEEPEXIT_A> for bool {
     #[inline(always)]
     fn from(variant: SLEEPEXIT_A) -> Self {
-        match variant {
-            SLEEPEXIT_A::DISABLED => false,
-            SLEEPEXIT_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SLEEPEXIT`"]
@@ -227,14 +214,12 @@ impl SLEEPEXIT_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SLEEPEXIT_AW {
     #[doc = "1: Enable"]
-    SET,
+    SET = 1,
 }
 impl From<SLEEPEXIT_AW> for bool {
     #[inline(always)]
     fn from(variant: SLEEPEXIT_AW) -> Self {
-        match variant {
-            SLEEPEXIT_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `SLEEPEXIT`"]

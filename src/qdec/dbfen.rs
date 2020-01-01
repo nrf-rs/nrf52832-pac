@@ -14,17 +14,14 @@ impl crate::ResetValue for super::DBFEN {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DBFEN_A {
     #[doc = "0: Debounce input filters disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Debounce input filters enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<DBFEN_A> for bool {
     #[inline(always)]
     fn from(variant: DBFEN_A) -> Self {
-        match variant {
-            DBFEN_A::DISABLED => false,
-            DBFEN_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DBFEN`"]

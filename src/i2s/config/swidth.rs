@@ -12,22 +12,19 @@ impl crate::ResetValue for super::SWIDTH {
 }
 #[doc = "Sample width.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SWIDTH_A {
     #[doc = "0: 8 bit."]
-    _8BIT,
+    _8BIT = 0,
     #[doc = "1: 16 bit."]
-    _16BIT,
+    _16BIT = 1,
     #[doc = "2: 24 bit."]
-    _24BIT,
+    _24BIT = 2,
 }
 impl From<SWIDTH_A> for u8 {
     #[inline(always)]
     fn from(variant: SWIDTH_A) -> Self {
-        match variant {
-            SWIDTH_A::_8BIT => 0,
-            SWIDTH_A::_16BIT => 1,
-            SWIDTH_A::_24BIT => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SWIDTH`"]

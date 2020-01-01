@@ -14,17 +14,14 @@ impl crate::ResetValue for super::SHORTS {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LASTTX_STARTRX_A {
     #[doc = "0: Disable shortcut"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable shortcut"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<LASTTX_STARTRX_A> for bool {
     #[inline(always)]
     fn from(variant: LASTTX_STARTRX_A) -> Self {
-        match variant {
-            LASTTX_STARTRX_A::DISABLED => false,
-            LASTTX_STARTRX_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LASTTX_STARTRX`"]
@@ -92,17 +89,14 @@ impl<'a> LASTTX_STARTRX_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LASTTX_SUSPEND_A {
     #[doc = "0: Disable shortcut"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable shortcut"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<LASTTX_SUSPEND_A> for bool {
     #[inline(always)]
     fn from(variant: LASTTX_SUSPEND_A) -> Self {
-        match variant {
-            LASTTX_SUSPEND_A::DISABLED => false,
-            LASTTX_SUSPEND_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LASTTX_SUSPEND`"]
@@ -170,17 +164,14 @@ impl<'a> LASTTX_SUSPEND_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LASTTX_STOP_A {
     #[doc = "0: Disable shortcut"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable shortcut"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<LASTTX_STOP_A> for bool {
     #[inline(always)]
     fn from(variant: LASTTX_STOP_A) -> Self {
-        match variant {
-            LASTTX_STOP_A::DISABLED => false,
-            LASTTX_STOP_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LASTTX_STOP`"]
@@ -248,17 +239,14 @@ impl<'a> LASTTX_STOP_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LASTRX_STARTTX_A {
     #[doc = "0: Disable shortcut"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable shortcut"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<LASTRX_STARTTX_A> for bool {
     #[inline(always)]
     fn from(variant: LASTRX_STARTTX_A) -> Self {
-        match variant {
-            LASTRX_STARTTX_A::DISABLED => false,
-            LASTRX_STARTTX_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LASTRX_STARTTX`"]
@@ -326,17 +314,14 @@ impl<'a> LASTRX_STARTTX_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LASTRX_STOP_A {
     #[doc = "0: Disable shortcut"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable shortcut"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<LASTRX_STOP_A> for bool {
     #[inline(always)]
     fn from(variant: LASTRX_STOP_A) -> Self {
-        match variant {
-            LASTRX_STOP_A::DISABLED => false,
-            LASTRX_STOP_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LASTRX_STOP`"]
