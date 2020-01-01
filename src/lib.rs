@@ -1208,16 +1208,18 @@ unsafe impl Send for TIMER3 {}
 impl TIMER3 {
     #[doc = r"Returns a pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const timer0::RegisterBlock {
+    pub const fn ptr() -> *const timer3::RegisterBlock {
         0x4001_a000 as *const _
     }
 }
 impl Deref for TIMER3 {
-    type Target = timer0::RegisterBlock;
+    type Target = timer3::RegisterBlock;
     fn deref(&self) -> &Self::Target {
         unsafe { &*TIMER3::ptr() }
     }
 }
+#[doc = "Timer/Counter 3"]
+pub mod timer3;
 #[doc = "Timer/Counter 4"]
 pub struct TIMER4 {
     _marker: PhantomData<*const ()>,
@@ -1226,12 +1228,12 @@ unsafe impl Send for TIMER4 {}
 impl TIMER4 {
     #[doc = r"Returns a pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const timer0::RegisterBlock {
+    pub const fn ptr() -> *const timer3::RegisterBlock {
         0x4001_b000 as *const _
     }
 }
 impl Deref for TIMER4 {
-    type Target = timer0::RegisterBlock;
+    type Target = timer3::RegisterBlock;
     fn deref(&self) -> &Self::Target {
         unsafe { &*TIMER4::ptr() }
     }
