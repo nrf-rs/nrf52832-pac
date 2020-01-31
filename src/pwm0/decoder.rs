@@ -12,25 +12,21 @@ impl crate::ResetValue for super::DECODER {
 }
 #[doc = "How a sequence is read from RAM and spread to the compare register\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum LOAD_A {
     #[doc = "0: 1st half word (16-bit) used in all PWM channels 0..3"]
-    COMMON,
+    COMMON = 0,
     #[doc = "1: 1st half word (16-bit) used in channel 0..1; 2nd word in channel 2..3"]
-    GROUPED,
+    GROUPED = 1,
     #[doc = "2: 1st half word (16-bit) in ch.0; 2nd in ch.1; ...; 4th in ch.3"]
-    INDIVIDUAL,
+    INDIVIDUAL = 2,
     #[doc = "3: 1st half word (16-bit) in ch.0; 2nd in ch.1; ...; 4th in COUNTERTOP"]
-    WAVEFORM,
+    WAVEFORM = 3,
 }
 impl From<LOAD_A> for u8 {
     #[inline(always)]
     fn from(variant: LOAD_A) -> Self {
-        match variant {
-            LOAD_A::COMMON => 0,
-            LOAD_A::GROUPED => 1,
-            LOAD_A::INDIVIDUAL => 2,
-            LOAD_A::WAVEFORM => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `LOAD`"]
@@ -111,17 +107,14 @@ impl<'a> LOAD_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MODE_A {
     #[doc = "0: SEQ\\[n\\].REFRESH is used to determine loading internal compare registers"]
-    REFRESHCOUNT,
+    REFRESHCOUNT = 0,
     #[doc = "1: NEXTSTEP task causes a new value to be loaded to internal compare registers"]
-    NEXTSTEP,
+    NEXTSTEP = 1,
 }
 impl From<MODE_A> for bool {
     #[inline(always)]
     fn from(variant: MODE_A) -> Self {
-        match variant {
-            MODE_A::REFRESHCOUNT => false,
-            MODE_A::NEXTSTEP => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MODE`"]

@@ -14,17 +14,14 @@ impl crate::ResetValue for super::INTENCLR {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TICK_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<TICK_A> for bool {
     #[inline(always)]
     fn from(variant: TICK_A) -> Self {
-        match variant {
-            TICK_A::DISABLED => false,
-            TICK_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TICK`"]
@@ -53,14 +50,12 @@ impl TICK_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TICK_AW {
     #[doc = "1: Disable"]
-    CLEAR,
+    CLEAR = 1,
 }
 impl From<TICK_AW> for bool {
     #[inline(always)]
     fn from(variant: TICK_AW) -> Self {
-        match variant {
-            TICK_AW::CLEAR => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `TICK`"]
@@ -101,17 +96,14 @@ impl<'a> TICK_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OVRFLW_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<OVRFLW_A> for bool {
     #[inline(always)]
     fn from(variant: OVRFLW_A) -> Self {
-        match variant {
-            OVRFLW_A::DISABLED => false,
-            OVRFLW_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `OVRFLW`"]
@@ -140,14 +132,12 @@ impl OVRFLW_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OVRFLW_AW {
     #[doc = "1: Disable"]
-    CLEAR,
+    CLEAR = 1,
 }
 impl From<OVRFLW_AW> for bool {
     #[inline(always)]
     fn from(variant: OVRFLW_AW) -> Self {
-        match variant {
-            OVRFLW_AW::CLEAR => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `OVRFLW`"]
@@ -184,21 +174,19 @@ impl<'a> OVRFLW_W<'a> {
         self.w
     }
 }
-#[doc = "Write '1' to Disable interrupt for COMPARE\\[0\\] event\n\nValue on reset: 0"]
+#[doc = "Write '1' to Disable interrupt for COMPARE\\[0\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum COMPARE0_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<COMPARE0_A> for bool {
     #[inline(always)]
     fn from(variant: COMPARE0_A) -> Self {
-        match variant {
-            COMPARE0_A::DISABLED => false,
-            COMPARE0_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `COMPARE0`"]
@@ -223,18 +211,17 @@ impl COMPARE0_R {
         *self == COMPARE0_A::ENABLED
     }
 }
-#[doc = "Write '1' to Disable interrupt for COMPARE\\[0\\] event\n\nValue on reset: 0"]
+#[doc = "Write '1' to Disable interrupt for COMPARE\\[0\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum COMPARE0_AW {
     #[doc = "1: Disable"]
-    CLEAR,
+    CLEAR = 1,
 }
 impl From<COMPARE0_AW> for bool {
     #[inline(always)]
     fn from(variant: COMPARE0_AW) -> Self {
-        match variant {
-            COMPARE0_AW::CLEAR => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `COMPARE0`"]
@@ -271,21 +258,19 @@ impl<'a> COMPARE0_W<'a> {
         self.w
     }
 }
-#[doc = "Write '1' to Disable interrupt for COMPARE\\[1\\] event\n\nValue on reset: 0"]
+#[doc = "Write '1' to Disable interrupt for COMPARE\\[1\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum COMPARE1_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<COMPARE1_A> for bool {
     #[inline(always)]
     fn from(variant: COMPARE1_A) -> Self {
-        match variant {
-            COMPARE1_A::DISABLED => false,
-            COMPARE1_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `COMPARE1`"]
@@ -310,18 +295,17 @@ impl COMPARE1_R {
         *self == COMPARE1_A::ENABLED
     }
 }
-#[doc = "Write '1' to Disable interrupt for COMPARE\\[1\\] event\n\nValue on reset: 0"]
+#[doc = "Write '1' to Disable interrupt for COMPARE\\[1\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum COMPARE1_AW {
     #[doc = "1: Disable"]
-    CLEAR,
+    CLEAR = 1,
 }
 impl From<COMPARE1_AW> for bool {
     #[inline(always)]
     fn from(variant: COMPARE1_AW) -> Self {
-        match variant {
-            COMPARE1_AW::CLEAR => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `COMPARE1`"]
@@ -358,21 +342,19 @@ impl<'a> COMPARE1_W<'a> {
         self.w
     }
 }
-#[doc = "Write '1' to Disable interrupt for COMPARE\\[2\\] event\n\nValue on reset: 0"]
+#[doc = "Write '1' to Disable interrupt for COMPARE\\[2\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum COMPARE2_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<COMPARE2_A> for bool {
     #[inline(always)]
     fn from(variant: COMPARE2_A) -> Self {
-        match variant {
-            COMPARE2_A::DISABLED => false,
-            COMPARE2_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `COMPARE2`"]
@@ -397,18 +379,17 @@ impl COMPARE2_R {
         *self == COMPARE2_A::ENABLED
     }
 }
-#[doc = "Write '1' to Disable interrupt for COMPARE\\[2\\] event\n\nValue on reset: 0"]
+#[doc = "Write '1' to Disable interrupt for COMPARE\\[2\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum COMPARE2_AW {
     #[doc = "1: Disable"]
-    CLEAR,
+    CLEAR = 1,
 }
 impl From<COMPARE2_AW> for bool {
     #[inline(always)]
     fn from(variant: COMPARE2_AW) -> Self {
-        match variant {
-            COMPARE2_AW::CLEAR => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `COMPARE2`"]
@@ -445,21 +426,19 @@ impl<'a> COMPARE2_W<'a> {
         self.w
     }
 }
-#[doc = "Write '1' to Disable interrupt for COMPARE\\[3\\] event\n\nValue on reset: 0"]
+#[doc = "Write '1' to Disable interrupt for COMPARE\\[3\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum COMPARE3_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<COMPARE3_A> for bool {
     #[inline(always)]
     fn from(variant: COMPARE3_A) -> Self {
-        match variant {
-            COMPARE3_A::DISABLED => false,
-            COMPARE3_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `COMPARE3`"]
@@ -484,18 +463,17 @@ impl COMPARE3_R {
         *self == COMPARE3_A::ENABLED
     }
 }
-#[doc = "Write '1' to Disable interrupt for COMPARE\\[3\\] event\n\nValue on reset: 0"]
+#[doc = "Write '1' to Disable interrupt for COMPARE\\[3\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum COMPARE3_AW {
     #[doc = "1: Disable"]
-    CLEAR,
+    CLEAR = 1,
 }
 impl From<COMPARE3_AW> for bool {
     #[inline(always)]
     fn from(variant: COMPARE3_AW) -> Self {
-        match variant {
-            COMPARE3_AW::CLEAR => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `COMPARE3`"]
@@ -543,22 +521,26 @@ impl R {
     pub fn ovrflw(&self) -> OVRFLW_R {
         OVRFLW_R::new(((self.bits >> 1) & 0x01) != 0)
     }
-    #[doc = "Bit 16 - Write '1' to Disable interrupt for COMPARE\\[0\\] event"]
+    #[doc = "Bit 16 - Write '1' to Disable interrupt for COMPARE\\[0\\]
+event"]
     #[inline(always)]
     pub fn compare0(&self) -> COMPARE0_R {
         COMPARE0_R::new(((self.bits >> 16) & 0x01) != 0)
     }
-    #[doc = "Bit 17 - Write '1' to Disable interrupt for COMPARE\\[1\\] event"]
+    #[doc = "Bit 17 - Write '1' to Disable interrupt for COMPARE\\[1\\]
+event"]
     #[inline(always)]
     pub fn compare1(&self) -> COMPARE1_R {
         COMPARE1_R::new(((self.bits >> 17) & 0x01) != 0)
     }
-    #[doc = "Bit 18 - Write '1' to Disable interrupt for COMPARE\\[2\\] event"]
+    #[doc = "Bit 18 - Write '1' to Disable interrupt for COMPARE\\[2\\]
+event"]
     #[inline(always)]
     pub fn compare2(&self) -> COMPARE2_R {
         COMPARE2_R::new(((self.bits >> 18) & 0x01) != 0)
     }
-    #[doc = "Bit 19 - Write '1' to Disable interrupt for COMPARE\\[3\\] event"]
+    #[doc = "Bit 19 - Write '1' to Disable interrupt for COMPARE\\[3\\]
+event"]
     #[inline(always)]
     pub fn compare3(&self) -> COMPARE3_R {
         COMPARE3_R::new(((self.bits >> 19) & 0x01) != 0)
@@ -575,22 +557,26 @@ impl W {
     pub fn ovrflw(&mut self) -> OVRFLW_W {
         OVRFLW_W { w: self }
     }
-    #[doc = "Bit 16 - Write '1' to Disable interrupt for COMPARE\\[0\\] event"]
+    #[doc = "Bit 16 - Write '1' to Disable interrupt for COMPARE\\[0\\]
+event"]
     #[inline(always)]
     pub fn compare0(&mut self) -> COMPARE0_W {
         COMPARE0_W { w: self }
     }
-    #[doc = "Bit 17 - Write '1' to Disable interrupt for COMPARE\\[1\\] event"]
+    #[doc = "Bit 17 - Write '1' to Disable interrupt for COMPARE\\[1\\]
+event"]
     #[inline(always)]
     pub fn compare1(&mut self) -> COMPARE1_W {
         COMPARE1_W { w: self }
     }
-    #[doc = "Bit 18 - Write '1' to Disable interrupt for COMPARE\\[2\\] event"]
+    #[doc = "Bit 18 - Write '1' to Disable interrupt for COMPARE\\[2\\]
+event"]
     #[inline(always)]
     pub fn compare2(&mut self) -> COMPARE2_W {
         COMPARE2_W { w: self }
     }
-    #[doc = "Bit 19 - Write '1' to Disable interrupt for COMPARE\\[3\\] event"]
+    #[doc = "Bit 19 - Write '1' to Disable interrupt for COMPARE\\[3\\]
+event"]
     #[inline(always)]
     pub fn compare3(&mut self) -> COMPARE3_W {
         COMPARE3_W { w: self }

@@ -14,17 +14,14 @@ impl crate::ResetValue for super::MCKEN {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MCKEN_A {
     #[doc = "0: Master clock generator disabled and PSEL.MCK not connected(available as GPIO)."]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Master clock generator running and MCK output on PSEL.MCK."]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<MCKEN_A> for bool {
     #[inline(always)]
     fn from(variant: MCKEN_A) -> Self {
-        match variant {
-            MCKEN_A::DISABLED => false,
-            MCKEN_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MCKEN`"]

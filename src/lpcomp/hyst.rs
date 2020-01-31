@@ -14,17 +14,14 @@ impl crate::ResetValue for super::HYST {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HYST_A {
     #[doc = "0: Comparator hysteresis disabled"]
-    NOHYST,
+    NOHYST = 0,
     #[doc = "1: Comparator hysteresis disabled (typ. 50 mV)"]
-    HYST50MV,
+    HYST50MV = 1,
 }
 impl From<HYST_A> for bool {
     #[inline(always)]
     fn from(variant: HYST_A) -> Self {
-        match variant {
-            HYST_A::NOHYST => false,
-            HYST_A::HYST50MV => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `HYST`"]

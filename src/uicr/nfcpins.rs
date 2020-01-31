@@ -14,17 +14,14 @@ impl crate::ResetValue for super::NFCPINS {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PROTECT_A {
     #[doc = "0: Operation as GPIO pins. Same protection as normal GPIO pins"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Operation as NFC antenna pins. Configures the protection for NFC operation"]
-    NFC,
+    NFC = 1,
 }
 impl From<PROTECT_A> for bool {
     #[inline(always)]
     fn from(variant: PROTECT_A) -> Self {
-        match variant {
-            PROTECT_A::DISABLED => false,
-            PROTECT_A::NFC => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PROTECT`"]

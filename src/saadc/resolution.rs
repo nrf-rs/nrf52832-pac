@@ -12,25 +12,21 @@ impl crate::ResetValue for super::RESOLUTION {
 }
 #[doc = "Set the resolution\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum VAL_A {
     #[doc = "0: 8 bit"]
-    _8BIT,
+    _8BIT = 0,
     #[doc = "1: 10 bit"]
-    _10BIT,
+    _10BIT = 1,
     #[doc = "2: 12 bit"]
-    _12BIT,
+    _12BIT = 2,
     #[doc = "3: 14 bit"]
-    _14BIT,
+    _14BIT = 3,
 }
 impl From<VAL_A> for u8 {
     #[inline(always)]
     fn from(variant: VAL_A) -> Self {
-        match variant {
-            VAL_A::_8BIT => 0,
-            VAL_A::_10BIT => 1,
-            VAL_A::_12BIT => 2,
-            VAL_A::_14BIT => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `VAL`"]

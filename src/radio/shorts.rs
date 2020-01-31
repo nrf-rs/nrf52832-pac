@@ -14,17 +14,14 @@ impl crate::ResetValue for super::SHORTS {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum READY_START_A {
     #[doc = "0: Disable shortcut"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable shortcut"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<READY_START_A> for bool {
     #[inline(always)]
     fn from(variant: READY_START_A) -> Self {
-        match variant {
-            READY_START_A::DISABLED => false,
-            READY_START_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `READY_START`"]
@@ -92,17 +89,14 @@ impl<'a> READY_START_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum END_DISABLE_A {
     #[doc = "0: Disable shortcut"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable shortcut"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<END_DISABLE_A> for bool {
     #[inline(always)]
     fn from(variant: END_DISABLE_A) -> Self {
-        match variant {
-            END_DISABLE_A::DISABLED => false,
-            END_DISABLE_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `END_DISABLE`"]
@@ -170,17 +164,14 @@ impl<'a> END_DISABLE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DISABLED_TXEN_A {
     #[doc = "0: Disable shortcut"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable shortcut"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<DISABLED_TXEN_A> for bool {
     #[inline(always)]
     fn from(variant: DISABLED_TXEN_A) -> Self {
-        match variant {
-            DISABLED_TXEN_A::DISABLED => false,
-            DISABLED_TXEN_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DISABLED_TXEN`"]
@@ -248,17 +239,14 @@ impl<'a> DISABLED_TXEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DISABLED_RXEN_A {
     #[doc = "0: Disable shortcut"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable shortcut"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<DISABLED_RXEN_A> for bool {
     #[inline(always)]
     fn from(variant: DISABLED_RXEN_A) -> Self {
-        match variant {
-            DISABLED_RXEN_A::DISABLED => false,
-            DISABLED_RXEN_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DISABLED_RXEN`"]
@@ -326,17 +314,14 @@ impl<'a> DISABLED_RXEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADDRESS_RSSISTART_A {
     #[doc = "0: Disable shortcut"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable shortcut"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<ADDRESS_RSSISTART_A> for bool {
     #[inline(always)]
     fn from(variant: ADDRESS_RSSISTART_A) -> Self {
-        match variant {
-            ADDRESS_RSSISTART_A::DISABLED => false,
-            ADDRESS_RSSISTART_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ADDRESS_RSSISTART`"]
@@ -404,17 +389,14 @@ impl<'a> ADDRESS_RSSISTART_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum END_START_A {
     #[doc = "0: Disable shortcut"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable shortcut"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<END_START_A> for bool {
     #[inline(always)]
     fn from(variant: END_START_A) -> Self {
-        match variant {
-            END_START_A::DISABLED => false,
-            END_START_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `END_START`"]
@@ -482,17 +464,14 @@ impl<'a> END_START_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADDRESS_BCSTART_A {
     #[doc = "0: Disable shortcut"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable shortcut"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<ADDRESS_BCSTART_A> for bool {
     #[inline(always)]
     fn from(variant: ADDRESS_BCSTART_A) -> Self {
-        match variant {
-            ADDRESS_BCSTART_A::DISABLED => false,
-            ADDRESS_BCSTART_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ADDRESS_BCSTART`"]
@@ -560,17 +539,14 @@ impl<'a> ADDRESS_BCSTART_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DISABLED_RSSISTOP_A {
     #[doc = "0: Disable shortcut"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable shortcut"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<DISABLED_RSSISTOP_A> for bool {
     #[inline(always)]
     fn from(variant: DISABLED_RSSISTOP_A) -> Self {
-        match variant {
-            DISABLED_RSSISTOP_A::DISABLED => false,
-            DISABLED_RSSISTOP_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DISABLED_RSSISTOP`"]

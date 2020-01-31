@@ -12,16 +12,15 @@ impl crate::ResetValue for super::PSELRXD {
 }
 #[doc = "Pin number configuration for UART RXD signal\n\nValue on reset: 4294967295"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u32)]
 pub enum PSELRXD_A {
     #[doc = "4294967295: Disconnect"]
-    DISCONNECTED,
+    DISCONNECTED = 4294967295,
 }
 impl From<PSELRXD_A> for u32 {
     #[inline(always)]
     fn from(variant: PSELRXD_A) -> Self {
-        match variant {
-            PSELRXD_A::DISCONNECTED => 4294967295,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PSELRXD`"]

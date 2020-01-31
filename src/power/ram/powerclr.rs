@@ -12,14 +12,12 @@ impl crate::ResetValue for super::POWERCLR {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum S0POWER_AW {
     #[doc = "1: Off"]
-    OFF,
+    OFF = 1,
 }
 impl From<S0POWER_AW> for bool {
     #[inline(always)]
     fn from(variant: S0POWER_AW) -> Self {
-        match variant {
-            S0POWER_AW::OFF => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `S0POWER`"]
@@ -60,14 +58,12 @@ impl<'a> S0POWER_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum S1POWER_AW {
     #[doc = "1: Off"]
-    OFF,
+    OFF = 1,
 }
 impl From<S1POWER_AW> for bool {
     #[inline(always)]
     fn from(variant: S1POWER_AW) -> Self {
-        match variant {
-            S1POWER_AW::OFF => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `S1POWER`"]
@@ -108,14 +104,12 @@ impl<'a> S1POWER_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum S0RETENTION_AW {
     #[doc = "1: Off"]
-    OFF,
+    OFF = 1,
 }
 impl From<S0RETENTION_AW> for bool {
     #[inline(always)]
     fn from(variant: S0RETENTION_AW) -> Self {
-        match variant {
-            S0RETENTION_AW::OFF => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `S0RETENTION`"]
@@ -156,14 +150,12 @@ impl<'a> S0RETENTION_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum S1RETENTION_AW {
     #[doc = "1: Off"]
-    OFF,
+    OFF = 1,
 }
 impl From<S1RETENTION_AW> for bool {
     #[inline(always)]
     fn from(variant: S1RETENTION_AW) -> Self {
-        match variant {
-            S1RETENTION_AW::OFF => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `S1RETENTION`"]

@@ -4,17 +4,14 @@ pub type R = crate::R<u32, super::RUNSTATUS>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RUNSTATUS_A {
     #[doc = "0: Watchdog not running"]
-    NOTRUNNING,
+    NOTRUNNING = 0,
     #[doc = "1: Watchdog is running"]
-    RUNNING,
+    RUNNING = 1,
 }
 impl From<RUNSTATUS_A> for bool {
     #[inline(always)]
     fn from(variant: RUNSTATUS_A) -> Self {
-        match variant {
-            RUNSTATUS_A::NOTRUNNING => false,
-            RUNSTATUS_A::RUNNING => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RUNSTATUS`"]

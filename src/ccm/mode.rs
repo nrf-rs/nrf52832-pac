@@ -14,17 +14,14 @@ impl crate::ResetValue for super::MODE {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MODE_A {
     #[doc = "0: AES CCM packet encryption mode"]
-    ENCRYPTION,
+    ENCRYPTION = 0,
     #[doc = "1: AES CCM packet decryption mode"]
-    DECRYPTION,
+    DECRYPTION = 1,
 }
 impl From<MODE_A> for bool {
     #[inline(always)]
     fn from(variant: MODE_A) -> Self {
-        match variant {
-            MODE_A::ENCRYPTION => false,
-            MODE_A::DECRYPTION => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MODE`"]
@@ -92,17 +89,14 @@ impl<'a> MODE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DATARATE_A {
     #[doc = "0: In synch with 1 Mbit data rate"]
-    _1MBIT,
+    _1MBIT = 0,
     #[doc = "1: In synch with 2 Mbit data rate"]
-    _2MBIT,
+    _2MBIT = 1,
 }
 impl From<DATARATE_A> for bool {
     #[inline(always)]
     fn from(variant: DATARATE_A) -> Self {
-        match variant {
-            DATARATE_A::_1MBIT => false,
-            DATARATE_A::_2MBIT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DATARATE`"]
@@ -170,17 +164,14 @@ impl<'a> DATARATE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LENGTH_A {
     #[doc = "0: Default length. Effective length of LENGTH field is 5-bit"]
-    DEFAULT,
+    DEFAULT = 0,
     #[doc = "1: Extended length. Effective length of LENGTH field is 8-bit"]
-    EXTENDED,
+    EXTENDED = 1,
 }
 impl From<LENGTH_A> for bool {
     #[inline(always)]
     fn from(variant: LENGTH_A) -> Self {
-        match variant {
-            LENGTH_A::DEFAULT => false,
-            LENGTH_A::EXTENDED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LENGTH`"]

@@ -14,17 +14,14 @@ impl crate::ResetValue for super::SHORTS {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum READY_SAMPLE_A {
     #[doc = "0: Disable shortcut"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable shortcut"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<READY_SAMPLE_A> for bool {
     #[inline(always)]
     fn from(variant: READY_SAMPLE_A) -> Self {
-        match variant {
-            READY_SAMPLE_A::DISABLED => false,
-            READY_SAMPLE_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `READY_SAMPLE`"]
@@ -92,17 +89,14 @@ impl<'a> READY_SAMPLE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum READY_STOP_A {
     #[doc = "0: Disable shortcut"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable shortcut"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<READY_STOP_A> for bool {
     #[inline(always)]
     fn from(variant: READY_STOP_A) -> Self {
-        match variant {
-            READY_STOP_A::DISABLED => false,
-            READY_STOP_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `READY_STOP`"]
@@ -170,17 +164,14 @@ impl<'a> READY_STOP_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DOWN_STOP_A {
     #[doc = "0: Disable shortcut"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable shortcut"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<DOWN_STOP_A> for bool {
     #[inline(always)]
     fn from(variant: DOWN_STOP_A) -> Self {
-        match variant {
-            DOWN_STOP_A::DISABLED => false,
-            DOWN_STOP_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DOWN_STOP`"]
@@ -248,17 +239,14 @@ impl<'a> DOWN_STOP_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UP_STOP_A {
     #[doc = "0: Disable shortcut"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable shortcut"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<UP_STOP_A> for bool {
     #[inline(always)]
     fn from(variant: UP_STOP_A) -> Self {
-        match variant {
-            UP_STOP_A::DISABLED => false,
-            UP_STOP_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UP_STOP`"]
@@ -326,17 +314,14 @@ impl<'a> UP_STOP_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CROSS_STOP_A {
     #[doc = "0: Disable shortcut"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable shortcut"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CROSS_STOP_A> for bool {
     #[inline(always)]
     fn from(variant: CROSS_STOP_A) -> Self {
-        match variant {
-            CROSS_STOP_A::DISABLED => false,
-            CROSS_STOP_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CROSS_STOP`"]

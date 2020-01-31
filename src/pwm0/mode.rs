@@ -14,17 +14,14 @@ impl crate::ResetValue for super::MODE {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UPDOWN_A {
     #[doc = "0: Up counter - edge aligned PWM duty-cycle"]
-    UP,
+    UP = 0,
     #[doc = "1: Up and down counter - center aligned PWM duty cycle"]
-    UPANDDOWN,
+    UPANDDOWN = 1,
 }
 impl From<UPDOWN_A> for bool {
     #[inline(always)]
     fn from(variant: UPDOWN_A) -> Self {
-        match variant {
-            UPDOWN_A::UP => false,
-            UPDOWN_A::UPANDDOWN => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UPDOWN`"]

@@ -12,22 +12,19 @@ impl crate::ResetValue for super::PDMCLKCTRL {
 }
 #[doc = "PDM_CLK frequency\n\nValue on reset: 138412032"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u32)]
 pub enum FREQ_A {
     #[doc = "134217728: PDM_CLK = 32 MHz / 32 = 1.000 MHz"]
-    _1000K,
+    _1000K = 134217728,
     #[doc = "138412032: PDM_CLK = 32 MHz / 31 = 1.032 MHz"]
-    DEFAULT,
+    DEFAULT = 138412032,
     #[doc = "142606336: PDM_CLK = 32 MHz / 30 = 1.067 MHz"]
-    _1067K,
+    _1067K = 142606336,
 }
 impl From<FREQ_A> for u32 {
     #[inline(always)]
     fn from(variant: FREQ_A) -> Self {
-        match variant {
-            FREQ_A::_1000K => 134217728,
-            FREQ_A::DEFAULT => 138412032,
-            FREQ_A::_1067K => 142606336,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `FREQ`"]

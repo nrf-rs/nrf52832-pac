@@ -4,17 +4,14 @@ pub type R = crate::R<u32, super::CRCSTATUS>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CRCSTATUS_A {
     #[doc = "0: Packet received with CRC error"]
-    CRCERROR,
+    CRCERROR = 0,
     #[doc = "1: Packet received with CRC ok"]
-    CRCOK,
+    CRCOK = 1,
 }
 impl From<CRCSTATUS_A> for bool {
     #[inline(always)]
     fn from(variant: CRCSTATUS_A) -> Self {
-        match variant {
-            CRCSTATUS_A::CRCERROR => false,
-            CRCSTATUS_A::CRCOK => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CRCSTATUS`"]

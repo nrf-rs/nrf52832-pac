@@ -12,19 +12,17 @@ impl crate::ResetValue for super::ENABLE {
 }
 #[doc = "Enable or disable UARTE\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ENABLE_A {
     #[doc = "0: Disable UARTE"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "8: Enable UARTE"]
-    ENABLED,
+    ENABLED = 8,
 }
 impl From<ENABLE_A> for u8 {
     #[inline(always)]
     fn from(variant: ENABLE_A) -> Self {
-        match variant {
-            ENABLE_A::DISABLED => 0,
-            ENABLE_A::ENABLED => 8,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ENABLE`"]

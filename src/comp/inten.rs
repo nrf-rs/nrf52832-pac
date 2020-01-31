@@ -14,17 +14,14 @@ impl crate::ResetValue for super::INTEN {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum READY_A {
     #[doc = "0: Disable"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<READY_A> for bool {
     #[inline(always)]
     fn from(variant: READY_A) -> Self {
-        match variant {
-            READY_A::DISABLED => false,
-            READY_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `READY`"]
@@ -92,17 +89,14 @@ impl<'a> READY_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DOWN_A {
     #[doc = "0: Disable"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<DOWN_A> for bool {
     #[inline(always)]
     fn from(variant: DOWN_A) -> Self {
-        match variant {
-            DOWN_A::DISABLED => false,
-            DOWN_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DOWN`"]
@@ -170,17 +164,14 @@ impl<'a> DOWN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UP_A {
     #[doc = "0: Disable"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<UP_A> for bool {
     #[inline(always)]
     fn from(variant: UP_A) -> Self {
-        match variant {
-            UP_A::DISABLED => false,
-            UP_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UP`"]
@@ -248,17 +239,14 @@ impl<'a> UP_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CROSS_A {
     #[doc = "0: Disable"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CROSS_A> for bool {
     #[inline(always)]
     fn from(variant: CROSS_A) -> Self {
-        match variant {
-            CROSS_A::DISABLED => false,
-            CROSS_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CROSS`"]

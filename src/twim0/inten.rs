@@ -14,17 +14,14 @@ impl crate::ResetValue for super::INTEN {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum STOPPED_A {
     #[doc = "0: Disable"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<STOPPED_A> for bool {
     #[inline(always)]
     fn from(variant: STOPPED_A) -> Self {
-        match variant {
-            STOPPED_A::DISABLED => false,
-            STOPPED_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `STOPPED`"]
@@ -92,17 +89,14 @@ impl<'a> STOPPED_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERROR_A {
     #[doc = "0: Disable"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<ERROR_A> for bool {
     #[inline(always)]
     fn from(variant: ERROR_A) -> Self {
-        match variant {
-            ERROR_A::DISABLED => false,
-            ERROR_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ERROR`"]
@@ -170,17 +164,14 @@ impl<'a> ERROR_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SUSPENDED_A {
     #[doc = "0: Disable"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<SUSPENDED_A> for bool {
     #[inline(always)]
     fn from(variant: SUSPENDED_A) -> Self {
-        match variant {
-            SUSPENDED_A::DISABLED => false,
-            SUSPENDED_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SUSPENDED`"]
@@ -248,17 +239,14 @@ impl<'a> SUSPENDED_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RXSTARTED_A {
     #[doc = "0: Disable"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<RXSTARTED_A> for bool {
     #[inline(always)]
     fn from(variant: RXSTARTED_A) -> Self {
-        match variant {
-            RXSTARTED_A::DISABLED => false,
-            RXSTARTED_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RXSTARTED`"]
@@ -326,17 +314,14 @@ impl<'a> RXSTARTED_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TXSTARTED_A {
     #[doc = "0: Disable"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<TXSTARTED_A> for bool {
     #[inline(always)]
     fn from(variant: TXSTARTED_A) -> Self {
-        match variant {
-            TXSTARTED_A::DISABLED => false,
-            TXSTARTED_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TXSTARTED`"]
@@ -404,17 +389,14 @@ impl<'a> TXSTARTED_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LASTRX_A {
     #[doc = "0: Disable"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<LASTRX_A> for bool {
     #[inline(always)]
     fn from(variant: LASTRX_A) -> Self {
-        match variant {
-            LASTRX_A::DISABLED => false,
-            LASTRX_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LASTRX`"]
@@ -482,17 +464,14 @@ impl<'a> LASTRX_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LASTTX_A {
     #[doc = "0: Disable"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<LASTTX_A> for bool {
     #[inline(always)]
     fn from(variant: LASTTX_A) -> Self {
-        match variant {
-            LASTTX_A::DISABLED => false,
-            LASTTX_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LASTTX`"]

@@ -12,16 +12,15 @@ impl crate::ResetValue for super::PSELCTS {
 }
 #[doc = "Pin number configuration for UART CTS signal\n\nValue on reset: 4294967295"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u32)]
 pub enum PSELCTS_A {
     #[doc = "4294967295: Disconnect"]
-    DISCONNECTED,
+    DISCONNECTED = 4294967295,
 }
 impl From<PSELCTS_A> for u32 {
     #[inline(always)]
     fn from(variant: PSELCTS_A) -> Self {
-        match variant {
-            PSELCTS_A::DISCONNECTED => 4294967295,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PSELCTS`"]

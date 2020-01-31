@@ -2,25 +2,21 @@
 pub type R = crate::R<u32, super::FLASH>;
 #[doc = "Flash variant\n\nValue on reset: 512"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u32)]
 pub enum FLASH_A {
     #[doc = "128: 128 kByte FLASH"]
-    K128,
+    K128 = 128,
     #[doc = "256: 256 kByte FLASH"]
-    K256,
+    K256 = 256,
     #[doc = "512: 512 kByte FLASH"]
-    K512,
+    K512 = 512,
     #[doc = "4294967295: Unspecified"]
-    UNSPECIFIED,
+    UNSPECIFIED = 4294967295,
 }
 impl From<FLASH_A> for u32 {
     #[inline(always)]
     fn from(variant: FLASH_A) -> Self {
-        match variant {
-            FLASH_A::K128 => 128,
-            FLASH_A::K256 => 256,
-            FLASH_A::K512 => 512,
-            FLASH_A::UNSPECIFIED => 4294967295,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `FLASH`"]

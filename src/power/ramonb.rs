@@ -14,17 +14,14 @@ impl crate::ResetValue for super::RAMONB {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ONRAM2_A {
     #[doc = "0: Off"]
-    RAM2OFF,
+    RAM2OFF = 0,
     #[doc = "1: On"]
-    RAM2ON,
+    RAM2ON = 1,
 }
 impl From<ONRAM2_A> for bool {
     #[inline(always)]
     fn from(variant: ONRAM2_A) -> Self {
-        match variant {
-            ONRAM2_A::RAM2OFF => false,
-            ONRAM2_A::RAM2ON => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ONRAM2`"]
@@ -92,17 +89,14 @@ impl<'a> ONRAM2_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ONRAM3_A {
     #[doc = "0: Off"]
-    RAM3OFF,
+    RAM3OFF = 0,
     #[doc = "1: On"]
-    RAM3ON,
+    RAM3ON = 1,
 }
 impl From<ONRAM3_A> for bool {
     #[inline(always)]
     fn from(variant: ONRAM3_A) -> Self {
-        match variant {
-            ONRAM3_A::RAM3OFF => false,
-            ONRAM3_A::RAM3ON => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ONRAM3`"]
@@ -170,17 +164,14 @@ impl<'a> ONRAM3_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OFFRAM2_A {
     #[doc = "0: Off"]
-    RAM2OFF,
+    RAM2OFF = 0,
     #[doc = "1: On"]
-    RAM2ON,
+    RAM2ON = 1,
 }
 impl From<OFFRAM2_A> for bool {
     #[inline(always)]
     fn from(variant: OFFRAM2_A) -> Self {
-        match variant {
-            OFFRAM2_A::RAM2OFF => false,
-            OFFRAM2_A::RAM2ON => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `OFFRAM2`"]
@@ -248,17 +239,14 @@ impl<'a> OFFRAM2_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OFFRAM3_A {
     #[doc = "0: Off"]
-    RAM3OFF,
+    RAM3OFF = 0,
     #[doc = "1: On"]
-    RAM3ON,
+    RAM3ON = 1,
 }
 impl From<OFFRAM3_A> for bool {
     #[inline(always)]
     fn from(variant: OFFRAM3_A) -> Self {
-        match variant {
-            OFFRAM3_A::RAM3OFF => false,
-            OFFRAM3_A::RAM3ON => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `OFFRAM3`"]

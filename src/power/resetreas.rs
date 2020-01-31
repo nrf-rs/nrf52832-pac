@@ -14,17 +14,14 @@ impl crate::ResetValue for super::RESETREAS {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RESETPIN_A {
     #[doc = "0: Not detected"]
-    NOTDETECTED,
+    NOTDETECTED = 0,
     #[doc = "1: Detected"]
-    DETECTED,
+    DETECTED = 1,
 }
 impl From<RESETPIN_A> for bool {
     #[inline(always)]
     fn from(variant: RESETPIN_A) -> Self {
-        match variant {
-            RESETPIN_A::NOTDETECTED => false,
-            RESETPIN_A::DETECTED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RESETPIN`"]
@@ -92,17 +89,14 @@ impl<'a> RESETPIN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DOG_A {
     #[doc = "0: Not detected"]
-    NOTDETECTED,
+    NOTDETECTED = 0,
     #[doc = "1: Detected"]
-    DETECTED,
+    DETECTED = 1,
 }
 impl From<DOG_A> for bool {
     #[inline(always)]
     fn from(variant: DOG_A) -> Self {
-        match variant {
-            DOG_A::NOTDETECTED => false,
-            DOG_A::DETECTED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DOG`"]
@@ -170,17 +164,14 @@ impl<'a> DOG_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SREQ_A {
     #[doc = "0: Not detected"]
-    NOTDETECTED,
+    NOTDETECTED = 0,
     #[doc = "1: Detected"]
-    DETECTED,
+    DETECTED = 1,
 }
 impl From<SREQ_A> for bool {
     #[inline(always)]
     fn from(variant: SREQ_A) -> Self {
-        match variant {
-            SREQ_A::NOTDETECTED => false,
-            SREQ_A::DETECTED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SREQ`"]
@@ -248,17 +239,14 @@ impl<'a> SREQ_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LOCKUP_A {
     #[doc = "0: Not detected"]
-    NOTDETECTED,
+    NOTDETECTED = 0,
     #[doc = "1: Detected"]
-    DETECTED,
+    DETECTED = 1,
 }
 impl From<LOCKUP_A> for bool {
     #[inline(always)]
     fn from(variant: LOCKUP_A) -> Self {
-        match variant {
-            LOCKUP_A::NOTDETECTED => false,
-            LOCKUP_A::DETECTED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LOCKUP`"]
@@ -326,17 +314,14 @@ impl<'a> LOCKUP_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OFF_A {
     #[doc = "0: Not detected"]
-    NOTDETECTED,
+    NOTDETECTED = 0,
     #[doc = "1: Detected"]
-    DETECTED,
+    DETECTED = 1,
 }
 impl From<OFF_A> for bool {
     #[inline(always)]
     fn from(variant: OFF_A) -> Self {
-        match variant {
-            OFF_A::NOTDETECTED => false,
-            OFF_A::DETECTED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `OFF`"]
@@ -404,17 +389,14 @@ impl<'a> OFF_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LPCOMP_A {
     #[doc = "0: Not detected"]
-    NOTDETECTED,
+    NOTDETECTED = 0,
     #[doc = "1: Detected"]
-    DETECTED,
+    DETECTED = 1,
 }
 impl From<LPCOMP_A> for bool {
     #[inline(always)]
     fn from(variant: LPCOMP_A) -> Self {
-        match variant {
-            LPCOMP_A::NOTDETECTED => false,
-            LPCOMP_A::DETECTED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LPCOMP`"]
@@ -482,17 +464,14 @@ impl<'a> LPCOMP_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DIF_A {
     #[doc = "0: Not detected"]
-    NOTDETECTED,
+    NOTDETECTED = 0,
     #[doc = "1: Detected"]
-    DETECTED,
+    DETECTED = 1,
 }
 impl From<DIF_A> for bool {
     #[inline(always)]
     fn from(variant: DIF_A) -> Self {
-        match variant {
-            DIF_A::NOTDETECTED => false,
-            DIF_A::DETECTED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DIF`"]
@@ -560,17 +539,14 @@ impl<'a> DIF_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum NFC_A {
     #[doc = "0: Not detected"]
-    NOTDETECTED,
+    NOTDETECTED = 0,
     #[doc = "1: Detected"]
-    DETECTED,
+    DETECTED = 1,
 }
 impl From<NFC_A> for bool {
     #[inline(always)]
     fn from(variant: NFC_A) -> Self {
-        match variant {
-            NFC_A::NOTDETECTED => false,
-            NFC_A::DETECTED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `NFC`"]

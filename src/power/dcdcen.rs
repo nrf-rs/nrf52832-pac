@@ -14,17 +14,14 @@ impl crate::ResetValue for super::DCDCEN {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DCDCEN_A {
     #[doc = "0: Disable"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<DCDCEN_A> for bool {
     #[inline(always)]
     fn from(variant: DCDCEN_A) -> Self {
-        match variant {
-            DCDCEN_A::DISABLED => false,
-            DCDCEN_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DCDCEN`"]

@@ -2,34 +2,27 @@
 pub type R = crate::R<u32, super::VARIANT>;
 #[doc = "Part Variant, Hardware version and Production configuration, encoded as ASCII\n\nValue on reset: 1094795586"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u32)]
 pub enum VARIANT_A {
     #[doc = "1094795585: AAAA"]
-    AAAA,
+    AAAA = 1094795585,
     #[doc = "1094795586: AAAB"]
-    AAAB,
+    AAAB = 1094795586,
     #[doc = "1094795841: AABA"]
-    AABA,
+    AABA = 1094795841,
     #[doc = "1094795842: AABB"]
-    AABB,
+    AABB = 1094795842,
     #[doc = "1094795824: AAB0"]
-    AAB0,
+    AAB0 = 1094795824,
     #[doc = "1094796592: AAE0"]
-    AAE0,
+    AAE0 = 1094796592,
     #[doc = "4294967295: Unspecified"]
-    UNSPECIFIED,
+    UNSPECIFIED = 4294967295,
 }
 impl From<VARIANT_A> for u32 {
     #[inline(always)]
     fn from(variant: VARIANT_A) -> Self {
-        match variant {
-            VARIANT_A::AAAA => 1094795585,
-            VARIANT_A::AAAB => 1094795586,
-            VARIANT_A::AABA => 1094795841,
-            VARIANT_A::AABB => 1094795842,
-            VARIANT_A::AAB0 => 1094795824,
-            VARIANT_A::AAE0 => 1094796592,
-            VARIANT_A::UNSPECIFIED => 4294967295,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `VARIANT`"]

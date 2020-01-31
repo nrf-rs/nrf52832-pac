@@ -12,14 +12,12 @@ impl crate::ResetValue for super::SYSTEMOFF {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SYSTEMOFF_AW {
     #[doc = "1: Enable System OFF mode"]
-    ENTER,
+    ENTER = 1,
 }
 impl From<SYSTEMOFF_AW> for bool {
     #[inline(always)]
     fn from(variant: SYSTEMOFF_AW) -> Self {
-        match variant {
-            SYSTEMOFF_AW::ENTER => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `SYSTEMOFF`"]

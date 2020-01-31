@@ -12,37 +12,29 @@ impl crate::ResetValue for super::PRESCALER {
 }
 #[doc = "Pre-scaler of PWM_CLK\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PRESCALER_A {
     #[doc = "0: Divide by   1 (16MHz)"]
-    DIV_1,
+    DIV_1 = 0,
     #[doc = "1: Divide by   2 ( 8MHz)"]
-    DIV_2,
+    DIV_2 = 1,
     #[doc = "2: Divide by   4 ( 4MHz)"]
-    DIV_4,
+    DIV_4 = 2,
     #[doc = "3: Divide by   8 ( 2MHz)"]
-    DIV_8,
+    DIV_8 = 3,
     #[doc = "4: Divide by  16 ( 1MHz)"]
-    DIV_16,
+    DIV_16 = 4,
     #[doc = "5: Divide by  32 ( 500kHz)"]
-    DIV_32,
+    DIV_32 = 5,
     #[doc = "6: Divide by  64 ( 250kHz)"]
-    DIV_64,
+    DIV_64 = 6,
     #[doc = "7: Divide by 128 ( 125kHz)"]
-    DIV_128,
+    DIV_128 = 7,
 }
 impl From<PRESCALER_A> for u8 {
     #[inline(always)]
     fn from(variant: PRESCALER_A) -> Self {
-        match variant {
-            PRESCALER_A::DIV_1 => 0,
-            PRESCALER_A::DIV_2 => 1,
-            PRESCALER_A::DIV_4 => 2,
-            PRESCALER_A::DIV_8 => 3,
-            PRESCALER_A::DIV_16 => 4,
-            PRESCALER_A::DIV_32 => 5,
-            PRESCALER_A::DIV_64 => 6,
-            PRESCALER_A::DIV_128 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PRESCALER`"]

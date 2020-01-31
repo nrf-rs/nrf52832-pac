@@ -14,17 +14,14 @@ impl crate::ResetValue for super::ALIGN {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ALIGN_A {
     #[doc = "0: Left-aligned."]
-    LEFT,
+    LEFT = 0,
     #[doc = "1: Right-aligned."]
-    RIGHT,
+    RIGHT = 1,
 }
 impl From<ALIGN_A> for bool {
     #[inline(always)]
     fn from(variant: ALIGN_A) -> Self {
-        match variant {
-            ALIGN_A::LEFT => false,
-            ALIGN_A::RIGHT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ALIGN`"]

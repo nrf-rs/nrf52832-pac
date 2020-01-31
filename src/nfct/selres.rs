@@ -28,17 +28,14 @@ impl<'a> RFU10_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CASCADE_A {
     #[doc = "0: NFCID1 complete"]
-    COMPLETE,
+    COMPLETE = 0,
     #[doc = "1: NFCID1 not complete"]
-    NOTCOMPLETE,
+    NOTCOMPLETE = 1,
 }
 impl From<CASCADE_A> for bool {
     #[inline(always)]
     fn from(variant: CASCADE_A) -> Self {
-        match variant {
-            CASCADE_A::COMPLETE => false,
-            CASCADE_A::NOTCOMPLETE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CASCADE`"]

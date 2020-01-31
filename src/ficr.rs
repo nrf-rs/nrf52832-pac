@@ -103,7 +103,7 @@ pub struct NFC {
 #[doc = r"Register block"]
 #[doc = "Unspecified"]
 pub mod nfc;
-#[doc = "Code memory page size\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [codepagesize](codepagesize) module"]
+#[doc = "Code memory page size\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [codepagesize](codepagesize) module"]
 pub type CODEPAGESIZE = crate::Reg<u32, _CODEPAGESIZE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -112,7 +112,7 @@ pub struct _CODEPAGESIZE;
 impl crate::Readable for CODEPAGESIZE {}
 #[doc = "Code memory page size"]
 pub mod codepagesize;
-#[doc = "Code memory size\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [codesize](codesize) module"]
+#[doc = "Code memory size\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [codesize](codesize) module"]
 pub type CODESIZE = crate::Reg<u32, _CODESIZE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -121,7 +121,7 @@ pub struct _CODESIZE;
 impl crate::Readable for CODESIZE {}
 #[doc = "Code memory size"]
 pub mod codesize;
-#[doc = "Description collection\\[0\\]: Device identifier\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [deviceid](deviceid) module"]
+#[doc = "Description collection\\[0\\]: Device identifier\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [deviceid](deviceid) module"]
 pub type DEVICEID = crate::Reg<u32, _DEVICEID>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -130,7 +130,7 @@ pub struct _DEVICEID;
 impl crate::Readable for DEVICEID {}
 #[doc = "Description collection\\[0\\]: Device identifier"]
 pub mod deviceid;
-#[doc = "Description collection\\[0\\]: Encryption Root, word 0\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [er](er) module"]
+#[doc = "Description collection\\[0\\]: Encryption Root, word 0\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [er](er) module"]
 pub type ER = crate::Reg<u32, _ER>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -139,7 +139,7 @@ pub struct _ER;
 impl crate::Readable for ER {}
 #[doc = "Description collection\\[0\\]: Encryption Root, word 0"]
 pub mod er;
-#[doc = "Description collection\\[0\\]: Identity Root, word 0\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ir](ir) module"]
+#[doc = "Description collection\\[0\\]: Identity Root, word 0\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ir](ir) module"]
 pub type IR = crate::Reg<u32, _IR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -148,7 +148,7 @@ pub struct _IR;
 impl crate::Readable for IR {}
 #[doc = "Description collection\\[0\\]: Identity Root, word 0"]
 pub mod ir;
-#[doc = "Device address type\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [deviceaddrtype](deviceaddrtype) module"]
+#[doc = "Device address type\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [deviceaddrtype](deviceaddrtype) module"]
 pub type DEVICEADDRTYPE = crate::Reg<u32, _DEVICEADDRTYPE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -157,7 +157,7 @@ pub struct _DEVICEADDRTYPE;
 impl crate::Readable for DEVICEADDRTYPE {}
 #[doc = "Device address type"]
 pub mod deviceaddrtype;
-#[doc = "Description collection\\[0\\]: Device address 0\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [deviceaddr](deviceaddr) module"]
+#[doc = "Description collection\\[0\\]: Device address 0\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [deviceaddr](deviceaddr) module"]
 pub type DEVICEADDR = crate::Reg<u32, _DEVICEADDR>;
 #[allow(missing_docs)]
 #[doc(hidden)]

@@ -14,17 +14,14 @@ impl crate::ResetValue for super::INTENCLR {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CTS_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CTS_A> for bool {
     #[inline(always)]
     fn from(variant: CTS_A) -> Self {
-        match variant {
-            CTS_A::DISABLED => false,
-            CTS_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CTS`"]
@@ -53,14 +50,12 @@ impl CTS_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CTS_AW {
     #[doc = "1: Disable"]
-    CLEAR,
+    CLEAR = 1,
 }
 impl From<CTS_AW> for bool {
     #[inline(always)]
     fn from(variant: CTS_AW) -> Self {
-        match variant {
-            CTS_AW::CLEAR => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CTS`"]
@@ -101,17 +96,14 @@ impl<'a> CTS_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum NCTS_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<NCTS_A> for bool {
     #[inline(always)]
     fn from(variant: NCTS_A) -> Self {
-        match variant {
-            NCTS_A::DISABLED => false,
-            NCTS_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `NCTS`"]
@@ -140,14 +132,12 @@ impl NCTS_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum NCTS_AW {
     #[doc = "1: Disable"]
-    CLEAR,
+    CLEAR = 1,
 }
 impl From<NCTS_AW> for bool {
     #[inline(always)]
     fn from(variant: NCTS_AW) -> Self {
-        match variant {
-            NCTS_AW::CLEAR => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `NCTS`"]
@@ -188,17 +178,14 @@ impl<'a> NCTS_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RXDRDY_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<RXDRDY_A> for bool {
     #[inline(always)]
     fn from(variant: RXDRDY_A) -> Self {
-        match variant {
-            RXDRDY_A::DISABLED => false,
-            RXDRDY_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RXDRDY`"]
@@ -227,14 +214,12 @@ impl RXDRDY_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RXDRDY_AW {
     #[doc = "1: Disable"]
-    CLEAR,
+    CLEAR = 1,
 }
 impl From<RXDRDY_AW> for bool {
     #[inline(always)]
     fn from(variant: RXDRDY_AW) -> Self {
-        match variant {
-            RXDRDY_AW::CLEAR => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `RXDRDY`"]
@@ -275,17 +260,14 @@ impl<'a> RXDRDY_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TXDRDY_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<TXDRDY_A> for bool {
     #[inline(always)]
     fn from(variant: TXDRDY_A) -> Self {
-        match variant {
-            TXDRDY_A::DISABLED => false,
-            TXDRDY_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TXDRDY`"]
@@ -314,14 +296,12 @@ impl TXDRDY_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TXDRDY_AW {
     #[doc = "1: Disable"]
-    CLEAR,
+    CLEAR = 1,
 }
 impl From<TXDRDY_AW> for bool {
     #[inline(always)]
     fn from(variant: TXDRDY_AW) -> Self {
-        match variant {
-            TXDRDY_AW::CLEAR => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `TXDRDY`"]
@@ -362,17 +342,14 @@ impl<'a> TXDRDY_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERROR_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<ERROR_A> for bool {
     #[inline(always)]
     fn from(variant: ERROR_A) -> Self {
-        match variant {
-            ERROR_A::DISABLED => false,
-            ERROR_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ERROR`"]
@@ -401,14 +378,12 @@ impl ERROR_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERROR_AW {
     #[doc = "1: Disable"]
-    CLEAR,
+    CLEAR = 1,
 }
 impl From<ERROR_AW> for bool {
     #[inline(always)]
     fn from(variant: ERROR_AW) -> Self {
-        match variant {
-            ERROR_AW::CLEAR => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `ERROR`"]
@@ -449,17 +424,14 @@ impl<'a> ERROR_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RXTO_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<RXTO_A> for bool {
     #[inline(always)]
     fn from(variant: RXTO_A) -> Self {
-        match variant {
-            RXTO_A::DISABLED => false,
-            RXTO_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RXTO`"]
@@ -488,14 +460,12 @@ impl RXTO_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RXTO_AW {
     #[doc = "1: Disable"]
-    CLEAR,
+    CLEAR = 1,
 }
 impl From<RXTO_AW> for bool {
     #[inline(always)]
     fn from(variant: RXTO_AW) -> Self {
-        match variant {
-            RXTO_AW::CLEAR => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `RXTO`"]

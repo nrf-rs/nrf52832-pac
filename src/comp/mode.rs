@@ -12,22 +12,19 @@ impl crate::ResetValue for super::MODE {
 }
 #[doc = "Speed and power modes\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SP_A {
     #[doc = "0: Low-power mode"]
-    LOW,
+    LOW = 0,
     #[doc = "1: Normal mode"]
-    NORMAL,
+    NORMAL = 1,
     #[doc = "2: High-speed mode"]
-    HIGH,
+    HIGH = 2,
 }
 impl From<SP_A> for u8 {
     #[inline(always)]
     fn from(variant: SP_A) -> Self {
-        match variant {
-            SP_A::LOW => 0,
-            SP_A::NORMAL => 1,
-            SP_A::HIGH => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SP`"]
@@ -96,17 +93,14 @@ impl<'a> SP_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MAIN_A {
     #[doc = "0: Single-ended mode"]
-    SE,
+    SE = 0,
     #[doc = "1: Differential mode"]
-    DIFF,
+    DIFF = 1,
 }
 impl From<MAIN_A> for bool {
     #[inline(always)]
     fn from(variant: MAIN_A) -> Self {
-        match variant {
-            MAIN_A::SE => false,
-            MAIN_A::DIFF => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MAIN`"]

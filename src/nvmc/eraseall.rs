@@ -14,17 +14,14 @@ impl crate::ResetValue for super::ERASEALL {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERASEALL_A {
     #[doc = "0: No operation"]
-    NOOPERATION,
+    NOOPERATION = 0,
     #[doc = "1: Start chip erase"]
-    ERASE,
+    ERASE = 1,
 }
 impl From<ERASEALL_A> for bool {
     #[inline(always)]
     fn from(variant: ERASEALL_A) -> Self {
-        match variant {
-            ERASEALL_A::NOOPERATION => false,
-            ERASEALL_A::ERASE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ERASEALL`"]

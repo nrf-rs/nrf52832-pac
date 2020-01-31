@@ -12,22 +12,19 @@ impl crate::ResetValue for super::GAINR {
 }
 #[doc = "Right output gain adjustment, in 0.5 dB steps, around the default module gain (see electrical parameters)\n\nValue on reset: 40"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum GAINR_A {
     #[doc = "0: -20dB gain adjustment (minimum)"]
-    MINGAIN,
+    MINGAIN = 0,
     #[doc = "40: 0dB gain adjustment ('2500 RMS' requirement)"]
-    DEFAULTGAIN,
+    DEFAULTGAIN = 40,
     #[doc = "80: +20dB gain adjustment (maximum)"]
-    MAXGAIN,
+    MAXGAIN = 80,
 }
 impl From<GAINR_A> for u8 {
     #[inline(always)]
     fn from(variant: GAINR_A) -> Self {
-        match variant {
-            GAINR_A::MINGAIN => 0,
-            GAINR_A::DEFAULTGAIN => 40,
-            GAINR_A::MAXGAIN => 80,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `GAINR`"]

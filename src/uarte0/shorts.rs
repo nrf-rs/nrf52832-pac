@@ -14,17 +14,14 @@ impl crate::ResetValue for super::SHORTS {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ENDRX_STARTRX_A {
     #[doc = "0: Disable shortcut"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable shortcut"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<ENDRX_STARTRX_A> for bool {
     #[inline(always)]
     fn from(variant: ENDRX_STARTRX_A) -> Self {
-        match variant {
-            ENDRX_STARTRX_A::DISABLED => false,
-            ENDRX_STARTRX_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ENDRX_STARTRX`"]
@@ -92,17 +89,14 @@ impl<'a> ENDRX_STARTRX_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ENDRX_STOPRX_A {
     #[doc = "0: Disable shortcut"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable shortcut"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<ENDRX_STOPRX_A> for bool {
     #[inline(always)]
     fn from(variant: ENDRX_STOPRX_A) -> Self {
-        match variant {
-            ENDRX_STOPRX_A::DISABLED => false,
-            ENDRX_STOPRX_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ENDRX_STOPRX`"]

@@ -14,17 +14,14 @@ impl crate::ResetValue for super::RXADDRESSES {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADDR0_A {
     #[doc = "0: Disable"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<ADDR0_A> for bool {
     #[inline(always)]
     fn from(variant: ADDR0_A) -> Self {
-        match variant {
-            ADDR0_A::DISABLED => false,
-            ADDR0_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ADDR0`"]
@@ -92,17 +89,14 @@ impl<'a> ADDR0_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADDR1_A {
     #[doc = "0: Disable"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<ADDR1_A> for bool {
     #[inline(always)]
     fn from(variant: ADDR1_A) -> Self {
-        match variant {
-            ADDR1_A::DISABLED => false,
-            ADDR1_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ADDR1`"]
@@ -170,17 +164,14 @@ impl<'a> ADDR1_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADDR2_A {
     #[doc = "0: Disable"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<ADDR2_A> for bool {
     #[inline(always)]
     fn from(variant: ADDR2_A) -> Self {
-        match variant {
-            ADDR2_A::DISABLED => false,
-            ADDR2_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ADDR2`"]
@@ -248,17 +239,14 @@ impl<'a> ADDR2_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADDR3_A {
     #[doc = "0: Disable"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<ADDR3_A> for bool {
     #[inline(always)]
     fn from(variant: ADDR3_A) -> Self {
-        match variant {
-            ADDR3_A::DISABLED => false,
-            ADDR3_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ADDR3`"]
@@ -326,17 +314,14 @@ impl<'a> ADDR3_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADDR4_A {
     #[doc = "0: Disable"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<ADDR4_A> for bool {
     #[inline(always)]
     fn from(variant: ADDR4_A) -> Self {
-        match variant {
-            ADDR4_A::DISABLED => false,
-            ADDR4_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ADDR4`"]
@@ -404,17 +389,14 @@ impl<'a> ADDR4_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADDR5_A {
     #[doc = "0: Disable"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<ADDR5_A> for bool {
     #[inline(always)]
     fn from(variant: ADDR5_A) -> Self {
-        match variant {
-            ADDR5_A::DISABLED => false,
-            ADDR5_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ADDR5`"]
@@ -482,17 +464,14 @@ impl<'a> ADDR5_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADDR6_A {
     #[doc = "0: Disable"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<ADDR6_A> for bool {
     #[inline(always)]
     fn from(variant: ADDR6_A) -> Self {
-        match variant {
-            ADDR6_A::DISABLED => false,
-            ADDR6_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ADDR6`"]
@@ -560,17 +539,14 @@ impl<'a> ADDR6_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADDR7_A {
     #[doc = "0: Disable"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<ADDR7_A> for bool {
     #[inline(always)]
     fn from(variant: ADDR7_A) -> Self {
-        match variant {
-            ADDR7_A::DISABLED => false,
-            ADDR7_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ADDR7`"]

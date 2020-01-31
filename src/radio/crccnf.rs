@@ -12,25 +12,21 @@ impl crate::ResetValue for super::CRCCNF {
 }
 #[doc = "CRC length in number of bytes.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum LEN_A {
     #[doc = "0: CRC length is zero and CRC calculation is disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: CRC length is one byte and CRC calculation is enabled"]
-    ONE,
+    ONE = 1,
     #[doc = "2: CRC length is two bytes and CRC calculation is enabled"]
-    TWO,
+    TWO = 2,
     #[doc = "3: CRC length is three bytes and CRC calculation is enabled"]
-    THREE,
+    THREE = 3,
 }
 impl From<LEN_A> for u8 {
     #[inline(always)]
     fn from(variant: LEN_A) -> Self {
-        match variant {
-            LEN_A::DISABLED => 0,
-            LEN_A::ONE => 1,
-            LEN_A::TWO => 2,
-            LEN_A::THREE => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `LEN`"]
@@ -111,17 +107,14 @@ impl<'a> LEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SKIPADDR_A {
     #[doc = "0: CRC calculation includes address field"]
-    INCLUDE,
+    INCLUDE = 0,
     #[doc = "1: CRC calculation does not include address field. The CRC calculation will start at the first byte after the address."]
-    SKIP,
+    SKIP = 1,
 }
 impl From<SKIPADDR_A> for bool {
     #[inline(always)]
     fn from(variant: SKIPADDR_A) -> Self {
-        match variant {
-            SKIPADDR_A::INCLUDE => false,
-            SKIPADDR_A::SKIP => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SKIPADDR`"]

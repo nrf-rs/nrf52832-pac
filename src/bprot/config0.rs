@@ -14,17 +14,14 @@ impl crate::ResetValue for super::CONFIG0 {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION0_A {
     #[doc = "0: Protection disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Protection enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<REGION0_A> for bool {
     #[inline(always)]
     fn from(variant: REGION0_A) -> Self {
-        match variant {
-            REGION0_A::DISABLED => false,
-            REGION0_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REGION0`"]
@@ -92,17 +89,14 @@ impl<'a> REGION0_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION1_A {
     #[doc = "0: Protection disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Protection enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<REGION1_A> for bool {
     #[inline(always)]
     fn from(variant: REGION1_A) -> Self {
-        match variant {
-            REGION1_A::DISABLED => false,
-            REGION1_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REGION1`"]
@@ -170,17 +164,14 @@ impl<'a> REGION1_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION2_A {
     #[doc = "0: Protection disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Protection enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<REGION2_A> for bool {
     #[inline(always)]
     fn from(variant: REGION2_A) -> Self {
-        match variant {
-            REGION2_A::DISABLED => false,
-            REGION2_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REGION2`"]
@@ -248,17 +239,14 @@ impl<'a> REGION2_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION3_A {
     #[doc = "0: Protection disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Protection enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<REGION3_A> for bool {
     #[inline(always)]
     fn from(variant: REGION3_A) -> Self {
-        match variant {
-            REGION3_A::DISABLED => false,
-            REGION3_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REGION3`"]
@@ -326,17 +314,14 @@ impl<'a> REGION3_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION4_A {
     #[doc = "0: Protection disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Protection enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<REGION4_A> for bool {
     #[inline(always)]
     fn from(variant: REGION4_A) -> Self {
-        match variant {
-            REGION4_A::DISABLED => false,
-            REGION4_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REGION4`"]
@@ -404,17 +389,14 @@ impl<'a> REGION4_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION5_A {
     #[doc = "0: Protection disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Protection enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<REGION5_A> for bool {
     #[inline(always)]
     fn from(variant: REGION5_A) -> Self {
-        match variant {
-            REGION5_A::DISABLED => false,
-            REGION5_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REGION5`"]
@@ -482,17 +464,14 @@ impl<'a> REGION5_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION6_A {
     #[doc = "0: Protection disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Protection enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<REGION6_A> for bool {
     #[inline(always)]
     fn from(variant: REGION6_A) -> Self {
-        match variant {
-            REGION6_A::DISABLED => false,
-            REGION6_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REGION6`"]
@@ -560,17 +539,14 @@ impl<'a> REGION6_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION7_A {
     #[doc = "0: Protection disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Protection enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<REGION7_A> for bool {
     #[inline(always)]
     fn from(variant: REGION7_A) -> Self {
-        match variant {
-            REGION7_A::DISABLED => false,
-            REGION7_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REGION7`"]
@@ -638,17 +614,14 @@ impl<'a> REGION7_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION8_A {
     #[doc = "0: Protection disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Protection enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<REGION8_A> for bool {
     #[inline(always)]
     fn from(variant: REGION8_A) -> Self {
-        match variant {
-            REGION8_A::DISABLED => false,
-            REGION8_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REGION8`"]
@@ -716,17 +689,14 @@ impl<'a> REGION8_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION9_A {
     #[doc = "0: Protection disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Protection enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<REGION9_A> for bool {
     #[inline(always)]
     fn from(variant: REGION9_A) -> Self {
-        match variant {
-            REGION9_A::DISABLED => false,
-            REGION9_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REGION9`"]
@@ -794,17 +764,14 @@ impl<'a> REGION9_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION10_A {
     #[doc = "0: Protection disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Protection enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<REGION10_A> for bool {
     #[inline(always)]
     fn from(variant: REGION10_A) -> Self {
-        match variant {
-            REGION10_A::DISABLED => false,
-            REGION10_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REGION10`"]
@@ -872,17 +839,14 @@ impl<'a> REGION10_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION11_A {
     #[doc = "0: Protection disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Protection enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<REGION11_A> for bool {
     #[inline(always)]
     fn from(variant: REGION11_A) -> Self {
-        match variant {
-            REGION11_A::DISABLED => false,
-            REGION11_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REGION11`"]
@@ -950,17 +914,14 @@ impl<'a> REGION11_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION12_A {
     #[doc = "0: Protection disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Protection enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<REGION12_A> for bool {
     #[inline(always)]
     fn from(variant: REGION12_A) -> Self {
-        match variant {
-            REGION12_A::DISABLED => false,
-            REGION12_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REGION12`"]
@@ -1028,17 +989,14 @@ impl<'a> REGION12_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION13_A {
     #[doc = "0: Protection disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Protection enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<REGION13_A> for bool {
     #[inline(always)]
     fn from(variant: REGION13_A) -> Self {
-        match variant {
-            REGION13_A::DISABLED => false,
-            REGION13_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REGION13`"]
@@ -1106,17 +1064,14 @@ impl<'a> REGION13_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION14_A {
     #[doc = "0: Protection disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Protection enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<REGION14_A> for bool {
     #[inline(always)]
     fn from(variant: REGION14_A) -> Self {
-        match variant {
-            REGION14_A::DISABLED => false,
-            REGION14_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REGION14`"]
@@ -1184,17 +1139,14 @@ impl<'a> REGION14_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION15_A {
     #[doc = "0: Protection disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Protection enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<REGION15_A> for bool {
     #[inline(always)]
     fn from(variant: REGION15_A) -> Self {
-        match variant {
-            REGION15_A::DISABLED => false,
-            REGION15_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REGION15`"]
@@ -1262,17 +1214,14 @@ impl<'a> REGION15_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION16_A {
     #[doc = "0: Protection disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Protection enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<REGION16_A> for bool {
     #[inline(always)]
     fn from(variant: REGION16_A) -> Self {
-        match variant {
-            REGION16_A::DISABLED => false,
-            REGION16_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REGION16`"]
@@ -1340,17 +1289,14 @@ impl<'a> REGION16_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION17_A {
     #[doc = "0: Protection disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Protection enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<REGION17_A> for bool {
     #[inline(always)]
     fn from(variant: REGION17_A) -> Self {
-        match variant {
-            REGION17_A::DISABLED => false,
-            REGION17_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REGION17`"]
@@ -1418,17 +1364,14 @@ impl<'a> REGION17_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION18_A {
     #[doc = "0: Protection disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Protection enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<REGION18_A> for bool {
     #[inline(always)]
     fn from(variant: REGION18_A) -> Self {
-        match variant {
-            REGION18_A::DISABLED => false,
-            REGION18_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REGION18`"]
@@ -1496,17 +1439,14 @@ impl<'a> REGION18_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION19_A {
     #[doc = "0: Protection disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Protection enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<REGION19_A> for bool {
     #[inline(always)]
     fn from(variant: REGION19_A) -> Self {
-        match variant {
-            REGION19_A::DISABLED => false,
-            REGION19_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REGION19`"]
@@ -1574,17 +1514,14 @@ impl<'a> REGION19_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION20_A {
     #[doc = "0: Protection disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Protection enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<REGION20_A> for bool {
     #[inline(always)]
     fn from(variant: REGION20_A) -> Self {
-        match variant {
-            REGION20_A::DISABLED => false,
-            REGION20_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REGION20`"]
@@ -1652,17 +1589,14 @@ impl<'a> REGION20_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION21_A {
     #[doc = "0: Protection disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Protection enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<REGION21_A> for bool {
     #[inline(always)]
     fn from(variant: REGION21_A) -> Self {
-        match variant {
-            REGION21_A::DISABLED => false,
-            REGION21_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REGION21`"]
@@ -1730,17 +1664,14 @@ impl<'a> REGION21_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION22_A {
     #[doc = "0: Protection disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Protection enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<REGION22_A> for bool {
     #[inline(always)]
     fn from(variant: REGION22_A) -> Self {
-        match variant {
-            REGION22_A::DISABLED => false,
-            REGION22_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REGION22`"]
@@ -1808,17 +1739,14 @@ impl<'a> REGION22_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION23_A {
     #[doc = "0: Protection disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Protection enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<REGION23_A> for bool {
     #[inline(always)]
     fn from(variant: REGION23_A) -> Self {
-        match variant {
-            REGION23_A::DISABLED => false,
-            REGION23_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REGION23`"]
@@ -1886,17 +1814,14 @@ impl<'a> REGION23_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION24_A {
     #[doc = "0: Protection disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Protection enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<REGION24_A> for bool {
     #[inline(always)]
     fn from(variant: REGION24_A) -> Self {
-        match variant {
-            REGION24_A::DISABLED => false,
-            REGION24_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REGION24`"]
@@ -1964,17 +1889,14 @@ impl<'a> REGION24_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION25_A {
     #[doc = "0: Protection disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Protection enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<REGION25_A> for bool {
     #[inline(always)]
     fn from(variant: REGION25_A) -> Self {
-        match variant {
-            REGION25_A::DISABLED => false,
-            REGION25_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REGION25`"]
@@ -2042,17 +1964,14 @@ impl<'a> REGION25_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION26_A {
     #[doc = "0: Protection disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Protection enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<REGION26_A> for bool {
     #[inline(always)]
     fn from(variant: REGION26_A) -> Self {
-        match variant {
-            REGION26_A::DISABLED => false,
-            REGION26_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REGION26`"]
@@ -2120,17 +2039,14 @@ impl<'a> REGION26_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION27_A {
     #[doc = "0: Protection disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Protection enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<REGION27_A> for bool {
     #[inline(always)]
     fn from(variant: REGION27_A) -> Self {
-        match variant {
-            REGION27_A::DISABLED => false,
-            REGION27_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REGION27`"]
@@ -2198,17 +2114,14 @@ impl<'a> REGION27_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION28_A {
     #[doc = "0: Protection disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Protection enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<REGION28_A> for bool {
     #[inline(always)]
     fn from(variant: REGION28_A) -> Self {
-        match variant {
-            REGION28_A::DISABLED => false,
-            REGION28_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REGION28`"]
@@ -2276,17 +2189,14 @@ impl<'a> REGION28_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION29_A {
     #[doc = "0: Protection disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Protection enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<REGION29_A> for bool {
     #[inline(always)]
     fn from(variant: REGION29_A) -> Self {
-        match variant {
-            REGION29_A::DISABLED => false,
-            REGION29_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REGION29`"]
@@ -2354,17 +2264,14 @@ impl<'a> REGION29_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION30_A {
     #[doc = "0: Protection disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Protection enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<REGION30_A> for bool {
     #[inline(always)]
     fn from(variant: REGION30_A) -> Self {
-        match variant {
-            REGION30_A::DISABLED => false,
-            REGION30_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REGION30`"]
@@ -2432,17 +2339,14 @@ impl<'a> REGION30_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGION31_A {
     #[doc = "0: Protection disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Protection enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<REGION31_A> for bool {
     #[inline(always)]
     fn from(variant: REGION31_A) -> Self {
-        match variant {
-            REGION31_A::DISABLED => false,
-            REGION31_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REGION31`"]

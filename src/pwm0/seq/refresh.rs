@@ -12,16 +12,15 @@ impl crate::ResetValue for super::REFRESH {
 }
 #[doc = "Amount of additional PWM periods between samples loaded into compare register (load every REFRESH.CNT+1 PWM periods)\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u32)]
 pub enum CNT_A {
     #[doc = "0: Update every PWM period"]
-    CONTINUOUS,
+    CONTINUOUS = 0,
 }
 impl From<CNT_A> for u32 {
     #[inline(always)]
     fn from(variant: CNT_A) -> Self {
-        match variant {
-            CNT_A::CONTINUOUS => 0,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CNT`"]

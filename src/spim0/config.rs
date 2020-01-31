@@ -14,17 +14,14 @@ impl crate::ResetValue for super::CONFIG {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ORDER_A {
     #[doc = "0: Most significant bit shifted out first"]
-    MSBFIRST,
+    MSBFIRST = 0,
     #[doc = "1: Least significant bit shifted out first"]
-    LSBFIRST,
+    LSBFIRST = 1,
 }
 impl From<ORDER_A> for bool {
     #[inline(always)]
     fn from(variant: ORDER_A) -> Self {
-        match variant {
-            ORDER_A::MSBFIRST => false,
-            ORDER_A::LSBFIRST => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ORDER`"]
@@ -92,17 +89,14 @@ impl<'a> ORDER_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CPHA_A {
     #[doc = "0: Sample on leading edge of clock, shift serial data on trailing edge"]
-    LEADING,
+    LEADING = 0,
     #[doc = "1: Sample on trailing edge of clock, shift serial data on leading edge"]
-    TRAILING,
+    TRAILING = 1,
 }
 impl From<CPHA_A> for bool {
     #[inline(always)]
     fn from(variant: CPHA_A) -> Self {
-        match variant {
-            CPHA_A::LEADING => false,
-            CPHA_A::TRAILING => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CPHA`"]
@@ -170,17 +164,14 @@ impl<'a> CPHA_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CPOL_A {
     #[doc = "0: Active high"]
-    ACTIVEHIGH,
+    ACTIVEHIGH = 0,
     #[doc = "1: Active low"]
-    ACTIVELOW,
+    ACTIVELOW = 1,
 }
 impl From<CPOL_A> for bool {
     #[inline(always)]
     fn from(variant: CPOL_A) -> Self {
-        match variant {
-            CPOL_A::ACTIVEHIGH => false,
-            CPOL_A::ACTIVELOW => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CPOL`"]

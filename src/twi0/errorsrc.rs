@@ -14,17 +14,14 @@ impl crate::ResetValue for super::ERRORSRC {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OVERRUN_A {
     #[doc = "0: Read: no overrun occured"]
-    NOTPRESENT,
+    NOTPRESENT = 0,
     #[doc = "1: Read: overrun occured"]
-    PRESENT,
+    PRESENT = 1,
 }
 impl From<OVERRUN_A> for bool {
     #[inline(always)]
     fn from(variant: OVERRUN_A) -> Self {
-        match variant {
-            OVERRUN_A::NOTPRESENT => false,
-            OVERRUN_A::PRESENT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `OVERRUN`"]
@@ -53,14 +50,12 @@ impl OVERRUN_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OVERRUN_AW {
     #[doc = "1: Write: clear error on writing '1'"]
-    CLEAR,
+    CLEAR = 1,
 }
 impl From<OVERRUN_AW> for bool {
     #[inline(always)]
     fn from(variant: OVERRUN_AW) -> Self {
-        match variant {
-            OVERRUN_AW::CLEAR => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `OVERRUN`"]
@@ -101,17 +96,14 @@ impl<'a> OVERRUN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ANACK_A {
     #[doc = "0: Read: error not present"]
-    NOTPRESENT,
+    NOTPRESENT = 0,
     #[doc = "1: Read: error present"]
-    PRESENT,
+    PRESENT = 1,
 }
 impl From<ANACK_A> for bool {
     #[inline(always)]
     fn from(variant: ANACK_A) -> Self {
-        match variant {
-            ANACK_A::NOTPRESENT => false,
-            ANACK_A::PRESENT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ANACK`"]
@@ -140,14 +132,12 @@ impl ANACK_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ANACK_AW {
     #[doc = "1: Write: clear error on writing '1'"]
-    CLEAR,
+    CLEAR = 1,
 }
 impl From<ANACK_AW> for bool {
     #[inline(always)]
     fn from(variant: ANACK_AW) -> Self {
-        match variant {
-            ANACK_AW::CLEAR => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `ANACK`"]
@@ -188,17 +178,14 @@ impl<'a> ANACK_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DNACK_A {
     #[doc = "0: Read: error not present"]
-    NOTPRESENT,
+    NOTPRESENT = 0,
     #[doc = "1: Read: error present"]
-    PRESENT,
+    PRESENT = 1,
 }
 impl From<DNACK_A> for bool {
     #[inline(always)]
     fn from(variant: DNACK_A) -> Self {
-        match variant {
-            DNACK_A::NOTPRESENT => false,
-            DNACK_A::PRESENT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DNACK`"]
@@ -227,14 +214,12 @@ impl DNACK_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DNACK_AW {
     #[doc = "1: Write: clear error on writing '1'"]
-    CLEAR,
+    CLEAR = 1,
 }
 impl From<DNACK_AW> for bool {
     #[inline(always)]
     fn from(variant: DNACK_AW) -> Self {
-        match variant {
-            DNACK_AW::CLEAR => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `DNACK`"]

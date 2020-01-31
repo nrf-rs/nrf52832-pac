@@ -14,17 +14,14 @@ impl crate::ResetValue for super::INTEN {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum STARTED_A {
     #[doc = "0: Disable"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<STARTED_A> for bool {
     #[inline(always)]
     fn from(variant: STARTED_A) -> Self {
-        match variant {
-            STARTED_A::DISABLED => false,
-            STARTED_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `STARTED`"]
@@ -92,17 +89,14 @@ impl<'a> STARTED_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum END_A {
     #[doc = "0: Disable"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<END_A> for bool {
     #[inline(always)]
     fn from(variant: END_A) -> Self {
-        match variant {
-            END_A::DISABLED => false,
-            END_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `END`"]
@@ -170,17 +164,14 @@ impl<'a> END_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DONE_A {
     #[doc = "0: Disable"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<DONE_A> for bool {
     #[inline(always)]
     fn from(variant: DONE_A) -> Self {
-        match variant {
-            DONE_A::DISABLED => false,
-            DONE_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DONE`"]
@@ -248,17 +239,14 @@ impl<'a> DONE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RESULTDONE_A {
     #[doc = "0: Disable"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<RESULTDONE_A> for bool {
     #[inline(always)]
     fn from(variant: RESULTDONE_A) -> Self {
-        match variant {
-            RESULTDONE_A::DISABLED => false,
-            RESULTDONE_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RESULTDONE`"]
@@ -326,17 +314,14 @@ impl<'a> RESULTDONE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CALIBRATEDONE_A {
     #[doc = "0: Disable"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CALIBRATEDONE_A> for bool {
     #[inline(always)]
     fn from(variant: CALIBRATEDONE_A) -> Self {
-        match variant {
-            CALIBRATEDONE_A::DISABLED => false,
-            CALIBRATEDONE_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CALIBRATEDONE`"]
@@ -404,17 +389,14 @@ impl<'a> CALIBRATEDONE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum STOPPED_A {
     #[doc = "0: Disable"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<STOPPED_A> for bool {
     #[inline(always)]
     fn from(variant: STOPPED_A) -> Self {
-        match variant {
-            STOPPED_A::DISABLED => false,
-            STOPPED_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `STOPPED`"]
@@ -482,17 +464,14 @@ impl<'a> STOPPED_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH0LIMITH_A {
     #[doc = "0: Disable"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH0LIMITH_A> for bool {
     #[inline(always)]
     fn from(variant: CH0LIMITH_A) -> Self {
-        match variant {
-            CH0LIMITH_A::DISABLED => false,
-            CH0LIMITH_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH0LIMITH`"]
@@ -560,17 +539,14 @@ impl<'a> CH0LIMITH_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH0LIMITL_A {
     #[doc = "0: Disable"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH0LIMITL_A> for bool {
     #[inline(always)]
     fn from(variant: CH0LIMITL_A) -> Self {
-        match variant {
-            CH0LIMITL_A::DISABLED => false,
-            CH0LIMITL_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH0LIMITL`"]
@@ -638,17 +614,14 @@ impl<'a> CH0LIMITL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH1LIMITH_A {
     #[doc = "0: Disable"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH1LIMITH_A> for bool {
     #[inline(always)]
     fn from(variant: CH1LIMITH_A) -> Self {
-        match variant {
-            CH1LIMITH_A::DISABLED => false,
-            CH1LIMITH_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH1LIMITH`"]
@@ -716,17 +689,14 @@ impl<'a> CH1LIMITH_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH1LIMITL_A {
     #[doc = "0: Disable"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH1LIMITL_A> for bool {
     #[inline(always)]
     fn from(variant: CH1LIMITL_A) -> Self {
-        match variant {
-            CH1LIMITL_A::DISABLED => false,
-            CH1LIMITL_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH1LIMITL`"]
@@ -794,17 +764,14 @@ impl<'a> CH1LIMITL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH2LIMITH_A {
     #[doc = "0: Disable"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH2LIMITH_A> for bool {
     #[inline(always)]
     fn from(variant: CH2LIMITH_A) -> Self {
-        match variant {
-            CH2LIMITH_A::DISABLED => false,
-            CH2LIMITH_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH2LIMITH`"]
@@ -872,17 +839,14 @@ impl<'a> CH2LIMITH_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH2LIMITL_A {
     #[doc = "0: Disable"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH2LIMITL_A> for bool {
     #[inline(always)]
     fn from(variant: CH2LIMITL_A) -> Self {
-        match variant {
-            CH2LIMITL_A::DISABLED => false,
-            CH2LIMITL_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH2LIMITL`"]
@@ -950,17 +914,14 @@ impl<'a> CH2LIMITL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH3LIMITH_A {
     #[doc = "0: Disable"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH3LIMITH_A> for bool {
     #[inline(always)]
     fn from(variant: CH3LIMITH_A) -> Self {
-        match variant {
-            CH3LIMITH_A::DISABLED => false,
-            CH3LIMITH_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH3LIMITH`"]
@@ -1028,17 +989,14 @@ impl<'a> CH3LIMITH_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH3LIMITL_A {
     #[doc = "0: Disable"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH3LIMITL_A> for bool {
     #[inline(always)]
     fn from(variant: CH3LIMITL_A) -> Self {
-        match variant {
-            CH3LIMITL_A::DISABLED => false,
-            CH3LIMITL_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH3LIMITL`"]
@@ -1106,17 +1064,14 @@ impl<'a> CH3LIMITL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH4LIMITH_A {
     #[doc = "0: Disable"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH4LIMITH_A> for bool {
     #[inline(always)]
     fn from(variant: CH4LIMITH_A) -> Self {
-        match variant {
-            CH4LIMITH_A::DISABLED => false,
-            CH4LIMITH_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH4LIMITH`"]
@@ -1184,17 +1139,14 @@ impl<'a> CH4LIMITH_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH4LIMITL_A {
     #[doc = "0: Disable"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH4LIMITL_A> for bool {
     #[inline(always)]
     fn from(variant: CH4LIMITL_A) -> Self {
-        match variant {
-            CH4LIMITL_A::DISABLED => false,
-            CH4LIMITL_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH4LIMITL`"]
@@ -1262,17 +1214,14 @@ impl<'a> CH4LIMITL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH5LIMITH_A {
     #[doc = "0: Disable"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH5LIMITH_A> for bool {
     #[inline(always)]
     fn from(variant: CH5LIMITH_A) -> Self {
-        match variant {
-            CH5LIMITH_A::DISABLED => false,
-            CH5LIMITH_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH5LIMITH`"]
@@ -1340,17 +1289,14 @@ impl<'a> CH5LIMITH_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH5LIMITL_A {
     #[doc = "0: Disable"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH5LIMITL_A> for bool {
     #[inline(always)]
     fn from(variant: CH5LIMITL_A) -> Self {
-        match variant {
-            CH5LIMITL_A::DISABLED => false,
-            CH5LIMITL_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH5LIMITL`"]
@@ -1418,17 +1364,14 @@ impl<'a> CH5LIMITL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH6LIMITH_A {
     #[doc = "0: Disable"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH6LIMITH_A> for bool {
     #[inline(always)]
     fn from(variant: CH6LIMITH_A) -> Self {
-        match variant {
-            CH6LIMITH_A::DISABLED => false,
-            CH6LIMITH_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH6LIMITH`"]
@@ -1496,17 +1439,14 @@ impl<'a> CH6LIMITH_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH6LIMITL_A {
     #[doc = "0: Disable"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH6LIMITL_A> for bool {
     #[inline(always)]
     fn from(variant: CH6LIMITL_A) -> Self {
-        match variant {
-            CH6LIMITL_A::DISABLED => false,
-            CH6LIMITL_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH6LIMITL`"]
@@ -1574,17 +1514,14 @@ impl<'a> CH6LIMITL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH7LIMITH_A {
     #[doc = "0: Disable"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH7LIMITH_A> for bool {
     #[inline(always)]
     fn from(variant: CH7LIMITH_A) -> Self {
-        match variant {
-            CH7LIMITH_A::DISABLED => false,
-            CH7LIMITH_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH7LIMITH`"]
@@ -1652,17 +1589,14 @@ impl<'a> CH7LIMITH_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH7LIMITL_A {
     #[doc = "0: Disable"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<CH7LIMITL_A> for bool {
     #[inline(always)]
     fn from(variant: CH7LIMITL_A) -> Self {
-        match variant {
-            CH7LIMITL_A::DISABLED => false,
-            CH7LIMITL_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH7LIMITL`"]

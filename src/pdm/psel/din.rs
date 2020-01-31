@@ -28,17 +28,14 @@ impl<'a> PIN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CONNECT_A {
     #[doc = "1: Disconnect"]
-    DISCONNECTED,
+    DISCONNECTED = 1,
     #[doc = "0: Connect"]
-    CONNECTED,
+    CONNECTED = 0,
 }
 impl From<CONNECT_A> for bool {
     #[inline(always)]
     fn from(variant: CONNECT_A) -> Self {
-        match variant {
-            CONNECT_A::DISCONNECTED => true,
-            CONNECT_A::CONNECTED => false,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CONNECT`"]

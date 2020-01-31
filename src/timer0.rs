@@ -12,12 +12,14 @@ pub struct RegisterBlock {
     #[doc = "0x10 - Deprecated register - Shut down timer"]
     pub tasks_shutdown: TASKS_SHUTDOWN,
     _reserved5: [u8; 44usize],
-    #[doc = "0x40 - Description collection\\[0\\]: Capture Timer value to CC\\[0\\] register"]
-    pub tasks_capture: [TASKS_CAPTURE; 6],
-    _reserved6: [u8; 232usize],
-    #[doc = "0x140 - Description collection\\[0\\]: Compare event on CC\\[0\\] match"]
-    pub events_compare: [EVENTS_COMPARE; 6],
-    _reserved7: [u8; 168usize],
+    #[doc = "0x40 - Description collection\\[0\\]: Capture Timer value to CC\\[0\\]
+register"]
+    pub tasks_capture: [TASKS_CAPTURE; 4],
+    _reserved6: [u8; 240usize],
+    #[doc = "0x140 - Description collection\\[0\\]: Compare event on CC\\[0\\]
+match"]
+    pub events_compare: [EVENTS_COMPARE; 4],
+    _reserved7: [u8; 176usize],
     #[doc = "0x200 - Shortcut register"]
     pub shorts: SHORTS,
     _reserved8: [u8; 256usize],
@@ -35,9 +37,9 @@ pub struct RegisterBlock {
     pub prescaler: PRESCALER,
     _reserved13: [u8; 44usize],
     #[doc = "0x540 - Description collection\\[0\\]: Capture/Compare register 0"]
-    pub cc: [CC; 6],
+    pub cc: [CC; 4],
 }
-#[doc = "Start Timer\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [tasks_start](tasks_start) module"]
+#[doc = "Start Timer\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tasks_start](tasks_start) module"]
 pub type TASKS_START = crate::Reg<u32, _TASKS_START>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -46,7 +48,7 @@ pub struct _TASKS_START;
 impl crate::Writable for TASKS_START {}
 #[doc = "Start Timer"]
 pub mod tasks_start;
-#[doc = "Stop Timer\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [tasks_stop](tasks_stop) module"]
+#[doc = "Stop Timer\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tasks_stop](tasks_stop) module"]
 pub type TASKS_STOP = crate::Reg<u32, _TASKS_STOP>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -55,7 +57,7 @@ pub struct _TASKS_STOP;
 impl crate::Writable for TASKS_STOP {}
 #[doc = "Stop Timer"]
 pub mod tasks_stop;
-#[doc = "Increment Timer (Counter mode only)\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [tasks_count](tasks_count) module"]
+#[doc = "Increment Timer (Counter mode only)\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tasks_count](tasks_count) module"]
 pub type TASKS_COUNT = crate::Reg<u32, _TASKS_COUNT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -64,7 +66,7 @@ pub struct _TASKS_COUNT;
 impl crate::Writable for TASKS_COUNT {}
 #[doc = "Increment Timer (Counter mode only)"]
 pub mod tasks_count;
-#[doc = "Clear time\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [tasks_clear](tasks_clear) module"]
+#[doc = "Clear time\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tasks_clear](tasks_clear) module"]
 pub type TASKS_CLEAR = crate::Reg<u32, _TASKS_CLEAR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -73,7 +75,7 @@ pub struct _TASKS_CLEAR;
 impl crate::Writable for TASKS_CLEAR {}
 #[doc = "Clear time"]
 pub mod tasks_clear;
-#[doc = "Deprecated register - Shut down timer\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [tasks_shutdown](tasks_shutdown) module"]
+#[doc = "Deprecated register - Shut down timer\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tasks_shutdown](tasks_shutdown) module"]
 pub type TASKS_SHUTDOWN = crate::Reg<u32, _TASKS_SHUTDOWN>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -82,16 +84,19 @@ pub struct _TASKS_SHUTDOWN;
 impl crate::Writable for TASKS_SHUTDOWN {}
 #[doc = "Deprecated register - Shut down timer"]
 pub mod tasks_shutdown;
-#[doc = "Description collection\\[0\\]: Capture Timer value to CC\\[0\\] register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [tasks_capture](tasks_capture) module"]
+#[doc = "Description collection\\[0\\]: Capture Timer value to CC\\[0\\]
+register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tasks_capture](tasks_capture) module"]
 pub type TASKS_CAPTURE = crate::Reg<u32, _TASKS_CAPTURE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
 pub struct _TASKS_CAPTURE;
 #[doc = "`write(|w| ..)` method takes [tasks_capture::W](tasks_capture::W) writer structure"]
 impl crate::Writable for TASKS_CAPTURE {}
-#[doc = "Description collection\\[0\\]: Capture Timer value to CC\\[0\\] register"]
+#[doc = "Description collection\\[0\\]: Capture Timer value to CC\\[0\\]
+register"]
 pub mod tasks_capture;
-#[doc = "Description collection\\[0\\]: Compare event on CC\\[0\\] match\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [events_compare](events_compare) module"]
+#[doc = "Description collection\\[0\\]: Compare event on CC\\[0\\]
+match\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [events_compare](events_compare) module"]
 pub type EVENTS_COMPARE = crate::Reg<u32, _EVENTS_COMPARE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -100,9 +105,10 @@ pub struct _EVENTS_COMPARE;
 impl crate::Readable for EVENTS_COMPARE {}
 #[doc = "`write(|w| ..)` method takes [events_compare::W](events_compare::W) writer structure"]
 impl crate::Writable for EVENTS_COMPARE {}
-#[doc = "Description collection\\[0\\]: Compare event on CC\\[0\\] match"]
+#[doc = "Description collection\\[0\\]: Compare event on CC\\[0\\]
+match"]
 pub mod events_compare;
-#[doc = "Shortcut register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [shorts](shorts) module"]
+#[doc = "Shortcut register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [shorts](shorts) module"]
 pub type SHORTS = crate::Reg<u32, _SHORTS>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -113,7 +119,7 @@ impl crate::Readable for SHORTS {}
 impl crate::Writable for SHORTS {}
 #[doc = "Shortcut register"]
 pub mod shorts;
-#[doc = "Enable interrupt\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [intenset](intenset) module"]
+#[doc = "Enable interrupt\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [intenset](intenset) module"]
 pub type INTENSET = crate::Reg<u32, _INTENSET>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -124,7 +130,7 @@ impl crate::Readable for INTENSET {}
 impl crate::Writable for INTENSET {}
 #[doc = "Enable interrupt"]
 pub mod intenset;
-#[doc = "Disable interrupt\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [intenclr](intenclr) module"]
+#[doc = "Disable interrupt\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [intenclr](intenclr) module"]
 pub type INTENCLR = crate::Reg<u32, _INTENCLR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -135,7 +141,7 @@ impl crate::Readable for INTENCLR {}
 impl crate::Writable for INTENCLR {}
 #[doc = "Disable interrupt"]
 pub mod intenclr;
-#[doc = "Timer mode selection\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [mode](mode) module"]
+#[doc = "Timer mode selection\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mode](mode) module"]
 pub type MODE = crate::Reg<u32, _MODE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -146,7 +152,7 @@ impl crate::Readable for MODE {}
 impl crate::Writable for MODE {}
 #[doc = "Timer mode selection"]
 pub mod mode;
-#[doc = "Configure the number of bits used by the TIMER\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [bitmode](bitmode) module"]
+#[doc = "Configure the number of bits used by the TIMER\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [bitmode](bitmode) module"]
 pub type BITMODE = crate::Reg<u32, _BITMODE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -157,7 +163,7 @@ impl crate::Readable for BITMODE {}
 impl crate::Writable for BITMODE {}
 #[doc = "Configure the number of bits used by the TIMER"]
 pub mod bitmode;
-#[doc = "Timer prescaler register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prescaler](prescaler) module"]
+#[doc = "Timer prescaler register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prescaler](prescaler) module"]
 pub type PRESCALER = crate::Reg<u32, _PRESCALER>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -168,7 +174,7 @@ impl crate::Readable for PRESCALER {}
 impl crate::Writable for PRESCALER {}
 #[doc = "Timer prescaler register"]
 pub mod prescaler;
-#[doc = "Description collection\\[0\\]: Capture/Compare register 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cc](cc) module"]
+#[doc = "Description collection\\[0\\]: Capture/Compare register 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cc](cc) module"]
 pub type CC = crate::Reg<u32, _CC>;
 #[allow(missing_docs)]
 #[doc(hidden)]

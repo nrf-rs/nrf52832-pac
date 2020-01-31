@@ -14,17 +14,14 @@ impl crate::ResetValue for super::RX {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CRCERROR_A {
     #[doc = "0: Valid CRC detected"]
-    CRCCORRECT,
+    CRCCORRECT = 0,
     #[doc = "1: CRC received does not match local check"]
-    CRCERROR,
+    CRCERROR = 1,
 }
 impl From<CRCERROR_A> for bool {
     #[inline(always)]
     fn from(variant: CRCERROR_A) -> Self {
-        match variant {
-            CRCERROR_A::CRCCORRECT => false,
-            CRCERROR_A::CRCERROR => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CRCERROR`"]
@@ -92,17 +89,14 @@ impl<'a> CRCERROR_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PARITYSTATUS_A {
     #[doc = "0: Frame received with parity OK"]
-    PARITYOK,
+    PARITYOK = 0,
     #[doc = "1: Frame received with parity error"]
-    PARITYERROR,
+    PARITYERROR = 1,
 }
 impl From<PARITYSTATUS_A> for bool {
     #[inline(always)]
     fn from(variant: PARITYSTATUS_A) -> Self {
-        match variant {
-            PARITYSTATUS_A::PARITYOK => false,
-            PARITYSTATUS_A::PARITYERROR => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PARITYSTATUS`"]
@@ -170,17 +164,14 @@ impl<'a> PARITYSTATUS_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OVERRUN_A {
     #[doc = "0: No overrun detected"]
-    NOOVERRUN,
+    NOOVERRUN = 0,
     #[doc = "1: Overrun error"]
-    OVERRUN,
+    OVERRUN = 1,
 }
 impl From<OVERRUN_A> for bool {
     #[inline(always)]
     fn from(variant: OVERRUN_A) -> Self {
-        match variant {
-            OVERRUN_A::NOOVERRUN => false,
-            OVERRUN_A::OVERRUN => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `OVERRUN`"]

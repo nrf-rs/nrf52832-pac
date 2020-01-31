@@ -14,17 +14,14 @@ impl crate::ResetValue for super::RXEN {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RXEN_A {
     #[doc = "0: Reception disabled and now data will be written to the RXD.PTR address."]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Reception enabled."]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<RXEN_A> for bool {
     #[inline(always)]
     fn from(variant: RXEN_A) -> Self {
-        match variant {
-            RXEN_A::DISABLED => false,
-            RXEN_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RXEN`"]

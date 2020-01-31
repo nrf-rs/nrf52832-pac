@@ -14,17 +14,14 @@ impl crate::ResetValue for super::INTEN {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum READY_A {
     #[doc = "0: Disable"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<READY_A> for bool {
     #[inline(always)]
     fn from(variant: READY_A) -> Self {
-        match variant {
-            READY_A::DISABLED => false,
-            READY_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `READY`"]
@@ -92,17 +89,14 @@ impl<'a> READY_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FIELDDETECTED_A {
     #[doc = "0: Disable"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<FIELDDETECTED_A> for bool {
     #[inline(always)]
     fn from(variant: FIELDDETECTED_A) -> Self {
-        match variant {
-            FIELDDETECTED_A::DISABLED => false,
-            FIELDDETECTED_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FIELDDETECTED`"]
@@ -170,17 +164,14 @@ impl<'a> FIELDDETECTED_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FIELDLOST_A {
     #[doc = "0: Disable"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<FIELDLOST_A> for bool {
     #[inline(always)]
     fn from(variant: FIELDLOST_A) -> Self {
-        match variant {
-            FIELDLOST_A::DISABLED => false,
-            FIELDLOST_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FIELDLOST`"]
@@ -248,17 +239,14 @@ impl<'a> FIELDLOST_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TXFRAMESTART_A {
     #[doc = "0: Disable"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<TXFRAMESTART_A> for bool {
     #[inline(always)]
     fn from(variant: TXFRAMESTART_A) -> Self {
-        match variant {
-            TXFRAMESTART_A::DISABLED => false,
-            TXFRAMESTART_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TXFRAMESTART`"]
@@ -326,17 +314,14 @@ impl<'a> TXFRAMESTART_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TXFRAMEEND_A {
     #[doc = "0: Disable"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<TXFRAMEEND_A> for bool {
     #[inline(always)]
     fn from(variant: TXFRAMEEND_A) -> Self {
-        match variant {
-            TXFRAMEEND_A::DISABLED => false,
-            TXFRAMEEND_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TXFRAMEEND`"]
@@ -404,17 +389,14 @@ impl<'a> TXFRAMEEND_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RXFRAMESTART_A {
     #[doc = "0: Disable"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<RXFRAMESTART_A> for bool {
     #[inline(always)]
     fn from(variant: RXFRAMESTART_A) -> Self {
-        match variant {
-            RXFRAMESTART_A::DISABLED => false,
-            RXFRAMESTART_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RXFRAMESTART`"]
@@ -482,17 +464,14 @@ impl<'a> RXFRAMESTART_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RXFRAMEEND_A {
     #[doc = "0: Disable"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<RXFRAMEEND_A> for bool {
     #[inline(always)]
     fn from(variant: RXFRAMEEND_A) -> Self {
-        match variant {
-            RXFRAMEEND_A::DISABLED => false,
-            RXFRAMEEND_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RXFRAMEEND`"]
@@ -560,17 +539,14 @@ impl<'a> RXFRAMEEND_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERROR_A {
     #[doc = "0: Disable"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<ERROR_A> for bool {
     #[inline(always)]
     fn from(variant: ERROR_A) -> Self {
-        match variant {
-            ERROR_A::DISABLED => false,
-            ERROR_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ERROR`"]
@@ -638,17 +614,14 @@ impl<'a> ERROR_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RXERROR_A {
     #[doc = "0: Disable"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<RXERROR_A> for bool {
     #[inline(always)]
     fn from(variant: RXERROR_A) -> Self {
-        match variant {
-            RXERROR_A::DISABLED => false,
-            RXERROR_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RXERROR`"]
@@ -716,17 +689,14 @@ impl<'a> RXERROR_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ENDRX_A {
     #[doc = "0: Disable"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<ENDRX_A> for bool {
     #[inline(always)]
     fn from(variant: ENDRX_A) -> Self {
-        match variant {
-            ENDRX_A::DISABLED => false,
-            ENDRX_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ENDRX`"]
@@ -794,17 +764,14 @@ impl<'a> ENDRX_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ENDTX_A {
     #[doc = "0: Disable"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<ENDTX_A> for bool {
     #[inline(always)]
     fn from(variant: ENDTX_A) -> Self {
-        match variant {
-            ENDTX_A::DISABLED => false,
-            ENDTX_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ENDTX`"]
@@ -872,17 +839,14 @@ impl<'a> ENDTX_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum AUTOCOLRESSTARTED_A {
     #[doc = "0: Disable"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<AUTOCOLRESSTARTED_A> for bool {
     #[inline(always)]
     fn from(variant: AUTOCOLRESSTARTED_A) -> Self {
-        match variant {
-            AUTOCOLRESSTARTED_A::DISABLED => false,
-            AUTOCOLRESSTARTED_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `AUTOCOLRESSTARTED`"]
@@ -950,17 +914,14 @@ impl<'a> AUTOCOLRESSTARTED_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum COLLISION_A {
     #[doc = "0: Disable"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<COLLISION_A> for bool {
     #[inline(always)]
     fn from(variant: COLLISION_A) -> Self {
-        match variant {
-            COLLISION_A::DISABLED => false,
-            COLLISION_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `COLLISION`"]
@@ -1028,17 +989,14 @@ impl<'a> COLLISION_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SELECTED_A {
     #[doc = "0: Disable"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<SELECTED_A> for bool {
     #[inline(always)]
     fn from(variant: SELECTED_A) -> Self {
-        match variant {
-            SELECTED_A::DISABLED => false,
-            SELECTED_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SELECTED`"]
@@ -1106,17 +1064,14 @@ impl<'a> SELECTED_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum STARTED_A {
     #[doc = "0: Disable"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<STARTED_A> for bool {
     #[inline(always)]
     fn from(variant: STARTED_A) -> Self {
-        match variant {
-            STARTED_A::DISABLED => false,
-            STARTED_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `STARTED`"]

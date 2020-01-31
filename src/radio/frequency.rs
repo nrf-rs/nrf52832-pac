@@ -28,17 +28,14 @@ impl<'a> FREQUENCY_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MAP_A {
     #[doc = "0: Channel map between 2400 MHZ .. 2500 MHz"]
-    DEFAULT,
+    DEFAULT = 0,
     #[doc = "1: Channel map between 2360 MHZ .. 2460 MHz"]
-    LOW,
+    LOW = 1,
 }
 impl From<MAP_A> for bool {
     #[inline(always)]
     fn from(variant: MAP_A) -> Self {
-        match variant {
-            MAP_A::DEFAULT => false,
-            MAP_A::LOW => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MAP`"]

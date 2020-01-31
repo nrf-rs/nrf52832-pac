@@ -14,17 +14,14 @@ impl crate::ResetValue for super::ERASEUICR {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERASEUICR_A {
     #[doc = "0: No operation"]
-    NOOPERATION,
+    NOOPERATION = 0,
     #[doc = "1: Start erase of UICR"]
-    ERASE,
+    ERASE = 1,
 }
 impl From<ERASEUICR_A> for bool {
     #[inline(always)]
     fn from(variant: ERASEUICR_A) -> Self {
-        match variant {
-            ERASEUICR_A::NOOPERATION => false,
-            ERASEUICR_A::ERASE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ERASEUICR`"]

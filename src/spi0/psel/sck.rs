@@ -12,16 +12,15 @@ impl crate::ResetValue for super::SCK {
 }
 #[doc = "Pin number configuration for SPI SCK signal\n\nValue on reset: 4294967295"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u32)]
 pub enum PSELSCK_A {
     #[doc = "4294967295: Disconnect"]
-    DISCONNECTED,
+    DISCONNECTED = 4294967295,
 }
 impl From<PSELSCK_A> for u32 {
     #[inline(always)]
     fn from(variant: PSELSCK_A) -> Self {
-        match variant {
-            PSELSCK_A::DISCONNECTED => 4294967295,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PSELSCK`"]

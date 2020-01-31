@@ -12,25 +12,21 @@ impl crate::ResetValue for super::CONFIG {
 }
 #[doc = "Positive channel resistor control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum RESP_A {
     #[doc = "0: Bypass resistor ladder"]
-    BYPASS,
+    BYPASS = 0,
     #[doc = "1: Pull-down to GND"]
-    PULLDOWN,
+    PULLDOWN = 1,
     #[doc = "2: Pull-up to VDD"]
-    PULLUP,
+    PULLUP = 2,
     #[doc = "3: Set input at VDD/2"]
-    VDD1_2,
+    VDD1_2 = 3,
 }
 impl From<RESP_A> for u8 {
     #[inline(always)]
     fn from(variant: RESP_A) -> Self {
-        match variant {
-            RESP_A::BYPASS => 0,
-            RESP_A::PULLDOWN => 1,
-            RESP_A::PULLUP => 2,
-            RESP_A::VDD1_2 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `RESP`"]
@@ -109,25 +105,21 @@ impl<'a> RESP_W<'a> {
 }
 #[doc = "Negative channel resistor control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum RESN_A {
     #[doc = "0: Bypass resistor ladder"]
-    BYPASS,
+    BYPASS = 0,
     #[doc = "1: Pull-down to GND"]
-    PULLDOWN,
+    PULLDOWN = 1,
     #[doc = "2: Pull-up to VDD"]
-    PULLUP,
+    PULLUP = 2,
     #[doc = "3: Set input at VDD/2"]
-    VDD1_2,
+    VDD1_2 = 3,
 }
 impl From<RESN_A> for u8 {
     #[inline(always)]
     fn from(variant: RESN_A) -> Self {
-        match variant {
-            RESN_A::BYPASS => 0,
-            RESN_A::PULLDOWN => 1,
-            RESN_A::PULLUP => 2,
-            RESN_A::VDD1_2 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `RESN`"]
@@ -206,37 +198,29 @@ impl<'a> RESN_W<'a> {
 }
 #[doc = "Gain control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum GAIN_A {
     #[doc = "0: 1/6"]
-    GAIN1_6,
+    GAIN1_6 = 0,
     #[doc = "1: 1/5"]
-    GAIN1_5,
+    GAIN1_5 = 1,
     #[doc = "2: 1/4"]
-    GAIN1_4,
+    GAIN1_4 = 2,
     #[doc = "3: 1/3"]
-    GAIN1_3,
+    GAIN1_3 = 3,
     #[doc = "4: 1/2"]
-    GAIN1_2,
+    GAIN1_2 = 4,
     #[doc = "5: 1"]
-    GAIN1,
+    GAIN1 = 5,
     #[doc = "6: 2"]
-    GAIN2,
+    GAIN2 = 6,
     #[doc = "7: 4"]
-    GAIN4,
+    GAIN4 = 7,
 }
 impl From<GAIN_A> for u8 {
     #[inline(always)]
     fn from(variant: GAIN_A) -> Self {
-        match variant {
-            GAIN_A::GAIN1_6 => 0,
-            GAIN_A::GAIN1_5 => 1,
-            GAIN_A::GAIN1_4 => 2,
-            GAIN_A::GAIN1_3 => 3,
-            GAIN_A::GAIN1_2 => 4,
-            GAIN_A::GAIN1 => 5,
-            GAIN_A::GAIN2 => 6,
-            GAIN_A::GAIN4 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `GAIN`"]
@@ -361,17 +345,14 @@ impl<'a> GAIN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REFSEL_A {
     #[doc = "0: Internal reference (0.6 V)"]
-    INTERNAL,
+    INTERNAL = 0,
     #[doc = "1: VDD/4 as reference"]
-    VDD1_4,
+    VDD1_4 = 1,
 }
 impl From<REFSEL_A> for bool {
     #[inline(always)]
     fn from(variant: REFSEL_A) -> Self {
-        match variant {
-            REFSEL_A::INTERNAL => false,
-            REFSEL_A::VDD1_4 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REFSEL`"]
@@ -437,31 +418,25 @@ impl<'a> REFSEL_W<'a> {
 }
 #[doc = "Acquisition time, the time the ADC uses to sample the input voltage\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum TACQ_A {
     #[doc = "0: 3 us"]
-    _3US,
+    _3US = 0,
     #[doc = "1: 5 us"]
-    _5US,
+    _5US = 1,
     #[doc = "2: 10 us"]
-    _10US,
+    _10US = 2,
     #[doc = "3: 15 us"]
-    _15US,
+    _15US = 3,
     #[doc = "4: 20 us"]
-    _20US,
+    _20US = 4,
     #[doc = "5: 40 us"]
-    _40US,
+    _40US = 5,
 }
 impl From<TACQ_A> for u8 {
     #[inline(always)]
     fn from(variant: TACQ_A) -> Self {
-        match variant {
-            TACQ_A::_3US => 0,
-            TACQ_A::_5US => 1,
-            TACQ_A::_10US => 2,
-            TACQ_A::_15US => 3,
-            TACQ_A::_20US => 4,
-            TACQ_A::_40US => 5,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `TACQ`"]
@@ -563,17 +538,14 @@ impl<'a> TACQ_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MODE_A {
     #[doc = "0: Single ended, PSELN will be ignored, negative input to ADC shorted to GND"]
-    SE,
+    SE = 0,
     #[doc = "1: Differential"]
-    DIFF,
+    DIFF = 1,
 }
 impl From<MODE_A> for bool {
     #[inline(always)]
     fn from(variant: MODE_A) -> Self {
-        match variant {
-            MODE_A::SE => false,
-            MODE_A::DIFF => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MODE`"]
@@ -641,17 +613,14 @@ impl<'a> MODE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BURST_A {
     #[doc = "0: Burst mode is disabled (normal operation)"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Burst mode is enabled. SAADC takes 2^OVERSAMPLE number of samples as fast as it can, and sends the average to Data RAM."]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<BURST_A> for bool {
     #[inline(always)]
     fn from(variant: BURST_A) -> Self {
-        match variant {
-            BURST_A::DISABLED => false,
-            BURST_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `BURST`"]

@@ -14,17 +14,14 @@ impl crate::ResetValue for super::TXEN {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TXEN_A {
     #[doc = "0: Transmission disabled and now data will be read from the RXD.TXD address."]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Transmission enabled."]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<TXEN_A> for bool {
     #[inline(always)]
     fn from(variant: TXEN_A) -> Self {
-        match variant {
-            TXEN_A::DISABLED => false,
-            TXEN_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TXEN`"]

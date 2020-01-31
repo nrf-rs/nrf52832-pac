@@ -14,17 +14,14 @@ impl crate::ResetValue for super::CONFIG {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SLEEP_A {
     #[doc = "0: Pause watchdog while the CPU is sleeping"]
-    PAUSE,
+    PAUSE = 0,
     #[doc = "1: Keep the watchdog running while the CPU is sleeping"]
-    RUN,
+    RUN = 1,
 }
 impl From<SLEEP_A> for bool {
     #[inline(always)]
     fn from(variant: SLEEP_A) -> Self {
-        match variant {
-            SLEEP_A::PAUSE => false,
-            SLEEP_A::RUN => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SLEEP`"]
@@ -92,17 +89,14 @@ impl<'a> SLEEP_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HALT_A {
     #[doc = "0: Pause watchdog while the CPU is halted by the debugger"]
-    PAUSE,
+    PAUSE = 0,
     #[doc = "1: Keep the watchdog running while the CPU is halted by the debugger"]
-    RUN,
+    RUN = 1,
 }
 impl From<HALT_A> for bool {
     #[inline(always)]
     fn from(variant: HALT_A) -> Self {
-        match variant {
-            HALT_A::PAUSE => false,
-            HALT_A::RUN => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `HALT`"]

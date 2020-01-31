@@ -12,25 +12,21 @@ impl crate::ResetValue for super::TRACECONFIG {
 }
 #[doc = "Speed of Trace Port clock. Note that the TRACECLK pin will output this clock divided by two.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum TRACEPORTSPEED_A {
     #[doc = "0: 32 MHz Trace Port clock (TRACECLK = 16 MHz)"]
-    _32MHZ,
+    _32MHZ = 0,
     #[doc = "1: 16 MHz Trace Port clock (TRACECLK = 8 MHz)"]
-    _16MHZ,
+    _16MHZ = 1,
     #[doc = "2: 8 MHz Trace Port clock (TRACECLK = 4 MHz)"]
-    _8MHZ,
+    _8MHZ = 2,
     #[doc = "3: 4 MHz Trace Port clock (TRACECLK = 2 MHz)"]
-    _4MHZ,
+    _4MHZ = 3,
 }
 impl From<TRACEPORTSPEED_A> for u8 {
     #[inline(always)]
     fn from(variant: TRACEPORTSPEED_A) -> Self {
-        match variant {
-            TRACEPORTSPEED_A::_32MHZ => 0,
-            TRACEPORTSPEED_A::_16MHZ => 1,
-            TRACEPORTSPEED_A::_8MHZ => 2,
-            TRACEPORTSPEED_A::_4MHZ => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `TRACEPORTSPEED`"]
@@ -109,22 +105,19 @@ impl<'a> TRACEPORTSPEED_W<'a> {
 }
 #[doc = "Pin multiplexing of trace signals.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum TRACEMUX_A {
     #[doc = "0: GPIOs multiplexed onto all trace-pins"]
-    GPIO,
+    GPIO = 0,
     #[doc = "1: SWO multiplexed onto P0.18, GPIO multiplexed onto other trace pins"]
-    SERIAL,
+    SERIAL = 1,
     #[doc = "2: TRACECLK and TRACEDATA multiplexed onto P0.20, P0.18, P0.16, P0.15 and P0.14."]
-    PARALLEL,
+    PARALLEL = 2,
 }
 impl From<TRACEMUX_A> for u8 {
     #[inline(always)]
     fn from(variant: TRACEMUX_A) -> Self {
-        match variant {
-            TRACEMUX_A::GPIO => 0,
-            TRACEMUX_A::SERIAL => 1,
-            TRACEMUX_A::PARALLEL => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `TRACEMUX`"]

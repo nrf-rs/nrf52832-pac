@@ -12,22 +12,19 @@ impl crate::ResetValue for super::LFCLKSRC {
 }
 #[doc = "Clock source\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SRC_A {
     #[doc = "0: 32.768 kHz RC oscillator"]
-    RC,
+    RC = 0,
     #[doc = "1: 32.768 kHz crystal oscillator"]
-    XTAL,
+    XTAL = 1,
     #[doc = "2: 32.768 kHz synthesized from HFCLK"]
-    SYNTH,
+    SYNTH = 2,
 }
 impl From<SRC_A> for u8 {
     #[inline(always)]
     fn from(variant: SRC_A) -> Self {
-        match variant {
-            SRC_A::RC => 0,
-            SRC_A::XTAL => 1,
-            SRC_A::SYNTH => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SRC`"]
@@ -96,17 +93,14 @@ impl<'a> SRC_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BYPASS_A {
     #[doc = "0: Disable (use with Xtal or low-swing external source)"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable (use with rail-to-rail external source)"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<BYPASS_A> for bool {
     #[inline(always)]
     fn from(variant: BYPASS_A) -> Self {
-        match variant {
-            BYPASS_A::DISABLED => false,
-            BYPASS_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `BYPASS`"]
@@ -174,17 +168,14 @@ impl<'a> BYPASS_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EXTERNAL_A {
     #[doc = "0: Disable external source (use with Xtal)"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enable use of external source instead of Xtal (SRC needs to be set to Xtal)"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<EXTERNAL_A> for bool {
     #[inline(always)]
     fn from(variant: EXTERNAL_A) -> Self {
-        match variant {
-            EXTERNAL_A::DISABLED => false,
-            EXTERNAL_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EXTERNAL`"]

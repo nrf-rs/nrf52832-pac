@@ -14,17 +14,14 @@ impl crate::ResetValue for super::INTENSET {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum STOPPED_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<STOPPED_A> for bool {
     #[inline(always)]
     fn from(variant: STOPPED_A) -> Self {
-        match variant {
-            STOPPED_A::DISABLED => false,
-            STOPPED_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `STOPPED`"]
@@ -53,14 +50,12 @@ impl STOPPED_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum STOPPED_AW {
     #[doc = "1: Enable"]
-    SET,
+    SET = 1,
 }
 impl From<STOPPED_AW> for bool {
     #[inline(always)]
     fn from(variant: STOPPED_AW) -> Self {
-        match variant {
-            STOPPED_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `STOPPED`"]
@@ -97,21 +92,19 @@ impl<'a> STOPPED_W<'a> {
         self.w
     }
 }
-#[doc = "Write '1' to Enable interrupt for SEQSTARTED\\[0\\] event\n\nValue on reset: 0"]
+#[doc = "Write '1' to Enable interrupt for SEQSTARTED\\[0\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SEQSTARTED0_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<SEQSTARTED0_A> for bool {
     #[inline(always)]
     fn from(variant: SEQSTARTED0_A) -> Self {
-        match variant {
-            SEQSTARTED0_A::DISABLED => false,
-            SEQSTARTED0_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SEQSTARTED0`"]
@@ -136,18 +129,17 @@ impl SEQSTARTED0_R {
         *self == SEQSTARTED0_A::ENABLED
     }
 }
-#[doc = "Write '1' to Enable interrupt for SEQSTARTED\\[0\\] event\n\nValue on reset: 0"]
+#[doc = "Write '1' to Enable interrupt for SEQSTARTED\\[0\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SEQSTARTED0_AW {
     #[doc = "1: Enable"]
-    SET,
+    SET = 1,
 }
 impl From<SEQSTARTED0_AW> for bool {
     #[inline(always)]
     fn from(variant: SEQSTARTED0_AW) -> Self {
-        match variant {
-            SEQSTARTED0_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `SEQSTARTED0`"]
@@ -184,21 +176,19 @@ impl<'a> SEQSTARTED0_W<'a> {
         self.w
     }
 }
-#[doc = "Write '1' to Enable interrupt for SEQSTARTED\\[1\\] event\n\nValue on reset: 0"]
+#[doc = "Write '1' to Enable interrupt for SEQSTARTED\\[1\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SEQSTARTED1_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<SEQSTARTED1_A> for bool {
     #[inline(always)]
     fn from(variant: SEQSTARTED1_A) -> Self {
-        match variant {
-            SEQSTARTED1_A::DISABLED => false,
-            SEQSTARTED1_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SEQSTARTED1`"]
@@ -223,18 +213,17 @@ impl SEQSTARTED1_R {
         *self == SEQSTARTED1_A::ENABLED
     }
 }
-#[doc = "Write '1' to Enable interrupt for SEQSTARTED\\[1\\] event\n\nValue on reset: 0"]
+#[doc = "Write '1' to Enable interrupt for SEQSTARTED\\[1\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SEQSTARTED1_AW {
     #[doc = "1: Enable"]
-    SET,
+    SET = 1,
 }
 impl From<SEQSTARTED1_AW> for bool {
     #[inline(always)]
     fn from(variant: SEQSTARTED1_AW) -> Self {
-        match variant {
-            SEQSTARTED1_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `SEQSTARTED1`"]
@@ -271,21 +260,19 @@ impl<'a> SEQSTARTED1_W<'a> {
         self.w
     }
 }
-#[doc = "Write '1' to Enable interrupt for SEQEND\\[0\\] event\n\nValue on reset: 0"]
+#[doc = "Write '1' to Enable interrupt for SEQEND\\[0\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SEQEND0_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<SEQEND0_A> for bool {
     #[inline(always)]
     fn from(variant: SEQEND0_A) -> Self {
-        match variant {
-            SEQEND0_A::DISABLED => false,
-            SEQEND0_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SEQEND0`"]
@@ -310,18 +297,17 @@ impl SEQEND0_R {
         *self == SEQEND0_A::ENABLED
     }
 }
-#[doc = "Write '1' to Enable interrupt for SEQEND\\[0\\] event\n\nValue on reset: 0"]
+#[doc = "Write '1' to Enable interrupt for SEQEND\\[0\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SEQEND0_AW {
     #[doc = "1: Enable"]
-    SET,
+    SET = 1,
 }
 impl From<SEQEND0_AW> for bool {
     #[inline(always)]
     fn from(variant: SEQEND0_AW) -> Self {
-        match variant {
-            SEQEND0_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `SEQEND0`"]
@@ -358,21 +344,19 @@ impl<'a> SEQEND0_W<'a> {
         self.w
     }
 }
-#[doc = "Write '1' to Enable interrupt for SEQEND\\[1\\] event\n\nValue on reset: 0"]
+#[doc = "Write '1' to Enable interrupt for SEQEND\\[1\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SEQEND1_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<SEQEND1_A> for bool {
     #[inline(always)]
     fn from(variant: SEQEND1_A) -> Self {
-        match variant {
-            SEQEND1_A::DISABLED => false,
-            SEQEND1_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SEQEND1`"]
@@ -397,18 +381,17 @@ impl SEQEND1_R {
         *self == SEQEND1_A::ENABLED
     }
 }
-#[doc = "Write '1' to Enable interrupt for SEQEND\\[1\\] event\n\nValue on reset: 0"]
+#[doc = "Write '1' to Enable interrupt for SEQEND\\[1\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SEQEND1_AW {
     #[doc = "1: Enable"]
-    SET,
+    SET = 1,
 }
 impl From<SEQEND1_AW> for bool {
     #[inline(always)]
     fn from(variant: SEQEND1_AW) -> Self {
-        match variant {
-            SEQEND1_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `SEQEND1`"]
@@ -449,17 +432,14 @@ impl<'a> SEQEND1_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PWMPERIODEND_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<PWMPERIODEND_A> for bool {
     #[inline(always)]
     fn from(variant: PWMPERIODEND_A) -> Self {
-        match variant {
-            PWMPERIODEND_A::DISABLED => false,
-            PWMPERIODEND_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PWMPERIODEND`"]
@@ -488,14 +468,12 @@ impl PWMPERIODEND_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PWMPERIODEND_AW {
     #[doc = "1: Enable"]
-    SET,
+    SET = 1,
 }
 impl From<PWMPERIODEND_AW> for bool {
     #[inline(always)]
     fn from(variant: PWMPERIODEND_AW) -> Self {
-        match variant {
-            PWMPERIODEND_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `PWMPERIODEND`"]
@@ -536,17 +514,14 @@ impl<'a> PWMPERIODEND_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LOOPSDONE_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<LOOPSDONE_A> for bool {
     #[inline(always)]
     fn from(variant: LOOPSDONE_A) -> Self {
-        match variant {
-            LOOPSDONE_A::DISABLED => false,
-            LOOPSDONE_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LOOPSDONE`"]
@@ -575,14 +550,12 @@ impl LOOPSDONE_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LOOPSDONE_AW {
     #[doc = "1: Enable"]
-    SET,
+    SET = 1,
 }
 impl From<LOOPSDONE_AW> for bool {
     #[inline(always)]
     fn from(variant: LOOPSDONE_AW) -> Self {
-        match variant {
-            LOOPSDONE_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `LOOPSDONE`"]
@@ -625,22 +598,26 @@ impl R {
     pub fn stopped(&self) -> STOPPED_R {
         STOPPED_R::new(((self.bits >> 1) & 0x01) != 0)
     }
-    #[doc = "Bit 2 - Write '1' to Enable interrupt for SEQSTARTED\\[0\\] event"]
+    #[doc = "Bit 2 - Write '1' to Enable interrupt for SEQSTARTED\\[0\\]
+event"]
     #[inline(always)]
     pub fn seqstarted0(&self) -> SEQSTARTED0_R {
         SEQSTARTED0_R::new(((self.bits >> 2) & 0x01) != 0)
     }
-    #[doc = "Bit 3 - Write '1' to Enable interrupt for SEQSTARTED\\[1\\] event"]
+    #[doc = "Bit 3 - Write '1' to Enable interrupt for SEQSTARTED\\[1\\]
+event"]
     #[inline(always)]
     pub fn seqstarted1(&self) -> SEQSTARTED1_R {
         SEQSTARTED1_R::new(((self.bits >> 3) & 0x01) != 0)
     }
-    #[doc = "Bit 4 - Write '1' to Enable interrupt for SEQEND\\[0\\] event"]
+    #[doc = "Bit 4 - Write '1' to Enable interrupt for SEQEND\\[0\\]
+event"]
     #[inline(always)]
     pub fn seqend0(&self) -> SEQEND0_R {
         SEQEND0_R::new(((self.bits >> 4) & 0x01) != 0)
     }
-    #[doc = "Bit 5 - Write '1' to Enable interrupt for SEQEND\\[1\\] event"]
+    #[doc = "Bit 5 - Write '1' to Enable interrupt for SEQEND\\[1\\]
+event"]
     #[inline(always)]
     pub fn seqend1(&self) -> SEQEND1_R {
         SEQEND1_R::new(((self.bits >> 5) & 0x01) != 0)
@@ -662,22 +639,26 @@ impl W {
     pub fn stopped(&mut self) -> STOPPED_W {
         STOPPED_W { w: self }
     }
-    #[doc = "Bit 2 - Write '1' to Enable interrupt for SEQSTARTED\\[0\\] event"]
+    #[doc = "Bit 2 - Write '1' to Enable interrupt for SEQSTARTED\\[0\\]
+event"]
     #[inline(always)]
     pub fn seqstarted0(&mut self) -> SEQSTARTED0_W {
         SEQSTARTED0_W { w: self }
     }
-    #[doc = "Bit 3 - Write '1' to Enable interrupt for SEQSTARTED\\[1\\] event"]
+    #[doc = "Bit 3 - Write '1' to Enable interrupt for SEQSTARTED\\[1\\]
+event"]
     #[inline(always)]
     pub fn seqstarted1(&mut self) -> SEQSTARTED1_W {
         SEQSTARTED1_W { w: self }
     }
-    #[doc = "Bit 4 - Write '1' to Enable interrupt for SEQEND\\[0\\] event"]
+    #[doc = "Bit 4 - Write '1' to Enable interrupt for SEQEND\\[0\\]
+event"]
     #[inline(always)]
     pub fn seqend0(&mut self) -> SEQEND0_W {
         SEQEND0_W { w: self }
     }
-    #[doc = "Bit 5 - Write '1' to Enable interrupt for SEQEND\\[1\\] event"]
+    #[doc = "Bit 5 - Write '1' to Enable interrupt for SEQEND\\[1\\]
+event"]
     #[inline(always)]
     pub fn seqend1(&mut self) -> SEQEND1_W {
         SEQEND1_W { w: self }

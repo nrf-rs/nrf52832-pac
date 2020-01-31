@@ -14,17 +14,14 @@ impl crate::ResetValue for super::FRAMECONFIG {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PARITY_A {
     #[doc = "0: Parity is not added in TX frames"]
-    NOPARITY,
+    NOPARITY = 0,
     #[doc = "1: Parity is added TX frames"]
-    PARITY,
+    PARITY = 1,
 }
 impl From<PARITY_A> for bool {
     #[inline(always)]
     fn from(variant: PARITY_A) -> Self {
-        match variant {
-            PARITY_A::NOPARITY => false,
-            PARITY_A::PARITY => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PARITY`"]
@@ -92,17 +89,14 @@ impl<'a> PARITY_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DISCARDMODE_A {
     #[doc = "0: Unused bits is discarded at end of frame"]
-    DISCARDEND,
+    DISCARDEND = 0,
     #[doc = "1: Unused bits is discarded at start of frame"]
-    DISCARDSTART,
+    DISCARDSTART = 1,
 }
 impl From<DISCARDMODE_A> for bool {
     #[inline(always)]
     fn from(variant: DISCARDMODE_A) -> Self {
-        match variant {
-            DISCARDMODE_A::DISCARDEND => false,
-            DISCARDMODE_A::DISCARDSTART => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DISCARDMODE`"]
@@ -170,17 +164,14 @@ impl<'a> DISCARDMODE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SOF_A {
     #[doc = "0: Start of Frame symbol not added"]
-    NOSOF,
+    NOSOF = 0,
     #[doc = "1: Start of Frame symbol added"]
-    SOF,
+    SOF = 1,
 }
 impl From<SOF_A> for bool {
     #[inline(always)]
     fn from(variant: SOF_A) -> Self {
-        match variant {
-            SOF_A::NOSOF => false,
-            SOF_A::SOF => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SOF`"]
@@ -248,17 +239,14 @@ impl<'a> SOF_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CRCMODETX_A {
     #[doc = "0: CRC is not added to the frame"]
-    NOCRCTX,
+    NOCRCTX = 0,
     #[doc = "1: 16 bit CRC added to the frame based on all the data read from RAM that is used in the frame"]
-    CRC16TX,
+    CRC16TX = 1,
 }
 impl From<CRCMODETX_A> for bool {
     #[inline(always)]
     fn from(variant: CRCMODETX_A) -> Self {
-        match variant {
-            CRCMODETX_A::NOCRCTX => false,
-            CRCMODETX_A::CRC16TX => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CRCMODETX`"]

@@ -10,21 +10,19 @@ impl crate::ResetValue for super::INTENSET {
         0
     }
 }
-#[doc = "Write '1' to Enable interrupt for TRIGGERED\\[0\\] event\n\nValue on reset: 0"]
+#[doc = "Write '1' to Enable interrupt for TRIGGERED\\[0\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRIGGERED0_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<TRIGGERED0_A> for bool {
     #[inline(always)]
     fn from(variant: TRIGGERED0_A) -> Self {
-        match variant {
-            TRIGGERED0_A::DISABLED => false,
-            TRIGGERED0_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TRIGGERED0`"]
@@ -49,18 +47,17 @@ impl TRIGGERED0_R {
         *self == TRIGGERED0_A::ENABLED
     }
 }
-#[doc = "Write '1' to Enable interrupt for TRIGGERED\\[0\\] event\n\nValue on reset: 0"]
+#[doc = "Write '1' to Enable interrupt for TRIGGERED\\[0\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRIGGERED0_AW {
     #[doc = "1: Enable"]
-    SET,
+    SET = 1,
 }
 impl From<TRIGGERED0_AW> for bool {
     #[inline(always)]
     fn from(variant: TRIGGERED0_AW) -> Self {
-        match variant {
-            TRIGGERED0_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `TRIGGERED0`"]
@@ -97,21 +94,19 @@ impl<'a> TRIGGERED0_W<'a> {
         self.w
     }
 }
-#[doc = "Write '1' to Enable interrupt for TRIGGERED\\[1\\] event\n\nValue on reset: 0"]
+#[doc = "Write '1' to Enable interrupt for TRIGGERED\\[1\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRIGGERED1_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<TRIGGERED1_A> for bool {
     #[inline(always)]
     fn from(variant: TRIGGERED1_A) -> Self {
-        match variant {
-            TRIGGERED1_A::DISABLED => false,
-            TRIGGERED1_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TRIGGERED1`"]
@@ -136,18 +131,17 @@ impl TRIGGERED1_R {
         *self == TRIGGERED1_A::ENABLED
     }
 }
-#[doc = "Write '1' to Enable interrupt for TRIGGERED\\[1\\] event\n\nValue on reset: 0"]
+#[doc = "Write '1' to Enable interrupt for TRIGGERED\\[1\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRIGGERED1_AW {
     #[doc = "1: Enable"]
-    SET,
+    SET = 1,
 }
 impl From<TRIGGERED1_AW> for bool {
     #[inline(always)]
     fn from(variant: TRIGGERED1_AW) -> Self {
-        match variant {
-            TRIGGERED1_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `TRIGGERED1`"]
@@ -184,21 +178,19 @@ impl<'a> TRIGGERED1_W<'a> {
         self.w
     }
 }
-#[doc = "Write '1' to Enable interrupt for TRIGGERED\\[2\\] event\n\nValue on reset: 0"]
+#[doc = "Write '1' to Enable interrupt for TRIGGERED\\[2\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRIGGERED2_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<TRIGGERED2_A> for bool {
     #[inline(always)]
     fn from(variant: TRIGGERED2_A) -> Self {
-        match variant {
-            TRIGGERED2_A::DISABLED => false,
-            TRIGGERED2_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TRIGGERED2`"]
@@ -223,18 +215,17 @@ impl TRIGGERED2_R {
         *self == TRIGGERED2_A::ENABLED
     }
 }
-#[doc = "Write '1' to Enable interrupt for TRIGGERED\\[2\\] event\n\nValue on reset: 0"]
+#[doc = "Write '1' to Enable interrupt for TRIGGERED\\[2\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRIGGERED2_AW {
     #[doc = "1: Enable"]
-    SET,
+    SET = 1,
 }
 impl From<TRIGGERED2_AW> for bool {
     #[inline(always)]
     fn from(variant: TRIGGERED2_AW) -> Self {
-        match variant {
-            TRIGGERED2_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `TRIGGERED2`"]
@@ -271,21 +262,19 @@ impl<'a> TRIGGERED2_W<'a> {
         self.w
     }
 }
-#[doc = "Write '1' to Enable interrupt for TRIGGERED\\[3\\] event\n\nValue on reset: 0"]
+#[doc = "Write '1' to Enable interrupt for TRIGGERED\\[3\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRIGGERED3_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<TRIGGERED3_A> for bool {
     #[inline(always)]
     fn from(variant: TRIGGERED3_A) -> Self {
-        match variant {
-            TRIGGERED3_A::DISABLED => false,
-            TRIGGERED3_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TRIGGERED3`"]
@@ -310,18 +299,17 @@ impl TRIGGERED3_R {
         *self == TRIGGERED3_A::ENABLED
     }
 }
-#[doc = "Write '1' to Enable interrupt for TRIGGERED\\[3\\] event\n\nValue on reset: 0"]
+#[doc = "Write '1' to Enable interrupt for TRIGGERED\\[3\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRIGGERED3_AW {
     #[doc = "1: Enable"]
-    SET,
+    SET = 1,
 }
 impl From<TRIGGERED3_AW> for bool {
     #[inline(always)]
     fn from(variant: TRIGGERED3_AW) -> Self {
-        match variant {
-            TRIGGERED3_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `TRIGGERED3`"]
@@ -358,21 +346,19 @@ impl<'a> TRIGGERED3_W<'a> {
         self.w
     }
 }
-#[doc = "Write '1' to Enable interrupt for TRIGGERED\\[4\\] event\n\nValue on reset: 0"]
+#[doc = "Write '1' to Enable interrupt for TRIGGERED\\[4\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRIGGERED4_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<TRIGGERED4_A> for bool {
     #[inline(always)]
     fn from(variant: TRIGGERED4_A) -> Self {
-        match variant {
-            TRIGGERED4_A::DISABLED => false,
-            TRIGGERED4_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TRIGGERED4`"]
@@ -397,18 +383,17 @@ impl TRIGGERED4_R {
         *self == TRIGGERED4_A::ENABLED
     }
 }
-#[doc = "Write '1' to Enable interrupt for TRIGGERED\\[4\\] event\n\nValue on reset: 0"]
+#[doc = "Write '1' to Enable interrupt for TRIGGERED\\[4\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRIGGERED4_AW {
     #[doc = "1: Enable"]
-    SET,
+    SET = 1,
 }
 impl From<TRIGGERED4_AW> for bool {
     #[inline(always)]
     fn from(variant: TRIGGERED4_AW) -> Self {
-        match variant {
-            TRIGGERED4_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `TRIGGERED4`"]
@@ -445,21 +430,19 @@ impl<'a> TRIGGERED4_W<'a> {
         self.w
     }
 }
-#[doc = "Write '1' to Enable interrupt for TRIGGERED\\[5\\] event\n\nValue on reset: 0"]
+#[doc = "Write '1' to Enable interrupt for TRIGGERED\\[5\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRIGGERED5_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<TRIGGERED5_A> for bool {
     #[inline(always)]
     fn from(variant: TRIGGERED5_A) -> Self {
-        match variant {
-            TRIGGERED5_A::DISABLED => false,
-            TRIGGERED5_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TRIGGERED5`"]
@@ -484,18 +467,17 @@ impl TRIGGERED5_R {
         *self == TRIGGERED5_A::ENABLED
     }
 }
-#[doc = "Write '1' to Enable interrupt for TRIGGERED\\[5\\] event\n\nValue on reset: 0"]
+#[doc = "Write '1' to Enable interrupt for TRIGGERED\\[5\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRIGGERED5_AW {
     #[doc = "1: Enable"]
-    SET,
+    SET = 1,
 }
 impl From<TRIGGERED5_AW> for bool {
     #[inline(always)]
     fn from(variant: TRIGGERED5_AW) -> Self {
-        match variant {
-            TRIGGERED5_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `TRIGGERED5`"]
@@ -532,21 +514,19 @@ impl<'a> TRIGGERED5_W<'a> {
         self.w
     }
 }
-#[doc = "Write '1' to Enable interrupt for TRIGGERED\\[6\\] event\n\nValue on reset: 0"]
+#[doc = "Write '1' to Enable interrupt for TRIGGERED\\[6\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRIGGERED6_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<TRIGGERED6_A> for bool {
     #[inline(always)]
     fn from(variant: TRIGGERED6_A) -> Self {
-        match variant {
-            TRIGGERED6_A::DISABLED => false,
-            TRIGGERED6_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TRIGGERED6`"]
@@ -571,18 +551,17 @@ impl TRIGGERED6_R {
         *self == TRIGGERED6_A::ENABLED
     }
 }
-#[doc = "Write '1' to Enable interrupt for TRIGGERED\\[6\\] event\n\nValue on reset: 0"]
+#[doc = "Write '1' to Enable interrupt for TRIGGERED\\[6\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRIGGERED6_AW {
     #[doc = "1: Enable"]
-    SET,
+    SET = 1,
 }
 impl From<TRIGGERED6_AW> for bool {
     #[inline(always)]
     fn from(variant: TRIGGERED6_AW) -> Self {
-        match variant {
-            TRIGGERED6_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `TRIGGERED6`"]
@@ -619,21 +598,19 @@ impl<'a> TRIGGERED6_W<'a> {
         self.w
     }
 }
-#[doc = "Write '1' to Enable interrupt for TRIGGERED\\[7\\] event\n\nValue on reset: 0"]
+#[doc = "Write '1' to Enable interrupt for TRIGGERED\\[7\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRIGGERED7_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<TRIGGERED7_A> for bool {
     #[inline(always)]
     fn from(variant: TRIGGERED7_A) -> Self {
-        match variant {
-            TRIGGERED7_A::DISABLED => false,
-            TRIGGERED7_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TRIGGERED7`"]
@@ -658,18 +635,17 @@ impl TRIGGERED7_R {
         *self == TRIGGERED7_A::ENABLED
     }
 }
-#[doc = "Write '1' to Enable interrupt for TRIGGERED\\[7\\] event\n\nValue on reset: 0"]
+#[doc = "Write '1' to Enable interrupt for TRIGGERED\\[7\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRIGGERED7_AW {
     #[doc = "1: Enable"]
-    SET,
+    SET = 1,
 }
 impl From<TRIGGERED7_AW> for bool {
     #[inline(always)]
     fn from(variant: TRIGGERED7_AW) -> Self {
-        match variant {
-            TRIGGERED7_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `TRIGGERED7`"]
@@ -706,21 +682,19 @@ impl<'a> TRIGGERED7_W<'a> {
         self.w
     }
 }
-#[doc = "Write '1' to Enable interrupt for TRIGGERED\\[8\\] event\n\nValue on reset: 0"]
+#[doc = "Write '1' to Enable interrupt for TRIGGERED\\[8\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRIGGERED8_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<TRIGGERED8_A> for bool {
     #[inline(always)]
     fn from(variant: TRIGGERED8_A) -> Self {
-        match variant {
-            TRIGGERED8_A::DISABLED => false,
-            TRIGGERED8_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TRIGGERED8`"]
@@ -745,18 +719,17 @@ impl TRIGGERED8_R {
         *self == TRIGGERED8_A::ENABLED
     }
 }
-#[doc = "Write '1' to Enable interrupt for TRIGGERED\\[8\\] event\n\nValue on reset: 0"]
+#[doc = "Write '1' to Enable interrupt for TRIGGERED\\[8\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRIGGERED8_AW {
     #[doc = "1: Enable"]
-    SET,
+    SET = 1,
 }
 impl From<TRIGGERED8_AW> for bool {
     #[inline(always)]
     fn from(variant: TRIGGERED8_AW) -> Self {
-        match variant {
-            TRIGGERED8_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `TRIGGERED8`"]
@@ -793,21 +766,19 @@ impl<'a> TRIGGERED8_W<'a> {
         self.w
     }
 }
-#[doc = "Write '1' to Enable interrupt for TRIGGERED\\[9\\] event\n\nValue on reset: 0"]
+#[doc = "Write '1' to Enable interrupt for TRIGGERED\\[9\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRIGGERED9_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<TRIGGERED9_A> for bool {
     #[inline(always)]
     fn from(variant: TRIGGERED9_A) -> Self {
-        match variant {
-            TRIGGERED9_A::DISABLED => false,
-            TRIGGERED9_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TRIGGERED9`"]
@@ -832,18 +803,17 @@ impl TRIGGERED9_R {
         *self == TRIGGERED9_A::ENABLED
     }
 }
-#[doc = "Write '1' to Enable interrupt for TRIGGERED\\[9\\] event\n\nValue on reset: 0"]
+#[doc = "Write '1' to Enable interrupt for TRIGGERED\\[9\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRIGGERED9_AW {
     #[doc = "1: Enable"]
-    SET,
+    SET = 1,
 }
 impl From<TRIGGERED9_AW> for bool {
     #[inline(always)]
     fn from(variant: TRIGGERED9_AW) -> Self {
-        match variant {
-            TRIGGERED9_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `TRIGGERED9`"]
@@ -880,21 +850,19 @@ impl<'a> TRIGGERED9_W<'a> {
         self.w
     }
 }
-#[doc = "Write '1' to Enable interrupt for TRIGGERED\\[10\\] event\n\nValue on reset: 0"]
+#[doc = "Write '1' to Enable interrupt for TRIGGERED\\[10\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRIGGERED10_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<TRIGGERED10_A> for bool {
     #[inline(always)]
     fn from(variant: TRIGGERED10_A) -> Self {
-        match variant {
-            TRIGGERED10_A::DISABLED => false,
-            TRIGGERED10_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TRIGGERED10`"]
@@ -919,18 +887,17 @@ impl TRIGGERED10_R {
         *self == TRIGGERED10_A::ENABLED
     }
 }
-#[doc = "Write '1' to Enable interrupt for TRIGGERED\\[10\\] event\n\nValue on reset: 0"]
+#[doc = "Write '1' to Enable interrupt for TRIGGERED\\[10\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRIGGERED10_AW {
     #[doc = "1: Enable"]
-    SET,
+    SET = 1,
 }
 impl From<TRIGGERED10_AW> for bool {
     #[inline(always)]
     fn from(variant: TRIGGERED10_AW) -> Self {
-        match variant {
-            TRIGGERED10_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `TRIGGERED10`"]
@@ -967,21 +934,19 @@ impl<'a> TRIGGERED10_W<'a> {
         self.w
     }
 }
-#[doc = "Write '1' to Enable interrupt for TRIGGERED\\[11\\] event\n\nValue on reset: 0"]
+#[doc = "Write '1' to Enable interrupt for TRIGGERED\\[11\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRIGGERED11_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<TRIGGERED11_A> for bool {
     #[inline(always)]
     fn from(variant: TRIGGERED11_A) -> Self {
-        match variant {
-            TRIGGERED11_A::DISABLED => false,
-            TRIGGERED11_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TRIGGERED11`"]
@@ -1006,18 +971,17 @@ impl TRIGGERED11_R {
         *self == TRIGGERED11_A::ENABLED
     }
 }
-#[doc = "Write '1' to Enable interrupt for TRIGGERED\\[11\\] event\n\nValue on reset: 0"]
+#[doc = "Write '1' to Enable interrupt for TRIGGERED\\[11\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRIGGERED11_AW {
     #[doc = "1: Enable"]
-    SET,
+    SET = 1,
 }
 impl From<TRIGGERED11_AW> for bool {
     #[inline(always)]
     fn from(variant: TRIGGERED11_AW) -> Self {
-        match variant {
-            TRIGGERED11_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `TRIGGERED11`"]
@@ -1054,21 +1018,19 @@ impl<'a> TRIGGERED11_W<'a> {
         self.w
     }
 }
-#[doc = "Write '1' to Enable interrupt for TRIGGERED\\[12\\] event\n\nValue on reset: 0"]
+#[doc = "Write '1' to Enable interrupt for TRIGGERED\\[12\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRIGGERED12_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<TRIGGERED12_A> for bool {
     #[inline(always)]
     fn from(variant: TRIGGERED12_A) -> Self {
-        match variant {
-            TRIGGERED12_A::DISABLED => false,
-            TRIGGERED12_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TRIGGERED12`"]
@@ -1093,18 +1055,17 @@ impl TRIGGERED12_R {
         *self == TRIGGERED12_A::ENABLED
     }
 }
-#[doc = "Write '1' to Enable interrupt for TRIGGERED\\[12\\] event\n\nValue on reset: 0"]
+#[doc = "Write '1' to Enable interrupt for TRIGGERED\\[12\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRIGGERED12_AW {
     #[doc = "1: Enable"]
-    SET,
+    SET = 1,
 }
 impl From<TRIGGERED12_AW> for bool {
     #[inline(always)]
     fn from(variant: TRIGGERED12_AW) -> Self {
-        match variant {
-            TRIGGERED12_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `TRIGGERED12`"]
@@ -1141,21 +1102,19 @@ impl<'a> TRIGGERED12_W<'a> {
         self.w
     }
 }
-#[doc = "Write '1' to Enable interrupt for TRIGGERED\\[13\\] event\n\nValue on reset: 0"]
+#[doc = "Write '1' to Enable interrupt for TRIGGERED\\[13\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRIGGERED13_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<TRIGGERED13_A> for bool {
     #[inline(always)]
     fn from(variant: TRIGGERED13_A) -> Self {
-        match variant {
-            TRIGGERED13_A::DISABLED => false,
-            TRIGGERED13_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TRIGGERED13`"]
@@ -1180,18 +1139,17 @@ impl TRIGGERED13_R {
         *self == TRIGGERED13_A::ENABLED
     }
 }
-#[doc = "Write '1' to Enable interrupt for TRIGGERED\\[13\\] event\n\nValue on reset: 0"]
+#[doc = "Write '1' to Enable interrupt for TRIGGERED\\[13\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRIGGERED13_AW {
     #[doc = "1: Enable"]
-    SET,
+    SET = 1,
 }
 impl From<TRIGGERED13_AW> for bool {
     #[inline(always)]
     fn from(variant: TRIGGERED13_AW) -> Self {
-        match variant {
-            TRIGGERED13_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `TRIGGERED13`"]
@@ -1228,21 +1186,19 @@ impl<'a> TRIGGERED13_W<'a> {
         self.w
     }
 }
-#[doc = "Write '1' to Enable interrupt for TRIGGERED\\[14\\] event\n\nValue on reset: 0"]
+#[doc = "Write '1' to Enable interrupt for TRIGGERED\\[14\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRIGGERED14_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<TRIGGERED14_A> for bool {
     #[inline(always)]
     fn from(variant: TRIGGERED14_A) -> Self {
-        match variant {
-            TRIGGERED14_A::DISABLED => false,
-            TRIGGERED14_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TRIGGERED14`"]
@@ -1267,18 +1223,17 @@ impl TRIGGERED14_R {
         *self == TRIGGERED14_A::ENABLED
     }
 }
-#[doc = "Write '1' to Enable interrupt for TRIGGERED\\[14\\] event\n\nValue on reset: 0"]
+#[doc = "Write '1' to Enable interrupt for TRIGGERED\\[14\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRIGGERED14_AW {
     #[doc = "1: Enable"]
-    SET,
+    SET = 1,
 }
 impl From<TRIGGERED14_AW> for bool {
     #[inline(always)]
     fn from(variant: TRIGGERED14_AW) -> Self {
-        match variant {
-            TRIGGERED14_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `TRIGGERED14`"]
@@ -1315,21 +1270,19 @@ impl<'a> TRIGGERED14_W<'a> {
         self.w
     }
 }
-#[doc = "Write '1' to Enable interrupt for TRIGGERED\\[15\\] event\n\nValue on reset: 0"]
+#[doc = "Write '1' to Enable interrupt for TRIGGERED\\[15\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRIGGERED15_A {
     #[doc = "0: Read: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Read: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<TRIGGERED15_A> for bool {
     #[inline(always)]
     fn from(variant: TRIGGERED15_A) -> Self {
-        match variant {
-            TRIGGERED15_A::DISABLED => false,
-            TRIGGERED15_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TRIGGERED15`"]
@@ -1354,18 +1307,17 @@ impl TRIGGERED15_R {
         *self == TRIGGERED15_A::ENABLED
     }
 }
-#[doc = "Write '1' to Enable interrupt for TRIGGERED\\[15\\] event\n\nValue on reset: 0"]
+#[doc = "Write '1' to Enable interrupt for TRIGGERED\\[15\\]
+event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRIGGERED15_AW {
     #[doc = "1: Enable"]
-    SET,
+    SET = 1,
 }
 impl From<TRIGGERED15_AW> for bool {
     #[inline(always)]
     fn from(variant: TRIGGERED15_AW) -> Self {
-        match variant {
-            TRIGGERED15_AW::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `TRIGGERED15`"]
@@ -1403,164 +1355,196 @@ impl<'a> TRIGGERED15_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bit 0 - Write '1' to Enable interrupt for TRIGGERED\\[0\\] event"]
+    #[doc = "Bit 0 - Write '1' to Enable interrupt for TRIGGERED\\[0\\]
+event"]
     #[inline(always)]
     pub fn triggered0(&self) -> TRIGGERED0_R {
         TRIGGERED0_R::new((self.bits & 0x01) != 0)
     }
-    #[doc = "Bit 1 - Write '1' to Enable interrupt for TRIGGERED\\[1\\] event"]
+    #[doc = "Bit 1 - Write '1' to Enable interrupt for TRIGGERED\\[1\\]
+event"]
     #[inline(always)]
     pub fn triggered1(&self) -> TRIGGERED1_R {
         TRIGGERED1_R::new(((self.bits >> 1) & 0x01) != 0)
     }
-    #[doc = "Bit 2 - Write '1' to Enable interrupt for TRIGGERED\\[2\\] event"]
+    #[doc = "Bit 2 - Write '1' to Enable interrupt for TRIGGERED\\[2\\]
+event"]
     #[inline(always)]
     pub fn triggered2(&self) -> TRIGGERED2_R {
         TRIGGERED2_R::new(((self.bits >> 2) & 0x01) != 0)
     }
-    #[doc = "Bit 3 - Write '1' to Enable interrupt for TRIGGERED\\[3\\] event"]
+    #[doc = "Bit 3 - Write '1' to Enable interrupt for TRIGGERED\\[3\\]
+event"]
     #[inline(always)]
     pub fn triggered3(&self) -> TRIGGERED3_R {
         TRIGGERED3_R::new(((self.bits >> 3) & 0x01) != 0)
     }
-    #[doc = "Bit 4 - Write '1' to Enable interrupt for TRIGGERED\\[4\\] event"]
+    #[doc = "Bit 4 - Write '1' to Enable interrupt for TRIGGERED\\[4\\]
+event"]
     #[inline(always)]
     pub fn triggered4(&self) -> TRIGGERED4_R {
         TRIGGERED4_R::new(((self.bits >> 4) & 0x01) != 0)
     }
-    #[doc = "Bit 5 - Write '1' to Enable interrupt for TRIGGERED\\[5\\] event"]
+    #[doc = "Bit 5 - Write '1' to Enable interrupt for TRIGGERED\\[5\\]
+event"]
     #[inline(always)]
     pub fn triggered5(&self) -> TRIGGERED5_R {
         TRIGGERED5_R::new(((self.bits >> 5) & 0x01) != 0)
     }
-    #[doc = "Bit 6 - Write '1' to Enable interrupt for TRIGGERED\\[6\\] event"]
+    #[doc = "Bit 6 - Write '1' to Enable interrupt for TRIGGERED\\[6\\]
+event"]
     #[inline(always)]
     pub fn triggered6(&self) -> TRIGGERED6_R {
         TRIGGERED6_R::new(((self.bits >> 6) & 0x01) != 0)
     }
-    #[doc = "Bit 7 - Write '1' to Enable interrupt for TRIGGERED\\[7\\] event"]
+    #[doc = "Bit 7 - Write '1' to Enable interrupt for TRIGGERED\\[7\\]
+event"]
     #[inline(always)]
     pub fn triggered7(&self) -> TRIGGERED7_R {
         TRIGGERED7_R::new(((self.bits >> 7) & 0x01) != 0)
     }
-    #[doc = "Bit 8 - Write '1' to Enable interrupt for TRIGGERED\\[8\\] event"]
+    #[doc = "Bit 8 - Write '1' to Enable interrupt for TRIGGERED\\[8\\]
+event"]
     #[inline(always)]
     pub fn triggered8(&self) -> TRIGGERED8_R {
         TRIGGERED8_R::new(((self.bits >> 8) & 0x01) != 0)
     }
-    #[doc = "Bit 9 - Write '1' to Enable interrupt for TRIGGERED\\[9\\] event"]
+    #[doc = "Bit 9 - Write '1' to Enable interrupt for TRIGGERED\\[9\\]
+event"]
     #[inline(always)]
     pub fn triggered9(&self) -> TRIGGERED9_R {
         TRIGGERED9_R::new(((self.bits >> 9) & 0x01) != 0)
     }
-    #[doc = "Bit 10 - Write '1' to Enable interrupt for TRIGGERED\\[10\\] event"]
+    #[doc = "Bit 10 - Write '1' to Enable interrupt for TRIGGERED\\[10\\]
+event"]
     #[inline(always)]
     pub fn triggered10(&self) -> TRIGGERED10_R {
         TRIGGERED10_R::new(((self.bits >> 10) & 0x01) != 0)
     }
-    #[doc = "Bit 11 - Write '1' to Enable interrupt for TRIGGERED\\[11\\] event"]
+    #[doc = "Bit 11 - Write '1' to Enable interrupt for TRIGGERED\\[11\\]
+event"]
     #[inline(always)]
     pub fn triggered11(&self) -> TRIGGERED11_R {
         TRIGGERED11_R::new(((self.bits >> 11) & 0x01) != 0)
     }
-    #[doc = "Bit 12 - Write '1' to Enable interrupt for TRIGGERED\\[12\\] event"]
+    #[doc = "Bit 12 - Write '1' to Enable interrupt for TRIGGERED\\[12\\]
+event"]
     #[inline(always)]
     pub fn triggered12(&self) -> TRIGGERED12_R {
         TRIGGERED12_R::new(((self.bits >> 12) & 0x01) != 0)
     }
-    #[doc = "Bit 13 - Write '1' to Enable interrupt for TRIGGERED\\[13\\] event"]
+    #[doc = "Bit 13 - Write '1' to Enable interrupt for TRIGGERED\\[13\\]
+event"]
     #[inline(always)]
     pub fn triggered13(&self) -> TRIGGERED13_R {
         TRIGGERED13_R::new(((self.bits >> 13) & 0x01) != 0)
     }
-    #[doc = "Bit 14 - Write '1' to Enable interrupt for TRIGGERED\\[14\\] event"]
+    #[doc = "Bit 14 - Write '1' to Enable interrupt for TRIGGERED\\[14\\]
+event"]
     #[inline(always)]
     pub fn triggered14(&self) -> TRIGGERED14_R {
         TRIGGERED14_R::new(((self.bits >> 14) & 0x01) != 0)
     }
-    #[doc = "Bit 15 - Write '1' to Enable interrupt for TRIGGERED\\[15\\] event"]
+    #[doc = "Bit 15 - Write '1' to Enable interrupt for TRIGGERED\\[15\\]
+event"]
     #[inline(always)]
     pub fn triggered15(&self) -> TRIGGERED15_R {
         TRIGGERED15_R::new(((self.bits >> 15) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0 - Write '1' to Enable interrupt for TRIGGERED\\[0\\] event"]
+    #[doc = "Bit 0 - Write '1' to Enable interrupt for TRIGGERED\\[0\\]
+event"]
     #[inline(always)]
     pub fn triggered0(&mut self) -> TRIGGERED0_W {
         TRIGGERED0_W { w: self }
     }
-    #[doc = "Bit 1 - Write '1' to Enable interrupt for TRIGGERED\\[1\\] event"]
+    #[doc = "Bit 1 - Write '1' to Enable interrupt for TRIGGERED\\[1\\]
+event"]
     #[inline(always)]
     pub fn triggered1(&mut self) -> TRIGGERED1_W {
         TRIGGERED1_W { w: self }
     }
-    #[doc = "Bit 2 - Write '1' to Enable interrupt for TRIGGERED\\[2\\] event"]
+    #[doc = "Bit 2 - Write '1' to Enable interrupt for TRIGGERED\\[2\\]
+event"]
     #[inline(always)]
     pub fn triggered2(&mut self) -> TRIGGERED2_W {
         TRIGGERED2_W { w: self }
     }
-    #[doc = "Bit 3 - Write '1' to Enable interrupt for TRIGGERED\\[3\\] event"]
+    #[doc = "Bit 3 - Write '1' to Enable interrupt for TRIGGERED\\[3\\]
+event"]
     #[inline(always)]
     pub fn triggered3(&mut self) -> TRIGGERED3_W {
         TRIGGERED3_W { w: self }
     }
-    #[doc = "Bit 4 - Write '1' to Enable interrupt for TRIGGERED\\[4\\] event"]
+    #[doc = "Bit 4 - Write '1' to Enable interrupt for TRIGGERED\\[4\\]
+event"]
     #[inline(always)]
     pub fn triggered4(&mut self) -> TRIGGERED4_W {
         TRIGGERED4_W { w: self }
     }
-    #[doc = "Bit 5 - Write '1' to Enable interrupt for TRIGGERED\\[5\\] event"]
+    #[doc = "Bit 5 - Write '1' to Enable interrupt for TRIGGERED\\[5\\]
+event"]
     #[inline(always)]
     pub fn triggered5(&mut self) -> TRIGGERED5_W {
         TRIGGERED5_W { w: self }
     }
-    #[doc = "Bit 6 - Write '1' to Enable interrupt for TRIGGERED\\[6\\] event"]
+    #[doc = "Bit 6 - Write '1' to Enable interrupt for TRIGGERED\\[6\\]
+event"]
     #[inline(always)]
     pub fn triggered6(&mut self) -> TRIGGERED6_W {
         TRIGGERED6_W { w: self }
     }
-    #[doc = "Bit 7 - Write '1' to Enable interrupt for TRIGGERED\\[7\\] event"]
+    #[doc = "Bit 7 - Write '1' to Enable interrupt for TRIGGERED\\[7\\]
+event"]
     #[inline(always)]
     pub fn triggered7(&mut self) -> TRIGGERED7_W {
         TRIGGERED7_W { w: self }
     }
-    #[doc = "Bit 8 - Write '1' to Enable interrupt for TRIGGERED\\[8\\] event"]
+    #[doc = "Bit 8 - Write '1' to Enable interrupt for TRIGGERED\\[8\\]
+event"]
     #[inline(always)]
     pub fn triggered8(&mut self) -> TRIGGERED8_W {
         TRIGGERED8_W { w: self }
     }
-    #[doc = "Bit 9 - Write '1' to Enable interrupt for TRIGGERED\\[9\\] event"]
+    #[doc = "Bit 9 - Write '1' to Enable interrupt for TRIGGERED\\[9\\]
+event"]
     #[inline(always)]
     pub fn triggered9(&mut self) -> TRIGGERED9_W {
         TRIGGERED9_W { w: self }
     }
-    #[doc = "Bit 10 - Write '1' to Enable interrupt for TRIGGERED\\[10\\] event"]
+    #[doc = "Bit 10 - Write '1' to Enable interrupt for TRIGGERED\\[10\\]
+event"]
     #[inline(always)]
     pub fn triggered10(&mut self) -> TRIGGERED10_W {
         TRIGGERED10_W { w: self }
     }
-    #[doc = "Bit 11 - Write '1' to Enable interrupt for TRIGGERED\\[11\\] event"]
+    #[doc = "Bit 11 - Write '1' to Enable interrupt for TRIGGERED\\[11\\]
+event"]
     #[inline(always)]
     pub fn triggered11(&mut self) -> TRIGGERED11_W {
         TRIGGERED11_W { w: self }
     }
-    #[doc = "Bit 12 - Write '1' to Enable interrupt for TRIGGERED\\[12\\] event"]
+    #[doc = "Bit 12 - Write '1' to Enable interrupt for TRIGGERED\\[12\\]
+event"]
     #[inline(always)]
     pub fn triggered12(&mut self) -> TRIGGERED12_W {
         TRIGGERED12_W { w: self }
     }
-    #[doc = "Bit 13 - Write '1' to Enable interrupt for TRIGGERED\\[13\\] event"]
+    #[doc = "Bit 13 - Write '1' to Enable interrupt for TRIGGERED\\[13\\]
+event"]
     #[inline(always)]
     pub fn triggered13(&mut self) -> TRIGGERED13_W {
         TRIGGERED13_W { w: self }
     }
-    #[doc = "Bit 14 - Write '1' to Enable interrupt for TRIGGERED\\[14\\] event"]
+    #[doc = "Bit 14 - Write '1' to Enable interrupt for TRIGGERED\\[14\\]
+event"]
     #[inline(always)]
     pub fn triggered14(&mut self) -> TRIGGERED14_W {
         TRIGGERED14_W { w: self }
     }
-    #[doc = "Bit 15 - Write '1' to Enable interrupt for TRIGGERED\\[15\\] event"]
+    #[doc = "Bit 15 - Write '1' to Enable interrupt for TRIGGERED\\[15\\]
+event"]
     #[inline(always)]
     pub fn triggered15(&mut self) -> TRIGGERED15_W {
         TRIGGERED15_W { w: self }

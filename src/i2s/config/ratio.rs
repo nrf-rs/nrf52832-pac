@@ -12,40 +12,31 @@ impl crate::ResetValue for super::RATIO {
 }
 #[doc = "MCK / LRCK ratio.\n\nValue on reset: 6"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum RATIO_A {
     #[doc = "0: LRCK = MCK / 32"]
-    _32X,
+    _32X = 0,
     #[doc = "1: LRCK = MCK / 48"]
-    _48X,
+    _48X = 1,
     #[doc = "2: LRCK = MCK / 64"]
-    _64X,
+    _64X = 2,
     #[doc = "3: LRCK = MCK / 96"]
-    _96X,
+    _96X = 3,
     #[doc = "4: LRCK = MCK / 128"]
-    _128X,
+    _128X = 4,
     #[doc = "5: LRCK = MCK / 192"]
-    _192X,
+    _192X = 5,
     #[doc = "6: LRCK = MCK / 256"]
-    _256X,
+    _256X = 6,
     #[doc = "7: LRCK = MCK / 384"]
-    _384X,
+    _384X = 7,
     #[doc = "8: LRCK = MCK / 512"]
-    _512X,
+    _512X = 8,
 }
 impl From<RATIO_A> for u8 {
     #[inline(always)]
     fn from(variant: RATIO_A) -> Self {
-        match variant {
-            RATIO_A::_32X => 0,
-            RATIO_A::_48X => 1,
-            RATIO_A::_64X => 2,
-            RATIO_A::_96X => 3,
-            RATIO_A::_128X => 4,
-            RATIO_A::_192X => 5,
-            RATIO_A::_256X => 6,
-            RATIO_A::_384X => 7,
-            RATIO_A::_512X => 8,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `RATIO`"]

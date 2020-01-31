@@ -14,17 +14,14 @@ impl crate::ResetValue for super::FORMAT {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FORMAT_A {
     #[doc = "0: Original I2S format."]
-    I2S,
+    I2S = 0,
     #[doc = "1: Alternate (left- or right-aligned) format."]
-    ALIGNED,
+    ALIGNED = 1,
 }
 impl From<FORMAT_A> for bool {
     #[inline(always)]
     fn from(variant: FORMAT_A) -> Self {
-        match variant {
-            FORMAT_A::I2S => false,
-            FORMAT_A::ALIGNED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FORMAT`"]

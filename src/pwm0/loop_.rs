@@ -12,16 +12,15 @@ impl crate::ResetValue for super::LOOP {
 }
 #[doc = "Amount of playback of pattern cycles\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u16)]
 pub enum CNT_A {
     #[doc = "0: Looping disabled (stop at the end of the sequence)"]
-    DISABLED,
+    DISABLED = 0,
 }
 impl From<CNT_A> for u16 {
     #[inline(always)]
     fn from(variant: CNT_A) -> Self {
-        match variant {
-            CNT_A::DISABLED => 0,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CNT`"]

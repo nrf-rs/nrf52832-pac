@@ -10,21 +10,21 @@ impl crate::ResetValue for super::RREN {
         0x01
     }
 }
-#[doc = "Enable or disable RR\\[0\\] register\n\nValue on reset: 1"]
+#[doc = "Enable or disable RR\\[0\\]
+register\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RR0_A {
-    #[doc = "0: Disable RR\\[0\\] register"]
-    DISABLED,
-    #[doc = "1: Enable RR\\[0\\] register"]
-    ENABLED,
+    #[doc = "0: Disable RR\\[0\\]
+register"]
+    DISABLED = 0,
+    #[doc = "1: Enable RR\\[0\\]
+register"]
+    ENABLED = 1,
 }
 impl From<RR0_A> for bool {
     #[inline(always)]
     fn from(variant: RR0_A) -> Self {
-        match variant {
-            RR0_A::DISABLED => false,
-            RR0_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RR0`"]
@@ -61,12 +61,14 @@ impl<'a> RR0_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "Disable RR\\[0\\] register"]
+    #[doc = "Disable RR\\[0\\]
+register"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
         self.variant(RR0_A::DISABLED)
     }
-    #[doc = "Enable RR\\[0\\] register"]
+    #[doc = "Enable RR\\[0\\]
+register"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
         self.variant(RR0_A::ENABLED)
@@ -88,21 +90,21 @@ impl<'a> RR0_W<'a> {
         self.w
     }
 }
-#[doc = "Enable or disable RR\\[1\\] register\n\nValue on reset: 0"]
+#[doc = "Enable or disable RR\\[1\\]
+register\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RR1_A {
-    #[doc = "0: Disable RR\\[1\\] register"]
-    DISABLED,
-    #[doc = "1: Enable RR\\[1\\] register"]
-    ENABLED,
+    #[doc = "0: Disable RR\\[1\\]
+register"]
+    DISABLED = 0,
+    #[doc = "1: Enable RR\\[1\\]
+register"]
+    ENABLED = 1,
 }
 impl From<RR1_A> for bool {
     #[inline(always)]
     fn from(variant: RR1_A) -> Self {
-        match variant {
-            RR1_A::DISABLED => false,
-            RR1_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RR1`"]
@@ -139,12 +141,14 @@ impl<'a> RR1_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "Disable RR\\[1\\] register"]
+    #[doc = "Disable RR\\[1\\]
+register"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
         self.variant(RR1_A::DISABLED)
     }
-    #[doc = "Enable RR\\[1\\] register"]
+    #[doc = "Enable RR\\[1\\]
+register"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
         self.variant(RR1_A::ENABLED)
@@ -166,21 +170,21 @@ impl<'a> RR1_W<'a> {
         self.w
     }
 }
-#[doc = "Enable or disable RR\\[2\\] register\n\nValue on reset: 0"]
+#[doc = "Enable or disable RR\\[2\\]
+register\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RR2_A {
-    #[doc = "0: Disable RR\\[2\\] register"]
-    DISABLED,
-    #[doc = "1: Enable RR\\[2\\] register"]
-    ENABLED,
+    #[doc = "0: Disable RR\\[2\\]
+register"]
+    DISABLED = 0,
+    #[doc = "1: Enable RR\\[2\\]
+register"]
+    ENABLED = 1,
 }
 impl From<RR2_A> for bool {
     #[inline(always)]
     fn from(variant: RR2_A) -> Self {
-        match variant {
-            RR2_A::DISABLED => false,
-            RR2_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RR2`"]
@@ -217,12 +221,14 @@ impl<'a> RR2_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "Disable RR\\[2\\] register"]
+    #[doc = "Disable RR\\[2\\]
+register"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
         self.variant(RR2_A::DISABLED)
     }
-    #[doc = "Enable RR\\[2\\] register"]
+    #[doc = "Enable RR\\[2\\]
+register"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
         self.variant(RR2_A::ENABLED)
@@ -244,21 +250,21 @@ impl<'a> RR2_W<'a> {
         self.w
     }
 }
-#[doc = "Enable or disable RR\\[3\\] register\n\nValue on reset: 0"]
+#[doc = "Enable or disable RR\\[3\\]
+register\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RR3_A {
-    #[doc = "0: Disable RR\\[3\\] register"]
-    DISABLED,
-    #[doc = "1: Enable RR\\[3\\] register"]
-    ENABLED,
+    #[doc = "0: Disable RR\\[3\\]
+register"]
+    DISABLED = 0,
+    #[doc = "1: Enable RR\\[3\\]
+register"]
+    ENABLED = 1,
 }
 impl From<RR3_A> for bool {
     #[inline(always)]
     fn from(variant: RR3_A) -> Self {
-        match variant {
-            RR3_A::DISABLED => false,
-            RR3_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RR3`"]
@@ -295,12 +301,14 @@ impl<'a> RR3_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "Disable RR\\[3\\] register"]
+    #[doc = "Disable RR\\[3\\]
+register"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
         self.variant(RR3_A::DISABLED)
     }
-    #[doc = "Enable RR\\[3\\] register"]
+    #[doc = "Enable RR\\[3\\]
+register"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
         self.variant(RR3_A::ENABLED)
@@ -322,21 +330,21 @@ impl<'a> RR3_W<'a> {
         self.w
     }
 }
-#[doc = "Enable or disable RR\\[4\\] register\n\nValue on reset: 0"]
+#[doc = "Enable or disable RR\\[4\\]
+register\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RR4_A {
-    #[doc = "0: Disable RR\\[4\\] register"]
-    DISABLED,
-    #[doc = "1: Enable RR\\[4\\] register"]
-    ENABLED,
+    #[doc = "0: Disable RR\\[4\\]
+register"]
+    DISABLED = 0,
+    #[doc = "1: Enable RR\\[4\\]
+register"]
+    ENABLED = 1,
 }
 impl From<RR4_A> for bool {
     #[inline(always)]
     fn from(variant: RR4_A) -> Self {
-        match variant {
-            RR4_A::DISABLED => false,
-            RR4_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RR4`"]
@@ -373,12 +381,14 @@ impl<'a> RR4_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "Disable RR\\[4\\] register"]
+    #[doc = "Disable RR\\[4\\]
+register"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
         self.variant(RR4_A::DISABLED)
     }
-    #[doc = "Enable RR\\[4\\] register"]
+    #[doc = "Enable RR\\[4\\]
+register"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
         self.variant(RR4_A::ENABLED)
@@ -400,21 +410,21 @@ impl<'a> RR4_W<'a> {
         self.w
     }
 }
-#[doc = "Enable or disable RR\\[5\\] register\n\nValue on reset: 0"]
+#[doc = "Enable or disable RR\\[5\\]
+register\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RR5_A {
-    #[doc = "0: Disable RR\\[5\\] register"]
-    DISABLED,
-    #[doc = "1: Enable RR\\[5\\] register"]
-    ENABLED,
+    #[doc = "0: Disable RR\\[5\\]
+register"]
+    DISABLED = 0,
+    #[doc = "1: Enable RR\\[5\\]
+register"]
+    ENABLED = 1,
 }
 impl From<RR5_A> for bool {
     #[inline(always)]
     fn from(variant: RR5_A) -> Self {
-        match variant {
-            RR5_A::DISABLED => false,
-            RR5_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RR5`"]
@@ -451,12 +461,14 @@ impl<'a> RR5_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "Disable RR\\[5\\] register"]
+    #[doc = "Disable RR\\[5\\]
+register"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
         self.variant(RR5_A::DISABLED)
     }
-    #[doc = "Enable RR\\[5\\] register"]
+    #[doc = "Enable RR\\[5\\]
+register"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
         self.variant(RR5_A::ENABLED)
@@ -478,21 +490,21 @@ impl<'a> RR5_W<'a> {
         self.w
     }
 }
-#[doc = "Enable or disable RR\\[6\\] register\n\nValue on reset: 0"]
+#[doc = "Enable or disable RR\\[6\\]
+register\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RR6_A {
-    #[doc = "0: Disable RR\\[6\\] register"]
-    DISABLED,
-    #[doc = "1: Enable RR\\[6\\] register"]
-    ENABLED,
+    #[doc = "0: Disable RR\\[6\\]
+register"]
+    DISABLED = 0,
+    #[doc = "1: Enable RR\\[6\\]
+register"]
+    ENABLED = 1,
 }
 impl From<RR6_A> for bool {
     #[inline(always)]
     fn from(variant: RR6_A) -> Self {
-        match variant {
-            RR6_A::DISABLED => false,
-            RR6_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RR6`"]
@@ -529,12 +541,14 @@ impl<'a> RR6_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "Disable RR\\[6\\] register"]
+    #[doc = "Disable RR\\[6\\]
+register"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
         self.variant(RR6_A::DISABLED)
     }
-    #[doc = "Enable RR\\[6\\] register"]
+    #[doc = "Enable RR\\[6\\]
+register"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
         self.variant(RR6_A::ENABLED)
@@ -556,21 +570,21 @@ impl<'a> RR6_W<'a> {
         self.w
     }
 }
-#[doc = "Enable or disable RR\\[7\\] register\n\nValue on reset: 0"]
+#[doc = "Enable or disable RR\\[7\\]
+register\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RR7_A {
-    #[doc = "0: Disable RR\\[7\\] register"]
-    DISABLED,
-    #[doc = "1: Enable RR\\[7\\] register"]
-    ENABLED,
+    #[doc = "0: Disable RR\\[7\\]
+register"]
+    DISABLED = 0,
+    #[doc = "1: Enable RR\\[7\\]
+register"]
+    ENABLED = 1,
 }
 impl From<RR7_A> for bool {
     #[inline(always)]
     fn from(variant: RR7_A) -> Self {
-        match variant {
-            RR7_A::DISABLED => false,
-            RR7_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RR7`"]
@@ -607,12 +621,14 @@ impl<'a> RR7_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "Disable RR\\[7\\] register"]
+    #[doc = "Disable RR\\[7\\]
+register"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
         self.variant(RR7_A::DISABLED)
     }
-    #[doc = "Enable RR\\[7\\] register"]
+    #[doc = "Enable RR\\[7\\]
+register"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
         self.variant(RR7_A::ENABLED)
@@ -635,84 +651,100 @@ impl<'a> RR7_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bit 0 - Enable or disable RR\\[0\\] register"]
+    #[doc = "Bit 0 - Enable or disable RR\\[0\\]
+register"]
     #[inline(always)]
     pub fn rr0(&self) -> RR0_R {
         RR0_R::new((self.bits & 0x01) != 0)
     }
-    #[doc = "Bit 1 - Enable or disable RR\\[1\\] register"]
+    #[doc = "Bit 1 - Enable or disable RR\\[1\\]
+register"]
     #[inline(always)]
     pub fn rr1(&self) -> RR1_R {
         RR1_R::new(((self.bits >> 1) & 0x01) != 0)
     }
-    #[doc = "Bit 2 - Enable or disable RR\\[2\\] register"]
+    #[doc = "Bit 2 - Enable or disable RR\\[2\\]
+register"]
     #[inline(always)]
     pub fn rr2(&self) -> RR2_R {
         RR2_R::new(((self.bits >> 2) & 0x01) != 0)
     }
-    #[doc = "Bit 3 - Enable or disable RR\\[3\\] register"]
+    #[doc = "Bit 3 - Enable or disable RR\\[3\\]
+register"]
     #[inline(always)]
     pub fn rr3(&self) -> RR3_R {
         RR3_R::new(((self.bits >> 3) & 0x01) != 0)
     }
-    #[doc = "Bit 4 - Enable or disable RR\\[4\\] register"]
+    #[doc = "Bit 4 - Enable or disable RR\\[4\\]
+register"]
     #[inline(always)]
     pub fn rr4(&self) -> RR4_R {
         RR4_R::new(((self.bits >> 4) & 0x01) != 0)
     }
-    #[doc = "Bit 5 - Enable or disable RR\\[5\\] register"]
+    #[doc = "Bit 5 - Enable or disable RR\\[5\\]
+register"]
     #[inline(always)]
     pub fn rr5(&self) -> RR5_R {
         RR5_R::new(((self.bits >> 5) & 0x01) != 0)
     }
-    #[doc = "Bit 6 - Enable or disable RR\\[6\\] register"]
+    #[doc = "Bit 6 - Enable or disable RR\\[6\\]
+register"]
     #[inline(always)]
     pub fn rr6(&self) -> RR6_R {
         RR6_R::new(((self.bits >> 6) & 0x01) != 0)
     }
-    #[doc = "Bit 7 - Enable or disable RR\\[7\\] register"]
+    #[doc = "Bit 7 - Enable or disable RR\\[7\\]
+register"]
     #[inline(always)]
     pub fn rr7(&self) -> RR7_R {
         RR7_R::new(((self.bits >> 7) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0 - Enable or disable RR\\[0\\] register"]
+    #[doc = "Bit 0 - Enable or disable RR\\[0\\]
+register"]
     #[inline(always)]
     pub fn rr0(&mut self) -> RR0_W {
         RR0_W { w: self }
     }
-    #[doc = "Bit 1 - Enable or disable RR\\[1\\] register"]
+    #[doc = "Bit 1 - Enable or disable RR\\[1\\]
+register"]
     #[inline(always)]
     pub fn rr1(&mut self) -> RR1_W {
         RR1_W { w: self }
     }
-    #[doc = "Bit 2 - Enable or disable RR\\[2\\] register"]
+    #[doc = "Bit 2 - Enable or disable RR\\[2\\]
+register"]
     #[inline(always)]
     pub fn rr2(&mut self) -> RR2_W {
         RR2_W { w: self }
     }
-    #[doc = "Bit 3 - Enable or disable RR\\[3\\] register"]
+    #[doc = "Bit 3 - Enable or disable RR\\[3\\]
+register"]
     #[inline(always)]
     pub fn rr3(&mut self) -> RR3_W {
         RR3_W { w: self }
     }
-    #[doc = "Bit 4 - Enable or disable RR\\[4\\] register"]
+    #[doc = "Bit 4 - Enable or disable RR\\[4\\]
+register"]
     #[inline(always)]
     pub fn rr4(&mut self) -> RR4_W {
         RR4_W { w: self }
     }
-    #[doc = "Bit 5 - Enable or disable RR\\[5\\] register"]
+    #[doc = "Bit 5 - Enable or disable RR\\[5\\]
+register"]
     #[inline(always)]
     pub fn rr5(&mut self) -> RR5_W {
         RR5_W { w: self }
     }
-    #[doc = "Bit 6 - Enable or disable RR\\[6\\] register"]
+    #[doc = "Bit 6 - Enable or disable RR\\[6\\]
+register"]
     #[inline(always)]
     pub fn rr6(&mut self) -> RR6_W {
         RR6_W { w: self }
     }
-    #[doc = "Bit 7 - Enable or disable RR\\[7\\] register"]
+    #[doc = "Bit 7 - Enable or disable RR\\[7\\]
+register"]
     #[inline(always)]
     pub fn rr7(&mut self) -> RR7_W {
         RR7_W { w: self }

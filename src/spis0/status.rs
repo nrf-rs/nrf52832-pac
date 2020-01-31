@@ -14,17 +14,14 @@ impl crate::ResetValue for super::STATUS {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OVERREAD_A {
     #[doc = "0: Read: error not present"]
-    NOTPRESENT,
+    NOTPRESENT = 0,
     #[doc = "1: Read: error present"]
-    PRESENT,
+    PRESENT = 1,
 }
 impl From<OVERREAD_A> for bool {
     #[inline(always)]
     fn from(variant: OVERREAD_A) -> Self {
-        match variant {
-            OVERREAD_A::NOTPRESENT => false,
-            OVERREAD_A::PRESENT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `OVERREAD`"]
@@ -53,14 +50,12 @@ impl OVERREAD_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OVERREAD_AW {
     #[doc = "1: Write: clear error on writing '1'"]
-    CLEAR,
+    CLEAR = 1,
 }
 impl From<OVERREAD_AW> for bool {
     #[inline(always)]
     fn from(variant: OVERREAD_AW) -> Self {
-        match variant {
-            OVERREAD_AW::CLEAR => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `OVERREAD`"]
@@ -101,17 +96,14 @@ impl<'a> OVERREAD_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OVERFLOW_A {
     #[doc = "0: Read: error not present"]
-    NOTPRESENT,
+    NOTPRESENT = 0,
     #[doc = "1: Read: error present"]
-    PRESENT,
+    PRESENT = 1,
 }
 impl From<OVERFLOW_A> for bool {
     #[inline(always)]
     fn from(variant: OVERFLOW_A) -> Self {
-        match variant {
-            OVERFLOW_A::NOTPRESENT => false,
-            OVERFLOW_A::PRESENT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `OVERFLOW`"]
@@ -140,14 +132,12 @@ impl OVERFLOW_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OVERFLOW_AW {
     #[doc = "1: Write: clear error on writing '1'"]
-    CLEAR,
+    CLEAR = 1,
 }
 impl From<OVERFLOW_AW> for bool {
     #[inline(always)]
     fn from(variant: OVERFLOW_AW) -> Self {
-        match variant {
-            OVERFLOW_AW::CLEAR => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `OVERFLOW`"]

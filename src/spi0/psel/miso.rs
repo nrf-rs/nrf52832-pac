@@ -12,16 +12,15 @@ impl crate::ResetValue for super::MISO {
 }
 #[doc = "Pin number configuration for SPI MISO signal\n\nValue on reset: 4294967295"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u32)]
 pub enum PSELMISO_A {
     #[doc = "4294967295: Disconnect"]
-    DISCONNECTED,
+    DISCONNECTED = 4294967295,
 }
 impl From<PSELMISO_A> for u32 {
     #[inline(always)]
     fn from(variant: PSELMISO_A) -> Self {
-        match variant {
-            PSELMISO_A::DISCONNECTED => 4294967295,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PSELMISO`"]

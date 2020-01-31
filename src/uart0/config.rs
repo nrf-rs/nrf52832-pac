@@ -14,17 +14,14 @@ impl crate::ResetValue for super::CONFIG {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HWFC_A {
     #[doc = "0: Disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Enabled"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<HWFC_A> for bool {
     #[inline(always)]
     fn from(variant: HWFC_A) -> Self {
-        match variant {
-            HWFC_A::DISABLED => false,
-            HWFC_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `HWFC`"]
@@ -90,19 +87,17 @@ impl<'a> HWFC_W<'a> {
 }
 #[doc = "Parity\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PARITY_A {
     #[doc = "0: Exclude parity bit"]
-    EXCLUDED,
+    EXCLUDED = 0,
     #[doc = "7: Include parity bit"]
-    INCLUDED,
+    INCLUDED = 7,
 }
 impl From<PARITY_A> for u8 {
     #[inline(always)]
     fn from(variant: PARITY_A) -> Self {
-        match variant {
-            PARITY_A::EXCLUDED => 0,
-            PARITY_A::INCLUDED => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PARITY`"]

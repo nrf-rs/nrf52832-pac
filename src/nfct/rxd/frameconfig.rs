@@ -14,17 +14,14 @@ impl crate::ResetValue for super::FRAMECONFIG {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PARITY_A {
     #[doc = "0: Parity is not expected in RX frames"]
-    NOPARITY,
+    NOPARITY = 0,
     #[doc = "1: Parity is expected in RX frames"]
-    PARITY,
+    PARITY = 1,
 }
 impl From<PARITY_A> for bool {
     #[inline(always)]
     fn from(variant: PARITY_A) -> Self {
-        match variant {
-            PARITY_A::NOPARITY => false,
-            PARITY_A::PARITY => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PARITY`"]
@@ -92,17 +89,14 @@ impl<'a> PARITY_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SOF_A {
     #[doc = "0: Start of Frame symbol is not expected in RX frames"]
-    NOSOF,
+    NOSOF = 0,
     #[doc = "1: Start of Frame symbol is expected in RX frames"]
-    SOF,
+    SOF = 1,
 }
 impl From<SOF_A> for bool {
     #[inline(always)]
     fn from(variant: SOF_A) -> Self {
-        match variant {
-            SOF_A::NOSOF => false,
-            SOF_A::SOF => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SOF`"]
@@ -170,17 +164,14 @@ impl<'a> SOF_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CRCMODERX_A {
     #[doc = "0: CRC is not expected in RX frames"]
-    NOCRCRX,
+    NOCRCRX = 0,
     #[doc = "1: Last 16 bits in RX frame is CRC, CRC is checked and CRCSTATUS updated"]
-    CRC16RX,
+    CRC16RX = 1,
 }
 impl From<CRCMODERX_A> for bool {
     #[inline(always)]
     fn from(variant: CRCMODERX_A) -> Self {
-        match variant {
-            CRCMODERX_A::NOCRCRX => false,
-            CRCMODERX_A::CRC16RX => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CRCMODERX`"]

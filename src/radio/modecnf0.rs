@@ -14,17 +14,14 @@ impl crate::ResetValue for super::MODECNF0 {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RU_A {
     #[doc = "0: Default ramp-up time (tRXEN), compatible with firmware written for nRF51"]
-    DEFAULT,
+    DEFAULT = 0,
     #[doc = "1: Fast ramp-up (tRXEN,FAST), see electrical specification for more information"]
-    FAST,
+    FAST = 1,
 }
 impl From<RU_A> for bool {
     #[inline(always)]
     fn from(variant: RU_A) -> Self {
-        match variant {
-            RU_A::DEFAULT => false,
-            RU_A::FAST => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RU`"]
@@ -90,22 +87,19 @@ impl<'a> RU_W<'a> {
 }
 #[doc = "Default TX value\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum DTX_A {
     #[doc = "0: Transmit '1'"]
-    B1,
+    B1 = 0,
     #[doc = "1: Transmit '0'"]
-    B0,
+    B0 = 1,
     #[doc = "2: Transmit center frequency"]
-    CENTER,
+    CENTER = 2,
 }
 impl From<DTX_A> for u8 {
     #[inline(always)]
     fn from(variant: DTX_A) -> Self {
-        match variant {
-            DTX_A::B1 => 0,
-            DTX_A::B0 => 1,
-            DTX_A::CENTER => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `DTX`"]
