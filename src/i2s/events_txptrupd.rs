@@ -10,5 +10,41 @@ impl crate::ResetValue for super::EVENTS_TXPTRUPD {
         0
     }
 }
-impl R {}
-impl W {}
+#[doc = "Reader of field `EVENTS_TXPTRUPD`"]
+pub type EVENTS_TXPTRUPD_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `EVENTS_TXPTRUPD`"]
+pub struct EVENTS_TXPTRUPD_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> EVENTS_TXPTRUPD_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w
+    }
+}
+impl R {
+    #[doc = "Bit 0"]
+    #[inline(always)]
+    pub fn events_txptrupd(&self) -> EVENTS_TXPTRUPD_R {
+        EVENTS_TXPTRUPD_R::new((self.bits & 0x01) != 0)
+    }
+}
+impl W {
+    #[doc = "Bit 0"]
+    #[inline(always)]
+    pub fn events_txptrupd(&mut self) -> EVENTS_TXPTRUPD_W {
+        EVENTS_TXPTRUPD_W { w: self }
+    }
+}
